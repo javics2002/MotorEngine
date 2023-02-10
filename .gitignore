@@ -10,3 +10,9 @@
 
 # MotorEngine Temp Files
 /Temp
+
+# No user data
+*.user
+
+# No logs
+*.log
