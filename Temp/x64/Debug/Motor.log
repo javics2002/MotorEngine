@@ -1,3 +1,0 @@
-﻿  Motor.cpp
-Motor.obj : error LNK2019: símbolo externo "void __cdecl saluda(char const *)" (?saluda@@YAXPEBD@Z) sin resolver al que se hace referencia en la función main
-C:\Users\34690\OneDrive\Documentos\TERCERO DE CARRERA\SEGUNDO CUATRIMESTRE\PROYECTOS III\MiMotor\Exe\Motor_d.exe : fatal error LNK1120: 1 externos sin resolver
