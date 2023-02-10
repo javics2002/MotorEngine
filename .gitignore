@@ -1,0 +1,12 @@
+# Ogre Build
+/Dependencies/Ogre/Build
+
+# Visual Studio Data
+/.vs
+
+# MotorEngine Output Files
+/Exe
+/Lib
+
+# MotorEngine Temp Files
+/Temp
