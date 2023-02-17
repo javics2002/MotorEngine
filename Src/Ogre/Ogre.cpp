@@ -1,4 +1,5 @@
 #include "Ogre.h"
+#include "OgreWindow.h"
 #include <OgreRoot.h>
 #include <iostream>
 
@@ -8,8 +9,10 @@ void saluda(const char* name) {
 	root = new Ogre::Root();
 	std::cout << "Ogre cargando Correctamente: " << name << std::endl;
 }
-//
-//void init()
-//{
-//	createRoot()
-//}
+
+void initOgre(const char* windowName)
+{
+	OgreWindow* ogre = new OgreWindow(windowName);
+	ogre->init();
+}
+

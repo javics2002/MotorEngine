@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    saluda("Diego");
+    initOgre("Juego");
     cout << "MotorEngine listo!\n";
 
     return 0;

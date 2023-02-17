@@ -1,7 +1,10 @@
 #include "OgreWindow.h"
 #include <OgreRoot.h>
+#include <OgreRenderWindow.h>
 #include <OgreFileSystemLayer.h>
-// #include <SDL.h>
+#include <SDL.h>
+#include <SDL_syswm.h>
+#include <iostream>
 
 OgreWindow::OgreWindow(const std::string windowName)
 {
@@ -20,48 +23,87 @@ OgreWindow::~OgreWindow()
 
 }
 
-bool OgreWindow::init()
+void OgreWindow::init()
 {
-	mPluginCfgPath = "./plugins.cfg";
-	mOgreCfgPath = "./ogre.cfg";
-	mOgreLogPath = "./Ogre.log";
+	initRoot();
 
+	//setup();
+	// mOverlaySystem = new Ogre::OverlaySystem();
+}
+
+void OgreWindow::initRoot()
+{
+
+	Ogre::FileSystemLayer* fsl = new Ogre::FileSystemLayer(mWindowName);
+	
+	mPluginCfgPath = fsl->getConfigFilePath("plugins.cfg");
+	mOgreCfgPath = fsl->getConfigFilePath("ogre.cfg");
+	mOgreLogPath = fsl->getConfigFilePath("Ogre.log");
+
+	delete fsl;
 	if (!Ogre::FileSystemLayer::fileExists(mPluginCfgPath))
-	{	// IG2: OGRE_CONFIG_DIR tiene un valor absoluto no portable
-		//pluginsPath = Ogre::FileSystemLayer::resolveBundlePath(OGRE_CONFIG_DIR "/plugins" OGRE_BUILD_SUFFIX ".cfg");
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "plugins.cfg", "IG2ApplicationContext::createRoot");
+	{	
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "plugins.cfg", "OgreWindow::initRoot");
 	}
 
 	if (!Ogre::FileSystemLayer::fileExists(mOgreCfgPath))
-	{	// IG2: OGRE_CONFIG_DIR tiene un valor absoluto no portable
-		//pluginsPath = Ogre::FileSystemLayer::resolveBundlePath(OGRE_CONFIG_DIR "/plugins" OGRE_BUILD_SUFFIX ".cfg");
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "IG2ApplicationContext::createRoot");
+	{	
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreWindow::initRoot");
 	}
 
 	if (!Ogre::FileSystemLayer::fileExists(mOgreLogPath))
-	{	// IG2: OGRE_CONFIG_DIR tiene un valor absoluto no portable
-		//pluginsPath = Ogre::FileSystemLayer::resolveBundlePath(OGRE_CONFIG_DIR "/plugins" OGRE_BUILD_SUFFIX ".cfg");
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "Ogre.log", "IG2ApplicationContext::createRoot");
+	{	
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "Ogre.log", "OgreWindow::initRoot");
 	}
 
 
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mOgreLogPath);
 
 	if(!mRoot)
-		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "IG2ApplicationContext::createRoot");
+		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreWindow::initRoot");
 
-	return mRoot->restoreConfig();
 
-	// mOverlaySystem = new Ogre::OverlaySystem();
 }
+
+
 
 void OgreWindow::setup() {
 
-	/*int sdlInit = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
-	assert(SDL_GetError(), sdlInit != 0);*/
+	mRoot->initialise(false,mWindowName);
+	createWindow();
+	
+}
 
-	// SDL_JoystickEventState(SDL_ENABLE);
-	// SDL_JoystickUpdate();
+void OgreWindow::createWindow()
+{
+	uint32_t w, h;
+	std::string x;
+	Ogre::ConfigOptionMap cOptionMap = mRoot->getRenderSystem()->getConfigOptions();
+	std::istringstream mode(cOptionMap["Video Mode"].currentValue);
+	mode >> w;
+	mode >> x;
+	mode >> h;
 
-	// mRoot->restoreConfig();
+	Ogre::NameValuePairList miscParams;
+	miscParams["FSAA"] = cOptionMap["FSAA"].currentValue;
+	miscParams["vsync"] = cOptionMap["VSync"].currentValue;
+	miscParams["gamma"] = cOptionMap["sRGB Gamma Conversion"].currentValue;
+
+	if (!SDL_WasInit(SDL_INIT_VIDEO)) 
+		SDL_InitSubSystem(SDL_INIT_VIDEO);
+
+	Uint32 flags = SDL_WINDOW_RESIZABLE;
+
+	if (cOptionMap["Full Screen"].currentValue == "Yes")  
+		flags = SDL_WINDOW_FULLSCREEN;
+
+	mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+
+	SDL_SysWMinfo wmInfo;
+	SDL_VERSION(&wmInfo.version);
+	SDL_GetWindowWMInfo(mSdlWindow, &wmInfo);
+
+	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
+	mRenderWindow = mRoot->createRenderWindow(mWindowName, w, h, false, &miscParams);
+
 }
