@@ -18,9 +18,15 @@
     <ClInclude Include="..\..\Src\Ogre\Ogre.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\Ogre\OgreWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Ogre\Ogre.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
