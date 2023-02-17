@@ -27,7 +27,7 @@ void OgreWindow::init()
 {
 	initRoot();
 
-	//setup();
+	setup();
 	// mOverlaySystem = new Ogre::OverlaySystem();
 }
 
@@ -61,7 +61,7 @@ void OgreWindow::initRoot()
 
 	if(!mRoot)
 		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreWindow::initRoot");
-
+	mRoot->restoreConfig();
 
 }
 
@@ -69,7 +69,7 @@ void OgreWindow::initRoot()
 
 void OgreWindow::setup() {
 
-	mRoot->initialise(false,mWindowName);
+	mRoot->initialise(false, mWindowName);
 	createWindow();
 	
 }
@@ -105,5 +105,7 @@ void OgreWindow::createWindow()
 
 	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
 	mRenderWindow = mRoot->createRenderWindow(mWindowName, w, h, false, &miscParams);
+
+	SDL_ShowCursor(true);
 
 }

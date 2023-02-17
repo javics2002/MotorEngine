@@ -12,7 +12,8 @@ int main()
 {
     initOgre("Juego");
     cout << "MotorEngine listo!\n";
-
+    int a;
+    std::cin >> a;
     return 0;
 }
 
