@@ -1,5 +1,6 @@
-# Ogre Build
+# Builds
 /Dependencies/Ogre/Build
+/Dependencies/SDL/Build
 
 # Visual Studio Data
 /.vs
