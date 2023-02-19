@@ -14,13 +14,15 @@ instancias de singleton.*/
 #endif
 
 namespace me {
+	
+	template<class T>
 	/**
 	Ensures there is only one instance of a class, and offers global access to it.
 	@tparam T is the class made a singleton
 	*/
-	template<class T>
 	class Singleton {
 	private:
+		//The only instance of class T
 		static std::unique_ptr<T> mInstance;
 		
 	protected:
@@ -31,10 +33,14 @@ namespace me {
 		Singleton(const Singleton<T>& o) = delete;
 		virtual ~Singleton() {}
 
+		/**
+		Constructs the instance of class T.
+		@tparam Arguments to pass to class T constructor.
+		*/
 		template<typename ...Targs>
 		static T* init(Targs &&...args) {
 			if (mInstance.get() == nullptr) {
-				mInstance = std::make_unique<T>(std::forward<Targs>(args)...);
+				mInstance.reset(new T(std::forward<Targs>(args)...));
 #ifdef _DEBUG
 				std::cout << "Singleton: Instance of " << typeid(T).name() << " created.\n";
 			}
@@ -45,6 +51,11 @@ namespace me {
 			return mInstance.get();
 		}
 
+		/**
+		Returns the class T instance. If it does not exits, creates it with
+		the default constructor and returns it.
+		@return Reference to the only instance of class T.
+		*/
 		static T* instance() {
 			if (mInstance.get() == nullptr)
 				return init();

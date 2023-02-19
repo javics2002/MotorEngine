@@ -26,5 +26,8 @@
     <ClInclude Include="..\..\Src\SDL\InputManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\SDL\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
