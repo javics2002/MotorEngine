@@ -15,6 +15,7 @@ namespace me {
 	InputManager provides information and callbacks for any user input.
 	You can access input by key, but you can also define your own
 	buttons to easely remap your game's controls.
+	You can access the InputManager just calling im().
 	*/
 	class InputManager : public Singleton<InputManager> {
 		friend Singleton<InputManager>;

@@ -1,20 +1,24 @@
 #include "Window.h"
+#include <SDL3/SDL_init.h>
 #include <SDL3/SDL_video.h>
 
 using namespace me;
 
-Window::Window(Uint32 flags) : window(nullptr)
+Window::Window()
 {
-	SDL_Init(flags);
+	SDL_Init(SDL_INIT_EVERYTHING);
+	window = SDL_CreateWindow("Motor Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		854, 480, SDL_WINDOW_INPUT_FOCUS);
+}
+
+Window::Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, uint32_t windowFlags)
+{
+	SDL_Init(sdlFlags);
+	window = SDL_CreateWindow(name, x, y, w, h, windowFlags);
 }
 
 Window::~Window()
 {
-}
-
-SDL_Window* Window::create(const char* name, int x, int y, int w, int h, Uint32 flags)
-{
-	return window = SDL_CreateWindow(name, x, y, w, h, flags);
 }
 
 SDL_Window* me::Window::get()

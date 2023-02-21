@@ -6,7 +6,7 @@
 #include "InputManager.h"
 #include "Window.h"
 #include <iostream>
-
+#include <SDL3/SDL_init.h>
 #include <SDL3/SDL_events.h>
 
 #define KEY_NAME SDL_GetKeyName(event->key.keysym.sym)
@@ -25,7 +25,8 @@ int revealKeyboardEvents(void* userdata, SDL_Event* event)
 
 int main() {
 	im();
-    win().create("Input Manager Test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_INPUT_FOCUS);
+    Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
+        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 
     char* name = (char*) "Javi";
     SDL_AddEventWatch(revealKeyboardEvents, name); 
