@@ -3,7 +3,7 @@
 #include <OgreRoot.h>
 #include <iostream>
 
-
+using namespace me;
 void saluda(const char* name) {
 	Ogre::Root* root;
 	root = new Ogre::Root();
@@ -15,4 +15,5 @@ void initOgre(const char* windowName)
 	OgreWindow* ogre = new OgreWindow(windowName);
 	ogre->init();
 }
+
 

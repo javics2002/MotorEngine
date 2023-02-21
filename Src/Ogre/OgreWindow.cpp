@@ -6,6 +6,8 @@
 #include <SDL_syswm.h>
 #include <iostream>
 
+using namespace me;
+
 OgreWindow::OgreWindow(const std::string windowName)
 {
 	mWindowName = windowName;

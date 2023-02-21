@@ -20,11 +20,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Ogre\Ogre.h" />
+    <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\Ogre\main.cpp" />
     <ClCompile Include="..\..\Src\Ogre\Ogre.cpp" />
+    <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDL\SDL.vcxproj">
+      <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -48,7 +56,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -79,7 +87,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)Lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Exe\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <IncludePath>$(IncludePath)</IncludePath>
@@ -123,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\include;$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\include-config-debug</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,8 +140,8 @@
       <AdditionalDependencies>OgreMain_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain_d.lib;SDL2d.lib;SDL2maind.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain_d.lib;</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,7 +152,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\include;$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\include-config-release</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,8 +163,8 @@
       <AdditionalDependencies>OgreMain.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\SDL2-build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain.lib;SDL2.lib;SDL2main.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain.lib;</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
