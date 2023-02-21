@@ -3,7 +3,7 @@
 
 using namespace me;
 
-Window::Window(Uint32 flags)
+Window::Window(Uint32 flags) : window(nullptr)
 {
 	SDL_Init(flags);
 }

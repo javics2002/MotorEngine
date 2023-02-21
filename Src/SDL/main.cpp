@@ -25,9 +25,8 @@ int revealKeyboardEvents(void* userdata, SDL_Event* event)
 
 int main() {
 	im();
-    SDL_Window* window = win().create("Input Manager Test",
-        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WindowFlags::SDL_WINDOW_INPUT_FOCUS);
-    win().get();
+    win().create("Input Manager Test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_INPUT_FOCUS);
+
     char* name = (char*) "Javi";
     SDL_AddEventWatch(revealKeyboardEvents, name); 
     //Se copia name, asi que creo que no se le pueden pasar datos que puedan cambiar
