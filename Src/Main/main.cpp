@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    initOgre("Juego");
+    me::initOgre("Juego");
     cout << "MotorEngine listo!\n";
     int a;
     std::cin >> a;

@@ -4,15 +4,16 @@
 #define __OGRE_MAIN
 
 
+
 #include "Ogre.h"
-#include "SDL/Window.h"
-
-
-
+#include <iostream>
 using namespace me;
 
+
 int main() {
-	initOgre("Juego");
+	initOgre("Juegox");
+	int a;
+	std::cin >> a;
 	return 0;
 }
 

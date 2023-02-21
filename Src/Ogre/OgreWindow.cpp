@@ -2,9 +2,11 @@
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
 #include <OgreFileSystemLayer.h>
-#include <SDL.h>
-#include <SDL_syswm.h>
 #include <iostream>
+#include "SDL/Window.h"
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_syswm.h>s
+
 
 using namespace me;
 
@@ -91,23 +93,23 @@ void OgreWindow::createWindow()
 	miscParams["vsync"] = cOptionMap["VSync"].currentValue;
 	miscParams["gamma"] = cOptionMap["sRGB Gamma Conversion"].currentValue;
 
-	if (!SDL_WasInit(SDL_INIT_VIDEO)) 
-		SDL_InitSubSystem(SDL_INIT_VIDEO);
+	
 
 	Uint32 flags = SDL_WINDOW_RESIZABLE;
 
 	if (cOptionMap["Full Screen"].currentValue == "Yes")  
 		flags = SDL_WINDOW_FULLSCREEN;
+	
+	mSdlWindow = win().create(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
-	mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
+	SDL_GetWindowWMInfo(mSdlWindow, wmInfo,wmInfo->version);
 
-	SDL_SysWMinfo wmInfo;
-	SDL_VERSION(&wmInfo.version);
-	SDL_GetWindowWMInfo(mSdlWindow, &wmInfo);
-
-	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
+	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo->info.win.window));
 	mRenderWindow = mRoot->createRenderWindow(mWindowName, w, h, false, &miscParams);
 
-	SDL_ShowCursor(true);
+	SDL_ShowCursor();
+	//SDL_HideCursor();
 
 }

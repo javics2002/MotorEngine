@@ -32,7 +32,7 @@
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Ogre\main.cpp">
+    <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp">
