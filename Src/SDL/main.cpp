@@ -4,8 +4,9 @@
 #define __SDL_MAIN
 
 #include "InputManager.h"
+#include "Window.h"
 #include <iostream>
-#include <SDL3/SDL_init.h>
+
 #include <SDL3/SDL_events.h>
 
 #define KEY_NAME SDL_GetKeyName(event->key.keysym.sym)
@@ -24,10 +25,9 @@ int revealKeyboardEvents(void* userdata, SDL_Event* event)
 
 int main() {
 	im();
-    SDL_Init(SDL_INIT_EVERYTHING); //Poner solo los flags justos
-    SDL_Window* window = SDL_CreateWindow("Input Manager Test", 
+    SDL_Window* window = win().create("Input Manager Test",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WindowFlags::SDL_WINDOW_INPUT_FOCUS);
-
+    win().get();
     char* name = (char*) "Javi";
     SDL_AddEventWatch(revealKeyboardEvents, name); 
     //Se copia name, asi que creo que no se le pueden pasar datos que puedan cambiar
@@ -38,7 +38,7 @@ int main() {
     while (SDL_WaitEvent(&event)) {
         switch (event.type) {
         case SDL_EVENT_QUIT:
-            break;
+            return 0;
         }
     }
     std::cout << SDL_GetError();

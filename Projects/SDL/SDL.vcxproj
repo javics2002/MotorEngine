@@ -142,10 +142,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\SDL\InputManager.cpp" />
     <ClCompile Include="..\..\Src\SDL\main.cpp" />
+    <ClCompile Include="..\..\Src\SDL\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\SDL\Button.h" />
     <ClInclude Include="..\..\Src\SDL\InputManager.h" />
+    <ClInclude Include="..\..\Src\SDL\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\Utils.vcxproj">
