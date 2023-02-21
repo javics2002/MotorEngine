@@ -1,6 +1,8 @@
 # Builds
 /Dependencies/Ogre/Build
 /Dependencies/SDL/Build
+/Dependencies/Bullet/Build
+
 
 # Visual Studio Data
 /.vs
