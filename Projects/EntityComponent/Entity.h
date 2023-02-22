@@ -1,3 +1,8 @@
+/**
+The main function of this class is to be the wrapper 
+of a set of components.
+*/
+
 #pragma once
 #ifndef __EC_ENTITY
 #define __EC_ENTITY
@@ -8,127 +13,89 @@
 #include <vector>
 #include <iostream>
 #include "Component.h"
-//#include "ecs.h"
+#include "ec.h"
 
-class Manager;
+namespace me {
 
-class Entity {
-	friend Manager;
+	class Entity {
 
-public:
+	public:
 
-	Entity(Manager* mngr) :
-		active_(true), //
-		mngr_(mngr), //
-		cmpArray_(), //
-		groups_() //
-	{
-	}
-
-	virtual ~Entity() {
-		for (auto c : components_) {
-			delete c;
-		}
-	}
-
-	template<typename T, typename ...Ts>
-	T* addComponent(Ts &&... args) {
-		T* c = new T(std::forward<Ts>(args)...);
-		c->setEntity(this);
-		c->init();
-		constexpr auto id = ecs::cmpIdx<T>;
-
-		if (cmpArray_[id] != nullptr) {
-			removeComponent<T>();
+		/**
+		Build the foundation of the entity.
+		*/
+		Entity() :
+			active_(true), //
+			cmpArray_() //
+		{
 		}
 
-		cmpArray_[id] = c;
-		components_.emplace_back(c);
-
-		return c;
-	}
-
-	template<typename T>
-	void removeComponent() {
-		auto id = ecs::cmpIdx<T>;
-		if (cmpArray_[id] != nullptr) {
-			Component* old_cmp = cmpArray_[id];
-			cmpArray_[id] = nullptr;
-			components_.erase( //
-				std::find_if( //
-					components_.begin(), //
-					components_.end(), //
-					[old_cmp](const Component* c) { //
-						return c == old_cmp;
-					}));
-			delete old_cmp;
+		/**
+		Delete all the components added to the entity.
+		*/
+		virtual ~Entity() {
+			for (auto c : components_) {
+				delete c;
+			}
 		}
-	}
 
-	template<typename T>
-	inline T* getComponent() {
-		auto id = ecs::cmpIdx<T>;
-		return static_cast<T*>(cmpArray_[id]);
-	}
+		/**
+		Add a new component. If the component
+		already exists, this will replace them.
+		@return Reference to the new component.
+		*/
+		template<typename T, typename ...Ts>
+		T* addComponent(Ts &&... args);
 
-	template<typename T>
-	inline bool hasComponent() {
-		auto id = ecs::cmpIdx<T>;
-		return cmpArray_[id] != nullptr;
-	}
+		/**
+		Remove completely a component.
+		*/
+		template<typename T>
+		void removeComponent();
 
-	inline void setMngr(Manager* mngr) {
-		mngr_ = mngr;
-	}
+		/**
+		Get the reference a suggested component.
+		@return Reference to the component.
+		*/
+		template<typename T>
+		inline T* getComponent();
 
-	inline Manager* getMngr() {
-		return mngr_;
-	}
+		/**
+		Check if the component has already been added.
+		@return Boolean confirmation.
+		*/
+		template<typename T>
+		inline bool hasComponent();
 
-	inline bool isActive() const {
-		return active_;
-	}
+		/**
+		Check if the entity is active.
+		@return Boolean confirmation.
+		*/
+		inline bool isActive() const;
 
-	inline void setActive(bool state) {
-		active_ = state;
-	}
+		/**
+		Set the entity activity to the boolean petition.
+		*/
+		inline void setActive(bool state);
 
-	template<typename T>
-	inline bool hasGroup() {
-		return groups_[ecs::grpIdx<T>];
-	}
+		/**
+		Run all the added components update method.
+		*/
+		void update();
 
-	template<typename T>
-	inline void setGroup(bool state) {
-		groups_[ecs::grpIdx<T>] = state;
-	}
+		/**
+		Run all the added components lateUpdate method.
+		*/
+		void lateUpdate();
 
-	inline void resetGroups() {
-		groups_.reset();
-	}
+	private:
 
+		bool active_;
+		std::vector<Component*> components_;
+		std::array<Component*, ec::maxComponent> cmpArray_;
 
-	void update() {
-		std::size_t n = components_.size();
-		for (auto i = 0u; i < n; i++) {
-			components_[i]->update();
-		}
-	}
+	};
 
-	void render() {
-		std::size_t n = components_.size();
-		for (auto i = 0u; i < n; i++) {
-			components_[i]->render();
-		}
-	}
-
-private:
-
-	bool active_;
-	Manager* mngr_;
-	std::vector<Component*> components_;
-	std::array<Component*, ecs::maxComponent> cmpArray_;
-	std::bitset<ecs::maxGroup> groups_;
 };
 
 #endif
