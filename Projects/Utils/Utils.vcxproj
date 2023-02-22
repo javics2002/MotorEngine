@@ -20,11 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Utils\Vector2.cpp" />
+    <ClCompile Include="..\..\Src\Utils\Vector3.cpp" />
+    <ClCompile Include="..\..\Src\Utils\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Utils\Singleton.h" />
     <ClInclude Include="..\..\Src\Utils\Utils.h" />
     <ClInclude Include="..\..\Src\Utils\Vector2.h" />
+    <ClInclude Include="..\..\Src\Utils\Vector3.h" />
+    <ClInclude Include="..\..\Src\Utils\Vector4.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

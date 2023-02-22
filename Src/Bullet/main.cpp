@@ -9,10 +9,12 @@
 #include "PhysicsManager.h"
 #include "SDL/Window.h"
 
+using namespace me;
+
 int main() {
     
-    me::PhysicsManager();
-    me::win();
+    pm();
+    win();
 
     SDL_Event event;
     while (SDL_WaitEvent(&event)) {
