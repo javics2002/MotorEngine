@@ -15,29 +15,25 @@ of a set of components.
 #include "Component.h"
 #include "ec.h"
 
+
 namespace me {
 
+	class Scene;
+
 	class Entity {
+		friend Scene;
 
 	public:
 
 		/**
 		Build the foundation of the entity.
 		*/
-		Entity() :
-			active_(true), //
-			cmpArray_() //
-		{
-		}
+		Entity(Scene* scn);
 
 		/**
 		Delete all the components added to the entity.
 		*/
-		virtual ~Entity() {
-			for (auto c : components_) {
-				delete c;
-			}
-		}
+		virtual ~Entity();
 
 		/**
 		Add a new component. If the component
@@ -68,6 +64,16 @@ namespace me {
 		inline bool hasComponent();
 
 		/**
+		Set the associated scene for the entity.
+		*/
+		inline void setScene(Scene* scn);
+
+		/**
+		Get the associated scene of the entity.
+		*/
+		inline Scene* getScene();
+
+		/**
 		Check if the entity is active.
 		@return Boolean confirmation.
 		*/
@@ -91,6 +97,7 @@ namespace me {
 	private:
 
 		bool active_;
+		Scene* scn_;
 		std::vector<Component*> components_;
 		std::array<Component*, ec::maxComponent> cmpArray_;
 

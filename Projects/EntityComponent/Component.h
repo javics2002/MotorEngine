@@ -14,13 +14,15 @@ namespace me {
 
 	class Component {
 	public:
-		Component() :
-			entity_(nullptr) {
-		}
+
+		/**
+		Build the foundation of the component.
+		*/
+		Component();
 
 		/**
 		This method is meant to be the definition
-		of the dynamic memory that has to be correctly delete.
+		of the dynamic memory that has to be safely delete.
 		*/
 		virtual ~Component() {}
 

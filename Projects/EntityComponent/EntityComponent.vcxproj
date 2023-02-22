@@ -136,6 +136,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="ec.h" />
+    <ClInclude Include="ec_defs.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="mpl.h" />
+    <ClInclude Include="Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
