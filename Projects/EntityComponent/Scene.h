@@ -47,7 +47,7 @@ namespace me {
 
 		/**
 		This method is only ever called once.
-		It is called in the instantiation of the script.
+		This must be called at the instantiation of the script.
 		*/
 		virtual void start() {}
 
