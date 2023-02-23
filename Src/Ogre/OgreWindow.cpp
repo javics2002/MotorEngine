@@ -100,7 +100,10 @@ void OgreWindow::createWindow()
 	if (cOptionMap["Full Screen"].currentValue == "Yes")  
 		flags = SDL_WINDOW_FULLSCREEN;
 	
-	mSdlWindow = win().create(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+	Window::init(SDL_INIT_EVERYTHING, mWindowName.c_str(),
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+
+	mSdlWindow = win().get();
 	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
 	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
