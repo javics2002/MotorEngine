@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -113,6 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,19 +151,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="ec.h" />
-    <ClInclude Include="ec_defs.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="mpl.h" />
-    <ClInclude Include="Scene.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Scene.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

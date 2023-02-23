@@ -13,11 +13,12 @@ namespace me {
 	class Entity;
 
 	class Component {
-	public:
+public:
 
 		/**
 		Build the foundation of the component.
 		*/
+
 		Component();
 
 		/**

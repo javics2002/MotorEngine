@@ -13,6 +13,18 @@ inline Vector3<T> Vector3<T>::operator-(const Vector3& v)
 }
 
 /**
+* Returns the difference between this vector and another vector
+*
+* @param v The other vector to subtract from this vector
+* @return The difference between this vector and the other vector
+*/
+template<typename T>
+inline Vector3<T> Vector3<T>::operator-=(const Vector3& v)
+{
+	return Vector3<T>(x - v.x, y - v.y, z - v.z);
+}
+
+/**
 * Returns the sum of this vector and another vector
 *
 * @param v The other vector to add to this vector
@@ -20,6 +32,12 @@ inline Vector3<T> Vector3<T>::operator-(const Vector3& v)
 */
 template<typename T>
 inline Vector3<T> Vector3<T>::operator+(const Vector3& v)
+{
+	return Vector3<T>(x + v.x, y + v.y, z + v.z);
+}
+
+template<typename T>
+Vector3<T> Vector3<T>::operator+=(const Vector3& v)
 {
 	return Vector3<T>(x + v.x, y + v.y, z + v.z);
 }
@@ -32,6 +50,12 @@ inline Vector3<T> Vector3<T>::operator+(const Vector3& v)
 */
 template<typename T>
 inline Vector3<T> Vector3<T>::operator*(const T& s)
+{
+	return Vector3<T>(x * s, y * s, z * s);
+}
+
+template<typename T>
+inline Vector3<T> Vector3<T>::operator*=(const T& s)
 {
 	return Vector3<T>(x * s, y * s, z * s);
 }
@@ -103,6 +127,35 @@ inline Vector3<T> Vector3<T>::cross(const Vector3<T>& v)
 {
 	return Vector3<T>((y * v.z) - (z * v.y), (z * v.x) - (x * v.z), (x * v.y) - (y * v.x));
 }
+
+/**
+*  Check if this vector is equal to another vector "v"
+*
+*  @param v The other vector to check equality with
+*  @return True if the two vectors are equal, false otherwise
+*/
+template<typename T>
+inline  void Vector3<T>::operator=(const Vector3<T>& v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
+
+/**
+*  Check if this vector is equal to another vector "v"
+*
+*  @param v The other vector to check equality with
+*  @return True if the two vectors are equal, false otherwise
+*/
+template<typename T>
+void Vector3<T>::operator=(const Vector3<T>* v)
+{
+	x = v->x;
+	y = v->y;
+	z = v->z;
+}
+
 
 
 /**

@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bullet", "Projects\Bullet\Bullet.vcxproj", "{31EA8915-AB30-4545-8535-15A0EE380979}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntityComponent", "Projects\EntityComponent\EntityComponent.vcxproj", "{E996E8C5-C183-4221-9A3E-4FC9E4475465}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E37B8FFF-2C86-46A5-B2A6-635658143588} = {E37B8FFF-2C86-46A5-B2A6-635658143588}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FMOD", "Projects\FMOD\FMOD.vcxproj", "{B4D632C1-E07D-4584-A31D-BB7546930D05}"
 EndProject
