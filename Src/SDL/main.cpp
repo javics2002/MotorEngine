@@ -8,6 +8,9 @@
 #include <iostream>
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_events.h>
+#include <SDL3/SDL_keyboard.h>
+#include <SDL3/SDL_mouse.h>
+#include <SDL3/SDL_gamepad.h>
 
 #define KEY_NAME SDL_GetKeyName(event->key.keysym.sym)
 
