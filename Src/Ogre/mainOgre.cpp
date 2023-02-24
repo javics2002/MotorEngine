@@ -5,15 +5,25 @@
 
 
 #include <iostream>
-
+#include <string>
 #include "OgreManager.h"
 
 using namespace me;
 
 
+
 int main() {
 
-	ogreM();
+	OgreManager* ogreMgr= OgreManager::instance();
+	std::string camJ1 = "CameraJugador1";
+	ogreMgr->createCamera(camJ1, 5,10000,true);
+	ogreMgr->setCameraInfo(camJ1, 0, 0, 500, 0, 0, -1);
+	ogreMgr->renderCamera(camJ1, 0.0f, 5.0f, 2.0f, 2.0f);
+	while (true)
+	{
+		ogreMgr->render();
+	}
+	
 	int a;
 	std::cin >> a;
 	return 0;

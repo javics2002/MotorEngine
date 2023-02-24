@@ -17,6 +17,7 @@ namespace me {
 		Ogre::Camera* mCamera ;
 		Ogre::Viewport* mViewport ;
 		Ogre::SceneNode* mCameraNode ;
+		Ogre::SceneNode* mLightNode ;
 		Ogre::SceneManager* mSceneMgr;
 		Ogre::RenderWindow* mRenderWindow;
 
@@ -26,6 +27,7 @@ namespace me {
 		~OgreCamera();
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );
 		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio);
+		void renderCamera();
 
 
 		void setPosition(int x, int y, int z);

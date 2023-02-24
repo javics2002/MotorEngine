@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Src\Ogre\OgreManager.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
+    <ClInclude Include="..\..\Src\Ogre\SGTechniqueResolverListener.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
     <ClInclude Include="OgreGame.h" />
   </ItemGroup>
@@ -28,6 +29,7 @@
     <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreManager.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
+    <ClCompile Include="..\..\Src\Ogre\SGTechniqueResolverListener.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
     <ClCompile Include="OgreGame.cpp" />
   </ItemGroup>
@@ -133,13 +135,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain_d.lib;SDL3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain_d.lib;SDL3.lib;OgreRTShaderSystem_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -154,7 +156,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -166,7 +168,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain.lib;SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

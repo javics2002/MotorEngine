@@ -1,10 +1,16 @@
 #include "OgreManager.h"
 #include <OgreRoot.h>
+#include <OgreSceneManager.h>
 #include <OgreFileSystemLayer.h>
 #include <OgreConfigFile.h>
+#include <OgreShaderGenerator.h>
+#include <OgreRTShaderSystem.h>
+#include <OgreMaterialManager.h>
 #include <iostream>
 
 #include "Ogre/OgreWindow.h"
+#include "Ogre/OgreCamera.h"
+#include "Ogre/SGTechniqueResolverListener.h"
 
 using namespace me;
 
@@ -15,6 +21,7 @@ OgreManager::OgreManager()
 	locateResources();
 	loadResources();
 	initialiseRTShaderSystem();
+	mSM = mRoot->createSceneManager();
 }
 
 void OgreManager::initRoot()
@@ -52,24 +59,98 @@ void me::OgreManager::initWindow()
 }
 
 bool OgreManager::initialiseRTShaderSystem() {
-	//if (Ogre::RTShader::ShaderGenerator::initialize())
-	//{
-	//	mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
-	//	// Core shader libs not found -> shader generating will fail.
-	//	if (mRTShaderLibPath.empty())
-	//		return false;
-	//	// Create and register the material manager listener if it doesn't exist yet.
-	//	if (!mMaterialMgrListener) {
-	//		mMaterialMgrListener = new SGTechniqueResolverListener(mShaderGenerator);
-	//		Ogre::MaterialManager::getSingleton().addListener(mMaterialMgrListener);
-	//	}
-	//}
+	if (Ogre::RTShader::ShaderGenerator::initialize())
+	{
+		mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
+		// Core shader libs not found -> shader generating will fail.
+		if (mRTShaderLibPath.empty())
+			return false;
+
+		// Create and register the material manager listener if it doesn't exist yet.
+		if (!mMaterialMgrListener) {
+			mMaterialMgrListener = new SGTechniqueResolverListener(mShaderGenerator);
+			Ogre::MaterialManager::getSingleton().addListener(mMaterialMgrListener);
+		}
+	}
 
 	return true;
 }
 
+
+
 me::OgreManager::~OgreManager()
 {
+	delete ogreWindow;
+}
+
+bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio)
+{
+
+	if (mCameras.count(name))
+		return false;
+
+	OgreCamera* camera = new OgreCamera();
+	Ogre::SceneNode* cameraNode = mSM->getSceneNode(parentName)->createChildSceneNode(name);
+	
+	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
+
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio);
+
+	mCameras[name] = camera;
+
+	return true;
+}
+
+bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio)
+{
+	if (mCameras.count(name))
+		return false;
+
+	OgreCamera* camera = new OgreCamera();
+	Ogre::SceneNode* cameraNode = mSM->getRootSceneNode()->createChildSceneNode(name);
+
+	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
+
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio);
+
+	mCameras[name] = camera;
+
+	return true;
+}
+
+OgreCamera* me::OgreManager::getCamera(std::string name)
+{
+	
+	if (!mCameras.count(name))
+		return nullptr;
+
+	return mCameras[name];
+}
+
+bool me::OgreManager::setCameraInfo(std::string name, int x, int y, int z, int x1, int y1, int z1)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setPosition(x,y,z);
+	cam->lookAt(x1,y1,z1);
+	
+
+	return true;
+
+}
+
+bool me::OgreManager::renderCamera(std::string name, float left, float top, float width, float height)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->renderCamera();
+	cam->setViewportDimension(left, top, width, height); //infractura en OgreMain.dll
+
+	return true;
 }
 
 void OgreManager::loadResources() {
@@ -165,5 +246,12 @@ void OgreManager::locateResources()
 	}*/
 
 
+	
+
+}
+
+void me::OgreManager::render()
+{
+	mRoot->renderOneFrame();
 }
 
