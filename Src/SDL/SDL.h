@@ -35,4 +35,13 @@ namespace me {
 	given any controller, keyboard or mouse
 	*/
 	struct Axis;
+
+	//This data defines the behaviour of the axis
+	struct AxisInfo;
+
+	//Represents a physical button or key that can trigger a virtual button
+	struct Input;
+
+	//Represents two physical buttons or keys that can trigger a virtual axis
+	struct AxisInput;
 }

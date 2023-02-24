@@ -6,8 +6,8 @@
 #include "Button.h"
 #include "Axis.h"
 #include <vector>
+#include <string>
 #include <unordered_map>
-#include <SDL3/SDL_events.h>
 
 namespace me {
 	/**
@@ -25,11 +25,11 @@ namespace me {
 		std::unordered_map<std::string, Axis> mAxis;			//Pairs each axis with its name
 
 		//Stores virtual button names linked to their physical input 
-		std::unordered_multimap<Input, std::string> mButtonBindings;
+		std::unordered_multimap<Input, std::string, InputHasher> mButtonBindings;
 		//Stores virtual axis names linked to their physical positive input 
-		std::unordered_multimap<Input, std::string> mPositiveAxisBindings;
+		std::unordered_multimap<Input, std::string, InputHasher> mPositiveAxisBindings;
 		//Stores virtual axis names linked to their physical negative input 
-		std::unordered_multimap<Input, std::string> mNegativeAxisBindings;
+		std::unordered_multimap<Input, std::string, InputHasher> mNegativeAxisBindings;
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
@@ -44,13 +44,13 @@ namespace me {
 		@param userdata is a pointer to additional information to use in the callback.
 		It is NULL by default.
 		*/
-		void addEvent(SDL_EventFilter filter, void* userdata = NULL) noexcept;
+		void addEvent(SDL_EventFilter filter, void* userdata = NULL);
 		/**
 		Deletes filter from the SDLEventWatch.
 		@param filter is the same function used to add the callback.
 		@param userdata is the same additional information used when adding the callback.
 		*/
-		void deleteEvent(SDL_EventFilter filter, void* userdata = NULL) noexcept;
+		void deleteEvent(SDL_EventFilter filter, void* userdata = NULL);
 
 		/**
 		Creates a button of name name.
