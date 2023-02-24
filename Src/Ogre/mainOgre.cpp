@@ -12,6 +12,7 @@ using namespace me;
 
 int main() {
 	initOgre("Juegox");
+
 	int a;
 	std::cin >> a;
 	return 0;

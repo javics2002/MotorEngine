@@ -22,12 +22,14 @@
     <ClInclude Include="..\..\Src\Ogre\Ogre.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
+    <ClInclude Include="OgreGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp" />
     <ClCompile Include="..\..\Src\Ogre\Ogre.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
+    <ClCompile Include="OgreGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDL\SDL.vcxproj">
@@ -136,7 +138,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Debug;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>OgreMain_d.lib;SDL3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>

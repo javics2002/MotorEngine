@@ -8,12 +8,12 @@
 */
 
 #include <string>
-class FileSystemLayer;
 class SDL_Window;
 
 namespace Ogre {
 	class Root;
 	class RenderWindow;
+	class FileSystemLayer;
 }
 namespace me {
 	class OgreWindow {
@@ -23,13 +23,19 @@ namespace me {
 		std::string mWindowName;
 		Ogre::Root* mRoot;
 		bool mFirstRun;
+
 		std::string mResourceCfgPath;
 		std::string mPluginCfgPath;
 		std::string mOgreLogPath;
 		std::string mOgreCfgPath;
+		std::string mOgreResourcesPath;
 
-		Ogre::RenderWindow* mRenderWindow = nullptr;
-		SDL_Window* mSdlWindow = nullptr;
+		/// TEMP (CARGA DE ASSETS)
+		std::string mSolutionPath;
+
+		SDL_Window* mRenderWindow = nullptr;
+
+		Ogre::FileSystemLayer* mFSLayer;
 
 		//Ogre::RTShader::ShaderGenerator * mShaderGenerator; // The Shader generator instance.
 		//SGTechniqueResolverListener* mMaterialMgrListener; // Shader generator material manager listener.
@@ -37,13 +43,17 @@ namespace me {
 		void initRoot();
 		void setup();
 		void createWindow();
+		void setWindowGrab(bool _grab);
+		void locateResources();
+		void loadResources();
+		bool initialiseRTShaderSystem();
 
 	public:
 		OgreWindow(const std::string windowName);
 		~OgreWindow();
 
 		void init();
-
+		Ogre::Root* getRoot();
 
 	};
 

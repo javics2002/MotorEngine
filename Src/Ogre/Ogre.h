@@ -1,8 +1,6 @@
 #pragma once
 
 namespace me {
-	//void saluda(const char* name);
+	// Ogre::Root* mRoot;
 	void initOgre(const char* windowName);
-
-
 }
