@@ -3,6 +3,7 @@
 #define __SDL_AXIS
 
 #include <string>
+#include <SDL3/SDL_events.h>
 
 namespace me {
 	//This data defines the behaviour of the axis

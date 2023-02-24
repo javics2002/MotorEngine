@@ -3,6 +3,7 @@
 #define __SDL_BUTTON
 
 #include <string>
+#include <SDL3/SDL_events.h>
 
 namespace me {
 	/**
@@ -26,6 +27,18 @@ namespace me {
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event*/
 		int which;
+
+		bool operator==(const Input& i) const
+		{
+			return type == i.type && which == i.which;
+		}
+	};
+
+	//Provides hash suppport for using struct Input as a key in std::unordered_map
+	struct InputHasher {
+		size_t operator()(const Input& t) const {
+			return std::hash<int>()(t.which) ^ std::hash<int>()(t.type);
+		}
 	};
 }
 
