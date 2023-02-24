@@ -27,8 +27,10 @@ namespace me {
 
 		/**
 		Build the foundation of the entity.
+		@param Scene to which it belongs.
+		@param String name to identify it.
 		*/
-		Entity(Scene* scn);
+		Entity(Scene* scn, std::string name);
 
 		/**
 		Delete all the components added to the entity.
@@ -38,6 +40,7 @@ namespace me {
 		/**
 		Add a new component. If the component
 		already exists, this will replace them.
+		@param Variable number of arguments of any type.
 		@return Reference to the new component.
 		*/
 		template<typename T, typename ...Ts>
@@ -65,11 +68,13 @@ namespace me {
 
 		/**
 		Set the associated scene for the entity.
+		@param Scene to which it belongs.
 		*/
 		inline void setScene(Scene* scn);
 
 		/**
 		Get the associated scene of the entity.
+		@return Scene to which it belongs.
 		*/
 		inline Scene* getScene();
 
@@ -81,6 +86,7 @@ namespace me {
 
 		/**
 		Set the entity activity to the boolean petition.
+		@param Boolean state activity.
 		*/
 		inline void setActive(bool state);
 
@@ -97,6 +103,7 @@ namespace me {
 	private:
 
 		bool active_;
+		std::string name_;
 		Scene* scn_;
 		std::vector<Component*> components_;
 		std::array<Component*, ec::maxComponent> cmpArray_;

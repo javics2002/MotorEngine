@@ -24,8 +24,9 @@ namespace me {
 
 		/**
 		Build the foundation of the scene.
+		@param String name to identify it.
 		*/
-		Scene();
+		Scene(std::string name);
 
 		/**
 		This method is meant to be the definition
@@ -35,13 +36,14 @@ namespace me {
 
 		/**
 		Add a new entity to the scene.
+		@param String name to identify the new entity.
 		@return Reference to the created new entity.
 		*/
-		Entity* addEntity();
+		Entity* addEntity(std::string name);
 
 		/**
 		Get the vector list of the entities in the scene.
-		@return Reference vector.
+		@return Reference vector of entities.
 		*/
 		inline const std::vector<Entity*>& getEntities();
 
@@ -77,6 +79,7 @@ namespace me {
 
 	protected:
 
+		std::string name_;
 		std::vector<Entity*> entities_;
 
 	};

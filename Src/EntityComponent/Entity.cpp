@@ -2,8 +2,9 @@
 
 namespace me {
 
-	Entity::Entity(Scene* scn) :
+	Entity::Entity(Scene* scn, std::string name) :
 		active_(true), //
+		name_(name), // 
 		scn_(scn), //
 		cmpArray_() //
 	{

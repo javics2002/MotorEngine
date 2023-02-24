@@ -2,7 +2,9 @@
 
 namespace me {
 
-	Scene::Scene() {
+	Scene::Scene(std::string name) : 
+		name_(name) //
+	{
 	};
 
 	Scene::~Scene() {
@@ -11,8 +13,8 @@ namespace me {
 		}
 	};
 
-	Entity* Scene::addEntity() {
-		Entity* e = new Entity(this);
+	Entity* Scene::addEntity(std::string name) {
+		Entity* e = new Entity(this, name);
 		if (e != nullptr) {
 			entities_.emplace_back(e);
 		}

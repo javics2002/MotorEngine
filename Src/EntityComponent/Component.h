@@ -13,12 +13,11 @@ namespace me {
 	class Entity;
 
 	class Component {
-public:
+	public:
 
 		/**
 		Build the foundation of the component.
 		*/
-
 		Component();
 
 		/**
@@ -29,6 +28,7 @@ public:
 
 		/**
 		Set the associated entity to the component.
+		@param Entity to which it belongs.
 
 		This method is meant to be use at the same time as start,
 		because it's not recomended to switch the entity at execution.
