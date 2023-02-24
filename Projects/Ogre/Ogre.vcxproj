@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Ogre\Ogre.h" />
+    <ClInclude Include="..\..\Src\Ogre\OgreManager.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
     <ClInclude Include="OgreGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp" />
-    <ClCompile Include="..\..\Src\Ogre\Ogre.cpp" />
+    <ClCompile Include="..\..\Src\Ogre\OgreManager.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
     <ClCompile Include="OgreGame.cpp" />

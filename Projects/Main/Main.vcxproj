@@ -28,6 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Main\main.cpp" />
+    <ClCompile Include="..\..\Src\Main\MotorEngine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\Main\MotorEngine.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

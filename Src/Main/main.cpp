@@ -4,13 +4,15 @@
 #include <iostream>
 #include <fstream>
 
-#include "Ogre/Ogre.h"
+#include "Main/MotorEngine.h"
 
 using namespace std;
 
 int main()
 {
-    me::initOgre("Juego");
+    me::MotorEngine engine;
+    engine.setup();
+
     cout << "MotorEngine listo!\n";
     int a;
     std::cin >> a;
