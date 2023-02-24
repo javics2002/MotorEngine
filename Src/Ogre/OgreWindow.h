@@ -21,19 +21,22 @@ namespace me {
 	private:
 	protected:
 		std::string mWindowName;
-		SDL_Window* mRenderWindow = nullptr;
+		SDL_Window* mSdlWindow = nullptr;
+		Ogre::RenderWindow* mRenderWindow = nullptr;
 
 		//Ogre::RTShader::ShaderGenerator * mShaderGenerator; // The Shader generator instance.
 		//SGTechniqueResolverListener* mMaterialMgrListener; // Shader generator material manager listener.
-		void createWindow();
+		void createWindow(Ogre::Root* root);
 		void setWindowGrab(bool _grab);
 
 	public:
 		OgreWindow(const std::string windowName);
 		~OgreWindow();
 
-		void init();
-		Ogre::Root* getRoot();
+		void init(Ogre::Root* root);
+		Ogre::RenderWindow* getRenderWindow();
+		SDL_Window* getSdlWindow();
+
 
 	};
 

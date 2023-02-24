@@ -14,8 +14,13 @@
 #include "Ogre/OgreManager.h"
 
 namespace me {
-	int setup() {
+
+	int MotorEngine::setup()
+	{
 		srand(std::time(NULL)); rand();
+
+		//Manager del proyecto de render
+		ogreM();
 
 
 		//GameComponentDefinition gameComponentDefinitions;
@@ -31,9 +36,6 @@ namespace me {
 
 		////Manager del proyecto de sonido
 		//soundManager = new LoveEngine::Audio::SoundManager();
-
-		////Manager del proyecto de render
-		//ogreManager = new LoveEngine::Renderer::OgreRenderer();
 
 		////Manager del proyecto de fisica
 		//physicsManager = new LoveEngine::Physics::PhysicsManager();
@@ -56,7 +58,6 @@ namespace me {
 
 		return 0;
 	}
-
 
 	void MotorEngine::loop()
 	{
@@ -119,3 +120,4 @@ namespace me {
 		lua_close(luastate);
 		FreeLibrary(game);*/
 	}
+};

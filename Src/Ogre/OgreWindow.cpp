@@ -1,13 +1,11 @@
 #include "OgreWindow.h"
 #include <OgreRoot.h>
-#include <OgreConfigFile.h>
-#include <OgreGpuProgramManager.h>
 #include <OgreRenderWindow.h>
-#include <OgreFileSystemLayer.h>
 #include <iostream>
-#include "SDL/Window.h"
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_syswm.h>
+
+#include "SDL/Window.h"
 
 
 using namespace me;
@@ -15,13 +13,6 @@ using namespace me;
 OgreWindow::OgreWindow(const std::string windowName)
 {
 	mWindowName = windowName;
-	mRoot = nullptr;
-	mFirstRun = true;
-
-	//mShaderGenerator = nullptr;
-	//mMaterialMgrListener = nullptr;
-
-
 }
 
 OgreWindow::~OgreWindow()
@@ -29,33 +20,30 @@ OgreWindow::~OgreWindow()
 
 }
 
-void OgreWindow::init()
+void OgreWindow::init(Ogre::Root* root)
 {
-	initRoot();
-	setup();
-	// mOverlaySystem = new Ogre::OverlaySystem();
-}
-
-
-
-void OgreWindow::setup() {
-
-	mRoot->initialise(false, mWindowName);
-	locateResources();
-	initialiseRTShaderSystem(); // TODO: Esto que es?
-	loadResources();
-
-	createWindow();
+	root->initialise(false, mWindowName);
+	createWindow(root);
 	setWindowGrab(false);
-
-	// mRoot->addFrameListener(this);
 }
 
-void OgreWindow::createWindow()
+Ogre::RenderWindow* me::OgreWindow::getRenderWindow()
+{
+	return mRenderWindow;
+}
+
+SDL_Window* me::OgreWindow::getSdlWindow()
+{
+	return mSdlWindow;
+}
+
+
+
+void OgreWindow::createWindow(Ogre::Root* root)
 {
 	uint32_t w, h;
 	std::string x;
-	Ogre::ConfigOptionMap cOptionMap = mRoot->getRenderSystem()->getConfigOptions();
+	Ogre::ConfigOptionMap cOptionMap = root->getRenderSystem()->getConfigOptions();
 	std::istringstream mode(cOptionMap["Video Mode"].currentValue);
 	mode >> w;
 	mode >> x;
@@ -68,38 +56,36 @@ void OgreWindow::createWindow()
 
 	
 
-	Uint32 flags = SDL_WINDOW_RESIZABLE;
+	Uint32 flags = SDL_WINDOW_RESIZABLE;		//| SDL_WINDOW_INPUT_FOCUS;
 
-	if (cOptionMap["Full Screen"].currentValue == "Yes")  
-		flags = SDL_WINDOW_FULLSCREEN;
-	
-	// mSdlWindow = win().create(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
-	// win().init(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+	if (cOptionMap["Full Screen"].currentValue == "Yes")
+		flags = SDL_WINDOW_FULLSCREEN;		//| SDL_WINDOW_INPUT_FOCUS;
 
-	me::Window::init(SDL_INIT_EVERYTHING, "Juegox", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
-	mRenderWindow = win().get();
+	//me::Window::init(SDL_INIT_EVERYTHING, mWindowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w,h, flags);
+	//mSdlWindow = win().get();
 	
-	// mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
+	mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
 	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
-	SDL_GetWindowWMInfo(mRenderWindow, wmInfo,wmInfo->version);
+	SDL_version version;
+	//SDL_VERSION(&version);
+	SDL_GetVersion(&version);
+	wmInfo->version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
+	SDL_GetWindowWMInfo(mSdlWindow, wmInfo,wmInfo->version);
 
 	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo->info.win.window));
-	// mRenderWindow = mRoot->createRenderWindow(mWindowName, w, h, false, &miscParams);
+	mRenderWindow = root->createRenderWindow(mWindowName, w, h, false, &miscParams);
 
-	// SDL_ShowCursor();
+	SDL_ShowCursor();
 	//SDL_HideCursor();
 
 }
 
-Ogre::Root* OgreWindow::getRoot() {
-	return mRoot;
-}
 
 void OgreWindow::setWindowGrab(bool bGrab)
 {
 	SDL_bool grab = SDL_bool(bGrab);
-	SDL_SetWindowGrab(mRenderWindow, grab);
+	SDL_SetWindowGrab(mSdlWindow, grab);
 	//SDL_SetRelativeMouseMode(grab);
 	
 	grab ? SDL_ShowCursor() : SDL_HideCursor();

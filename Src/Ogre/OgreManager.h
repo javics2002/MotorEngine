@@ -1,5 +1,6 @@
 #pragma once
 #include "Utils/Singleton.h"
+#include <string>
 
 namespace Ogre {
 	class Root;
@@ -8,13 +9,12 @@ namespace Ogre {
 }
 
 namespace me {
-	class OgreManager : public Singleton<OgreManager> {
-	public:
-		void initRoot();
 
-		void locateResources();
-		void loadResources();
-		bool initialiseRTShaderSystem();
+	class OgreWindow;
+
+	class OgreManager : public Singleton<OgreManager> {
+		friend Singleton<OgreManager>;
+
 	private:
 	protected:
 		// Root de Ogre
@@ -32,5 +32,32 @@ namespace me {
 
 		/// TEMP (CARGA DE ASSETS)
 		std::string mSolutionPath;
+
+		OgreWindow* ogreWindow;
+
+		OgreManager();
+		void initRoot();
+		void initWindow();
+		void locateResources();
+		void loadResources();
+		bool initialiseRTShaderSystem();
+
+	public:
+
+		OgreManager& operator=(const OgreManager& o) = delete;
+		OgreManager(const OgreManager& o) = delete;
+		~OgreManager() override;
+
+
+
+	
 	};
+	/**
+	This macro defines a compact way for using the singleton InputHandler, instead of
+	writing InputHandler::instance()->method() we write ih().method()
+	*/
+	inline OgreManager& ogreM() {
+		return *OgreManager::instance();
+	}
+
 }

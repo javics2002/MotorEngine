@@ -2,6 +2,8 @@
 #include <chrono>
 
 namespace me {
+	class OgreManager;
+
 	class MotorEngine {
 	public:
 		int setup();
@@ -13,7 +15,7 @@ namespace me {
 
 		//ECS::Blueprint* blueprintManager;
 		//Input::InputManager* inputManager;
-		//Renderer::OgreRenderer* ogreManager;
+		OgreManager* ogreManager;
 		//Audio::SoundManager* soundManager;
 		//Physics::PhysicsManager* physicsManager;
 

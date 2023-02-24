@@ -4,15 +4,16 @@
 #define __OGRE_MAIN
 
 
-
-#include "Ogre.h"
 #include <iostream>
+
+#include "OgreManager.h"
+
 using namespace me;
 
 
 int main() {
-	initOgre("Juegox");
 
+	ogreM();
 	int a;
 	std::cin >> a;
 	return 0;

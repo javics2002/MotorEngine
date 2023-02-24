@@ -4,7 +4,18 @@
 #include <OgreConfigFile.h>
 #include <iostream>
 
+#include "Ogre/OgreWindow.h"
+
 using namespace me;
+
+OgreManager::OgreManager()
+{
+	initRoot();
+	initWindow();
+	locateResources();
+	loadResources();
+	initialiseRTShaderSystem();
+}
 
 void OgreManager::initRoot()
 {
@@ -15,11 +26,11 @@ void OgreManager::initRoot()
 	mOgreLogPath = mFSLayer->getConfigFilePath("Ogre.log");
 
 	if (!Ogre::FileSystemLayer::fileExists(mPluginCfgPath))
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "plugins.cfg", "OgreWindow::initRoot");
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "plugins.cfg", "OgreManager::initRoot");
 	if (!Ogre::FileSystemLayer::fileExists(mOgreCfgPath))
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreWindow::initRoot");
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreManager::initRoot");
 	if (!Ogre::FileSystemLayer::fileExists(mOgreLogPath))
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "Ogre.log", "OgreWindow::initRoot");
+		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "Ogre.log", "OgreManager::initRoot");
 
 	mSolutionPath = mPluginCfgPath;    // Añadido para definir directorios relativos al de la solución 
 
@@ -30,8 +41,14 @@ void OgreManager::initRoot()
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mOgreLogPath);
 
 	if (!mRoot)
-		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreWindow::initRoot");
+		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreManager::initRoot");
 	mRoot->restoreConfig();
+}
+
+void me::OgreManager::initWindow()
+{
+	ogreWindow = new OgreWindow("OgreWindow");
+	ogreWindow->init(mRoot);
 }
 
 bool OgreManager::initialiseRTShaderSystem() {
@@ -49,6 +66,10 @@ bool OgreManager::initialiseRTShaderSystem() {
 	//}
 
 	return true;
+}
+
+me::OgreManager::~OgreManager()
+{
 }
 
 void OgreManager::loadResources() {
