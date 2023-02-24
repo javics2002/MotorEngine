@@ -52,9 +52,14 @@ public:
 
 
 	Vector3<T> operator-(const Vector3& v);
+	Vector3<T> operator-=(const Vector3& v);
 	Vector3<T> operator+(const Vector3& v);
+	Vector3<T> operator+=(const Vector3& v);
 	Vector3<T> operator*(const T& s);
+	Vector3<T> operator*=(const T& s);
 
+	void operator=(const Vector3<T>& v);
+	void operator=(const Vector3<T>* v);
 	bool operator==(const Vector3<T>& v);
 	bool operator!=(const Vector3<T>& v);
 

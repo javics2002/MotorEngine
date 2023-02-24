@@ -145,8 +145,10 @@
     <ClCompile Include="..\..\Src\SDL\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\SDL\Axis.h" />
     <ClInclude Include="..\..\Src\SDL\Button.h" />
     <ClInclude Include="..\..\Src\SDL\InputManager.h" />
+    <ClInclude Include="..\..\Src\SDL\SDL.h" />
     <ClInclude Include="..\..\Src\SDL\Window.h" />
   </ItemGroup>
   <ItemGroup>

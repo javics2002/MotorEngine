@@ -8,7 +8,7 @@ Window::Window()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("Motor Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		854, 480, SDL_WINDOW_INPUT_FOCUS);
+		854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 }
 
 Window::Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, uint32_t windowFlags)
