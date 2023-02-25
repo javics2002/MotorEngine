@@ -21,15 +21,18 @@ namespace me {
 
 		InputManager();
 
-		std::unordered_map<std::string, Button> mButtons;		//Pairs each button with its name
-		std::unordered_map<std::string, Axis> mAxis;			//Pairs each axis with its name
+		std::unordered_map<std::string, Button> mButtons;		//Pairs each button with its name.
+		std::unordered_map<std::string, Axis> mAxis;			//Pairs each axis with its name.
 
-		//Stores virtual button names linked to their physical input 
+		//Stores virtual button names linked to their physical input.
 		std::unordered_multimap<Input, std::string, InputHasher> mButtonBindings;
-		//Stores virtual axis names linked to their physical positive input 
+		//Stores virtual axis names linked to their physical positive input.
 		std::unordered_multimap<Input, std::string, InputHasher> mPositiveAxisBindings;
-		//Stores virtual axis names linked to their physical negative input 
+		//Stores virtual axis names linked to their physical negative input.
 		std::unordered_multimap<Input, std::string, InputHasher> mNegativeAxisBindings;
+
+		//Stores callback data for virtual buttons.
+		std::unordered_multimap<std::string, OnButtonPressedInfo> mOnButtonPressed;
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
@@ -174,11 +177,22 @@ namespace me {
 		*/
 		float getAxis(std::string name);
 
-		//To be implemented
-		bool addOnButtonPressedEvent(SDL_EventFilter* filter, 
-			void* userdata, std::string buttonName);
-		bool deleteOnButtonPressedEvent(SDL_EventFilter* filter, 
-			void* userdata, std::string buttonName);
+		/**
+		Binds a callback to a virtual button, so it's executed anytime it's triggered.
+		@param name Name of the button
+		@param callback Callback to be binded to button name
+		@param additionalData Parameter that the callback would be called with and it may use.
+		@returns Whether the callback could be binded to the button
+		*/
+		bool addOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData = NULL);
+		/**
+		Unbinds a callback from its virtual button, so it's never executed again anytime its button is triggered.
+		@param name Name of the button
+		@param callback Callback to be unbinded to button name
+		@param additionalData is the same additional information used when the callback was binded.
+		@returns Whether the callback could be unbinded to the button
+		*/
+		bool deleteOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData = NULL);
 	};
 
 	/**

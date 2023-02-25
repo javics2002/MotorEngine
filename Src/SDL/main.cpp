@@ -26,16 +26,67 @@ int revealKeyboardEvents(void* userdata, SDL_Event* event)
     return 0;
 }
 
+int interact(void* userdata)
+{
+    std::cout << "Interacting!\n";
+
+    return 0;
+}
+
+int toggleInteract(void* userdata)
+{
+    bool* interactActive = (bool*) userdata;
+    if (*interactActive)
+        im().deleteOnButtonPressedEvent("Interact", interact, NULL);
+    else
+        im().addOnButtonPressedEvent("Interact", interact, NULL);
+
+    *interactActive = !*interactActive;
+
+    return 0;
+}
+
+int shoot(void* userdata)
+{
+    std::cout << "Shooting!\n";
+
+    return 0;
+}
+
 int main() {
 	im();
     Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 
-    char* name = (char*) "Javi";
-    SDL_AddEventWatch(revealKeyboardEvents, name); 
-    //Se copia name, asi que creo que no se le pueden pasar datos que puedan cambiar
-    //Si cambio name despues sigue diciendo Javi
-    name = (char*) "Rayo";
+    //char* name = (char*) "Javi";
+    //SDL_AddEventWatch(revealKeyboardEvents, name); 
+    ////Se copia name, asi que creo que no se le pueden pasar datos que puedan cambiar
+    ////Si cambio name despues sigue diciendo Javi
+    //name = (char*) "Rayo";
+
+    Input keyboardE;
+    keyboardE.type = SDL_EVENT_KEY_DOWN;
+    keyboardE.which = SDLK_e;
+
+    im().addButton("Interact", keyboardE);
+
+    bool interactActive = false;
+
+    Input keyboardSpace;
+    keyboardSpace.type = SDL_EVENT_KEY_DOWN;
+    keyboardSpace.which = SDLK_SPACE;
+    im().addButton("Space", keyboardSpace);
+
+    im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
+
+    Input leftClick;
+    leftClick.type = SDL_EVENT_MOUSE_BUTTON_DOWN;
+    leftClick.which = SDL_BUTTON_LEFT;
+    im().addButton("Shoot", leftClick);
+
+    im().addOnButtonPressedEvent("Shoot", shoot);
+
+    std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
 
     SDL_Event event;
     while (SDL_WaitEvent(&event)) {
