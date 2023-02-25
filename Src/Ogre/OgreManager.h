@@ -3,21 +3,16 @@
 #include <unordered_map>
 #include <string>
 
-
-
 namespace Ogre {
 	class Root;
 	class RenderWindow;
 	class FileSystemLayer;
 	class SceneManager;
-	;
 	
 	namespace RTShader {
 		class ShaderGenerator;
 	}
 }
-
-
 
 namespace me {
 
@@ -27,6 +22,7 @@ namespace me {
 
 	class OgreManager : public Singleton<OgreManager> {
 		friend Singleton<OgreManager>;
+		OgreManager();
 
 	private:
 	protected:
@@ -55,7 +51,6 @@ namespace me {
 
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
 
-		OgreManager();
 		void initRoot();
 		void initWindow();
 		void locateResources();
@@ -65,7 +60,6 @@ namespace me {
 		OgreCamera* getCamera(std::string name);
 
 	public:
-
 		OgreManager& operator=(const OgreManager& o) = delete;
 		OgreManager(const OgreManager& o) = delete;
 		~OgreManager() override;
@@ -76,14 +70,15 @@ namespace me {
 		//void setCameraInfo(std::string name, Vector3 pos, Vector3 lookAt, float left, float top, float width, float height);
 		bool renderCamera(std::string name, float left, float top, float width, float height);
 
-
 		void render();
-		
-		
-
-
-	
 	};
 
+	/**
+		This macro defines a compact way for using the singleton InputHandler, instead of
+		writing InputHandler::instance()->method() we write ih().method()
+	*/
+	inline OgreManager& om() {
+		return *OgreManager::instance();
+	}
 
 }

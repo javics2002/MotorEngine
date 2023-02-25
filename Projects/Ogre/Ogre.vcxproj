@@ -23,7 +23,6 @@
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
     <ClInclude Include="..\..\Src\Ogre\SGTechniqueResolverListener.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
-    <ClInclude Include="OgreGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp" />
@@ -31,7 +30,6 @@
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
     <ClCompile Include="..\..\Src\Ogre\SGTechniqueResolverListener.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
-    <ClCompile Include="OgreGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDL\SDL.vcxproj">

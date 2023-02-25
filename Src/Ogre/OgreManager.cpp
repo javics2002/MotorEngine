@@ -244,10 +244,6 @@ void OgreManager::locateResources()
 	{
 		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/HLSL", type, sec);
 	}*/
-
-
-	
-
 }
 
 void me::OgreManager::render()

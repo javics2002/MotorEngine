@@ -2,13 +2,9 @@
 
 #include <iostream>
 #include <thread>
-// #include <Windows.h>
+#include <Windows.h>
 #include <time.h>
-
-//#include <PhysicsManager.h>
-//#include <OgreRenderer.h>
-//#include <SceneManager.h>
-
+#include <chrono>
 #include <memory>
 #include <random>
 #include "Ogre/OgreManager.h"
@@ -20,104 +16,84 @@ namespace me {
 		srand(std::time(NULL)); rand();
 
 		//Manager del proyecto de render
-		ogreM();
+		// om();
 
-
-		//GameComponentDefinition gameComponentDefinitions;
-
-		//if (initialiseDLLs(gameComponentDefinitions)) {
-		//	assert(("Error al inicializar las DLL.", false));
-		//	return -1;
-		//}
-
-		//time = new LoveEngine::Time();
-		//sceneManager = new LoveEngine::SceneManagement::SceneManager();
-		//compFactory = new LoveEngine::ComponentDefinitions::ComponentFactory();
-
-		////Manager del proyecto de sonido
-		//soundManager = new LoveEngine::Audio::SoundManager();
-
-		////Manager del proyecto de fisica
-		//physicsManager = new LoveEngine::Physics::PhysicsManager();
-
-		////Manager del proyecto de Input
-		//inputManager = new LoveEngine::Input::InputManager();
-
-		//blueprintManager = new LoveEngine::ECS::Blueprint();
-		//changeWindowTitle();
-
-
-		//gameComponentDefinitions();
-
-		//if (initialiseSceneCreator()) {
-		//	return -1;
-		//}
-
-		//sceneManager->initiliseScenes();
-		//sceneManager->initialisePersistentScene();
+		//ogreManager = new OgreManager();
+		//ogreManager->init();
 
 		return 0;
 	}
 
 	void MotorEngine::loop()
 	{
-		//const float physicsFrameRate = 50;
-		//duration pInterval = duration<double>(1.0 / physicsFrameRate);
+		/*
+		Physics are calculated every 0.02 seconds (Fixed Update) while the rest of the game is calculated depending on the frames per second 
+		of the computer
+		*/
+		const float pFrameRate = 50;
+		std::chrono::duration<double> pInterval = std::chrono::duration<double>(1.0 / pFrameRate);
 
-		//steady_clock::time_point applicationStart = high_resolution_clock::now();
-		//steady_clock::time_point lastPhysicFrame = applicationStart;
-		//steady_clock::time_point beginFrame = applicationStart;
+		/*
+		* Three clocks that are used to calculate time between frames
+		*/
+		std::chrono::steady_clock::time_point gameStartFrame = std::chrono::high_resolution_clock::now();
+		std::chrono::steady_clock::time_point beginFrame = gameStartFrame;
+		std::chrono::steady_clock::time_point lastPhysicFrame = gameStartFrame;
 
-		//while (true) {
+		while (true) {
+			/*
+			* If we press SDL_QUIT (Exit button), the game stops and closes
+			*/
+			//if (!inputManager->handleInput()) {
+			//	break;
+			//}
 
-		//	LoveEngine::ECS::Scene* currentScene = sceneManager->getCurrentScene();
+			/*
+			* Update the scene
+			*/
 
-		//	if (currentScene == nullptr) {
-		//		break;
-		//	}
+			/*
+			* Update physics
+			*/
+			if ((beginFrame - lastPhysicFrame).count() > pFrameRate) {
 
-		//	if (!inputManager->handleInput()) { //if SDl Quit, exit the game
-		//		break;
-		//	}
+				/*currentScene->stepPhysics();
+				physicsManager->update(pInterval.count() * time->timeScale);*/
 
-		//	currentScene->update();
-		//	sceneManager->updatePersistentScene();
+				lastPhysicFrame = beginFrame;
+			}
+
+			/*
+			* Render the scene
+			*/
 
 
-		//	if ((beginFrame - lastPhysicFrame).count() > physicsFrameRate) {
-
-		//		currentScene->stepPhysics();
-		//		physicsManager->update(pInterval.count() * time->timeScale);
-
-		//		lastPhysicFrame = beginFrame;
-		//	}
-
-		//	ogreManager->update();
-
-		//	currentScene->removeObjects();
-
-		//	sceneManager->tryChangeScene();
-
-		//	//Calculo del tiempo
-		//	steady_clock::time_point endFrame = high_resolution_clock::now();
-		//	updateTimeValues(beginFrame, endFrame, applicationStart);
-		//	beginFrame = endFrame;
-		//}
+			/*
+			* Update the new frames values
+			*/
+			std::chrono::steady_clock::time_point endFrame = std::chrono::high_resolution_clock::now();
+			updateTimeValues(beginFrame, endFrame, gameStartFrame);
+			beginFrame = endFrame;
+		}
 	}
 
-	void MotorEngine::quit()
+	void MotorEngine::exit()
 	{
-		/*delete compFactory;
-		delete sceneManager;
-		delete time;
+		/*
+		Clear the memory created in the execution of the program
+		*/
 
-		delete physicsManager;
 		delete ogreManager;
-		delete inputManager;
-		delete soundManager;
-		delete blueprintManager;
+	}
 
-		lua_close(luastate);
-		FreeLibrary(game);*/
+	void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame, 
+		const  std::chrono::steady_clock::time_point& endFrame, const  std::chrono::steady_clock::time_point& gameStartFrame)
+	{
+		std::chrono::duration<float, std::milli> timeSinceStart = endFrame - gameStartFrame;
+		std::chrono::duration<double, std::milli> timeSinceLastFrame = endFrame - beginFrame;
+
+		//time->timeSinceStart = timeSinceStart.count();
+		//time->deltaTime = timeSinceLastFrame.count() * 0.001;
+		//time->frameCount++;
 	}
 };
