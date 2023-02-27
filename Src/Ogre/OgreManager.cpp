@@ -1,11 +1,16 @@
 #include "OgreManager.h"
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
+#include <OgreSceneNode.h>
+#include <OgreEntity.h>
+#include <OgreLight.h>
 #include <OgreFileSystemLayer.h>
 #include <OgreConfigFile.h>
 #include <OgreShaderGenerator.h>
 #include <OgreRTShaderSystem.h>
 #include <OgreMaterialManager.h>
+#include <OgreMath.h>
+#include <OgreMeshManager.h>
 #include <iostream>
 
 #include "Ogre/OgreWindow.h"
@@ -22,6 +27,7 @@ OgreManager::OgreManager()
 	loadResources();
 	initialiseRTShaderSystem();
 	mSM = mRoot->createSceneManager();
+	mShaderGenerator->addSceneManager(mSM);
 }
 
 void OgreManager::initRoot()
@@ -30,26 +36,26 @@ void OgreManager::initRoot()
 
 	mPluginCfgPath = mFSLayer->getConfigFilePath("plugins.cfg");
 	mOgreCfgPath = mFSLayer->getConfigFilePath("ogre.cfg");
-	mOgreLogPath = mFSLayer->getConfigFilePath("Ogre.log");
 
 	if (!Ogre::FileSystemLayer::fileExists(mPluginCfgPath))
 		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "plugins.cfg", "OgreManager::initRoot");
 	if (!Ogre::FileSystemLayer::fileExists(mOgreCfgPath))
 		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreManager::initRoot");
-	if (!Ogre::FileSystemLayer::fileExists(mOgreLogPath))
-		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "Ogre.log", "OgreManager::initRoot");
+	
 
-	mSolutionPath = mPluginCfgPath;    // Añadido para definir directorios relativos al de la solución 
+	mSolutionPath = mFSLayer->getConfigFilePath("plugins.cfg");   // Añadido para definir directorios relativos al de la solución 
 
 	mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);
 	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuración ogre. (en el bin de la solubión)
-	mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
+	//mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
 
-	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mOgreLogPath);
+	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mFSLayer->getWritablePath("ogre.log"));
 
 	if (!mRoot)
 		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreManager::initRoot");
 	mRoot->restoreConfig();
+
+
 }
 
 void me::OgreManager::initWindow()
@@ -107,7 +113,7 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 		return false;
 
 	OgreCamera* camera = new OgreCamera();
-	Ogre::SceneNode* cameraNode = mSM->getRootSceneNode()->createChildSceneNode(name);
+	Ogre::SceneNode* cameraNode =createNode(name);
 
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
@@ -116,6 +122,20 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 	mCameras[name] = camera;
 
 	return true;
+}
+
+void me::OgreManager::createNewLight(std::string name)
+{
+	
+	Ogre::Light* light = mSM->createLight(name);
+	light->setType(Ogre::Light::LT_DIRECTIONAL);
+	light->setVisible(true);
+	Ogre::SceneNode* lightNode = createNode(name);
+	lightNode->attachObject(light);
+	lightNode->setDirection(Ogre::Vector3(0,0,-1));
+	lightNode->setPosition(20, 80, 5000);
+	
+
 }
 
 OgreCamera* me::OgreManager::getCamera(std::string name)
@@ -153,6 +173,18 @@ bool me::OgreManager::renderCamera(std::string name, float left, float top, floa
 	return true;
 }
 
+Ogre::SceneNode* me::OgreManager::createNode(std::string name)
+{
+	return  mSM->getRootSceneNode()->createChildSceneNode(name);
+}
+
+Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, Ogre::SceneNode* parent)
+{
+	return parent->createChildSceneNode(name);
+}
+
+
+
 void OgreManager::loadResources() {
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
@@ -160,6 +192,7 @@ void OgreManager::loadResources() {
 
 void OgreManager::locateResources()
 {
+
 	// load resource paths from config file
 	Ogre::ConfigFile cf;
 
@@ -192,8 +225,8 @@ void OgreManager::locateResources()
 		}
 	}
 
-	sec = Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME;
-	const Ogre::ResourceGroupManager::LocationList genLocs = Ogre::ResourceGroupManager::getSingleton().getResourceLocationList(sec);
+	//sec = Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME;
+	//const Ogre::ResourceGroupManager::LocationList genLocs = Ogre::ResourceGroupManager::getSingleton().getResourceLocationList(sec);
 
 	// OgreAssert(!genLocs.empty(), ("Resource Group '" + sec + "' must contain at least one entry").c_str());
 
@@ -244,6 +277,9 @@ void OgreManager::locateResources()
 	{
 		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/HLSL", type, sec);
 	}*/
+
+	//Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(5);
+	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
 
 void me::OgreManager::render()
@@ -251,3 +287,17 @@ void me::OgreManager::render()
 	mRoot->renderOneFrame();
 }
 
+void me::OgreManager::scene1()
+{
+	Ogre::SceneNode* mSinbadNode;
+	Ogre::Entity* ent;
+	ent = mSM->createEntity("Sinbad.mesh");
+	mSinbadNode = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
+	mSinbadNode->attachObject(ent);
+	mSinbadNode->setPosition(0, 0, 0);
+	//mSinbadNode->setScale(10, 10, 10);
+	//mSinbadNode->yaw(Ogre::Degree(-45));
+	//mSinbadNode->showBoundingBox(true);
+	mSinbadNode->setVisible(false);
+	
+}

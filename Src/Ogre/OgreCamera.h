@@ -17,7 +17,6 @@ namespace me {
 		Ogre::Camera* mCamera ;
 		Ogre::Viewport* mViewport ;
 		Ogre::SceneNode* mCameraNode ;
-		Ogre::SceneNode* mLightNode ;
 		Ogre::SceneManager* mSceneMgr;
 		Ogre::RenderWindow* mRenderWindow;
 

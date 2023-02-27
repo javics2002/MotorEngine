@@ -8,6 +8,7 @@ namespace Ogre {
 	class RenderWindow;
 	class FileSystemLayer;
 	class SceneManager;
+	class SceneNode;
 	
 	namespace RTShader {
 		class ShaderGenerator;
@@ -47,6 +48,7 @@ namespace me {
 		/// TEMP (CARGA DE ASSETS)
 		std::string mSolutionPath;
 
+
 		OgreWindow* ogreWindow;
 
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
@@ -66,11 +68,18 @@ namespace me {
 
 		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio);
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio);
+		void createNewLight(std::string name);
 		bool setCameraInfo(std::string name, int x, int y, int z, int x1, int y1, int z1);
 		//void setCameraInfo(std::string name, Vector3 pos, Vector3 lookAt, float left, float top, float width, float height);
 		bool renderCamera(std::string name, float left, float top, float width, float height);
+		Ogre::SceneNode* createNode(std::string name);
+		Ogre::SceneNode* createChildNode(std::string name,Ogre::SceneNode* parent);
+
+		void scene1();
 
 		void render();
+
+
 	};
 
 	/**
