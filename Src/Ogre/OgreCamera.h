@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __OGRE_OGRECAMERA
+#define __OGRE_OGRECAMERA
+
 namespace Ogre {
 	class Camera;
 	class Viewport;
@@ -25,8 +28,7 @@ namespace me {
 		OgreCamera();
 		~OgreCamera();
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );
-		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio);
-		void renderCamera();
+		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder);
 
 
 		void setPosition(int x, int y, int z);
@@ -39,3 +41,4 @@ namespace me {
 	};
 
 }
+#endif

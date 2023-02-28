@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Src\Ogre\OgreManager.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h" />
+    <ClInclude Include="..\..\Src\Ogre\OgreMesh.h" />
     <ClInclude Include="..\..\Src\Ogre\SGTechniqueResolverListener.h" />
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h" />
   </ItemGroup>
@@ -28,6 +29,7 @@
     <ClCompile Include="..\..\Src\Ogre\mainOgre.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreManager.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp" />
+    <ClCompile Include="..\..\Src\Ogre\OgreMesh.cpp" />
     <ClCompile Include="..\..\Src\Ogre\SGTechniqueResolverListener.cpp" />
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp" />
   </ItemGroup>

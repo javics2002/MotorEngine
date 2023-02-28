@@ -44,7 +44,6 @@ namespace me {
 		Ogre::RTShader::ShaderGenerator* mShaderGenerator;
 		SGTechniqueResolverListener* mMaterialMgrListener;
 
-		std::string mRTShaderLibPath;
 		/// TEMP (CARGA DE ASSETS)
 		std::string mSolutionPath;
 
@@ -66,12 +65,12 @@ namespace me {
 		OgreManager(const OgreManager& o) = delete;
 		~OgreManager() override;
 
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio);
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio);
-		void createNewLight(std::string name);
-		bool setCameraInfo(std::string name, int x, int y, int z, int x1, int y1, int z1);
+		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder);
+		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder);
+		void createNewLight(std::string name,int posX, int posY, int posZ, int dirX, int dirY, int dirZ );
+		bool setCameraInfo(std::string name, int posX, int posY, int posZ, int lookX, int lookY, int lookZ);
 		//void setCameraInfo(std::string name, Vector3 pos, Vector3 lookAt, float left, float top, float width, float height);
-		bool renderCamera(std::string name, float left, float top, float width, float height);
+		bool setViewportDimension(std::string name, float left, float top, float width, float height);
 		Ogre::SceneNode* createNode(std::string name);
 		Ogre::SceneNode* createChildNode(std::string name,Ogre::SceneNode* parent);
 

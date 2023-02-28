@@ -68,10 +68,7 @@ bool OgreManager::initialiseRTShaderSystem() {
 	if (Ogre::RTShader::ShaderGenerator::initialize())
 	{
 		mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
-		// Core shader libs not found -> shader generating will fail.
-		if (mRTShaderLibPath.empty())
-			return false;
-
+		
 		// Create and register the material manager listener if it doesn't exist yet.
 		if (!mMaterialMgrListener) {
 			mMaterialMgrListener = new SGTechniqueResolverListener(mShaderGenerator);
@@ -89,7 +86,7 @@ me::OgreManager::~OgreManager()
 	delete ogreWindow;
 }
 
-bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio)
+bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder)
 {
 
 	if (mCameras.count(name))
@@ -100,14 +97,14 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder);
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio)
+bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder)
 {
 	if (mCameras.count(name))
 		return false;
@@ -117,14 +114,14 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder);
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-void me::OgreManager::createNewLight(std::string name)
+void me::OgreManager::createNewLight(std::string name, int posX, int posY, int posZ, int dirX, int dirY, int dirZ)
 {
 	
 	Ogre::Light* light = mSM->createLight(name);
@@ -132,8 +129,8 @@ void me::OgreManager::createNewLight(std::string name)
 	light->setVisible(true);
 	Ogre::SceneNode* lightNode = createNode(name);
 	lightNode->attachObject(light);
-	lightNode->setDirection(Ogre::Vector3(0,0,-1));
-	lightNode->setPosition(20, 80, 5000);
+	lightNode->setDirection(Ogre::Vector3(dirX, dirY, dirZ));
+	lightNode->setPosition(posX,posY,posZ);
 	
 
 }
@@ -147,28 +144,29 @@ OgreCamera* me::OgreManager::getCamera(std::string name)
 	return mCameras[name];
 }
 
-bool me::OgreManager::setCameraInfo(std::string name, int x, int y, int z, int x1, int y1, int z1)
+bool me::OgreManager::setCameraInfo(std::string name, int posX, int posY, int posZ, int lookX, int lookY, int lookZ)
 {
 	OgreCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
-	cam->setPosition(x,y,z);
-	cam->lookAt(x1,y1,z1);
+	cam->setPosition(posX,posY,posZ);
+	cam->lookAt(lookX,lookY,lookZ);
 	
 
 	return true;
 
 }
 
-bool me::OgreManager::renderCamera(std::string name, float left, float top, float width, float height)
+
+bool me::OgreManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {
 	OgreCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
-	cam->renderCamera();
-	cam->setViewportDimension(left, top, width, height); //infractura en OgreMain.dll
+	cam->setViewportDimension(left, top, width, height);
+
 
 	return true;
 }
@@ -225,60 +223,6 @@ void OgreManager::locateResources()
 		}
 	}
 
-	//sec = Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME;
-	//const Ogre::ResourceGroupManager::LocationList genLocs = Ogre::ResourceGroupManager::getSingleton().getResourceLocationList(sec);
-
-	// OgreAssert(!genLocs.empty(), ("Resource Group '" + sec + "' must contain at least one entry").c_str());
-
-	// arch = genLocs.front().archive->getName();
-	// type = genLocs.front().archive->getType();
-
-	// Add locations for supported shader languages
-	/*if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsles"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/GLSLES", type, sec);
-	}
-	else if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsl"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/GLSL120", type, sec);
-
-		if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsl150"))
-		{
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/GLSL150", type, sec);
-		}
-		else
-		{
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/GLSL", type, sec);
-		}
-
-		if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsl400"))
-		{
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/GLSL400", type, sec);
-		}
-	}
-	else if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("hlsl"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch + "/materials/programs/HLSL", type, sec);
-	}*/
-
-	/*mRTShaderLibPath = arch + "/RTShaderLib";
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/materials", type, sec);
-
-	if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsles"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/GLSL", type, sec);
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/GLSLES", type, sec);
-	}
-	else if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("glsl"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/GLSL", type, sec);
-	}
-	else if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("hlsl"))
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(mRTShaderLibPath + "/HLSL", type, sec);
-	}*/
-
-	//Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(5);
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
 
@@ -295,9 +239,9 @@ void me::OgreManager::scene1()
 	mSinbadNode = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
 	mSinbadNode->attachObject(ent);
 	mSinbadNode->setPosition(0, 0, 0);
-	//mSinbadNode->setScale(10, 10, 10);
+	mSinbadNode->setScale(10, 10, 10);
 	//mSinbadNode->yaw(Ogre::Degree(-45));
 	//mSinbadNode->showBoundingBox(true);
-	mSinbadNode->setVisible(false);
+	mSinbadNode->setVisible(true);
 	
 }

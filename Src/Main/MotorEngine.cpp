@@ -16,7 +16,7 @@ namespace me {
 		srand(std::time(NULL)); rand();
 
 		//Manager del proyecto de render
-		// om();
+		 om();
 
 		//ogreManager = new OgreManager();
 		//ogreManager->init();

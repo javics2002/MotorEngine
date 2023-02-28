@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
