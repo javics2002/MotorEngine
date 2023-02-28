@@ -4,16 +4,17 @@ of a set of components.
 */
 
 #pragma once
+
 #ifndef __EC_ENTITY
 #define __EC_ENTITY
 
 #include <algorithm>
 #include <array>
-#include <bitset>
 #include <vector>
 #include <iostream>
-#include "Component.h"
+
 #include "ec.h"
+#include "Component.h"
 
 
 namespace me {
@@ -26,7 +27,7 @@ namespace me {
 	public:
 
 		/**
-		Build the foundation of the entity.
+		Build the foundation of the Entity.
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
@@ -57,38 +58,52 @@ namespace me {
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent();
+		inline T* getComponent() {
+			auto id = ec::cmpIdx<T>;
+			return static_cast<T*>(cmpArray_[id]);
+		};
 
 		/**
 		Check if the component has already been added.
 		@return Boolean confirmation.
 		*/
 		template<typename T>
-		inline bool hasComponent();
+		inline bool hasComponent() {
+			auto id = ec::cmpIdx<T>;
+			return cmpArray_[id] != nullptr;
+		};
 
 		/**
 		Set the associated scene for the entity.
 		@param Scene to which it belongs.
 		*/
-		inline void setScene(Scene* scn);
+		inline void setScene(Scene* scn) {
+			scn_ = scn;
+		};
 
 		/**
 		Get the associated scene of the entity.
 		@return Scene to which it belongs.
 		*/
-		inline Scene* getScene();
+		inline Scene* getScene() {
+			return scn_;
+		};
 
 		/**
 		Check if the entity is active.
 		@return Boolean confirmation.
 		*/
-		inline bool isActive() const;
+		inline bool isActive() const {
+			return active_;
+		};
 
 		/**
 		Set the entity activity to the boolean petition.
 		@param Boolean state activity.
 		*/
-		inline void setActive(bool state);
+		inline void setActive(bool state) {
+			active_ = state;
+		};
 
 		/**
 		Run all the added components update method.

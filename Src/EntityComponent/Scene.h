@@ -4,6 +4,7 @@ of a set of entities.
 */
 
 #pragma once
+
 #ifndef __EC_SCENE
 #define __EC_SCENE
 
@@ -13,17 +14,18 @@ of a set of entities.
 
 #include "ec.h"
 #include "Entity.h"
+#include "MessagesCenter.h"
 
 
 namespace me {
 
 	class Entity;
 
-	class Scene {
+	class Scene : public MessagesCenter {
 	public:
 
 		/**
-		Build the foundation of the scene.
+		Build the foundation of the Scene.
 		@param String name to identify it.
 		*/
 		Scene(std::string name);
@@ -45,13 +47,15 @@ namespace me {
 		Get the vector list of the entities in the scene.
 		@return Reference vector of entities.
 		*/
-		inline const std::vector<Entity*>& getEntities();
+		inline const std::vector<Entity*>& getEntities() {
+			return entities_;
+		};
 
 		/**
 		This method is only ever called once.
 		This must be called at the instantiation of the script.
 		*/
-		virtual void start() {}
+		virtual void start() = 0;
 
 		/**
 		This method is meant to be the definition 

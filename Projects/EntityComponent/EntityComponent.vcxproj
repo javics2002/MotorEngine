@@ -19,11 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Listener.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\message.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />

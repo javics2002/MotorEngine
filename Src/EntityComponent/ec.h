@@ -1,4 +1,5 @@
 #pragma once
+
 #ifndef __EC
 #define __EC
 
@@ -8,6 +9,7 @@
 
 #include "mpl.h"
 
+
 namespace me {
 
 	/**
@@ -16,8 +18,8 @@ namespace me {
 	This include is valid from c++17, it won't compile with older versions. 
 	If you are using an older version replace the #if #else and #endif.
 	*/ 
-	#if __has_include("./ec_defs.h") 
-	#include "./ec_defs.h" 
+	#if __has_include("ec_defs.h") 
+	#include "ec_defs.h" 
 	#else 
 	#endif 
 	 

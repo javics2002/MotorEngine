@@ -7,13 +7,7 @@ namespace me {
 
     Message::Message(MessageType type, MessageData data) : type(type), data(data) {};
 
-    MessageType Message::getType() const {
-        return type;
-    };
-
-    MessageData Message::getData() const {
-        return data;
-    };
+    Message::~Message() {};
 
     Message* Message::clone() const {
         return new Message(*this);

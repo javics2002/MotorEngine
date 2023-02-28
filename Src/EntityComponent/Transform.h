@@ -3,9 +3,11 @@
 #ifndef __ENTITYCOMPONENT_TRANSFORM
 #define __ENTITYCOMPONENT_TRANSFORM
 
-#include "Component.h"
 #include <Vector3.h>
 #include <list>
+
+#include "Component.h"
+
 
 namespace me {
 
@@ -53,7 +55,6 @@ namespace me {
 
 		std::list<Transform*> mChildren;
 	};
-}
+};
+
 #endif
-
-

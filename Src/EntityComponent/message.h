@@ -57,19 +57,23 @@ namespace me {
         This method is meant to be the definition
         of the dynamic memory that has to be safely delete.
         */
-        virtual ~Message() {};
+        virtual ~Message();
 
         /**
         Get the type of the actual message.
         @return MessageType.
         */
-        MessageType getType() const;
+        inline MessageType getType() const {
+            return type;
+        };
 
         /**
         Get the data of the actual message.
         @return MessageData.
         */
-        MessageData getData() const;
+        inline MessageData getData() const {
+            return data;
+        };
 
         /**
         Duplicate the actual message.
