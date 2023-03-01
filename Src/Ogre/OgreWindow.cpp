@@ -68,7 +68,6 @@ void OgreWindow::createWindow(Ogre::Root* root)
 
 	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
 	SDL_version version;
-	//SDL_VERSION(&version);
 	SDL_GetVersion(&version);
 	wmInfo->version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
 	SDL_GetWindowWMInfo(mSdlWindow, wmInfo,wmInfo->version);
