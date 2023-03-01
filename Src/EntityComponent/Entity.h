@@ -14,12 +14,12 @@ of a set of components.
 #include <iostream>
 
 #include "ec.h"
-#include "Component.h"
 
 
 namespace me {
 
 	class Scene;
+	class Component;
 
 	class Entity {
 		friend Scene;
@@ -32,7 +32,6 @@ namespace me {
 		@param String name to identify it.
 		*/
 		Entity(Scene* scn, std::string name);
-
 
 		/**
 		Build the foundation of the Entity.
@@ -65,27 +64,21 @@ namespace me {
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent() {
-			auto id = ec::cmpIdx<T>;
-			return static_cast<T*>(cmpArray_[id]);
-		};
+		inline T* getComponent();
 
 		/**
 		Check if the component has already been added.
 		@return Boolean confirmation.
 		*/
 		template<typename T>
-		inline bool hasComponent() {
-			auto id = ec::cmpIdx<T>;
-			return cmpArray_[id] != nullptr;
-		};
+		inline bool hasComponent();
 
 		/**
 		Set the associated scene for the entity.
 		@param Scene to which it belongs.
 		*/
 		inline void setScene(Scene* scn) {
-			scn_ = scn;
+			mScn = scn;
 		};
 
 		/**
@@ -93,7 +86,7 @@ namespace me {
 		@return Scene to which it belongs.
 		*/
 		inline Scene* getScene() {
-			return scn_;
+			return mScn;
 		};
 
 		/**
@@ -101,7 +94,7 @@ namespace me {
 		@return Boolean confirmation.
 		*/
 		inline bool isActive() const {
-			return active_;
+			return mActive;
 		};
 
 		/**
@@ -109,7 +102,7 @@ namespace me {
 		@param Boolean state activity.
 		*/
 		inline void setActive(bool state) {
-			active_ = state;
+			mActive = state;
 		};
 
 		/**
@@ -141,11 +134,11 @@ namespace me {
 
 	private:
 
-		bool active_;
-		std::string name_;
-		Scene* scn_;
-		std::vector<Component*> components_;
-		std::array<Component*, ec::maxComponent> cmpArray_;
+		bool mActive;
+		std::string mName;
+		Scene* mScn;
+		std::vector<Component*> mComponents;
+		std::array<Component*, maxComponent> mCmpArray;
 
 	};
 

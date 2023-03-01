@@ -13,15 +13,13 @@ of a set of entities.
 #include <list>
 
 #include "ec.h"
-#include "Entity.h"
-#include "MessagesCenter.h"
 
 
 namespace me {
 
 	class Entity;
 
-	class Scene : public MessagesCenter {
+	class Scene {
 	public:
 
 		/**
@@ -48,14 +46,14 @@ namespace me {
 		@return Reference vector of entities.
 		*/
 		inline const std::vector<Entity*>& getEntities() {
-			return entities_;
+			return mEntities;
 		};
 
 		/**
 		This method is only ever called once.
 		This must be called at the instantiation of the script.
 		*/
-		virtual void start() = 0;
+		virtual void start();
 
 		/**
 		This method is meant to be the definition 
@@ -83,8 +81,8 @@ namespace me {
 
 	protected:
 
-		std::string name_;
-		std::vector<Entity*> entities_;
+		std::string mName;
+		std::vector<Entity*> mEntities;
 
 	};
 

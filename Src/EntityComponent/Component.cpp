@@ -4,21 +4,22 @@
 namespace me {
 
 	Component::Component() :
-		mEntity(nullptr) {
-	}
-
-	inline void Component::setEntity(Entity* e) {
-		mEntity = e;
-	}
-
-	inline Entity* Component::getEntity() {
-		return mEntity;
-	}
-
-	template<typename T>
-	T* Component::getComponent()
+		mEntity(nullptr)
 	{
-		return mEntity->getComponent<T>();
-	}
+	};
+
+	Component::~Component() {};
+
+	void Component::start() {};
+
+	void Component::update() {};
+
+	void Component::lateUpdate() {};
+
+	void Component::OnCollisionEnter(Entity* other) {};
+
+	void Component::OnCollisionStay(Entity* other) {};
+
+	void Component::OnCollisionExit(Entity* other) {};
 
 };

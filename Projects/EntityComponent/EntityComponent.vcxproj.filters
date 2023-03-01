@@ -21,19 +21,16 @@
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\message.cpp">
-	    <Filter>Source Files</Filter>
-	</ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,9 +63,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\message.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\data_types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h">

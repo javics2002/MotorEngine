@@ -23,7 +23,7 @@ namespace me {
         @param Listener object.
         */
         void loginListener(Listener* listener) {
-            listeners_.push_back(listener);
+            mListeners.push_back(listener);
         };
 
         /**
@@ -31,7 +31,7 @@ namespace me {
         @param Listener object.
         */
         void logoutListener(Listener* listener) {
-            listeners_.erase(std::remove(listeners_.begin(), listeners_.end(), listener), listeners_.end());
+            mListeners.erase(std::remove(mListeners.begin(), mListeners.end(), listener), mListeners.end());
         };
 
         /**
@@ -39,7 +39,7 @@ namespace me {
         @param Message with all information.
         */
         inline void sendMessage(const Message& message) {
-            message_ = message;
+            mMessage = message;
             notifyListeners();
         };
 
@@ -48,22 +48,22 @@ namespace me {
         @return Message with all information.
         */
         inline const Message& getMessage() const {
-            return message_;
+            return mMessage;
         };
 
         /**
         Method to communicate message events to all registered listeners.
         */
         void notifyListeners() {
-            for (Listener* listener : listeners_) {
-                listener->handleMessage(message_);
+            for (Listener* listener : mListeners) {
+                listener->handleMessage(mMessage);
             };
         };
 
     private:
 
-        Message message_;
-        std::vector<Listener*> listeners_;
+        Message mMessage;
+        std::vector<Listener*> mListeners;
 
     };
 

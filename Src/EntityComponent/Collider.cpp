@@ -1,5 +1,6 @@
 #include "Collider.h"
 
+
 me::Collider::Collider()
 {
 }
@@ -10,15 +11,15 @@ me::Collider::~Collider()
 
 void me::Collider::onCollisionEnter(Entity* other)
 {
-	entity_->OnCollisionEnter(other);
+	mEntity->OnCollisionEnter(other);
 }
 
 void me::Collider::onCollisionStay(Entity* other)
 {
-	entity_->OnCollisionStay(other);
+	mEntity->OnCollisionStay(other);
 }
 
 void me::Collider::onCollisionExit(Entity* other)
 {
-	entity_->OnCollisionExit(other);
+	mEntity->OnCollisionExit(other);
 }

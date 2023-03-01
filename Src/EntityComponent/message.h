@@ -1,5 +1,6 @@
 /**
-Data structure that contains message event information.
+This file contains de definitions of the differents types of data
+that could be use by the MessagesCenter.
 */
 
 #pragma once
@@ -7,86 +8,82 @@ Data structure that contains message event information.
 #ifndef __EC_MESSAGE
 #define __EC_MESSAGE
 
-#include <string>
-
-#include "data_types.h"
+#include <cstdint>
 
 
 namespace me {
 
-    /**
-    Defines the differents types of messages.
-    */
-    enum class MessageType : uint8_t {
-        _PAUSE_START_,
-        _PAUSE_OVER_,
-        _ROUND_START_, 
-        _ROUND_OVER_, 
-        _GAME_START_,
-        _GAME_OVER_
-    };
+	class Entity;
 
-    /**
-    Defines the possible content of the message.
+	/**
+	Defines 32 bits float type.
+	*/
+	typedef float float32_t;
+	static_assert(sizeof(float32_t) == sizeof(std::int32_t), "Tamaño de float32_t no es 32 bits");
+	
+	/**
+	Defines the differents types of messages.
+	*/
+	enum class MessageType {
+		COLLISION,
+		DAMAGE,
+		MOVE,
+		// ...
+		_PAUSE_START_,
+		_PAUSE_OVER_,
+		_ROUND_START_,
+		_ROUND_OVER_,
+		_GAME_START_,
+		_GAME_OVER_
+	};
 
-    Fact: 'union' data share the same portion of memory,
-    that means that only one of those fields can be use at the same time.
-    */
-    union MessageData {
-        State st;
-        Collision col;
-        Score score;
-    };
+	/**
+	Defines human communication data type.
+	*/
+	struct ChatMessage {
+		char message[256];
+	};
 
-    struct Message {
-    public:
+	/**
+	Defines collision data type.
+	*/
+	struct CollisionMessage {
+		Entity* entity1;
+		Entity* entity2;
+	};
 
-        /**
-        Build the default foundation of the Message.
-        */
-        Message();
+	/**
+	Defines damage data type.
+	*/
+	struct DamageMessage {
+		Entity* target;
+		float damage;
+	};
 
-        /**
-        Build the foundation of the Message.
-        @param MessageType to identify the message.
-        @param MessageData with the information to be communicate.
-        */
-        Message(MessageType type, MessageData data);
+	/**
+	Defines move data type.
+	*/
+	struct MoveMessage {
+		Entity* entity;
+		float x, y, z;
+	};
 
-        /**
-        This method is meant to be the definition
-        of the dynamic memory that has to be safely delete.
-        */
-        virtual ~Message();
+	/**
+	Defines the main message struct, using union inheritance.
+	This defines the possible content of the message.
 
-        /**
-        Get the type of the actual message.
-        @return MessageType.
-        */
-        inline MessageType getType() const {
-            return type;
-        };
-
-        /**
-        Get the data of the actual message.
-        @return MessageData.
-        */
-        inline MessageData getData() const {
-            return data;
-        };
-
-        /**
-        Duplicate the actual message.
-        @return Message.
-        */
-        virtual Message* clone() const;
-
-    private:
-
-        MessageType type;
-        MessageData data;
-
-    };
+	Fact: 'union' data share the same portion of memory,
+	that means that only one of those fields can be use at the same time.
+	*/
+	struct Message {
+		MessageType type;
+		union {
+			CollisionMessage collision;
+			DamageMessage damage;
+			MoveMessage move;
+			// ...
+		};
+	};
 
 };
 
