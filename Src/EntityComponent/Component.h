@@ -65,9 +65,13 @@ namespace me {
 		*/
 		virtual void lateUpdate() {}
 
+		template<typename T>
+
+		T* getComponent();
+
 	protected:
 
-		Entity* entity_;
+		Entity* mEntity;
 
 	};
 

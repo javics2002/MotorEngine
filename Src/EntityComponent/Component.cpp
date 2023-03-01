@@ -1,17 +1,24 @@
 #include "Component.h"
+#include "Entity.h"
 
 namespace me {
 
 	Component::Component() :
-		entity_(nullptr) {
-	};
+		mEntity(nullptr) {
+	}
 
 	inline void Component::setEntity(Entity* e) {
-		entity_ = e;
-	};
+		mEntity = e;
+	}
 
 	inline Entity* Component::getEntity() {
-		return entity_;
-	};
+		return mEntity;
+	}
+
+	template<typename T>
+	T* Component::getComponent()
+	{
+		return mEntity->getComponent<T>();
+	}
 
 };

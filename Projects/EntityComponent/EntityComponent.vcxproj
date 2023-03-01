@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Listener.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\message.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\message.h" />
     <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
@@ -137,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Bullet\Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,6 +154,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Bullet\Build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
