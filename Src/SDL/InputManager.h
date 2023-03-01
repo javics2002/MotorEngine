@@ -11,9 +11,9 @@
 
 namespace me {
 	/**
-	InputManager provides information and callbacks for any user input.
-	You can access input by key, but you can also define your own
-	buttons to easely remap your game's controls.
+	InputManager provides information and callbacks for any user input from
+	keyboard, mouse and game controller.
+	Define virtual buttons to easely remap your game's controls.
 	You can access the InputManager just calling im().
 	*/
 	class InputManager : public Singleton<InputManager> {
@@ -33,6 +33,14 @@ namespace me {
 
 		//Stores callback data for virtual buttons.
 		std::unordered_multimap<std::string, OnButtonPressedInfo> mOnButtonPressed;
+
+		//Stores each player's gamepad
+		std::unordered_map<int, SDL_Gamepad*> mGamepads;
+
+		/*
+		Manages the connection and disconnection of controllers.
+		*/
+		static int watchControllers(void* userdata, SDL_Event* event);
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
@@ -143,7 +151,7 @@ namespace me {
 		bool addBinding(std::string name, AxisInput input);
 		/**
 		Unlinks a button with some physical input
-		@param name Name of the buttob.
+		@param name Name of the button.
 		@param input Representation of the physical input.
 		input.type can be SDL_KeyboardEvent for keyboard key presses,
 		SDL_MouseButtonEvent for mouse clicks,
