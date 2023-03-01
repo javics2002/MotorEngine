@@ -33,6 +33,13 @@ namespace me {
 		*/
 		Entity(Scene* scn, std::string name);
 
+
+		/**
+		Build the foundation of the Entity.
+		@param String name to identify it.
+		*/
+		Entity(std::string name);
+
 		/**
 		Delete all the components added to the entity.
 		*/
@@ -114,6 +121,23 @@ namespace me {
 		Run all the added components lateUpdate method.
 		*/
 		void lateUpdate();
+
+
+		/**
+		This function is called when the object collides with another object
+		*/
+		void OnCollisionEnter(Entity* other);
+
+
+		/**
+		This function is called every frame while the object is colliding with another object
+		*/
+		void OnCollisionStay(Entity* other);
+
+		/**
+		This function is called when the object stops colliding with another object
+		*/
+		void OnCollisionExit(Entity* other);
 
 	private:
 

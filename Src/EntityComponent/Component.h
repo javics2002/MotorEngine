@@ -16,6 +16,8 @@ namespace me {
 	class Component {
 	public:
 
+		bool enabled=true;
+
 		/**
 		Build the foundation of the Component.
 		*/
@@ -72,6 +74,11 @@ namespace me {
 		For example: render and collisions.
 		*/
 		virtual void lateUpdate() = 0;
+
+
+		virtual void OnCollisionEnter(Entity* other) {};
+		virtual void OnCollisionStay(Entity* other) {};
+		virtual void OnCollisionExit(Entity* other) {};
 
 	protected:
 
