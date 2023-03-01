@@ -8,6 +8,7 @@
 class Transform;
 class Image;
 class PlayerCtrl;
+class Collider;
 #define _CMPS_LIST_  Transform,Image,PlayerCtrl 
 
 #endif

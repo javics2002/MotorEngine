@@ -11,10 +11,19 @@ namespace me {
 	{
 	};
 
+	Entity::Entity(std::string name):
+		active_(false),
+		name_(name),
+		scn_(nullptr),
+		cmpArray_()
+	{
+	}
+
 	Entity::~Entity() {
 		for (auto c : components_) {
 			delete c;
 		};
+		components_.clear();
 	};
 
 	template<typename T, typename ...Ts>
@@ -54,15 +63,39 @@ namespace me {
 	void Entity::update() {
 		std::size_t n = components_.size();
 		for (auto i = 0u; i < n; i++) {
-			components_[i]->update();
+			if(components_[i]->enabled)
+				components_[i]->update();
 		};
 	};
 
 	void Entity::lateUpdate() {
 		std::size_t n = components_.size();
 		for (auto i = 0u; i < n; i++) {
-			components_[i]->lateUpdate();
+			if (components_[i]->enabled)
+				components_[i]->lateUpdate();
 		};
 	};
+
+	void Entity::OnCollisionEnter(Entity* other)
+	{
+		for (Component* comp : components_) {
+			if(comp->enabled)
+				comp->OnCollisionEnter(other);
+		}
+	}
+	void Entity::OnCollisionStay(Entity* other)
+	{
+		for (Component* comp : components_) {
+			if (comp->enabled)
+				comp->OnCollisionStay(other);
+		}
+	}
+	void Entity::OnCollisionExit(Entity* other)
+	{
+		for (Component* comp : components_) {
+			if (comp->enabled)
+				comp->OnCollisionExit(other);
+		}
+	}
 
 };
