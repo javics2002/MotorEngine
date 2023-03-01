@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
@@ -30,11 +31,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Collider.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\message.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Listener.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\message.h" />
     <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
     <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />

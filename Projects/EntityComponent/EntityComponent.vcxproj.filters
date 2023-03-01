@@ -1,15 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Listener.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\message.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{07955aa0-f13e-48ae-a8d5-f8c4101e19bb}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ad718c84-5698-4869-aeb5-09236e3ea0c9}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{7d162712-84dd-4b01-bcfa-b19daef834c9}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
@@ -24,7 +27,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp">
@@ -33,8 +36,29 @@
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\EntityComponent\Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -47,16 +71,22 @@
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Transform.h">
+    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\Listener.h">
@@ -66,9 +96,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Collider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
