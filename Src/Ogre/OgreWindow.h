@@ -21,39 +21,22 @@ namespace me {
 	private:
 	protected:
 		std::string mWindowName;
-		Ogre::Root* mRoot;
-		bool mFirstRun;
-
-		std::string mResourceCfgPath;
-		std::string mPluginCfgPath;
-		std::string mOgreLogPath;
-		std::string mOgreCfgPath;
-		std::string mOgreResourcesPath;
-
-		/// TEMP (CARGA DE ASSETS)
-		std::string mSolutionPath;
-
-		SDL_Window* mRenderWindow = nullptr;
-
-		Ogre::FileSystemLayer* mFSLayer;
+		SDL_Window* mSdlWindow = nullptr;
+		Ogre::RenderWindow* mRenderWindow = nullptr;
 
 		//Ogre::RTShader::ShaderGenerator * mShaderGenerator; // The Shader generator instance.
 		//SGTechniqueResolverListener* mMaterialMgrListener; // Shader generator material manager listener.
-
-		void initRoot();
-		void setup();
-		void createWindow();
+		void createWindow(Ogre::Root* root);
 		void setWindowGrab(bool _grab);
-		void locateResources();
-		void loadResources();
-		bool initialiseRTShaderSystem();
 
 	public:
 		OgreWindow(const std::string windowName);
 		~OgreWindow();
 
-		void init();
-		Ogre::Root* getRoot();
+		void init(Ogre::Root* root);
+		Ogre::RenderWindow* getRenderWindow();
+		SDL_Window* getSdlWindow();
+
 
 	};
 

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Ogre\Ogre.h">
+    <ClInclude Include="..\..\Src\Ogre\OgreManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Ogre\OgreWindow.h">
@@ -24,12 +24,15 @@
     <ClInclude Include="..\..\Src\Ogre\OgreCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OgreGame.h">
+    <ClInclude Include="..\..\Src\Ogre\SGTechniqueResolverListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Ogre\OgreMesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Ogre\Ogre.cpp">
+    <ClCompile Include="..\..\Src\Ogre\OgreManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\Ogre\OgreWindow.cpp">
@@ -41,7 +44,10 @@
     <ClCompile Include="..\..\Src\Ogre\OgreCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OgreGame.cpp">
+    <ClCompile Include="..\..\Src\Ogre\SGTechniqueResolverListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Ogre\OgreMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
