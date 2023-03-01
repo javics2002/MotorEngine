@@ -34,10 +34,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Listener.h" />
     <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\message.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
     <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
