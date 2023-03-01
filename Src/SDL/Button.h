@@ -35,7 +35,7 @@ namespace me {
 		}
 	};
 
-	//Provides hash suppport for using struct Input as a key in std::unordered_map.
+	//Provides hash suppport for using struct Input as a key in std::unordered_map
 	struct InputHasher {
 		size_t operator()(const Input& t) const {
 			return std::hash<int>()(t.which) ^ std::hash<int>()(t.type);

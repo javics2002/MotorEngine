@@ -28,6 +28,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\message.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp">
