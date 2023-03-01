@@ -55,25 +55,19 @@ public:
 	*  Return the sum of two Vector2
 	*  @param v Vector2
 	*/
-	Vector2<T> operator+(const Vector2<T> v) {
-		return Vector2<T>(x + v.x, y + v.y);
-	}
+	Vector2<T> operator+(const Vector2<T>& v);
 
 	/**
 	*  Return the difference of two Vector2
 	*  @param v Vector2
 	*/
-	Vector2<T> operator-(const Vector2<T> v) {
-		return Vector2<T>(x - v.x, y - v.y);
-	}
+	Vector2<T> operator-(const Vector2<T>& v);
 
 	/**
 	*  Return a  Vector2 scale
 	*  @param s scale factor
 	*/
-	Vector2<T> operator*(const T s) {
-		return Vector2<T>(x * s, y * s);
-	}
+	Vector2<T> operator*(const T s);
 
 	/**
 	*  Returns a new Vector2 interpolating between the two given Vector2 based on the scalar value "f".
@@ -81,7 +75,7 @@ public:
 	*  @param b second Vector2
 	*  @param f interpolation factor
 	*/
-	Vector2<T> lerp(const Vector2<T> a, const Vector2<T> b, float f) {
+	inline Vector2<T> lerp(const Vector2<T> a, const Vector2<T> b, float f) {
 		return Vector2<T>( lerp(a.x, b.x, f), lerp(a.y, b.y, f));
 	}
 

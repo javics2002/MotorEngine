@@ -4,12 +4,13 @@
 #define __ENTITYCOMPONENT_TRANSFORM
 
 #include "Component.h"
-#include "Utils/Vector3.h"
+#include "Vector3.h"
 
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>
 #include <list>
 #include <LinearMath/btQuaternion.h>
+
 
 namespace me {
 
@@ -150,7 +151,6 @@ namespace me {
 
 		std::list<Transform*> mChildren;
 	};
-}
+};
+
 #endif
-
-

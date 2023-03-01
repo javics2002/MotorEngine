@@ -1,6 +1,6 @@
 /**
 This file contains de definitions of the differents types of data
-that will be use by the MessagesCenter.
+that could be use by the MessagesCenter.
 */
 
 #pragma once

@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Listener.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\message.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
@@ -30,6 +30,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\EntityComponent\Collider.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
     <ClInclude Include="..\..\Src\EntityComponent\data_types.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec.h" />

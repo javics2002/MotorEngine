@@ -10,54 +10,55 @@ Manager interface for message events.
 #include <vector>
 
 #include "Message.h"
+#include "Listener.h"
 
 
 namespace me {
-
-    class Listener;
 
     class MessagesCenter {
     public:
 
         /**
-        Build the foundation of the MessagesCenter.
-        */
-        MessagesCenter();
-
-        /**
-        This method is meant to be the definition
-        of the dynamic memory that has to be safely delete.
-        */
-        virtual ~MessagesCenter();
-
-        /**
         Log in a new Listener to take it into account.
         @param Listener object.
         */
-        void loginListener(Listener* listener);
+        void loginListener(Listener* listener) {
+            listeners_.push_back(listener);
+        };
 
         /**
         Log out a new Listener to stop taking it into account.
         @param Listener object.
         */
-        void logoutListener(Listener* listener);
+        void logoutListener(Listener* listener) {
+            listeners_.erase(std::remove(listeners_.begin(), listeners_.end(), listener), listeners_.end());
+        };
 
         /**
         Method to receive and process message events.
         @param Message with all information.
         */
-        void sendMessage(const Message& message);
+        inline void sendMessage(const Message& message) {
+            message_ = message;
+            notifyListeners();
+        };
 
         /**
         Get the actual message information.
         @return Message with all information.
         */
-        const Message& getMessage() const;
+        inline const Message& getMessage() const {
+            return message_;
+        };
 
         /**
         Method to communicate message events to all registered listeners.
         */
-        void notifyListeners();
+        void notifyListeners() {
+            for (Listener* listener : listeners_) {
+                listener->handleMessage(message_);
+            };
+        };
 
     private:
 

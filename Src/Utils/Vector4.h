@@ -10,6 +10,14 @@ class Vector4
 
 private:
 
+	/**
+	* Returns the linear interpolation between "a" and "b" by a factor of "f"
+	*
+	* @param a The starting value of the interpolation
+	* @param b The ending value of the interpolation
+	* @param f The factor by which to interpolate between "a" and "b"
+	* @return The linear interpolation between "a" and "b" by a factor of "f"
+	*/
 	float lerp(float a, float b, float f);
 
 
@@ -39,6 +47,14 @@ public:
 		w = v.w;
 	}
 
+
+	/**
+	*  Returns the linear interpolation between "a" and "b" by a factor of "f"
+	*
+	*  @param a The starting vector to interpolate from
+	*  @param b The ending vector to interpolate to
+	*  @param f The interpolation factor, a value between 0 and 1
+	*/
 	Vector4<T> lerp(const Vector4<T>& a, const Vector4<T>& b, float f);
 };
 

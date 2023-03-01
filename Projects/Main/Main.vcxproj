@@ -19,15 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Biblioteca\Biblioteca.vcxproj">
-      <Project>{b210d5ee-0ad3-4515-a68e-4080ec2c2ede}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Ogre\Ogre.vcxproj">
       <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Main\main.cpp" />
+    <ClCompile Include="..\..\Src\Main\MotorEngine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\Main\MotorEngine.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -1,5 +1,5 @@
 /**
-Interface of a Listener.
+Abstract interface for a Listener.
 */
 
 #pragma once
@@ -23,7 +23,7 @@ namespace me {
         of how to process messages and which should be process.
         @param Message to be process with the data that should be use.
         */
-        virtual void handleMessage(const Message& message) {};
+        virtual void handleMessage(const Message& message) = 0;
 
     };
 

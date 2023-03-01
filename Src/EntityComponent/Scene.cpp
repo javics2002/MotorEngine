@@ -1,5 +1,6 @@
 #include "Scene.h"
 
+
 namespace me {
 
 	Scene::Scene(std::string name) : 
@@ -10,19 +11,15 @@ namespace me {
 	Scene::~Scene() {
 		for (auto e : entities_) {
 			delete e;
-		}
+		};
 	};
 
 	Entity* Scene::addEntity(std::string name) {
 		Entity* e = new Entity(this, name);
 		if (e != nullptr) {
 			entities_.emplace_back(e);
-		}
+		};
 		return e;
-	};
-
-	inline const std::vector<Entity*>& Scene::getEntities() {
-		return entities_;
 	};
 
 	void Scene::update() {
@@ -51,7 +48,7 @@ namespace me {
 			else {
 				delete e;
 				return true;
-			}
+			};
 		}), //
 			entities_.end());
 

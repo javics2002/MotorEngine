@@ -12,18 +12,70 @@
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\data_types.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Listener.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\message.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
+    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\message.cpp">
+	    <Filter>Source Files</Filter>
+	</ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\MessagesCenter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\EntityComponent\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\ec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\mpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Listener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\data_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\MessagesCenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

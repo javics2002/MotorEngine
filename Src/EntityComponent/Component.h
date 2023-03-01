@@ -1,9 +1,10 @@
 /**
-This abstract class is meant to be the root 
+This abstract class interface that is meant to be the root 
 for any behavior designed as a component.
 */
 
 #pragma once
+
 #ifndef __EC_COMPONENT
 #define __EC_COMPONENT
 
@@ -15,16 +16,21 @@ namespace me {
 	class Component {
 	public:
 
+		bool enabled=true;
+
 		/**
-		Build the foundation of the component.
+		Build the foundation of the Component.
 		*/
-		Component();
+		Component() :
+			entity_(nullptr)
+		{
+		};
 
 		/**
 		This method is meant to be the definition
 		of the dynamic memory that has to be safely delete.
 		*/
-		virtual ~Component() {}
+		virtual ~Component() = 0;
 
 		/**
 		Set the associated entity to the component.
@@ -33,19 +39,23 @@ namespace me {
 		This method is meant to be use at the same time as start,
 		because it's not recomended to switch the entity at execution.
 		*/
-		inline void setEntity(Entity* e);
+		inline void setEntity(Entity* e) {
+			entity_ = e;
+		};
 
 		/**
 		Get the entity associated reference.
 		@return Reference to the entity.
 		*/
-		inline Entity* getEntity();
+		inline Entity* getEntity() {
+			return entity_;
+		};
 
 		/**
 		This method is only ever called once.
 		This must be called at the instantiation of the script.
 		*/
-		virtual void start() {}
+		virtual void start() = 0;
 
 		/**
 		This method is meant to be the definition 
@@ -54,7 +64,7 @@ namespace me {
 
 		Almost all the logic updates.
 		*/
-		virtual void update() {}
+		virtual void update() = 0;
 
 		/**
 		This method is meant to be the definition 
@@ -63,7 +73,12 @@ namespace me {
 
 		For example: render and collisions.
 		*/
-		virtual void lateUpdate() {}
+		virtual void lateUpdate() = 0;
+
+
+		virtual void OnCollisionEnter(Entity* other) {};
+		virtual void OnCollisionStay(Entity* other) {};
+		virtual void OnCollisionExit(Entity* other) {};
 
 		template<typename T>
 
