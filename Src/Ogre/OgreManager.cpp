@@ -64,11 +64,54 @@ void me::OgreManager::initWindow()
 	ogreWindow->init(mRoot);
 }
 
+
+
+void OgreManager::locateResources()
+{
+
+	// load resource paths from config file
+	Ogre::ConfigFile cf;
+
+	Ogre::String resourcesPath = mFSLayer->getConfigFilePath("resources.cfg");
+	if (Ogre::FileSystemLayer::fileExists(resourcesPath))
+	{
+		cf.load(resourcesPath);
+	}
+	else
+	{
+		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(
+			Ogre::FileSystemLayer::resolveBundlePath(mSolutionPath + "\\media"),
+			"FileSystem", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
+	}
+
+	Ogre::String sec, type, arch;
+	// go through all specified resource groups
+	Ogre::ConfigFile::SettingsBySection_::const_iterator seci;
+	for (seci = cf.getSettingsBySection().begin(); seci != cf.getSettingsBySection().end(); ++seci) {
+		sec = seci->first;
+		const Ogre::ConfigFile::SettingsMultiMap& settings = seci->second;
+		Ogre::ConfigFile::SettingsMultiMap::const_iterator i;
+
+		// go through all resource paths
+		for (i = settings.begin(); i != settings.end(); i++)
+		{
+			type = i->first;
+			arch = Ogre::FileSystemLayer::resolveBundlePath(i->second);
+			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type, sec);
+		}
+	}
+
+}
+
+void OgreManager::loadResources() {
+	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
+}
+
 bool OgreManager::initialiseRTShaderSystem() {
 	if (Ogre::RTShader::ShaderGenerator::initialize())
 	{
 		mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
-		
+
 		// Create and register the material manager listener if it doesn't exist yet.
 		if (!mMaterialMgrListener) {
 			mMaterialMgrListener = new SGTechniqueResolverListener(mShaderGenerator);
@@ -78,8 +121,6 @@ bool OgreManager::initialiseRTShaderSystem() {
 
 	return true;
 }
-
-
 
 me::OgreManager::~OgreManager()
 {
@@ -93,7 +134,7 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 		return false;
 
 	OgreCamera* camera = new OgreCamera();
-	Ogre::SceneNode* cameraNode = mSM->getSceneNode(parentName)->createChildSceneNode(name);
+	Ogre::SceneNode* cameraNode = createChildNode(name, parentName);
 	
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
@@ -176,55 +217,14 @@ Ogre::SceneNode* me::OgreManager::createNode(std::string name)
 	return  mSM->getRootSceneNode()->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, Ogre::SceneNode* parent)
+Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string parent)
 {
-	return parent->createChildSceneNode(name);
+	return mSM->getSceneNode(parent)->createChildSceneNode(name);
 }
 
 
 
-void OgreManager::loadResources() {
-	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
-}
 
-
-void OgreManager::locateResources()
-{
-
-	// load resource paths from config file
-	Ogre::ConfigFile cf;
-
-	Ogre::String resourcesPath = mFSLayer->getConfigFilePath("resources.cfg");
-	if (Ogre::FileSystemLayer::fileExists(resourcesPath))
-	{
-		cf.load(resourcesPath);
-	}
-	else
-	{
-		Ogre::ResourceGroupManager::getSingleton().addResourceLocation(
-			Ogre::FileSystemLayer::resolveBundlePath(mSolutionPath + "\\media"),
-			"FileSystem", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
-	}
-
-	Ogre::String sec, type, arch;
-	// go through all specified resource groups
-	Ogre::ConfigFile::SettingsBySection_::const_iterator seci;
-	for (seci = cf.getSettingsBySection().begin(); seci != cf.getSettingsBySection().end(); ++seci) {
-		sec = seci->first;
-		const Ogre::ConfigFile::SettingsMultiMap& settings = seci->second;
-		Ogre::ConfigFile::SettingsMultiMap::const_iterator i;
-
-		// go through all resource paths
-		for (i = settings.begin(); i != settings.end(); i++)
-		{
-			type = i->first;
-			arch = Ogre::FileSystemLayer::resolveBundlePath(i->second);
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type, sec);
-		}
-	}
-
-	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
-}
 
 void me::OgreManager::render()
 {

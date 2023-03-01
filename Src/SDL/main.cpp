@@ -18,11 +18,15 @@ using namespace me;
 
 int revealKeyboardEvents(void* userdata, SDL_Event* event)
 {
-    char* name = (char*) userdata;
+    char* name = (char*) userdata; 
+
     if (event->type == SDL_EVENT_KEY_DOWN && !event->key.repeat)
         std::cout << name << " ha pulsado la tecla " << KEY_NAME << "\n";
     else if (event->type == SDL_EVENT_KEY_UP)
         std::cout << name << " ha soltado la tecla " << KEY_NAME << "\n";
+    else if (event->type == SDL_EVENT_GAMEPAD_BUTTON_DOWN)
+        std::cout << name << " ha pulsado el boton del mando " << event->cbutton.button << "\n";
+
     return 0;
 }
 
@@ -59,7 +63,7 @@ int main() {
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 
     //char* name = (char*) "Javi";
-    //SDL_AddEventWatch(revealKeyboardEvents, name); 
+    //SDL_AddEventWatch(revealKeyboardEvents, name);
     ////Se copia name, asi que creo que no se le pueden pasar datos que puedan cambiar
     ////Si cambio name despues sigue diciendo Javi
     //name = (char*) "Rayo";
@@ -85,6 +89,14 @@ int main() {
     im().addButton("Shoot", leftClick);
 
     im().addOnButtonPressedEvent("Shoot", shoot);
+
+    Input controllerA;
+    controllerA.type = SDL_EVENT_GAMEPAD_BUTTON_DOWN;
+    controllerA.which = SDL_GAMEPAD_BUTTON_A;
+
+    im().addButton("A", controllerA);
+
+    im().addOnButtonPressedEvent("A", shoot);
 
     std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
 

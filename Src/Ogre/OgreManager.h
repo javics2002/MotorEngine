@@ -1,7 +1,11 @@
 #pragma once
+#ifndef __OGRE_MANAGER
+#define __OGRE_MANAGER
+
 #include "Utils/Singleton.h"
 #include <unordered_map>
 #include <string>
+
 
 namespace Ogre {
 	class Root;
@@ -21,8 +25,17 @@ namespace me {
 	class OgreCamera;
 	class SGTechniqueResolverListener;
 
+	/**
+	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
+	locate and load resources (from resource.cfg)
+	and handle the creation of camera, light, mesh
+	You can access the OgreManager just calling om().
+	*/
 	class OgreManager : public Singleton<OgreManager> {
 		friend Singleton<OgreManager>;
+		/**
+		Initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow),locate and load Resource
+		*/
 		OgreManager();
 
 	private:
@@ -32,32 +45,77 @@ namespace me {
 		//SceneManager de Ogre
 		Ogre::SceneManager* mSM = nullptr;
 
-		bool mFirstRun;
-
+		/**
+		Path of the "resource.cfg"
+		Add all resources (mesh, zip, particles, material, animation) to the subfolder of Asset
+		And they are accessed by putting paths in "resource.cfg" like this:
+			Zip= ../../Assets/packs/Sinbad.zip
+			FileSystem=../../Assets/Main
+		Be careful, our working directory is "Exe/Main/", 
+		so we have to go to the above directory 2 times to access the "Assets" directory.
+		*/
 		std::string mResourceCfgPath;
-		std::string mPluginCfgPath;
-		std::string mOgreLogPath;
-		std::string mOgreCfgPath;
-		std::string mOgreResourcesPath;
 
+		/**
+		Path of the "plugins.cfg"
+		Add all necessary Ogre plugins in "plugins.cfg" like this:
+			Plugin=Codec_STBI
+		Remember to add all the .dll of the written plugins
+		*/
+		std::string mPluginCfgPath;
+
+		/**
+		Path of the "Ogre.cfg"
+		configuration file where it indicates all the configurations 
+		proposed for "Renderer DirectX11"
+		*/
+		std::string mOgreCfgPath;
+
+		//Ogre fileSystem
 		Ogre::FileSystemLayer* mFSLayer;
+
+		//Ogre ShaderGenerator
 		Ogre::RTShader::ShaderGenerator* mShaderGenerator;
+
+		//Ogre Material Manager Listener
 		SGTechniqueResolverListener* mMaterialMgrListener;
 
-		/// TEMP (CARGA DE ASSETS)
+		//Path pointing to "/Main/x64/debug"
 		std::string mSolutionPath;
 
-
+		//Reference to OgreWindow class
 		OgreWindow* ogreWindow;
 
+		//Store camera name to ogreCamera
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
 
+		/**
+		initializes FileSystem, find m_Paths and initialize Ogre::Root
+		*/
 		void initRoot();
+		/**
+		Creates OgreWindow (RenderWindow)
+		*/
 		void initWindow();
+
+		/*
+		Find mResourcePath and add all written resources to Ogre::ResourceGroupManager
+		*/
 		void locateResources();
+		/**
+		Call Ogre::ResourceGroupManager to load added resources
+		*/
 		void loadResources();
+		/**
+		initialize RTShaderSystem (Shader Generator) and add Ogre:: Material Manager Listener
+		*/
 		bool initialiseRTShaderSystem();
 
+		/**
+		@param name: Name of the camera
+		@return OgreCamera: that was created with this name 
+		@return nullptr: if it doesn't exist
+		*/
 		OgreCamera* getCamera(std::string name);
 
 	public:
@@ -65,28 +123,90 @@ namespace me {
 		OgreManager(const OgreManager& o) = delete;
 		~OgreManager() override;
 
+		/**
+		Create the camera that is a child of another Ogre::SceneNode with this name and store it
+		@param name: name of camera
+		@param parentName: name of parent Ogre::SceneNode
+		@param nearDist: near clipping plane distancia 
+		@param farDist: far clipping plane distancia 
+		@param autoRadio: if viewport calculate aspect radio automatically
+		@param zOrder: relative order of viewport
+		@return false: if renamed
+		@return true: if succeed
+		*/
 		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder);
+		
+		/**
+		Create the camera with this name and store it
+		@param name: name of camera
+		@param nearDist: near clipping plane distancia
+		@param farDist: far clipping plane distancia
+		@param autoRadio: if viewport calculate aspect radio automatically
+		@param zOrder: relative order of viewport
+		@return false: if renamed
+		@return true: if succeed
+		*/
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder);
+		
+		/**
+		Create the light with this name
+		@param name: name of light
+		@param pos: position of light
+		@param dir: direction of light
+		*/
 		void createNewLight(std::string name,int posX, int posY, int posZ, int dirX, int dirY, int dirZ );
+		/**
+		Set location and direction to the camera with this name
+		@param name: name of camera
+		@param pos: position of camera
+		@param look: camera look at
+		*/
 		bool setCameraInfo(std::string name, int posX, int posY, int posZ, int lookX, int lookY, int lookZ);
-		//void setCameraInfo(std::string name, Vector3 pos, Vector3 lookAt, float left, float top, float width, float height);
+		
+		/**
+		Set dimension to the viewport of the camera with this name
+		@param name: name of camera
+		@param left: left point of viewport in range 0.0 to 1.0
+		@param top: top point of viewport in range 0.0 to 1.0
+		@param width: width of viewport in range 0.0 to 1.0
+		@param height: height of viewport in range 0.0 to 1.0
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setViewportDimension(std::string name, float left, float top, float width, float height);
+		
+		/**
+		@param name: name of node
+		@return Ogre::SceneNodo created with this name and it is in root node
+		*/
 		Ogre::SceneNode* createNode(std::string name);
-		Ogre::SceneNode* createChildNode(std::string name,Ogre::SceneNode* parent);
+		/**
+		@param name: name of node
+		@param parent: name of parent node
+		@return Ogre::SceneNodo created with this name and it is child node of another node
+		*/
+		Ogre::SceneNode* createChildNode(std::string name, std::string parent);
 
+		/**
+		Example scene where rendering a sinbad with 2 camera,viewport
+		*/
 		void scene1();
 
+		/**
+		Render one frame of Ogre::Root -> current scene manager
+		*/
 		void render();
 
 
 	};
 
 	/**
-		This macro defines a compact way for using the singleton InputHandler, instead of
-		writing InputHandler::instance()->method() we write ih().method()
+		This macro defines a compact way for using the singleton OgreManager, instead of
+		writing OgreManager::instance()->method() we write om().method()
 	*/
 	inline OgreManager& om() {
 		return *OgreManager::instance();
 	}
 
 }
+#endif
