@@ -31,13 +31,13 @@ namespace me {
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
-		Entity(Scene* scn, std::string name);
+		Entity(Scene* scn, const std::string name);
 
 		/**
 		Build the foundation of the Entity.
 		@param String name to identify it.
 		*/
-		Entity(std::string name);
+		Entity(const std::string name);
 
 		/**
 		Delete all the components added to the entity.
@@ -74,22 +74,6 @@ namespace me {
 		inline bool hasComponent();
 
 		/**
-		Set the associated scene for the entity.
-		@param Scene to which it belongs.
-		*/
-		inline void setScene(Scene* scn) {
-			mScn = scn;
-		};
-
-		/**
-		Get the associated scene of the entity.
-		@return Scene to which it belongs.
-		*/
-		inline Scene* getScene() {
-			return mScn;
-		};
-
-		/**
 		Check if the entity is active.
 		@return Boolean confirmation.
 		*/
@@ -98,11 +82,43 @@ namespace me {
 		};
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Set the entity activity to false.
+		This will cause to be safely delete by the scene.
 		*/
-		inline void setActive(bool state) {
-			mActive = state;
+		inline void destroy() {
+			mActive = false;
+		};
+
+		/**
+		Get the entity name.
+		@return String name.
+		*/
+		inline const std::string getName() const {
+			return mName;
+		};
+
+		/**
+		Set the entity name to the new one.
+		@param String name.
+		*/
+		inline void setName(const std::string name) {
+			mName = name;
+		};
+
+		/**
+		Get the associated scene of the entity.
+		@return Scene to which it belongs.
+		*/
+		inline Scene* getScene() const {
+			return mScn;
+		};
+
+		/**
+		Set the associated scene for the entity.
+		@param Scene to which it belongs.
+		*/
+		inline void setScene(Scene* scn) {
+			mScn = scn;
 		};
 
 		/**

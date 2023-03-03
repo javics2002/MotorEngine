@@ -5,7 +5,7 @@
 
 namespace me {
 
-	Entity::Entity(Scene* scn, std::string name) :
+	Entity::Entity(Scene* scn, const std::string name) :
 		mActive(true), //
 		mName(name), // 
 		mScn(scn), //
@@ -13,8 +13,8 @@ namespace me {
 	{
 	};
 
-	Entity::Entity(std::string name) :
-		mActive(false),
+	Entity::Entity(const std::string name) :
+		mActive(true),
 		mName(name),
 		mScn(nullptr),
 		mCmpArray()
@@ -74,6 +74,8 @@ namespace me {
 	};
 
 	void Entity::update() {
+		if (!mActive) return;
+
 		std::size_t n = mComponents.size();
 		for (auto i = 0u; i < n; i++) {
 			if(mComponents[i]->enabled)
@@ -82,6 +84,8 @@ namespace me {
 	};
 
 	void Entity::lateUpdate() {
+		if (!mActive) return;
+
 		std::size_t n = mComponents.size();
 		for (auto i = 0u; i < n; i++) {
 			if (mComponents[i]->enabled)
