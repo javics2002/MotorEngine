@@ -47,7 +47,7 @@ namespace me {
 		/**
 		Prepares an entity to be safely remove from the scene.
 		This assumes that the name is a unique identifier.
-		@param String name to identify the entity to be delete.
+		@param String name to identify the entity to be remove.
 		*/
 		void removeEntity(const std::string& name);
 

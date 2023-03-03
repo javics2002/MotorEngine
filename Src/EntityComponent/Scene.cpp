@@ -5,9 +5,7 @@
 namespace me {
 
 	Scene::Scene(const std::string name) : 
-		mName(name), //
-		mNewEntities(),
-		mEntities()
+		mName(name)
 	{
 	};
 

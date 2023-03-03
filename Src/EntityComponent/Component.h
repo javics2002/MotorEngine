@@ -77,10 +77,6 @@ namespace me {
 		virtual void OnCollisionStay(Entity* other);
 		virtual void OnCollisionExit(Entity* other);
 
-		template<typename T>
-
-		T* getComponent();
-
 	protected:
 
 		Entity* mEntity;

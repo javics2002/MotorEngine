@@ -54,7 +54,7 @@ namespace me {
 		T* addComponent(Ts &&... args);
 
 		/**
-		Remove completely a component.
+		Remove completely a typed component.
 		*/
 		template<typename T>
 		void removeComponent();
