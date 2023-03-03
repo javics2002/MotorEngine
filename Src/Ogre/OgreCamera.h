@@ -2,6 +2,8 @@
 #ifndef __OGRE_OGRECAMERA
 #define __OGRE_OGRECAMERA
 
+#include <OgreVector3.h>
+
 namespace Ogre {
 	class Camera;
 	class Viewport;
@@ -44,9 +46,9 @@ namespace me {
 		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder);
 
 		//Set position to mCameraNode
-		void setPosition(int x, int y, int z);
+		void setPosition(const Ogre::Vector3f &pos);
 		//Set lookAT to mCameraNode
-		void lookAt(int x, int y, int z);
+		void lookAt(const Ogre::Vector3f &look);
 		/**
 		Set dimension to mViewport
 		@param left: left point of mViewport in range 0.0 to 1.0

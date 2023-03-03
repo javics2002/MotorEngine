@@ -4,7 +4,7 @@
 #define __ENTITYCOMPONENT_TRANSFORM
 
 #include "Component.h"
-#include "Vector3.h"
+#include "Utils/Vector3.h"
 
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>

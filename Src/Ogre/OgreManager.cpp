@@ -2,6 +2,7 @@
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreSceneNode.h>
+#include <OgreQuaternion.h>
 #include <OgreEntity.h>
 #include <OgreLight.h>
 #include <OgreFileSystemLayer.h>
@@ -9,12 +10,12 @@
 #include <OgreShaderGenerator.h>
 #include <OgreRTShaderSystem.h>
 #include <OgreMaterialManager.h>
-#include <OgreMath.h>
-#include <OgreMeshManager.h>
+#include <OgreVector.h>
 #include <iostream>
 
 #include "Ogre/OgreWindow.h"
 #include "Ogre/OgreCamera.h"
+#include "Ogre/OgreMesh.h"
 #include "Ogre/SGTechniqueResolverListener.h"
 
 using namespace me;
@@ -89,7 +90,7 @@ void OgreManager::locateResources()
 	Ogre::ConfigFile::SettingsBySection_::const_iterator seci;
 	for (seci = cf.getSettingsBySection().begin(); seci != cf.getSettingsBySection().end(); ++seci) {
 		sec = seci->first;
-		const Ogre::ConfigFile::SettingsMultiMap& settings = seci->second;
+		const Ogre::ConfigFile::SettingsMultiMap&settings = seci->second;
 		Ogre::ConfigFile::SettingsMultiMap::const_iterator i;
 
 		// go through all resource paths
@@ -120,6 +121,22 @@ bool OgreManager::initialiseRTShaderSystem() {
 	}
 
 	return true;
+}
+
+OgreMesh* me::OgreManager::getMesh(std::string name)
+{
+	if (!mMeshes.count(name))
+		return nullptr;
+
+	return mMeshes[name];
+}
+OgreCamera* me::OgreManager::getCamera(std::string name)
+{
+
+	if (!mCameras.count(name))
+		return nullptr;
+
+	return mCameras[name];
 }
 
 me::OgreManager::~OgreManager()
@@ -162,7 +179,20 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 	return true;
 }
 
-void me::OgreManager::createNewLight(std::string name, int posX, int posY, int posZ, int dirX, int dirY, int dirZ)
+bool me::OgreManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setPosition(pos);
+	cam->lookAt(look);
+
+
+	return true;
+
+}
+void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
 {
 	
 	Ogre::Light* light = mSM->createLight(name);
@@ -170,34 +200,82 @@ void me::OgreManager::createNewLight(std::string name, int posX, int posY, int p
 	light->setVisible(true);
 	Ogre::SceneNode* lightNode = createNode(name);
 	lightNode->attachObject(light);
-	lightNode->setDirection(Ogre::Vector3(dirX, dirY, dirZ));
-	lightNode->setPosition(posX,posY,posZ);
+	lightNode->setDirection(dir);
+	lightNode->setPosition(pos);
 	
 
 }
 
-OgreCamera* me::OgreManager::getCamera(std::string name)
+bool me::OgreManager::createMesh(std::string name, std::string nameMesh)
 {
-	
-	if (!mCameras.count(name))
-		return nullptr;
 
-	return mCameras[name];
-}
-
-bool me::OgreManager::setCameraInfo(std::string name, int posX, int posY, int posZ, int lookX, int lookY, int lookZ)
-{
-	OgreCamera* cam = getCamera(name);
-	if (cam == nullptr)
+	if (mMeshes.count(name))
 		return false;
 
-	cam->setPosition(posX,posY,posZ);
-	cam->lookAt(lookX,lookY,lookZ);
-	
+	Ogre::SceneNode* entityNode = createNode(name);
+	OgreMesh* mesh = new OgreMesh(entityNode, nameMesh);
+
+	mMeshes[name] = mesh;
 
 	return true;
-
 }
+
+bool me::OgreManager::setMeshPosition(std::string name, const Ogre::Vector3f &pos)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setPosition( pos);
+
+	return true;
+}
+
+bool me::OgreManager::setMeshScale(std::string name, const Ogre::Vector3f &scale)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setScale(scale);
+	
+	return true;
+}
+
+bool me::OgreManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setRotation(rot);
+
+	return true;
+}
+
+bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setTransform(pos, scale , Ogre::Quaternion::IDENTITY);
+
+	return true;
+}
+
+bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setTransform(pos, scale, rot);
+
+	return true;
+}
+
+
 
 
 bool me::OgreManager::setViewportDimension(std::string name, float left, float top, float width, float height)
@@ -224,7 +302,10 @@ Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string 
 
 
 
-
+Ogre::Vector3f* me::OgreManager::createVector(float x, float y, float z)
+{
+	return new Ogre::Vector3f(x,y,z);
+}
 
 void me::OgreManager::render()
 {

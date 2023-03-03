@@ -23,7 +23,7 @@ namespace me {
         scheme name we will try to create shader generated technique for it.
         */
         Ogre::Technique* handleSchemeNotFound(unsigned short schemeIndex,
-            const Ogre::String& schemeName,
+            const Ogre::String &schemeName,
             Ogre::Material* originalMaterial, unsigned short lodIndex,
             const Ogre::Renderable* rend) override;
 

@@ -3,9 +3,11 @@
 #define __OGRE_OGREMESH
 
 #include <string>
+#include <OgreVector3.h>
 
 namespace Ogre {
 	class SceneNode;
+	class Quaternion;
 }
 
 namespace me {
@@ -20,6 +22,7 @@ namespace me {
 		Ogre::SceneNode* mNode;
 		//Name of mesh that used
 		std::string mMeshName;
+		std::string mName;
 		
 
 
@@ -32,8 +35,11 @@ namespace me {
 		*/
 		OgreMesh(Ogre::SceneNode* node,std::string meshName);
 		~OgreMesh();
-		//Set position and scale of mNode
-		void setTransform(int posX, int posY, int posZ, int scaleX, int scaleY, int scaleZ);
+		//Set position, rotation and scale of mNode
+		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
+		void setPosition(const Ogre::Vector3f &pos);
+		void setScale(const Ogre::Vector3f &scale);
+		void setRotation(Ogre::Quaternion rot);
 		
 
 	};

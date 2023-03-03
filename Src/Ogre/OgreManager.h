@@ -13,7 +13,11 @@ namespace Ogre {
 	class FileSystemLayer;
 	class SceneManager;
 	class SceneNode;
-	
+	class Quaternion;
+	template<int dism, typename T>
+	class Vector;
+	typedef Vector< 3, float > 	Vector3f;
+
 	namespace RTShader {
 		class ShaderGenerator;
 	}
@@ -23,6 +27,7 @@ namespace me {
 
 	class OgreWindow;
 	class OgreCamera;
+	class OgreMesh;
 	class SGTechniqueResolverListener;
 
 	/**
@@ -88,6 +93,8 @@ namespace me {
 
 		//Store camera name to ogreCamera
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
+		//Store mesh name to ogreMesh
+		std::unordered_map<std::string, OgreMesh*> mMeshes;			//Pairs each mesh with its name
 
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
@@ -118,9 +125,16 @@ namespace me {
 		*/
 		OgreCamera* getCamera(std::string name);
 
+		/**
+		@param name: Name of the mesh
+		@return OgreMesh: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		OgreMesh* getMesh(std::string name);
+
 	public:
-		OgreManager& operator=(const OgreManager& o) = delete;
-		OgreManager(const OgreManager& o) = delete;
+		OgreManager&operator=(const OgreManager&o) = delete;
+		OgreManager(const OgreManager&o) = delete;
 		~OgreManager() override;
 
 		/**
@@ -147,22 +161,52 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder);
-		
+
+		/**
+		Set location and direction to the camera with this name
+		@param name: name of camera
+		@param pos: position of camera
+		@param look: camera look at
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look);
+
 		/**
 		Create the light with this name
 		@param name: name of light
 		@param pos: position of light
 		@param dir: direction of light
 		*/
-		void createNewLight(std::string name,int posX, int posY, int posZ, int dirX, int dirY, int dirZ );
-		/**
-		Set location and direction to the camera with this name
-		@param name: name of camera
-		@param pos: position of camera
-		@param look: camera look at
-		*/
-		bool setCameraInfo(std::string name, int posX, int posY, int posZ, int lookX, int lookY, int lookZ);
+		void createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir);
 		
+		/**
+		Create the ogreMesh with this name 
+		@param name: name of Ogre::SceneNode &&unordered_map
+		@param nameMesh: name of file (xxx.mesh)
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createMesh(std::string name, std::string nameMesh);
+
+		/**
+		Set Transform info to the mesh with this name (for static object)
+		@param name: name of ogreMesh
+		@param pos: position of ogreMesh
+		@param scale: scale of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed		
+		*/
+		bool setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale);
+		bool setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot);
+		//set position info to the mesh with this name
+		bool setMeshPosition(std::string name, const Ogre::Vector3f &pos);
+		//set scale info to the mesh with this name
+		bool setMeshScale(std::string name, const Ogre::Vector3f &scale);
+		//set rotation info to the mesh with this name
+		bool setMeshRotation(std::string name,Ogre::Quaternion rot);
+
+
 		/**
 		Set dimension to the viewport of the camera with this name
 		@param name: name of camera
@@ -192,6 +236,8 @@ namespace me {
 		*/
 		void scene1();
 
+		Ogre::Vector3f* createVector(float x, float y, float z);
+
 		/**
 		Render one frame of Ogre::Root -> current scene manager
 		*/
@@ -204,7 +250,7 @@ namespace me {
 		This macro defines a compact way for using the singleton OgreManager, instead of
 		writing OgreManager::instance()->method() we write om().method()
 	*/
-	inline OgreManager& om() {
+	inline OgreManager&om() {
 		return *OgreManager::instance();
 	}
 

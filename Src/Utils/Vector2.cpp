@@ -2,12 +2,12 @@
 
 
 template<typename T>
-Vector2<T> Vector2<T>::operator+(const  Vector2<T>& s) {
+Vector2<T> Vector2<T>::operator+(const  Vector2<T>& v) {
 	return Vector2<T>(x + v.x, y + v.y);
 }
 
 template<typename T>
-Vector2<T> Vector2<T>::operator-(const  Vector2<T>& s) {
+Vector2<T> Vector2<T>::operator-(const  Vector2<T>& v) {
 	return Vector2<T>(x - v.x, y - v.y);
 }
 

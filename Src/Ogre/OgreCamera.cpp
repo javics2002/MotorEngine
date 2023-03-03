@@ -28,8 +28,19 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 	mCamera->setFarClipDistance(farDist);
 	mCamera->setAutoAspectRatio(autoRadio);
 	mCameraNode->attachObject(mCamera);
-	mViewport = mRenderWindow->addViewport(mCamera,zOrder, 0.5*zOrder,0,0.5,1);
-	mViewport->setBackgroundColour(Ogre::ColourValue(0.0f, 0.0f, 0.0f));
+	mViewport = mRenderWindow->addViewport(mCamera,0, 0.0,0,0.5,1);
+	mViewport->setBackgroundColour(Ogre::ColourValue(1.0f, 0.0f, 0.0f));
+
+	//Ogre::Camera* mCamera2 = mSceneMgr->createCamera(name+'2');
+	//mCamera2->setNearClipDistance(nearDist);
+	//mCamera2->setFarClipDistance(farDist);
+	//mCamera2->setAutoAspectRatio(autoRadio);
+	//Ogre::SceneNode* mCameraNode2 = mCameraNode->createChildSceneNode();
+	//mCameraNode2->attachObject(mCamera2);
+	//mViewport = mRenderWindow->addViewport(mCamera2, 1, 0.5, 0, 0.5, 1);
+	//mViewport->setBackgroundColour(Ogre::ColourValue(0.0f, 0.0f, 0.0f));
+
+
 		
 }
 
@@ -40,14 +51,14 @@ me::OgreCamera::~OgreCamera()
 }
 
 
-void me::OgreCamera::setPosition(int x, int y, int z)
+void me::OgreCamera::setPosition(const Ogre::Vector3f &pos)
 {
-	mCameraNode->setPosition(Ogre::Vector3(x, y, z));
+	mCameraNode->setPosition(pos);
 }
 
-void me::OgreCamera::lookAt(int x, int y, int z)
+void me::OgreCamera::lookAt(const Ogre::Vector3f &look)
 {
-	mCameraNode->lookAt(Ogre::Vector3(x, y, z), Ogre::Node::TS_WORLD);
+	mCameraNode->lookAt(look, Ogre::Node::TS_WORLD);
 }
 
 void me::OgreCamera::setViewportDimension(float left, float top, float width, float height)

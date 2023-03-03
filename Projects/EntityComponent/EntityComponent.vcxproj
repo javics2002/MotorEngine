@@ -41,6 +41,11 @@
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.vcxproj">
+      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

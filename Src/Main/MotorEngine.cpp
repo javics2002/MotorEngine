@@ -17,9 +17,17 @@ namespace me {
 
 		//Manager del proyecto de render
 		 om();
+		 std::string camJ1 = "CameraJugador1";
 
-		//ogreManager = new OgreManager();
-		//ogreManager->init();
+		 om().createCamera(camJ1, 5, 10000, true, 0);
+		 om().setCameraInfo(camJ1, *om().createVector( 0, 0, 500), *om().createVector(0, 0, -1));
+		 om().createNewLight("Luz", *om().createVector(0, 500, 500), *om().createVector(0, -1, -1));
+
+		 std::string sinbadEnt = "Sinbad";
+		 om().createMesh(sinbadEnt,"Sinbad.mesh");
+		 om().setMeshTransform(sinbadEnt, *om().createVector(0, 0, 0), *om().createVector(10, 10, 10));
+		 
+		
 
 		return 0;
 	}
@@ -51,7 +59,7 @@ namespace me {
 			/*
 			* Update the scene
 			*/
-
+			
 			/*
 			* Update physics
 			*/
@@ -67,7 +75,7 @@ namespace me {
 			* Render the scene
 			*/
 
-
+			om().render();
 			/*
 			* Update the new frames values
 			*/

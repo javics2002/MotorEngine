@@ -7,11 +7,20 @@
 #include <math.h>
 #include <cmath>
 
-#include <OgreVector3.h>
-#include <OgreQuaternion.h>
+
+//#include <OgreVector3.h>
+//#include <OgreQuaternion.h>
 #include <LinearMath/btVector3.h>
 #include <LinearMath/btQuaternion.h>
 
+namespace Ogre {
+	template<int dism, typename T>
+	class Vector;
+	typedef Vector< 3, float > 	Vector3f;
+
+	class Quaternion;
+
+}
 namespace me {
 
 	template<typename T = float>
