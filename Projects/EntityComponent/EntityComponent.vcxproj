@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
@@ -68,7 +69,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>

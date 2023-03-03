@@ -8,13 +8,17 @@
 #include <string>
 #include <memory>
 
+#include "Utils/Singleton.h"
+
 
 namespace me {
 
     class Scene;
 
-    class SceneManager {
-    public:
+    class SceneManager : public Singleton<SceneManager> {
+        friend Singleton<SceneManager>;
+
+    public:        
 
         /**
         Build the foundation of the SceneManager.
@@ -49,6 +53,20 @@ namespace me {
         std::shared_ptr<Scene> getScene(const std::string& name) const;
 
         /**
+        Get the scene that is actually active from the SceneManager.
+        */
+        inline std::shared_ptr<Scene> getActiveScene() const {
+            return mActiveScene;
+        };
+
+        /**
+        Rename an scene name to the new one.
+        @param String oldName to be change.
+        @param String newName to be set.
+        */
+        void renameScene(const std::string& oldName, const std::string& newName);
+
+        /**
         Set the active scene from the SceneManager.
         This assumes that the name is a unique identifier.
         @param String name to identify the scene suggested.
@@ -67,6 +85,14 @@ namespace me {
         std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
         std::shared_ptr<Scene> mActiveScene;
 
+    };
+
+    /**
+    This macro defines a compact way for using the singleton SceneManager, 
+    instead of writing SceneManager::instance()->method() we write sm().method()
+    */
+    inline SceneManager& sm() {
+        return *SceneManager::instance();
     };
 
 };

@@ -70,6 +70,29 @@ namespace me {
 		std::shared_ptr<Entity> findEntity(const std::string& name) const;
 
 		/**
+		Get the scene name.
+		@return String name.
+		*/
+		inline const std::string getName() const {
+			return mName;
+		};
+
+		/**
+		Set the scene name to the new one.
+		@param String name.
+		*/
+		inline void setName(const std::string name) {
+			mName = name;
+		};
+
+		/**
+		Rename an entity name to the new one.
+		@param String oldName to be change.
+		@param String newName to be set.
+		*/
+		void renameEntity(const std::string& oldName, const std::string& newName);
+
+		/**
 		This method is only ever called once.
 		This must be called at the instantiation of the script.
 		*/

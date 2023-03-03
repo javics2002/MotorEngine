@@ -7,11 +7,18 @@ namespace me {
 	Scene::Scene(const std::string name) : 
 		mName(name)
 	{
+#ifdef _DEBUG
+		std::cout << " > Scene ( " << mName << " ) created." << std::endl;
+#endif
 	};
 
 	Scene::~Scene() {
 		mNewEntities.clear();
 		mEntities.clear();
+
+#ifdef _DEBUG
+		std::cout << " >>> Scene ( " << mName << " ) deleted..." << std::endl;
+#endif
 	};
 
 	std::shared_ptr<Entity> Scene::addEntity(const std::string name) {
@@ -22,8 +29,7 @@ namespace me {
 		return e;
 	};
 
-	void Scene::removeEntity(const std::string& name)
-	{
+	void Scene::removeEntity(const std::string& name) {
 		auto it = mEntities.find(name);
 		if (it != mEntities.end()) {
 			it->second->destroy();
@@ -45,6 +51,16 @@ namespace me {
 			return it->second;
 		};
 		return nullptr;
+	};
+
+	void Scene::renameEntity(const std::string& oldName, const std::string& newName) {
+		auto it = mEntities.find(oldName);
+		auto dst = mEntities.find(newName);
+		if (it != mEntities.end() && oldName != newName && dst == mEntities.end()) {
+			it->second->setName(newName);
+			mEntities.emplace(newName, std::move(it->second));
+			mEntities.erase(it);
+		};
 	};
 
 	void Scene::start() {

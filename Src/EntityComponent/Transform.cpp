@@ -1,4 +1,5 @@
 #include "Transform.h"
+#include <iostream>
 
 me::Transform::Transform()
 {
@@ -9,10 +10,17 @@ me::Transform::Transform()
 
 	// Set parent to null
 	mParent = nullptr;
+
+#ifdef _DEBUG
+	std::cout << " > Component ( Transform ) created." << std::endl;
+#endif
 }
 
 me::Transform::~Transform()
 {
+#ifdef _DEBUG
+	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
+#endif
 }
 
 void me::Transform::update()

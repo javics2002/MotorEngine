@@ -10,6 +10,9 @@ namespace me {
 		mScn(scn), //
 		mCmpArray() //
 	{
+#ifdef _DEBUG
+		std::cout << " > Entity ( " << mName << " ) created." << std::endl;
+#endif
 	};
 
 	Entity::Entity(const std::string name) :
@@ -18,6 +21,9 @@ namespace me {
 		mScn(nullptr),
 		mCmpArray()
 	{
+#ifdef _DEBUG
+		std::cout << " > Entity " << mName << " created.";
+#endif
 	};
 
 	Entity::~Entity() {
@@ -25,6 +31,10 @@ namespace me {
 			delete c;
 		};
 		mComponents.clear();
+
+#ifdef _DEBUG
+		std::cout << " >>> Entity ( " << mName << " ) deleted..." << std::endl;
+#endif
 	};
 
 	template<typename T, typename ...Ts>

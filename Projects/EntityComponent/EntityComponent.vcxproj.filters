@@ -54,6 +54,9 @@
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Collider.h">

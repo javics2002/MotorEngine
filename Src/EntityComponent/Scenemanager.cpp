@@ -7,14 +7,21 @@ namespace me {
     SceneManager::SceneManager() :
         mActiveScene(nullptr)
     {
+#ifdef _DEBUG
+        std::cout << " > SceneManager created." << std::endl;
+#endif
     };
 
     SceneManager::~SceneManager() {
         mScenes.clear();
+
+#ifdef _DEBUG
+        std::cout << " >>> SceneManager deleted..." << std::endl;
+#endif
     };
 
     std::shared_ptr<Scene> SceneManager::addScene(const std::string& name) {
-        auto scene = std::make_shared<Scene>(this, name);
+        auto scene = std::make_shared<Scene>(name);
         if (scene != nullptr) {
             mScenes.emplace(name, scene);
         };
@@ -34,6 +41,16 @@ namespace me {
             return it->second;
         };
         return nullptr;
+    };
+
+    void SceneManager::renameScene(const std::string& oldName, const std::string& newName) {
+        auto it = mScenes.find(oldName);
+        auto dst = mScenes.find(newName);
+        if (it != mScenes.end() && oldName != newName && dst == mScenes.end()) {
+            it->second->setName(newName);
+            mScenes.emplace(newName, std::move(it->second));
+            mScenes.erase(it);
+        };
     };
 
     void SceneManager::setActiveScene(const std::string& name) {

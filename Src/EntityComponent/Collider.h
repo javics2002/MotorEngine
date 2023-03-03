@@ -2,7 +2,7 @@
 #ifndef __EC_COLLIDER
 #define __EC_COLLIDER
 
-#include <Vector3.h>
+#include "Utils/Vector3.h"
 #include "Component.h"
 #include "Entity.h"
 
