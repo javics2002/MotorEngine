@@ -14,12 +14,12 @@ of a set of components.
 #include <iostream>
 
 #include "ec.h"
-#include "Component.h"
 
 
 namespace me {
 
 	class Scene;
+	class Component;
 
 	class Entity {
 		friend Scene;
@@ -31,14 +31,13 @@ namespace me {
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
-		Entity(Scene* scn, std::string name);
-
+		Entity(Scene* scn, const std::string name);
 
 		/**
 		Build the foundation of the Entity.
 		@param String name to identify it.
 		*/
-		Entity(std::string name);
+		Entity(const std::string name);
 
 		/**
 		Delete all the components added to the entity.
@@ -55,7 +54,7 @@ namespace me {
 		T* addComponent(Ts &&... args);
 
 		/**
-		Remove completely a component.
+		Remove completely a typed component.
 		*/
 		template<typename T>
 		void removeComponent();
@@ -65,19 +64,53 @@ namespace me {
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent() {
-			auto id = ec::cmpIdx<T>;
-			return static_cast<T*>(cmpArray_[id]);
-		};
+		inline T* getComponent();
 
 		/**
 		Check if the component has already been added.
 		@return Boolean confirmation.
 		*/
 		template<typename T>
-		inline bool hasComponent() {
-			auto id = ec::cmpIdx<T>;
-			return cmpArray_[id] != nullptr;
+		inline bool hasComponent();
+
+		/**
+		Check if the entity is active.
+		@return Boolean confirmation.
+		*/
+		inline bool isActive() const {
+			return mActive;
+		};
+
+		/**
+		Set the entity activity to false.
+		This will cause to be safely delete by the scene.
+		*/
+		inline void destroy() {
+			mActive = false;
+		};
+
+		/**
+		Get the entity name.
+		@return String name.
+		*/
+		inline const std::string getName() const {
+			return mName;
+		};
+
+		/**
+		Set the entity name to the new one.
+		@param String name.
+		*/
+		inline void setName(const std::string name) {
+			mName = name;
+		};
+
+		/**
+		Get the associated scene of the entity.
+		@return Scene to which it belongs.
+		*/
+		inline Scene* getScene() const {
+			return mScn;
 		};
 
 		/**
@@ -85,31 +118,7 @@ namespace me {
 		@param Scene to which it belongs.
 		*/
 		inline void setScene(Scene* scn) {
-			scn_ = scn;
-		};
-
-		/**
-		Get the associated scene of the entity.
-		@return Scene to which it belongs.
-		*/
-		inline Scene* getScene() {
-			return scn_;
-		};
-
-		/**
-		Check if the entity is active.
-		@return Boolean confirmation.
-		*/
-		inline bool isActive() const {
-			return active_;
-		};
-
-		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
-		*/
-		inline void setActive(bool state) {
-			active_ = state;
+			mScn = scn;
 		};
 
 		/**
@@ -141,11 +150,11 @@ namespace me {
 
 	private:
 
-		bool active_;
-		std::string name_;
-		Scene* scn_;
-		std::vector<Component*> components_;
-		std::array<Component*, ec::maxComponent> cmpArray_;
+		bool mActive;
+		std::string mName;
+		Scene* mScn;
+		std::vector<Component*> mComponents;
+		std::array<Component*, maxComponent> mCmpArray;
 
 	};
 

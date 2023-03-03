@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef UTILS_VECTOR3;
-#define UTILS_VECTOR3;
+#ifndef __UTILS_VECTOR4
+#define __UTILS_VECTOR4
 
 
 template< typename T = float>

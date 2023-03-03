@@ -8,6 +8,7 @@
 
 #include "PhysicsManager.h"
 #include "SDL/Window.h"
+#include "Utils/Vector3.h"
 
 using namespace me;
 
@@ -15,6 +16,8 @@ int main() {
     
     pm();
     win();
+    
+    //pm().update(5);
 
     SDL_Event event;
     while (SDL_WaitEvent(&event)) {

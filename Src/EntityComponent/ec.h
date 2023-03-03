@@ -1,3 +1,9 @@
+/**
+This file contains several definitions related to entities and components.
+The type list of components, a variable to access the index of a suggested type component 
+and a constant the defines the total number of components types.
+*/
+
 #pragma once
 
 #ifndef __EC
@@ -24,7 +30,7 @@ namespace me {
 	#endif 
 	 
 	/**
-	Defines a default component list.
+	Defines a default component list consisting of a single dummy component.
 	*/
 	#ifndef  _CMPS_LIST_
 	class ___DummyComponent____;
@@ -32,31 +38,29 @@ namespace me {
 	#endif
 
 
-	namespace ec {
+	/**
+	Defines the name reference of the class that must use this.
+	*/
+	class Entity;
+	class Component;
 
-		/**
-		Defines the name reference of the class that must use this.
-		*/
-		class Entity;
-		class Component;
+	/**
+	Creates the list of the declarated components.
+	*/
+	using ComponentsList = TypeList<_CMPS_LIST_>;
 
-		/**
-		Creates the list of the declarated components.
-		*/
-		using ComponentsList = mpl::TypeList<_CMPS_LIST_>;
+	/**
+	The cmpIdx template variable is used to get the index 
+	of a component type in the ComponentsList.
+	*/
+	template<typename T>
+	constexpr std::size_t cmpIdx = IndexOf<T, ComponentsList>();
 
-		/**
-		Gets the position in the list of the suggested component.
-		*/
-		template<typename T>
-		constexpr std::size_t cmpIdx = mpl::IndexOf<T, ComponentsList>();
-
-		/**
-		Gets the top index of the list of declarated components.
-		*/
-		constexpr std::size_t maxComponent = ComponentsList::size;
-
-	};
+	/**
+	The maxComponent constant is defined as the size of the ComponentsList,
+	representing the total number of component types defined.
+	*/
+	constexpr std::size_t maxComponent = ComponentsList::size;
 
 };
 

@@ -8,6 +8,7 @@ using namespace me;
 
 InputManager::InputManager()
 {
+	SDL_AddEventWatch(watchControllers, NULL);
 }
 
 InputManager::~InputManager()
@@ -152,6 +153,8 @@ bool InputManager::addBinding(std::string name, Input input)
 		std::cout << "keyboard " << SDL_GetKeyName(input.which) << ".\n";
 	else if (input.type == SDL_EVENT_MOUSE_BUTTON_DOWN || input.type == SDL_EVENT_KEY_UP)
 		std::cout << "mouse button " << input.which << ".\n";
+	else if (input.type == SDL_EVENT_GAMEPAD_BUTTON_DOWN || input.type == SDL_EVENT_GAMEPAD_BUTTON_UP)
+		std::cout << "gamepad button " << input.which << ".\n";
 	else
 		std::cout << input.which << ".\n";
 #endif
@@ -281,7 +284,10 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 		case SDL_EVENT_MOUSE_BUTTON_UP:
 			input.which = event->button.button;
 			break;
-		//CONTROLLER TO BE IMPLEMENTED
+		case SDL_EVENT_GAMEPAD_BUTTON_DOWN:
+		case SDL_EVENT_GAMEPAD_BUTTON_UP:
+			input.which = event->cbutton.button;
+			break;
 		default:
 			return -1;
 		}
@@ -340,4 +346,32 @@ bool InputManager::deleteOnButtonPressedEvent(std::string name, int(*callback)(v
 #endif
 
 	return true;
+}
+
+int InputManager::watchControllers(void* userdata, SDL_Event* event)
+{
+	switch (event->type)
+	{
+	case SDL_EVENT_GAMEPAD_ADDED:
+		
+		instance()->mGamepads[1] = SDL_OpenGamepad(event->cdevice.which);
+
+#ifdef _DEBUG
+		std::cout << SDL_GetGamepadName(instance()->mGamepads[1]) << " detected. ID: " << event->cdevice.which <<"\n";
+#endif
+		break;
+	case SDL_EVENT_GAMEPAD_REMOVED:
+#ifdef _DEBUG
+		std::cout << SDL_GetGamepadName(instance()->mGamepads[1]) << " removed. ID: " << event->cdevice.which << "\n";
+#endif
+
+		SDL_CloseGamepad(instance()->mGamepads[1]);
+
+		instance()->mGamepads.erase(1);
+		break;
+	default:
+		break;
+	}
+		
+	return 0;
 }

@@ -1,29 +1,30 @@
 #include "Entity.h"
+#include "Component.h"
 
 
 namespace me {
 
-	Entity::Entity(Scene* scn, std::string name) :
-		active_(true), //
-		name_(name), // 
-		scn_(scn), //
-		cmpArray_() //
+	Entity::Entity(Scene* scn, const std::string name) :
+		mActive(true), //
+		mName(name), // 
+		mScn(scn), //
+		mCmpArray() //
 	{
 	};
 
-	Entity::Entity(std::string name):
-		active_(false),
-		name_(name),
-		scn_(nullptr),
-		cmpArray_()
+	Entity::Entity(const std::string name) :
+		mActive(true),
+		mName(name),
+		mScn(nullptr),
+		mCmpArray()
 	{
-	}
+	};
 
 	Entity::~Entity() {
-		for (auto c : components_) {
+		for (auto c : mComponents) {
 			delete c;
 		};
-		components_.clear();
+		mComponents.clear();
 	};
 
 	template<typename T, typename ...Ts>
@@ -31,68 +32,83 @@ namespace me {
 		T* c = new T(std::forward<Ts>(args)...);
 		c->setEntity(this);
 		c->start();
-		constexpr auto id = ec::cmpIdx<T>;
+		constexpr auto id = cmpIdx<T>;
 
-		if (cmpArray_[id] != nullptr) {
+		if (mCmpArray[id] != nullptr) {
 			removeComponent<T>();
 		};
 
-		cmpArray_[id] = c;
-		components_.emplace_back(c);
+		mCmpArray[id] = c;
+		mComponents.emplace_back(c);
 
 		return c;
 	};
 
 	template<typename T>
 	void Entity::removeComponent() {
-		auto id = ec::cmpIdx<T>;
-		if (cmpArray_[id] != nullptr) {
-			Component* old_cmp = cmpArray_[id];
-			cmpArray_[id] = nullptr;
-			components_.erase( //
+		auto id = cmpIdx<T>;
+		if (mCmpArray[id] != nullptr) {
+			Component* old_cmp = mCmpArray[id];
+			mCmpArray[id] = nullptr;
+			mComponents.erase( //
 				std::find_if( //
-					components_.begin(), //
-					components_.end(), //
+					mComponents.begin(), //
+					mComponents.end(), //
 					[old_cmp](const Component* c) { //
 				return c == old_cmp;
 			}));
 			delete old_cmp;
 		};
+	}
+	template<typename T>
+	inline T* Entity::getComponent() {
+		auto id = cmpIdx<T>;
+		return static_cast<T*>(mCmpArray[id]);
+	};
+
+	template<typename T>
+	inline bool Entity::hasComponent() {
+		auto id = cmpIdx<T>;
+		return mCmpArray[id] != nullptr;
 	};
 
 	void Entity::update() {
-		std::size_t n = components_.size();
+		if (!mActive) return;
+
+		std::size_t n = mComponents.size();
 		for (auto i = 0u; i < n; i++) {
-			if(components_[i]->enabled)
-				components_[i]->update();
+			if(mComponents[i]->enabled)
+				mComponents[i]->update();
 		};
 	};
 
 	void Entity::lateUpdate() {
-		std::size_t n = components_.size();
+		if (!mActive) return;
+
+		std::size_t n = mComponents.size();
 		for (auto i = 0u; i < n; i++) {
-			if (components_[i]->enabled)
-				components_[i]->lateUpdate();
+			if (mComponents[i]->enabled)
+				mComponents[i]->lateUpdate();
 		};
 	};
 
 	void Entity::OnCollisionEnter(Entity* other)
 	{
-		for (Component* comp : components_) {
+		for (Component* comp : mComponents) {
 			if(comp->enabled)
 				comp->OnCollisionEnter(other);
 		}
 	}
 	void Entity::OnCollisionStay(Entity* other)
 	{
-		for (Component* comp : components_) {
+		for (Component* comp : mComponents) {
 			if (comp->enabled)
 				comp->OnCollisionStay(other);
 		}
 	}
 	void Entity::OnCollisionExit(Entity* other)
 	{
-		for (Component* comp : components_) {
+		for (Component* comp : mComponents) {
 			if (comp->enabled)
 				comp->OnCollisionExit(other);
 		}

@@ -1,3 +1,7 @@
+/**
+This file contains the declaration of the differents types of components.
+*/
+
 #pragma once
 
 #ifndef __EC_DEFS
