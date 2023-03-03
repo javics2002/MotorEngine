@@ -5,6 +5,7 @@
 #include "Utils/Singleton.h"
 #include <unordered_map>
 #include <string>
+#include <OgreColourValue.h>
 
 
 namespace Ogre {
@@ -16,7 +17,7 @@ namespace Ogre {
 	class Quaternion;
 	template<int dism, typename T>
 	class Vector;
-	typedef Vector< 3, float > 	Vector3f;
+	typedef Vector<3, float> Vector3f;
 
 	namespace RTShader {
 		class ShaderGenerator;
@@ -148,7 +149,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder);
+		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 		
 		/**
 		Create the camera with this name and store it
@@ -160,7 +161,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder);
+		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 
 		/**
 		Set location and direction to the camera with this name
@@ -235,8 +236,6 @@ namespace me {
 		Example scene where rendering a sinbad with 2 camera,viewport
 		*/
 		void scene1();
-
-		Ogre::Vector3f* createVector(float x, float y, float z);
 
 		/**
 		Render one frame of Ogre::Root -> current scene manager

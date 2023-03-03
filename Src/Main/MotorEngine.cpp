@@ -8,27 +8,89 @@
 #include <memory>
 #include <random>
 #include "Ogre/OgreManager.h"
+#include "SDL/InputManager.h"
+#include <Ogre.h>
+#include <SDL3/SDL_events.h>
+#include "SDL/Window.h"
+#include <SDL3/SDL_init.h>
+
+int interact(void* userdata)
+{
+	std::cout << "Interacting!\n";
+
+	return 0;
+}
+
+int toggleInteract(void* userdata)
+{
+	bool* interactActive = (bool*)userdata;
+	if (*interactActive)
+		me::im().deleteOnButtonPressedEvent("Interact", interact, NULL);
+	else
+		me::im().addOnButtonPressedEvent("Interact", interact, NULL);
+
+	*interactActive = !*interactActive;
+
+	return 0;
+}
+
+int shoot(void* userdata)
+{
+	std::cout << "Shooting!\n";
+
+	return 0;
+}
+
 
 namespace me {
 
 	int MotorEngine::setup()
 	{
-		srand(std::time(NULL)); rand();
+		Window::init(SDL_INIT_EVERYTHING, "Motor Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+			854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 		//Manager del proyecto de render
-		 om();
-		 std::string camJ1 = "CameraJugador1";
+		std::string camJ1 = "CameraJugador1";
+		om().createCamera(camJ1, 5, 10000, true, 0, Ogre::ColourValue(0.0f, 0.0f, 0.1f));
+		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 0, 500), Ogre::Vector3(0, 0, -1));
+		om().createNewLight("Luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
 
-		 om().createCamera(camJ1, 5, 10000, true, 0);
-		 om().setCameraInfo(camJ1, *om().createVector( 0, 0, 500), *om().createVector(0, 0, -1));
-		 om().createNewLight("Luz", *om().createVector(0, 500, 500), *om().createVector(0, -1, -1));
+		std::string sinbadEnt = "Sinbad";
+		om().createMesh(sinbadEnt,"Sinbad.mesh");
+		om().setMeshTransform(sinbadEnt, Ogre::Vector3f(0, 0, 0), Ogre::Vector3f(10, 10, 10));
 
-		 std::string sinbadEnt = "Sinbad";
-		 om().createMesh(sinbadEnt,"Sinbad.mesh");
-		 om().setMeshTransform(sinbadEnt, *om().createVector(0, 0, 0), *om().createVector(10, 10, 10));
-		 
+		Input keyboardE;
+		keyboardE.type = SDL_EVENT_KEY_DOWN;
+		keyboardE.which = SDLK_e;
+
+		im().addButton("Interact", keyboardE);
+
+		static bool interactActive = false;
+
+		Input keyboardSpace;
+		keyboardSpace.type = SDL_EVENT_KEY_DOWN;
+		keyboardSpace.which = SDLK_SPACE;
+		im().addButton("Space", keyboardSpace);
+
+		im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
+
+		Input leftClick;
+		leftClick.type = SDL_EVENT_MOUSE_BUTTON_DOWN;
+		leftClick.which = SDL_BUTTON_LEFT;
+		im().addButton("Shoot", leftClick);
+
+		im().addOnButtonPressedEvent("Shoot", shoot);
+
+		Input controllerA;
+		controllerA.type = SDL_EVENT_GAMEPAD_BUTTON_DOWN;
+		controllerA.which = SDL_GAMEPAD_BUTTON_A;
+
+		im().addButton("A", controllerA);
+
+		im().addOnButtonPressedEvent("A", shoot);
+
+		std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
 		
-
 		return 0;
 	}
 
@@ -48,14 +110,10 @@ namespace me {
 		std::chrono::steady_clock::time_point beginFrame = gameStartFrame;
 		std::chrono::steady_clock::time_point lastPhysicFrame = gameStartFrame;
 
-		while (true) {
-			/*
-			* If we press SDL_QUIT (Exit button), the game stops and closes
-			*/
-			//if (!inputManager->handleInput()) {
-			//	break;
-			//}
-
+		SDL_Event event;
+		bool quit = false;
+		im().addEvent(quitLoop, &quit);
+		while (!quit && SDL_WaitEvent(&event)) {
 			/*
 			* Update the scene
 			*/
@@ -74,8 +132,8 @@ namespace me {
 			/*
 			* Render the scene
 			*/
-
 			om().render();
+
 			/*
 			* Update the new frames values
 			*/
@@ -91,7 +149,7 @@ namespace me {
 		Clear the memory created in the execution of the program
 		*/
 
-		delete ogreManager;
+		//delete ogreManager;
 	}
 
 	void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame, 
@@ -103,5 +161,19 @@ namespace me {
 		//time->timeSinceStart = timeSinceStart.count();
 		//time->deltaTime = timeSinceLastFrame.count() * 0.001;
 		//time->frameCount++;
+	}
+
+	int MotorEngine::quitLoop(void* userdata, SDL_Event* event)
+	{
+		if (event->type == SDL_EVENT_QUIT || (event->type == SDL_EVENT_KEY_DOWN && event->key.keysym.sym == SDLK_ESCAPE)) {
+			bool* quit = (bool*)userdata;
+			*quit = true;
+
+#ifdef _DEBUG
+			std::cout << "MotorEngine quitting...\n";
+#endif
+		}
+
+		return 0;
 	}
 };

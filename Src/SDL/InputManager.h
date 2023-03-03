@@ -10,6 +10,8 @@
 #include <unordered_map>
 
 namespace me {
+	enum InputType { INPUTTYPE_KEYBOARD, INPUTTYPE_MOUSE, INPUTTYPE_GAMEPAD, INPUTTYPE_NULL };
+
 	/**
 	InputManager provides information and callbacks for any user input from
 	keyboard, mouse and game controller.
@@ -41,6 +43,16 @@ namespace me {
 		Manages the connection and disconnection of controllers.
 		*/
 		static int watchControllers(void* userdata, SDL_Event* event);
+
+		/*
+		Updates button and axis' data
+		*/
+		static int updateInputData(void* userdata, SDL_Event* event);
+
+		/*
+		Constructs input struct for any given event
+		*/
+		static Input getInput(SDL_Event* event);
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;

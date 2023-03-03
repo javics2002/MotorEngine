@@ -4,6 +4,8 @@
 
 #include <chrono>
 
+union SDL_Event;
+
 namespace me {
 	class OgreManager;
 
@@ -28,6 +30,11 @@ namespace me {
 		*/
 		void updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame,
 			const std::chrono::steady_clock::time_point& endFrame, const std::chrono::steady_clock::time_point& gameStartFrame);
+
+		/*
+		* If we press SDL_QUIT (Exit button), the game stops and closes
+		*/
+		static int quitLoop(void* userdata, SDL_Event* event);
 	};
 }
 

@@ -7,6 +7,8 @@
 #include <SDL3/SDL_events.h>
 
 namespace me {
+	enum InputType;
+
 	/**
 	Representation of a virtual button, so you can unify input
 	given any controller, keyboard or mouse.
@@ -19,11 +21,12 @@ namespace me {
 	//Represents a physical button or key that can trigger a virtual button.
 	struct Input {
 		/*
-		SDL_EVENT_KEY_DOWN for keyboard key presses
-		SDL_MouseButtonEvent for mouse clicks
-		SDL_ControllerButtonEvent for controller presses
+		INPUTTYPE_KEYBOARD for keyboard key presses
+		INPUTTYPE_MOUSE for mouse clicks
+		INPUTTYPE_GAMEPAD for controller presses
+		INPUTTYPE_NULL for invalid input
 		*/
-		SDL_EventType type;
+		InputType type;
 
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event.*/

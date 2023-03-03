@@ -12,6 +12,6 @@ Vector2<T> Vector2<T>::operator-(const  Vector2<T>& v) {
 }
 
 template<typename T>
-Vector2<T> Vector2<T>::operator*(const  T s) {
-	return Vector2<T>(x * s, y * s);
+Vector2<T> Vector2<T>::operator*(const  T v) {
+	return Vector2<T>(x * v, y * v);
 }

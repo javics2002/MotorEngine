@@ -3,9 +3,10 @@
 #define __SDL_AXIS
 
 #include <string>
-#include <SDL3/SDL_events.h>
 
 namespace me {
+	enum InputType;
+
 	//This data defines the behaviour of the axis
 	struct AxisInfo {
 		//Speed in units per second that the axis falls toward neutral when no input is present.
@@ -23,16 +24,20 @@ namespace me {
 	struct Axis : AxisInfo {
 		//Normalized value
 		float value;
+
+		//Whether the axis is receiving input
+		bool active;
 	};
 
 	//Represents two physical buttons or keys that can trigger a virtual axis
 	struct AxisInput {
 		/*
-		SDL_KeyboardEvent for keyboard key presses
-		SDL_MouseButtonEvent for mouse clicks
-		SDL_ControllerButtonEvent for controller presses
+		INPUTTYPE_KEYBOARD for keyboard key presses
+		INPUTTYPE_MOUSE for mouse clicks
+		INPUTTYPE_GAMEPAD for controller presses
+		INPUTTYPE_NULL for invalid input
 		*/
-		SDL_EventType type;
+		InputType type;
 
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event*/

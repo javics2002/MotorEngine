@@ -56,12 +56,11 @@ void OgreWindow::createWindow(Ogre::Root* root)
 
 	
 
-	Uint32 flags = SDL_WINDOW_RESIZABLE;		//| SDL_WINDOW_INPUT_FOCUS;
+	Uint32 flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS;
 
 	if (cOptionMap["Full Screen"].currentValue == "Yes")
-		flags = SDL_WINDOW_FULLSCREEN;		//| SDL_WINDOW_INPUT_FOCUS;
+		flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_INPUT_FOCUS;
 
-	me::Window::init(SDL_INIT_EVERYTHING, mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 	mSdlWindow = win().get();
 	
 	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);

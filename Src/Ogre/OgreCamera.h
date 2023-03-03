@@ -43,7 +43,7 @@ namespace me {
 		@param autoRadio: if viewport calculate aspect radio automatically
 		@param zOrder: relative order of mViewport
 		*/
-		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder);
+		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 
 		//Set position to mCameraNode
 		void setPosition(const Ogre::Vector3f &pos);

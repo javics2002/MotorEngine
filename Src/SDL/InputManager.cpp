@@ -3,12 +3,19 @@
 #include <iostream>
 #include <typeinfo>
 #endif
+#define EVENT_BUTTON_DOWN event->type == SDL_EVENT_KEY_DOWN || \
+	event->type == SDL_EVENT_MOUSE_BUTTON_DOWN || \
+	event->type == SDL_EVENT_GAMEPAD_BUTTON_DOWN
+#define EVENT_BUTTON_UP event->type == SDL_EVENT_KEY_UP || \
+	event->type == SDL_EVENT_MOUSE_BUTTON_UP || \
+	event->type == SDL_EVENT_GAMEPAD_BUTTON_UP
 
 using namespace me;
 
 InputManager::InputManager()
 {
 	SDL_AddEventWatch(watchControllers, NULL);
+	SDL_AddEventWatch(updateInputData, NULL);
 }
 
 InputManager::~InputManager()
@@ -249,7 +256,10 @@ float InputManager::getAxis(std::string name)
 		return .0f;
 	}
 
-	return mAxis[name].value;
+	if (std::abs(mAxis[name].value) >= mAxis[name].dead)
+		return mAxis[name].value;
+	else
+		return 0;
 }
 
 bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData)
@@ -267,33 +277,13 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 	any of the virtual button's bindings.*/
 	OnButtonPressedInfo info;
 	info.filter = [](void* userdata, SDL_Event* event)->int {
+		if (EVENT_BUTTON_UP)
+			return 0;
+
 		OnButtonPressedInfo* info = (OnButtonPressedInfo*)userdata;
 
-		//Get input
-		Input input;
-		input.type = (SDL_EventType)event->type;
-		switch (input.type)
-		{
-		case SDL_EVENT_KEY_DOWN:
-			if (event->key.repeat)
-				return -1;
-		case SDL_EVENT_KEY_UP:
-			input.which = event->key.keysym.sym;
-			break;
-		case SDL_EVENT_MOUSE_BUTTON_DOWN:
-		case SDL_EVENT_MOUSE_BUTTON_UP:
-			input.which = event->button.button;
-			break;
-		case SDL_EVENT_GAMEPAD_BUTTON_DOWN:
-		case SDL_EVENT_GAMEPAD_BUTTON_UP:
-			input.which = event->cbutton.button;
-			break;
-		default:
-			return -1;
-		}
-
 		//Call callback if input matches any of the virtual button's bindings.
-		auto bindings = info->buttonBindings->equal_range(input);
+		auto bindings = info->buttonBindings->equal_range(getInput(event));
 		for (auto binding = bindings.first; binding != bindings.second; binding++)
 			if (binding->second == info->buttonName)
 				info->callback(info->additionalData);
@@ -374,4 +364,71 @@ int InputManager::watchControllers(void* userdata, SDL_Event* event)
 	}
 		
 	return 0;
+}
+
+int InputManager::updateInputData(void* userdata, SDL_Event* event)
+{
+	Input input = getInput(event);
+
+	//Update all buttons binded to that input
+	auto bindings = instance()->mButtonBindings.equal_range(input);
+	for (auto binding = bindings.first; binding != bindings.second; binding++)
+		instance()->mButtons[binding->second].pressed = EVENT_BUTTON_DOWN;
+
+	//Return all unactive axis towards zero
+	for (auto& axis : instance()->mAxis)
+		if (axis.second.active)
+			continue;
+		else if (axis.second.value > 0)
+			axis.second.value = std::max(.0f, axis.second.value - axis.second.gravity);
+		else 
+			axis.second.value = std::min(.0f, axis.second.value + axis.second.gravity);
+
+	//Update all axis binded to that input
+	bindings = instance()->mPositiveAxisBindings.equal_range(input);
+	for (auto binding = bindings.first; binding != bindings.second; binding++) {
+		instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+		instance()->mAxis[binding->second].value = 1;
+	}
+	bindings = instance()->mNegativeAxisBindings.equal_range(input);
+	for (auto binding = bindings.first; binding != bindings.second; binding++) {
+		instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+		instance()->mAxis[binding->second].value = -1;
+	}
+
+	return 0;
+}
+
+Input me::InputManager::getInput(SDL_Event* event)
+{
+	Input input;
+	switch (event->type)
+	{
+	case SDL_EVENT_KEY_DOWN:
+		if (event->key.repeat) {
+			input.type = INPUTTYPE_NULL;
+			input.which = -1;
+			break;
+		}
+	case SDL_EVENT_KEY_UP:
+		input.type = INPUTTYPE_KEYBOARD;
+		input.which = event->key.keysym.sym;
+		break;
+	case SDL_EVENT_MOUSE_BUTTON_UP:
+	case SDL_EVENT_MOUSE_BUTTON_DOWN:
+		input.type = INPUTTYPE_MOUSE;
+		input.which = event->button.button;
+		break;
+	case SDL_EVENT_GAMEPAD_BUTTON_DOWN:
+	case SDL_EVENT_GAMEPAD_BUTTON_UP:
+		input.type = INPUTTYPE_GAMEPAD;
+		input.which = event->cbutton.button;
+		break;
+	default:
+		input.type = INPUTTYPE_NULL;
+		input.which = -1;
+		break;
+	}
+
+	return input;
 }

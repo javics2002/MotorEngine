@@ -21,7 +21,7 @@ void me::OgreCamera::init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* Scene
 	mRenderWindow = RenderWindow;
 }
 
-void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder)
+void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 	mCamera = mSceneMgr->createCamera(name);
 	mCamera->setNearClipDistance(nearDist);
@@ -29,7 +29,7 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 	mCamera->setAutoAspectRatio(autoRadio);
 	mCameraNode->attachObject(mCamera);
 	mViewport = mRenderWindow->addViewport(mCamera,0, 0.0,0,0.5,1);
-	mViewport->setBackgroundColour(Ogre::ColourValue(1.0f, 0.0f, 0.0f));
+	mViewport->setBackgroundColour(color);
 
 	//Ogre::Camera* mCamera2 = mSceneMgr->createCamera(name+'2');
 	//mCamera2->setNearClipDistance(nearDist);

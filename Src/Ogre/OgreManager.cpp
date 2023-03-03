@@ -144,7 +144,7 @@ me::OgreManager::~OgreManager()
 	delete ogreWindow;
 }
 
-bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder)
+bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 
 	if (mCameras.count(name))
@@ -155,24 +155,24 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder)
+bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 	if (mCameras.count(name))
 		return false;
 
 	OgreCamera* camera = new OgreCamera();
-	Ogre::SceneNode* cameraNode =createNode(name);
+	Ogre::SceneNode* cameraNode = createNode(name);
 
 	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
 
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
 
 	mCameras[name] = camera;
 
@@ -298,13 +298,6 @@ Ogre::SceneNode* me::OgreManager::createNode(std::string name)
 Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string parent)
 {
 	return mSM->getSceneNode(parent)->createChildSceneNode(name);
-}
-
-
-
-Ogre::Vector3f* me::OgreManager::createVector(float x, float y, float z)
-{
-	return new Ogre::Vector3f(x,y,z);
 }
 
 void me::OgreManager::render()

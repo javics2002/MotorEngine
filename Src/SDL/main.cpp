@@ -57,6 +57,13 @@ int shoot(void* userdata)
     return 0;
 }
 
+int getAxisValue(void* userdata) {
+    char* name = (char*) userdata;
+    std::cout << name << " axis value: " << im().getAxis(name) << "\n";
+
+    return 0;
+}
+
 int main() {
 	im();
     Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
@@ -69,7 +76,7 @@ int main() {
     //name = (char*) "Rayo";
 
     Input keyboardE;
-    keyboardE.type = SDL_EVENT_KEY_DOWN;
+    keyboardE.type = INPUTTYPE_KEYBOARD;
     keyboardE.which = SDLK_e;
 
     im().addButton("Interact", keyboardE);
@@ -77,26 +84,46 @@ int main() {
     bool interactActive = false;
 
     Input keyboardSpace;
-    keyboardSpace.type = SDL_EVENT_KEY_DOWN;
+    keyboardSpace.type = INPUTTYPE_KEYBOARD;
     keyboardSpace.which = SDLK_SPACE;
     im().addButton("Space", keyboardSpace);
 
     im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
 
     Input leftClick;
-    leftClick.type = SDL_EVENT_MOUSE_BUTTON_DOWN;
+    leftClick.type = INPUTTYPE_MOUSE;
     leftClick.which = SDL_BUTTON_LEFT;
     im().addButton("Shoot", leftClick);
 
     im().addOnButtonPressedEvent("Shoot", shoot);
 
     Input controllerA;
-    controllerA.type = SDL_EVENT_GAMEPAD_BUTTON_DOWN;
+    controllerA.type = INPUTTYPE_GAMEPAD;
     controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
     im().addButton("A", controllerA);
 
     im().addOnButtonPressedEvent("A", shoot);
+
+    AxisInput horizontal;
+    horizontal.type = INPUTTYPE_KEYBOARD;
+    horizontal.positive = SDLK_d;
+    horizontal.negative = SDLK_a;
+
+    AxisInfo horizontalInfo;
+    horizontalInfo.dead = .1;
+    horizontalInfo.gravity = .01;
+
+    char* horizontalName = (char*) "Horizontal";
+    im().addAxis(horizontalName, horizontalInfo, horizontal);
+
+    Input keyboardP;
+    keyboardP.type = INPUTTYPE_KEYBOARD;
+    keyboardP.which = SDLK_p;
+
+    im().addButton("P", keyboardP);
+    im().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
+
 
     std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
 
