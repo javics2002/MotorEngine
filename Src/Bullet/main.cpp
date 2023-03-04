@@ -7,15 +7,32 @@
 #include <SDL3/SDL_events.h>
 
 #include "PhysicsManager.h"
-#include "SDL/Window.h"
 #include "Utils/Vector3.h"
+#include "Ogre/OgreManager.h"
+#include "EntityComponent/Entity.h"
+#include "EntityComponent/RigidBody.h"
+#include "EntityComponent/MeshRenderer.h"
 
 using namespace me;
 
 int main() {
     
     pm();
-    win();
+
+    std::string cam = "CameraDemo";
+
+    om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0));
+    om().setCameraInfo(cam, Ogre::Vector3f(0, 0, 500), Ogre::Vector3f(0, 0, -1));
+
+    Entity* cube = new Entity("cube");    
+
+    //cube->addComponent<Transform>();
+    //cube->addComponent<RigidBody>(1, 1, 5, 0.3, 0.5, false);
+    //cube->addComponent<MeshRenderer>("c", "cube.mesh");
+
+    //Ogre::SceneNode* mCubeNode;
+    
+
     
     //pm().update(5);
 

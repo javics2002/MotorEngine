@@ -3,7 +3,6 @@
 #ifndef __RIGID_BODY
 #define  __RIGID_BODY
 
-#include "Component.h"
 #include "Transform.h"
 
 class btRigidBody;
@@ -31,6 +30,7 @@ namespace me{
 		btTransform* mBtTransform = nullptr;
 
 		Transform* mTransform = nullptr;
+		btVector3 scale;
 
 	public:
 
@@ -64,7 +64,7 @@ namespace me{
 		@param force is the vector of the force to apply
 		@param relativePos is the local pos of the rigidBody
 		*/
-		void addForce(Vector3<float> force, Vector3<float> relativePos);
+		void addForce(Vector3 force, Vector3 relativePos);
 
 		/**
 		Apply a impulse to the rigidBody
@@ -72,7 +72,7 @@ namespace me{
 		@param impulse is the vector of the impulse to apply
 		@param relativePos is the local pos of the rigidBody
 		*/
-		void addImpulse(Vector3<float> impulse, Vector3<float> relativePos);
+		void addImpulse(Vector3 impulse, Vector3 relativePos);
 
 		/*
 		Get the mass of the rigidBody

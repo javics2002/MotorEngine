@@ -6,6 +6,8 @@
 
 #include "Bullet/PhysicsManager.h"
 
+#include "Entity.h"
+
 me::RigidBody::RigidBody(int colShape, int mvType, float mass, float friction, float restitution, bool isTrigger)
 {
 	mColShape = colShape;
@@ -23,11 +25,14 @@ me::RigidBody::~RigidBody()
 void me::RigidBody::start()
 {
 
-	mTransform = getComponent<Transform>();
+	mTransform = mEntity->getComponent<Transform>();
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
-	mBtRigidBody = pm().createRigidBody(mBtTransform, &mTransform->getScale().v3ToBulletV3(), Shapes(mColShape), MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
+	scale = mTransform->getScale().v3ToBulletV3();
+
+	mBtRigidBody = pm().createRigidBody(mBtTransform, &scale, Shapes(mColShape),
+		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
 	
 }
 
@@ -61,12 +66,12 @@ void me::RigidBody::setRestitution(float restitution)
 	mRestitution = restitution;
 }
 
-void me::RigidBody::addForce(Vector3<float> force, Vector3<float> relativePos)
+void me::RigidBody::addForce(Vector3 force, Vector3 relativePos)
 {
 	mBtRigidBody->applyForce(force.v3ToBulletV3(), relativePos.v3ToBulletV3());
 }
 
-void me::RigidBody::addImpulse(Vector3<float> impulse, Vector3<float> relativePos)
+void me::RigidBody::addImpulse(Vector3 impulse, Vector3 relativePos)
 {
 	mBtRigidBody->applyImpulse(impulse.v3ToBulletV3(), relativePos.v3ToBulletV3());
 }

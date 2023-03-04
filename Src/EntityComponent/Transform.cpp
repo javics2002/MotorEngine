@@ -4,9 +4,9 @@
 me::Transform::Transform()
 {
 	// Initialize position, rotation and scale vectors
-	mPosition = new Vector3<float>(0.0, 0.0, 0.0);
+	mPosition = new Vector3(0.0, 0.0, 0.0);
 	mRotation = Ogre::Quaternion::IDENTITY;
-	mScale = new Vector3<float>(1.0, 1.0, 1.0);
+	mScale = new Vector3(1.0, 1.0, 1.0);
 
 	// Set parent to null
 	mParent = nullptr;
@@ -28,7 +28,7 @@ void me::Transform::update()
 
 }
 
-me::Vector3<float> me::Transform::getPosition()
+me::Vector3 me::Transform::getPosition()
 {
 	return mPosition;
 }
@@ -43,12 +43,12 @@ btQuaternion me::Transform::getRotationInBullet()
 	return btQuaternion(mRotation.x, mRotation.y, mRotation.z, mRotation.w);
 }
 
-me::Vector3<float> me::Transform::getScale()
+me::Vector3 me::Transform::getScale()
 {
 	return mScale;
 }
 
-void me::Transform::setPosition(Vector3<float> newPosition)
+void me::Transform::setPosition(Vector3 newPosition)
 {
 	mPosition = newPosition;
 }
@@ -58,17 +58,17 @@ void me::Transform::setRotation(Ogre::Quaternion newRotation)
 	mRotation = newRotation;
 }
 
-void me::Transform::setScale(Vector3<float> newScale)
+void me::Transform::setScale(Vector3 newScale)
 {
 	mScale = newScale;
 }
 
-void me::Transform::translate(Vector3<float> translation)
+void me::Transform::translate(Vector3 translation)
 {
 	mPosition += translation;
 }
 
-void me::Transform::rotate(Vector3<float> rotation)
+void me::Transform::rotate(Vector3 rotation)
 {
 	// To be implemented
 }

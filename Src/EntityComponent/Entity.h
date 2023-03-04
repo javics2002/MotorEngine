@@ -51,27 +51,62 @@ namespace me {
 		@return Reference to the new component.
 		*/
 		template<typename T, typename ...Ts>
-		T* addComponent(Ts &&... args);
+		T* addComponent(Ts &&... args) {
+			T* c = new T(std::forward<Ts>(args)...);
+			c->setEntity(this);
+			c->start();
+			constexpr auto id = cmpIdx<T>;
+
+			if (mCmpArray[id] != nullptr) {
+				removeComponent<T>();
+			};
+
+			mCmpArray[id] = c;
+			mComponents.emplace_back(c);
+
+			return c;
+		};
 
 		/**
 		Remove completely a typed component.
 		*/
 		template<typename T>
-		void removeComponent();
+		void removeComponent() {
+			auto id = cmpIdx<T>;
+			if (mCmpArray[id] != nullptr) {
+				Component* old_cmp = mCmpArray[id];
+				mCmpArray[id] = nullptr;
+				mComponents.erase( //
+					std::find_if( //
+						mComponents.begin(), //
+						mComponents.end(), //
+						[old_cmp](const Component* c) { //
+							return c == old_cmp;
+						}));
+				delete old_cmp;
+			};
+		}
+		
 
 		/**
 		Get the reference a suggested component.
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent();
+		inline T* getComponent() {
+			auto id = cmpIdx<T>;
+			return static_cast<T*>(mCmpArray[id]);
+		};
 
 		/**
 		Check if the component has already been added.
 		@return Boolean confirmation.
 		*/
 		template<typename T>
-		inline bool hasComponent();
+		inline bool hasComponent() {
+			auto id = cmpIdx<T>;
+			return mCmpArray[id] != nullptr;
+		};
 
 		/**
 		Check if the entity is active.

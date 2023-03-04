@@ -23,6 +23,12 @@
     <ClCompile Include="..\..\Src\Bullet\PhysicsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityComponent\EntityComponent.vcxproj">
+      <Project>{e996e8c5-c183-4221-9a3e-4fc9e4475465}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Ogre\Ogre.vcxproj">
+      <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\SDL\SDL.vcxproj">
       <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
     </ProjectReference>

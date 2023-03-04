@@ -1,88 +1,77 @@
 #include "Vector3.h"
 
+#include <OgreVector3.h>
+
 using namespace me;
 
-template<typename T>
-inline Vector3<T> Vector3<T>::operator-(const Vector3& v)
+ Vector3 Vector3::operator-(const Vector3& v)
 {
-	return Vector3<T>(x - v.x, y - v.y, z - v.z);
+	return Vector3 (x - v.x, y - v.y, z - v.z);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::operator-=(const Vector3& v)
+ Vector3 Vector3::operator-=(const Vector3& v)
 {
-	return Vector3<T>(x - v.x, y - v.y, z - v.z);
+	return Vector3(x - v.x, y - v.y, z - v.z);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::operator+(const Vector3& v)
+ Vector3 Vector3::operator+(const Vector3& v)
 {
-	return Vector3<T>(x + v.x, y + v.y, z + v.z);
+	return Vector3(x + v.x, y + v.y, z + v.z);
 }
 
-template<typename T>
-Vector3<T> Vector3<T>::operator+=(const Vector3& v)
+Vector3 Vector3::operator+=(const Vector3& v)
 {
-	return Vector3<T>(x + v.x, y + v.y, z + v.z);
+	return Vector3(x + v.x, y + v.y, z + v.z);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::operator*(const T& s)
+ Vector3 Vector3::operator*(const float& s)
 {
-	return Vector3<T>(x * s, y * s, z * s);
+	return Vector3 (x * s, y * s, z * s);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::operator*=(const T& s)
+ Vector3 Vector3::operator*=(const float & s)
 {
-	return Vector3<T>(x * s, y * s, z * s);
+	return Vector3(x * s, y * s, z * s);
 }
 
-template<typename T>
-inline  void Vector3<T>::operator=(const Vector3<T>& v)
+ void Vector3::operator=(const Vector3 & v)
 {
 	x = v.x;
 	y = v.y;
 	z = v.z;
 }
 
-template<typename T>
-void Vector3<T>::operator=(const Vector3<T>* v)
+void Vector3::operator=(const Vector3 * v)
 {
 	x = v->x;
 	y = v->y;
 	z = v->z;
 }
 
-template<typename T>
-inline bool Vector3<T>::operator==(const Vector3<T>& v)
+bool Vector3::operator==(const Vector3 & v)
 {
 	return (x == v.x && y == v.y && z == v.z);
 }
 
-template<typename T>
-inline bool Vector3<T>::operator!=(const Vector3<T>& v)
+bool Vector3::operator!=(const Vector3& v)
 {
 	return (x != v.x || y != v.y || z != v.z);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::lerp(const Vector3<T>& a, const Vector3<T>& b, float f)
+Vector3 Vector3::lerp(const Vector3& a, const Vector3& b, float f)
 {
-	return Vector3<T>(lerp(a.x, b.x, f), lerp(a.y, b.y, f), lerp(a.z, b.z, f));
+	return Vector3(lerp(a.x, b.x, f), lerp(a.y, b.y, f), lerp(a.z, b.z, f));
 }
 
-template<typename T>
-inline T Vector3<T>::magnitude()
+float Vector3::magnitude()
 {
 	return sqrt(x * x + y * y + z * z);
 }
 
-template<typename T>
-inline void Vector3<T>::normalize()
+void Vector3::normalize()
 {
 	// Calculate the magnitude of the vector
-	T m = magnitude();
+	float m = magnitude();
 
 	// Divide the vector components by the magnitude to normalize the vector
 	x = x / m;
@@ -90,87 +79,73 @@ inline void Vector3<T>::normalize()
 	z = z / m;
 }
 
-template<typename T>
-inline T Vector3<T>::dot(const Vector3<T>& v)
+float Vector3::dot(const Vector3& v)
 {
 	return (x * v.x + y * v.y + z * v.z);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::cross(const Vector3<T>& v)
+Vector3 Vector3::cross(const Vector3& v)
 {
-	return Vector3<T>((y * v.z) - (z * v.y), (z * v.x) - (x * v.z), (x * v.y) - (y * v.x));
+	return Vector3((y * v.z) - (z * v.y), (z * v.x) - (x * v.z), (x * v.y) - (y * v.x));
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::zero()
+Vector3 Vector3::zero()
 {
-	return Vector3<T>(0, 0, 0);
+	return Vector3(0, 0, 0);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::up()
+Vector3 Vector3::up()
 {
-	return Vector3<T>(0, 1, 0);
+	return Vector3(0, 1, 0);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::down()
+Vector3 Vector3::down()
 {
-	return Vector3<T>(0, -1, 0);
+	return Vector3(0, -1, 0);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::left()
+Vector3 Vector3::left()
 {
-	return Vector3<T>(-1, 0, 0);
+	return Vector3 (-1, 0, 0);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::rigth()
+Vector3 Vector3::rigth()
 {
-	return Vector3<T>(1, 0, 0);
+	return Vector3 (1, 0, 0);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::back()
+Vector3 Vector3::back()
 {
-	return Vector3<T>(0, 0, -1);
+	return Vector3 (0, 0, -1);
 }
 
-template<typename T>
-inline Vector3<T> Vector3<T>::forward()
+Vector3 Vector3::forward()
 {
-	return Vector3<T>(0, 0, 1);
+	return Vector3 (0, 0, 1);
 }
 
-template<typename T>
-inline T Vector3<T>::distance(const Vector3<T>& v)
+float Vector3::distance(const Vector3 & v)
 {
-	return Vector3<T>(v.x - x, v.y - y, v.z - z).magnitude();
+	return Vector3 (v.x - x, v.y - y, v.z - z).magnitude();
 }
 
-template<typename T>
-inline std::ostream& operator<<(std::ostream& os, const Vector3<T>& v)
+std::ostream& operator<<(std::ostream& os, const Vector3 & v)
 {
 	os << "Vector3(" << v.x << ',' << v.y << ',' << v.z << ")";
 	return os;
 }
 
-template<typename T>
-inline T Vector3<T>::angle(const Vector3<T>& v)
+float Vector3::angle(const Vector3 & v)
 {
-	return acos(scalarProduct(v) / sqrt(magnitude() * v.magnitude())) * 180 / M_PI_CONST;
+	return 20.f; //acos((v) / sqrt(magnitude() * v.magnitude())) * 180 / M_PI_CONST;
 }
 
-template<typename T>
-Ogre::Vector3f me::Vector3<T>::v3ToOgreV3()
+Ogre::Vector3f me::Vector3::v3ToOgreV3()
 {
 	return Ogre::Vector3f(x, y, z);
 }
 
-template<typename T>
-btVector3 me::Vector3<T>::v3ToBulletV3()
+btVector3 me::Vector3::v3ToBulletV3()
 {
 	return btVector3(x, y, z);
 }

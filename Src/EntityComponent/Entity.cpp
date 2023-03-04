@@ -37,51 +37,7 @@ namespace me {
 #endif
 	};
 
-	template<typename T, typename ...Ts>
-	T* Entity::addComponent(Ts &&... args) {
-		T* c = new T(std::forward<Ts>(args)...);
-		c->setEntity(this);
-		c->start();
-		constexpr auto id = cmpIdx<T>;
-
-		if (mCmpArray[id] != nullptr) {
-			removeComponent<T>();
-		};
-
-		mCmpArray[id] = c;
-		mComponents.emplace_back(c);
-
-		return c;
-	};
-
-	template<typename T>
-	void Entity::removeComponent() {
-		auto id = cmpIdx<T>;
-		if (mCmpArray[id] != nullptr) {
-			Component* old_cmp = mCmpArray[id];
-			mCmpArray[id] = nullptr;
-			mComponents.erase( //
-				std::find_if( //
-					mComponents.begin(), //
-					mComponents.end(), //
-					[old_cmp](const Component* c) { //
-				return c == old_cmp;
-			}));
-			delete old_cmp;
-		};
-	}
-	template<typename T>
-	inline T* Entity::getComponent() {
-		auto id = cmpIdx<T>;
-		return static_cast<T*>(mCmpArray[id]);
-	};
-
-	template<typename T>
-	inline bool Entity::hasComponent() {
-		auto id = cmpIdx<T>;
-		return mCmpArray[id] != nullptr;
-	};
-
+	
 	void Entity::update() {
 		if (!mActive) return;
 

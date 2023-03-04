@@ -39,7 +39,7 @@ namespace me {
 
 		@return A Vector3 object representing the position.
 		*/
-		Vector3<float> getPosition();
+		Vector3 getPosition();
 
 		/**
 		Returns the current Rotation
@@ -56,14 +56,14 @@ namespace me {
 
 		@return A Vector3 object representing the scale.
 		*/
-		Vector3<float> getScale();
+		Vector3 getScale();
 
 		/**
 		Set the position vector of the Transform object.
 
 		@param newPosition A Vector3 object representing the new position.
 		*/
-		void setPosition(Vector3<float> newPosition);
+		void setPosition(Vector3 newPosition);
 
 		/**
 		Set the rotation vector of the Transform object.
@@ -77,7 +77,7 @@ namespace me {
 
 		@param newScale A Vector3 object representing the new scale.
 		*/
-		void setScale(Vector3<float> newScale);
+		void setScale(Vector3 newScale);
 
 
 		/**
@@ -85,14 +85,14 @@ namespace me {
 
 		@param translation A Vector3 object representing the translation.
 		*/
-		void translate(Vector3<float> translation);
+		void translate(Vector3 translation);
 
 		/**
 		Rotate the Transform object by a given vector.
 
 		@param rotation A Vector3 object representing the rotation.
 		*/
-		void rotate(Vector3<float> rotation);
+		void rotate(Vector3 rotation);
 
 
 		/**
@@ -139,13 +139,13 @@ namespace me {
 
 	private:
 
-		Vector3<float> mPosition;
+		Vector3 mPosition;
 		Ogre::Quaternion mRotation;
-		Vector3<float> mScale;
+		Vector3  mScale;
 
-		Vector3<float> mLocalPosition;
+		Vector3 mLocalPosition;
 		Ogre::Quaternion mLocalRotation;
-		Vector3<float> mLocalScale;
+		Vector3  mLocalScale;
 
 		Transform* mParent;
 

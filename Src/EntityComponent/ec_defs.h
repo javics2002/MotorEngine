@@ -10,9 +10,8 @@ This file contains the declaration of the differents types of components.
 
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
-class Image;
-class PlayerCtrl;
-class Collider;
-#define _CMPS_LIST_  Transform,Image,PlayerCtrl 
+class RigidBody;
+class MeshRenderer;
+#define _CMPS_LIST_  Transform, RigidBody, MeshRenderer
 
 #endif
