@@ -15,6 +15,8 @@ me::SoundManager::SoundManager() {
 	master->addGroup(effects);
 	master->addGroup(music);
 
+	mListeners = std::vector<bool>(FMOD_MAX_LISTENERS, false); // Vector used to know which listeners are being used
+
 	channelsVector.reserve(MAX_CHANNELS);
 	for (int i = 0; i < MAX_CHANNELS; i++) {
 		channelsVector.push_back(nullptr);
@@ -34,11 +36,17 @@ bool me::SoundManager::checkFMODResult(FMOD_RESULT FMODResult)
 	return true;
 }
 
-void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound* soundHandle, int channel)
+FMOD::Channel* me::SoundManager::getChannel(FMOD::Sound* sound)
+{
+	//TO BE IMPLEMENTED
+	return nullptr;
+}
+
+void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
 {
 }
 
-void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound* soundHandle, int channel)
+void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
 {
 	result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &soundHandle);
 	if(checkFMODResult(result)){
@@ -47,7 +55,17 @@ void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound* sou
 	}
 }
 
-void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped = -1)
+void me::SoundManager::stopSound(FMOD::Sound* sound)
+{
+	//TO BE IMPLEMENTED
+}
+
+void me::SoundManager::pauseSound(FMOD::Sound* sound, bool pause)
+{
+	//TO BE IMPLEMENTED
+}
+
+void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped)
 {
 	if (isLoop) {
 		result = soundHandle->setMode(FMOD_LOOP_NORMAL);
@@ -93,8 +111,29 @@ void me::SoundManager::deleteSound(FMOD::Sound* soundHandle)
 	lastPlayedMap.erase(soundHandle);
 }
 
+void me::SoundManager::updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel)
+{
+	Sound_System->set3DListenerAttributes(index, &listenerPos, &listenerVel, &listenerFW, &listenerUP);
+}
+
+void me::SoundManager::removeListener(int index)
+{
+	mListeners[index] = false;
+	updateListenersPosition(index, { 999999,999999,999999 }, { 0,0,0 }, { 0,0,0 }, { 0,0,0 });
+}
+
+void me::SoundManager::setSoundPosition(FMOD::Sound*& sound, Vector3 position)
+{
+	//TO BE IMPLEMENTED
+}
+
 void me::SoundManager::setSpeed(FMOD::Sound* soundHandle, float newSpeed)
 {
 	result = soundHandle->setMusicSpeed(newSpeed);
 	checkFMODResult(result);
+}
+
+void me::SoundManager::setMode(FMOD::Sound* sound, int flags)
+{
+	//TO BE IMPLEMENTED
 }
