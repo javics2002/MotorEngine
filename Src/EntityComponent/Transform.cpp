@@ -68,9 +68,26 @@ void me::Transform::translate(Vector3 translation)
 	mPosition += translation;
 }
 
-void me::Transform::rotate(Vector3 rotation)
+void me::Transform::rotate(int degrees, AxisRotations axis)
 {
-	// To be implemented
+
+	Ogre::Vector3 v;
+
+	switch (axis)
+	{
+	case me::AXIS_ROTATIONS_X:
+		v = Ogre::Vector3::UNIT_X;
+		break;
+	case me::AXIS_ROTATIONS_Y:
+		v = Ogre::Vector3::UNIT_Y;
+		break;
+	case me::AXIS_ROTATIONS_Z:
+		v = Ogre::Vector3::UNIT_Z;
+		break;
+	}
+
+	mRotation = Ogre::Quaternion(Ogre::Degree(degrees), v);
+
 }
 
 void me::Transform::scaleF(float scaleF)

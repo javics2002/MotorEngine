@@ -39,6 +39,10 @@ void me::RigidBody::start()
 //To implement
 void me::RigidBody::update()
 {
+	if (MovementType(mMvType) != MOVEMENT_TYPE_STATIC) {
+		btVector3 pos = mBtRigidBody->getWorldTransform().getOrigin();
+		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
+	}
 }
 
 //To implement

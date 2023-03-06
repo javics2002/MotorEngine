@@ -231,7 +231,6 @@ namespace me {
 		Returns the conversion of a Vector3 to an btVector3
 		*/
 		btVector3 v3ToBulletV3();
-
 	};
 }
 
