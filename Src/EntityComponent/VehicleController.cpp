@@ -37,18 +37,18 @@ void VehicleController::update()
     if(deltaX != 0) {
         if (drift) {
             // If the vehicle is drifting, rotate it based on the drift factor
-            mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, mRotationSpeed * deltaX * mDriftFactor, 0));
+            mEntity->getComponent<me::Transform>("transform")->rotate( mRotationSpeed * deltaX * mDriftFactor, me::AXIS_ROTATIONS_Y);
         }
         else {
             // Otherwise, rotate it normally
-            mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, mRotationSpeed * deltaX, 0));
+            mEntity->getComponent<me::Transform>("transform")->rotate(mRotationSpeed * deltaX, me::AXIS_ROTATIONS_Y);
         }
     }
     //If the player is using keyboard
     else if(left)
-        mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, -mRotationSpeed, 0));
+        mEntity->getComponent<me::Transform>("transform")->rotate(-mRotationSpeed, me::AXIS_ROTATIONS_Y);
     else if(right)
-        mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, mRotationSpeed, 0));
+        mEntity->getComponent<me::Transform>("transform")->rotate(mRotationSpeed, me::AXIS_ROTATIONS_Y);
 
     // Move the vehicle forward or backward
     me::Vector3 v;

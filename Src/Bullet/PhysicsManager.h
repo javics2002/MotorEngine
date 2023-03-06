@@ -68,11 +68,9 @@ namespace me {
 
 		friend Singleton<PhysicsManager>;
 
-		/**
-		Constructor for the PhysicsManager class. Initializes a default collision configuration,
-		a collision dispatcher, a broadphase interface, and a dynamics world.
-		*/
 		PhysicsManager();
+
+		btAlignedObjectArray<btCollisionShape*> collisionShapes;
 
 		//DynamicWorld
 		btDiscreteDynamicsWorld* mDynamicsWorld;
@@ -88,6 +86,12 @@ namespace me {
 		Destructor for the PhysicsManager class. TO DO.
 		*/
 		~PhysicsManager();
+
+		/**
+		Initializes a default collision configuration,
+		a collision dispatcher, a broadphase interface, and a dynamics world.
+		*/
+		void start();
 
 		/**
 		Adds a rigid body to the dynamics world. The rigid body will be subject to physical forces

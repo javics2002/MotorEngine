@@ -7,15 +7,21 @@
 
 me::PhysicsManager::PhysicsManager()
 {
+}
+
+me::PhysicsManager::~PhysicsManager()
+{
+}
+
+void me::PhysicsManager::start()
+{
 	mCollisionConfiguration = new btDefaultCollisionConfiguration();
 	mDispatcher = new btCollisionDispatcher(mCollisionConfiguration);
 	mBroadphaseInterface = new btDbvtBroadphase();
 
 	mDynamicsWorld = new btDiscreteDynamicsWorld(mDispatcher, mBroadphaseInterface, nullptr, mCollisionConfiguration);
-}
 
-me::PhysicsManager::~PhysicsManager()
-{
+	mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
 }
 
 void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody)
@@ -88,13 +94,14 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, btVector
 		rb->setCollisionFlags(btCollisionObject::CF_NO_CONTACT_RESPONSE);
 	}
 
+	addRigidBody(rb);
+
 	return rb;
 
 }
 
 void me::PhysicsManager::update(const float& dt)
 {
-	//cout << "5";
 	mDynamicsWorld->stepSimulation(dt);
 }
 
