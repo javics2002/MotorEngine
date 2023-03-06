@@ -91,14 +91,14 @@ int main() {
     im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
 
     Input leftClick;
-    leftClick.type = INPUTTYPE_MOUSE;
+    leftClick.type = INPUTTYPE_MOUSE_CLICK;
     leftClick.which = SDL_BUTTON_LEFT;
     im().addButton("Shoot", leftClick);
 
     im().addOnButtonPressedEvent("Shoot", shoot);
 
     Input controllerA;
-    controllerA.type = INPUTTYPE_GAMEPAD;
+    controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
     controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
     im().addButton("A", controllerA);

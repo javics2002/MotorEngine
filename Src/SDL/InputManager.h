@@ -10,7 +10,15 @@
 #include <unordered_map>
 
 namespace me {
-	enum InputType { INPUTTYPE_KEYBOARD, INPUTTYPE_MOUSE, INPUTTYPE_GAMEPAD, INPUTTYPE_NULL };
+	enum InputType { 
+		INPUTTYPE_KEYBOARD, 
+		INPUTTYPE_MOUSE_CLICK,
+		INPUTTYPE_MOUSE_MOTION,
+		INPUTTYPE_MOUSE_WHEEL,
+		INPUTTYPE_GAMEPAD_BUTTON,
+		INPUTTYPE_GAMEPAD_AXIS,
+		INPUTTYPE_NULL 
+	};
 
 	/**
 	InputManager provides information and callbacks for any user input from

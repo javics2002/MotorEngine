@@ -27,10 +27,14 @@ namespace me {
 		INPUTTYPE_NULL for invalid input
 		*/
 		InputType type;
-
+		
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event.*/
 		int which;
+
+		/*In case it is a gamepad axis motion, or a mouse motion, the value will be stored here*/
+		float value;
+		
 
 		bool operator==(const Input& i) const
 		{

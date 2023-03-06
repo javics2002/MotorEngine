@@ -41,6 +41,12 @@ int shoot(void* userdata)
 	return 0;
 }
 
+int getAxisValue(void* userdata) {
+	char* name = (char*)userdata;
+	std::cout << name << " axis value: " << me::im().getAxis(name) << "\n";
+
+	return 0;
+}
 
 namespace me {
 
@@ -60,7 +66,7 @@ namespace me {
 		om().setMeshTransform(sinbadEnt, Ogre::Vector3f(0, 0, 0), Ogre::Vector3f(10, 10, 10));
 
 		Input keyboardE;
-		keyboardE.type = SDL_EVENT_KEY_DOWN;
+		keyboardE.type = INPUTTYPE_KEYBOARD;
 		keyboardE.which = SDLK_e;
 
 		im().addButton("Interact", keyboardE);
@@ -68,26 +74,45 @@ namespace me {
 		static bool interactActive = false;
 
 		Input keyboardSpace;
-		keyboardSpace.type = SDL_EVENT_KEY_DOWN;
+		keyboardSpace.type = INPUTTYPE_KEYBOARD;
 		keyboardSpace.which = SDLK_SPACE;
 		im().addButton("Space", keyboardSpace);
 
 		im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
 
 		Input leftClick;
-		leftClick.type = SDL_EVENT_MOUSE_BUTTON_DOWN;
+		leftClick.type = INPUTTYPE_MOUSE_CLICK;
 		leftClick.which = SDL_BUTTON_LEFT;
 		im().addButton("Shoot", leftClick);
 
 		im().addOnButtonPressedEvent("Shoot", shoot);
 
 		Input controllerA;
-		controllerA.type = SDL_EVENT_GAMEPAD_BUTTON_DOWN;
+		controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
 		controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
 		im().addButton("A", controllerA);
 
 		im().addOnButtonPressedEvent("A", shoot);
+
+		AxisInput horizontal;
+		horizontal.type = INPUTTYPE_KEYBOARD;
+		horizontal.positive = SDLK_d;
+		horizontal.negative = SDLK_a;
+
+		AxisInfo horizontalInfo;
+		horizontalInfo.dead = .1;
+		horizontalInfo.gravity = .01;
+
+		char* horizontalName = (char*)"Horizontal";
+		im().addAxis(horizontalName, horizontalInfo, horizontal);
+
+		Input keyboardP;
+		keyboardP.type = INPUTTYPE_KEYBOARD;
+		keyboardP.which = SDLK_p;
+
+		im().addButton("P", keyboardP);
+		im().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
 
 		std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
 		
@@ -113,10 +138,15 @@ namespace me {
 		SDL_Event event;
 		bool quit = false;
 		im().addEvent(quitLoop, &quit);
-		while (!quit && SDL_WaitEvent(&event)) {
+		while (!quit) {
+			while(SDL_PollEvent(&event)) {
+
+			}
+
 			/*
 			* Update the scene
 			*/
+			
 			
 			/*
 			* Update physics
