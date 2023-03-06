@@ -2,14 +2,19 @@
 
 #include "OgreTechnique.h"
 
-namespace OgreBites {
+namespace me {
 
 SGTechniqueResolverListener::SGTechniqueResolverListener(Ogre::RTShader::ShaderGenerator *pShaderGenerator)
 {
     mShaderGenerator = pShaderGenerator;
 }
 
-Ogre::Technique *SGTechniqueResolverListener::handleSchemeNotFound(unsigned short schemeIndex, const Ogre::String &schemeName, Ogre::Material *originalMaterial, unsigned short lodIndex, const Ogre::Renderable *rend) {
+Ogre::Technique* SGTechniqueResolverListener::handleSchemeNotFound(unsigned short schemeIndex,
+                                                                   const Ogre::String& schemeName,
+                                                                   Ogre::Material* originalMaterial,
+                                                                   unsigned short lodIndex,
+                                                                   const Ogre::Renderable* rend)
+{
     if (!mShaderGenerator->hasRenderState(schemeName))
     {
         return NULL;
@@ -18,9 +23,7 @@ Ogre::Technique *SGTechniqueResolverListener::handleSchemeNotFound(unsigned shor
 
     // Create shader generated technique for this material.
     bool techniqueCreated = mShaderGenerator->createShaderBasedTechnique(
-                *originalMaterial,
-                Ogre::MaterialManager::DEFAULT_SCHEME_NAME,
-                schemeName);
+        *originalMaterial, Ogre::MaterialManager::DEFAULT_SCHEME_NAME, schemeName);
 
     if (!techniqueCreated)
     {
@@ -33,7 +36,7 @@ Ogre::Technique *SGTechniqueResolverListener::handleSchemeNotFound(unsigned shor
 
     // Grab the generated technique.
     Ogre::Material::Techniques::const_iterator it;
-    for(it = originalMaterial->getTechniques().begin(); it != originalMaterial->getTechniques().end(); ++it)
+    for (it = originalMaterial->getTechniques().begin(); it != originalMaterial->getTechniques().end(); ++it)
     {
         Ogre::Technique* curTech = *it;
 
@@ -44,7 +47,7 @@ Ogre::Technique *SGTechniqueResolverListener::handleSchemeNotFound(unsigned shor
     }
 
     return NULL;
-}
+}y
 
 bool SGTechniqueResolverListener::afterIlluminationPassesCreated(Ogre::Technique *tech)
 {

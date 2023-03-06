@@ -1,5 +1,11 @@
-# Ogre Build
+# Builds
 /Dependencies/Ogre/Build
+/Dependencies/SDL/Build
+/Dependencies/Bullet/Build
+/Dependencies/FMOD/FMOD_Src\bin
+/Dependencies/FMOD/FMOD_Src\doc
+/Dependencies/FMOD/FMOD_Src\plugins
+/Dependencies/FMOD/FMOD_Src\uninstall.exe
 
 # Visual Studio Data
 /.vs
