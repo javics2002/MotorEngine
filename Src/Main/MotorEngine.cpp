@@ -61,9 +61,13 @@ namespace me {
 		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 0, 500), Ogre::Vector3(0, 0, -1));
 		om().createNewLight("Luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
 
-		std::string sinbadEnt = "Sinbad";
+		/*std::string sinbadEnt = "Sinbad";
 		om().createMesh(sinbadEnt,"Sinbad.mesh");
-		om().setMeshTransform(sinbadEnt, Ogre::Vector3f(0, 0, 0), Ogre::Vector3f(10, 10, 10));
+		om().setMeshTransform(sinbadEnt, Ogre::Vector3f(0, 0, 0), Ogre::Vector3f(10, 10, 10));*/
+
+		om().scene1();
+		
+
 
 		Input keyboardE;
 		keyboardE.type = INPUTTYPE_KEYBOARD;

@@ -17,7 +17,7 @@ public:
 	float deltaTime;
 
 	/*
-	Fixed Delta time describes the time difference between the previous PHYSICS frame that was calculated and the current frame.
+	Fixed Delta time describes the time difference between the previous PHYSICS frame that was calculated and the current PHYSICS frame.
 	*/
 	float fixedDeltaTime;
 

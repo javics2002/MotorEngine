@@ -30,7 +30,7 @@ void VehicleController::update()
 
     //If the player is using keyboard
     bool left = me::im().getButton("LEFT");
-    bool rigth = me::im().getButton("RIGTH");
+    bool right = me::im().getButton("RIGHT");
     float deltaX = me::im().getAxis("HORIZONTAL");
 
     // Rotate the vehicle if the player is using DualShock or Xbox controller
@@ -47,7 +47,7 @@ void VehicleController::update()
     //If the player is using keyboard
     else if(left)
         mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, -mRotationSpeed, 0));
-    else if(rigth)
+    else if(right)
         mEntity->getComponent<me::Transform>("transform")->rotate(me::Vector3(0, mRotationSpeed, 0));
 
     // Move the vehicle forward or backward

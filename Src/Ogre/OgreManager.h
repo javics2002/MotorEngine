@@ -51,6 +51,9 @@ namespace me {
 		//SceneManager de Ogre
 		Ogre::SceneManager* mSM = nullptr;
 
+		// TEMPORAL VALUE FOR ANIMATION HITO1
+		Ogre::AnimationState* ogreAnimState;
+
 		/**
 		Path of the "resource.cfg"
 		Add all resources (mesh, zip, particles, material, animation) to the subfolder of Asset
@@ -90,7 +93,7 @@ namespace me {
 		std::string mSolutionPath;
 
 		//Reference to OgreWindow class
-		OgreWindow* ogreWindow;
+		OgreWindow* mOgreWindow;
 
 		//Store camera name to ogreCamera
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name

@@ -18,6 +18,10 @@
 #include "Ogre/OgreMesh.h"
 #include "Ogre/SGTechniqueResolverListener.h"
 
+// Animation includes
+#include <OgreAnimation.h>
+#include <OgreKeyFrame.h>
+
 using namespace me;
 
 OgreManager::OgreManager()
@@ -61,8 +65,8 @@ void OgreManager::initRoot()
 
 void me::OgreManager::initWindow()
 {
-	ogreWindow = new OgreWindow("OgreWindow");
-	ogreWindow->init(mRoot);
+	mOgreWindow = new OgreWindow("OgreWindow");
+	mOgreWindow->init(mRoot);
 }
 
 
@@ -141,7 +145,7 @@ OgreCamera* me::OgreManager::getCamera(std::string name)
 
 me::OgreManager::~OgreManager()
 {
-	delete ogreWindow;
+	delete mOgreWindow;
 }
 
 bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
@@ -153,7 +157,7 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	OgreCamera* camera = new OgreCamera();
 	Ogre::SceneNode* cameraNode = createChildNode(name, parentName);
 	
-	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
+	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
 
 	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
 
@@ -170,7 +174,7 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 	OgreCamera* camera = new OgreCamera();
 	Ogre::SceneNode* cameraNode = createNode(name);
 
-	camera->init(cameraNode, mSM, ogreWindow->getRenderWindow());
+	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
 
 	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
 
@@ -314,6 +318,8 @@ Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string 
 void me::OgreManager::render()
 {
 	mRoot->renderOneFrame();
+
+	ogreAnimState->addTime(0.0166);
 }
 
 void me::OgreManager::scene1()
@@ -325,8 +331,43 @@ void me::OgreManager::scene1()
 	mSinbadNode->attachObject(ent);
 	mSinbadNode->setPosition(0, 0, 0);
 	mSinbadNode->setScale(10, 10, 10);
-	//mSinbadNode->yaw(Ogre::Degree(-45));
-	//mSinbadNode->showBoundingBox(true);
 	mSinbadNode->setVisible(true);
+
+	// TEMPORAL ANIMATION
+	Ogre::Real duration = 4;
+	Ogre::Real step = duration / 4;
+
+	Ogre::Animation* anim;
+	anim = mSM->createAnimation("sinbadAnimation", duration);
+	Ogre::NodeAnimationTrack* track = anim->createNodeTrack(0, mSinbadNode);
+	anim->setInterpolationMode(Ogre::Animation::IM_LINEAR);
+
+	Ogre::TransformKeyFrame* key;
+
+	int counterStep = 0;
+
+	key = track->createNodeKeyFrame(step * counterStep++);
+	key->setRotation(Ogre::Quaternion());
+	key->setScale(Ogre::Vector3(10));
+
+	key = track->createNodeKeyFrame(step * counterStep++);
+	key->setRotation(Ogre::Quaternion(Ogre::Degree(-90), Ogre::Vector3::UNIT_X));
+	key->setScale(Ogre::Vector3(10));
+
+	key = track->createNodeKeyFrame(step * counterStep++);
+	key->setRotation(Ogre::Quaternion(Ogre::Degree(-180), Ogre::Vector3::UNIT_X));
+	key->setScale(Ogre::Vector3(10));
+
+	key = track->createNodeKeyFrame(step * counterStep++);
+	key->setRotation(Ogre::Quaternion(Ogre::Degree(-270), Ogre::Vector3::UNIT_X));
+	key->setScale(Ogre::Vector3(10));
+
+	key = track->createNodeKeyFrame(step * counterStep++);
+	key->setRotation(Ogre::Quaternion(Ogre::Degree(-359), Ogre::Vector3::UNIT_X));
+	key->setScale(Ogre::Vector3(10));
+
+	ogreAnimState = mSM->createAnimationState("sinbadAnimation");
+	ogreAnimState->setEnabled(true);
+	ogreAnimState->setLoop(true);
 	
 }
