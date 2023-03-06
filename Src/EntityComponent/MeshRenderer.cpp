@@ -38,3 +38,8 @@ void me::MeshRenderer::setStatic(bool stat)
 	mStaticObject = stat;
 }
 
+void me::MeshRenderer::setMaterial(std::string materialName)
+{
+	om().setMeshMaterial(mName,materialName);
+}
+

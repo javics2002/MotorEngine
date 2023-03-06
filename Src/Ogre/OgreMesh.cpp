@@ -10,8 +10,8 @@ me::OgreMesh::OgreMesh(Ogre::SceneNode* node, std::string meshName)
 	mMeshName = meshName;
 	Ogre::SceneManager* mSM = mNode->getCreator();
 
-	Ogre::Entity* ent = mSM->createEntity(mMeshName);
-	mNode->attachObject(ent);
+	mEntity = mSM->createEntity(mMeshName);
+	mNode->attachObject(mEntity);
 	mNode->setVisible(true);
 }
 
@@ -39,4 +39,11 @@ void me::OgreMesh::setScale(const Ogre::Vector3f &scale)
 void me::OgreMesh::setRotation(Ogre::Quaternion rot)
 {
 	mNode->setOrientation(rot);
+}
+
+void me::OgreMesh::setMaterial(std::string materialName)
+{
+	mMaterialName = materialName;
+	mEntity->setMaterialName(materialName);
+	
 }

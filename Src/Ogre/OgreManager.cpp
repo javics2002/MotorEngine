@@ -253,6 +253,17 @@ bool me::OgreManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
 	return true;
 }
 
+bool me::OgreManager::setMeshMaterial(std::string name, std::string nameMaterial)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+		return false;
+
+	mesh->setMaterial(nameMaterial);
+
+	return true;
+}
+
 bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
 {
 	OgreMesh* mesh = getMesh(name);

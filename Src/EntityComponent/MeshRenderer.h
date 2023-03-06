@@ -30,6 +30,7 @@ namespace me {
 		void start() override;
 		void update() override;
 		void setStatic(bool stat);
+		void setMaterial(std::string materialName);
 
 
 

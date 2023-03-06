@@ -20,8 +20,11 @@ namespace me {
 	protected:
 		//Reference to Ogre::SceneNode for renderize
 		Ogre::SceneNode* mNode;
+		//Reference to Ogre::Entity for renderize
+		Ogre::Entity* mEntity;
 		//Name of mesh that used
 		std::string mMeshName;
+		std::string mMaterialName;
 		std::string mName;
 		
 
@@ -40,6 +43,13 @@ namespace me {
 		void setPosition(const Ogre::Vector3f &pos);
 		void setScale(const Ogre::Vector3f &scale);
 		void setRotation(Ogre::Quaternion rot);
+
+		/**
+		Assign material name to entity
+		@param materialName: name of material that we used 
+		Must be writted in MaterialResource.material
+		*/
+		void setMaterial(std::string materialName);
 		
 
 	};

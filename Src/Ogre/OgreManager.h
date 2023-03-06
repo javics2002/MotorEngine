@@ -207,6 +207,9 @@ namespace me {
 		//set rotation info to the mesh with this name
 		bool setMeshRotation(std::string name,Ogre::Quaternion rot);
 
+		//set rotation info to the mesh with this name
+		bool setMeshMaterial(std::string name, std::string nameMaterial);
+
 
 		/**
 		Set dimension to the viewport of the camera with this name

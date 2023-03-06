@@ -1,0 +1,60 @@
+material Material/roja
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 0.0 0.0
+		}
+	}
+}
+material Material/marronclaro
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.9 0.5 0.0
+		}
+	}
+}
+material Material/amarillo
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 0.0
+		}
+	}
+}
+material Material/cian
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.0 1.0 1.0
+		}
+	}
+}
+material Material/marronoscuro
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.5 0.3 0.0
+		}
+	}
+}
+material Material/naranja
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 0.7 0.0
+		}
+	}
+}
