@@ -8,9 +8,9 @@ me::SoundManager::SoundManager() {
 	result = Sound_System->init(MAX_CHANNELS, FMOD_INIT_NORMAL, 0);    // Initialize FMOD.
 	checkFMODResult(result);
 
-	Sound_System->createChannelGroup("Master", &master);
-	Sound_System->createChannelGroup("Effects", &effects);
-	Sound_System->createChannelGroup("Music", &music);
+	Sound_System->createChannelGroup("master", &master);
+	Sound_System->createChannelGroup("effects", &effects);
+	Sound_System->createChannelGroup("music", &music);
 
 	master->addGroup(effects);
 	master->addGroup(music);
@@ -42,8 +42,19 @@ FMOD::Channel* me::SoundManager::getChannel(FMOD::Sound* sound)
 	return nullptr;
 }
 
+void me::SoundManager::systemRefresh()
+{
+	result = Sound_System->update();
+	if (result != FMOD_OK)
+	{
+		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+		exit(-1);
+	}
+}
+
 void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
 {
+	//TO BE IMPLEMENTED
 }
 
 void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
@@ -65,7 +76,8 @@ void me::SoundManager::pauseSound(FMOD::Sound* sound, bool pause)
 	//TO BE IMPLEMENTED
 }
 
-void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped)
+//void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped)
+void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, int timesLooped)
 {
 	if (isLoop) {
 		result = soundHandle->setMode(FMOD_LOOP_NORMAL);
@@ -84,18 +96,15 @@ void me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, int chan
 
 		if (isPlaying) continue;
 
-		switch (channelGroup) {
-		case EFFECTS:
-			result = Sound_System->playSound(soundHandle, effects, false, &channelsVector[i]);
-			checkFMODResult(result);
-			break;
-		case MUSIC:
-			result = Sound_System->playSound(soundHandle, music, false, &channelsVector[i]);
-			checkFMODResult(result);
-			break;
-		default:
-			break;
+		auto playedChannelGroup = channelGroupMaps.find(channelGroup);
+		if (playedChannelGroup == channelGroupMaps.end()) {
+			createChannel(channelGroup);
 		}
+
+		
+		result = Sound_System->playSound(soundHandle, playedChannelGroup->second, false, &channelsVector[i]);
+		checkFMODResult(result);
+	
 
 		lastPlayedMap.find(soundHandle)->second = i;
 
@@ -136,4 +145,10 @@ void me::SoundManager::setSpeed(FMOD::Sound* soundHandle, float newSpeed)
 void me::SoundManager::setMode(FMOD::Sound* sound, int flags)
 {
 	//TO BE IMPLEMENTED
+}
+void me::SoundManager::createChannel(const char* channelGroupName)
+{
+	FMOD::ChannelGroup* newChannelGroup;
+	Sound_System->createChannelGroup(channelGroupName, &newChannelGroup);
+	std::pair<std::string, FMOD::ChannelGroup*> newGroup(channelGroupName, newChannelGroup);
 }

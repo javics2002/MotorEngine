@@ -16,8 +16,8 @@
 
 namespace me {
 	const int MAX_CHANNELS = 36;
-	typedef int channelNumber;
-	typedef enum CHANNELGROUP_NAMES { EFFECTS = 0, MUSIC };
+	typedef int CHANNEL_NUMBER;
+	//typedef enum CHANNELGROUP_NAMES { EFFECTS = 0, MUSIC };
 
 	class SoundManager : public Singleton<SoundManager>
 	{
@@ -25,7 +25,8 @@ namespace me {
 		friend Singleton<SoundManager>;
 		SoundManager();
 		
-		std::unordered_map<FMOD::Sound*,channelNumber> lastPlayedMap;
+		std::unordered_map<FMOD::Sound*,CHANNEL_NUMBER> lastPlayedMap;
+		std::unordered_map<std::string, FMOD::ChannelGroup*> channelGroupMaps;
 		std::vector<FMOD::Channel*> channelsVector;
 		std::vector<FMOD::ChannelGroup*> channelsGroupsVector;
 		FMOD::ChannelGroup* effects, * music, *master;
@@ -40,10 +41,12 @@ namespace me {
 		FMOD_RESULT result;
 
 	public:
+		void systemRefresh();
 		void create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel);
 		void createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel);
 		void setSpeed(FMOD::Sound* soundHandle, float newSpeed);
 		void setMode(FMOD::Sound* sound, int flags);
+		void createChannel(const char* newChannelGroup);
 
 		inline void setVolume(FMOD::Sound* sound, float value) {
 			//TO BE IMPLEMENTED
@@ -54,7 +57,8 @@ namespace me {
 
 		void stopSound(FMOD::Sound* sound);
 		void pauseSound(FMOD::Sound* sound, bool pause);
-		void playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped = -1);
+		//void playSound(FMOD::Sound* soundHandle, bool isLoop, int channelGroup, int timesLooped = -1);
+		void playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, int timesLooped = -1);
 		void deleteSound(FMOD::Sound* soundHandle);
 
 		void updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel = { 0,0,0 });
@@ -70,7 +74,7 @@ namespace me {
 			}
 			return -1;
 		}
-		//void createChannel(); Sería necesario??
+		
 		
 	};
 

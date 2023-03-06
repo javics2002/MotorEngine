@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdio.h>
 
-#include <fmod.hpp>
-#include <fmod_errors.h>
+//#include <fmod.hpp>
+//#include <fmod_errors.h>
+#include "SoundManager.h"
 
 const int MAX_CHANNELS = 36;
 
@@ -13,6 +14,11 @@ int main() {
 	FMOD::System* Sound_System = NULL;
 	FMOD::Sound* sonido;
 	FMOD::Channel* canal1;
+	me::SoundManager &sm  = me::sm();
+
+	
+
+	
 
 	result = FMOD::System_Create(&Sound_System);      // Create the main system object.
 	if (result != FMOD_OK)
