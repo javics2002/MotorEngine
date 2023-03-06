@@ -25,7 +25,7 @@ me::RigidBody::~RigidBody()
 void me::RigidBody::start()
 {
 
-	mTransform = mEntity->getComponent<Transform>();
+	mTransform = mEntity->getComponent<Transform>("transform");
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 

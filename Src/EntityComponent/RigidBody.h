@@ -37,6 +37,8 @@ namespace me{
 		/*
 		Set the values of the new RigidBody that will be created
 
+		@param colShape indicates the shape of the rigidbody (0 = sphere, 1 = box, 2 = cylinder, 3 = capsule)
+		@param mvType the movement of the object (0 = Dynamic, 1 = Static, 2 = Kinematic)
 		@param mass mass of the RigidBody
 		@param friction the magnitude friction force
 		@param restitution magnitude of the rebounding ability
@@ -44,6 +46,7 @@ namespace me{
 		*/
 		RigidBody(int colShape, int mvType, float mass, float friction, float restitution, bool isTrigger);
 		~RigidBody();
+		RigidBody() {};
 
 		/*
 		Starts the RigidBody of the entity for the physics

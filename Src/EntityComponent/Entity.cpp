@@ -7,8 +7,7 @@ namespace me {
 	Entity::Entity(Scene* scn, const std::string name) :
 		mActive(true), //
 		mName(name), // 
-		mScn(scn), //
-		mCmpArray() //
+		mScn(scn)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity ( " << mName << " ) created." << std::endl;
@@ -18,8 +17,7 @@ namespace me {
 	Entity::Entity(const std::string name) :
 		mActive(true),
 		mName(name),
-		mScn(nullptr),
-		mCmpArray()
+		mScn(nullptr)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity " << mName << " created.";
@@ -27,8 +25,8 @@ namespace me {
 	};
 
 	Entity::~Entity() {
-		for (auto c : mComponents) {
-			delete c;
+		for (auto &c : mComponents) {
+			delete c.second;
 		};
 		mComponents.clear();
 
@@ -40,43 +38,39 @@ namespace me {
 	
 	void Entity::update() {
 		if (!mActive) return;
-
-		std::size_t n = mComponents.size();
-		for (auto i = 0u; i < n; i++) {
-			if(mComponents[i]->enabled)
-				mComponents[i]->update();
+		for (auto c : mComponents) {
+			if(c.second->enabled)
+				c.second->update();
 		};
 	};
 
 	void Entity::lateUpdate() {
 		if (!mActive) return;
-
-		std::size_t n = mComponents.size();
-		for (auto i = 0u; i < n; i++) {
-			if (mComponents[i]->enabled)
-				mComponents[i]->lateUpdate();
+		for (auto c : mComponents) {
+			if (c.second->enabled)
+				c.second->lateUpdate();
 		};
 	};
 
 	void Entity::OnCollisionEnter(Entity* other)
 	{
-		for (Component* comp : mComponents) {
-			if(comp->enabled)
-				comp->OnCollisionEnter(other);
+		for (auto &c : mComponents) {
+			if(c.second->enabled)
+				c.second->OnCollisionEnter(other);
 		}
 	}
 	void Entity::OnCollisionStay(Entity* other)
 	{
-		for (Component* comp : mComponents) {
-			if (comp->enabled)
-				comp->OnCollisionStay(other);
+		for (auto &c : mComponents) {
+			if (c.second->enabled)
+				c.second->OnCollisionStay(other);
 		}
 	}
 	void Entity::OnCollisionExit(Entity* other)
 	{
-		for (Component* comp : mComponents) {
-			if (comp->enabled)
-				comp->OnCollisionExit(other);
+		for (auto &c : mComponents) {
+			if (c.second->enabled)
+				c.second->OnCollisionExit(other);
 		}
 	}
 

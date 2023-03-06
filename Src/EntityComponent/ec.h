@@ -53,8 +53,8 @@ namespace me {
 	The cmpIdx template variable is used to get the index 
 	of a component type in the ComponentsList.
 	*/
-	template<typename T>
-	constexpr std::size_t cmpIdx = IndexOf<T, ComponentsList>();
+	/*template<typename T>
+	constexpr std::size_t cmpIdx = IndexOf<T, ComponentsList>();*/
 
 	/**
 	The maxComponent constant is defined as the size of the ComponentsList,

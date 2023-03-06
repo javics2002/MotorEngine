@@ -18,7 +18,7 @@ me::AudioListener::~AudioListener()
 
 void me::AudioListener::update()
 {
-	Vector3 position = mEntity->getComponent<Transform>()->getPosition();
+	Vector3 position = mEntity->getComponent<Transform>("transform")->getPosition();
 	{
 		// Update the position of the audio listener in the sound manager
 		sm().updateListenersPosition(mListenerIndex, { position.x,position.y,position.z }, { 0,0,1 }, {0,1,0});

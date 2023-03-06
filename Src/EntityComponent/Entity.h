@@ -11,6 +11,8 @@ of a set of components.
 #include <algorithm>
 #include <array>
 #include <vector>
+#include <map>
+#include <string>
 #include <iostream>
 
 #include "ec.h"
@@ -46,23 +48,26 @@ namespace me {
 
 		/**
 		Add a new component. If the component
-		already exists, this will replace them.
+		already exists, write a cout in debug mode
+		@param component the key  of the component in the map
 		@param Variable number of arguments of any type.
 		@return Reference to the new component.
 		*/
 		template<typename T, typename ...Ts>
-		T* addComponent(Ts &&... args) {
+		T* addComponent(std::string component, Ts &&... args) {
+
 			T* c = new T(std::forward<Ts>(args)...);
-			c->setEntity(this);
-			c->start();
-			constexpr auto id = cmpIdx<T>;
 
-			if (mCmpArray[id] != nullptr) {
-				removeComponent<T>();
-			};
+			if (!hasComponent(component)) {
 
-			mCmpArray[id] = c;
-			mComponents.emplace_back(c);
+				mComponents.insert({component, c});
+				c->setEntity(this);
+				c->start();
+			}
+
+#ifdef _DEBUG
+			else std::cout << "Entity: " << mName << " already has the Component:" << component;
+#endif
 
 			return c;
 		};
@@ -71,41 +76,36 @@ namespace me {
 		Remove completely a typed component.
 		*/
 		template<typename T>
-		void removeComponent() {
-			auto id = cmpIdx<T>;
-			if (mCmpArray[id] != nullptr) {
-				Component* old_cmp = mCmpArray[id];
-				mCmpArray[id] = nullptr;
-				mComponents.erase( //
-					std::find_if( //
-						mComponents.begin(), //
-						mComponents.end(), //
-						[old_cmp](const Component* c) { //
-							return c == old_cmp;
-						}));
-				delete old_cmp;
-			};
+		bool removeComponent(std::string component) {
+			if (hasComponent(component)) {
+				delete mComponents.find(component)->second;
+				mComponents.erase(component);
+				return true;
+			}
+			return false;
 		}
 		
 
 		/**
 		Get the reference a suggested component.
+		@param key name  in the map
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent() {
-			auto id = cmpIdx<T>;
-			return static_cast<T*>(mCmpArray[id]);
+		inline T* getComponent(std::string component) {
+
+			if (!hasComponent(component)) return nullptr;
+
+			return static_cast<T*>(mComponents.find(component)->second);
 		};
 
 		/**
 		Check if the component has already been added.
+		@param key name  in the map
 		@return Boolean confirmation.
 		*/
-		template<typename T>
-		inline bool hasComponent() {
-			auto id = cmpIdx<T>;
-			return mCmpArray[id] != nullptr;
+		inline bool hasComponent(std::string component) {
+			return mComponents.find(component) != mComponents.end();
 		};
 
 		/**
@@ -188,8 +188,7 @@ namespace me {
 		bool mActive;
 		std::string mName;
 		Scene* mScn;
-		std::vector<Component*> mComponents;
-		std::array<Component*, maxComponent> mCmpArray;
+		std::map<std::string, Component*> mComponents;
 
 	};
 

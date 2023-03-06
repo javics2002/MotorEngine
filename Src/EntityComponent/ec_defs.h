@@ -12,6 +12,8 @@ This file contains the declaration of the differents types of components.
 class Transform;
 class RigidBody;
 class MeshRenderer;
-#define _CMPS_LIST_  Transform, RigidBody, MeshRenderer
+class Collider;
+
+#define _CMPS_LIST_ Transform,RigidBody,MeshRenderer,Collider
 
 #endif

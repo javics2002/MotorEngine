@@ -19,7 +19,7 @@ me::MeshRenderer::~MeshRenderer()
 
 void me::MeshRenderer::start()
 {
-	mTransform = getEntity()->getComponent<Transform>();
+	mTransform = getEntity()->getComponent<Transform>("transform");
 	om().createMesh(mName, mMeshName);
 	om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
 
@@ -29,8 +29,7 @@ void me::MeshRenderer::update()
 {
 	if (!mStaticObject)
 	{
-		//om().setMeshPosition(mName, mTransform->getPosition().v3ToOgreV3());
-		om().setMeshRotation(mName, mTransform->getRotation());
+		om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
 	}
 }
 

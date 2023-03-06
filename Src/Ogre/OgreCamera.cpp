@@ -28,7 +28,7 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 	mCamera->setFarClipDistance(farDist);
 	mCamera->setAutoAspectRatio(autoRadio);
 	mCameraNode->attachObject(mCamera);
-	mViewport = mRenderWindow->addViewport(mCamera,0, 0.0,0,0.5,1);
+	mViewport = mRenderWindow->addViewport(mCamera,0);
 	mViewport->setBackgroundColour(color);
 
 	//Ogre::Camera* mCamera2 = mSceneMgr->createCamera(name+'2');

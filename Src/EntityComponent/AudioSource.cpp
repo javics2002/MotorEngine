@@ -30,7 +30,7 @@ me::AudioSource::~AudioSource()
 void me::AudioSource::update()
 {
     if (mIs3D) {
-        sm().setSoundPosition(mSound, mEntity->getComponent<me::Transform>()->getPosition());
+        sm().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
     }
 }
 

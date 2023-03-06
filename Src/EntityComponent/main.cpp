@@ -18,7 +18,7 @@ int main() {
 
 	Scene* s = sm().addScene("Game").get();
 	Entity* e = sm().getActiveScene()->addEntity("dummyEntity").get();
-	Transform* tr = e->addComponent<Transform>();
+	Transform* tr = e->addComponent<Transform>("transform");
 	tr->setPosition(Vector3 (0, 0, 0));
 
 	int cont = 0;
@@ -31,7 +31,7 @@ int main() {
 
 	};
 
-	e->removeComponent<Transform>();
+	e->removeComponent<Transform>("transform");
 	s->removeEntity(e->getName());
 	sm().removeScene(s->getName());
 

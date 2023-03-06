@@ -12,6 +12,7 @@
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
+#include "EntityComponent/Collider.h"
 
 using namespace me;
 
@@ -21,23 +22,29 @@ int main() {
 
     std::string cam = "CameraDemo";
 
-    om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0));
-    om().setCameraInfo(cam, Ogre::Vector3f(0, 0, 500), Ogre::Vector3f(0, 0, -1));
+    om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+    om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 500), Ogre::Vector3f(0, -1, -1));
 
     Entity* cube = new Entity("cube");    
 
-    //cube->addComponent<Transform>();
-    //cube->addComponent<RigidBody>(1, 1, 5, 0.3, 0.5, false);
-    //cube->addComponent<MeshRenderer>("c", "cube.mesh");
+    cube->addComponent<Transform>("transform");
+    cube->getComponent<Transform>("transform")->setScale(Vector3(5, 0.1, 5));
+    //Ogre::Quaternion quat(Ogre::Degree(80), Ogre::Vector3::UNIT_X);
+    //cube->getComponent<Transform>("transform")->setRotation(quat);
 
-    //Ogre::SceneNode* mCubeNode;
-    
 
-    
-    //pm().update(5);
+    cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
+    cube->addComponent<MeshRenderer>("meshRenderer",  "c", "cube.mesh");
+
+    om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
     SDL_Event event;
     while (SDL_WaitEvent(&event)) {
+
+        om().render();
+
+        cube->update();
+
         switch (event.type) {
         case SDL_EVENT_QUIT:
             return 0;
