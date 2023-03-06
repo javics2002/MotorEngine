@@ -13,6 +13,14 @@
 #include <SDL3/SDL_events.h>
 #include "SDL/Window.h"
 #include <SDL3/SDL_init.h>
+#include "Bullet/PhysicsManager.h"
+#include "Utils/Vector3.h"
+#include "Ogre/OgreManager.h"
+#include "EntityComponent/Entity.h"
+#include "EntityComponent/RigidBody.h"
+#include "EntityComponent/MeshRenderer.h"
+#include "EntityComponent/Collider.h"
+#include "FMOD/SoundManager.h"
 
 int interact(void* userdata)
 {
@@ -34,9 +42,19 @@ int toggleInteract(void* userdata)
 	return 0;
 }
 
+struct TestSound {
+	FMOD::Sound* sound;
+	FMOD::Channel* channel;
+	FMOD::System* system;
+};
+
 int shoot(void* userdata)
 {
 	std::cout << "Shooting!\n";
+
+	TestSound test = *(TestSound*)userdata;
+
+	test.system->playSound(test.sound, 0, false, &test.channel);
 
 	return 0;
 }
@@ -49,7 +67,6 @@ int getAxisValue(void* userdata) {
 }
 
 namespace me {
-
 	int MotorEngine::setup()
 	{
 		Window::init(SDL_INIT_EVERYTHING, "Motor Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -58,16 +75,28 @@ namespace me {
 		//Manager del proyecto de render
 		std::string camJ1 = "CameraJugador1";
 		om().createCamera(camJ1, 5, 10000, true, 0, Ogre::ColourValue(0.0f, 0.0f, 0.1f));
-		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 0, 500), Ogre::Vector3(0, 0, -1));
+		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 200, 500), Ogre::Vector3(0, -1, -1));
 		om().createNewLight("Luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
 
-		/*std::string sinbadEnt = "Sinbad";
-		om().createMesh(sinbadEnt,"Sinbad.mesh");
-		om().setMeshTransform(sinbadEnt, Ogre::Vector3f(0, 0, 0), Ogre::Vector3f(10, 10, 10));*/
+		pm().start();
+
+		plane = new Entity("plane");
+
+		auto tr = plane->addComponent<Transform>("transform");
+		tr->setPosition(Vector3(0, -50, 0));
+		tr->setScale(Vector3(5, 0.1, 5));
+
+		plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
+		plane->addComponent<MeshRenderer>("meshRenderer", "p", "cube.mesh")->setMaterial("Material/roja");
+
+		cube = new Entity("cube");
+
+		cube->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 0));
+
+		cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
+		cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
 
 		om().scene1();
-		
-
 
 		Input keyboardE;
 		keyboardE.type = INPUTTYPE_KEYBOARD;
@@ -83,13 +112,6 @@ namespace me {
 		im().addButton("Space", keyboardSpace);
 
 		im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
-
-		Input leftClick;
-		leftClick.type = INPUTTYPE_MOUSE_CLICK;
-		leftClick.which = SDL_BUTTON_LEFT;
-		im().addButton("Shoot", leftClick);
-
-		im().addOnButtonPressedEvent("Shoot", shoot);
 
 		Input controllerA;
 		controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
@@ -119,6 +141,54 @@ namespace me {
 		im().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
 
 		std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";
+
+		result = FMOD::System_Create(&Sound_System);      // Create the main system object.
+		if (result != FMOD_OK)
+		{
+			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+			std::exit(-1);
+		}
+
+		result = Sound_System->init(MAX_CHANNELS, FMOD_INIT_NORMAL, 0);    // Initialize FMOD.
+		if (result != FMOD_OK)
+		{
+			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+			std::exit(-1);
+		}
+
+		result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
+		if (result != FMOD_OK)
+		{
+			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+			std::exit(-1);
+		}
+
+		result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
+		if (result != FMOD_OK)
+		{
+			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+			std::exit(-1);
+		}
+
+		result = Sound_System->playSound(sonido, 0, false, &canal1);
+		if (result != FMOD_OK)
+		{
+			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+			std::exit(-1);
+		}
+
+		static TestSound testSound;
+
+		testSound.system = Sound_System;
+		testSound.sound = disparo;
+		testSound.channel = canal1;
+
+		Input leftClick;
+		leftClick.type = INPUTTYPE_MOUSE_CLICK;
+		leftClick.which = SDL_BUTTON_LEFT;
+		im().addButton("Shoot", leftClick);
+
+		im().addOnButtonPressedEvent("Shoot", shoot, &testSound);
 		
 		return 0;
 	}
@@ -150,7 +220,15 @@ namespace me {
 			/*
 			* Update the scene
 			*/
-			
+			pm().update(0.0166);
+			plane->update();
+			cube->update();
+			result = Sound_System->update();
+			if (result != FMOD_OK)
+			{
+				printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+				std::exit(-1);
+			}
 			
 			/*
 			* Update physics

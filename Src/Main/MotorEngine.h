@@ -6,7 +6,10 @@
 
 union SDL_Event;
 
+#include "FMOD/SoundManager.h"
+
 namespace me {
+	class Entity;
 	class OgreManager;
 
 	/*
@@ -35,6 +38,13 @@ namespace me {
 		* If we press SDL_QUIT (Exit button), the game stops and closes
 		*/
 		static int quitLoop(void* userdata, SDL_Event* event);
+
+		//Test hito 1
+		Entity* plane, *cube;
+		FMOD_RESULT result;
+		FMOD::System* Sound_System = NULL;
+		FMOD::Sound* sonido, *disparo;
+		FMOD::Channel* canal1;
 	};
 }
 

@@ -14,7 +14,7 @@ int main() {
 	FMOD::System* Sound_System = NULL;
 	FMOD::Sound* sonido;
 	FMOD::Channel* canal1;
-	me::SoundManager &sm  = me::sm();
+	//me::SoundManager &sm  = me::sm();
 
 	
 
