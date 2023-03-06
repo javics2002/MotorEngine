@@ -2,7 +2,7 @@
 * This file contains the function "main". The execution of the program starts here and ends here
 */
 
-#include "Main/MotorEngine.h"
+#include "MotorEngine.h"
 
 using namespace std;
 

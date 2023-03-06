@@ -4,7 +4,7 @@
 #define __SDL_MAIN
 
 #include "InputManager.h"
-#include "Window.h"
+#include "Render/Window.h"
 #include <iostream>
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_events.h>

@@ -6,7 +6,7 @@
 
 union SDL_Event;
 
-#include "FMOD/SoundManager.h"
+#include "Audio/SoundManager.h"
 
 namespace me {
 	class Entity;

@@ -7,20 +7,19 @@
 #include <chrono>
 #include <memory>
 #include <random>
-#include "Ogre/OgreManager.h"
-#include "SDL/InputManager.h"
+#include "Render/OgreManager.h"
+#include "Input/InputManager.h"
 #include <Ogre.h>
 #include <SDL3/SDL_events.h>
-#include "SDL/Window.h"
+#include "Render/Window.h"
 #include <SDL3/SDL_init.h>
-#include "Bullet/PhysicsManager.h"
+#include "Physics/PhysicsManager.h"
 #include "Utils/Vector3.h"
-#include "Ogre/OgreManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
 #include "EntityComponent/Collider.h"
-#include "FMOD/SoundManager.h"
+#include "Audio/SoundManager.h"
 
 int interact(void* userdata)
 {

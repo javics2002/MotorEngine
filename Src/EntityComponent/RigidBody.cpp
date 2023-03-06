@@ -4,7 +4,7 @@
 #include "LinearMath/btQuaternion.h"
 #include "LinearMath/btVector3.h"
 
-#include "Bullet/PhysicsManager.h"
+#include "Physics/PhysicsManager.h"
 
 #include "Entity.h"
 

@@ -8,7 +8,7 @@
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
-#include "Ogre/OgreManager.h"
+#include "Render/OgreManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"

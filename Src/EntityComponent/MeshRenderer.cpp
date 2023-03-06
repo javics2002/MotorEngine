@@ -1,5 +1,5 @@
 #include "MeshRenderer.h"
-#include "Ogre/OgreManager.h"
+#include "Render/OgreManager.h"
 #include "Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"

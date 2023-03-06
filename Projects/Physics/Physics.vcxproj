@@ -19,23 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\FMOD\main.cpp" />
-    <ClCompile Include="..\..\Src\FMOD\SoundManager.cpp" />
+    <ClCompile Include="..\..\Src\Physics\main.cpp" />
+    <ClCompile Include="..\..\Src\Physics\PhysicsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\FMOD\SoundManager.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\EntityComponent\EntityComponent.vcxproj">
+      <Project>{e996e8c5-c183-4221-9a3e-4fc9e4475465}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Render\Render.vcxproj">
+      <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Input\Input.vcxproj">
+      <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.vcxproj">
       <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\Physics\PhysicsManager.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b4d632c1-e07d-4584-a31d-bb7546930d05}</ProjectGuid>
-    <RootNamespace>FMOD</RootNamespace>
+    <ProjectGuid>{31ea8915-ab30-4545-8535-15a0ee380979}</ProjectGuid>
+    <RootNamespace>Physics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Physics</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -125,19 +135,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Src;$(SolutionDir)Dependencies\Bullet\Src\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;</AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,7 +156,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc; $(SolutionDir)Src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,10 +165,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>fmod_vc.lib;fmodstudio_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

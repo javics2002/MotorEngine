@@ -19,32 +19,29 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Bullet\main.cpp" />
-    <ClCompile Include="..\..\Src\Bullet\PhysicsManager.cpp" />
+    <ClInclude Include="..\..\Src\Render\OgreManager.h" />
+    <ClInclude Include="..\..\Src\Render\OgreCamera.h" />
+    <ClInclude Include="..\..\Src\Render\OgreMesh.h" />
+    <ClInclude Include="..\..\Src\Render\SGTechniqueResolverListener.h" />
+    <ClInclude Include="..\..\Src\Render\OgreWindow.h" />
+    <ClInclude Include="..\..\Src\Render\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityComponent\EntityComponent.vcxproj">
-      <Project>{e996e8c5-c183-4221-9a3e-4fc9e4475465}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Ogre\Ogre.vcxproj">
-      <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SDL\SDL.vcxproj">
-      <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Utils\Utils.vcxproj">
-      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Src\Bullet\PhysicsManager.h" />
+    <ClCompile Include="..\..\Src\Render\mainOgre.cpp" />
+    <ClCompile Include="..\..\Src\Render\OgreManager.cpp" />
+    <ClCompile Include="..\..\Src\Render\OgreCamera.cpp" />
+    <ClCompile Include="..\..\Src\Render\OgreMesh.cpp" />
+    <ClCompile Include="..\..\Src\Render\SGTechniqueResolverListener.cpp" />
+    <ClCompile Include="..\..\Src\Render\OgreWindow.cpp" />
+    <ClCompile Include="..\..\Src\Render\Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{31ea8915-ab30-4545-8535-15a0ee380979}</ProjectGuid>
-    <RootNamespace>Bullet</RootNamespace>
+    <ProjectGuid>{f397a5dd-2267-4be9-9453-7db0da6118ae}</ProjectGuid>
+    <RootNamespace>Ogre</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Render</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -95,10 +92,12 @@
     <OutDir>$(SolutionDir)Lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Lib\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,17 +133,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain_d.lib;SDL3.lib;OgreRTShaderSystem_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -155,17 +154,19 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\Ogre\Build\lib\$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

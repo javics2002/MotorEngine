@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\FMOD\main.cpp">
+    <ClCompile Include="..\..\Src\Physics\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\FMOD\SoundManager.cpp">
+    <ClCompile Include="..\..\Src\Physics\PhysicsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\FMOD\SoundManager.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="..\..\Src\Physics\PhysicsManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

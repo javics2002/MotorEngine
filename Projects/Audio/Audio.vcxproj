@@ -18,12 +18,25 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Src\Audio\main.cpp" />
+    <ClCompile Include="..\..\Src\Audio\SoundManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\Audio\SoundManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.vcxproj">
+      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</ProjectGuid>
-    <RootNamespace>SDL</RootNamespace>
+    <ProjectGuid>{b4d632c1-e07d-4584-a31d-bb7546930d05}</ProjectGuid>
+    <RootNamespace>FMOD</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Audio</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -113,19 +126,19 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Src;$(SolutionDir)Dependencies\Bullet\Src\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/SDL/Build/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/SDL/Build/Debug;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,24 +157,13 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>fmod_vc.lib;fmodstudio_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Src\SDL\InputManager.cpp" />
-    <ClCompile Include="..\..\Src\SDL\main.cpp" />
-    <ClCompile Include="..\..\Src\SDL\Window.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Src\SDL\Axis.h" />
-    <ClInclude Include="..\..\Src\SDL\Button.h" />
-    <ClInclude Include="..\..\Src\SDL\InputManager.h" />
-    <ClInclude Include="..\..\Src\SDL\SDL.h" />
-    <ClInclude Include="..\..\Src\SDL\Window.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.vcxproj">
-      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

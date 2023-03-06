@@ -1,5 +1,5 @@
 #include "VehicleController.h"
-#include <SDL/InputManager.h>
+#include <Input/InputManager.h>
 #include "Transform.h"
 #include "Utils/Vector3.h"
 #include "RigidBody.h"

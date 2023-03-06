@@ -7,7 +7,7 @@
 #include "Component.h"
 #include "Entity.h"
 
-#include <FMOD/SoundManager.h>
+#include <Audio/SoundManager.h>
 
 namespace me {
 	class AudioSource : public Component

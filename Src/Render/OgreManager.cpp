@@ -13,10 +13,10 @@
 #include <OgreVector.h>
 #include <iostream>
 
-#include "Ogre/OgreWindow.h"
-#include "Ogre/OgreCamera.h"
-#include "Ogre/OgreMesh.h"
-#include "Ogre/SGTechniqueResolverListener.h"
+#include "Render/OgreWindow.h"
+#include "Render/OgreCamera.h"
+#include "Render/OgreMesh.h"
+#include "Render/SGTechniqueResolverListener.h"
 
 // Animation includes
 #include <OgreAnimation.h>
