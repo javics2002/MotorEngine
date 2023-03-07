@@ -5,6 +5,7 @@
 
 #include "InputManager.h"
 #include "Render/Window.h"
+#include "Utils/checkML.h"
 #include <iostream>
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_events.h>
@@ -64,6 +65,12 @@ int getAxisValue(void* userdata) {
     return 0;
 }
 
+int getMousePosition(void* userdata) {
+    std::cout << "Mouse pos: " << im().getMousePositon().x << " " << im().getMousePositon().y << "\n";
+
+    return 0;
+}
+
 int main() {
 	im();
     Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
@@ -101,7 +108,7 @@ int main() {
     controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
     controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
-    im().addButton("A", controllerA);
+    im().addButton("A", controllerA, 4); //Solo P1
 
     im().addOnButtonPressedEvent("A", shoot);
 
@@ -117,12 +124,25 @@ int main() {
     char* horizontalName = (char*) "Horizontal";
     im().addAxis(horizontalName, horizontalInfo, horizontal);
 
+    AxisInput gamepadLeftHorizontal;
+    gamepadLeftHorizontal.type = INPUTTYPE_GAMEPAD_AXIS;
+    gamepadLeftHorizontal.which = SDL_GAMEPAD_AXIS_LEFTX;
+
+    im().addBinding("Horizontal", gamepadLeftHorizontal);
+
     Input keyboardP;
     keyboardP.type = INPUTTYPE_KEYBOARD;
     keyboardP.which = SDLK_p;
 
     im().addButton("P", keyboardP);
     im().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
+
+    Input keyboardM;
+    keyboardM.type = INPUTTYPE_KEYBOARD;
+    keyboardM.which = SDLK_m;
+
+    im().addButton("M", keyboardM);
+    im().addOnButtonPressedEvent("M", getMousePosition);
 
 
     std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";

@@ -41,7 +41,15 @@ namespace me {
 
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event*/
-		int positive, negative;
+		union {
+			/*In case it is a physical axis, which will be used instead of two buttons.*/
+			int which;
+
+			int positive;
+		};
+		int negative;
+
+		
 	};
 }
 

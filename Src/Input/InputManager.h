@@ -3,6 +3,7 @@
 #define __SDL_INPUT_MANAGER
 
 #include "Utils/Singleton.h"
+#include "Utils/Vector2.h"
 #include "Button.h"
 #include "Axis.h"
 #include <vector>
@@ -44,9 +45,6 @@ namespace me {
 		//Stores callback data for virtual buttons.
 		std::unordered_multimap<std::string, OnButtonPressedInfo> mOnButtonPressed;
 
-		//Stores each player's gamepad
-		std::unordered_map<int, SDL_Gamepad*> mGamepads;
-
 		/*
 		Manages the connection and disconnection of controllers.
 		*/
@@ -61,6 +59,8 @@ namespace me {
 		Constructs input struct for any given event
 		*/
 		static Input getInput(SDL_Event* event);
+
+		float mouseX, mouseY;
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
@@ -86,9 +86,12 @@ namespace me {
 		/**
 		Creates a button of name name.
 		@param name Name of the button.
+		@param player In case it is necessary to differenciate which player
+		inputs a press, InputManager will dissmiss presses from other players.
+		First player is 0.
 		@returns A boolean representing whether the button could be created.
 		*/
-		bool addButton(std::string name);
+		bool addButton(std::string name, int player = -1);
 		/**
 		Creates a button of name name and binds it with some physical input.
 		@param name Name of the button.
@@ -98,9 +101,12 @@ namespace me {
 		or SDL_ControllerButtonEvent for controller presses;
 		and input.which represents a value of SDL_KeyCode, SDL_BUTTON 
 		or SDL_GamepadButton depending on the type of the event
+		@param player In case it is necessary to differenciate which player
+		inputs a press, InputManager will dissmiss presses from other players.
+		First player is 0.
 		@returns A boolean representing whether the button could be created.
 		*/
-		bool addButton(std::string name, Input input);
+		bool addButton(std::string name, Input input, int player = -1);
 		/**
 		Deletes button name and any bindings it may have.
 		@param name Name of the button.
@@ -221,6 +227,11 @@ namespace me {
 		@returns Whether the callback could be unbinded to the button
 		*/
 		bool deleteOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData = NULL);
+
+		/*
+		@returns Current mouse position
+		*/
+		Vector2<> getMousePositon();
 	};
 
 	/**

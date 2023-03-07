@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\Src\Utils\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\Utils\checkML.h" />
     <ClInclude Include="..\..\Src\Utils\Singleton.h" />
     <ClInclude Include="..\..\Src\Utils\Time.h" />
     <ClInclude Include="..\..\Src\Utils\Utils.h" />

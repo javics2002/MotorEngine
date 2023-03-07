@@ -16,6 +16,10 @@ namespace me {
 	struct Button {
 		//Value
 		bool pressed;
+
+		/*Whose player this button is, used in case its a gamepad button press
+		-1 will be considered as a playerless input.*/
+		int player;
 	};
 
 	//Represents a physical button or key that can trigger a virtual button.
@@ -67,6 +71,11 @@ namespace me {
 
 		//Name of the button this callback belongs to.
 		std::string buttonName;
+
+		/*Whose player this button is, used in case its a gamepad button press.
+		The first player is 0.
+		-1 will be considered as a playerless input.*/
+		int player;
 	};
 }
 
