@@ -31,6 +31,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\VehicleController.cpp" />
+    <ClCompile Include="C:\hlocal\Nueva carpeta\P3-Motor\Src\EntityComponent\ParticleSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\AudioListener.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\VehicleController.h" />
+    <ClInclude Include="C:\hlocal\Nueva carpeta\P3-Motor\Src\EntityComponent\ParticleSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\Utils.vcxproj">

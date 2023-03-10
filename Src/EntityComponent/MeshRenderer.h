@@ -30,7 +30,7 @@ namespace me {
 	public:
 
 		/**
-		Construct a new MeshRenderer object that saved necesary info
+		Construct a new MeshRenderer component and save necesary info
 		@param name: name saved in om() map and used for entity that attached in node
 		@param meshName: name of .mesh file
 		*/

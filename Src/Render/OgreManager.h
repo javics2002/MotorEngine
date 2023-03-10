@@ -29,6 +29,7 @@ namespace me {
 	class OgreWindow;
 	class OgreCamera;
 	class OgreMesh;
+	class OgreParticleSystem;
 	class SGTechniqueResolverListener;
 
 	/**
@@ -99,7 +100,8 @@ namespace me {
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
 		//Store mesh name to ogreMesh
 		std::unordered_map<std::string, OgreMesh*> mMeshes;			//Pairs each mesh with its name
-
+		//Store mesh name to ogreParticleSystem
+		std::unordered_map<std::string, OgreParticleSystem*> mParticles;			//Pairs each mesh with its name
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
@@ -135,6 +137,13 @@ namespace me {
 		@return nullptr: if it doesn't exist
 		*/
 		OgreMesh* getMesh(std::string name);
+
+		/**
+		@param name: Name of the particle
+		@return OgreParticleSystem: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		OgreParticleSystem* getParticle(std::string name);
 
 	public:
 		OgreManager&operator=(const OgreManager&o) = delete;
@@ -210,11 +219,39 @@ namespace me {
 		//set rotation info to the mesh with this name
 		bool setMeshRotation(std::string name,Ogre::Quaternion rot);
 
-		//set rotation info to the mesh with this name
+		//set material to the mesh with this name
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
 
 		//destroy OgreMesh created 
 		void destroyMesh(std::string name);
+
+		/**
+		Create the ogreParticleSystem with this name
+		@param name: name of Ogre::SceneNode &&unordered_map
+		@param nameParticle: name of partcile system that is written int ParticleResource.particle
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createParticle(std::string name, std::string nameMesh);
+		/**
+		Set Transform info to the particle with this name (for static object)
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale);
+		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot);
+		//set position info to the particle with this name
+		bool setParticlePosition(std::string name, const Ogre::Vector3f& pos);
+		//set scale info to the particle with this name
+		bool setParticleScale(std::string name, const Ogre::Vector3f& scale);
+		//set rotation info to the particle with this name
+		bool setParticleRotation(std::string name, Ogre::Quaternion rot);
+
+		//set emitting state to the particle with this name
+		bool setParticleEmitting(std::string name, bool emitted);
 
 		/**
 		Set dimension to the viewport of the camera with this name

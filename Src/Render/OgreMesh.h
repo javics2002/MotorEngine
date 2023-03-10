@@ -25,7 +25,6 @@ namespace me {
 		//Name of mesh that used
 		std::string mMeshName;
 		std::string mMaterialName;
-		std::string mName;
 		
 
 

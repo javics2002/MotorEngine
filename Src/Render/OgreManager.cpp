@@ -16,6 +16,7 @@
 #include "Render/OgreWindow.h"
 #include "Render/OgreCamera.h"
 #include "Render/OgreMesh.h"
+#include "Render/OgreParticleSystem.h"
 #include "Render/SGTechniqueResolverListener.h"
 
 // Animation includes
@@ -143,6 +144,14 @@ OgreCamera* me::OgreManager::getCamera(std::string name)
 	return mCameras[name];
 }
 
+OgreParticleSystem* me::OgreManager::getParticle(std::string name)
+{
+	if (!mParticles.count(name))
+		return nullptr;
+
+	return mParticles[name];
+}
+
 me::OgreManager::~OgreManager()
 {
 	for (auto& it : mCameras) {
@@ -207,6 +216,20 @@ bool me::OgreManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos,
 	return true;
 
 }
+
+
+bool me::OgreManager::setViewportDimension(std::string name, float left, float top, float width, float height)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setViewportDimension(left, top, width, height);
+
+
+	return true;
+}
+
 void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
 {
 	
@@ -318,18 +341,86 @@ bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &p
 
 
 
-
-bool me::OgreManager::setViewportDimension(std::string name, float left, float top, float width, float height)
+bool me::OgreManager::createParticle(std::string name, std::string nameParticle)
 {
-	OgreCamera* cam = getCamera(name);
-	if (cam == nullptr)
+	if (mParticles.count(name))
 		return false;
 
-	cam->setViewportDimension(left, top, width, height);
+	Ogre::SceneNode* entityNode = createNode(name);
+	OgreParticleSystem* particle = new OgreParticleSystem(name, entityNode, nameParticle);
 
+	mParticles[name] = particle;
 
 	return true;
 }
+
+bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setTransform(pos, scale, Ogre::Quaternion::IDENTITY);
+
+	return true;
+}
+
+bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setTransform(pos, scale, rot);
+
+	return true;
+}
+
+bool me::OgreManager::setParticlePosition(std::string name, const Ogre::Vector3f& pos)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setPosition(pos);
+
+	return true;
+}
+
+bool me::OgreManager::setParticleScale(std::string name, const Ogre::Vector3f& scale)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setScale(scale);
+
+	return true;
+}
+
+bool me::OgreManager::setParticleRotation(std::string name, Ogre::Quaternion rot)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setRotation(rot);
+
+	return true;
+}
+
+bool me::OgreManager::setParticleEmitting(std::string name, bool emitted)
+{
+	OgreParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setEmitting(emitted);
+
+	return true;
+}
+
+
 
 Ogre::SceneNode* me::OgreManager::createNode(std::string name)
 {
