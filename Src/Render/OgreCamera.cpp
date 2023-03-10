@@ -47,7 +47,9 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 
 me::OgreCamera::~OgreCamera()
 {
-
+	mCameraNode->detachAllObjects();
+	mSceneMgr->destroyCamera(mCamera);
+	mSceneMgr->destroySceneNode(mCameraNode);
 }
 
 

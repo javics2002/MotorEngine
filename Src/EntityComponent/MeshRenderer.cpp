@@ -15,6 +15,7 @@ me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
 
 me::MeshRenderer::~MeshRenderer()
 {
+	om().destroyMesh(mName);
 }
 
 void me::MeshRenderer::start()

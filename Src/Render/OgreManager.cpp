@@ -145,6 +145,17 @@ OgreCamera* me::OgreManager::getCamera(std::string name)
 
 me::OgreManager::~OgreManager()
 {
+	for (auto& it : mCameras) {
+
+		delete it.second;
+	}
+	mCameras.clear();
+
+	for (auto& it2 : mMeshes) {
+
+		delete it2.second;
+	}
+	mMeshes.clear();
 	delete mOgreWindow;
 }
 
@@ -266,6 +277,21 @@ bool me::OgreManager::setMeshMaterial(std::string name, std::string nameMaterial
 	mesh->setMaterial(nameMaterial);
 
 	return true;
+}
+
+void me::OgreManager::destroyMesh(std::string name)
+{
+	OgreMesh* mesh = getMesh(name);
+	if (mesh == nullptr)
+	{
+		std::cout << "Try to destroy nullptr mesh with this name " << name << std::endl;
+	}
+	else
+	{
+		delete mesh;
+		mMeshes.erase(name);
+	}
+
 }
 
 bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)

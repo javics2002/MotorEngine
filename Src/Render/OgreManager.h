@@ -213,6 +213,8 @@ namespace me {
 		//set rotation info to the mesh with this name
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
 
+		//destroy OgreMesh created 
+		void destroyMesh(std::string name);
 
 		/**
 		Set dimension to the viewport of the camera with this name
