@@ -54,6 +54,7 @@ void OgreManager::initRoot()
 	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuración ogre. (en el bin de la solubión)
 	//mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
 
+	std:: string logPath = mFSLayer->getWritablePath("ogre.log");
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mFSLayer->getWritablePath("ogre.log"));
 
 	if (!mRoot)
@@ -319,7 +320,12 @@ void me::OgreManager::render()
 {
 	mRoot->renderOneFrame();
 
-	ogreAnimState->addTime(0.0166);
+	// ogreAnimState->addTime(0.0166);
+}
+
+OgreWindow* me::OgreManager::getOgreWindow()
+{
+	return mOgreWindow;
 }
 
 void me::OgreManager::scene1()

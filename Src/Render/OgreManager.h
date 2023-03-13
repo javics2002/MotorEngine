@@ -239,6 +239,12 @@ namespace me {
 		Ogre::SceneNode* createChildNode(std::string name, std::string parent);
 
 		/**
+		Returns a pointer to the OgreWindow used for rendering.
+		@return The Render Window
+		*/
+		OgreWindow* getOgreWindow();
+
+		/**
 		Example scene where rendering a sinbad with 2 camera,viewport
 		*/
 		void scene1();
