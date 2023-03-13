@@ -174,7 +174,7 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
-
+		
 		/**
 		Set location and direction to the camera with this name
 		@param name: name of camera

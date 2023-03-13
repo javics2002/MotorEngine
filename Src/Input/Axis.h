@@ -5,7 +5,7 @@
 #include <string>
 
 namespace me {
-	enum InputType;
+	enum InputType : int;
 
 	//This data defines the behaviour of the axis
 	struct AxisInfo {

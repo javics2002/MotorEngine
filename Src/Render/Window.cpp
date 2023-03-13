@@ -21,7 +21,7 @@ Window::~Window()
 {
 }
 
-SDL_Window* me::Window::get()
+SDL_Window* Window::get()
 {
 	return window;
 }

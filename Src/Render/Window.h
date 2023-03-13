@@ -4,7 +4,7 @@
 
 #include "Utils/Singleton.h"
 
-class SDL_Window;
+typedef struct SDL_Window SDL_Window;
 
 namespace me {
 	/**

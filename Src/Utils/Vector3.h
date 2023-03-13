@@ -32,7 +32,7 @@ namespace me {
 			return a + f * (b - a);
 		}
 
-		const float M_PI_CONST = 3.141592653589793238462;
+		const float M_PI_CONST = 3.141592653589793238462f;
 
 	public:
 		float x, y, z;

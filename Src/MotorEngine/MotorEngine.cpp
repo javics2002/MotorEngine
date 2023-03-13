@@ -161,14 +161,14 @@ namespace me {
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("../../Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
+		result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("../../Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
+		result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
