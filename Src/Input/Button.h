@@ -7,7 +7,7 @@
 #include <SDL3/SDL_events.h>
 
 namespace me {
-	enum InputType;
+	enum InputType : int;
 
 	/**
 	Representation of a virtual button, so you can unify input

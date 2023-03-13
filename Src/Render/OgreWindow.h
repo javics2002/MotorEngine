@@ -3,7 +3,7 @@
 #define __OGRE_OGRE_WINDOW
 
 #include <string>
-class SDL_Window;
+typedef struct SDL_Window SDL_Window;
 
 namespace Ogre {
 	class Root;

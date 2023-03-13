@@ -108,7 +108,7 @@ int main() {
     controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
     controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
-    im().addButton("A", controllerA, 4); //Solo P1
+    im().addButton("A", controllerA, 0); //Solo P1
 
     im().addOnButtonPressedEvent("A", shoot);
 
@@ -118,8 +118,8 @@ int main() {
     horizontal.negative = SDLK_a;
 
     AxisInfo horizontalInfo;
-    horizontalInfo.dead = .1;
-    horizontalInfo.gravity = .01;
+    horizontalInfo.dead = .1f;
+    horizontalInfo.gravity = .01f;
 
     char* horizontalName = (char*) "Horizontal";
     im().addAxis(horizontalName, horizontalInfo, horizontal);

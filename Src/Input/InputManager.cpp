@@ -39,7 +39,7 @@ bool InputManager::addButton(std::string name, int player)
 #ifdef _DEBUG
 		std::cout << "Button " << name << " already exists.\n";
 #endif
-
+		
 		return false;
 	}
 
