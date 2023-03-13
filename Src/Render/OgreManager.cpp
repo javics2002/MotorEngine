@@ -10,6 +10,7 @@
 #include <OgreShaderGenerator.h>
 #include <OgreRTShaderSystem.h>
 #include <OgreMaterialManager.h>
+#include <OgreColourValue.h>
 #include <OgreVector.h>
 #include <iostream>
 
@@ -186,7 +187,7 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	return true;
 }
 
-bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
 {
 	if (mCameras.count(name))
 		return false;
@@ -228,6 +229,22 @@ bool me::OgreManager::setViewportDimension(std::string name, float left, float t
 
 
 	return true;
+}
+
+
+void me::OgreManager::destroyCamera(std::string name)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+	{
+		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+	}
+	else
+	{
+		delete cam;
+		mCameras.erase(name);
+	}
+
 }
 
 void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
@@ -316,6 +333,7 @@ void me::OgreManager::destroyMesh(std::string name)
 	}
 
 }
+
 
 bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
 {
@@ -437,6 +455,11 @@ void me::OgreManager::render()
 	mRoot->renderOneFrame();
 
 	ogreAnimState->addTime(0.0166);
+}
+
+Ogre::SceneManager* me::OgreManager::getSceneManager()
+{
+	return mSM;
 }
 
 void me::OgreManager::scene1()

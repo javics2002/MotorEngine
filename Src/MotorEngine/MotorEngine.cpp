@@ -19,6 +19,7 @@
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
 #include "EntityComponent/ParticleSystem.h"
+#include "EntityComponent/Camera.h"
 #include "EntityComponent/Collider.h"
 #include "Audio/SoundManager.h"
 
@@ -74,8 +75,15 @@ namespace me {
 
 		//Manager del proyecto de render
 		std::string camJ1 = "CameraJugador1";
-		om().createCamera(camJ1, 5, 10000, true, 0, Ogre::ColourValue(0.0f, 0.0f, 0.1f));
-		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 200, 500), Ogre::Vector3(0, -1, -1));
+		camera1 = new Entity("camera");
+		camera1->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 500));
+		camera1->addComponent<Camera>("camera", camJ1, 5, 10000, true, 0 , Vector3(0, -1, -1))->setViewportDimension(0.0f,0.0f,0.5f,1.0f);
+		
+		std::string camJ2 = "CameraJugador2";
+		camera2 = new Entity("camera2");
+		camera2->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 500));
+		camera2->addComponent<Camera>("camera", camJ2, 5, 10000, true, 1, Vector3(0, -1, -1))->setViewportDimension(0.5f, 0.0f, 0.5f, 1.0f);
+
 		om().createNewLight("Luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
 
 		pm().start();
@@ -161,14 +169,14 @@ namespace me {
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
+		result = Sound_System->createSound("../../Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
+		result = Sound_System->createSound("../../Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
@@ -228,6 +236,8 @@ namespace me {
 			pm().update(0.0166);
 			plane->update();
 			cube->update();
+			camera1->update();
+			camera2->update();
 			result = Sound_System->update();
 			if (result != FMOD_OK)
 			{

@@ -29,16 +29,13 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 	mCamera->setAutoAspectRatio(autoRadio);
 	mCameraNode->attachObject(mCamera);
 	mViewport = mRenderWindow->addViewport(mCamera,zOrder);
+	if (zOrder > 0)
+	{
+		mViewport->setClearEveryFrame(false);
+	}
 	mViewport->setBackgroundColour(color);
+	mViewport->setOverlaysEnabled(false);
 
-	//Ogre::Camera* mCamera2 = mSceneMgr->createCamera(name+'2');
-	//mCamera2->setNearClipDistance(nearDist);
-	//mCamera2->setFarClipDistance(farDist);
-	//mCamera2->setAutoAspectRatio(autoRadio);
-	//Ogre::SceneNode* mCameraNode2 = mCameraNode->createChildSceneNode();
-	//mCameraNode2->attachObject(mCamera2);
-	//mViewport = mRenderWindow->addViewport(mCamera2, 1, 0.5, 0, 0.5, 1);
-	//mViewport->setBackgroundColour(Ogre::ColourValue(0.0f, 0.0f, 0.0f));
 
 
 		
@@ -68,6 +65,8 @@ void me::OgreCamera::setViewportDimension(float left, float top, float width, fl
 	mViewport->setDimensions(left, top, width, height);
 	
 }
+
+
 
 
 

@@ -41,7 +41,7 @@ namespace me {
 
 		//Test hito 1
 		Entity* plane, *cube;
-		Entity* vacio;
+		Entity* camera1, *camera2;
 		FMOD_RESULT result;
 		FMOD::System* Sound_System = NULL;
 		FMOD::Sound* sonido, *disparo;

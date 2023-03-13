@@ -58,6 +58,7 @@ namespace me {
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
 
+		
 		//void setPosition(Vector3 pos);
 		//void lookAt(Vector3 pos);
 
