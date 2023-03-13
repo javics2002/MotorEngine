@@ -41,6 +41,7 @@ namespace me {
 
 		//Test hito 1
 		Entity* plane, *cube;
+		Entity* vacio;
 		FMOD_RESULT result;
 		FMOD::System* Sound_System = NULL;
 		FMOD::Sound* sonido, *disparo;

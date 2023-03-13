@@ -30,7 +30,7 @@ void me::ParticleSystem::update()
 {
 	Vector3 pos = mTransform->getPosition() + mOffsetPos;
 	Vector3 scale = mTransform->getScale() + mOffsetScale;
-	om().setMeshTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation());
+	om().setParticleTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation());
 
 }
 

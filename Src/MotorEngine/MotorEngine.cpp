@@ -18,6 +18,7 @@
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
+#include "EntityComponent/ParticleSystem.h"
 #include "EntityComponent/Collider.h"
 #include "Audio/SoundManager.h"
 
@@ -95,6 +96,11 @@ namespace me {
 		cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
 		cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
 
+
+		auto ps = cube->addComponent<ParticleSystem>("particleSystem", "cParticle", "Particle/Smoke");
+		ps->setEmitting(true);
+		ps->setOffsetPos(Vector3(50, 50, 0));
+		
 		om().scene1();
 
 		Input keyboardE;
@@ -155,14 +161,14 @@ namespace me {
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
+		result = Sound_System->createSound("../../Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
+		result = Sound_System->createSound("../../Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));

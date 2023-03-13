@@ -26,12 +26,12 @@
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\ParticleSystem.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\VehicleController.cpp" />
-    <ClCompile Include="C:\hlocal\Nueva carpeta\P3-Motor\Src\EntityComponent\ParticleSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\AudioListener.h" />
@@ -43,12 +43,12 @@
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
     <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ParticleSystem.h" />
     <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\VehicleController.h" />
-    <ClInclude Include="C:\hlocal\Nueva carpeta\P3-Motor\Src\EntityComponent\ParticleSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\Utils.vcxproj">

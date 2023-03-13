@@ -486,5 +486,6 @@ void me::OgreManager::scene1()
 	ogreAnimState = mSM->createAnimationState("sinbadAnimation");
 	ogreAnimState->setEnabled(true);
 	ogreAnimState->setLoop(true);
+
 	
 }
