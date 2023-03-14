@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SDL_WINDOW
-#define __SDL_WINDOW
+#ifndef __RENDER_WINDOW
+#define __RENDER_WINDOW
 
 #include "Utils/Singleton.h"
 
