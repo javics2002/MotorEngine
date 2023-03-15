@@ -22,6 +22,7 @@ namespace Ogre {
 	namespace RTShader {
 		class ShaderGenerator;
 	}
+	class TextAreaOverlayElement;
 }
 
 namespace me {
@@ -31,6 +32,7 @@ namespace me {
 	class OgreMesh;
 	class OgreParticleSystem;
 	class SGTechniqueResolverListener;
+	class OverlayManager;
 
 	/**
 	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
@@ -73,6 +75,10 @@ namespace me {
 		Remember to add all the .dll of the written plugins
 		*/
 		std::string mPluginCfgPath;
+
+
+		OverlayManager* mOverlayManager;
+
 
 		/**
 		Path of the "Ogre.cfg"
@@ -287,6 +293,14 @@ namespace me {
 		*/
 		void render();
 
+		/**
+		Return the Ogre::Entity asociated
+		*/
+		Ogre::Entity* getOgreEntity(std::string name);
+
+
+		//Text UI
+		Ogre::TextAreaOverlayElement* createOverlayElement();
 
 	};
 

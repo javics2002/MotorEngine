@@ -47,6 +47,11 @@ void me::OgreMesh::setRotation(Ogre::Quaternion rot)
 	mNode->setOrientation(rot);
 }
 
+Ogre::Entity* me::OgreMesh::getOgreEntity()
+{
+	return mEntity;
+}
+
 void me::OgreMesh::setMaterial(std::string materialName)
 {
 	mMaterialName = materialName;

@@ -44,6 +44,11 @@ namespace me {
 		void setRotation(Ogre::Quaternion rot);
 
 		/**
+		Return the Ogre::Entity asociated
+		*/
+		Ogre::Entity* getOgreEntity();
+
+		/**
 		Assign material name to entity
 		@param materialName: name of material that we used 
 		Must be writted in MaterialResource.material

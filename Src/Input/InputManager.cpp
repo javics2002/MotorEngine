@@ -22,6 +22,11 @@ InputManager::~InputManager()
 {
 }
 
+bool me::InputManager::justClicked()
+{
+	
+}
+
 void InputManager::addEvent(SDL_EventFilter filter, void* userdata)
 {
 	SDL_AddEventWatch(filter, userdata);

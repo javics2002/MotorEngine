@@ -12,7 +12,7 @@
 #include <OgreMaterialManager.h>
 #include <OgreVector.h>
 #include <iostream>
-
+#include "OgreTextAreaOverlayElement.h"
 #include "Render/OgreWindow.h"
 #include "Render/OgreCamera.h"
 #include "Render/OgreMesh.h"
@@ -253,6 +253,7 @@ bool me::OgreManager::createMesh(std::string name, std::string nameMesh)
 	Ogre::SceneNode* entityNode = createNode(name);
 	OgreMesh* mesh = new OgreMesh(entityNode, nameMesh);
 
+
 	mMeshes[name] = mesh;
 
 	return true;
@@ -438,6 +439,18 @@ void me::OgreManager::render()
 
 	ogreAnimState->addTime(0.0166);
 }
+
+Ogre::Entity* me::OgreManager::getOgreEntity(std::string name)
+{
+	return getMesh(name)->getOgreEntity();
+}
+
+Ogre::TextAreaOverlayElement* me::OgreManager::createOverlayElement()
+{
+	return nullptr;
+}
+
+
 
 void me::OgreManager::scene1()
 {

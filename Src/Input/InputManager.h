@@ -67,6 +67,8 @@ namespace me {
 		InputManager(const InputManager& o) = delete;
 		~InputManager() override;
 		
+		bool justClicked();
+
 		/**
 		Calls filter everytime an SDL_Event is processed.
 		@param filter is a function with the format:
