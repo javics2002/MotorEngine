@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\hlocal\P3-Motor\Src\Lua\mainLua.cpp" />
+    <ClCompile Include="..\..\Src\Lua\mainLua.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

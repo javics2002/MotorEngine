@@ -167,7 +167,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
 		
 		/**
 		Create the camera with this name and store it
@@ -181,6 +181,8 @@ namespace me {
 		*/
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 		
+		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
+
 		/**
 		Set location and direction to the camera with this name
 		@param name: name of camera
@@ -190,6 +192,21 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look);
+
+		/**
+		Set dimension to the viewport of the camera with this name
+		@param name: name of camera
+		@param left: left point of viewport in range 0.0 to 1.0
+		@param top: top point of viewport in range 0.0 to 1.0
+		@param width: width of viewport in range 0.0 to 1.0
+		@param height: height of viewport in range 0.0 to 1.0
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setViewportDimension(std::string name, float left, float top, float width, float height);
+
+		//destroy OgreCamera created 
+		void destroyCamera(std::string name);
 
 		/**
 		Create the light with this name
@@ -259,17 +276,6 @@ namespace me {
 		//set emitting state to the particle with this name
 		bool setParticleEmitting(std::string name, bool emitted);
 
-		/**
-		Set dimension to the viewport of the camera with this name
-		@param name: name of camera
-		@param left: left point of viewport in range 0.0 to 1.0
-		@param top: top point of viewport in range 0.0 to 1.0
-		@param width: width of viewport in range 0.0 to 1.0
-		@param height: height of viewport in range 0.0 to 1.0
-		@return false: if it doesn't exist
-		@return true: if succeed
-		*/
-		bool setViewportDimension(std::string name, float left, float top, float width, float height);
 		
 		/**
 		@param name: name of node
@@ -301,6 +307,10 @@ namespace me {
 
 		//Text UI
 		Ogre::TextAreaOverlayElement* createOverlayElement();
+		Getter for scene manager
+		*/
+		Ogre::SceneManager* getSceneManager();
+
 
 	};
 

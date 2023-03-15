@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <thread>
-#include <Windows.h>
 #include <time.h>
 #include <chrono>
 #include <memory>
@@ -19,8 +18,12 @@
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
 #include "EntityComponent/ParticleSystem.h"
+#include "EntityComponent/Camera.h"
 #include "EntityComponent/Collider.h"
 #include "Audio/SoundManager.h"
+
+typedef HRESULT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT*);
+typedef const char* (*GameName)();
 
 int interact(void* userdata)
 {
@@ -69,13 +72,25 @@ int getAxisValue(void* userdata) {
 namespace me {
 	int MotorEngine::setup()
 	{
-		Window::init(SDL_INIT_EVERYTHING, "Motor Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		loadGame("VroomVroom"); //Deberia subir la variable a setup
+		assert(game != NULL);
+		
+		GameName name = (GameName)GetProcAddress(game, "name");
+
+		Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED, 
+			SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 		//Manager del proyecto de render
 		std::string camJ1 = "CameraJugador1";
-		om().createCamera(camJ1, 5, 10000, true, 0, Ogre::ColourValue(0.0f, 0.0f, 0.1f));
-		om().setCameraInfo(camJ1, Ogre::Vector3f(0, 200, 500), Ogre::Vector3(0, -1, -1));
+		camera1 = new Entity("camera");
+		camera1->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 500));
+		camera1->addComponent<Camera>("camera", camJ1, 5, 10000, true, 0 , Vector3(0, -1, -1))->setViewportDimension(0.0f,0.0f,0.5f,1.0f);
+		
+		std::string camJ2 = "CameraJugador2";
+		camera2 = new Entity("camera2");
+		camera2->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 500));
+		camera2->addComponent<Camera>("camera", camJ2, 5, 10000, true, 1, Vector3(0, -1, -1))->setViewportDimension(0.5f, 0.0f, 0.5f, 1.0f);
+
 		om().createNewLight("Luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
 
 		pm().start();
@@ -161,14 +176,14 @@ namespace me {
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("../../Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
+		result = Sound_System->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &sonido);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
 			std::exit(-1);
 		}
 
-		result = Sound_System->createSound("../../Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
+		result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
 		if (result != FMOD_OK)
 		{
 			printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
@@ -228,6 +243,8 @@ namespace me {
 			pm().update(0.0166);
 			plane->update();
 			cube->update();
+			camera1->update();
+			camera2->update();
 			result = Sound_System->update();
 			if (result != FMOD_OK)
 			{
@@ -266,7 +283,7 @@ namespace me {
 		Clear the memory created in the execution of the program
 		*/
 
-		//delete ogreManager;
+		FreeLibrary(game);
 	}
 
 	void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame, 
@@ -292,5 +309,28 @@ namespace me {
 		}
 
 		return 0;
+	}
+
+	bool MotorEngine::loadGame(std::string gameDllName)
+	{
+#ifdef _DEBUG
+		gameDllName = "./" + gameDllName + "_d.dll";
+#else
+		gameDllName = "./" + gameDllName + ".dll";
+#endif
+
+		//Convert to Windows text
+		size_t length = gameDllName.length();
+		wchar_t* wtext = new wchar_t[length *2];
+		
+		size_t* pReturnValue = new size_t();
+		mbstowcs_s(pReturnValue, wtext, length * 2, gameDllName.c_str(), length);
+		
+		game = LoadLibrary(wtext);
+		
+		delete pReturnValue;
+		delete[] wtext;
+		
+		return game != NULL;
 	}
 };

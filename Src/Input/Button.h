@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SDL_BUTTON
-#define __SDL_BUTTON
+#ifndef __INPUT_BUTTON
+#define __INPUT_BUTTON
 
 #include <string>
 #include <unordered_map>

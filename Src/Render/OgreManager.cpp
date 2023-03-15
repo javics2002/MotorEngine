@@ -10,6 +10,7 @@
 #include <OgreShaderGenerator.h>
 #include <OgreRTShaderSystem.h>
 #include <OgreMaterialManager.h>
+#include <OgreColourValue.h>
 #include <OgreVector.h>
 #include <iostream>
 #include "OgreTextAreaOverlayElement.h"
@@ -49,10 +50,10 @@ void OgreManager::initRoot()
 		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreManager::initRoot");
 	
 
-	mSolutionPath = mFSLayer->getConfigFilePath("plugins.cfg");   // Añadido para definir directorios relativos al de la solución 
+	mSolutionPath = mFSLayer->getConfigFilePath("plugins.cfg");   // Aï¿½adido para definir directorios relativos al de la soluciï¿½n 
 
 	mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);
-	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuración ogre. (en el bin de la solubión)
+	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuraciï¿½n ogre. (en el bin de la solubiï¿½n)
 	//mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
 
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mFSLayer->getWritablePath("ogre.log"));
@@ -186,7 +187,7 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	return true;
 }
 
-bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
 {
 	if (mCameras.count(name))
 		return false;
@@ -228,6 +229,22 @@ bool me::OgreManager::setViewportDimension(std::string name, float left, float t
 
 
 	return true;
+}
+
+
+void me::OgreManager::destroyCamera(std::string name)
+{
+	OgreCamera* cam = getCamera(name);
+	if (cam == nullptr)
+	{
+		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+	}
+	else
+	{
+		delete cam;
+		mCameras.erase(name);
+	}
+
 }
 
 void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
@@ -317,6 +334,7 @@ void me::OgreManager::destroyMesh(std::string name)
 	}
 
 }
+
 
 bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
 {
@@ -451,6 +469,11 @@ Ogre::TextAreaOverlayElement* me::OgreManager::createOverlayElement()
 }
 
 
+
+Ogre::SceneManager* me::OgreManager::getSceneManager()
+{
+	return mSM;
+}
 
 void me::OgreManager::scene1()
 {

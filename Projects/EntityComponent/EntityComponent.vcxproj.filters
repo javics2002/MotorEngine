@@ -79,6 +79,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\UIButton.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -138,6 +139,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\UIButton.h">
+    <ClInclude Include="..\..\Src\EntityComponent\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

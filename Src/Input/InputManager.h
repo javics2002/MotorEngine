@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SDL_INPUT_MANAGER
-#define __SDL_INPUT_MANAGER
+#ifndef __INPUT_INPUT_MANAGER
+#define __INPUT_INPUT_MANAGER
 
 #include "Utils/Singleton.h"
 #include "Utils/Vector2.h"
