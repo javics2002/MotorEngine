@@ -12,7 +12,7 @@ me::UIButton::UIButton(std::string name, float width, float height, float left, 
 
 	setTop(top);
 	setLeft(left);
-	setSize(Vector2<float>(width,height));
+	setSize(Vector2(width,height));
 	setWidth(width);
 	setHeight(height);
 
@@ -32,7 +32,7 @@ void me::UIButton::update()
 
 void me::UIButton::handleInput()
 {
-	Vector2<float> mousePosition = im().getMousePositon();
+	Vector2 mousePosition = im().getMousePositon();
 	if (mFocus && mousePosition.x >= getPos().x && mousePosition.x <= getPos().x + getSize().x &&
 		mousePosition.y >= getPos().y && mousePosition.y <= getPos().y + getSize().y) {
 		if (im().justClicked()) {

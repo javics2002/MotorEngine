@@ -6,7 +6,7 @@
 #include <OgreOverlayManager.h>
 #include "UIElement.h"
 
-me::UIText::UIText(std::string name, std::string fontName, float posX, float posY, float width, float height, std::string text, Vector4<float> textColor) : UIElement()
+me::UIText::UIText(std::string name, std::string fontName, float posX, float posY, float width, float height, std::string text, Vector4 textColor) : UIElement()
 {
 	mTextArea = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + std::to_string(mElems)));
 	mOverlay = mOverlayManager->create(name + std::to_string(mElems));
@@ -52,7 +52,7 @@ void me::UIText::setText(std::string text)
 	mTextArea->setCaption(text);
 }
 
-void me::UIText::setTextColor(Vector4<float> newColor)
+void me::UIText::setTextColor(Vector4 newColor)
 {
 	// Set the color
 	mTextArea->setColour(Ogre::ColourValue(newColor.x, newColor.y, newColor.z, newColor.w));

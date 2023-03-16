@@ -179,7 +179,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		//bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 		
 		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
 
@@ -312,7 +312,7 @@ namespace me {
 
 		//Text UI
 		Ogre::TextAreaOverlayElement* createOverlayElement();
-		Getter for scene manager
+		/*Getter for scene manager
 		*/
 		Ogre::SceneManager* getSceneManager();
 

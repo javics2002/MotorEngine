@@ -13,7 +13,7 @@
 namespace me {
 	class UIText : public me::UIElement
 	{
-		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4<float> textColor);
+		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
 		~UIText();
 
 
@@ -52,7 +52,7 @@ namespace me {
 		* Set the color of the text displayed by the UIText instance
 		* @param newColor The new color of the text
 		*/
-		void setTextColor(Vector4<float> newColor);
+		void setTextColor(Vector4 newColor);
 
 
 		/**

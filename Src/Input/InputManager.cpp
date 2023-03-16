@@ -24,7 +24,7 @@ InputManager::~InputManager()
 
 bool me::InputManager::justClicked()
 {
-	
+	return true;
 }
 
 void InputManager::addEvent(SDL_EventFilter filter, void* userdata)

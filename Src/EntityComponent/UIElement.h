@@ -41,19 +41,19 @@ namespace me {
 		* Gets the size of the UIElement
 		* @return A Vector2<float> representing the width and height of the UIElement
 		*/
-		Vector2<float> getSize();
+		Vector2 getSize();
 
 		/**
 		* Gets the position of the UIElement
 		* @return A Vector2<float> representing the x and y position of the UIElement
 		*/
-		Vector2<float> getPos();
+		Vector2 getPos();
 
 		/**
 		* Sets the size of the UIElement
 		* @param size A Vector2<float> representing the new width and height of the UIElement
 		*/
-		void setSize(Vector2<float> size);
+		void setSize(Vector2 size);
 
 		/**
 		* Checks if the UIElement is currently visible

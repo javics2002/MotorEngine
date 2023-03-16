@@ -24,17 +24,17 @@ void me::UIElement::hide()
     mOverlay->hide();
 }
 
-Vector2<float> me::UIElement::getSize()
+Vector2 me::UIElement::getSize()
 {
-    return Vector2<float>(mOverlayContainer->getWidth(), mOverlayContainer->getHeight());
+    return Vector2(mOverlayContainer->getWidth(), mOverlayContainer->getHeight());
 }
 
-Vector2<float> me::UIElement::getPos()
+Vector2 me::UIElement::getPos()
 {
-    return Vector2<float>(mOverlayContainer->getLeft(), mOverlayContainer->getTop());
+    return Vector2(mOverlayContainer->getLeft(), mOverlayContainer->getTop());
 }
 
-void me::UIElement::setSize(Vector2<float> size)
+void me::UIElement::setSize(Vector2 size)
 {
     mOverlayContainer->setDimensions(size.x,size.y);
 }
