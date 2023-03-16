@@ -450,11 +450,15 @@ Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string 
 	return mSM->getSceneNode(parent)->createChildSceneNode(name);
 }
 
+Ogre::SceneNode* me::OgreManager::getRootSceneNode()
+{
+	return mSM->getRootSceneNode();
+}
+
 void me::OgreManager::render()
 {
 	mRoot->renderOneFrame();
-
-	ogreAnimState->addTime(0.0166);
+	//ogreAnimState->addTime(0.0166);
 }
 
 Ogre::SceneManager* me::OgreManager::getSceneManager()

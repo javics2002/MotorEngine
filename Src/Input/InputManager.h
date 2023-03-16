@@ -231,7 +231,7 @@ namespace me {
 		/*
 		@returns Current mouse position
 		*/
-		Vector2<> getMousePositon();
+		Vector2 getMousePositon();
 	};
 
 	/**

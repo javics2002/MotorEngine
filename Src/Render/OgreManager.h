@@ -282,6 +282,11 @@ namespace me {
 		Ogre::SceneNode* createChildNode(std::string name, std::string parent);
 
 		/**
+		@return returns the root scene node
+		*/
+		Ogre::SceneNode* getRootSceneNode();
+
+		/**
 		Example scene where rendering a sinbad with 2 camera,viewport
 		*/
 		void scene1();

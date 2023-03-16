@@ -30,7 +30,7 @@ namespace me{
 		btTransform* mBtTransform = nullptr;
 
 		Transform* mTransform = nullptr;
-		btVector3 scale;
+		btVector3 mScale;
 
 	public:
 

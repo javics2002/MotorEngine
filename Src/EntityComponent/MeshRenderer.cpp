@@ -21,9 +21,11 @@ me::MeshRenderer::~MeshRenderer()
 void me::MeshRenderer::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
+
+	assert(mTransform && "An Entity doesn't have the transform component");
+
 	om().createMesh(mName, mMeshName);
 	om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
-
 }
 
 void me::MeshRenderer::update()

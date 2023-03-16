@@ -20,20 +20,20 @@ namespace me{
 		Set the entity activity to the boolean petition.
 		@param Boolean state activity.
 		*/
-		virtual void onCollisionEnter(Entity* other);
+		void onCollisionEnter(Entity* other);
 
 		/**
 		Set the entity activity to the boolean petition.
 		@param Boolean state activity.
 		*/
-		virtual void onCollisionStay(Entity* other);
+		void onCollisionStay(Entity* other);
 
 
 		/**
 		Set the entity activity to the boolean petition.
 		@param Boolean state activity.
 		*/
-		virtual void onCollisionExit(Entity* other);
+		void onCollisionExit(Entity* other);
 
 	};
 }

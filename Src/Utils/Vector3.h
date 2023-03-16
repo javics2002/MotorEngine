@@ -108,6 +108,7 @@ namespace me {
 
 		void operator=(const Vector3& v);
 		void operator=(const Vector3* v);
+		void operator=(const btVector3&v);
 
 		/**
 		Check if this vector is equal to another vector "v"
@@ -185,7 +186,7 @@ namespace me {
 		/**
 		Returns a unit vector pointing to the right along the x-axis
 		*/
-		Vector3 rigth();
+		Vector3 right();
 
 		/**
 		Returns a unit vector pointing backwards along the z-axis
@@ -231,6 +232,8 @@ namespace me {
 		Returns the conversion of a Vector3 to an btVector3
 		*/
 		btVector3 v3ToBulletV3();
+
+		
 	};
 }
 
