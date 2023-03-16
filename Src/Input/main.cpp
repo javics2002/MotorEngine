@@ -1,7 +1,7 @@
 #ifdef _DEBUG
 #pragma once
-#ifndef __SDL_MAIN
-#define __SDL_MAIN
+#ifndef __INPUT_MAIN
+#define __INPUT_MAIN
 
 #include "InputManager.h"
 #include "Render/Window.h"

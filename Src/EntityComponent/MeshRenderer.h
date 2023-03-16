@@ -58,6 +58,11 @@ namespace me {
 		Set it is static entity or not
 		*/
 		void setStatic(bool stat);
+
+		/**
+		Set it is static entity or not
+		*/
+		std::string getName();
 			
 	};
 }

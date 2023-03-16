@@ -7,9 +7,16 @@
 
 using namespace std;
 
+#ifdef _DEBUG
 int main()
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+#else
+#include <Windows.h>
+
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
+#endif
 
     me::MotorEngine engine;
 

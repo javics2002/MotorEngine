@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SDL_AXIS
-#define __SDL_AXIS
+#ifndef __INPUT_AXIS
+#define __INPUT_AXIS
 
 #include <string>
 

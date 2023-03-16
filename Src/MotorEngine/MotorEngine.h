@@ -2,11 +2,11 @@
 #ifndef __MOTORENGINE_MAIN
 #define __MOTORENGINE_MAIN
 
+#include "Audio/SoundManager.h"
+#include <Windows.h>
 #include <chrono>
 
 union SDL_Event;
-
-#include "Audio/SoundManager.h"
 
 namespace me {
 	class Entity;
@@ -38,6 +38,11 @@ namespace me {
 		* If we press SDL_QUIT (Exit button), the game stops and closes
 		*/
 		static int quitLoop(void* userdata, SDL_Event* event);
+
+		//Load dll of the game
+		bool loadGame(std::string gameDllname);
+
+		HMODULE game;
 
 		//Test hito 1
 		Entity* plane, *cube;

@@ -13,7 +13,7 @@
 #include <OgreColourValue.h>
 #include <OgreVector.h>
 #include <iostream>
-
+#include "OgreTextAreaOverlayElement.h"
 #include "Render/OgreWindow.h"
 #include "Render/OgreCamera.h"
 #include "Render/OgreMesh.h"
@@ -50,10 +50,10 @@ void OgreManager::initRoot()
 		OGRE_EXCEPT(Ogre::Exception::ERR_FILE_NOT_FOUND, "ogre.cfg", "OgreManager::initRoot");
 	
 
-	mSolutionPath = mFSLayer->getConfigFilePath("plugins.cfg");   // Añadido para definir directorios relativos al de la solución 
+	mSolutionPath = mFSLayer->getConfigFilePath("plugins.cfg");   // Aï¿½adido para definir directorios relativos al de la soluciï¿½n 
 
 	mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);
-	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuración ogre. (en el bin de la solubión)
+	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuraciï¿½n ogre. (en el bin de la solubiï¿½n)
 	//mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
 
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mFSLayer->getWritablePath("ogre.log"));
@@ -270,6 +270,7 @@ bool me::OgreManager::createMesh(std::string name, std::string nameMesh)
 	Ogre::SceneNode* entityNode = createNode(name);
 	OgreMesh* mesh = new OgreMesh(entityNode, nameMesh);
 
+
 	mMeshes[name] = mesh;
 
 	return true;
@@ -460,6 +461,18 @@ void me::OgreManager::render()
 	mRoot->renderOneFrame();
 	//ogreAnimState->addTime(0.0166);
 }
+
+Ogre::Entity* me::OgreManager::getOgreEntity(std::string name)
+{
+	return getMesh(name)->getOgreEntity();
+}
+
+Ogre::TextAreaOverlayElement* me::OgreManager::createOverlayElement()
+{
+	return nullptr;
+}
+
+
 
 Ogre::SceneManager* me::OgreManager::getSceneManager()
 {
