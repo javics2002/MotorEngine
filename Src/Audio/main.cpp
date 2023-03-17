@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 
-//#include <fmod.hpp>
-//#include <fmod_errors.h>
+#include <fmod.hpp>
+#include <fmod_errors.h>
 #include "SoundManager.h"
 
 const int MAX_CHANNELS = 36;

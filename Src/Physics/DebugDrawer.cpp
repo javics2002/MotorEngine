@@ -73,9 +73,9 @@ void me::DebugDrawer::drawTriangle(const btVector3& v0, const btVector3& v1, con
 	c.saturate();
 
 	Vector3 v0_, v1_, v2_;
-	v0_ = v0;
+	/*v0_ = v0;
 	v1_ = v1;
-	v2_ = v2;
+	v2_ = v2;*/
 
 	mTriangles->position(v0_.v3ToOgreV3());
 	mTriangles->colour(c);

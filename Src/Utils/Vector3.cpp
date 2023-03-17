@@ -1,6 +1,9 @@
 #include "Vector3.h"
 
 #include <OgreVector3.h>
+#include <OgreQuaternion.h>
+#include <LinearMath/btVector3.h>
+#include <LinearMath/btQuaternion.h>
 
 using namespace me;
 

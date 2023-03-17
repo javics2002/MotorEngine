@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include "Render/OgreManager.h"
+#include <OgreVector3.h>
 #include "Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"

@@ -31,9 +31,9 @@ void me::RigidBody::start()
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
-	mScale = mTransform->getScale().v3ToBulletV3();
+	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 
-	mBtRigidBody = pm().createRigidBody(mBtTransform, mScale, Shapes(mColShape),
+	mBtRigidBody = pm().createRigidBody(mBtTransform, scale, Shapes(mColShape),
 		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);

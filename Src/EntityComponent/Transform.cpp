@@ -18,6 +18,7 @@ me::Transform::Transform()
 
 me::Transform::~Transform()
 {
+	//DELETES
 #ifdef _DEBUG
 	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
 #endif

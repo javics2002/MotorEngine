@@ -7,11 +7,6 @@
 #include <math.h>
 #include <cmath>
 
-
-//#include <OgreQuaternion.h>
-#include <LinearMath/btVector3.h>
-#include <LinearMath/btQuaternion.h>
-
 namespace Ogre {
 	template<int dism, typename T>
 	class Vector;
@@ -19,6 +14,9 @@ namespace Ogre {
 
 	class Quaternion;
 }
+
+class btVector3;
+class btQuaternion;
 
 namespace me {
 
@@ -232,8 +230,6 @@ namespace me {
 		Returns the conversion of a Vector3 to an btVector3
 		*/
 		btVector3 v3ToBulletV3();
-
-		
 	};
 }
 

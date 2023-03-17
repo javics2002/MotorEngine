@@ -2,17 +2,21 @@
 #ifndef _FMOD_SOUND_MANAGER
 #define _FMOD_SOUND_MANAGER
 #include "Utils/Singleton.h"
+#include "Utils/Vector3.h"
 #include <unordered_map>
 
 #include <iostream>
 #include <stdio.h>
 
-#include <fmod.hpp>
-#include <fmod_errors.h>
-#include <Utils/Vector3.h>
+namespace FMOD {
+	class Sound;
+	class ChannelGroup;
+	class Channel;
+	class System;
+}
 
-
-
+enum FMOD_RESULT;
+typedef unsigned int FMOD_MODE;
 
 namespace me {
 	const int MAX_CHANNELS = 36;
@@ -26,7 +30,6 @@ namespace me {
 	*/
 	class SoundManager : public Singleton<SoundManager>
 	{
-
 		friend Singleton<SoundManager>;
 		SoundManager();
 		//Stores audio handles linked to the last channel they where played in.
@@ -120,23 +123,15 @@ namespace me {
 		@param sound : the sound handle needed to look for a channel.
 		@param newVolume : the volume value the channel will be changed to.
 		*/
-		inline void setVolume(FMOD::Sound* sound, float newVolume) {
-			auto channel = getChannel(sound);
-			if (channel != nullptr) channel->setVolume(newVolume);
-		}
+		void setVolume(FMOD::Sound* sound, float newVolume);
+
 		/**
 		Checks the volume of a certain channel if it exists.
 		@param sound : the sound handle needed to look for a channel.
 		@return The specific float of the volume.
 		*/
-		inline float getVolume(FMOD::Sound* sound) {
-			auto channel = getChannel(sound);
-			float volume;
-			if (channel != nullptr) {
-				channel->getVolume(&volume);
-				return volume;
-			}
-		}
+		float getVolume(FMOD::Sound* sound);
+
 		/**
 		Looks for a sound channel and in case that it exists, sets the pause state of that channel to "pause".
 		@param sound : the sound handle needed to look for a channel.
@@ -167,7 +162,8 @@ namespace me {
 		@param listenerUP : 
 		@param listenerVel : the velocity of the listener.
 		*/
-		void updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel = { 0,0,0 });
+		void updateListenersPosition(int index, Vector3 listenerPos, 
+			Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel = { 0,0,0 });
 		/**
 		Removes the listener from its vector and resets its values.
 		@param index : the index that refers to a certain listener.
@@ -179,7 +175,7 @@ namespace me {
 		@param sound : the sound handle which position will be set.
 		@param position : the value of the position of the sound.
 		*/
-		void setSoundPosition(FMOD::Sound*& sound,Vector3 position);
+		void setSoundPosition(FMOD::Sound*& sound, Vector3 position);
 
 		/**
 		Gets the useful listener which will be able to listen to a new sound.

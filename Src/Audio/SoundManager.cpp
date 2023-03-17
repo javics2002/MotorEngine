@@ -1,5 +1,9 @@
 #include "SoundManager.h"
 
+#include <fmod.hpp>
+#include <fmod_errors.h>
+#include <Utils/Vector3.h>
+
 me::SoundManager::SoundManager() {
 
 	mResult = FMOD::System_Create(&mSoundSystem);      // Create the main system object.
@@ -137,9 +141,9 @@ void me::SoundManager::deleteSound(FMOD::Sound* soundHandle)
 	mLastPlayedMap.erase(soundHandle);
 }
 
-void me::SoundManager::updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel)
+void me::SoundManager::updateListenersPosition(int index, Vector3 listenerPos, Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel)
 {
-	mSoundSystem->set3DListenerAttributes(index, &listenerPos, &listenerVel, &listenerFW, &listenerUP);
+	//mSoundSystem->set3DListenerAttributes(index, &lPos, &listenerVel, &listenerFW, &listenerUP);
 }
 
 void me::SoundManager::removeListener(int index)
@@ -187,5 +191,21 @@ bool me::SoundManager::setChannelVolume(const char* channelGroup, float newVolum
 	}
 	else {
 		changeChannelVolume(changedGroup, newVolume);
+	}
+}
+
+void me::SoundManager::setVolume(FMOD::Sound* sound, float newVolume)
+{
+	auto channel = getChannel(sound);
+	if (channel != nullptr) channel->setVolume(newVolume);
+}
+
+float me::SoundManager::getVolume(FMOD::Sound* sound)
+{
+	auto channel = getChannel(sound);
+	float volume;
+	if (channel != nullptr) {
+		channel->getVolume(&volume);
+		return volume;
 	}
 }

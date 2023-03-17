@@ -3,8 +3,8 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
-
-
+#include <OgreQuaternion.h>
+#include <OgreVector3.h>
 
 me::ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
 {
