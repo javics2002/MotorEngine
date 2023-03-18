@@ -3,8 +3,10 @@
 #ifndef __BULLET_MAIN
 #define __BULLET_MAIN
 
+#include <fstream>
 #include <iostream>
 #include <SDL3/SDL_events.h>
+#include <json.hpp>
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
@@ -16,6 +18,8 @@
 #include "EntityComponent/Collider.h"
 
 using namespace me;
+
+using json = nlohmann::json;
 
 int main() {
     
@@ -48,6 +52,20 @@ int main() {
 
     SDL_Event event;
     bool quit = false;
+
+    std::fstream file;
+
+    file.open("ejemplo.json");
+
+    json info;
+
+    info.parse(file);
+
+    std::cout << "x: " << info["x"] << "\n";
+    std::cout << "y: " << info["y"] << "\n";
+    std::cout << "z: " << info["z"] << "\n";
+
+    file.close();
 
     while (!quit) {
 

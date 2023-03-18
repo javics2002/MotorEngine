@@ -1,146 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{07955aa0-f13e-48ae-a8d5-f8c4101e19bb}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{ad718c84-5698-4869-aeb5-09236e3ea0c9}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{7d162712-84dd-4b01-bcfa-b19daef834c9}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="..\..\Src\EntityComponent\Animator.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\AudioListener.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\AudioSource.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Camera.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\ParticleSystem.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\UIButton.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\UIElement.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\UIText.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\VehicleController.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\ComponentsFactory.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\FactoryComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\RigidBody.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\VehicleController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\AudioListener.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\AudioSource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\UIText.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\UIElement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Animator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\ParticleSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\UIButton.cpp">
-    <ClCompile Include="..\..\Src\EntityComponent\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Src\EntityComponent\Collider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\ec.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\mpl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Transform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\VehicleController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\AudioListener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\AudioSource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\UIText.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\UIElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Animator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\ParticleSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\UIButton.h">
-    <ClInclude Include="..\..\Src\EntityComponent\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Animator.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\AudioListener.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\AudioSource.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Camera.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Collider.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ParticleSystem.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\RigidBody.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\UIButton.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\UIElement.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\UIText.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\VehicleController.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ComponentsFactory.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\FactoryComponent.h" />
   </ItemGroup>
 </Project>

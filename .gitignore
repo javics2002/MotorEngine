@@ -2,6 +2,7 @@
 /Dependencies/Ogre/Build
 /Dependencies/SDL/Build
 /Dependencies/Bullet/Build
+/Dependencies/JSON/build
 /Dependencies/FMOD/FMOD_Src\bin
 /Dependencies/FMOD/FMOD_Src\doc
 /Dependencies/FMOD/FMOD_Src\plugins

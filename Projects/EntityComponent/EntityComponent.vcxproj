@@ -25,7 +25,9 @@
     <ClCompile Include="..\..\Src\EntityComponent\Camera.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Collider.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\ComponentsFactory.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\FactoryComponent.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\ParticleSystem.cpp" />
@@ -45,9 +47,11 @@
     <ClInclude Include="..\..\Src\EntityComponent\Camera.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Collider.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ComponentsFactory.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\FactoryComponent.h" />
     <ClInclude Include="..\..\Src\EntityComponent\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
     <ClInclude Include="..\..\Src\EntityComponent\ParticleSystem.h" />
