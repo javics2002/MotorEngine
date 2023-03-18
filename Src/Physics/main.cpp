@@ -7,6 +7,8 @@
 #include <iostream>
 #include <SDL3/SDL_events.h>
 #include <json.hpp>
+#include <string>
+#include <sol/sol.hpp>
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
@@ -21,14 +23,39 @@ using namespace me;
 
 using json = nlohmann::json;
 
+
 int main() {
-    
     pm().start();
 
     std::string cam = "CameraDemo";
 
     om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
     om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+
+    sol::state lua;
+
+    std::ifstream file("scene.lua");
+    if (file.fail())
+        return -1;
+
+    char* line = new char[500];
+    while (!file.eof()) {
+        file.getline(line, 500);
+        
+        //Quitar espacios
+        // 
+        //Encontramos un comentario
+        if (!std::strncmp(line, "--", 2)) {
+            //Ignoro la linea
+            continue;
+        }
+        //tolower 
+
+            
+
+        std::cout << line << "\n";
+    }
+
 
     Entity* plane = new Entity("plane");    
 
@@ -53,9 +80,9 @@ int main() {
     SDL_Event event;
     bool quit = false;
 
-    std::fstream file;
+    //std::fstream file;
 
-    file.open("ejemplo.json");
+    /*file.open("ejemplo.json");
 
     json info;
 
@@ -65,7 +92,7 @@ int main() {
     std::cout << "y: " << info["y"] << "\n";
     std::cout << "z: " << info["z"] << "\n";
 
-    file.close();
+    file.close();*/
 
     while (!quit) {
 
