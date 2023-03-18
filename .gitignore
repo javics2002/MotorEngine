@@ -6,6 +6,10 @@
 /Dependencies/FMOD/FMOD_Src\doc
 /Dependencies/FMOD/FMOD_Src\plugins
 /Dependencies/FMOD/FMOD_Src\uninstall.exe
+/Dependencies/LuaBridge/src/
+/Dependencies/LuaBridge/build/
+/Dependencies/LuaBridge/bin/
+
 
 # Visual Studio Data
 /.vs
