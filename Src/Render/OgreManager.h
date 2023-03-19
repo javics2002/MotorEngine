@@ -290,6 +290,13 @@ namespace me {
 		Ogre::SceneNode* createChildNode(std::string name, std::string parent);
 
 		/**
+		Returns a pointer to the OgreWindow used for rendering.
+		@return The Render Window
+		*/
+		OgreWindow* getOgreWindow();
+
+		/**
+		Returns a pointer to the Root SceneNode.
 		@return returns the root scene node
 		*/
 		Ogre::SceneNode* getRootSceneNode();

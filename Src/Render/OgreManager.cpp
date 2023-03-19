@@ -56,6 +56,7 @@ void OgreManager::initRoot()
 	mFSLayer->setHomePath(mSolutionPath);   // Para los archivos de configuraci�n ogre. (en el bin de la solubi�n)
 	//mSolutionPath.erase(mSolutionPath.find_last_of("\\") + 1, mSolutionPath.size() - 1);   // Quito /bin
 
+	std:: string logPath = mFSLayer->getWritablePath("ogre.log");
 	mRoot = new Ogre::Root(mPluginCfgPath, mOgreCfgPath, mFSLayer->getWritablePath("ogre.log"));
 
 	if (!mRoot)
@@ -462,6 +463,11 @@ void me::OgreManager::render()
 	//ogreAnimState->addTime(0.0166);
 }
 
+OgreWindow* me::OgreManager::getOgreWindow()
+{
+	return mOgreWindow;
+}
+
 Ogre::Entity* me::OgreManager::getOgreEntity(std::string name)
 {
 	return getMesh(name)->getOgreEntity();
@@ -471,8 +477,6 @@ Ogre::TextAreaOverlayElement* me::OgreManager::createOverlayElement()
 {
 	return nullptr;
 }
-
-
 
 Ogre::SceneManager* me::OgreManager::getSceneManager()
 {

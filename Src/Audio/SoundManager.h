@@ -8,6 +8,12 @@
 #include <iostream>
 #include <stdio.h>
 
+#include <fmod.hpp>
+#include <fmod_errors.h>
+#include "Utils/Vector3.h"
+#include "Input/InputManager.h"
+
+
 namespace FMOD {
 	class Sound;
 	class ChannelGroup;
@@ -19,7 +25,14 @@ enum FMOD_RESULT;
 typedef unsigned int FMOD_MODE;
 
 namespace me {
+	//Maximum number of channels allowed to exist in this particular system setting.
 	const int MAX_CHANNELS = 36;
+	//Scaling factor for how much the pitch varies due to doppler shifting in 3D sound.
+	const float DOPPLER_SCALE = 1; 
+	//Relative distance factor, compared to 1.0 meters. How many units per meter my engine have.
+	const float DISTANCE_FACTOR = 1;
+	//Global attenuation rolloff factor. 
+	const float ROLLOFF_SCALE = 1;
 	typedef int CHANNEL_NUMBER;
 	//typedef enum CHANNELGROUP_NAMES { EFFECTS = 0, MUSIC };
 
@@ -84,15 +97,17 @@ namespace me {
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundHandle : the specific sound variable that will be used to play sounds.
 		@param channel : the first channel the sound will be linked to.
+		@param minDistance : minimum audible distance for a 3D sound.
+		@param maxDistance : maximum audible distance for a 3D sound.
 		*/
-		void create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel);
+		void create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel, float minDistance, float maxDistance);
 		/**
 		Creates a normal sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundHandle : the specific sound variable that will be used to play sounds.
 		@param channel : the first channel the sound will be linked to.
 		*/
-		void createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel);
+		void createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel = 0);
 		/**
 		Sets the speed a certain sound wil be played at.
 		@param soundHandle : the especific sound which speed will be changed.
@@ -144,11 +159,13 @@ namespace me {
 		@param soundHandle : the sound handle that will be played out.
 		@param isLoop : the value of loopability that will be used to play the sound.
 		@param channelGroup : the channel group where the sound will played on.
+		@param channelPos : the channel's position used for panning and attenuation.
+		@param channelVel : the channel' group where the sound will played on's velocity in 3D space used for doppler.
 		@param timesLooped : the number of times the sound will be looped.
 		By default it is set to constant loop.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, int timesLooped = -1);
+		bool playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundHandle : the sound handle which dynamic memory will be released.

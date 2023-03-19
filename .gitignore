@@ -2,8 +2,7 @@
 /Dependencies/Ogre/Build
 /Dependencies/SDL/Build
 /Dependencies/Bullet/Build
-/Dependencies/Lua/Build
-/Dependencies/JSON/build
+/Dependencies/CEGUI/Build
 /Dependencies/FMOD/FMOD_Src\bin
 /Dependencies/FMOD/FMOD_Src\doc
 /Dependencies/FMOD/FMOD_Src\plugins
