@@ -41,7 +41,7 @@ void me::AudioSource::play()
 
 void me::AudioSource::stop()
 {
-    //sm().stopSound(mSound);
+    //sm().pauseSound(mSound, true);
 }
 
 void me::AudioSource::pause()

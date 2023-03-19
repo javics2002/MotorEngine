@@ -7,6 +7,8 @@ me::SoundManager::SoundManager() {
 
 	mResult = mSoundSystem->init(MAX_CHANNELS, FMOD_INIT_NORMAL, 0);    // Initialize FMOD.
 	checkFMODResult(mResult);
+	mResult = mSoundSystem->set3DSettings(DOPPLER_SCALE, DISTANCE_FACTOR, ROLLOFF_SCALE);
+	checkFMODResult(mResult);
 
 	mSoundSystem->createChannelGroup("master", &mMaster);
 	mSoundSystem->createChannelGroup("effects", &mEffects);
@@ -21,7 +23,6 @@ me::SoundManager::SoundManager() {
 	for (int i = 0; i < MAX_CHANNELS; i++) {
 		mChannelsVector.push_back(nullptr);
 	}
-
 }
 
 bool me::SoundManager::checkFMODResult(FMOD_RESULT FMODResult)
@@ -66,13 +67,16 @@ void me::SoundManager::systemRefresh()
 	}
 }
 
-void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
+void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel, float minDistance, float maxDistance)
 {
 	mResult = mSoundSystem->createSound("Assets/Sounds/wave.mp3", FMOD_3D, 0, &soundHandle);
+
 	if (checkFMODResult(mResult)) {
 		std::pair<FMOD::Sound*, int> newSound(soundHandle, channel);
 		mLastPlayedMap.insert(newSound);
 	}
+	mResult = soundHandle->set3DMinMaxDistance(minDistance * DISTANCE_FACTOR, maxDistance * DISTANCE_FACTOR);
+	checkFMODResult(mResult);
 }
 
 void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
@@ -95,7 +99,7 @@ void me::SoundManager::pauseSound(FMOD::Sound* sound, bool pause)
 	}
 }
 
-bool me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, int timesLooped)
+bool me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped)
 {
 	if (isLoop) {
 		mResult = soundHandle->setMode(FMOD_LOOP_NORMAL);
@@ -113,6 +117,12 @@ bool me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const ch
 		mChannelsVector[i]->isPlaying(&isPlaying);
 
 		if (isPlaying) continue;
+
+		FMOD_MODE soundMode;
+		soundHandle->getMode(&soundMode);
+		if (soundMode == FMOD_3D) {
+			mChannelsVector[i]->set3DAttributes(channelPos, channelVel);
+		}
 
 		auto playedChannelGroup = getGroupChannel(channelGroup);
 		if (playedChannelGroup == nullptr) return false;
