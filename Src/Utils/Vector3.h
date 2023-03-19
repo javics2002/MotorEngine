@@ -7,11 +7,6 @@
 #include <math.h>
 #include <cmath>
 
-
-//#include <OgreQuaternion.h>
-#include <LinearMath/btVector3.h>
-#include <LinearMath/btQuaternion.h>
-
 namespace Ogre {
 	template<int dism, typename T>
 	class Vector;
@@ -19,6 +14,9 @@ namespace Ogre {
 
 	class Quaternion;
 }
+
+class btVector3;
+class btQuaternion;
 
 namespace me {
 
@@ -32,7 +30,7 @@ namespace me {
 			return a + f * (b - a);
 		}
 
-		const float M_PI_CONST = 3.141592653589793238462;
+		const float M_PI_CONST = 3.141592653589793238462f;
 
 	public:
 		float x, y, z;
@@ -108,6 +106,7 @@ namespace me {
 
 		void operator=(const Vector3& v);
 		void operator=(const Vector3* v);
+		void operator=(const btVector3&v);
 
 		/**
 		Check if this vector is equal to another vector "v"
@@ -185,7 +184,7 @@ namespace me {
 		/**
 		Returns a unit vector pointing to the right along the x-axis
 		*/
-		Vector3 rigth();
+		Vector3 right();
 
 		/**
 		Returns a unit vector pointing backwards along the z-axis

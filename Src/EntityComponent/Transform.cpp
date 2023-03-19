@@ -3,7 +3,7 @@
 
 me::Transform::Transform()
 {
-	// Initialize position, rotation and scale vectors
+	// Initialize position, rotation, size and scale vectors
 	mPosition = new Vector3(0.0, 0.0, 0.0);
 	mRotation = Ogre::Quaternion::IDENTITY;
 	mScale = new Vector3(1.0, 1.0, 1.0);
@@ -18,6 +18,7 @@ me::Transform::Transform()
 
 me::Transform::~Transform()
 {
+	//DELETES
 #ifdef _DEBUG
 	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
 #endif

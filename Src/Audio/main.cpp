@@ -2,8 +2,8 @@
 #include <stdio.h>
 //#include "Utils/checkML.h"
 
-//#include <fmod.hpp>
-//#include <fmod_errors.h>
+#include <fmod.hpp>
+#include <fmod_errors.h>
 #include "SoundManager.h"
 #include "Input/InputManager.h"
 #include <SDL3/SDL_events.h>

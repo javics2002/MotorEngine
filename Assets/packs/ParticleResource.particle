@@ -1,11 +1,11 @@
-particle_system IG2App/Smoke
+particle_system Particle/Smoke
 { // p. s. attributes
 	renderer billboard
 	billboard_type point
 	particle_width 35
 	particle_height 35
 	quota 500
-	material IG2App/Smoke
+	material Material/Smoke
 	emitter Point
 	{ // e. attributes
 	direction 0 1 0
@@ -36,14 +36,14 @@ particle_system IG2App/Smoke
 	}
 }
 
-particle_system IG2App/EstelaAvion
+particle_system Particle/EstelaAvion
 { // p. s. attributes
 	renderer billboard
 	billboard_type point
 	particle_width 35
 	particle_height 35
 	quota 500
-	material IG2App/Smoke
+	material Material/Smoke
 	emitter Point
 	{ // e. attributes
 	direction 0 0 -1
@@ -60,14 +60,14 @@ particle_system IG2App/EstelaAvion
 
 }
 
-particle_system IG2App/Explosion
+particle_system Particle/Explosion
 { // p. s. attributes
 	renderer billboard
 	billboard_type point
 	particle_width 35
 	particle_height 35
 	quota 500
-	material IG2App/Smoke
+	material Material/Smoke
 	emitter Point
 	{ // e. attributes
 	direction 0 1 0

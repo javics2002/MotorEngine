@@ -8,6 +8,7 @@
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
+#include "Input/InputManager.h"
 #include "Render/OgreManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/RigidBody.h"
@@ -27,40 +28,42 @@ int main() {
 
     Entity* plane = new Entity("plane");    
 
-    auto tr = plane->addComponent<Transform>("transform");
-    tr->setScale(Vector3(5, 0.1, 5));
+    auto trPlane = plane->addComponent<Transform>("transform");
+    trPlane->setScale(Vector3(5, 0.1, 5));
 
-    plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
+    auto planeRb =  plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
     plane->addComponent<MeshRenderer>("meshRenderer",  "p", "cube.mesh")->setMaterial("Material/roja");
+    plane->addComponent<Collider>("collider");
 
     Entity* cube = new Entity("cube");
 
-    cube->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 0));
+    auto trCube = cube->addComponent<Transform>("transform");
+    trCube->setPosition(Vector3(0, 200, 0));
 
     cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
     cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
-
+    cube->addComponent<Collider>("collider");
 
     om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
-    //Transform *tr = cube->getComponent<Transform>("transform");
-    //int degrees = 0;
-    //tr->rotate(degrees, AXIS_ROTATIONS_Z);
-    //degrees += 1;
-
     SDL_Event event;
-    while (SDL_WaitEvent(&event)) {
+    bool quit = false;
 
-        om().render();
+    while (!quit) {
+
+        while (SDL_PollEvent(&event)) {
+
+        }
 
         plane->update();
         cube->update();
 
+        om().render();
         pm().update(0.01667);
 
         switch (event.type) {
         case SDL_EVENT_QUIT:
-            return 0;
+            return quit = true;
         }
     }
 

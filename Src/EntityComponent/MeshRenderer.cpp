@@ -3,7 +3,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
-
+#include <OgreVector3.h>
 
 
 me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
@@ -21,9 +21,11 @@ me::MeshRenderer::~MeshRenderer()
 void me::MeshRenderer::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
+
+	assert(mTransform && "An Entity doesn't have the transform component");
+
 	om().createMesh(mName, mMeshName);
 	om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
-
 }
 
 void me::MeshRenderer::update()
@@ -38,6 +40,12 @@ void me::MeshRenderer::setStatic(bool stat)
 {
 	mStaticObject = stat;
 }
+
+std::string me::MeshRenderer::getName()
+{
+	return mName;
+}
+
 
 void me::MeshRenderer::setMaterial(std::string materialName)
 {

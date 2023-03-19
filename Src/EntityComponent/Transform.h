@@ -8,8 +8,8 @@
 
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>
-#include <list>
 #include <LinearMath/btQuaternion.h>
+#include <list>
 
 
 namespace me {

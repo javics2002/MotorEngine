@@ -3,8 +3,8 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
-
-
+#include <OgreQuaternion.h>
+#include <OgreVector3.h>
 
 me::ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
 {
@@ -30,7 +30,7 @@ void me::ParticleSystem::update()
 {
 	Vector3 pos = mTransform->getPosition() + mOffsetPos;
 	Vector3 scale = mTransform->getScale() + mOffsetScale;
-	om().setMeshTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation());
+	om().setParticleTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation());
 
 }
 
