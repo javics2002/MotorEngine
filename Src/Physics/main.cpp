@@ -3,8 +3,10 @@
 #ifndef __BULLET_MAIN
 #define __BULLET_MAIN
 
+#include <fstream>
 #include <iostream>
 #include <SDL3/SDL_events.h>
+#include <string>
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
@@ -18,13 +20,13 @@
 using namespace me;
 
 int main() {
-    
     pm().start();
 
     std::string cam = "CameraDemo";
 
     om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
     om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+
 
     Entity* plane = new Entity("plane");    
 
