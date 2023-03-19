@@ -17,6 +17,12 @@ me::OgreMesh::OgreMesh(Ogre::SceneNode* node, std::string meshName)
 
 me::OgreMesh::~OgreMesh()
 {
+	
+	Ogre::SceneManager* mSM = mNode->getCreator();
+	mNode->detachAllObjects();
+	mSM->destroyEntity(mEntity);
+	mSM->destroySceneNode(mNode);
+
 }
 
 void me::OgreMesh::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
@@ -39,6 +45,11 @@ void me::OgreMesh::setScale(const Ogre::Vector3f &scale)
 void me::OgreMesh::setRotation(Ogre::Quaternion rot)
 {
 	mNode->setOrientation(rot);
+}
+
+Ogre::Entity* me::OgreMesh::getOgreEntity()
+{
+	return mEntity;
 }
 
 void me::OgreMesh::setMaterial(std::string materialName)

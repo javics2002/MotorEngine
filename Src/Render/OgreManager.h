@@ -22,6 +22,7 @@ namespace Ogre {
 	namespace RTShader {
 		class ShaderGenerator;
 	}
+	class TextAreaOverlayElement;
 }
 
 namespace me {
@@ -29,7 +30,9 @@ namespace me {
 	class OgreWindow;
 	class OgreCamera;
 	class OgreMesh;
+	class OgreParticleSystem;
 	class SGTechniqueResolverListener;
+	class OverlayManager;
 
 	/**
 	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
@@ -73,6 +76,10 @@ namespace me {
 		*/
 		std::string mPluginCfgPath;
 
+
+		OverlayManager* mOverlayManager;
+
+
 		/**
 		Path of the "Ogre.cfg"
 		configuration file where it indicates all the configurations 
@@ -99,7 +106,8 @@ namespace me {
 		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
 		//Store mesh name to ogreMesh
 		std::unordered_map<std::string, OgreMesh*> mMeshes;			//Pairs each mesh with its name
-
+		//Store mesh name to ogreParticleSystem
+		std::unordered_map<std::string, OgreParticleSystem*> mParticles;			//Pairs each mesh with its name
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
@@ -136,6 +144,13 @@ namespace me {
 		*/
 		OgreMesh* getMesh(std::string name);
 
+		/**
+		@param name: Name of the particle
+		@return OgreParticleSystem: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		OgreParticleSystem* getParticle(std::string name);
+
 	public:
 		OgreManager&operator=(const OgreManager&o) = delete;
 		OgreManager(const OgreManager&o) = delete;
@@ -152,7 +167,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
 		
 		/**
 		Create the camera with this name and store it
@@ -164,7 +179,9 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		//bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		
+		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
 
 		/**
 		Set location and direction to the camera with this name
@@ -175,6 +192,21 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look);
+
+		/**
+		Set dimension to the viewport of the camera with this name
+		@param name: name of camera
+		@param left: left point of viewport in range 0.0 to 1.0
+		@param top: top point of viewport in range 0.0 to 1.0
+		@param width: width of viewport in range 0.0 to 1.0
+		@param height: height of viewport in range 0.0 to 1.0
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setViewportDimension(std::string name, float left, float top, float width, float height);
+
+		//destroy OgreCamera created 
+		void destroyCamera(std::string name);
 
 		/**
 		Create the light with this name
@@ -210,21 +242,40 @@ namespace me {
 		//set rotation info to the mesh with this name
 		bool setMeshRotation(std::string name,Ogre::Quaternion rot);
 
-		//set rotation info to the mesh with this name
+		//set material to the mesh with this name
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
 
+		//destroy OgreMesh created 
+		void destroyMesh(std::string name);
 
 		/**
-		Set dimension to the viewport of the camera with this name
-		@param name: name of camera
-		@param left: left point of viewport in range 0.0 to 1.0
-		@param top: top point of viewport in range 0.0 to 1.0
-		@param width: width of viewport in range 0.0 to 1.0
-		@param height: height of viewport in range 0.0 to 1.0
+		Create the ogreParticleSystem with this name
+		@param name: name of Ogre::SceneNode &&unordered_map
+		@param nameParticle: name of partcile system that is written int ParticleResource.particle
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createParticle(std::string name, std::string nameMesh);
+		/**
+		Set Transform info to the particle with this name (for static object)
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
 		@return false: if it doesn't exist
 		@return true: if succeed
 		*/
-		bool setViewportDimension(std::string name, float left, float top, float width, float height);
+		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale);
+		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot);
+		//set position info to the particle with this name
+		bool setParticlePosition(std::string name, const Ogre::Vector3f& pos);
+		//set scale info to the particle with this name
+		bool setParticleScale(std::string name, const Ogre::Vector3f& scale);
+		//set rotation info to the particle with this name
+		bool setParticleRotation(std::string name, Ogre::Quaternion rot);
+
+		//set emitting state to the particle with this name
+		bool setParticleEmitting(std::string name, bool emitted);
+
 		
 		/**
 		@param name: name of node
@@ -245,6 +296,12 @@ namespace me {
 		OgreWindow* getOgreWindow();
 
 		/**
+		Returns a pointer to the Root SceneNode.
+		@return returns the root scene node
+		*/
+		Ogre::SceneNode* getRootSceneNode();
+
+		/**
 		Example scene where rendering a sinbad with 2 camera,viewport
 		*/
 		void scene1();
@@ -253,6 +310,18 @@ namespace me {
 		Render one frame of Ogre::Root -> current scene manager
 		*/
 		void render();
+
+		/**
+		Return the Ogre::Entity asociated
+		*/
+		Ogre::Entity* getOgreEntity(std::string name);
+
+
+		//Text UI
+		Ogre::TextAreaOverlayElement* createOverlayElement();
+		/*Getter for scene manager
+		*/
+		Ogre::SceneManager* getSceneManager();
 
 
 	};

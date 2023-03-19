@@ -25,6 +25,7 @@
     <ClInclude Include="..\..\Src\Render\SGTechniqueResolverListener.h" />
     <ClInclude Include="..\..\Src\Render\OgreWindow.h" />
     <ClInclude Include="..\..\Src\Render\Window.h" />
+    <ClInclude Include="..\..\Src\Render\OgreParticleSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Render\mainOgre.cpp" />
@@ -34,6 +35,7 @@
     <ClCompile Include="..\..\Src\Render\SGTechniqueResolverListener.cpp" />
     <ClCompile Include="..\..\Src\Render\OgreWindow.cpp" />
     <ClCompile Include="..\..\Src\Render\Window.cpp" />
+    <ClCompile Include="..\..\Src\Render\OgreParticleSystem.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -129,11 +131,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Src\PlugIns\ParticleFX\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Dependencies\Ogre\Src\Components\Overlay\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +146,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;Plugin_ParticleFX_d.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,7 +157,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Src\PlugIns\ParticleFX\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Dependencies\Ogre\Src\Components\Overlay\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -166,7 +170,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;Plugin_ParticleFX.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

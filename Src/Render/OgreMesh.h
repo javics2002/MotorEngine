@@ -25,7 +25,6 @@ namespace me {
 		//Name of mesh that used
 		std::string mMeshName;
 		std::string mMaterialName;
-		std::string mName;
 		
 
 
@@ -43,6 +42,11 @@ namespace me {
 		void setPosition(const Ogre::Vector3f &pos);
 		void setScale(const Ogre::Vector3f &scale);
 		void setRotation(Ogre::Quaternion rot);
+
+		/**
+		Return the Ogre::Entity asociated
+		*/
+		Ogre::Entity* getOgreEntity();
 
 		/**
 		Assign material name to entity

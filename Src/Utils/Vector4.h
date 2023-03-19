@@ -3,8 +3,6 @@
 #ifndef __UTILS_VECTOR4
 #define __UTILS_VECTOR4
 
-
-template< typename T = float>
 class Vector4
 {
 
@@ -23,7 +21,7 @@ private:
 
 public:
 
-	T x, y, z, w;
+	float x, y, z, w;
 
 
 	Vector4() {
@@ -33,7 +31,7 @@ public:
 		w = 1;
 	}
 
-	Vector4(T a, T b, T c, T d) {
+	Vector4(float a, float b, float c, float d) {
 		x = a;
 		y = b;
 		z = c;
@@ -55,7 +53,7 @@ public:
 	*  @param b The ending vector to interpolate to
 	*  @param f The interpolation factor, a value between 0 and 1
 	*/
-	Vector4<T> lerp(const Vector4<T>& a, const Vector4<T>& b, float f);
+	Vector4 lerp(const Vector4& a, const Vector4& b, float f);
 };
 
 #endif

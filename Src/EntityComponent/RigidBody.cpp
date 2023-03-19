@@ -26,13 +26,17 @@ void me::RigidBody::start()
 {
 
 	mTransform = mEntity->getComponent<Transform>("transform");
+	
+	assert(mTransform && "An Entity doesn't have the transform component");
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
-	scale = mTransform->getScale().v3ToBulletV3();
+	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 
-	mBtRigidBody = pm().createRigidBody(mBtTransform, &scale, Shapes(mColShape),
+	mBtRigidBody = pm().createRigidBody(mBtTransform, scale, Shapes(mColShape),
 		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
+
+	mBtRigidBody->setUserPointer(this);
 	
 }
 

@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __SDL_INPUT_MANAGER
-#define __SDL_INPUT_MANAGER
+#ifndef __INPUT_INPUT_MANAGER
+#define __INPUT_INPUT_MANAGER
 
 #include "Utils/Singleton.h"
 #include "Utils/Vector2.h"
@@ -67,6 +67,8 @@ namespace me {
 		InputManager(const InputManager& o) = delete;
 		~InputManager() override;
 		
+		bool justClicked();
+
 		/**
 		Calls filter everytime an SDL_Event is processed.
 		@param filter is a function with the format:
@@ -231,7 +233,7 @@ namespace me {
 		/*
 		@returns Current mouse position
 		*/
-		Vector2<> getMousePositon();
+		Vector2 getMousePositon();
 	};
 
 	/**

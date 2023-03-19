@@ -22,6 +22,11 @@ InputManager::~InputManager()
 {
 }
 
+bool me::InputManager::justClicked()
+{
+	return true;
+}
+
 void InputManager::addEvent(SDL_EventFilter filter, void* userdata)
 {
 	SDL_AddEventWatch(filter, userdata);
@@ -39,7 +44,7 @@ bool InputManager::addButton(std::string name, int player)
 #ifdef _DEBUG
 		std::cout << "Button " << name << " already exists.\n";
 #endif
-
+		
 		return false;
 	}
 
@@ -358,11 +363,11 @@ bool InputManager::deleteOnButtonPressedEvent(std::string name, int(*callback)(v
 	return true;
 }
 
-Vector2<> me::InputManager::getMousePositon()
+Vector2 me::InputManager::getMousePositon()
 {
 	SDL_GetMouseState(&mouseX, &mouseY);
 
-	return Vector2<>(mouseX, mouseY);
+	return Vector2(mouseX, mouseY);
 }
 
 int InputManager::watchControllers(void* userdata, SDL_Event* event)
