@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\0b8aba75825ed1b74194ee763efd1d5c\LUA_VANILLA-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\bfe3d1911f6611f72ff0c1d2c70793b4\LUA_VANILLA-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\8985074eaab63ea6648edc3365b11c21\LUA_VANILLA.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\LUA_VANILLA" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1E9FFBF9-513E-3340-BB27-6D44B5F74579}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

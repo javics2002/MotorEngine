@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <list>
 
 #include "Component.h"
 
@@ -10,6 +11,8 @@ class FactoryComponent
 protected:
 
 	void parseParams(const std::string& params);
+
+	std::list<std::string> mParams;
 
 public:
 

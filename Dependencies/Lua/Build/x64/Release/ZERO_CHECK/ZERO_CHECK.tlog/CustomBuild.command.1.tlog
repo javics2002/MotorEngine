@@ -1,0 +1,10 @@
+^C:\USERS\34690\ONEDRIVE\DOCUMENTOS\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-MOTOR\DEPENDENCIES\LUA\BUILD\CMAKEFILES\8985074EAAB63EA6648EDC3365B11C21\GENERATE.STAMP.RULE
+setlocal
+C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\CMake\bin\cmake.exe -SC:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Src -BC:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/sol2.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

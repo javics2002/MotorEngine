@@ -1,0 +1,10 @@
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/Experimental.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/Nightly.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/Continuous.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/LUA_VANILLA.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/liblua-5.4.4.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/RUN_TESTS.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/INSTALL.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/ALL_BUILD.dir
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/ZERO_CHECK.dir

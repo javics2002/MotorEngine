@@ -1,0 +1,14 @@
+# Target labels
+ LUA_VANILLA
+# Source files and their labels
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/LUA_VANILLA
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/8985074eaab63ea6648edc3365b11c21/LUA_VANILLA.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/bfe3d1911f6611f72ff0c1d2c70793b4/LUA_VANILLA-complete.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-build.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-configure.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-download.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-install.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-mkdir.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-patch.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-test.rule
+C:/Users/34690/OneDrive/Documentos/TERCERODECARRERA/SEGUNDOCUATRIMESTRE/PROYECTOSIII/P3-Motor/Dependencies/Lua/Build/CMakeFiles/0b8aba75825ed1b74194ee763efd1d5c/LUA_VANILLA-update.rule

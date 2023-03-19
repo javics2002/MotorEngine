@@ -137,13 +137,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Lua\Src\include;$(SolutionDir)Dependencies\JSON\src\single_include\nlohmann;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Lua\Build\$(Platform)\lib\$(ConfigurationName);$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;OgreMain_d.lib;OgreRTShaderSystem_d.lib;lua-5.4.4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\LuaBridge\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;OgreMain_d.lib;OgreRTShaderSystem_d.lib;Lua54_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -158,7 +158,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Lua\Src\include;$(SolutionDir)Dependencies\JSON\src\single_include\nlohmann;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,8 +167,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;OgreMain.lib;OgreRTShaderSystem.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;OgreMain.lib;OgreRTShaderSystem.lib;Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\LuaBridge\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

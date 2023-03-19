@@ -7,6 +7,9 @@
 #include <iostream>
 #include <SDL3/SDL_events.h>
 #include <string>
+#include <lua.hpp>
+#include <LuaBridge/LuaBridge.h>
+#include <map>
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
@@ -16,60 +19,136 @@
 #include "EntityComponent/RigidBody.h"
 #include "EntityComponent/MeshRenderer.h"
 #include "EntityComponent/Collider.h"
+#include "EntityComponent/FactoryComponent.h"
 
 using namespace me;
 
 int main() {
-    pm().start();
 
-    std::string cam = "CameraDemo";
+	pm().start();
 
-    om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
-    om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+	std::string cam = "CameraDemo";
 
+	om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+	om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
 
-    Entity* plane = new Entity("plane");    
+	Entity* plane = new Entity("plane");
 
-    auto trPlane = plane->addComponent<Transform>("transform");
-    trPlane->setScale(Vector3(5, 0.1, 5));
+	auto trPlane = plane->addComponent<Transform>("transform");
+	trPlane->setScale(Vector3(5, 0.1, 5));
 
-    auto planeRb =  plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
-    plane->addComponent<MeshRenderer>("meshRenderer",  "p", "cube.mesh")->setMaterial("Material/roja");
-    plane->addComponent<Collider>("collider");
+	auto planeRb = plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
+	plane->addComponent<MeshRenderer>("meshRenderer", "p", "cube.mesh")->setMaterial("Material/roja");
+	plane->addComponent<Collider>("collider");
 
-    Entity* cube = new Entity("cube");
+	Entity* cube = new Entity("cube");
 
-    auto trCube = cube->addComponent<Transform>("transform");
-    trCube->setPosition(Vector3(0, 200, 0));
+	auto trCube = cube->addComponent<Transform>("transform");
+	trCube->setPosition(Vector3(0, 200, 0));
 
-    cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
-    cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
-    cube->addComponent<Collider>("collider");
+	cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
+	cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
+	cube->addComponent<Collider>("collider");
 
-    om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
+	om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
-    SDL_Event event;
-    bool quit = false;
+	lua_State* L = luaL_newstate();
+	luaL_openlibs(L);
 
-    while (!quit) {
+	// Cargar el archivo de datos Lua
+	//luaL_dofile(L, "Assets/Scenes/scene.lua");
 
-        while (SDL_PollEvent(&event)) {
+	if (luaL_loadfile(L, "Assets/Scenes/scene.lua") ||
+		lua_pcall(L, 0, 0, 0)) {
+		std::cout << "No se encontro el archivo .lua\n";
+		return -1;
+	}
 
-        }
+	std::map<std::string, FactoryComponent*> infoEntity;
 
-        plane->update();
-        cube->update();
+	lua_getglobal(L, "Plane");
+	lua_pushnil(L);
 
-        om().render();
-        pm().update(0.01667);
+	while (lua_next(L, -2) != 0) {
 
-        switch (event.type) {
-        case SDL_EVENT_QUIT:
-            return quit = true;
-        }
-    }
+		if (lua_isstring(L, -2)) {
 
-    return 0;
+			std::string componentName = lua_tostring(L, -2);
+
+			for (char& c : componentName) {
+				c = tolower(c);
+			}
+
+			std::cout << componentName << '\n';
+
+			lua_pushnil(L);
+			while (lua_next(L, -2) != 0) {
+
+				if (lua_isstring(L, -2)) {
+
+					std::string fieldName = lua_tostring(L, -2);
+
+					for (char& c : fieldName) {
+						c = tolower(c);
+					}
+
+					std::cout << fieldName << '\n';
+
+					if (lua_istable(L, -1)) {
+							for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
+
+								std::string fieldValueName = lua_tostring(L, -2);
+								std::cout << fieldValueName  << ': ' << '\n';
+
+								if (lua_isstring(L, -1)) {
+									std::string fieldValue = lua_tostring(L, -1);
+									std::cout << fieldValue;
+								}
+							}
+							std::cout << '\n';
+					}
+
+					else {
+						if (lua_isstring(L, -1)) {
+							std::string fieldValue = lua_tostring(L, -1);
+							std::cout << fieldValue << std::endl;
+						}
+					}
+
+				}
+
+				lua_pop(L, 1);
+
+			}
+
+			lua_pop(L, 1);
+		}
+
+	}
+
+	SDL_Event event;
+	bool quit = false;
+
+	while (!quit) {
+
+		while (SDL_PollEvent(&event)) {
+
+		}
+
+		plane->update();
+		cube->update();
+
+		om().render();
+		pm().update(0.01667);
+
+		switch (event.type) {
+		case SDL_EVENT_QUIT:
+			return quit = true;
+		}
+	}
+
+	return 0;
+
 }
 
 #endif
