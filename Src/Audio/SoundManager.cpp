@@ -73,7 +73,7 @@ void me::SoundManager::systemRefresh()
 
 void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel, float minDistance, float maxDistance)
 {
-	mResult = mSoundSystem->createSound("Assets/Sounds/wave.mp3", FMOD_3D, 0, &soundHandle);
+	mResult = mSoundSystem->createSound(soundPath, FMOD_3D, 0, &soundHandle);
 
 	if (checkFMODResult(mResult)) {
 		std::pair<FMOD::Sound*, int> newSound(soundHandle, channel);
@@ -85,7 +85,7 @@ void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundH
 
 void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
 {
-	mResult = mSoundSystem->createSound("Assets/Sounds/wave.mp3", FMOD_DEFAULT, 0, &soundHandle);
+	mResult = mSoundSystem->createSound(soundPath, FMOD_DEFAULT, 0, &soundHandle);
 	if(checkFMODResult(mResult)){
 		std::pair<FMOD::Sound*, int> newSound(soundHandle, channel);
 		mLastPlayedMap.insert(newSound);
