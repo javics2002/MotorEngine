@@ -1,6 +1,8 @@
 #include "Entity.h"
 #include "Components/Component.h"
 
+#include "Components/ComponentsFactory.h"
+
 
 namespace me {
 
@@ -35,6 +37,43 @@ namespace me {
 #endif
 	};
 
+	template<typename T>
+	T* Entity::addComponent(const std::string& componentName) {
+
+		T* c = componentsFactory().create(componentName);
+
+		if (!hasComponent(componentName)) {
+
+			mComponents.insert({ componentName, c });
+			c->setEntity(this);
+			c->start();
+		}
+
+#ifdef _DEBUG
+		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+
+		return c;
+	};
+	
+	Component* Entity::addComponent(const std::string& componentName, std::unordered_map<std::string, std::string>& params) {
+		Component* c = componentsFactory().create(componentName, params);
+
+		if (!hasComponent(componentName)) {
+
+			mComponents.insert({ componentName, c });
+			c->setEntity(this);
+			c->start();
+		}
+
+#ifdef _DEBUG
+		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+
+		return c;
+	};
+
+	
 	
 	void Entity::update() {
 		if (!mActive) return;

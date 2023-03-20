@@ -37,8 +37,8 @@
     <ProjectReference Include="..\Input\Input.vcxproj">
       <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Nuklear\Nuklear.vcxproj">
-      <Project>{73a7a28d-6005-4dc0-9a11-d511f4e7465a}</Project>
+    <ProjectReference Include="..\LuaBridge\LuaBridge.vcxproj">
+      <Project>{1cac7004-abd3-4156-8820-cbf95d3b8df7}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Physics\Physics.vcxproj">
       <Project>{31ea8915-ab30-4545-8535-15a0ee380979}</Project>

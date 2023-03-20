@@ -85,19 +85,26 @@ namespace me {
         /**
         Parse entities from .lua file to an unordered_map that will be passed to the current Scene
         to create the entities.
+        sceneName has to be the name of the file with .lua INCLUDED. Example: sceneName => scene.lua
 
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
         */
-        int loadEntities();
+        int loadEntities(const std::string& sceneName);
+
     private:
 
-        /**
+        /*
+        This function parses the .lua file to the unordered_map.
+        @param L is the lua_State that was opened by the function loadEntities
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
         */
         int readEntities(lua_State* L);
 
+        /*
+        This function calls the active scene and passes the unordered_map with all the entities information
+        */
         void pushEntities();
 
         std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;

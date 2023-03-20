@@ -10,6 +10,8 @@
 #include "Render/OgreManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
+#include "EntityComponent/Components/ComponentsFactory.h"
+#include "EntityComponent/Components/FactoryComponent.h"
 #include "Render/Window.h"
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
@@ -17,6 +19,7 @@
 //typedef HRESULT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT*);
 typedef const char* (*GameName)();
 typedef bool(__cdecl* GameEntryPoint)();
+typedef void(*TypeDefinition)();
 
 using namespace me;
 
@@ -27,6 +30,7 @@ bool MotorEngine::setup()
 	if (game == NULL)
 		return false;
 
+
 	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
 
 	if (entryPoint == NULL)
@@ -36,6 +40,17 @@ bool MotorEngine::setup()
 
 	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+
+	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
+	if (gameTypesDef == NULL)
+		return false;
+
+	
+	// Añadir componentes del juego
+	gameTypesDef();
+
+	// Añadir componentes del motor
+	initFactories();
 
 	entryPoint();
 
@@ -126,7 +141,11 @@ bool MotorEngine::loadGame(std::string gameDllName)
 
 void me::MotorEngine::initFactories()
 {
-	
+	componentsFactory().addFactoryComponent("transform", new FactoryTransform());
+	componentsFactory().addFactoryComponent("rigidbody", new FactoryRigidBody());
+	componentsFactory().addFactoryComponent("animator", new FactoryAnimator());
+	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
+	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
 }
 
 void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame,

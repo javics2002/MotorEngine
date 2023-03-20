@@ -12,6 +12,7 @@ of a set of components.
 #include <array>
 #include <vector>
 #include <map>
+#include <unordered_map>
 #include <string>
 #include <iostream>
 
@@ -46,6 +47,7 @@ namespace me {
 		*/
 		virtual ~Entity();
 
+		
 		/**
 		Add a new component. If the component
 		already exists, write a cout in debug mode
@@ -53,24 +55,10 @@ namespace me {
 		@param Variable number of arguments of any type.
 		@return Reference to the new component.
 		*/
-		template<typename T, typename ...Ts>
-		T* addComponent(std::string component, Ts &&... args) {
+		Component* addComponent(const std::string& componentName, std::unordered_map<std::string, std::string>& params);
 
-			T* c = new T(std::forward<Ts>(args)...);
-
-			if (!hasComponent(component)) {
-
-				mComponents.insert({component, c});
-				c->setEntity(this);
-				c->start();
-			}
-
-#ifdef _DEBUG
-			else std::cout << "Entity: " << mName << " already has the Component:" << component;
-#endif
-
-			return c;
-		};
+		template<typename T>
+		T* addComponent(const std::string& componentName);
 
 		/**
 		Remove completely a typed component.

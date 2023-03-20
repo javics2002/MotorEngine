@@ -78,9 +78,9 @@ namespace me {
 		virtual void OnCollisionExit(Entity* other);
 
 	protected:
-
 		Entity* mEntity;
 
+		// TODO: Identificar cada componente con un nombre
 	};
 
 };

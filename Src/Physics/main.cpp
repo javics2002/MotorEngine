@@ -34,7 +34,10 @@ int main() {
 
 	me::Entity* plane = new me::Entity("plane");
 
-	auto trPlane = plane->addComponent<Transform>("transform");
+	plane->addComponent<Transform>("transform");
+	
+
+	/*auto trPlane = plane->addComponent<Transform>("transform");
 	trPlane->setScale(Vector3(5, 0.1, 5));
 
 	auto planeRb = plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
@@ -48,18 +51,9 @@ int main() {
 
 	cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
 	cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
-	cube->addComponent<Collider>("collider");
+	cube->addComponent<Collider>("collider");*/
 
 	renderManager().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
-
-	
-	Scene* s = sceneManager().addScene("Game").get();
-	sceneManager().setActiveScene("Game");
-
-	sceneManager().loadEntities();
-
-	
-	
 
 	SDL_Event event;
 	bool quit = false;
@@ -70,8 +64,8 @@ int main() {
 
 		}
 
-		plane->update();
-		cube->update();
+		//plane->update();
+		//cube->update();
 
 		renderManager().render();
 		physicsManager().update(0.01667);

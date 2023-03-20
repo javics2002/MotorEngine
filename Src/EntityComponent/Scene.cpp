@@ -100,17 +100,14 @@ namespace me {
 		// Recorrer el mapa de entidades
 		for (auto& it : entitiesMap) {
 			// Crear entidad
-			addEntity(it.first);
+			auto e = addEntity(it.first);
 
-
-			// Crear componentes
+			// Crear y añadir componentes
 			for (auto& component : it.second) {
 				std::string componentName = component.first;
 
-				ComponentsFactory::instance()->create(componentName, component.second);
+				e->addComponent(componentName, component.second);
 			}
-
-			// Añadir componentes
 		}
 	};
 };

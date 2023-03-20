@@ -114,7 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Src;$(SolutionDir)Dependencies\CEGUI\Build\cegui\include;$(SolutionDir)Dependencies\CEGUI\cegui-0.8.7\cegui\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Src;$(SolutionDir)Dependencies\CEGUI\Build\cegui\include;$(SolutionDir)Dependencies\CEGUI\Src\cegui\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

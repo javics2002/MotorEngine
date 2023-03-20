@@ -32,10 +32,17 @@ extern "C" {
 			friend Singleton<MotorEngine>;
 			MotorEngine();
 
-			//Load dll of the game
+			/*
+			Load .dll of the Game
+			@param gameDllName is the name of the .dll file
+			@returns If the game loaded correctly, the function returns true.
+			Else, the function will return false.
+			*/
 			bool loadGame(std::string gameDllname);
 
-			//Creates factories for each component and adds them to the componetsFactories map.
+			/*
+			Creates each component factories and adds them to the componentsFactories map
+			*/
 			void initFactories();
 
 			/**
@@ -49,6 +56,9 @@ extern "C" {
 
 			/*
 			* If we press SDL_QUIT (Exit button), the game stops and closes
+			* @param userData is the aditional information of the SDL callback. By default, userData contains nullptr.
+			* @param event is a SDL variable that contains information about the SDL_Event launched by any event.
+			* @returns is ignored
 			*/
 			static int quitLoop(void* userdata, SDL_Event* event);
 

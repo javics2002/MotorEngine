@@ -17,11 +17,11 @@ using namespace me;
 
 int main() {
 
-    win();
-    om().render();
+    window();
+    renderManager().render();
 
     // Ogre::RenderWindow* rendTarget = om().getOgreWindow()->getRenderWindow();
-    CEGUI::OgreRenderer* renderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(om().getOgreWindow()->getRenderWindow()));
+    CEGUI::OgreRenderer* renderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(renderManager().getOgreWindow()->getRenderWindow()));
 
     return 0;
 }

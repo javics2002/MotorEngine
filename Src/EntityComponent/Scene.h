@@ -132,9 +132,8 @@ namespace me {
 		void processNewEntities();
 
 		/**
-		Safely adds the new entities from map,
-		by deferring the addition of the new entity
-		to the mEntities map until after the loop has completed.
+		Safely adds the new entities from unordered_map passed by the sceneManager
+		@param entitiesMap is the unordered_map that contains all the information about the entity and its components.
 		*/
 		void pushEntities(std::unordered_map<std::string, std::unordered_map<std::string, std::unordered_map<std::string, std::string>>>& entitiesMap);
 

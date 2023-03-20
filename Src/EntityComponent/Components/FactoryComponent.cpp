@@ -47,12 +47,20 @@ me::Component* me::FactoryCamera::create(Parameters params)
 
 me::Component* me::FactoryCollider::create(Parameters params)
 {
-    return nullptr;
+    Collider* collider = new Collider();
+    // TODO: Y los setters????
+
+    return collider;
 }
 
 me::Component* me::FactoryMeshRenderer::create(Parameters params)
 {
-    return nullptr;
+    std::string mesh = value(params, "mesh", std::string());
+    std::string meshName = value(params, "meshname", std::string());
+
+    MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
+
+    return meshRenderer;
 }
 
 me::Component* me::FactoryParticleSystem::create(Parameters params)
@@ -62,7 +70,16 @@ me::Component* me::FactoryParticleSystem::create(Parameters params)
 
 me::Component* me::FactoryRigidBody::create(Parameters params)
 {
-    return nullptr;
+    RigidBody* rigidbody = new RigidBody();
+    rigidbody->setMass(value(params, "mass", 0.0f));
+    rigidbody->setRestitution(value(params, "restitution", 0.0f));
+    rigidbody->setFriction(value(params, "friction", 0.0f));
+    rigidbody->setTrigger(value(params, "istrigger", false));
+    
+    // TODO: colShape??
+    // TODO: mvType??
+
+    return rigidbody;
 }
 
 float me::FactoryComponent::value(Parameters params, std::string parameter, float defaultValue)

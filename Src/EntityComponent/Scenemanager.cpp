@@ -71,13 +71,15 @@ namespace me {
         };
     };
 
-    int SceneManager::loadEntities() {
+    int SceneManager::loadEntities(const std::string& sceneName) {
         // Cargamos Lua Bridge
         lua_State* L = luaL_newstate();
         luaL_openlibs(L);
 
         // Abrimos el fichero
-        if (luaL_loadfile(L, "Assets/Scenes/scene.lua") ||
+        std::string path = "Assets/Scenes/" + sceneName;
+
+        if (luaL_loadfile(L, path.c_str()) ||
             lua_pcall(L, 0, 0, 0)) {
             std::cout << "No se encontro el archivo .lua\n";
             return 1;
