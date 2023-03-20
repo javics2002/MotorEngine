@@ -24,7 +24,7 @@ namespace me {
 		Takes into account the current window, so initialize the RenderManager first.
 		@param resourceDirectory Directory of the fonts, images, etc. folders.
 		*/
-		GUIManager(const std::string& resourceDirectory = "../../../../Assets/GUI");
+		GUIManager();
 
 	private:
 		static CEGUI::OgreRenderer* mRenderer;
@@ -71,6 +71,7 @@ namespace me {
 		void setWidgetDestRect(CEGUI::Window* widget, const Vector4& destRectPercentage, const Vector4& destRectPixels);
 
 
+
 		// -------------- Getters ---------------
 
 		/**
@@ -85,6 +86,8 @@ namespace me {
 		*/
 		CEGUI::GUIContext* getContext();
 	};
+
+
 
 	/**
 		This macro defines a compact way for using the singleton GUIManager, instead of

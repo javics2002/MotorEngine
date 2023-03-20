@@ -6,28 +6,17 @@
 
 CEGUI::OgreRenderer* me::GUIManager::mRenderer = nullptr;
 
-me::GUIManager::GUIManager(const std::string& resourceDirectory)
+me::GUIManager::GUIManager()
 {
 	if (mRenderer == nullptr) {
 		mRenderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(om().getOgreWindow()->getRenderWindow()));
 
-		CEGUI::DefaultResourceProvider* resourceProv = static_cast<CEGUI::DefaultResourceProvider*>(CEGUI::System::getSingleton().getResourceProvider());
-
-		// Incluir comprobación de string de directorio correcto.
-
-		/*resourceProv->setResourceGroupDirectory("imagesets", resourceDirectory + "/imagesets/");
-		resourceProv->setResourceGroupDirectory("schemes", resourceDirectory + "/schemes/");
-		resourceProv->setResourceGroupDirectory("fonts", resourceDirectory + "/fonts/");
-		resourceProv->setResourceGroupDirectory("layouts", resourceDirectory + "/layouts/");
-		resourceProv->setResourceGroupDirectory("looknfeel", resourceDirectory + "/looknfeel/");
-		resourceProv->setResourceGroupDirectory("lua_scripts", resourceDirectory + "/lua_scripts/");*/
-
-		CEGUI::ImageManager::setImagesetDefaultResourceGroup("imagesets");
-		CEGUI::Scheme::setDefaultResourceGroup("schemes");
-		CEGUI::Font::setDefaultResourceGroup("fonts");
-		CEGUI::WidgetLookManager::setDefaultResourceGroup("looknfeel");
-		CEGUI::WindowManager::setDefaultResourceGroup("layouts");
-		CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
+		CEGUI::ImageManager::setImagesetDefaultResourceGroup("Imagesets");
+		CEGUI::Scheme::setDefaultResourceGroup("Schemes");
+		CEGUI::Font::setDefaultResourceGroup("Fonts");
+		CEGUI::WidgetLookManager::setDefaultResourceGroup("LookNFeel");
+		CEGUI::WindowManager::setDefaultResourceGroup("Layouts");
+		// CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
 	}
 
 	mContext = &CEGUI::System::getSingleton().createGUIContext(mRenderer->getDefaultRenderTarget());
