@@ -42,9 +42,9 @@ int toggleInteract(void* userdata)
 {
     bool* interactActive = (bool*) userdata;
     if (*interactActive)
-        im().deleteOnButtonPressedEvent("Interact", interact, NULL);
+        inputManager().deleteOnButtonPressedEvent("Interact", interact, NULL);
     else
-        im().addOnButtonPressedEvent("Interact", interact, NULL);
+        inputManager().addOnButtonPressedEvent("Interact", interact, NULL);
 
     *interactActive = !*interactActive;
 
@@ -60,19 +60,19 @@ int shoot(void* userdata)
 
 int getAxisValue(void* userdata) {
     char* name = (char*) userdata;
-    std::cout << name << " axis value: " << im().getAxis(name) << "\n";
+    std::cout << name << " axis value: " << inputManager().getAxis(name) << "\n";
 
     return 0;
 }
 
 int getMousePosition(void* userdata) {
-    std::cout << "Mouse pos: " << im().getMousePositon().x << " " << im().getMousePositon().y << "\n";
+    std::cout << "Mouse pos: " << inputManager().getMousePositon().x << " " << inputManager().getMousePositon().y << "\n";
 
     return 0;
 }
 
 int main() {
-	im();
+    inputManager();
     Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 
@@ -86,31 +86,31 @@ int main() {
     keyboardE.type = INPUTTYPE_KEYBOARD;
     keyboardE.which = SDLK_e;
 
-    im().addButton("Interact", keyboardE);
+    inputManager().addButton("Interact", keyboardE);
 
     bool interactActive = false;
 
     Input keyboardSpace;
     keyboardSpace.type = INPUTTYPE_KEYBOARD;
     keyboardSpace.which = SDLK_SPACE;
-    im().addButton("Space", keyboardSpace);
+    inputManager().addButton("Space", keyboardSpace);
 
-    im().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
+    inputManager().addOnButtonPressedEvent("Space", toggleInteract, &interactActive);
 
     Input leftClick;
     leftClick.type = INPUTTYPE_MOUSE_CLICK;
     leftClick.which = SDL_BUTTON_LEFT;
-    im().addButton("Shoot", leftClick);
+    inputManager().addButton("Shoot", leftClick);
 
-    im().addOnButtonPressedEvent("Shoot", shoot);
+    inputManager().addOnButtonPressedEvent("Shoot", shoot);
 
     Input controllerA;
     controllerA.type = INPUTTYPE_GAMEPAD_BUTTON;
     controllerA.which = SDL_GAMEPAD_BUTTON_A;
 
-    im().addButton("A", controllerA, 0); //Solo P1
+    inputManager().addButton("A", controllerA, 0); //Solo P1
 
-    im().addOnButtonPressedEvent("A", shoot);
+    inputManager().addOnButtonPressedEvent("A", shoot);
 
     AxisInput horizontal;
     horizontal.type = INPUTTYPE_KEYBOARD;
@@ -122,27 +122,27 @@ int main() {
     horizontalInfo.gravity = .01f;
 
     char* horizontalName = (char*) "Horizontal";
-    im().addAxis(horizontalName, horizontalInfo, horizontal);
+    inputManager().addAxis(horizontalName, horizontalInfo, horizontal);
 
     AxisInput gamepadLeftHorizontal;
     gamepadLeftHorizontal.type = INPUTTYPE_GAMEPAD_AXIS;
     gamepadLeftHorizontal.which = SDL_GAMEPAD_AXIS_LEFTX;
 
-    im().addBinding("Horizontal", gamepadLeftHorizontal);
+    inputManager().addBinding("Horizontal", gamepadLeftHorizontal);
 
     Input keyboardP;
     keyboardP.type = INPUTTYPE_KEYBOARD;
     keyboardP.which = SDLK_p;
 
-    im().addButton("P", keyboardP);
-    im().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
+    inputManager().addButton("P", keyboardP);
+    inputManager().addOnButtonPressedEvent("P", getAxisValue, horizontalName);
 
     Input keyboardM;
     keyboardM.type = INPUTTYPE_KEYBOARD;
     keyboardM.which = SDLK_m;
 
-    im().addButton("M", keyboardM);
-    im().addOnButtonPressedEvent("M", getMousePosition);
+    inputManager().addButton("M", keyboardM);
+    inputManager().addOnButtonPressedEvent("M", getMousePosition);
 
 
     std::cout << "Use Space to toogle Interact. Use E to interact when Interact is enabled.\n";

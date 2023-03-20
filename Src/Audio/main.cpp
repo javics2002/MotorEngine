@@ -41,7 +41,7 @@ int main() {
 	FMOD::Channel* canal1 = nullptr;
 	//me::SoundManager &sm  = me::sm();
 
-	me::im();
+	me::inputManager();
 	me::Window::init(SDL_INIT_EVERYTHING, "Sound Manager Test",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 	
@@ -85,9 +85,9 @@ int main() {
 	me::Input botonA;
 	botonA.type = me::INPUTTYPE_KEYBOARD;
 	botonA.which = SDLK_a;
-	me::im().addButton("Shoot", botonA);
+	me::inputManager().addButton("Shoot", botonA);
 
-	bool what = me::im().addOnButtonPressedEvent("Shoot", shoot, &testSound);
+	bool what = me::inputManager().addOnButtonPressedEvent("Shoot", shoot, &testSound);
 	SDL_Event event;
 	while (true) {
 		//std::cout << "bucle" << std::endl;

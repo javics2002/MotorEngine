@@ -1,5 +1,5 @@
 #include "Collider.h"
-
+#include "EntityComponent/Entity.h"
 
 me::Collider::Collider()
 {

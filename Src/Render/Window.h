@@ -57,7 +57,7 @@ namespace me {
 	This macro defines a compact way for using the singleton Window, instead of
 	writing Window::instance()->method() we write win().method()
 	*/
-	inline Window& win() {
+	inline Window& window() {
 		return *Window::instance();
 	};
 }

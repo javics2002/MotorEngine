@@ -9,6 +9,7 @@
 #include "Physics/PhysicsManager.h"
 #include "Render/OgreManager.h"
 #include "Input/InputManager.h"
+#include "EntityComponent/SceneManager.h"
 #include "Render/Window.h"
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
@@ -59,7 +60,7 @@ void MotorEngine::loop()
 
 	SDL_Event event;
 	bool quit = false;
-	im().addEvent(quitLoop, &quit);
+	inputManager().addEvent(quitLoop, &quit);
 	while (!quit) {
 		while (SDL_PollEvent(&event)) {
 
@@ -68,7 +69,7 @@ void MotorEngine::loop()
 		/*
 		* Update the scene
 		*/
-		pm().update(0.0166);
+		physicsManager().update(0.0166);
 		
 
 		/*
@@ -80,7 +81,7 @@ void MotorEngine::loop()
 		/*
 		* Render the scene
 		*/
-		om().render();
+		renderManager().render();
 
 		/*
 		* Update the new frames values
@@ -121,6 +122,11 @@ bool MotorEngine::loadGame(std::string gameDllName)
 	delete[] wtext;
 
 	return game != NULL;
+}
+
+void me::MotorEngine::initFactories()
+{
+	
 }
 
 void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame,

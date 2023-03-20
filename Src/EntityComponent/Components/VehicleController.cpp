@@ -24,14 +24,14 @@ Returns the difference between this vector and another vector
 void VehicleController::update()
 {
     // Get the input
-    bool acelerate = me::im().getButton("ACELERATE");
-    bool decelerate = me::im().getButton("DECELERATE");
-    bool drift = me::im().getButton("DRIFT");
+    bool acelerate = me::inputManager().getButton("ACELERATE");
+    bool decelerate = me::inputManager().getButton("DECELERATE");
+    bool drift = me::inputManager().getButton("DRIFT");
 
     //If the player is using keyboard
-    bool left = me::im().getButton("LEFT");
-    bool right = me::im().getButton("RIGHT");
-    float deltaX = me::im().getAxis("HORIZONTAL");
+    bool left = me::inputManager().getButton("LEFT");
+    bool right = me::inputManager().getButton("RIGHT");
+    float deltaX = me::inputManager().getAxis("HORIZONTAL");
 
     // Rotate the vehicle if the player is using DualShock or Xbox controller
     if(deltaX != 0) {

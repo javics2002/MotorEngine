@@ -3,6 +3,8 @@
 #include "Component.h"
 #include "FactoryComponent.h"
 
+#include <cassert>
+
 using namespace me;
 
 
@@ -11,13 +13,9 @@ me::ComponentsFactory::ComponentsFactory()
     
 }
 
-//me::ComponentsFactory::~ComponentsFactory()
-//{
-//
-//}
-
-me::Component* ComponentsFactory::create(const std::string & name, const std::unordered_map<std::string, std::string>& params)
+me::Component* ComponentsFactory::create(const std::string & name, std::unordered_map<std::string, std::string>& params)
 {
+    assert(mFactories.count(name));
     return mFactories[name]->create(params);
 }
 

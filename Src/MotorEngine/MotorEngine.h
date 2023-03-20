@@ -35,6 +35,9 @@ extern "C" {
 			//Load dll of the game
 			bool loadGame(std::string gameDllname);
 
+			//Creates factories for each component and adds them to the componetsFactories map.
+			void initFactories();
+
 			/**
 			Function used to update the values of the frames
 			@param beginFrame is the time value of the frame before the execution of the main loop

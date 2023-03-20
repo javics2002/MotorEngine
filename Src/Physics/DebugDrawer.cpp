@@ -39,7 +39,7 @@ me::DebugDrawer::DebugDrawer() {
 	mTriangles = new Ogre::ManualObject("triangle");
 	mTriangles->setDynamic(true);
 
-	om().getRootSceneNode()->createChildSceneNode()->attachObject(mTriangles);
+	renderManager().getRootSceneNode()->createChildSceneNode()->attachObject(mTriangles);
 	
 	std::string materialName = "Material/amarillo";
 	Ogre::MaterialPtr mat = Ogre::MaterialManager::getSingleton().getDefaultSettings()->clone(materialName);

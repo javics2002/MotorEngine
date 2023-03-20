@@ -6,7 +6,7 @@
 
 #include "Physics/PhysicsManager.h"
 
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 
 me::RigidBody::RigidBody(int colShape, int mvType, float mass, float friction, float restitution, bool isTrigger)
 {
@@ -33,7 +33,7 @@ void me::RigidBody::start()
 
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 
-	mBtRigidBody = pm().createRigidBody(mBtTransform, scale, Shapes(mColShape),
+	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, Shapes(mColShape),
 		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);

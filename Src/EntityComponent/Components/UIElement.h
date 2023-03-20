@@ -2,7 +2,7 @@
 #ifndef __EC_UI_ELEMENT
 #define __EC_UI_ELEMENT
 
-#include <EntityComponent/Component.h>
+#include "Component.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector2.h"
 

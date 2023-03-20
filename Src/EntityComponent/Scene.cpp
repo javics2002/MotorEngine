@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include "Entity.h"
 
-#include "ComponentsFactory.h"
+#include "Components/ComponentsFactory.h"
 
 
 namespace me {

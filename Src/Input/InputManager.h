@@ -240,7 +240,7 @@ namespace me {
 	This macro defines a compact way for using the singleton InputHandler, instead of
 	writing InputHandler::instance()->method() we write ih().method()
 	*/
-	inline InputManager& im() {
+	inline InputManager& inputManager() {
 		return *InputManager::instance();
 	}
 }

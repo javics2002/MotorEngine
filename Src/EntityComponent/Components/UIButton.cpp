@@ -32,10 +32,10 @@ void me::UIButton::update()
 
 void me::UIButton::handleInput()
 {
-	Vector2 mousePosition = im().getMousePositon();
+	Vector2 mousePosition = me::inputManager().getMousePositon();
 	if (mFocus && mousePosition.x >= getPos().x && mousePosition.x <= getPos().x + getSize().x &&
 		mousePosition.y >= getPos().y && mousePosition.y <= getPos().y + getSize().y) {
-		if (im().justClicked()) {
+		if (me::inputManager().justClicked()) {
 			for (auto l : mLambda) l();
 		}
 	}

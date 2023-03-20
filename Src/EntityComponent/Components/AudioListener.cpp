@@ -5,7 +5,7 @@
 me::AudioListener::AudioListener()
 {
 	// Get the next available index for a listener in the sound manager
-	mListenerIndex = sm().getNextUsefulListenerIndex();
+	mListenerIndex = soundManager().getNextUsefulListenerIndex();
 
 	if(mListenerIndex=-1)
 		std::cout << "ERROR: Listeners vector is full\n";
@@ -13,7 +13,7 @@ me::AudioListener::AudioListener()
 
 me::AudioListener::~AudioListener()
 {
-	sm().removeListener(mListenerIndex);
+	soundManager().removeListener(mListenerIndex);
 }
 
 void me::AudioListener::update()
@@ -21,6 +21,6 @@ void me::AudioListener::update()
 	Vector3 position = mEntity->getComponent<Transform>("transform")->getPosition();
 	{
 		// Update the position of the audio listener in the sound manager
-		sm().updateListenersPosition(mListenerIndex, { position.x,position.y,position.z }, { 0,0,1 }, {0,1,0});
+		soundManager().updateListenersPosition(mListenerIndex, { position.x,position.y,position.z }, { 0,0,1 }, {0,1,0});
 	}
 }

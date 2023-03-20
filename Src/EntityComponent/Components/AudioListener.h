@@ -3,7 +3,7 @@
 #define EC_AUDIO_LISTENER
 
 #include "Component.h"
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 
 
 namespace me {

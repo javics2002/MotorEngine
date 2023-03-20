@@ -1,5 +1,6 @@
 #include "AudioSource.h"
 #include "Transform.h"
+#include "EntityComponent/Entity.h"
 
 me::AudioSource::AudioSource(const char* source, float volume, bool playOnStart, bool is3D, bool loop)
 {
@@ -24,13 +25,13 @@ me::AudioSource::AudioSource(const char* source, float volume, bool playOnStart,
 
 me::AudioSource::~AudioSource()
 {
-    sm().deleteSound(mSound);
+    soundManager().deleteSound(mSound);
 }
 
 void me::AudioSource::update()
 {
     if (mIs3D) {
-        sm().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
+        soundManager().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
     }
 }
 
@@ -46,12 +47,12 @@ void me::AudioSource::stop()
 
 void me::AudioSource::pause()
 {
-    sm().pauseSound(mSound, true);
+    soundManager().pauseSound(mSound, true);
 }
 
 void me::AudioSource::resume()
 {
-    sm().pauseSound(mSound, false);
+    soundManager().pauseSound(mSound, false);
 }
 
 bool me::AudioSource::isPlaying()

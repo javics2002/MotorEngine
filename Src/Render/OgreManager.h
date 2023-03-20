@@ -330,7 +330,7 @@ namespace me {
 		This macro defines a compact way for using the singleton OgreManager, instead of
 		writing OgreManager::instance()->method() we write om().method()
 	*/
-	inline OgreManager&om() {
+	inline OgreManager& renderManager() {
 		return *OgreManager::instance();
 	}
 

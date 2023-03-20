@@ -19,7 +19,7 @@ private:
 	struct mUIChild {
 		UIElement* mUiElement;
 		me::Vector3 mPos;
-		Vector2<float> mScale;
+		Vector2 mScale;
 	};
 	std::vector<mUIChild> mUiElements;
 

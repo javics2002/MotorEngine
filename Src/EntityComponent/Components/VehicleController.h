@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Component.h"
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 
 class InputManager;
 

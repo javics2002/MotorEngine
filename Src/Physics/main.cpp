@@ -14,10 +14,10 @@
 #include "Input/InputManager.h"
 #include "Render/OgreManager.h"
 #include "EntityComponent/Entity.h"
-#include "EntityComponent/RigidBody.h"
-#include "EntityComponent/MeshRenderer.h"
-#include "EntityComponent/Collider.h"
-#include "EntityComponent/FactoryComponent.h"
+#include "EntityComponent/Components/RigidBody.h"
+#include "EntityComponent/Components/MeshRenderer.h"
+#include "EntityComponent/Components/Collider.h"
+#include "EntityComponent/Components/FactoryComponent.h"
 
 #include "EntityComponent/SceneManager.h"
 
@@ -25,14 +25,14 @@ using namespace me;
 
 int main() {
 
-	pm().start();
+	physicsManager().start();
 
 	std::string cam = "CameraDemo";
 
-	om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
-	om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
 
-	Entity* plane = new Entity("plane");
+	me::Entity* plane = new me::Entity("plane");
 
 	auto trPlane = plane->addComponent<Transform>("transform");
 	trPlane->setScale(Vector3(5, 0.1, 5));
@@ -41,7 +41,7 @@ int main() {
 	plane->addComponent<MeshRenderer>("meshRenderer", "p", "cube.mesh")->setMaterial("Material/roja");
 	plane->addComponent<Collider>("collider");
 
-	Entity* cube = new Entity("cube");
+	me::Entity* cube = new me::Entity("cube");
 
 	auto trCube = cube->addComponent<Transform>("transform");
 	trCube->setPosition(Vector3(0, 200, 0));
@@ -50,13 +50,13 @@ int main() {
 	cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
 	cube->addComponent<Collider>("collider");
 
-	om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
+	renderManager().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
 	
-	Scene* s = sm().addScene("Game").get();
-	sm().setActiveScene("Game");
+	Scene* s = sceneManager().addScene("Game").get();
+	sceneManager().setActiveScene("Game");
 
-	sm().loadEntities();
+	sceneManager().loadEntities();
 
 	
 	
@@ -73,8 +73,8 @@ int main() {
 		plane->update();
 		cube->update();
 
-		om().render();
-		pm().update(0.01667);
+		renderManager().render();
+		physicsManager().update(0.01667);
 
 		switch (event.type) {
 		case SDL_EVENT_QUIT:

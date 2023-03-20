@@ -4,7 +4,7 @@ Animator::Animator()
 {
 	mMesh = mEntity->getComponent<me::MeshRenderer>("meshRenderer");
 	mCurrentState = nullptr;
-	mAnimStatesMap = me::om().getOgreEntity(mMesh->getName())->getAllAnimationStates();
+	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
 	mStop = false;
 }
 

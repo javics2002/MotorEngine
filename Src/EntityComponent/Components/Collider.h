@@ -2,9 +2,8 @@
 #ifndef __EC_COLLIDER
 #define __EC_COLLIDER
 
-#include "Utils/Vector3.h"
 #include "Component.h"
-#include "Entity.h"
+class Entity;
 
 namespace me{
 

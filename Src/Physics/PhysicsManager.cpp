@@ -6,7 +6,7 @@
 #include <BulletCollision/CollisionShapes/btCapsuleShape.h>
 #include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 
-#include "EntityComponent/Collider.h"
+#include "EntityComponent/Components/Collider.h"
 #include "Render/OgreManager.h"
 
 me::PhysicsManager::PhysicsManager()

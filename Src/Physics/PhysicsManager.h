@@ -3,7 +3,7 @@
 #define __BULLET_PHYSICS_MANAGER
 
 #include "Utils/Singleton.h"
-#include "EntityComponent/Transform.h"
+#include "EntityComponent/Components/Transform.h"
 #include "DebugDrawer.h"
 
 /*
@@ -151,7 +151,7 @@ namespace me {
 	This macro defines a compact way for using the singleton PhysicsManager, instead of
 	writing InputHandler::instance()->method() we write ih().method()
 	*/
-	inline PhysicsManager& pm() {
+	inline PhysicsManager& physicsManager() {
 		return *PhysicsManager::instance();
 	}
 

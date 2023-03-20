@@ -6,7 +6,7 @@
 #include <string>
 #include "Render/OgreManager.h"
 #include <OgreAnimation.h>
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 #include "MeshRenderer.h"
 #include <OgreEntity.h>
 

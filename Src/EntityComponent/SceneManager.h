@@ -111,7 +111,7 @@ namespace me {
     This macro defines a compact way for using the singleton SceneManager, 
     instead of writing SceneManager::instance()->method() we write sm().method()
     */
-    inline SceneManager& sm() {
+    inline SceneManager& sceneManager() {
         return *SceneManager::instance();
     };
 

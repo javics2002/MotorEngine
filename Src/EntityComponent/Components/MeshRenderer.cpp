@@ -1,6 +1,6 @@
 #include "MeshRenderer.h"
 #include "Render/OgreManager.h"
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
 #include <OgreVector3.h>
@@ -15,7 +15,7 @@ me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
 
 me::MeshRenderer::~MeshRenderer()
 {
-	om().destroyMesh(mName);
+	renderManager().destroyMesh(mName);
 }
 
 void me::MeshRenderer::start()
@@ -24,15 +24,15 @@ void me::MeshRenderer::start()
 
 	assert(mTransform && "An Entity doesn't have the transform component");
 
-	om().createMesh(mName, mMeshName);
-	om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
+	renderManager().createMesh(mName, mMeshName);
+	renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
 }
 
 void me::MeshRenderer::update()
 {
 	if (!mStaticObject)
 	{
-		om().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
+		renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
 	}
 }
 
@@ -49,6 +49,6 @@ std::string me::MeshRenderer::getName()
 
 void me::MeshRenderer::setMaterial(std::string materialName)
 {
-	om().setMeshMaterial(mName,materialName);
+	renderManager().setMeshMaterial(mName,materialName);
 }
 

@@ -1,13 +1,9 @@
 #pragma once
-
 #ifndef __EC_AUDIO_SOURCE
 #define __EC_AUDIO_SOURCE
 
-// Include necessary header files
 #include "Component.h"
-#include "Entity.h"
-
-#include <Audio/SoundManager.h>
+#include "Audio/SoundManager.h"
 
 namespace me {
 	class AudioSource : public Component

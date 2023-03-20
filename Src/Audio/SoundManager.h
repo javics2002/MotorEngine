@@ -213,7 +213,7 @@ namespace me {
 	This macro defines a compact way for using the singleton PhysicsManager, instead of
 	writing SoundManager::instance()->method() we write sm().method()
 	*/
-	inline SoundManager& sm() {
+	inline SoundManager& soundManager() {
 		return *SoundManager::instance();
 	}
 }

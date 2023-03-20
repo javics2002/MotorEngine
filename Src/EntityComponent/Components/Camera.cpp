@@ -1,7 +1,7 @@
 #include "Camera.h"
 #include "Render/OgreManager.h"
 #include <OgreVector3.h>
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
 
@@ -15,19 +15,18 @@ me::Camera::Camera(std::string name, int nearDist, int farDist, bool autoRadio, 
 	mAutoRadio = autoRadio;
 	mZOrder = zOrder;
 	mLookAt = lookAt;
-
 }
 
 me::Camera::~Camera()
 {
-	om().destroyCamera(mName);
+	renderManager().destroyCamera(mName);
 }
 
 void me::Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	om().createCamera(mName,mNearDistance,mFarDistance,mAutoRadio,mZOrder);
-	om().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
+	renderManager().createCamera(mName,mNearDistance,mFarDistance,mAutoRadio,mZOrder);
+	renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
 
 }
 
@@ -35,7 +34,7 @@ void me::Camera::update()
 {
 	if (!mStaticObject)
 	{
-		om().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
+		renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
 	}
 }
 
@@ -46,7 +45,7 @@ void me::Camera::setStatic(bool stat)
 
 void me::Camera::setViewportDimension(float left, float top, float width, float height)
 {
-	om().setViewportDimension(mName, left, top, width, height);
+	renderManager().setViewportDimension(mName, left, top, width, height);
 }
 
 
