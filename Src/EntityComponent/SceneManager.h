@@ -11,6 +11,8 @@
 #include "Utils/Singleton.h"
 
 
+class lua_State;
+
 namespace me {
 
     class Scene;
@@ -80,11 +82,29 @@ namespace me {
         */
         void update();
 
+        /**
+        Parse entities from .lua file to an unordered_map that will be passed to the current Scene
+        to create the entities.
+
+        @returns Error Value, 0 if loadEntities worked correctly or 1 if
+        some error appeared during this function
+        */
+        int loadEntities();
     private:
+
+        /**
+        @returns Error Value, 0 if loadEntities worked correctly or 1 if
+        some error appeared during this function
+        */
+        int readEntities(lua_State* L);
+
+        void pushEntities();
 
         std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
         std::shared_ptr<Scene> mActiveScene;
 
+        typedef std::unordered_map<std::string, std::unordered_map<std::string, std::string>> InfoEntities;
+        std::unordered_map<std::string, InfoEntities> mEntitiesMap;
     };
 
     /**

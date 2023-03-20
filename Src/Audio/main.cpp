@@ -32,7 +32,8 @@ int main() {
 	FMOD_RESULT result;
 	//FMOD_SOUND sonido{};
 	FMOD::System* Sound_System = NULL;
-	FMOD::Sound* sonido, * disparo;
+	FMOD::Sound* sonido;
+	FMOD::Sound* disparo = nullptr;
 	FMOD::Channel* canal1;
 	//me::SoundManager &sm  = me::sm();
 

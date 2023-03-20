@@ -2,93 +2,95 @@
 
 #include <string>
 #include <list>
+#include <unordered_map>
 
-#include "Component.h"
 
-class FactoryComponent
-{
+namespace me {
+	class Component;
 
-protected:
+	class FactoryComponent
+	{
+	protected:
 
-	void parseParams(const std::string& params);
 
-	std::list<std::string> mParams;
+	public:
 
-public:
+		virtual me::Component* create(const std::unordered_map<std::string, std::string>& params) = 0;
 
-	virtual me::Component* create(const std::string& params) = 0;
+	};
 
-};
+	class FactoryAnimator : public FactoryComponent {
 
-class FactoryAnimator : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryAudioListener : public FactoryComponent {
 
-class FactoryAudioListener : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryAudioSource : public FactoryComponent {
 
-class FactoryAudioSource: public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryCamera : public FactoryComponent {
 
-class FactoryCamera : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryCollider : public FactoryComponent {
 
-class FactoryCollider : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryMeshRenderer : public FactoryComponent {
 
-class FactoryMeshRenderer : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryParticleSystem : public FactoryComponent {
 
-class FactoryParticleSystem : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryRigidBody : public FactoryComponent {
 
-class FactoryRigidBody : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
 
-};
+	class FactoryTransform : public FactoryComponent {
 
-class FactoryTransform : public FactoryComponent {
+	public:
 
-public:
+		me::Component* create(const std::unordered_map<std::string, std::string>& params);
 
-	me::Component* create(const std::string& params);
+	};
+}
 
-};
+
 

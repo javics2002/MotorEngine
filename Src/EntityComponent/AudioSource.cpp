@@ -10,8 +10,8 @@ me::AudioSource::AudioSource(const char* source, float volume, bool playOnStart,
 
     // Create a 3D sound or a normal sound
     if (is3D)
-        sm().create3DSound(source, mSound, 1);
-    else sm().createNormalSound(source, mSound, 1);
+        // sm().create3DSound(source, mSound, 1);
+    // else sm().createNormalSound(source, mSound, 1);
 
     // If the sound was not created, output an error message
     if (!mSound) 
@@ -36,7 +36,7 @@ void me::AudioSource::update()
 
 void me::AudioSource::play()
 {
-    sm().playSound(mSound, mLoop, 0,10);
+    // sm().playSound(mSound, mLoop, 0,10);
 }
 
 void me::AudioSource::stop()

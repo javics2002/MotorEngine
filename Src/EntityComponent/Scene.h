@@ -21,6 +21,7 @@ namespace me {
 
 	class Entity;
 
+
 	class Scene {
 	public:
 
@@ -130,7 +131,16 @@ namespace me {
 		*/
 		void processNewEntities();
 
+		/**
+		Safely adds the new entities from map,
+		by deferring the addition of the new entity
+		to the mEntities map until after the loop has completed.
+		*/
+		void pushEntities(std::unordered_map<std::string, std::unordered_map<std::string, std::unordered_map<std::string, std::string>>>& entitiesMap);
+
 	protected:
+		typedef std::unordered_map<std::string, std::unordered_map<std::string, std::string>> InfoEntities;
+
 
 		std::string mName;
 		std::vector<std::shared_ptr<Entity>> mNewEntities;

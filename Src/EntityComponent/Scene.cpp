@@ -1,6 +1,8 @@
 #include "Scene.h"
 #include "Entity.h"
 
+#include "ComponentsFactory.h"
+
 
 namespace me {
 
@@ -93,4 +95,22 @@ namespace me {
 		mNewEntities.clear();
 	};
 
+	void Scene::pushEntities(std::unordered_map<std::string, InfoEntities>& entitiesMap)
+	{
+		// Recorrer el mapa de entidades
+		for (auto& it : entitiesMap) {
+			// Crear entidad
+			addEntity(it.first);
+
+
+			// Crear componentes
+			for (auto& component : it.second) {
+				std::string componentName = component.first;
+
+				ComponentsFactory::instance()->create(componentName, component.second);
+			}
+
+			// Añadir componentes
+		}
+	};
 };

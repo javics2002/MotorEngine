@@ -7,8 +7,6 @@
 #include <iostream>
 #include <SDL3/SDL_events.h>
 #include <string>
-#include <lua.hpp>
-#include <LuaBridge/LuaBridge.h>
 #include <map>
 
 #include "PhysicsManager.h"
@@ -20,6 +18,8 @@
 #include "EntityComponent/MeshRenderer.h"
 #include "EntityComponent/Collider.h"
 #include "EntityComponent/FactoryComponent.h"
+
+#include "EntityComponent/SceneManager.h"
 
 using namespace me;
 
@@ -52,79 +52,14 @@ int main() {
 
 	om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
-	lua_State* L = luaL_newstate();
-	luaL_openlibs(L);
+	
+	Scene* s = sm().addScene("Game").get();
+	sm().setActiveScene("Game");
 
-	// Cargar el archivo de datos Lua
-	//luaL_dofile(L, "Assets/Scenes/scene.lua");
+	sm().loadEntities();
 
-	if (luaL_loadfile(L, "Assets/Scenes/scene.lua") ||
-		lua_pcall(L, 0, 0, 0)) {
-		std::cout << "No se encontro el archivo .lua\n";
-		return -1;
-	}
-
-	std::map<std::string, FactoryComponent*> infoEntity;
-
-	lua_getglobal(L, "Plane");
-	lua_pushnil(L);
-
-	while (lua_next(L, -2) != 0) {
-
-		if (lua_isstring(L, -2)) {
-
-			std::string componentName = lua_tostring(L, -2);
-
-			for (char& c : componentName) {
-				c = tolower(c);
-			}
-
-			std::cout << componentName << '\n';
-
-			lua_pushnil(L);
-			while (lua_next(L, -2) != 0) {
-
-				if (lua_isstring(L, -2)) {
-
-					std::string fieldName = lua_tostring(L, -2);
-
-					for (char& c : fieldName) {
-						c = tolower(c);
-					}
-
-					std::cout << fieldName << '\n';
-
-					if (lua_istable(L, -1)) {
-							for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
-
-								std::string fieldValueName = lua_tostring(L, -2);
-								std::cout << fieldValueName  << ': ' << '\n';
-
-								if (lua_isstring(L, -1)) {
-									std::string fieldValue = lua_tostring(L, -1);
-									std::cout << fieldValue;
-								}
-							}
-							std::cout << '\n';
-					}
-
-					else {
-						if (lua_isstring(L, -1)) {
-							std::string fieldValue = lua_tostring(L, -1);
-							std::cout << fieldValue << std::endl;
-						}
-					}
-
-				}
-
-				lua_pop(L, 1);
-
-			}
-
-			lua_pop(L, 1);
-		}
-
-	}
+	
+	
 
 	SDL_Event event;
 	bool quit = false;
@@ -150,6 +85,7 @@ int main() {
 	return 0;
 
 }
+
 
 #endif
 #endif

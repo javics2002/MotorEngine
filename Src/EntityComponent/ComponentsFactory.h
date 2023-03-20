@@ -2,22 +2,25 @@
 
 #include <string>
 #include <map>
+#include <unordered_map>
 
-#include "Component.h"
-#include "FactoryComponent.h"
+#include "Utils/Singleton.h"
 
-class ComponentsFactory
-{
+namespace me {
+	class Component;
+	class FactoryComponent;
 
-private:
+	class ComponentsFactory : public Singleton<ComponentsFactory>
+	{
+	private:
+		friend Singleton<ComponentsFactory>;
+		ComponentsFactory();
 
-	std::map<std::string, FactoryComponent*>mFactories;
+		std::map<std::string, FactoryComponent*> mFactories;
+	public:
+		me::Component* create(const std::string& name, const std::unordered_map<std::string, std::string>& params);
+		void addFactoryComponent(const std::string& name, FactoryComponent* factoryComponent);
+	};
+}
 
-public:
-
-	me::Component* create(const std::string& name, const std::string &params);
-
-	void addFactoryComponent(const std::string& name, FactoryComponent* factoryComponent);
-	
-};
 
