@@ -1,11 +1,12 @@
 #include "Transform.h"
+
 #include <iostream>
 
 me::Transform::Transform()
 {
 	// Initialize position, rotation, size and scale vectors
 	mPosition = new Vector3(0.0, 0.0, 0.0);
-	mRotation = Ogre::Quaternion::IDENTITY;
+	mRotation = new Vector4(0.0, 0.0, 0.0, 0.0);
 	mScale = new Vector3(1.0, 1.0, 1.0);
 
 	// Set parent to null
@@ -24,9 +25,17 @@ me::Transform::~Transform()
 #endif
 }
 
+void me::Transform::start()
+{
+}
+
 void me::Transform::update()
 {
 
+}
+
+void me::Transform::lateUpdate()
+{
 }
 
 me::Vector3 me::Transform::getPosition()
@@ -34,14 +43,9 @@ me::Vector3 me::Transform::getPosition()
 	return mPosition;
 }
 
-Ogre::Quaternion me::Transform::getRotation()
+Vector4 me::Transform::getRotation()
 {
 	return mRotation;
-}
-
-btQuaternion me::Transform::getRotationInBullet()
-{
-	return btQuaternion(mRotation.x, mRotation.y, mRotation.z, mRotation.w);
 }
 
 me::Vector3 me::Transform::getScale()
@@ -54,9 +58,9 @@ void me::Transform::setPosition(Vector3 newPosition)
 	mPosition = newPosition;
 }
 
-void me::Transform::setRotation(Ogre::Quaternion newRotation)
+void me::Transform::setRotation(Vector3 newRotation)
 {
-	mRotation = newRotation;
+	
 }
 
 void me::Transform::setScale(Vector3 newScale)
@@ -72,22 +76,26 @@ void me::Transform::translate(Vector3 translation)
 void me::Transform::rotate(int degrees, AxisRotations axis)
 {
 
-	Ogre::Vector3 v;
+	//To be implemented
+
+	//Meter en v4 la rotacion y q me devuelva el v4
+
+	Vector3 v;
 
 	switch (axis)
 	{
 	case me::AXIS_ROTATIONS_X:
-		v = Ogre::Vector3::UNIT_X;
+		//v = v.x();
 		break;
 	case me::AXIS_ROTATIONS_Y:
-		v = Ogre::Vector3::UNIT_Y;
+		//v = Ogre::Vector3::UNIT_Y;
 		break;
 	case me::AXIS_ROTATIONS_Z:
-		v = Ogre::Vector3::UNIT_Z;
+		//v = Ogre::Vector3::UNIT_Z;
 		break;
 	}
 
-	mRotation = Ogre::Quaternion(Ogre::Degree(degrees), v);
+	//mRotation = Ogre::Quaternion(Ogre::Degree(degrees), v);
 
 }
 

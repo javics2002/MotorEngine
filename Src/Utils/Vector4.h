@@ -3,6 +3,16 @@
 #ifndef __UTILS_VECTOR4
 #define __UTILS_VECTOR4
 
+namespace Ogre {
+	template<int dism, typename T>
+	class Vector;
+	typedef Vector< 3, float > 	Vector3f;
+
+	class Quaternion;
+}
+
+class btQuaternion;
+
 class Vector4
 {
 
@@ -24,27 +34,21 @@ public:
 	float x, y, z, w;
 
 
-	Vector4() {
-		x = 1;
-		y = 1;
-		z = 1;
-		w = 1;
-	}
+	Vector4();
 
-	Vector4(float a, float b, float c, float d) {
-		x = a;
-		y = b;
-		z = c;
-		w = d;
-	}
+	Vector4(float a, float b, float c, float d);
 
-	Vector4(const Vector4& v) {
-		x = v.x;
-		y = v.y;
-		z = v.z;
-		w = v.w;
-	}
+	Vector4(const Vector4& v);
 
+	/**
+	Return the conversion Vector4 - Ogre::Quaternion
+	*/
+	Ogre::Quaternion v4ToQuaternion();
+
+	/**
+	Returns the current Rotation in btQuaternion
+	*/
+	btQuaternion getRotationInBullet();
 
 	/**
 	*  Returns the linear interpolation between "a" and "b" by a factor of "f"
@@ -54,6 +58,9 @@ public:
 	*  @param f The interpolation factor, a value between 0 and 1
 	*/
 	Vector4 lerp(const Vector4& a, const Vector4& b, float f);
+
+	void operator=(const Vector4& v);
+	void operator=(const Vector4* v);
 };
 
 #endif

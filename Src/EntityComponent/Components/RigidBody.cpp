@@ -8,14 +8,9 @@
 
 #include "EntityComponent/Entity.h"
 
-me::RigidBody::RigidBody(int colShape, int mvType, float mass, float friction, float restitution, bool isTrigger)
+me::RigidBody::RigidBody()
 {
-	mColShape = colShape;
-	mMvType = mvType;
-	mMass = mass;
-	mFricion = friction;
-	mIsTrigger = isTrigger;
-	mRestitution = restitution;
+
 }
 
 me::RigidBody::~RigidBody()
@@ -29,7 +24,7 @@ void me::RigidBody::start()
 	
 	assert(mTransform && "An Entity doesn't have the transform component");
 
-	mBtTransform = new btTransform(btQuaternion(mTransform->getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
+	mBtTransform = new btTransform(btQuaternion(mTransform->getRotation().getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 
@@ -74,6 +69,16 @@ void me::RigidBody::setRestitution(float restitution)
 	mRestitution = restitution;
 }
 
+void me::RigidBody::setColShape(int colShape)
+{
+	mColShape = colShape;
+}
+
+void me::RigidBody::setMomeventType(int mvType)
+{
+	mMvType = mvType;
+}
+
 void me::RigidBody::addForce(Vector3 force, Vector3 relativePos)
 {
 	mBtRigidBody->applyForce(force.v3ToBulletV3(), relativePos.v3ToBulletV3());
@@ -84,7 +89,31 @@ void me::RigidBody::addImpulse(Vector3 impulse, Vector3 relativePos)
 	mBtRigidBody->applyImpulse(impulse.v3ToBulletV3(), relativePos.v3ToBulletV3());
 }
 
-float me::RigidBody::getMass()
+bool me::RigidBody::getTrigger()
 {
+	return mIsTrigger;
+}
+
+float me::RigidBody::getMass() {
 	return mMass;
+}
+
+float me::RigidBody::getFriction()
+{
+	return mFricion;
+}
+
+float me::RigidBody::getRestitution()
+{
+	return mRestitution;
+}
+
+int me::RigidBody::getColShape()
+{
+	return mColShape;
+}
+
+int me::RigidBody::getMovementType()
+{
+	return mMvType;
 }

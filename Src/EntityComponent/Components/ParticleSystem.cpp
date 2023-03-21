@@ -22,7 +22,7 @@ void me::ParticleSystem::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 	renderManager().createParticle(mName, mParticleName);
-	renderManager().setParticleTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
+	renderManager().setParticleTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation().v4ToQuaternion());
 
 }
 
@@ -30,7 +30,7 @@ void me::ParticleSystem::update()
 {
 	Vector3 pos = mTransform->getPosition() + mOffsetPos;
 	Vector3 scale = mTransform->getScale() + mOffsetScale;
-	renderManager().setParticleTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation());
+	renderManager().setParticleTransform(mName, pos.v3ToOgreV3(), scale.v3ToOgreV3(), mTransform->getRotation().v4ToQuaternion());
 
 }
 

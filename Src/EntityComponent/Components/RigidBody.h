@@ -4,6 +4,7 @@
 #define  __RIGID_BODY
 
 #include "Transform.h"
+#include "Component.h"
 
 class btRigidBody;
 class btTransform;
@@ -43,9 +44,8 @@ namespace me{
 		@param restitution magnitude of the rebounding ability
 		@param isTrigger indicates if the body will have collisions
 		*/
-		RigidBody(int colShape, int mvType, float mass, float friction, float restitution, bool isTrigger);
+		RigidBody();
 		~RigidBody();
-		RigidBody() {};
 
 		/*
 		Starts the RigidBody of the entity for the physics
@@ -59,6 +59,15 @@ namespace me{
 		void setMass (float mass);
 		void setFriction(float friction);
 		void setRestitution(float restitution);
+		void setColShape(int colShape);
+		void setMomeventType(int mvType);
+
+		bool getTrigger();
+		float getMass();
+		float getFriction();
+		float getRestitution();
+		int  getColShape();
+		int getMovementType();
 
 		/**
 		Apply a force to the rigidBody
@@ -75,11 +84,6 @@ namespace me{
 		@param relativePos is the local pos of the rigidBody
 		*/
 		void addImpulse(Vector3 impulse, Vector3 relativePos);
-
-		/*
-		Get the mass of the rigidBody
-		*/
-		float getMass();
 
 	};
 

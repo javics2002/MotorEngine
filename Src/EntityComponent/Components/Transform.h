@@ -3,14 +3,12 @@
 #ifndef __ENTITYCOMPONENT_TRANSFORM
 #define __ENTITYCOMPONENT_TRANSFORM
 
-#include "Component.h"
+
 #include "Utils/Vector3.h"
+#include "Utils/Vector4.h"
+#include "Component.h"
 
-#include <OgreVector3.h>
-#include <OgreQuaternion.h>
-#include <LinearMath/btQuaternion.h>
 #include <list>
-
 
 namespace me {
 
@@ -35,9 +33,11 @@ namespace me {
 		/**
 		Destroy the Transform object and its components.
 		*/
-		~Transform();
+		~Transform() override;
 
+		void start() override;
 		void update() override;
+		void lateUpdate() override;
 
 		/**
 		Get the position vector of the Transform object.
@@ -49,12 +49,7 @@ namespace me {
 		/**
 		Returns the current Rotation
 		*/
-		Ogre::Quaternion getRotation();
-
-		/**
-		Returns the current Rotation in btQuaternion
-		*/
-		btQuaternion  getRotationInBullet();
+		Vector4 getRotation();
 
 		/**
 		Get the scale vector of the Transform object.
@@ -75,7 +70,7 @@ namespace me {
 
 		@param newRotation A Vector3 object representing the new rotation.
 		*/
-		void setRotation(Ogre::Quaternion newRotation);
+		void setRotation(Vector3 newRotation);
 
 		/**
 		Set the scale vector of the Transform object.
@@ -146,11 +141,11 @@ namespace me {
 	private:
 
 		Vector3 mPosition;
-		Ogre::Quaternion mRotation;
+		Vector4 mRotation;
 		Vector3  mScale;
 
 		Vector3 mLocalPosition;
-		Ogre::Quaternion mLocalRotation;
+		Vector4 mLocalRotation;
 		Vector3  mLocalScale;
 
 		Transform* mParent;

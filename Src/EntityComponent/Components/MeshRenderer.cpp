@@ -25,14 +25,14 @@ void me::MeshRenderer::start()
 	assert(mTransform && "An Entity doesn't have the transform component");
 
 	renderManager().createMesh(mName, mMeshName);
-	renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
+	renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation().v4ToQuaternion());
 }
 
 void me::MeshRenderer::update()
 {
 	if (!mStaticObject)
 	{
-		renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation());
+		renderManager().setMeshTransform(mName, mTransform->getPosition().v3ToOgreV3(), mTransform->getScale().v3ToOgreV3(), mTransform->getRotation().v4ToQuaternion());
 	}
 }
 
