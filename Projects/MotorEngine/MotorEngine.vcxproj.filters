@@ -32,5 +32,8 @@
     <ClInclude Include="..\..\Src\MotorEngine\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\MotorEngine\MotorEngineAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

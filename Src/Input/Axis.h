@@ -48,8 +48,6 @@ namespace me {
 			int positive;
 		};
 		int negative;
-
-		
 	};
 }
 

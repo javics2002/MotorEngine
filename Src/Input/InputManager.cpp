@@ -1,8 +1,11 @@
 #include "InputManager.h"
+
+#include <SDL3/SDL_events.h>
 #ifdef _DEBUG
 #include <iostream>
 #include <typeinfo>
 #endif
+
 #define EVENT_BUTTON_DOWN event->type == SDL_EVENT_KEY_DOWN || \
 	event->type == SDL_EVENT_MOUSE_BUTTON_DOWN || \
 	event->type == SDL_EVENT_GAMEPAD_BUTTON_DOWN

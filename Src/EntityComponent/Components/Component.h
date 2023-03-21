@@ -8,12 +8,13 @@ for any behavior designed as a component.
 #ifndef __EC_COMPONENT
 #define __EC_COMPONENT
 
+#include "MotorEngine/MotorEngineAPI.h"
 
 namespace me {
 
 	class Entity;
 
-	class Component {
+	class __MOTORENGINE_API Component {
 	public:
 
 		bool enabled = true;
@@ -82,7 +83,6 @@ namespace me {
 
 		// TODO: Identificar cada componente con un nombre
 	};
-
 };
 
 #endif

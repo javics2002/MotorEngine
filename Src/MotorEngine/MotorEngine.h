@@ -2,13 +2,7 @@
 #ifndef __MOTORENGINE_MAIN
 #define __MOTORENGINE_MAIN
 
-#define __MOTORENGINE_EXPORT
-#ifdef __MOTORENGINE_EXPORT
-#define __MOTORENGINE_API __declspec(dllexport)
-#else
-#define __MOTORENGINE_API __declspec(dllimport)
-#endif
-
+#include "MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include <Windows.h>
 #include <chrono>
@@ -24,7 +18,12 @@ extern "C" {
 		*/
 		class __MOTORENGINE_API MotorEngine : public Singleton<MotorEngine> {
 		public:
-			bool setup();
+			/**
+			Loads and initializates the engine and the game.
+			Automatically loads a _d sufix dll if _DEBUG flags is defined.
+			@params gameName Name of the .dll of the game, without any sufixes
+			*/
+			bool setup(std::string gameName = "VroomVroom");
 			void loop();
 			void exit();
 

@@ -70,7 +70,7 @@ namespace me {
 
 		@param newRotation A Vector3 object representing the new rotation.
 		*/
-		void setRotation(Vector3 newRotation);
+		void setRotation(Vector4 newRotation);
 
 		/**
 		Set the scale vector of the Transform object.

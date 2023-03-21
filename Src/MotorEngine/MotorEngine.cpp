@@ -23,13 +23,12 @@ typedef void(*TypeDefinition)();
 
 using namespace me;
 
-bool MotorEngine::setup()
+bool MotorEngine::setup(std::string gameName)
 {
-	loadGame("VroomVroom"); //Deberia subir la variable a setup
+	loadGame(gameName); 
 
 	if (game == NULL)
 		return false;
-
 
 	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
 
@@ -41,16 +40,13 @@ bool MotorEngine::setup()
 	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
-	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
-	if (gameTypesDef == NULL)
-		return false;
-
-	
-	// Añadir componentes del juego
-	gameTypesDef();
-
-	// Añadir componentes del motor
+	// Register Motor Engine's default component factories
 	initFactories();
+	
+	// Register game's component factories
+	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
+	if (gameTypesDef != NULL)
+		gameTypesDef();
 
 	entryPoint();
 
@@ -76,6 +72,7 @@ void MotorEngine::loop()
 	SDL_Event event;
 	bool quit = false;
 	inputManager().addEvent(quitLoop, &quit);
+	physicsManager().start();
 	while (!quit) {
 		while (SDL_PollEvent(&event)) {
 

@@ -2,7 +2,7 @@ Entities = {
 	-- Define una entidad llamada "player"
 	Plane = {
 	  -- Componente Transform
-	  TRANSFORM = {
+	  TRANSFORM = { 
 		rotation = { x = 0, y = 0, z = 0 },
 		position = {},
 		scale = { y = .1, z = 5, x = 5 }
@@ -28,7 +28,7 @@ Entities = {
 	  }
 	},
 
-	Droga = {
+	test = {
 		-- Componente Transform
 	  TRANSFORM = {
 		rotation = { x = 666, y = 666, z = 666 },

@@ -4,7 +4,9 @@
 
 #include <string>
 #include <unordered_map>
-#include <SDL3/SDL_events.h>
+
+typedef union SDL_Event SDL_Event;
+typedef int (__cdecl* SDL_EventFilter) (void* userdata, SDL_Event* event);
 
 namespace me {
 	enum InputType : int;

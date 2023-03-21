@@ -58,9 +58,9 @@ void me::Transform::setPosition(Vector3 newPosition)
 	mPosition = newPosition;
 }
 
-void me::Transform::setRotation(Vector3 newRotation)
+void me::Transform::setRotation(Vector4 newRotation)
 {
-	
+	mRotation = newRotation;
 }
 
 void me::Transform::setScale(Vector3 newScale)
