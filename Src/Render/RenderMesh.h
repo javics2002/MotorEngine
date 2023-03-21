@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __OGRE_OGREMESH
-#define __OGRE_OGREMESH
+#ifndef __RENDER_RENDERMESH
+#define __RENDER_RENDERMESH
 
 #include <string>
 #include <OgreVector3.h>
@@ -13,7 +13,7 @@ namespace Ogre {
 namespace me {
 
 	//Class to create renderizable object with mesh
-	class OgreMesh
+	class RenderMesh
 	{
 
 	private:
@@ -35,8 +35,8 @@ namespace me {
 		@param meshName: name of resource (type mesh) that we used for create Ogre::Entity. 
 		Must be writted in resource.cfg (.mesh inside Zip or FileSystem)
 		*/
-		OgreMesh(Ogre::SceneNode* node,std::string meshName);
-		~OgreMesh();
+		RenderMesh(Ogre::SceneNode* node,std::string meshName);
+		~RenderMesh();
 		//Set position, rotation and scale of mNode
 		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
 		void setPosition(const Ogre::Vector3f &pos);

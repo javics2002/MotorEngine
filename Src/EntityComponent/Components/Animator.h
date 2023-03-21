@@ -4,7 +4,7 @@
 
 #include "Component.h"
 #include <string>
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 #include <OgreAnimation.h>
 #include "EntityComponent/Entity.h"
 #include "MeshRenderer.h"

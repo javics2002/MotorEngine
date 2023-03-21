@@ -1,8 +1,8 @@
 #pragma once
-#ifndef __OGRE_OGRECAMERA
-#define __OGRE_OGRECAMERA
+#ifndef __RENDER_RENDERCAMERA
+#define __RENDER_RENDERCAMERA
 
-#include <OgreVector3.h>
+
 
 namespace Ogre {
 	class Camera;
@@ -10,10 +10,14 @@ namespace Ogre {
 	class SceneNode;
 	class SceneManager;
 	class RenderWindow;
+	class ColourValue;
+	template<int dism, typename T>
+	class Vector;
+	typedef Vector<3, float> Vector3f;
 }
 
 namespace me {
-	class OgreCamera
+	class RenderCamera
 	{
 
 	private:
@@ -24,15 +28,15 @@ namespace me {
 		Ogre::Viewport* mViewport ;
 		//Reference to Ogre::SceneNode of mCamera
 		Ogre::SceneNode* mCameraNode ;
-		//Reference to Ogre::SceneManager created by OgreManager
+		//Reference to Ogre::SceneManager created by RenderManager
 		Ogre::SceneManager* mSceneMgr;
-		//Reference to Ogre::RenderWindow created by OgreManager
+		//Reference to Ogre::RenderWindow created by RenderManager
 		Ogre::RenderWindow* mRenderWindow;
 
 
 	public:
-		OgreCamera();
-		~OgreCamera();
+		RenderCamera();
+		~RenderCamera();
 
 		//Assign references
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );

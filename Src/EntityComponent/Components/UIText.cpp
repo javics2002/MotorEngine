@@ -1,5 +1,5 @@
 #include "UIText.h"
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 #include <OgreOverlay.h>
 #include <OgreOverlayElement.h>
 #include <OgreOverlayContainer.h>

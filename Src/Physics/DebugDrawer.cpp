@@ -2,7 +2,7 @@
 
 #include "Utils/Vector3.h"
 
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 
 //bool me::DebugDrawer::frameStarted(const Ogre::FrameEvent& evt)
 //{

@@ -7,7 +7,7 @@
 #include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 
 #include "EntityComponent/Components/Collider.h"
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 
 me::PhysicsManager::PhysicsManager()
 {

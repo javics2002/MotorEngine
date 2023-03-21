@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __OGRE_OGRE_WINDOW
-#define __OGRE_OGRE_WINDOW
+#ifndef __RENDER_RENDERWINDOW
+#define __RENDER_RENDERWINDOW
 
 #include <string>
 typedef struct SDL_Window SDL_Window;
@@ -16,7 +16,7 @@ namespace me {
 	Class to create linked window between SDL_window and Ogre::RendererWindow
 	*/
 
-	class OgreWindow {
+	class RenderWindow {
 
 	private:
 	protected:
@@ -39,8 +39,8 @@ namespace me {
 
 	public:
 		//Store windowName
-		OgreWindow(const std::string windowName);
-		~OgreWindow();
+		RenderWindow(const std::string windowName);
+		~RenderWindow();
 
 		/**
 		Initialize linked window without automatically window created

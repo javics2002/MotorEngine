@@ -1,10 +1,10 @@
-#include "OgreParticleSystem.h"
+#include "RenderParticleSystem.h"
 #include <OgreSceneManager.h>
 #include <OgreParticleSystem.h>
 #include <OgreSceneNode.h>
 #include <OgreQuaternion.h>
 
-me::OgreParticleSystem::OgreParticleSystem(std::string name,Ogre::SceneNode* node, std::string particleName)
+me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode* node, std::string particleName)
 {
 	mNode = node;
 	mParticleName = particleName;
@@ -16,7 +16,7 @@ me::OgreParticleSystem::OgreParticleSystem(std::string name,Ogre::SceneNode* nod
 	mNode->attachObject(mParticleSystem);
 }
 
-me::OgreParticleSystem::~OgreParticleSystem()
+me::RenderParticleSystem::~RenderParticleSystem()
 {
 	
 	Ogre::SceneManager* mSM = mNode->getCreator();
@@ -26,29 +26,29 @@ me::OgreParticleSystem::~OgreParticleSystem()
 
 }
 
-void me::OgreParticleSystem::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
+void me::RenderParticleSystem::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
 {
 	mNode->setPosition(pos);
 	mNode->setScale(scale);
 	mNode->setOrientation(rot);
 }
 
-void me::OgreParticleSystem::setPosition(const Ogre::Vector3f &pos)
+void me::RenderParticleSystem::setPosition(const Ogre::Vector3f &pos)
 {
 	mNode->setPosition(pos);
 }
 
-void me::OgreParticleSystem::setScale(const Ogre::Vector3f &scale)
+void me::RenderParticleSystem::setScale(const Ogre::Vector3f &scale)
 {
 	mNode->setScale(scale);
 }
 
-void me::OgreParticleSystem::setRotation(Ogre::Quaternion rot)
+void me::RenderParticleSystem::setRotation(Ogre::Quaternion rot)
 {
 	mNode->setOrientation(rot);
 }
 
-void me::OgreParticleSystem::setEmitting(bool emitted)
+void me::RenderParticleSystem::setEmitting(bool emitted)
 {
 	mParticleSystem->setEmitting(emitted);
 }

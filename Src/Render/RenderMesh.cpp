@@ -1,10 +1,10 @@
-#include "OgreMesh.h"
+#include "RenderMesh.h"
 #include <OgreSceneManager.h>
 #include <OgreEntity.h>
 #include <OgreSceneNode.h>
 #include <OgreQuaternion.h>
 
-me::OgreMesh::OgreMesh(Ogre::SceneNode* node, std::string meshName)
+me::RenderMesh::RenderMesh(Ogre::SceneNode* node, std::string meshName)
 {
 	mNode = node;
 	mMeshName = meshName;
@@ -15,7 +15,7 @@ me::OgreMesh::OgreMesh(Ogre::SceneNode* node, std::string meshName)
 	mNode->setVisible(true);
 }
 
-me::OgreMesh::~OgreMesh()
+me::RenderMesh::~RenderMesh()
 {
 	
 	Ogre::SceneManager* mSM = mNode->getCreator();
@@ -25,34 +25,34 @@ me::OgreMesh::~OgreMesh()
 
 }
 
-void me::OgreMesh::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
+void me::RenderMesh::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
 {
 	mNode->setPosition(pos);
 	mNode->setScale(scale);
 	mNode->setOrientation(rot);
 }
 
-void me::OgreMesh::setPosition(const Ogre::Vector3f &pos)
+void me::RenderMesh::setPosition(const Ogre::Vector3f &pos)
 {
 	mNode->setPosition(pos);
 }
 
-void me::OgreMesh::setScale(const Ogre::Vector3f &scale)
+void me::RenderMesh::setScale(const Ogre::Vector3f &scale)
 {
 	mNode->setScale(scale);
 }
 
-void me::OgreMesh::setRotation(Ogre::Quaternion rot)
+void me::RenderMesh::setRotation(Ogre::Quaternion rot)
 {
 	mNode->setOrientation(rot);
 }
 
-Ogre::Entity* me::OgreMesh::getOgreEntity()
+Ogre::Entity* me::RenderMesh::getOgreEntity()
 {
 	return mEntity;
 }
 
-void me::OgreMesh::setMaterial(std::string materialName)
+void me::RenderMesh::setMaterial(std::string materialName)
 {
 	mMaterialName = materialName;
 	mEntity->setMaterialName(materialName);

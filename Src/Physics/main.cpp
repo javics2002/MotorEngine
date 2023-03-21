@@ -12,7 +12,7 @@
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
 #include "Input/InputManager.h"
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Components/RigidBody.h"
 #include "EntityComponent/Components/MeshRenderer.h"

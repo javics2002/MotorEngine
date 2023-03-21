@@ -1,4 +1,4 @@
-#include "OgreWindow.h"
+#include "RenderWindow.h"
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
 #include <iostream>
@@ -10,36 +10,36 @@
 
 using namespace me;
 
-OgreWindow::OgreWindow(const std::string windowName)
+RenderWindow::RenderWindow(const std::string windowName)
 {
 	mWindowName = windowName;
 }
 
-OgreWindow::~OgreWindow()
+RenderWindow::~RenderWindow()
 {
 
 }
 
-void OgreWindow::init(Ogre::Root* root)
+void RenderWindow::init(Ogre::Root* root)
 {
 	root->initialise(false, mWindowName);
 	createWindow(root);
 	//setWindowGrab(true);
 }
 
-Ogre::RenderWindow* me::OgreWindow::getRenderWindow()
+Ogre::RenderWindow* me::RenderWindow::getRenderWindow()
 {
 	return mRenderWindow;
 }
 
-SDL_Window* me::OgreWindow::getSdlWindow()
+SDL_Window* me::RenderWindow::getSdlWindow()
 {
 	return mSdlWindow;
 }
 
 
 
-void OgreWindow::createWindow(Ogre::Root* root)
+void RenderWindow::createWindow(Ogre::Root* root)
 {
 	uint32_t w, h;
 	std::string x;
@@ -80,7 +80,7 @@ void OgreWindow::createWindow(Ogre::Root* root)
 }
 
 
-void OgreWindow::setWindowGrab(bool bGrab)
+void RenderWindow::setWindowGrab(bool bGrab)
 {
 	SDL_bool grab = SDL_bool(bGrab);
 	SDL_SetWindowGrab(mSdlWindow, grab);

@@ -57,15 +57,31 @@ me::Component* me::FactoryMeshRenderer::create(Parameters params)
 {
     std::string mesh = value(params, "mesh", std::string());
     std::string meshName = value(params, "meshname", std::string());
+    std::string materialName = value(params, "materialname", std::string());
+    bool staticState = value(params, "staticobj", false);
 
     MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
+    meshRenderer->setMaterial(materialName);
+    meshRenderer->setStatic(staticState);
 
     return meshRenderer;
 }
 
 me::Component* me::FactoryParticleSystem::create(Parameters params)
 {
-    return nullptr;
+
+    std::string particle = value(params, "particle", std::string());
+    std::string particleName = value(params, "particlename", std::string());
+    bool emitted = value(params, "emitted", false);    
+
+    ParticleSystem* particleSystem = new ParticleSystem(particle, particleName);
+    particleSystem->setEmitting(emitted);
+    particleSystem->setOffsetPos(Vector3(value(params, "offpos_x", 0.0f),
+        value(params, "offpos_y", 0.0f), value(params, "offpos_z", 0.0f)));
+    particleSystem->setOffsetScale(Vector3(value(params, "offscale_x", 0.0f),
+        value(params, "offscale_y", 0.0f), value(params, "offscale_z", 0.0f)));
+
+    return particleSystem;
 }
 
 me::Component* me::FactoryRigidBody::create(Parameters params)

@@ -1,5 +1,5 @@
 #include "Camera.h"
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 #include <OgreVector3.h>
 #include "EntityComponent/Entity.h"
 #include "Transform.h"

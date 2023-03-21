@@ -1,11 +1,11 @@
-#include "OgreCamera.h"
+#include "RenderCamera.h"
 #include "OgreSceneManager.h"
 #include "OgreRenderWindow.h"
 #include "OgreViewport.h"
 #include <string>
 
 
-me::OgreCamera::OgreCamera()
+me::RenderCamera::RenderCamera()
 {
 	mCamera = nullptr;
 	mViewport = nullptr;
@@ -14,14 +14,14 @@ me::OgreCamera::OgreCamera()
 	mRenderWindow = nullptr;
 }
 
-void me::OgreCamera::init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow)
+void me::RenderCamera::init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow)
 {
 	mSceneMgr = SceneMgr;
 	mCameraNode= CameraNode;
 	mRenderWindow = RenderWindow;
 }
 
-void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+void me::RenderCamera::createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 	mCamera = mSceneMgr->createCamera(name);
 	mCamera->setNearClipDistance(nearDist);
@@ -42,7 +42,7 @@ void me::OgreCamera::createCamera(const char* name, int nearDist, int farDist, b
 }
 
 
-me::OgreCamera::~OgreCamera()
+me::RenderCamera::~RenderCamera()
 {
 	mCameraNode->detachAllObjects();
 	mSceneMgr->destroyCamera(mCamera);
@@ -50,17 +50,17 @@ me::OgreCamera::~OgreCamera()
 }
 
 
-void me::OgreCamera::setPosition(const Ogre::Vector3f &pos)
+void me::RenderCamera::setPosition(const Ogre::Vector3f &pos)
 {
 	mCameraNode->setPosition(pos);
 }
 
-void me::OgreCamera::lookAt(const Ogre::Vector3f &look)
+void me::RenderCamera::lookAt(const Ogre::Vector3f &look)
 {
 	mCameraNode->lookAt(look, Ogre::Node::TS_WORLD);
 }
 
-void me::OgreCamera::setViewportDimension(float left, float top, float width, float height)
+void me::RenderCamera::setViewportDimension(float left, float top, float width, float height)
 {
 	mViewport->setDimensions(left, top, width, height);
 	

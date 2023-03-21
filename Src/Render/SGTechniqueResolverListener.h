@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef __OGRE_SGTECHNIQUE_RESOLVER_LISTENER
-#define __OGRE_SGTECHNIQUE_RESOLVER_LISTENER
+#ifndef __RENDER_SGTECHNIQUE_RESOLVER_LISTENER
+#define __RENDER_SGTECHNIQUE_RESOLVER_LISTENER
 
 #include "OgreRTShaderSystem.h"
 #include "OgreMaterialManager.h"

@@ -7,7 +7,7 @@
 #include <random>
 #include "Audio/SoundManager.h"
 #include "Physics/PhysicsManager.h"
-#include "Render/OgreManager.h"
+#include "Render/RenderManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
 #include "EntityComponent/Components/ComponentsFactory.h"

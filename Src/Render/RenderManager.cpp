@@ -1,4 +1,4 @@
-#include "OgreManager.h"
+#include "RenderManager.h"
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreSceneNode.h>
@@ -14,10 +14,10 @@
 #include <OgreVector.h>
 #include <iostream>
 #include "OgreTextAreaOverlayElement.h"
-#include "Render/OgreWindow.h"
-#include "Render/OgreCamera.h"
-#include "Render/OgreMesh.h"
-#include "Render/OgreParticleSystem.h"
+#include "Render/RenderWindow.h"
+#include "Render/RenderCamera.h"
+#include "Render/RenderMesh.h"
+#include "Render/RenderParticleSystem.h"
 #include "Render/SGTechniqueResolverListener.h"
 
 // Animation includes
@@ -26,7 +26,7 @@
 
 using namespace me;
 
-OgreManager::OgreManager()
+RenderManager::RenderManager()
 {
 	initRoot();
 	initWindow();
@@ -37,7 +37,7 @@ OgreManager::OgreManager()
 	mShaderGenerator->addSceneManager(mSM);
 }
 
-void OgreManager::initRoot()
+void RenderManager::initRoot()
 {
 	mFSLayer = new Ogre::FileSystemLayer("OgreFileSystem");
 
@@ -66,15 +66,15 @@ void OgreManager::initRoot()
 
 }
 
-void me::OgreManager::initWindow()
+void me::RenderManager::initWindow()
 {
-	mOgreWindow = new OgreWindow("OgreWindow");
+	mOgreWindow = new RenderWindow("OgreWindow");
 	mOgreWindow->init(mRoot);
 }
 
 
 
-void OgreManager::locateResources()
+void RenderManager::locateResources()
 {
 
 	// load resource paths from config file
@@ -111,11 +111,11 @@ void OgreManager::locateResources()
 
 }
 
-void OgreManager::loadResources() {
+void RenderManager::loadResources() {
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
 
-bool OgreManager::initialiseRTShaderSystem() {
+bool RenderManager::initialiseRTShaderSystem() {
 	if (Ogre::RTShader::ShaderGenerator::initialize())
 	{
 		mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
@@ -130,14 +130,14 @@ bool OgreManager::initialiseRTShaderSystem() {
 	return true;
 }
 
-OgreMesh* me::OgreManager::getMesh(std::string name)
+RenderMesh* me::RenderManager::getMesh(std::string name)
 {
 	if (!mMeshes.count(name))
 		return nullptr;
 
 	return mMeshes[name];
 }
-OgreCamera* me::OgreManager::getCamera(std::string name)
+RenderCamera* me::RenderManager::getCamera(std::string name)
 {
 
 	if (!mCameras.count(name))
@@ -146,7 +146,7 @@ OgreCamera* me::OgreManager::getCamera(std::string name)
 	return mCameras[name];
 }
 
-OgreParticleSystem* me::OgreManager::getParticle(std::string name)
+RenderParticleSystem* me::RenderManager::getParticle(std::string name)
 {
 	if (!mParticles.count(name))
 		return nullptr;
@@ -154,7 +154,7 @@ OgreParticleSystem* me::OgreManager::getParticle(std::string name)
 	return mParticles[name];
 }
 
-me::OgreManager::~OgreManager()
+me::RenderManager::~RenderManager()
 {
 	for (auto& it : mCameras) {
 
@@ -170,13 +170,13 @@ me::OgreManager::~OgreManager()
 	delete mOgreWindow;
 }
 
-bool me::OgreManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 
 	if (mCameras.count(name))
 		return false;
 
-	OgreCamera* camera = new OgreCamera();
+	RenderCamera* camera = new RenderCamera();
 	Ogre::SceneNode* cameraNode = createChildNode(name, parentName);
 	
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
@@ -188,12 +188,12 @@ bool me::OgreManager::createCamera(std::string name, std::string parentName, int
 	return true;
 }
 
-bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
+bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
 {
 	if (mCameras.count(name))
 		return false;
 
-	OgreCamera* camera = new OgreCamera();
+	RenderCamera* camera = new RenderCamera();
 	Ogre::SceneNode* cameraNode = createNode(name);
 
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
@@ -205,9 +205,9 @@ bool me::OgreManager::createCamera(std::string name, int nearDist, int farDist, 
 	return true;
 }
 
-bool me::OgreManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look)
+bool me::RenderManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look)
 {
-	OgreCamera* cam = getCamera(name);
+	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
@@ -220,9 +220,9 @@ bool me::OgreManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos,
 }
 
 
-bool me::OgreManager::setViewportDimension(std::string name, float left, float top, float width, float height)
+bool me::RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {
-	OgreCamera* cam = getCamera(name);
+	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
@@ -233,9 +233,9 @@ bool me::OgreManager::setViewportDimension(std::string name, float left, float t
 }
 
 
-void me::OgreManager::destroyCamera(std::string name)
+void me::RenderManager::destroyCamera(std::string name)
 {
-	OgreCamera* cam = getCamera(name);
+	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 	{
 		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
@@ -248,7 +248,7 @@ void me::OgreManager::destroyCamera(std::string name)
 
 }
 
-void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
+void me::RenderManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
 {
 	
 	Ogre::Light* light = mSM->createLight(name);
@@ -262,14 +262,14 @@ void me::OgreManager::createNewLight(std::string name, const Ogre::Vector3f &pos
 
 }
 
-bool me::OgreManager::createMesh(std::string name, std::string nameMesh)
+bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
 {
 
 	if (mMeshes.count(name))
 		return false;
 
 	Ogre::SceneNode* entityNode = createNode(name);
-	OgreMesh* mesh = new OgreMesh(entityNode, nameMesh);
+	RenderMesh* mesh = new RenderMesh(entityNode, nameMesh);
 
 
 	mMeshes[name] = mesh;
@@ -277,9 +277,9 @@ bool me::OgreManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
-bool me::OgreManager::setMeshPosition(std::string name, const Ogre::Vector3f &pos)
+bool me::RenderManager::setMeshPosition(std::string name, const Ogre::Vector3f &pos)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -288,9 +288,9 @@ bool me::OgreManager::setMeshPosition(std::string name, const Ogre::Vector3f &po
 	return true;
 }
 
-bool me::OgreManager::setMeshScale(std::string name, const Ogre::Vector3f &scale)
+bool me::RenderManager::setMeshScale(std::string name, const Ogre::Vector3f &scale)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -299,9 +299,9 @@ bool me::OgreManager::setMeshScale(std::string name, const Ogre::Vector3f &scale
 	return true;
 }
 
-bool me::OgreManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
+bool me::RenderManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -310,9 +310,9 @@ bool me::OgreManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
 	return true;
 }
 
-bool me::OgreManager::setMeshMaterial(std::string name, std::string nameMaterial)
+bool me::RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -321,9 +321,9 @@ bool me::OgreManager::setMeshMaterial(std::string name, std::string nameMaterial
 	return true;
 }
 
-void me::OgreManager::destroyMesh(std::string name)
+void me::RenderManager::destroyMesh(std::string name)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 	{
 		std::cout << "Try to destroy nullptr mesh with this name " << name << std::endl;
@@ -337,9 +337,9 @@ void me::OgreManager::destroyMesh(std::string name)
 }
 
 
-bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
+bool me::RenderManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -348,9 +348,9 @@ bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &p
 	return true;
 }
 
-bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot)
+bool me::RenderManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot)
 {
-	OgreMesh* mesh = getMesh(name);
+	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
@@ -361,22 +361,22 @@ bool me::OgreManager::setMeshTransform(std::string name, const Ogre::Vector3f &p
 
 
 
-bool me::OgreManager::createParticle(std::string name, std::string nameParticle)
+bool me::RenderManager::createParticle(std::string name, std::string nameParticle)
 {
 	if (mParticles.count(name))
 		return false;
 
 	Ogre::SceneNode* entityNode = createNode(name);
-	OgreParticleSystem* particle = new OgreParticleSystem(name, entityNode, nameParticle);
+	RenderParticleSystem* particle = new RenderParticleSystem(name, entityNode, nameParticle);
 
 	mParticles[name] = particle;
 
 	return true;
 }
 
-bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale)
+bool me::RenderManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -385,9 +385,9 @@ bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3
 	return true;
 }
 
-bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot)
+bool me::RenderManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -396,9 +396,9 @@ bool me::OgreManager::setParticleTransform(std::string name, const Ogre::Vector3
 	return true;
 }
 
-bool me::OgreManager::setParticlePosition(std::string name, const Ogre::Vector3f& pos)
+bool me::RenderManager::setParticlePosition(std::string name, const Ogre::Vector3f& pos)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -407,9 +407,9 @@ bool me::OgreManager::setParticlePosition(std::string name, const Ogre::Vector3f
 	return true;
 }
 
-bool me::OgreManager::setParticleScale(std::string name, const Ogre::Vector3f& scale)
+bool me::RenderManager::setParticleScale(std::string name, const Ogre::Vector3f& scale)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -418,9 +418,9 @@ bool me::OgreManager::setParticleScale(std::string name, const Ogre::Vector3f& s
 	return true;
 }
 
-bool me::OgreManager::setParticleRotation(std::string name, Ogre::Quaternion rot)
+bool me::RenderManager::setParticleRotation(std::string name, Ogre::Quaternion rot)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -429,9 +429,9 @@ bool me::OgreManager::setParticleRotation(std::string name, Ogre::Quaternion rot
 	return true;
 }
 
-bool me::OgreManager::setParticleEmitting(std::string name, bool emitted)
+bool me::RenderManager::setParticleEmitting(std::string name, bool emitted)
 {
-	OgreParticleSystem* particle = getParticle(name);
+	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
@@ -442,48 +442,48 @@ bool me::OgreManager::setParticleEmitting(std::string name, bool emitted)
 
 
 
-Ogre::SceneNode* me::OgreManager::createNode(std::string name)
+Ogre::SceneNode* me::RenderManager::createNode(std::string name)
 {
 	return  mSM->getRootSceneNode()->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::OgreManager::createChildNode(std::string name, std::string parent)
+Ogre::SceneNode* me::RenderManager::createChildNode(std::string name, std::string parent)
 {
 	return mSM->getSceneNode(parent)->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::OgreManager::getRootSceneNode()
+Ogre::SceneNode* me::RenderManager::getRootSceneNode()
 {
 	return mSM->getRootSceneNode();
 }
 
-void me::OgreManager::render()
+void me::RenderManager::render()
 {
 	mRoot->renderOneFrame();
 	//ogreAnimState->addTime(0.0166);
 }
 
-OgreWindow* me::OgreManager::getOgreWindow()
+RenderWindow* me::RenderManager::getOgreWindow()
 {
 	return mOgreWindow;
 }
 
-Ogre::Entity* me::OgreManager::getOgreEntity(std::string name)
+Ogre::Entity* me::RenderManager::getOgreEntity(std::string name)
 {
 	return getMesh(name)->getOgreEntity();
 }
 
-Ogre::TextAreaOverlayElement* me::OgreManager::createOverlayElement()
+Ogre::TextAreaOverlayElement* me::RenderManager::createOverlayElement()
 {
 	return nullptr;
 }
 
-Ogre::SceneManager* me::OgreManager::getSceneManager()
+Ogre::SceneManager* me::RenderManager::getSceneManager()
 {
 	return mSM;
 }
 
-void me::OgreManager::scene1()
+void me::RenderManager::scene1()
 {
 	Ogre::SceneNode* mSinbadNode;
 	Ogre::Entity* ent;

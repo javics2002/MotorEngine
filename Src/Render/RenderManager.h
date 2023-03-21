@@ -1,12 +1,11 @@
 #pragma once
-#ifndef __OGRE_MANAGER
-#define __OGRE_MANAGER
+#ifndef __RENDER_MANAGER
+#define __RENDER_MANAGER
 
 #include "Utils/Singleton.h"
 #include <unordered_map>
 #include <string>
-#include <OgreColourValue.h>
-
+#include "OgreColourValue.h"
 
 namespace Ogre {
 	class Root;
@@ -15,6 +14,9 @@ namespace Ogre {
 	class SceneManager;
 	class SceneNode;
 	class Quaternion;
+	class ColourValue;
+	class AnimationState;
+	class Entity;
 	template<int dism, typename T>
 	class Vector;
 	typedef Vector<3, float> Vector3f;
@@ -27,10 +29,10 @@ namespace Ogre {
 
 namespace me {
 
-	class OgreWindow;
-	class OgreCamera;
-	class OgreMesh;
-	class OgreParticleSystem;
+	class RenderWindow;
+	class RenderCamera;
+	class RenderMesh;
+	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
 	class OverlayManager;
 
@@ -40,12 +42,12 @@ namespace me {
 	and handle the creation of camera, light, mesh
 	You can access the OgreManager just calling om().
 	*/
-	class OgreManager : public Singleton<OgreManager> {
-		friend Singleton<OgreManager>;
+	class RenderManager : public Singleton<RenderManager> {
+		friend Singleton<RenderManager>;
 		/**
 		Initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow),locate and load Resource
 		*/
-		OgreManager();
+		RenderManager();
 
 	private:
 	protected:
@@ -99,15 +101,15 @@ namespace me {
 		//Path pointing to "/Main/x64/debug"
 		std::string mSolutionPath;
 
-		//Reference to OgreWindow class
-		OgreWindow* mOgreWindow;
+		//Reference to RenderWindow class
+		RenderWindow* mOgreWindow;
 
 		//Store camera name to ogreCamera
-		std::unordered_map<std::string, OgreCamera*> mCameras;			//Pairs each cameras with its name
+		std::unordered_map<std::string, RenderCamera*> mCameras;			//Pairs each cameras with its name
 		//Store mesh name to ogreMesh
-		std::unordered_map<std::string, OgreMesh*> mMeshes;			//Pairs each mesh with its name
+		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
 		//Store mesh name to ogreParticleSystem
-		std::unordered_map<std::string, OgreParticleSystem*> mParticles;			//Pairs each mesh with its name
+		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
@@ -135,26 +137,26 @@ namespace me {
 		@return OgreCamera: that was created with this name 
 		@return nullptr: if it doesn't exist
 		*/
-		OgreCamera* getCamera(std::string name);
+		RenderCamera* getCamera(std::string name);
 
 		/**
 		@param name: Name of the mesh
 		@return OgreMesh: that was created with this name
 		@return nullptr: if it doesn't exist
 		*/
-		OgreMesh* getMesh(std::string name);
+		RenderMesh* getMesh(std::string name);
 
 		/**
 		@param name: Name of the particle
 		@return OgreParticleSystem: that was created with this name
 		@return nullptr: if it doesn't exist
 		*/
-		OgreParticleSystem* getParticle(std::string name);
+		RenderParticleSystem* getParticle(std::string name);
 
 	public:
-		OgreManager&operator=(const OgreManager&o) = delete;
-		OgreManager(const OgreManager&o) = delete;
-		~OgreManager() override;
+		RenderManager&operator=(const RenderManager&o) = delete;
+		RenderManager(const RenderManager&o) = delete;
+		~RenderManager() override;
 
 		/**
 		Create the camera that is a child of another Ogre::SceneNode with this name and store it
@@ -293,7 +295,7 @@ namespace me {
 		Returns a pointer to the OgreWindow used for rendering.
 		@return The Render Window
 		*/
-		OgreWindow* getOgreWindow();
+		RenderWindow* getOgreWindow();
 
 		/**
 		Returns a pointer to the Root SceneNode.
@@ -330,8 +332,8 @@ namespace me {
 		This macro defines a compact way for using the singleton OgreManager, instead of
 		writing OgreManager::instance()->method() we write om().method()
 	*/
-	inline OgreManager& renderManager() {
-		return *OgreManager::instance();
+	inline RenderManager& renderManager() {
+		return *RenderManager::instance();
 	}
 
 }

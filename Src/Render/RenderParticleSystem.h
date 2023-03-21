@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __OGRE_OGRE_PARTICLESYSTEM
-#define __OGRE_OGRE_PARTICLESYSTEM
+#ifndef __RENDER_RENDERPARTICLESYSTEM
+#define __RENDER_RENDERPARTICLESYSTEM
 
 #include <string>
 #include <OgreVector3.h>
@@ -14,7 +14,7 @@ namespace Ogre {
 namespace me {
 
 	//Class to create renderizable particle system 
-	class OgreParticleSystem
+	class RenderParticleSystem
 	{
 
 	private:
@@ -38,8 +38,8 @@ namespace me {
 		@param meshName: name of resource (type mesh) that we used for create Ogre::Entity. 
 		Must be writted in resource.cfg (.mesh inside Zip or FileSystem)
 		*/
-		OgreParticleSystem(std::string name,Ogre::SceneNode* node,std::string particleName);
-		~OgreParticleSystem();
+		RenderParticleSystem(std::string name,Ogre::SceneNode* node,std::string particleName);
+		~RenderParticleSystem();
 		//Set position, rotation and scale of mNode
 		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
 		void setPosition(const Ogre::Vector3f &pos);
