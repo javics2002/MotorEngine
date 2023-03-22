@@ -43,7 +43,7 @@ me::Vector3 me::Transform::getPosition()
 	return mPosition;
 }
 
-Vector4 me::Transform::getRotation()
+me::Vector4 me::Transform::getRotation()
 {
 	return mRotation;
 }

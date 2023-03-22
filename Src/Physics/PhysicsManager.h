@@ -1,7 +1,8 @@
 #pragma once
-#ifndef __BULLET_PHYSICS_MANAGER
-#define __BULLET_PHYSICS_MANAGER
+#ifndef __PHYSICS_PHYSICSMANAGER
+#define __PHYSICS_PHYSICSMANAGER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "EntityComponent/Components/Transform.h"
 #include "DebugDrawer.h"
@@ -69,7 +70,7 @@ enum MovementType {
 
 namespace me {
 
-	class PhysicsManager: public Singleton<PhysicsManager>
+	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
 	{
 
 	private:

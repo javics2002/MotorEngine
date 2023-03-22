@@ -8,7 +8,7 @@ namespace me {
 	enum InputType : int;
 
 	//This data defines the behaviour of the axis
-	struct AxisInfo {
+	struct __MOTORENGINE_API AxisInfo {
 		//Speed in units per second that the axis falls toward neutral when no input is present.
 		float gravity;
 
@@ -21,7 +21,7 @@ namespace me {
 	Representation of a virtual axis, so you can unify input
 	given any controller, keyboard or mouse
 	*/
-	struct Axis : AxisInfo {
+	struct __MOTORENGINE_API Axis : AxisInfo {
 		//Normalized value
 		float value;
 
@@ -30,7 +30,7 @@ namespace me {
 	};
 
 	//Represents two physical buttons or keys that can trigger a virtual axis
-	struct AxisInput {
+	struct __MOTORENGINE_API AxisInput {
 		/*
 		INPUTTYPE_KEYBOARD for keyboard key presses
 		INPUTTYPE_MOUSE for mouse clicks

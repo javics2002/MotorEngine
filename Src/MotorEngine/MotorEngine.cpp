@@ -171,5 +171,8 @@ int MotorEngine::quitLoop(void* userdata, SDL_Event* event)
 }
 
 MotorEngine::MotorEngine() {
+}
 
+MotorEngine::~MotorEngine()
+{
 }

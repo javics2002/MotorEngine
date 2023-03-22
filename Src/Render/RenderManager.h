@@ -2,10 +2,11 @@
 #ifndef __RENDER_MANAGER
 #define __RENDER_MANAGER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include <unordered_map>
 #include <string>
-#include "OgreColourValue.h"
+#include <OgreColourValue.h>
 
 namespace Ogre {
 	class Root;
@@ -42,7 +43,7 @@ namespace me {
 	and handle the creation of camera, light, mesh
 	You can access the OgreManager just calling om().
 	*/
-	class RenderManager : public Singleton<RenderManager> {
+	class __MOTORENGINE_API RenderManager : public Singleton<RenderManager> {
 		friend Singleton<RenderManager>;
 		/**
 		Initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow),locate and load Resource

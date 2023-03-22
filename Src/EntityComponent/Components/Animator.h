@@ -1,92 +1,92 @@
 #pragma once
-#ifndef __EC_ANIMATOR
-#define __EC_ANIMATOR
+#ifndef __ENTITYCOMPONENT_ANIMATOR
+#define __ENTITYCOMPONENT_ANIMATOR
 
 #include "Component.h"
 #include <string>
-#include "Render/RenderManager.h"
-#include <OgreAnimation.h>
-#include "EntityComponent/Entity.h"
-#include "MeshRenderer.h"
-#include <OgreEntity.h>
 
-using namespace std;
+namespace Ogre {
+	class AnimationState;
+	class AnimationStateSet;
+}
 
+namespace me {
+	class MeshRenderer;
 
-
-class Animator : public me::Component
-{
-public:
-	Animator();
-	~Animator();
-
-
-	void update() override;
-
-	/**
-	* Sets the Animator's active state
-	* @param state Boolean value indicating whether the Animator should be active or not
-	*/
-	void setActive(bool state);
-
-	/**
-	* Sets the Animator's loop state
-	* @param state Boolean value indicating whether the current animation should loop or not
-	*/
-	void setLoop(bool state);
+	class __MOTORENGINE_API Animator : public Component
+	{
+	public:
+		Animator();
+		~Animator();
 
 
-	/**
-	* Returns the name of the current animation being played
-	* @return A string containing the name of the current animation
-	*/
-	std::string getCurrAnimName();
+		void update() override;
 
-	/**
-	* Returns the Animator's active state
-	* @return A boolean value indicating whether the Animator is active or not
-	*/
-	bool isActive();
+		/**
+		* Sets the Animator's active state
+		* @param state Boolean value indicating whether the Animator should be active or not
+		*/
+		void setActive(bool state);
 
-	/**
-	* Returns the Animator's loop state
-	* @return A boolean value indicating whether the current animation should loop or not
-	*/
-	bool isLoop();
-
-	/*
-	* Returns whether the current animation has ended or not
-	* @return A boolean value indicating whether the current animation has ended
-	*/
-	bool animHasEnded();
+		/**
+		* Sets the Animator's loop state
+		* @param state Boolean value indicating whether the current animation should loop or not
+		*/
+		void setLoop(bool state);
 
 
-	/**
-	* Plays a specified animation on the Entity
-	* @param anim A string containing the name of the animation to be played
-	* @param loop A boolean value indicating whether the animation should loop or not
-	*/
-	void playAnim(std::string anim, bool loop = true);
+		/**
+		* Returns the name of the current animation being played
+		* @return A string containing the name of the current animation
+		*/
+		std::string getCurrAnimName();
 
-	/**
-	* Stops the current animation
-	*/
-	void stopAnim();
+		/**
+		* Returns the Animator's active state
+		* @return A boolean value indicating whether the Animator is active or not
+		*/
+		bool isActive();
 
-	/**
-	* Resumes the current animation
-	*/
-	void resumeAnim();
+		/**
+		* Returns the Animator's loop state
+		* @return A boolean value indicating whether the current animation should loop or not
+		*/
+		bool isLoop();
 
-private:
-	Ogre::AnimationState* mCurrentState; // Pointer to the current animation state
+		/*
+		* Returns whether the current animation has ended or not
+		* @return A boolean value indicating whether the current animation has ended
+		*/
+		bool animHasEnded();
 
-	Ogre::AnimationStateSet* mAnimStatesMap; // Pointer to the animation state set
 
-	me::MeshRenderer* mMesh = nullptr;  // Pointer to the MeshRenderer component of the Entity
+		/**
+		* Plays a specified animation on the Entity
+		* @param anim A string containing the name of the animation to be played
+		* @param loop A boolean value indicating whether the animation should loop or not
+		*/
+		void playAnim(std::string anim, bool loop = true);
 
-	bool mStop; // Boolean value indicating whether the current animation has been stopped
-};
+		/**
+		* Stops the current animation
+		*/
+		void stopAnim();
+
+		/**
+		* Resumes the current animation
+		*/
+		void resumeAnim();
+
+	private:
+		Ogre::AnimationState* mCurrentState; // Pointer to the current animation state
+
+		Ogre::AnimationStateSet* mAnimStatesMap; // Pointer to the animation state set
+
+		MeshRenderer* mMesh = nullptr;  // Pointer to the MeshRenderer component of the Entity
+
+		bool mStop; // Boolean value indicating whether the current animation has been stopped
+	};
+}
 #endif // !__EC_ANIMATOR
 
 

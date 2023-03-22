@@ -2,6 +2,7 @@
 #ifndef __RENDER_RENDERWINDOW
 #define __RENDER_RENDERWINDOW
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <string>
 typedef struct SDL_Window SDL_Window;
 
@@ -16,7 +17,7 @@ namespace me {
 	Class to create linked window between SDL_window and Ogre::RendererWindow
 	*/
 
-	class RenderWindow {
+	class __MOTORENGINE_API RenderWindow {
 
 	private:
 	protected:

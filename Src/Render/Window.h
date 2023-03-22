@@ -2,6 +2,7 @@
 #ifndef __RENDER_WINDOW
 #define __RENDER_WINDOW
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 
 typedef struct SDL_Window SDL_Window;
@@ -20,7 +21,7 @@ namespace me {
 	@param w, h width and height of the window in screen coordinates
 	@param windowFlags 0, or one or more SDL_WindowFlags OR'd together
 	*/
-	class Window : public Singleton<Window>
+	class __MOTORENGINE_API Window : public Singleton<Window>
 	{
 		friend Singleton<Window>;
 

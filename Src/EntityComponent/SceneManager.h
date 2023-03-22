@@ -1,23 +1,19 @@
 #pragma once
 
-#ifndef __EC_SCENE_MANAGER
-#define __EC_SCENE_MANAGER
+#ifndef __ENTITYCOMPONENT_SCENE_MANAGER
+#define __ENTITYCOMPONENT_SCENE_MANAGER
 
-
-#include <unordered_map>
-#include <string>
-#include <memory>
-
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
-
+#include "InfoScene.h"
+#include <memory>
 
 class lua_State;
 
 namespace me {
-
     class Scene;
 
-    class SceneManager : public Singleton<SceneManager> {
+    class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
         friend Singleton<SceneManager>;
 
     public:        
@@ -110,8 +106,7 @@ namespace me {
         std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
         std::shared_ptr<Scene> mActiveScene;
 
-        typedef std::unordered_map<std::string, std::unordered_map<std::string, std::string>> InfoEntities;
-        std::unordered_map<std::string, InfoEntities> mEntitiesMap;
+        InfoScene mEntitiesMap;
     };
 
     /**

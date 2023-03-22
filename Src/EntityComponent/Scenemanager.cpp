@@ -3,6 +3,9 @@
 
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>
+#ifdef _DEBUG
+#include <iostream>
+#endif
 
 namespace me {
 

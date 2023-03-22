@@ -2,11 +2,13 @@
 #ifndef __UTILS_TIME
 #define __UTILS_TIME
 
+#include "MotorEngine/MotorEngineAPI.h"
+
 /*
 class Time provides/has information about time between frames, 
 physics time between frames, time scale and framerate.
 */
-class Time
+class __MOTORENGINE_API Time
 {
 public:
 	Time();

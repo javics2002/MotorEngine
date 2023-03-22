@@ -3,10 +3,13 @@
 
 #include "Components/ComponentsFactory.h"
 
+#ifdef _DEBUG
+#include <iostream>
+#endif
 
 namespace me {
 
-	Entity::Entity(Scene* scn, const std::string name) :
+	Entity::Entity(Scene* scn, const SceneName name) :
 		mActive(true), //
 		mName(name), // 
 		mScn(scn)
@@ -16,7 +19,7 @@ namespace me {
 #endif
 	};
 
-	Entity::Entity(const std::string name) :
+	Entity::Entity(const SceneName name) :
 		mActive(true),
 		mName(name),
 		mScn(nullptr)
@@ -38,7 +41,7 @@ namespace me {
 	};
 
 	template<typename T>
-	T* Entity::addComponent(const std::string& componentName) {
+	T* Entity::addComponent(const ComponentName& componentName) {
 
 		T* c = componentsFactory().create(componentName);
 
@@ -56,7 +59,7 @@ namespace me {
 		return c;
 	};
 	
-	Component* Entity::addComponent(const std::string& componentName, std::unordered_map<std::string, std::string>& params) {
+	Component* Entity::addComponent(const ComponentName& componentName, Parameters& params) {
 		Component* c = componentsFactory().create(componentName, params);
 
 		if (!hasComponent(componentName)) {
@@ -112,5 +115,4 @@ namespace me {
 				c.second->OnCollisionExit(other);
 		}
 	}
-
 };

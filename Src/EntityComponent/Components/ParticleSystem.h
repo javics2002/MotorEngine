@@ -5,16 +5,16 @@
 
 #include "Component.h"
 #include "Utils/Vector3.h"
+#include <string>
 #include <list>
 
 namespace me {
-
 	class Transform;
 
 	/**
 	The ParticleSystem class represents a visual particle system in 3D space and can be attached to entities.
 	*/
-	class ParticleSystem : public Component
+	class __MOTORENGINE_API ParticleSystem : public Component
 	{
 	private:
 	protected:

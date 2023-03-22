@@ -1,13 +1,11 @@
 #pragma once
-#ifndef EC_AUDIO_LISTENER
-#define EC_AUDIO_LISTENER
+#ifndef __ENTITYCOMPONENT_AUDIOLISTENER
+#define __ENTITYCOMPONENT_AUDIOLISTENER
 
 #include "Component.h"
-#include "EntityComponent/Entity.h"
-
 
 namespace me {
-	class AudioListener : public me::Component
+	class __MOTORENGINE_API  AudioListener : public me::Component
 	{
 	public:
 		AudioListener();

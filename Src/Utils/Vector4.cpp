@@ -4,6 +4,8 @@
 #include <OgreVector3.h>
 #include <LinearMath/btQuaternion.h>
 
+using namespace me;
+
 float Vector4::lerp(float a, float b, float f)
 {
 	return a + f * (b - a);

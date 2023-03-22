@@ -3,12 +3,13 @@
 #define __EC_COLLIDER
 
 #include "Component.h"
+
 class Entity;
 
 namespace me{
 
 
-	class Collider : public Component
+	class __MOTORENGINE_API Collider : public Component
 	{
 	public:
 		Collider();

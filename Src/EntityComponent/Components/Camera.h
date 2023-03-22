@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Utils/Vector3.h"
+#include <string>
 #include <list>
 
 namespace me {
@@ -14,7 +15,7 @@ namespace me {
 	/**
 	The Camera class create camera(Viewer) in scene
 	*/
-	class Camera : public Component
+	class __MOTORENGINE_API Camera : public Component
 	{
 	private:
 	protected:

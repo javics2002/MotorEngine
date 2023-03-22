@@ -1,5 +1,6 @@
 #include "AudioListener.h"
 #include "Audio/SoundManager.h"
+#include "EntityComponent/Entity.h"
 #include "Transform.h"
 
 me::AudioListener::AudioListener()

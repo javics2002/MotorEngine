@@ -3,11 +3,9 @@
 #ifndef __ENTITYCOMPONENT_TRANSFORM
 #define __ENTITYCOMPONENT_TRANSFORM
 
-
+#include "Component.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
-#include "Component.h"
-
 #include <list>
 
 namespace me {
@@ -20,7 +18,7 @@ namespace me {
 	/*
 	*The Transform class represents a position, rotation, and scale in 3D space and can be attached to entities.
 	*/
-	class Transform : public Component
+	class __MOTORENGINE_API Transform : public Component
 	{
 	public:
 

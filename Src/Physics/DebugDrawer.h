@@ -2,13 +2,14 @@
 #ifndef __DEBUG_DRAWER
 #define __DEBUG_DRAWER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <LinearMath/btIDebugDraw.h>
 
 #include <Ogre.h>
 
 namespace me {
 
-	class DebugDrawer : public btIDebugDraw // public Ogre::FrameListener
+	class __MOTORENGINE_API DebugDrawer : public btIDebugDraw // public Ogre::FrameListener
 	{
 
 		Ogre::ManualObject* mTriangles;

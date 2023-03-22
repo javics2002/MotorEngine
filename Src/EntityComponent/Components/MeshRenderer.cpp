@@ -5,12 +5,10 @@
 #include "Utils/Vector3.h"
 #include <OgreVector3.h>
 
-
 me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
 {
 	mName = name;
 	mMeshName = nameMesh;
-
 }
 
 me::MeshRenderer::~MeshRenderer()

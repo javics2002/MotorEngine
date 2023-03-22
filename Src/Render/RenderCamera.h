@@ -2,7 +2,7 @@
 #ifndef __RENDER_RENDERCAMERA
 #define __RENDER_RENDERCAMERA
 
-
+#include "MotorEngine/MotorEngineAPI.h"
 
 namespace Ogre {
 	class Camera;
@@ -17,7 +17,7 @@ namespace Ogre {
 }
 
 namespace me {
-	class RenderCamera
+	class __MOTORENGINE_API RenderCamera
 	{
 
 	private:

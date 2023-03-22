@@ -3,6 +3,8 @@
 #ifndef __UTILS_VECTOR4
 #define __UTILS_VECTOR4
 
+#include "MotorEngine/MotorEngineAPI.h"
+
 namespace Ogre {
 	template<int dism, typename T>
 	class Vector;
@@ -13,54 +15,56 @@ namespace Ogre {
 
 class btQuaternion;
 
-class Vector4
-{
+namespace me {
+	class __MOTORENGINE_API Vector4
+	{
 
-private:
+	private:
 
-	/**
-	* Returns the linear interpolation between "a" and "b" by a factor of "f"
-	*
-	* @param a The starting value of the interpolation
-	* @param b The ending value of the interpolation
-	* @param f The factor by which to interpolate between "a" and "b"
-	* @return The linear interpolation between "a" and "b" by a factor of "f"
-	*/
-	float lerp(float a, float b, float f);
-
-
-public:
-
-	float x, y, z, w;
+		/**
+		* Returns the linear interpolation between "a" and "b" by a factor of "f"
+		*
+		* @param a The starting value of the interpolation
+		* @param b The ending value of the interpolation
+		* @param f The factor by which to interpolate between "a" and "b"
+		* @return The linear interpolation between "a" and "b" by a factor of "f"
+		*/
+		float lerp(float a, float b, float f);
 
 
-	Vector4();
+	public:
 
-	Vector4(float a, float b, float c, float d);
+		float x, y, z, w;
 
-	Vector4(const Vector4& v);
 
-	/**
-	Return the conversion Vector4 - Ogre::Quaternion
-	*/
-	Ogre::Quaternion v4ToQuaternion();
+		Vector4();
 
-	/**
-	Returns the current Rotation in btQuaternion
-	*/
-	btQuaternion getRotationInBullet();
+		Vector4(float a, float b, float c, float d);
 
-	/**
-	*  Returns the linear interpolation between "a" and "b" by a factor of "f"
-	*
-	*  @param a The starting vector to interpolate from
-	*  @param b The ending vector to interpolate to
-	*  @param f The interpolation factor, a value between 0 and 1
-	*/
-	Vector4 lerp(const Vector4& a, const Vector4& b, float f);
+		Vector4(const Vector4& v);
 
-	void operator=(const Vector4& v);
-	void operator=(const Vector4* v);
-};
+		/**
+		Return the conversion Vector4 - Ogre::Quaternion
+		*/
+		Ogre::Quaternion v4ToQuaternion();
+
+		/**
+		Returns the current Rotation in btQuaternion
+		*/
+		btQuaternion getRotationInBullet();
+
+		/**
+		*  Returns the linear interpolation between "a" and "b" by a factor of "f"
+		*
+		*  @param a The starting vector to interpolate from
+		*  @param b The ending vector to interpolate to
+		*  @param f The interpolation factor, a value between 0 and 1
+		*/
+		Vector4 lerp(const Vector4& a, const Vector4& b, float f);
+
+		void operator=(const Vector4& v);
+		void operator=(const Vector4* v);
+	};
+}
 
 #endif

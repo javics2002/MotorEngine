@@ -5,8 +5,8 @@ for any behavior designed as a component.
 
 #pragma once
 
-#ifndef __EC_COMPONENT
-#define __EC_COMPONENT
+#ifndef __ENTITYCOMPONENT_COMPONENT
+#define __ENTITYCOMPONENT_COMPONENT
 
 #include "MotorEngine/MotorEngineAPI.h"
 

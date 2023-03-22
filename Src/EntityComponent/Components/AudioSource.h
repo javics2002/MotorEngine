@@ -1,12 +1,15 @@
 #pragma once
-#ifndef __EC_AUDIO_SOURCE
-#define __EC_AUDIO_SOURCE
+#ifndef __ENTITYCOMPONENT_AUDIOSOURCE
+#define __ENTITYCOMPONENT_AUDIOSOURCE
 
 #include "Component.h"
-#include "Audio/SoundManager.h"
+
+namespace FMOD {
+	class Sound;
+}
 
 namespace me {
-	class AudioSource : public Component
+	class __MOTORENGINE_API AudioSource : public Component
 	{
 	public:
 

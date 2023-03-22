@@ -1,17 +1,16 @@
 #pragma once
-#ifndef __EC_UI_TEXT
-#define __EC_UI_TEXT
+#ifndef __ENTITYCOMPONETN_UITEXT
+#define __ENTITYCOMPONETN_UITEXT
 
 #include "Component.h"
-#include <string>
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
 #include "UIElement.h"
-
 #include <OgreTextAreaOverlayElement.h>
+#include <string>
 
 namespace me {
-	class UIText : public me::UIElement
+	class __MOTORENGINE_API UIText : public UIElement
 	{
 		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
 		~UIText();

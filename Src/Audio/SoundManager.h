@@ -1,18 +1,11 @@
 #pragma once
 #ifndef _FMOD_SOUND_MANAGER
 #define _FMOD_SOUND_MANAGER
+
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
+#include "MotorEngine/MotorEngineAPI.h"
 #include <unordered_map>
-
-#include <iostream>
-#include <stdio.h>
-
-#include <fmod.hpp>
-#include <fmod_errors.h>
-#include "Utils/Vector3.h"
-#include "Input/InputManager.h"
-
 
 namespace FMOD {
 	class Sound;
@@ -22,7 +15,9 @@ namespace FMOD {
 }
 
 enum FMOD_RESULT;
+class FMOD_VECTOR;
 typedef unsigned int FMOD_MODE;
+typedef int CHANNEL_NUMBER;
 
 namespace me {
 	//Maximum number of channels allowed to exist in this particular system setting.
@@ -33,15 +28,13 @@ namespace me {
 	const float DISTANCE_FACTOR = 1;
 	//Global attenuation rolloff factor. 
 	const float ROLLOFF_SCALE = 1;
-	typedef int CHANNEL_NUMBER;
-	//typedef enum CHANNELGROUP_NAMES { EFFECTS = 0, MUSIC };
 
 	/**
 	SoundManager provides FMOD wrappers to manage audio creation and modulation, 
 	audio channel and audio channel groups. 
 	You can access the InputManager calling sm().
 	*/
-	class SoundManager : public Singleton<SoundManager>
+	class __MOTORENGINE_API SoundManager : public Singleton<SoundManager>
 	{
 		friend Singleton<SoundManager>;
 		SoundManager();

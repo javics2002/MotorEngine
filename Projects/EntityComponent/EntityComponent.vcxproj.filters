@@ -20,13 +20,10 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIContainer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIElement.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIText.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\VehicleController.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\FactoryComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\EntityComponent\ec_defs.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\mpl.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h" />
@@ -44,7 +41,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIContainer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIElement.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIText.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\VehicleController.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\FactoryComponent.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\InfoScene.h" />
   </ItemGroup>
 </Project>

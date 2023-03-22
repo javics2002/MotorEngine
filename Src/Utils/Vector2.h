@@ -4,11 +4,13 @@
 #ifndef __UTILS_VECTOR2
 #define __UTILS_VECTOR2
 
+#include "MotorEngine/MotorEngineAPI.h"
+
 /**
 *	Class Vector2 for represent the UI
 */
 
-class Vector2
+class __MOTORENGINE_API Vector2
 {
 
 private:

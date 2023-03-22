@@ -4,17 +4,15 @@
 #define __ENTITYCOMPONENT_MESHRENDERER
 
 #include "Component.h"
-#include "Utils/Vector3.h"
-#include <list>
+#include <string>
 
 namespace me {
-
 	class Transform;
 
 	/**
 	The MeshRenderer class represents a visual object in 3D space and can be attached to entities.
 	*/
-	class MeshRenderer : public Component
+	class __MOTORENGINE_API MeshRenderer : public Component
 	{
 	private:
 	protected:

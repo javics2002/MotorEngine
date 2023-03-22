@@ -1,12 +1,15 @@
 #include "Scene.h"
-#include "Entity.h"
 
+#include "Entity.h"
 #include "Components/ComponentsFactory.h"
 
+#ifdef _DEBUG
+#include <iostream>
+#endif
 
 namespace me {
 
-	Scene::Scene(const std::string name) : 
+	Scene::Scene(const SceneName name) : 
 		mName(name)
 	{
 #ifdef _DEBUG
@@ -23,7 +26,7 @@ namespace me {
 #endif
 	};
 
-	std::shared_ptr<Entity> Scene::addEntity(const std::string name) {
+	std::shared_ptr<Entity> Scene::addEntity(const EntityName name) {
 		auto e = std::make_shared<Entity>(this, name);
 		if (e != nullptr) {
 			mNewEntities.push_back(e);
@@ -31,7 +34,7 @@ namespace me {
 		return e;
 	};
 
-	void Scene::removeEntity(const std::string& name) {
+	void Scene::removeEntity(const EntityName& name) {
 		auto it = mEntities.find(name);
 		if (it != mEntities.end()) {
 			it->second->destroy();
@@ -47,7 +50,7 @@ namespace me {
 		return entities;
 	};
 
-	std::shared_ptr<Entity> Scene::findEntity(const std::string& name) const {
+	std::shared_ptr<Entity> Scene::findEntity(const EntityName& name) const {
 		auto it = mEntities.find(name);
 		if (it != mEntities.end() && it->second->isActive()) {
 			return it->second;
@@ -55,7 +58,7 @@ namespace me {
 		return nullptr;
 	};
 
-	void Scene::renameEntity(const std::string& oldName, const std::string& newName) {
+	void Scene::renameEntity(const EntityName& oldName, const EntityName& newName) {
 		auto it = mEntities.find(oldName);
 		auto dst = mEntities.find(newName);
 		if (it != mEntities.end() && oldName != newName && dst == mEntities.end()) {
@@ -95,18 +98,21 @@ namespace me {
 		mNewEntities.clear();
 	};
 
-	void Scene::pushEntities(std::unordered_map<std::string, InfoEntities>& entitiesMap)
+	void Scene::pushEntities(InfoScene& entitiesMap)
 	{
 		// Recorrer el mapa de entidades
-		for (auto& it : entitiesMap) {
+		for (auto& infoEntity : entitiesMap) {
+			const EntityName* entityName = &infoEntity.first;
+			InfoEntity* entityComponents = &infoEntity.second;
+
 			// Crear entidad
-			auto e = addEntity(it.first);
+			auto entity = addEntity(*entityName);
 
 			// Crear y añadir componentes
-			for (auto& component : it.second) {
-				std::string componentName = component.first;
-
-				e->addComponent(componentName, component.second);
+			for (auto& component : *entityComponents) {
+				const ComponentName* componentName = &component.first;
+				Parameters* componentInfo = &component.second;
+				entity->addComponent(*componentName, *componentInfo);
 			}
 		}
 	};

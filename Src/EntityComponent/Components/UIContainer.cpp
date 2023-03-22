@@ -1,5 +1,7 @@
 #include "UIContainer.h"
 
+using namespace me;
+
 void UIContainer::addElement(Component* element)
 {
 	UIElement* ui;

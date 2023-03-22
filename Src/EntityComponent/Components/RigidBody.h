@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef __RIGID_BODY
-#define  __RIGID_BODY
+#ifndef __ENTITYCOMPONENT_RIGIDBODY
+#define __ENTITYCOMPONENT_RIGIDBODY
 
-#include "Transform.h"
 #include "Component.h"
+#include "Transform.h"
 
 class btRigidBody;
 class btTransform;
@@ -13,11 +13,8 @@ class btCollisionShape;
 
 namespace me{
 
-	class RigidBody : public Component
+	class __MOTORENGINE_API RigidBody : public Component
 	{
-
-	private:
-
 		int mColShape;
 		int mMvType;
 

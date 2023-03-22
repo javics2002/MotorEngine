@@ -3,7 +3,7 @@
 #ifndef __UTILS_VECTOR3
 #define __UTILS_VECTOR3
 
-#include <ostream>
+#include "MotorEngine/MotorEngineAPI.h"
 #include <math.h>
 #include <cmath>
 
@@ -15,12 +15,20 @@ namespace Ogre {
 	class Quaternion;
 }
 
+namespace std {
+	template <class T>
+	struct char_traits;
+	template <class _Elem, class _Traits>
+	class basic_ostream;
+	using ostream = basic_ostream<char, char_traits<char>>;
+}
+
 class btVector3;
 class btQuaternion;
 
 namespace me {
 
-	class Vector3
+	class __MOTORENGINE_API Vector3
 	{
 
 	private:

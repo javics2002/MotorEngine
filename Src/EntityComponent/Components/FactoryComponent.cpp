@@ -11,6 +11,26 @@
 
 using namespace me;
 
+float me::FactoryComponent::value(Parameters params, const ParameterName& parameter, float defaultValue)
+{
+    return params.count(parameter) ? std::stof(params[parameter]) : defaultValue;
+}
+
+int me::FactoryComponent::value(Parameters params, const ParameterName& parameter, int defaultValue)
+{
+    return params.count(parameter) ? std::stoi(params[parameter]) : defaultValue;
+}
+
+bool me::FactoryComponent::value(Parameters params, const ParameterName& parameter, bool defaultValue)
+{
+    return params.count(parameter) ? (bool)std::stoi(params[parameter]) : defaultValue;
+}
+
+std::string me::FactoryComponent::value(Parameters params, const ParameterName& parameter, std::string defaultValue)
+{
+    return params.count(parameter) ? params[parameter] : defaultValue;
+}
+
 Component* FactoryAnimator::create(Parameters params)
 {
     Animator* animator = new Animator();
@@ -96,24 +116,4 @@ me::Component* me::FactoryRigidBody::create(Parameters params)
     // TODO: mvType??
 
     return rigidbody;
-}
-
-float me::FactoryComponent::value(Parameters params, std::string parameter, float defaultValue)
-{
-    return params.count(parameter) ? std::stof(params[parameter]) : defaultValue;
-}
-
-int me::FactoryComponent::value(Parameters params, std::string parameter, int defaultValue)
-{
-    return params.count(parameter) ? std::stoi(params[parameter]) : defaultValue;
-}
-
-bool me::FactoryComponent::value(Parameters params, std::string parameter, bool defaultValue)
-{
-    return params.count(parameter) ? (bool) std::stoi(params[parameter]) : defaultValue;
-}
-
-std::string me::FactoryComponent::value(Parameters params, std::string parameter, std::string defaultValue)
-{
-    return params.count(parameter) ? params[parameter] : defaultValue;
 }

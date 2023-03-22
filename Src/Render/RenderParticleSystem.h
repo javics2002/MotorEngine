@@ -2,6 +2,7 @@
 #ifndef __RENDER_RENDERPARTICLESYSTEM
 #define __RENDER_RENDERPARTICLESYSTEM
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <string>
 #include <OgreVector3.h>
 
@@ -14,7 +15,7 @@ namespace Ogre {
 namespace me {
 
 	//Class to create renderizable particle system 
-	class RenderParticleSystem
+	class __MOTORENGINE_API RenderParticleSystem
 	{
 
 	private:

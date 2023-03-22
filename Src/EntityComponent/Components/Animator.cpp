@@ -1,8 +1,15 @@
 #include "Animator.h"
+#include "EntityComponent/Entity.h"
+#include "MeshRenderer.h"
+#include "Render/RenderManager.h"
+#include <OgreAnimation.h>
+#include <OgreEntity.h>
+
+using namespace me;
 
 Animator::Animator()
 {
-	mMesh = mEntity->getComponent<me::MeshRenderer>("meshRenderer");
+	mMesh = mEntity->getComponent<MeshRenderer>("meshRenderer");
 	mCurrentState = nullptr;
 	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
 	mStop = false;

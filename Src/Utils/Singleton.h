@@ -62,9 +62,9 @@ namespace me {
 			return mInstance.get();
 		}
 	};
-}
 
-template<class T>
-std::unique_ptr<T> me::Singleton<T>::mInstance;
+	template<class T>
+	std::unique_ptr<T> Singleton<T>::mInstance;
+}
 
 #endif

@@ -2,6 +2,7 @@
 #ifndef __RENDER_RENDERMESH
 #define __RENDER_RENDERMESH
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <string>
 #include <OgreVector3.h>
 
@@ -13,7 +14,7 @@ namespace Ogre {
 namespace me {
 
 	//Class to create renderizable object with mesh
-	class RenderMesh
+	class __MOTORENGINE_API RenderMesh
 	{
 
 	private:

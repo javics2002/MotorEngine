@@ -2,6 +2,7 @@
 #ifndef __INPUT_INPUT_MANAGER
 #define __INPUT_INPUT_MANAGER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector2.h"
 #include "Button.h"
@@ -11,7 +12,7 @@
 #include <unordered_map>
 
 namespace me {
-	enum InputType { 
+	enum __MOTORENGINE_API InputType {
 		INPUTTYPE_KEYBOARD, 
 		INPUTTYPE_MOUSE_CLICK,
 		INPUTTYPE_MOUSE_MOTION,
@@ -27,7 +28,7 @@ namespace me {
 	Define virtual buttons to easely remap your game's controls.
 	You can access the InputManager just calling im().
 	*/
-	class InputManager : public Singleton<InputManager> {
+	class __MOTORENGINE_API InputManager : public Singleton<InputManager> {
 		friend Singleton<InputManager>;
 
 		InputManager();

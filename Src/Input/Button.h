@@ -2,6 +2,7 @@
 #ifndef __INPUT_BUTTON
 #define __INPUT_BUTTON
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <string>
 #include <unordered_map>
 
@@ -15,7 +16,7 @@ namespace me {
 	Representation of a virtual button, so you can unify input
 	given any controller, keyboard or mouse.
 	*/
-	struct Button {
+	struct __MOTORENGINE_API Button {
 		//Value
 		bool pressed;
 
@@ -25,7 +26,7 @@ namespace me {
 	};
 
 	//Represents a physical button or key that can trigger a virtual button.
-	struct Input {
+	struct __MOTORENGINE_API Input {
 		/*
 		INPUTTYPE_KEYBOARD for keyboard key presses
 		INPUTTYPE_MOUSE for mouse clicks
@@ -49,7 +50,7 @@ namespace me {
 	};
 
 	//Provides hash suppport for using struct Input as a key in std::unordered_map
-	struct InputHasher {
+	struct __MOTORENGINE_API InputHasher {
 		size_t operator()(const Input& t) const {
 			return std::hash<int>()(t.which) ^ std::hash<int>()(t.type);
 		}
@@ -58,7 +59,7 @@ namespace me {
 	/*
 	Stores data for virtual buttons' callbacks.
 	*/
-	struct OnButtonPressedInfo {
+	struct __MOTORENGINE_API OnButtonPressedInfo {
 		//Simple callback provided by the user.
 		int(*callback)(void*); 
 

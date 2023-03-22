@@ -1,7 +1,8 @@
 #pragma once
-#ifndef __EC_UI_ELEMENT
-#define __EC_UI_ELEMENT
+#ifndef __ENTITYCOMPONENT_UIELEMENT
+#define __ENTITYCOMPONENT_UIELEMENT
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Component.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector2.h"
@@ -12,7 +13,6 @@ namespace Ogre {
 	class OverlayManager;
 }
 
-
 namespace me {
 
 	/**
@@ -20,7 +20,7 @@ namespace me {
 	* It is a Component that can be attached to an Entity to add user interface functionality to it
 	*/
 
-	class UIElement : public me::Component
+	class __MOTORENGINE_API UIElement : public Component
 	{
 	public:
 		UIElement();

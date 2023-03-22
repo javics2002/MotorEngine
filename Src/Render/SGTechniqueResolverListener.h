@@ -1,8 +1,9 @@
 #pragma once
 
-#ifndef __RENDER_SGTECHNIQUE_RESOLVER_LISTENER
-#define __RENDER_SGTECHNIQUE_RESOLVER_LISTENER
+#ifndef __RENDER_SGTECHNIQUERESOLVERLISTENER
+#define __RENDER_SGTECHNIQUERESOLVERLISTENER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "OgreRTShaderSystem.h"
 #include "OgreMaterialManager.h"
 
@@ -12,7 +13,7 @@ namespace me {
     When a target scheme callback is invoked with the shader generator scheme it tries to create an equivalent shader
     based technique based on the default technique of the given material.
     */
-    class SGTechniqueResolverListener : public Ogre::MaterialManager::Listener {
+    class __MOTORENGINE_API SGTechniqueResolverListener : public Ogre::MaterialManager::Listener {
     public:
         explicit SGTechniqueResolverListener(Ogre::RTShader::ShaderGenerator* pShaderGenerator);
 

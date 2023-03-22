@@ -19,26 +19,33 @@ int main()
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
 #endif
 
+    MotorEngine* engine = new MotorEngine();
+
     /*
     * Create and initialize the engine
     * All libraries and components that the engine is going to use (Render, Physics, UI...)
     * In case of the setup of the engine fails, the game can't start and the program returns an error value (-1)
     */
-    if (motorEngine().setup()) {
+    if (engine->setup()) {
         /*
         * The main loop of the game
         * It is responsible of calculating the time between frames and when the game
         * does one iteration (Render, Physics, SceneManager, Audio, UI)
         */
-        motorEngine().loop();
+        engine->loop();
 
         /*
         * Delete all the memory created
         */
-        motorEngine().exit();
+        engine->exit();
     }
-    else
+    else {
+        delete engine;
+
         return -1;
+    }
+
+    delete engine;
 
     return 0;
 }

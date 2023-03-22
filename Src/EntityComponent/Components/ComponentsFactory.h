@@ -1,27 +1,26 @@
 #pragma once
+#ifndef __ENTITYCOMPONENT_COMPONENTSFACTORY
+#define __ENTITYCOMPONENT_COMPONENTSFACTORY
 
-#include <string>
-#include <map>
-#include <unordered_map>
-
+#include "MotorEngine/MotorEngineAPI.h"
+#include "EntityComponent/InfoScene.h"
 #include "Utils/Singleton.h"
 
 namespace me {
 	class Component;
 	class FactoryComponent;
 
-	class ComponentsFactory : public Singleton<ComponentsFactory>
+	class __MOTORENGINE_API ComponentsFactory : public Singleton<ComponentsFactory>
 	{
-	private:
 		friend Singleton<ComponentsFactory>;
 		ComponentsFactory();
 
-		std::map<std::string, FactoryComponent*> mFactories;
+		std::unordered_map<ComponentName, FactoryComponent*> mFactories;
 	public:
 		~ComponentsFactory();
 
-		me::Component* create(const std::string& name, std::unordered_map<std::string, std::string>& params);
-		void addFactoryComponent(const std::string& name, FactoryComponent* factoryComponent);
+		me::Component* create(const ComponentName& name, Parameters& params);
+		void addFactoryComponent(const ComponentName& name, FactoryComponent* factoryComponent);
 	};
 
 	/**
@@ -32,5 +31,4 @@ namespace me {
 		return *ComponentsFactory::instance();
 	}
 }
-
-
+#endif

@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __EC_UI_BUTTON
-#define __EC_UI_BUTTON
+#ifndef __ENTITYCOMPONENT_UIBUTTON
+#define __ENTITYCOMPONENT_UIBUTTON
 
 #include "UIElement.h"
 #include <functional>
@@ -8,7 +8,7 @@
 
 namespace me {
 
-	class UIButton : public me::UIElement
+	class __MOTORENGINE_API UIButton : public me::UIElement
 	{
 	public:
 		UIButton(std::string name,float width,float height, float left, float top);
