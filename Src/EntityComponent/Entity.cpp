@@ -31,7 +31,7 @@ namespace me {
 
 	Entity::~Entity() {
 		for (auto &c : mComponents) {
-			delete c.second;
+			delete c.second; //No se pueden borrar componentes del juego -> hacerlo en factoria?
 		};
 		mComponents.clear();
 
@@ -66,7 +66,6 @@ namespace me {
 
 			mComponents.insert({ componentName, c });
 			c->setEntity(this);
-			c->start();
 		}
 
 #ifdef _DEBUG
@@ -78,6 +77,14 @@ namespace me {
 
 	
 	
+	void Entity::start()
+	{
+		for (auto c : mComponents) {
+			if (c.second->enabled)
+				c.second->start();
+		};
+	}
+
 	void Entity::update() {
 		if (!mActive) return;
 		for (auto c : mComponents) {

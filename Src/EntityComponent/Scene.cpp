@@ -72,6 +72,8 @@ namespace me {
 #ifdef _DEBUG
 		std::cout << "Scene " << mName << " started.";
 #endif
+		for (const auto& kv : mEntities)
+			kv.second->start();
 	};
 
 	void Scene::update() {

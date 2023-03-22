@@ -136,6 +136,8 @@ namespace me {
 			mScn = scn;
 		};
 
+		void start();
+
 		/**
 		Run all the added components update method.
 		*/

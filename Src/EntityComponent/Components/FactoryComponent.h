@@ -9,7 +9,7 @@
 namespace me {
 	class Component;
 
-	class FactoryComponent
+	class __MOTORENGINE_API FactoryComponent
 	{
 	protected:
 		/*

@@ -32,13 +32,7 @@ namespace me {
 	{
 
 	private:
-
-		float lerp(float a, float b, float f)
-		{
-			return a + f * (b - a);
-		}
-
-		const float M_PI_CONST = 3.141592653589793238462f;
+		float lerp(float a, float b, float f);
 
 	public:
 		float x, y, z;

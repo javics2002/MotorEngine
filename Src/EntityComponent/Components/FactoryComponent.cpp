@@ -44,7 +44,9 @@ Component* FactoryTransform::create(Parameters params)
     Transform* transform = new Transform();
     transform->setPosition(Vector3(value(params, "position_x", 0.0f),
         value(params, "position_y", 0.0f), value(params, "position_z", 0.0f)));
-    // transform->setRotation();  TO DO VECTOR 3 TO QUATERNION
+    transform->setRotation(Vector4(value(params, "rotation_x", 0.0f),
+        value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f),
+        value(params, "rotation_w", 0.0f)));
     transform->setScale(Vector3(value(params, "scale_x", 1.0f),
         value(params, "scale_y", 1.0f), value(params, "scale_z", 1.0f)));
     return transform;

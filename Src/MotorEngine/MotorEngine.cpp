@@ -10,6 +10,7 @@
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
+#include "EntityComponent/Scene.h"
 #include "EntityComponent/Components/ComponentsFactory.h"
 #include "EntityComponent/Components/FactoryComponent.h"
 #include "Render/Window.h"
@@ -48,9 +49,13 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameTypesDef != NULL)
 		gameTypesDef();
 
-	entryPoint();
+	// Init managers
+	physicsManager().start();
+	std::string cam = "CameraDemo";
+	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 3, -5), Ogre::Vector3f(0, .5, 0));
 
-	return true;
+	return entryPoint();
 }
 
 void MotorEngine::loop()
@@ -69,10 +74,12 @@ void MotorEngine::loop()
 	std::chrono::steady_clock::time_point beginFrame = gameStartFrame;
 	std::chrono::steady_clock::time_point lastPhysicFrame = gameStartFrame;
 
+	sceneManager().getActiveScene().get()->processNewEntities();
+	sceneManager().getActiveScene().get()->start();
+
 	SDL_Event event;
 	bool quit = false;
 	inputManager().addEvent(quitLoop, &quit);
-	physicsManager().start();
 	while (!quit) {
 		while (SDL_PollEvent(&event)) {
 
@@ -82,7 +89,7 @@ void MotorEngine::loop()
 		* Update the scene
 		*/
 		physicsManager().update(0.0166);
-		
+		sceneManager().update();
 
 		/*
 		* Update physics

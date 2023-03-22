@@ -5,6 +5,7 @@
 #include <LuaBridge/LuaBridge.h>
 #ifdef _DEBUG
 #include <iostream>
+#include <Windows.h>
 #endif
 
 namespace me {
@@ -80,11 +81,22 @@ namespace me {
         luaL_openlibs(L);
 
         // Abrimos el fichero
-        std::string path = "Assets/Scenes/" + sceneName;
 
-        if (luaL_loadfile(L, path.c_str()) ||
-            lua_pcall(L, 0, 0, 0)) {
-            std::cout << "No se encontro el archivo .lua\n";
+        //std::string path = "Assets\\Scenes\\example.lua";
+        std::string path = "Assets\\Scenes\\" + sceneName;
+
+        if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
+#ifdef _DEBUG
+            char buffer[MAX_PATH];
+            GetCurrentDirectoryA(MAX_PATH, buffer);
+            std::string currentPath(buffer);
+
+            currentPath += "\\" + path;
+
+            //std::cout << "La ubicación del archivo es: " << currentPath << std::endl;
+
+            std::cout << "No se encontro el archivo " << currentPath << "\n";
+#endif
             return 1;
         }
 

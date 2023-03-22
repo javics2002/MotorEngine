@@ -159,3 +159,8 @@ btVector3 me::Vector3::v3ToBulletV3()
 {
 	return btVector3(btScalar(x), btScalar(y), btScalar(z));
 }
+
+float Vector3::lerp(float a, float b, float f)
+{
+	return a + f * (b - a);
+}
