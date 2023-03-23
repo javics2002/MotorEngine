@@ -15,6 +15,8 @@ namespace Ogre {
 	class Quaternion;
 }
 
+class btQuaternion;
+
 namespace std {
 	template <class T>
 	struct char_traits;
@@ -232,6 +234,7 @@ namespace me {
 		Returns the conversion of a Vector3 to an btVector3
 		*/
 		btVector3 v3ToBulletV3();
+
 	};
 }
 

@@ -3,6 +3,7 @@
 #include "LinearMath/btTransform.h"
 #include "LinearMath/btQuaternion.h"
 #include "LinearMath/btVector3.h"
+#include "BulletDynamics/Dynamics/btRigidBody.h"
 
 #include "Physics/PhysicsManager.h"
 
