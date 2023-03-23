@@ -1,10 +1,11 @@
 #pragma once
-#ifndef __SDL_WINDOW
-#define __SDL_WINDOW
+#ifndef __RENDER_WINDOW
+#define __RENDER_WINDOW
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 
-class SDL_Window;
+typedef struct SDL_Window SDL_Window;
 
 namespace me {
 	/**
@@ -20,7 +21,7 @@ namespace me {
 	@param w, h width and height of the window in screen coordinates
 	@param windowFlags 0, or one or more SDL_WindowFlags OR'd together
 	*/
-	class Window : public Singleton<Window>
+	class __MOTORENGINE_API Window : public Singleton<Window>
 	{
 		friend Singleton<Window>;
 
@@ -57,7 +58,7 @@ namespace me {
 	This macro defines a compact way for using the singleton Window, instead of
 	writing Window::instance()->method() we write win().method()
 	*/
-	inline Window& win() {
+	inline Window& window() {
 		return *Window::instance();
 	};
 }

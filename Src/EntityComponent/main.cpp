@@ -8,16 +8,16 @@
 #include "EntityComponent/SceneManager.h"
 #include "EntityComponent/Scene.h"
 #include "EntityComponent/Entity.h"
-#include "EntityComponent/Transform.h"
+#include "EntityComponent/Components/Transform.h"
 
 using namespace me;
 
 int main() {
 
-	sm();
+	sceneManager();
 
-	Scene* s = sm().addScene("Game").get();
-	Entity* e = sm().getActiveScene()->addEntity("dummyEntity").get();
+	/*Scene* s = sceneManager().addScene("Game").get();
+	Entity* e = sceneManager().getActiveScene()->addEntity("dummyEntity").get();
 	Transform* tr = e->addComponent<Transform>("transform");
 	tr->setPosition(Vector3 (0, 0, 0));
 
@@ -29,11 +29,11 @@ int main() {
 
 		std::cout << "Entity " << e->getName() << " transform position " << tr->getPosition() << std::endl;
 
-	};
+	};*/
 
-	e->removeComponent<Transform>("transform");
-	s->removeEntity(e->getName());
-	sm().removeScene(s->getName());
+	//e->removeComponent<Transform>("transform");
+	//s->removeEntity(e->getName());
+	//sceneManager().removeScene(s->getName());
 
 };
 

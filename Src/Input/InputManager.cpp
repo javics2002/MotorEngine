@@ -1,8 +1,11 @@
 #include "InputManager.h"
+
+#include <SDL3/SDL_events.h>
 #ifdef _DEBUG
 #include <iostream>
 #include <typeinfo>
 #endif
+
 #define EVENT_BUTTON_DOWN event->type == SDL_EVENT_KEY_DOWN || \
 	event->type == SDL_EVENT_MOUSE_BUTTON_DOWN || \
 	event->type == SDL_EVENT_GAMEPAD_BUTTON_DOWN
@@ -22,6 +25,11 @@ InputManager::~InputManager()
 {
 }
 
+bool me::InputManager::justClicked()
+{
+	return true;
+}
+
 void InputManager::addEvent(SDL_EventFilter filter, void* userdata)
 {
 	SDL_AddEventWatch(filter, userdata);
@@ -32,19 +40,20 @@ void InputManager::deleteEvent(SDL_EventFilter filter, void* userdata)
 	SDL_DelEventWatch(filter, userdata);
 }
 
-bool InputManager::addButton(std::string name)
+bool InputManager::addButton(std::string name, int player)
 {
 	//Button must not exist beforehand
 	if (mButtons.count(name)) {
 #ifdef _DEBUG
 		std::cout << "Button " << name << " already exists.\n";
 #endif
-
+		
 		return false;
 	}
 
 	Button button;
 	button.pressed = false;
+	button.player = player;
 
 	mButtons[name] = button;
 
@@ -55,9 +64,9 @@ bool InputManager::addButton(std::string name)
 	return true;
 }
 
-bool InputManager::addButton(std::string name, Input input)
+bool InputManager::addButton(std::string name, Input input, int player)
 {
-	return addButton(name) && addBinding(name, input);
+	return addButton(name, player) && addBinding(name, input);
 }
 
 bool InputManager::deleteButton(std::string name)
@@ -302,9 +311,10 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 		//Call callback if input matches any of the virtual button's bindings.
 		auto bindings = info->buttonBindings->equal_range(getInput(event));
 		for (auto binding = bindings.first; binding != bindings.second; binding++)
-			if (binding->second == info->buttonName)
+			if (binding->second == info->buttonName 
+				&& (info->player == -1 || info->player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))
 				info->callback(info->additionalData);
-
+		
 		return 0;
 	};
 
@@ -313,6 +323,7 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 	info.additionalData = additionalData;
 	info.buttonBindings = &mButtonBindings;
 	info.buttonName = name;
+	info.player = mButtons[name].player;
 
 	auto it = mOnButtonPressed.insert({ name, info });
 
@@ -355,33 +366,37 @@ bool InputManager::deleteOnButtonPressedEvent(std::string name, int(*callback)(v
 	return true;
 }
 
+Vector2 me::InputManager::getMousePositon()
+{
+	SDL_GetMouseState(&mouseX, &mouseY);
+
+	return Vector2(mouseX, mouseY);
+}
+
 int InputManager::watchControllers(void* userdata, SDL_Event* event)
 {
 	switch (event->type)
 	{
 	case SDL_EVENT_GAMEPAD_ADDED:
 	{
-		int i = 1;
-		while (instance()->mGamepads.count(i))
-			i++;
-
-		instance()->mGamepads.insert({ 1, SDL_OpenGamepad(event->cdevice.which) });
-		//SDL_GETGAMEPADAXIS
-		SDL_GetGamepadPlayerIndex(instance()->mGamepads[1]);
+		SDL_Gamepad* gamepad = SDL_OpenGamepad(event->cdevice.which);
 
 #ifdef _DEBUG
-		std::cout << SDL_GetGamepadName(instance()->mGamepads[1]) << " detected.	Player: " << SDL_GetGamepadPlayerIndex(instance()->mGamepads[1]) << "	ID: " << event->cdevice.which << "\n";
+		std::cout << SDL_GetGamepadName(gamepad) << " detected.	Player: " 
+			<< SDL_GetGamepadPlayerIndex(gamepad) << "	ID: " << event->cdevice.which << "\n";
 #endif
 	}
 		break;
 	case SDL_EVENT_GAMEPAD_REMOVED:
+	{
+		SDL_Gamepad* gamepad = SDL_GetGamepadFromInstanceID(event->cdevice.which);
+
 #ifdef _DEBUG
-		std::cout << SDL_GetGamepadName(instance()->mGamepads[1]) << " removed. ID: " << event->cdevice.which << "\n";
+			std::cout << SDL_GetGamepadName(gamepad) << " removed. ID: " << event->cdevice.which << "\n";
 #endif
 
-		SDL_CloseGamepad(instance()->mGamepads[1]);
-
-		instance()->mGamepads.erase(1);
+		SDL_CloseGamepad(gamepad);
+	}
 		break;
 	default:
 		break;
@@ -409,15 +424,25 @@ int InputManager::updateInputData(void* userdata, SDL_Event* event)
 			axis.second.value = std::min(.0f, axis.second.value + axis.second.gravity);
 
 	//Update all axis binded to that input
-	bindings = instance()->mPositiveAxisBindings.equal_range(input);
-	for (auto binding = bindings.first; binding != bindings.second; binding++) {
-		instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-		instance()->mAxis[binding->second].value = 1;
+	if (input.type == INPUTTYPE_GAMEPAD_AXIS) {
+		bindings = instance()->mPositiveAxisBindings.equal_range(input);
+		for (auto binding = bindings.first; binding != bindings.second; binding++) {
+			Axis* axis = &instance()->mAxis[binding->second];
+			axis->value = input.value;
+			axis->active = std::abs(input.value) > axis->dead;
+		}
 	}
-	bindings = instance()->mNegativeAxisBindings.equal_range(input);
-	for (auto binding = bindings.first; binding != bindings.second; binding++) {
-		instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-		instance()->mAxis[binding->second].value = -1;
+	else {
+		bindings = instance()->mPositiveAxisBindings.equal_range(input);
+		for (auto binding = bindings.first; binding != bindings.second; binding++) {
+			instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+			instance()->mAxis[binding->second].value = 1;
+		}
+		bindings = instance()->mNegativeAxisBindings.equal_range(input);
+		for (auto binding = bindings.first; binding != bindings.second; binding++) {
+			instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+			instance()->mAxis[binding->second].value = -1;
+		}
 	}
 
 	return 0;
@@ -429,6 +454,7 @@ Input me::InputManager::getInput(SDL_Event* event)
 	switch (event->type)
 	{
 	case SDL_EVENT_KEY_DOWN:
+		//Don't repeat button down events
 		if (event->key.repeat) {
 			input.type = INPUTTYPE_NULL;
 			input.which = -1;
@@ -450,18 +476,15 @@ Input me::InputManager::getInput(SDL_Event* event)
 		break;
 	case SDL_EVENT_GAMEPAD_AXIS_MOTION:
 		input.type = INPUTTYPE_GAMEPAD_AXIS;
-		input.which = event->caxis.which;
-		input.value = event->caxis.value / SHRT_MAX;
-		break;
-	case SDL_EVENT_MOUSE_MOTION:
-		input.type = INPUTTYPE_MOUSE_MOTION;
-		input.which = event->motion.x;
-
+		input.which = event->caxis.axis;
+		input.value = std::max(-1.0f, (float) event->caxis.value / SHRT_MAX);
 		break;
 	case SDL_EVENT_MOUSE_WHEEL:
 		input.type = INPUTTYPE_MOUSE_WHEEL;
 		input.which = event->wheel.direction;
 		break;
+	case SDL_EVENT_MOUSE_MOTION:
+
 	default:
 		input.type = INPUTTYPE_NULL;
 		input.which = -1;

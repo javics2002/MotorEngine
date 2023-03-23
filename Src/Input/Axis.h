@@ -1,14 +1,14 @@
 #pragma once
-#ifndef __SDL_AXIS
-#define __SDL_AXIS
+#ifndef __INPUT_AXIS
+#define __INPUT_AXIS
 
 #include <string>
 
 namespace me {
-	enum InputType;
+	enum InputType : int;
 
 	//This data defines the behaviour of the axis
-	struct AxisInfo {
+	struct __MOTORENGINE_API AxisInfo {
 		//Speed in units per second that the axis falls toward neutral when no input is present.
 		float gravity;
 
@@ -21,7 +21,7 @@ namespace me {
 	Representation of a virtual axis, so you can unify input
 	given any controller, keyboard or mouse
 	*/
-	struct Axis : AxisInfo {
+	struct __MOTORENGINE_API Axis : AxisInfo {
 		//Normalized value
 		float value;
 
@@ -30,7 +30,7 @@ namespace me {
 	};
 
 	//Represents two physical buttons or keys that can trigger a virtual axis
-	struct AxisInput {
+	struct __MOTORENGINE_API AxisInput {
 		/*
 		INPUTTYPE_KEYBOARD for keyboard key presses
 		INPUTTYPE_MOUSE for mouse clicks
@@ -41,7 +41,13 @@ namespace me {
 
 		/*Which key, mouse button, or controller button has been pressed.
 		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event*/
-		int positive, negative;
+		union {
+			/*In case it is a physical axis, which will be used instead of two buttons.*/
+			int which;
+
+			int positive;
+		};
+		int negative;
 	};
 }
 

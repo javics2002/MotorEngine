@@ -1,10 +1,15 @@
 #include "Entity.h"
-#include "Component.h"
+#include "Components/Component.h"
 
+#include "Components/ComponentsFactory.h"
+
+#ifdef _DEBUG
+#include <iostream>
+#endif
 
 namespace me {
 
-	Entity::Entity(Scene* scn, const std::string name) :
+	Entity::Entity(Scene* scn, const SceneName name) :
 		mActive(true), //
 		mName(name), // 
 		mScn(scn)
@@ -14,7 +19,7 @@ namespace me {
 #endif
 	};
 
-	Entity::Entity(const std::string name) :
+	Entity::Entity(const SceneName name) :
 		mActive(true),
 		mName(name),
 		mScn(nullptr)
@@ -26,7 +31,7 @@ namespace me {
 
 	Entity::~Entity() {
 		for (auto &c : mComponents) {
-			delete c.second;
+			delete c.second; //No se pueden borrar componentes del juego -> hacerlo en factoria?
 		};
 		mComponents.clear();
 
@@ -35,7 +40,51 @@ namespace me {
 #endif
 	};
 
+	template<typename T>
+	T* Entity::addComponent(const ComponentName& componentName) {
+
+		T* c = componentsFactory().create(componentName);
+
+		if (!hasComponent(componentName)) {
+
+			mComponents.insert({ componentName, c });
+			c->setEntity(this);
+			c->start();
+		}
+
+#ifdef _DEBUG
+		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+
+		return c;
+	};
 	
+	Component* Entity::addComponent(const ComponentName& componentName, Parameters& params) {
+		Component* c = componentsFactory().create(componentName, params);
+
+		if (!hasComponent(componentName)) {
+
+			mComponents.insert({ componentName, c });
+			c->setEntity(this);
+		}
+
+#ifdef _DEBUG
+		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+
+		return c;
+	};
+
+	
+	
+	void Entity::start()
+	{
+		for (auto c : mComponents) {
+			if (c.second->enabled)
+				c.second->start();
+		};
+	}
+
 	void Entity::update() {
 		if (!mActive) return;
 		for (auto c : mComponents) {
@@ -73,5 +122,4 @@ namespace me {
 				c.second->OnCollisionExit(other);
 		}
 	}
-
 };

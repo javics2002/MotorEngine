@@ -1,25 +1,32 @@
 #pragma once
-#ifndef __SDL_BUTTON
-#define __SDL_BUTTON
+#ifndef __INPUT_BUTTON
+#define __INPUT_BUTTON
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include <string>
 #include <unordered_map>
-#include <SDL3/SDL_events.h>
+
+typedef union SDL_Event SDL_Event;
+typedef int (__cdecl* SDL_EventFilter) (void* userdata, SDL_Event* event);
 
 namespace me {
-	enum InputType;
+	enum InputType : int;
 
 	/**
 	Representation of a virtual button, so you can unify input
 	given any controller, keyboard or mouse.
 	*/
-	struct Button {
+	struct __MOTORENGINE_API Button {
 		//Value
 		bool pressed;
+
+		/*Whose player this button is, used in case its a gamepad button press
+		-1 will be considered as a playerless input.*/
+		int player;
 	};
 
 	//Represents a physical button or key that can trigger a virtual button.
-	struct Input {
+	struct __MOTORENGINE_API Input {
 		/*
 		INPUTTYPE_KEYBOARD for keyboard key presses
 		INPUTTYPE_MOUSE for mouse clicks
@@ -43,7 +50,7 @@ namespace me {
 	};
 
 	//Provides hash suppport for using struct Input as a key in std::unordered_map
-	struct InputHasher {
+	struct __MOTORENGINE_API InputHasher {
 		size_t operator()(const Input& t) const {
 			return std::hash<int>()(t.which) ^ std::hash<int>()(t.type);
 		}
@@ -52,7 +59,7 @@ namespace me {
 	/*
 	Stores data for virtual buttons' callbacks.
 	*/
-	struct OnButtonPressedInfo {
+	struct __MOTORENGINE_API OnButtonPressedInfo {
 		//Simple callback provided by the user.
 		int(*callback)(void*); 
 
@@ -67,6 +74,11 @@ namespace me {
 
 		//Name of the button this callback belongs to.
 		std::string buttonName;
+
+		/*Whose player this button is, used in case its a gamepad button press.
+		The first player is 0.
+		-1 will be considered as a playerless input.*/
+		int player;
 	};
 }
 

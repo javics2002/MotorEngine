@@ -1,9 +1,11 @@
 #pragma once
-#ifndef __BULLET_PHYSICS_MANAGER
-#define __BULLET_PHYSICS_MANAGER
+#ifndef __PHYSICS_PHYSICSMANAGER
+#define __PHYSICS_PHYSICSMANAGER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
-#include "EntityComponent/Transform.h"
+#include "EntityComponent/Components/Transform.h"
+#include "DebugDrawer.h"
 
 /*
 This class represents the physics world and handles the simulation of rigid bodies.
@@ -46,6 +48,11 @@ but do not themselves move or have physics responses.
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
 
 #include <BulletCollision/CollisionShapes/btCollisionShape.h>
+
+#include <BulletDynamics/ConstraintSolver/btConstraintSolver.h>
+
+#include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
+
 #include <LinearMath/btDefaultMotionState.h>
 
 enum Shapes {
@@ -63,8 +70,10 @@ enum MovementType {
 
 namespace me {
 
-	class PhysicsManager: public Singleton<PhysicsManager>
+	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
 	{
+
+	private:
 
 		friend Singleton<PhysicsManager>;
 
@@ -79,6 +88,9 @@ namespace me {
 		btDispatcher* mDispatcher;
 		btBroadphaseInterface* mBroadphaseInterface;
 		btCollisionConfiguration* mCollisionConfiguration;
+		btSequentialImpulseConstraintSolver* mConstraintSolver;
+
+		DebugDrawer* mDebug;
 
 	public:
 
@@ -113,15 +125,17 @@ namespace me {
 		Returns the Collision Shape of the rigidbody
 
 		@param shape indicates the shape of the rigidbody (0 = sphere, 1 = box, 2 = cylinder, 3 = capsule)
-		@param size indicates the scale of transform
+		@param scale indicates the scale of transform
+		@param size indicates the size of transform
 		*/
-		btCollisionShape* createShape(Shapes shape, btVector3 * scale);
+		btCollisionShape* createShape(Shapes shape, const btVector3 &scale);
 
 		/*
 		Create and add a rigidbody to the dynamic world
 
 		@param transform is the transform of the rigidBody
 		@param scale indicates the scale of transform
+		@param size indicates the size of transform
 		@param shape indicates the shape of the rigidbody (0 = sphere, 1 = box, 2 = cylinder, 3 = capsule)
 		@param mvType the movement of the object (0 = Dynamic, 1 = Static, 2 = Kinematic)
 		@param isTrigger indicates if the object is trigger or not
@@ -129,7 +143,7 @@ namespace me {
 		@param mass mass of the object
 		@param restitution restitution of the object
 		*/
-		btRigidBody*createRigidBody(btTransform *transform, btVector3 *scale, Shapes shape, MovementType mvType, bool isTrigger, float friction, float mass, float restitution);
+		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const float& dt);
 	};
@@ -138,7 +152,7 @@ namespace me {
 	This macro defines a compact way for using the singleton PhysicsManager, instead of
 	writing InputHandler::instance()->method() we write ih().method()
 	*/
-	inline PhysicsManager& pm() {
+	inline PhysicsManager& physicsManager() {
 		return *PhysicsManager::instance();
 	}
 

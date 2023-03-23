@@ -1,6 +1,9 @@
 #include "Vector3.h"
 
 #include <OgreVector3.h>
+#include <OgreQuaternion.h>
+#include <LinearMath/btVector3.h>
+#include <LinearMath/btQuaternion.h>
 
 using namespace me;
 
@@ -51,6 +54,13 @@ void Vector3::operator=(const Vector3 * v)
 bool Vector3::operator==(const Vector3 & v)
 {
 	return (x == v.x && y == v.y && z == v.z);
+}
+
+void Vector3::operator=(const btVector3& v)
+{
+	x = v.x();
+	y = v.y();
+	z = v.z();
 }
 
 bool Vector3::operator!=(const Vector3& v)
@@ -109,7 +119,7 @@ Vector3 Vector3::left()
 	return Vector3 (-1, 0, 0);
 }
 
-Vector3 Vector3::rigth()
+Vector3 Vector3::right()
 {
 	return Vector3 (1, 0, 0);
 }
@@ -147,5 +157,10 @@ Ogre::Vector3f me::Vector3::v3ToOgreV3()
 
 btVector3 me::Vector3::v3ToBulletV3()
 {
-	return btVector3(x, y, z);
+	return btVector3(btScalar(x), btScalar(y), btScalar(z));
+}
+
+float Vector3::lerp(float a, float b, float f)
+{
+	return a + f * (b - a);
 }

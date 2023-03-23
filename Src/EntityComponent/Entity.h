@@ -5,47 +5,41 @@ of a set of components.
 
 #pragma once
 
-#ifndef __EC_ENTITY
-#define __EC_ENTITY
+#ifndef __ENTITYCOMPONENT_ENTITY
+#define __ENTITYCOMPONENT_ENTITY
 
-#include <algorithm>
-#include <array>
+#include "MotorEngine/MotorEngineAPI.h"
+#include "InfoScene.h"
 #include <vector>
 #include <map>
-#include <string>
-#include <iostream>
-
-#include "ec.h"
-
 
 namespace me {
-
 	class Scene;
 	class Component;
 
-	class Entity {
+	class __MOTORENGINE_API Entity {
 		friend Scene;
 
 	public:
-
 		/**
 		Build the foundation of the Entity.
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
-		Entity(Scene* scn, const std::string name);
+		Entity(Scene* scn, const SceneName name);
 
 		/**
 		Build the foundation of the Entity.
 		@param String name to identify it.
 		*/
-		Entity(const std::string name);
+		Entity(const SceneName name);
 
 		/**
 		Delete all the components added to the entity.
 		*/
 		virtual ~Entity();
 
+		
 		/**
 		Add a new component. If the component
 		already exists, write a cout in debug mode
@@ -53,30 +47,16 @@ namespace me {
 		@param Variable number of arguments of any type.
 		@return Reference to the new component.
 		*/
-		template<typename T, typename ...Ts>
-		T* addComponent(std::string component, Ts &&... args) {
+		Component* addComponent(const ComponentName& componentName, Parameters& params);
 
-			T* c = new T(std::forward<Ts>(args)...);
-
-			if (!hasComponent(component)) {
-
-				mComponents.insert({component, c});
-				c->setEntity(this);
-				c->start();
-			}
-
-#ifdef _DEBUG
-			else std::cout << "Entity: " << mName << " already has the Component:" << component;
-#endif
-
-			return c;
-		};
+		template<typename T>
+		T* addComponent(const ComponentName& componentName);
 
 		/**
 		Remove completely a typed component.
 		*/
 		template<typename T>
-		bool removeComponent(std::string component) {
+		bool removeComponent(ComponentName& component) {
 			if (hasComponent(component)) {
 				delete mComponents.find(component)->second;
 				mComponents.erase(component);
@@ -92,7 +72,7 @@ namespace me {
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent(std::string component) {
+		inline T* getComponent(const ComponentName& component) {
 
 			if (!hasComponent(component)) return nullptr;
 
@@ -104,7 +84,7 @@ namespace me {
 		@param key name  in the map
 		@return Boolean confirmation.
 		*/
-		inline bool hasComponent(std::string component) {
+		inline bool hasComponent(const ComponentName& component) {
 			return mComponents.find(component) != mComponents.end();
 		};
 
@@ -128,7 +108,7 @@ namespace me {
 		Get the entity name.
 		@return String name.
 		*/
-		inline const std::string getName() const {
+		inline EntityName getName() const {
 			return mName;
 		};
 
@@ -136,7 +116,7 @@ namespace me {
 		Set the entity name to the new one.
 		@param String name.
 		*/
-		inline void setName(const std::string name) {
+		inline void setName(const EntityName name) {
 			mName = name;
 		};
 
@@ -155,6 +135,8 @@ namespace me {
 		inline void setScene(Scene* scn) {
 			mScn = scn;
 		};
+
+		void start();
 
 		/**
 		Run all the added components update method.
@@ -188,10 +170,8 @@ namespace me {
 		bool mActive;
 		std::string mName;
 		Scene* mScn;
-		std::map<std::string, Component*> mComponents;
-
+		std::map<ComponentName, Component*> mComponents;
 	};
-
 };
 
 #endif

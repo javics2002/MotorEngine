@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\x64\Release\LUA_VANILLA</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\x64\bin\Release\lua-5.4.4.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

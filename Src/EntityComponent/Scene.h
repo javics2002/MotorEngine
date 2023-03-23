@@ -5,30 +5,25 @@ of a set of entities.
 
 #pragma once
 
-#ifndef __EC_SCENE
-#define __EC_SCENE
+#ifndef __ENTITYCOMPONENT_SCENE
+#define __ENTITYCOMPONENT_SCENE
 
-
-#include <unordered_map>
-#include <string>
+#include "MotorEngine/MotorEngineAPI.h"
+#include "InfoScene.h"
 #include <memory>
 #include <initializer_list>
 
-#include "ec.h"
-
-
 namespace me {
-
 	class Entity;
 
-	class Scene {
+	class __MOTORENGINE_API Scene {
 	public:
 
 		/**
 		Build the foundation of the Scene.
 		@param String name to identify it.
 		*/
-		Scene(const std::string name);
+		Scene(const SceneName name);
 
 		/**
 		This method is meant to be the definition
@@ -42,14 +37,14 @@ namespace me {
 		@param String name to identify the new entity.
 		@return Created new entity.
 		*/
-		std::shared_ptr<Entity> addEntity(const std::string name);
+		std::shared_ptr<Entity> addEntity(const EntityName name);
 
 		/**
 		Prepares an entity to be safely remove from the scene.
 		This assumes that the name is a unique identifier.
 		@param String name to identify the entity to be remove.
 		*/
-		void removeEntity(const std::string& name);
+		void removeEntity(const EntityName& name);
 
 		/**
 		Get a vector of all entities in the scene.
@@ -67,13 +62,13 @@ namespace me {
 		@param String name of the entity to be found.
 		@return Entity with the given name, or nullptr if not found.
 		*/
-		std::shared_ptr<Entity> findEntity(const std::string& name) const;
+		std::shared_ptr<Entity> findEntity(const EntityName& name) const;
 
 		/**
 		Get the scene name.
 		@return String name.
 		*/
-		inline const std::string getName() const {
+		inline const EntityName getName() const {
 			return mName;
 		};
 
@@ -81,7 +76,7 @@ namespace me {
 		Set the scene name to the new one.
 		@param String name.
 		*/
-		inline void setName(const std::string name) {
+		inline void setName(const SceneName name) {
 			mName = name;
 		};
 
@@ -90,7 +85,7 @@ namespace me {
 		@param String oldName to be change.
 		@param String newName to be set.
 		*/
-		void renameEntity(const std::string& oldName, const std::string& newName);
+		void renameEntity(const EntityName& oldName, const EntityName& newName);
 
 		/**
 		This method is only ever called once.
@@ -130,14 +125,17 @@ namespace me {
 		*/
 		void processNewEntities();
 
+		/**
+		Safely adds the new entities from unordered_map passed by the sceneManager
+		@param entitiesMap is the unordered_map that contains all the information about the entity and its components.
+		*/
+		void pushEntities(InfoScene& entitiesMap);
+
 	protected:
-
-		std::string mName;
+		SceneName mName;
 		std::vector<std::shared_ptr<Entity>> mNewEntities;
-		std::unordered_map<std::string, std::shared_ptr<Entity>> mEntities;
-
+		std::unordered_map<EntityName, std::shared_ptr<Entity>> mEntities;
 	};
-
 };
 
 #endif

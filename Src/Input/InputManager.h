@@ -1,8 +1,10 @@
 #pragma once
-#ifndef __SDL_INPUT_MANAGER
-#define __SDL_INPUT_MANAGER
+#ifndef __INPUT_INPUT_MANAGER
+#define __INPUT_INPUT_MANAGER
 
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
+#include "Utils/Vector2.h"
 #include "Button.h"
 #include "Axis.h"
 #include <vector>
@@ -10,7 +12,7 @@
 #include <unordered_map>
 
 namespace me {
-	enum InputType { 
+	enum __MOTORENGINE_API InputType {
 		INPUTTYPE_KEYBOARD, 
 		INPUTTYPE_MOUSE_CLICK,
 		INPUTTYPE_MOUSE_MOTION,
@@ -26,7 +28,7 @@ namespace me {
 	Define virtual buttons to easely remap your game's controls.
 	You can access the InputManager just calling im().
 	*/
-	class InputManager : public Singleton<InputManager> {
+	class __MOTORENGINE_API InputManager : public Singleton<InputManager> {
 		friend Singleton<InputManager>;
 
 		InputManager();
@@ -44,9 +46,6 @@ namespace me {
 		//Stores callback data for virtual buttons.
 		std::unordered_multimap<std::string, OnButtonPressedInfo> mOnButtonPressed;
 
-		//Stores each player's gamepad
-		std::unordered_map<int, SDL_Gamepad*> mGamepads;
-
 		/*
 		Manages the connection and disconnection of controllers.
 		*/
@@ -62,11 +61,15 @@ namespace me {
 		*/
 		static Input getInput(SDL_Event* event);
 
+		float mouseX, mouseY;
+
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
 		InputManager(const InputManager& o) = delete;
 		~InputManager() override;
 		
+		bool justClicked();
+
 		/**
 		Calls filter everytime an SDL_Event is processed.
 		@param filter is a function with the format:
@@ -86,9 +89,12 @@ namespace me {
 		/**
 		Creates a button of name name.
 		@param name Name of the button.
+		@param player In case it is necessary to differenciate which player
+		inputs a press, InputManager will dissmiss presses from other players.
+		First player is 0.
 		@returns A boolean representing whether the button could be created.
 		*/
-		bool addButton(std::string name);
+		bool addButton(std::string name, int player = -1);
 		/**
 		Creates a button of name name and binds it with some physical input.
 		@param name Name of the button.
@@ -98,9 +104,12 @@ namespace me {
 		or SDL_ControllerButtonEvent for controller presses;
 		and input.which represents a value of SDL_KeyCode, SDL_BUTTON 
 		or SDL_GamepadButton depending on the type of the event
+		@param player In case it is necessary to differenciate which player
+		inputs a press, InputManager will dissmiss presses from other players.
+		First player is 0.
 		@returns A boolean representing whether the button could be created.
 		*/
-		bool addButton(std::string name, Input input);
+		bool addButton(std::string name, Input input, int player = -1);
 		/**
 		Deletes button name and any bindings it may have.
 		@param name Name of the button.
@@ -221,13 +230,18 @@ namespace me {
 		@returns Whether the callback could be unbinded to the button
 		*/
 		bool deleteOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData = NULL);
+
+		/*
+		@returns Current mouse position
+		*/
+		Vector2 getMousePositon();
 	};
 
 	/**
 	This macro defines a compact way for using the singleton InputHandler, instead of
 	writing InputHandler::instance()->method() we write ih().method()
 	*/
-	inline InputManager& im() {
+	inline InputManager& inputManager() {
 		return *InputManager::instance();
 	}
 }

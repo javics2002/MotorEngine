@@ -3,69 +3,83 @@
 #ifndef __BULLET_MAIN
 #define __BULLET_MAIN
 
+#include <fstream>
 #include <iostream>
 #include <SDL3/SDL_events.h>
+#include <string>
+#include <map>
 
 #include "PhysicsManager.h"
 #include "Utils/Vector3.h"
-#include "Render/OgreManager.h"
+#include "Input/InputManager.h"
+#include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
-#include "EntityComponent/RigidBody.h"
-#include "EntityComponent/MeshRenderer.h"
-#include "EntityComponent/Collider.h"
+#include "EntityComponent/Components/RigidBody.h"
+#include "EntityComponent/Components/MeshRenderer.h"
+#include "EntityComponent/Components/Collider.h"
+#include "EntityComponent/Components/FactoryComponent.h"
+
+#include "EntityComponent/SceneManager.h"
 
 using namespace me;
 
 int main() {
-    
-    pm().start();
 
-    std::string cam = "CameraDemo";
+	physicsManager().start();
 
-    om().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
-    om().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+	std::string cam = "CameraDemo";
 
-    Entity* plane = new Entity("plane");    
+	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
 
-    auto tr = plane->addComponent<Transform>("transform");
-    tr->setScale(Vector3(5, 0.1, 5));
+	me::Entity* plane = new me::Entity("plane");
 
-    plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
-    plane->addComponent<MeshRenderer>("meshRenderer",  "p", "cube.mesh")->setMaterial("Material/roja");
+	plane->addComponent<Transform>("transform");
+	
 
-    Entity* cube = new Entity("cube");
+	/*auto trPlane = plane->addComponent<Transform>("transform");
+	trPlane->setScale(Vector3(5, 0.1, 5));
 
-    cube->addComponent<Transform>("transform")->setPosition(Vector3(0, 200, 0));
+	auto planeRb = plane->addComponent<RigidBody>("rigidBody", 1, 1, 5, 0.3, 0.5, false);
+	plane->addComponent<MeshRenderer>("meshRenderer", "p", "cube.mesh")->setMaterial("Material/roja");
+	plane->addComponent<Collider>("collider");
 
-    cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
-    cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
+	me::Entity* cube = new me::Entity("cube");
 
+	auto trCube = cube->addComponent<Transform>("transform");
+	trCube->setPosition(Vector3(0, 200, 0));
 
-    om().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
+	cube->addComponent<RigidBody>("rigidBody", 1, 0, 5, 0.3, 0.5, false);
+	cube->addComponent<MeshRenderer>("meshRenderer", "c", "cube.mesh")->setMaterial("Material/marronclaro");
+	cube->addComponent<Collider>("collider");*/
 
-    //Transform *tr = cube->getComponent<Transform>("transform");
-    //int degrees = 0;
-    //tr->rotate(degrees, AXIS_ROTATIONS_Z);
-    //degrees += 1;
+	renderManager().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
-    SDL_Event event;
-    while (SDL_WaitEvent(&event)) {
+	SDL_Event event;
+	bool quit = false;
 
-        om().render();
+	while (!quit) {
 
-        plane->update();
-        cube->update();
+		while (SDL_PollEvent(&event)) {
 
-        pm().update(0.01667);
+		}
 
-        switch (event.type) {
-        case SDL_EVENT_QUIT:
-            return 0;
-        }
-    }
+		//plane->update();
+		//cube->update();
 
-    return 0;
+		renderManager().render();
+		physicsManager().update(0.01667);
+
+		switch (event.type) {
+		case SDL_EVENT_QUIT:
+			return quit = true;
+		}
+	}
+
+	return 0;
+
 }
+
 
 #endif
 #endif

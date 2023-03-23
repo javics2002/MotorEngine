@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\8985074eaab63ea6648edc3365b11c21\NightlyMemoryCheck.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\34690\OneDrive\Documentos\TERCERODECARRERA\SEGUNDOCUATRIMESTRE\PROYECTOSIII\P3-Motor\Dependencies\Lua\Build\CMakeFiles\NightlyMemoryCheck" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1E9FFBF9-513E-3340-BB27-6D44B5F74579}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

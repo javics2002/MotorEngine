@@ -1,21 +1,19 @@
 #pragma once
 
-#ifndef __EC_SCENE_MANAGER
-#define __EC_SCENE_MANAGER
+#ifndef __ENTITYCOMPONENT_SCENE_MANAGER
+#define __ENTITYCOMPONENT_SCENE_MANAGER
 
-
-#include <unordered_map>
-#include <string>
+#include "MotorEngine/MotorEngineAPI.h"
+#include "Utils/Singleton.h"
+#include "InfoScene.h"
 #include <memory>
 
-#include "Utils/Singleton.h"
-
+class lua_State;
 
 namespace me {
-
     class Scene;
 
-    class SceneManager : public Singleton<SceneManager> {
+    class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
         friend Singleton<SceneManager>;
 
     public:        
@@ -80,18 +78,42 @@ namespace me {
         */
         void update();
 
+        /**
+        Parse entities from .lua file to an unordered_map that will be passed to the current Scene
+        to create the entities.
+        sceneName has to be the name of the file with .lua INCLUDED. Example: sceneName => scene.lua
+
+        @returns Error Value, 0 if loadEntities worked correctly or 1 if
+        some error appeared during this function
+        */
+        int loadEntities(const std::string& sceneName);
+
     private:
+
+        /*
+        This function parses the .lua file to the unordered_map.
+        @param L is the lua_State that was opened by the function loadEntities
+        @returns Error Value, 0 if loadEntities worked correctly or 1 if
+        some error appeared during this function
+        */
+        int readEntities(lua_State* L);
+
+        /*
+        This function calls the active scene and passes the unordered_map with all the entities information
+        */
+        void pushEntities();
 
         std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
         std::shared_ptr<Scene> mActiveScene;
 
+        InfoScene mEntitiesMap;
     };
 
     /**
     This macro defines a compact way for using the singleton SceneManager, 
     instead of writing SceneManager::instance()->method() we write sm().method()
     */
-    inline SceneManager& sm() {
+    inline SceneManager& sceneManager() {
         return *SceneManager::instance();
     };
 

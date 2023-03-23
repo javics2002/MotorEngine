@@ -1,29 +1,46 @@
 #pragma once
-#ifndef __MOTORENGINE_MAIN
-#define __MOTORENGINE_MAIN
+#ifndef __MOTORENGINE_MOTORENGINE
+#define __MOTORENGINE_MOTORENGINE
 
+#include "MotorEngineAPI.h"
+#include <Windows.h>
 #include <chrono>
+#include <string>
 
 union SDL_Event;
 
-#include "Audio/SoundManager.h"
-
 namespace me {
-	class Entity;
-	class OgreManager;
-
 	/*
 	class MotorEngine provides/has information about the characteristics of the Engine,
 	as the initialization, main loop and memory management of the program.
 	*/
-	class MotorEngine {
+	class __MOTORENGINE_API MotorEngine {
 	public:
-		int setup();
+		MotorEngine();
+		~MotorEngine();
+
+		/**
+		Loads and initializates the engine and the game.
+		Automatically loads a _d sufix dll if _DEBUG flags is defined.
+		@params gameName Name of the .dll of the game, without any sufixes
+		*/
+		bool setup(std::string gameName = "VroomVroom");
 		void loop();
 		void exit();
 
 	private:
-		OgreManager* ogreManager; // All information related to graphics and render.
+		/*
+		Load .dll of the Game
+		@param gameDllName is the name of the .dll file
+		@returns If the game loaded correctly, the function returns true.
+		Else, the function will return false.
+		*/
+		bool loadGame(std::string gameDllname);
+
+		/*
+		Creates each component factories and adds them to the componentsFactories map
+		*/
+		void initFactories();
 
 		/**
 		Function used to update the values of the frames
@@ -36,15 +53,13 @@ namespace me {
 
 		/*
 		* If we press SDL_QUIT (Exit button), the game stops and closes
+		* @param userData is the aditional information of the SDL callback. By default, userData contains nullptr.
+		* @param event is a SDL variable that contains information about the SDL_Event launched by any event.
+		* @returns is ignored
 		*/
 		static int quitLoop(void* userdata, SDL_Event* event);
 
-		//Test hito 1
-		Entity* plane, *cube;
-		FMOD_RESULT result;
-		FMOD::System* Sound_System = NULL;
-		FMOD::Sound* sonido, *disparo;
-		FMOD::Channel* canal1;
+		HMODULE game;
 	};
 }
 
