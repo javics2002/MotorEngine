@@ -1,0 +1,14 @@
+---
+
+FMOD
+
+1. descargar de la web estando registrado: https://fmod.com/download
+2. añadir includes de: \FMOD_Src\api\core\inc
+3. añadir bibliotecas de: \FMOD_Src\api\core\lib\{Plaform}
+4. Copiar dll's de: \FMOD_Src\api\core\lib\{Plaform} 
+en el directorio del proyecto.
+
+---
+
+
+
