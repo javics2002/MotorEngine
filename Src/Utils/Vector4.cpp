@@ -86,8 +86,7 @@ void Vector4::operator=(const Vector4* v)
 }
 
 Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
-	Ogre::Vector3f* v3 = new Ogre::Vector3f(x, y, z);
-	return Ogre::Quaternion(v3);
+	return Ogre::Quaternion(x, y, z, w);
 }
 
 btQuaternion Vector4::getRotationInBullet() {
