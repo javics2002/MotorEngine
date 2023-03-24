@@ -1,15 +1,38 @@
 #include "Time.h"
 
-Time::Time()
+Time::Time(const float& gameStartTime)
 {
-	// TODO: INIT VARIABLES?
-	frameCounter = 0;
-
-	deltaTime = 1 / fpsValue;
+	mFrameCounter = 0;
+	mFpsValue = 0;
+	mDeltaTime = 0;
+	mFixedDeltaTime = 0;
+	mGameStartTime = gameStartTime;
 }
 
 float Time::getFPS() {
-	return frameCounter / gameStartTime * 1000;
+	return mFpsValue;
+}
+
+
+float Time::getDeltaTime()
+{
+	return mDeltaTime;
+}
+
+float Time::getFixedDeltaTime()
+{
+	return mFixedDeltaTime;
+}
+
+void Time::update()
+{
+	mFrameCounter++; // Adds 1 frame
+	mFpsValue = mFrameCounter / mGameStartTime * 1000; // Updates fps value
+
+	mDeltaTime = 1 / mFpsValue; // Update delta time
+
+	// TODO: Update fixed delta time
+
 }
 
 
@@ -23,3 +46,4 @@ void Time::disableVSYNC()
 {
 
 }
+

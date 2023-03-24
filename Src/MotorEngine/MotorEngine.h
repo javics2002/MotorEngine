@@ -8,6 +8,7 @@
 #include <string>
 
 union SDL_Event;
+class Time;
 
 namespace me {
 	/*
@@ -60,6 +61,11 @@ namespace me {
 		static int quitLoop(void* userdata, SDL_Event* event);
 
 		HMODULE game;
+
+		/*
+		* Utils
+		*/
+		Time* timeUtils;
 	};
 }
 

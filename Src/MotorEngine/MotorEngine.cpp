@@ -1,19 +1,25 @@
 #include "MotorEngine.h"
 
+// --- C++
 #include <iostream>
 #include <thread>
 #include <time.h>
 #include <memory>
 #include <random>
+// --- Managers
 #include "Audio/SoundManager.h"
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
 #include "EntityComponent/Scene.h"
+#include "Render/Window.h"
+// --- Components
 #include "EntityComponent/Components/ComponentsFactory.h"
 #include "EntityComponent/Components/FactoryComponent.h"
-#include "Render/Window.h"
+// --- Utils
+#include "Utils/Time.h"
+// --- SDL3
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
 
@@ -28,34 +34,44 @@ bool MotorEngine::setup(std::string gameName)
 {
 	loadGame(gameName); 
 
-	if (game == NULL)
-		return false;
+	//if (game == NULL)
+	//	return false;
 
-	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
+	//GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
 
-	if (entryPoint == NULL)
-		return false;
+	//if (entryPoint == NULL)
+	//	return false;
 
-	GameName name = (GameName)GetProcAddress(game, "name");
+	//GameName name = (GameName)GetProcAddress(game, "name");
 
-	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
-		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+	//Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
+	//	SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
-	// Register Motor Engine's default component factories
-	initFactories();
-	
-	// Register game's component factories
-	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
-	if (gameTypesDef != NULL)
-		gameTypesDef();
+	//// Register Motor Engine's default component factories
+	//TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
+	//if (gameTypesDef == NULL)
+	//	return false;
+	//
+	//// Añadir componentes del juego
+	//gameTypesDef();
+
+	//// Añadir componentes del motor
+	//initFactories();
+	//
+	//// Register game's component factories
+	//TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
+	//if (gameTypesDef != NULL)
+	//	gameTypesDef();
 
 	// Init managers
 	physicsManager().start();
 	std::string cam = "CameraDemo";
 	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
 	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 200, 500), Ogre::Vector3f(0, -1, -1));
+	// entryPoint();
 
-	return entryPoint();
+	return 0;
+	// return entryPoint();
 }
 
 void MotorEngine::loop()
@@ -76,6 +92,10 @@ void MotorEngine::loop()
 
 	sceneManager().getActiveScene().get()->processNewEntities();
 	sceneManager().getActiveScene().get()->start();
+	// Init Utils
+	// std::cout << gameStartFrame << "\n";
+	//float test = std::chrono::duration_cast<float, std::chrono::steady_clock::time_point>(gameStartFrame);
+	// timeUtils = new Time(test);
 
 	SDL_Event event;
 	bool quit = false;
@@ -85,11 +105,16 @@ void MotorEngine::loop()
 
 		}
 
+		timeUtils->update();
+
 		/*
 		* Update the scene
 		*/
 		physicsManager().update(0.0166);
 		sceneManager().update();
+		std::cout << timeUtils->getFPS() << "\n";
+		// physicsManager().update(timeUtils->getDeltaTime());
+		
 
 		/*
 		* Update physics
@@ -100,7 +125,7 @@ void MotorEngine::loop()
 		/*
 		* Render the scene
 		*/
-		renderManager().render();
+		// renderManager().render();
 
 		/*
 		* Update the new frames values
