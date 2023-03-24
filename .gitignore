@@ -10,7 +10,7 @@
 /Dependencies/LuaBridge/src/
 /Dependencies/LuaBridge/build/
 /Dependencies/LuaBridge/bin/
-
+/Dependencies/Lua/Build/.vs
 
 # Visual Studio Data
 /.vs
