@@ -26,7 +26,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     * All libraries and components that the engine is going to use (Render, Physics, UI...)
     * In case of the setup of the engine fails, the game can't start and the program returns an error value (-1)
     */
-    if (!engine->setup()) {
+    if (engine->setup() != 0) {
         delete engine;
         return -1;
     }

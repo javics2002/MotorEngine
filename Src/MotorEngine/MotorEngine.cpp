@@ -34,69 +34,76 @@ bool MotorEngine::setup(std::string gameName)
 {
 	loadGame(gameName); 
 
-	//if (game == NULL)
-	//	return false;
+	if (game == NULL)
+		return false;
 
-	//GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
+	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
 
-	//if (entryPoint == NULL)
-	//	return false;
+	if (entryPoint == NULL)
+		return false;
 
-	//GameName name = (GameName)GetProcAddress(game, "name");
+	GameName name = (GameName)GetProcAddress(game, "name");
 
-	//Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
-	//	SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
-	//// Register Motor Engine's default component factories
-	//TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
-	//if (gameTypesDef == NULL)
-	//	return false;
-	//
-	//// Añadir componentes del juego
-	//gameTypesDef();
+	// Register Motor Engine's default component factories
+	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
+	if (gameTypesDef == NULL)
+		return false;
+	
+	// Añadir componentes del juego
+	gameTypesDef();
 
-	//// Añadir componentes del motor
-	//initFactories();
-	//
-	//// Register game's component factories
-	//TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
-	//if (gameTypesDef != NULL)
-	//	gameTypesDef();
+	// Añadir componentes del motor
+	initFactories();
 
 	// Init managers
 	physicsManager().start();
 	std::string cam = "CameraDemo";
 	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
 	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 200, 500), Ogre::Vector3f(0, -1, -1));
-	// entryPoint();
 
-	return 0;
-	// return entryPoint();
+	return entryPoint();
 }
 
 void MotorEngine::loop()
 {
 	/*
+	Init Utils
+	*/
+	timeUtils = new Time();
+	
+	/*
 	Physics are calculated every 0.02 seconds (Fixed Update) while the rest of the game is calculated depending on the frames per second
 	of the computer
 	*/
-	const float pFrameRate = 50;
-	std::chrono::duration<double> pInterval = std::chrono::duration<double>(1.0 / pFrameRate);
+	float pFrameRate = timeUtils->getPhysicsFrameValue();
+	std::chrono::duration<double> pInterval = std::chrono::duration<double>(1.0 / pFrameRate); // -> 1 / 50
 
 	/*
-	* Three clocks that are used to calculate time between frames
+	* Two clocks that are used to calculate time between frames
 	*/
-	std::chrono::steady_clock::time_point gameStartFrame = std::chrono::high_resolution_clock::now();
-	std::chrono::steady_clock::time_point beginFrame = gameStartFrame;
-	std::chrono::steady_clock::time_point lastPhysicFrame = gameStartFrame;
+	std::chrono::steady_clock::time_point lastTick = std::chrono::high_resolution_clock::now();
+	std::chrono::steady_clock::time_point lastPhysicsTick = std::chrono::high_resolution_clock::now();
 
-	sceneManager().getActiveScene().get()->processNewEntities();
-	sceneManager().getActiveScene().get()->start();
-	// Init Utils
-	// std::cout << gameStartFrame << "\n";
-	//float test = std::chrono::duration_cast<float, std::chrono::steady_clock::time_point>(gameStartFrame);
-	// timeUtils = new Time(test);
+	/*
+	* Used to calculate Delta Time and Fixed Delta Time
+	*/
+	std::chrono::duration<double> dtAccum = std::chrono::duration<double>();
+	std::chrono::duration<double> dt = std::chrono::duration<double>();
+	std::chrono::duration<double> fixedDt = std::chrono::duration<double>();
 
+	/*
+	* FrameRate counter
+	*/
+	std::chrono::duration<double> timer = std::chrono::duration<double>();
+	unsigned int frameCounter = 0;
+	double fpsValue = 0;
+
+	// sceneManager().getActiveScene().get()->processNewEntities();
+	// sceneManager().getActiveScene().get()->start();
+	
 	SDL_Event event;
 	bool quit = false;
 	inputManager().addEvent(quitLoop, &quit);
@@ -105,34 +112,50 @@ void MotorEngine::loop()
 
 		}
 
-		timeUtils->update();
+		/*
+		* Update the new frames values
+		*/
+		dt = std::chrono::high_resolution_clock::now() - lastTick;
+		timer += dt;
+		timeUtils->deltaTime = dt.count();
+
+		// FPS
+		frameCounter++;
+		if (timer.count() > 1.0) { //every second
+			fpsValue = frameCounter / 1000;
+			timeUtils->currentFPSValue = fpsValue;
+
+			std::cout << "FPS:" << timeUtils->currentFPSValue << std::endl;
+			
+			frameCounter = 0;
+			timer = std::chrono::duration<double>();
+		}
 
 		/*
 		* Update the scene
 		*/
-		physicsManager().update(0.0166);
 		sceneManager().update();
-		std::cout << timeUtils->getFPS() << "\n";
-		// physicsManager().update(timeUtils->getDeltaTime());
 		
-
 		/*
 		* Update physics
 		*/
-		if ((beginFrame - lastPhysicFrame).count() > pFrameRate) 
-			lastPhysicFrame = beginFrame;
+		dtAccum += dt;
+		if (dtAccum >= pInterval) { // Limitado a 50 fps
+			fixedDt = std::chrono::high_resolution_clock::now() - lastPhysicsTick;
+			timeUtils->fixedDeltaTime = fixedDt.count();
+
+			physicsManager().update(timeUtils->fixedDeltaTime);
+			dtAccum = std::chrono::duration<double>();
+
+			lastPhysicsTick = std::chrono::high_resolution_clock::now();
+		}
 
 		/*
 		* Render the scene
 		*/
-		// renderManager().render();
+		renderManager().render();
 
-		/*
-		* Update the new frames values
-		*/
-		std::chrono::steady_clock::time_point endFrame = std::chrono::high_resolution_clock::now();
-		updateTimeValues(beginFrame, endFrame, gameStartFrame);
-		beginFrame = endFrame;
+		lastTick = std::chrono::high_resolution_clock::now();
 	}
 }
 
@@ -175,17 +198,6 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("animator", new FactoryAnimator());
 	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
 	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
-}
-
-void MotorEngine::updateTimeValues(const std::chrono::steady_clock::time_point& beginFrame,
-	const  std::chrono::steady_clock::time_point& endFrame, const  std::chrono::steady_clock::time_point& gameStartFrame)
-{
-	std::chrono::duration<float, std::milli> timeSinceStart = endFrame - gameStartFrame;
-	std::chrono::duration<double, std::milli> timeSinceLastFrame = endFrame - beginFrame;
-
-	//time->timeSinceStart = timeSinceStart.count();
-	//time->deltaTime = timeSinceLastFrame.count() * 0.001;
-	//time->frameCount++;
 }
 
 int MotorEngine::quitLoop(void* userdata, SDL_Event* event)

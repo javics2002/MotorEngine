@@ -11,30 +11,19 @@ physics time between frames, time scale and framerate.
 class __MOTORENGINE_API Time
 {
 public:
-	Time(const float& gameStartTime);
-	
-	/**
-	Function used to update time values
-	*/
-	void update();
+	Time();
 
 	/**
-	Read Only Function used to get the current framerate value
+	Read Only Function used to get the framerate value
 	@returns A float number representing the framerate value (Example: 60fps, 144fps)
 	*/
-	float getFPS();
+	float getGameFrameValue();
 
 	/**
-	Read Only Function used to get the current delta time value
-	@returns A float number representing the delta time value (Example: 0.016f)
+	Read Only Function used to get the physics framerate value
+	@returns A float number representing the framerate value (Example: 50.0f)
 	*/
-	float getDeltaTime();
-
-	/**
-	Read Only Function used to get the current fixed delta time value
-	@returns A float number representing the fixed delta time value (Example: 0.02f)
-	*/
-	float getFixedDeltaTime();
+	float getPhysicsFrameValue();
 
 	/**
 	Function used to enable vertical syncronization to cap the framerate of the game
@@ -46,32 +35,33 @@ public:
 	*/
 	void disableVSYNC();
 
-private:
-protected:
 	/*
 	Delta time describes the time difference between the previous frame that was drawn and the current frame.
 	*/
-	float mDeltaTime;
+	double deltaTime;
 
 	/*
 	Fixed Delta time describes the time difference between the previous PHYSICS frame that was calculated and the current PHYSICS frame.
 	*/
-	float mFixedDeltaTime;
+	double fixedDeltaTime;
 
 	/*
-	* Current framerate value
+	* Current Framerate value
 	*/
-	float mFpsValue; 
+	float currentFPSValue;
+
+private:
+protected:
 
 	/*
-	* Frame counter since the game started
+	* Framerate value (60, 144)
 	*/
-	unsigned long mFrameCounter;
+	float mFrameValue; 
 
 	/*
-	* Time value when game started
+	*  Physics framerate value (50)
 	*/
-	float mGameStartTime;
+	float mPhysicsFrameValue;
 };
 
 #endif

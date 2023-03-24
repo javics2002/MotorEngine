@@ -1,40 +1,20 @@
 #include "Time.h"
 
-Time::Time(const float& gameStartTime)
+Time::Time()
 {
-	mFrameCounter = 0;
-	mFpsValue = 0;
-	mDeltaTime = 0;
-	mFixedDeltaTime = 0;
-	mGameStartTime = gameStartTime;
+	mFrameValue = 60;
+	mPhysicsFrameValue = 50;
 }
 
-float Time::getFPS() {
-	return mFpsValue;
-}
-
-
-float Time::getDeltaTime()
+float Time::getGameFrameValue()
 {
-	return mDeltaTime;
+	return mFrameValue;
 }
 
-float Time::getFixedDeltaTime()
+float Time::getPhysicsFrameValue()
 {
-	return mFixedDeltaTime;
+	return mPhysicsFrameValue;
 }
-
-void Time::update()
-{
-	mFrameCounter++; // Adds 1 frame
-	mFpsValue = mFrameCounter / mGameStartTime * 1000; // Updates fps value
-
-	mDeltaTime = 1 / mFpsValue; // Update delta time
-
-	// TODO: Update fixed delta time
-
-}
-
 
 // TODO: VSYNC
 void Time::enableVSYNC()
