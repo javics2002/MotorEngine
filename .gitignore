@@ -1,16 +1,8 @@
 # Builds
-/Dependencies/Ogre/Build
-/Dependencies/SDL/Build
-/Dependencies/Bullet/Build
-/Dependencies/CEGUI/Build
-/Dependencies/FMOD/FMOD_Src\bin
-/Dependencies/FMOD/FMOD_Src\doc
-/Dependencies/FMOD/FMOD_Src\plugins
-/Dependencies/FMOD/FMOD_Src\uninstall.exe
-/Dependencies/LuaBridge/src/
-/Dependencies/LuaBridge/build/
-/Dependencies/LuaBridge/bin/
-/Dependencies/Lua/Build/.vs
+/Dependencies/*/src/
+/Dependencies/*/build/
+/Dependencies/*/bin/
+
 
 # Visual Studio Data
 /.vs
