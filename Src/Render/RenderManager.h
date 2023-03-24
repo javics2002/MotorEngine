@@ -36,7 +36,8 @@ namespace me {
 	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
 	class OverlayManager;
-
+	class Vector3;
+	class Vector4;
 	/**
 	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
 	locate and load resources (from resource.cfg)
@@ -236,14 +237,14 @@ namespace me {
 		@return false: if it doesn't exist
 		@return true: if succeed		
 		*/
-		bool setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale);
-		bool setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot);
+		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale);
+		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
 		//set position info to the mesh with this name
-		bool setMeshPosition(std::string name, const Ogre::Vector3f &pos);
+		bool setMeshPosition(std::string name, Vector3 pos);
 		//set scale info to the mesh with this name
-		bool setMeshScale(std::string name, const Ogre::Vector3f &scale);
+		bool setMeshScale(std::string name, Vector3 scale);
 		//set rotation info to the mesh with this name
-		bool setMeshRotation(std::string name,Ogre::Quaternion rot);
+		bool setMeshRotation(std::string name, Vector4 rot);
 
 		//set material to the mesh with this name
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
@@ -267,14 +268,14 @@ namespace me {
 		@return false: if it doesn't exist
 		@return true: if succeed
 		*/
-		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale);
-		bool setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot);
+		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale);
+		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
 		//set position info to the particle with this name
-		bool setParticlePosition(std::string name, const Ogre::Vector3f& pos);
+		bool setParticlePosition(std::string name, Vector3 pos);
 		//set scale info to the particle with this name
-		bool setParticleScale(std::string name, const Ogre::Vector3f& scale);
+		bool setParticleScale(std::string name, Vector3 scale);
 		//set rotation info to the particle with this name
-		bool setParticleRotation(std::string name, Ogre::Quaternion rot);
+		bool setParticleRotation(std::string name, Vector4 rot);
 
 		//set emitting state to the particle with this name
 		bool setParticleEmitting(std::string name, bool emitted);

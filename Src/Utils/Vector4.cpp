@@ -1,4 +1,5 @@
 #include "Vector4.h"
+#include "Vector3.h"
 
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
@@ -13,10 +14,40 @@ float Vector4::lerp(float a, float b, float f)
 
 Vector4::Vector4()
 {
-	x = 1;
-	y = 1;
-	z = 1;
-	w = 1;
+	x = 0;
+	y = 0;
+	z = 0;
+	w = 0;
+}
+
+Vector4::Vector4(float a, float b, float c) {
+
+	Ogre::Vector3f* v = new Ogre::Vector3f(a, b, c);
+	v->normalise();
+
+	Ogre::Quaternion quat(v);
+
+	x = quat.x;
+	y = quat.y;
+	z = quat.z;
+	w = quat.w;
+
+	delete v;
+}
+
+Vector4::Vector4(const Vector3& v_) {
+	
+	Ogre::Vector3f *v = new Ogre::Vector3f(v_.x, v_.y, v_.z);
+	v->normalise();
+
+	Ogre::Quaternion quat(v);
+	
+	x = quat.x;
+	y = quat.y;
+	z = quat.z;
+	w = quat.w;
+
+	delete v;
 }
 
 Vector4::Vector4(float a, float b, float c, float d) {
@@ -31,22 +62,6 @@ Vector4::Vector4(const Vector4 &v) {
 	y = v.y;
 	z = v.z;
 	w = v.w;
-}
-
-Ogre::Quaternion Vector4::v4ToQuaternion() {
-
-	Ogre::Vector3f xAxis(x,y,z);
-	Ogre::Vector3f yAxis(w, z, -y);
-	Ogre::Vector3f zAxis = xAxis.crossProduct(yAxis);
-
-	Ogre::Quaternion quat;
-	quat.FromAxes(xAxis, yAxis, zAxis);
-
-	return quat;
-}
-
-btQuaternion Vector4::getRotationInBullet() {
-	return btQuaternion(x, y, z, w);
 }
 
 Vector4 Vector4::lerp(const Vector4& a, const Vector4& b, float f)
@@ -68,5 +83,29 @@ void Vector4::operator=(const Vector4* v)
 	y = v->y;
 	z = v->z;
 	w = v->w;
+}
+
+Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
+	Ogre::Vector3f* v3 = new Ogre::Vector3f(x, y, z);
+	return Ogre::Quaternion(v3);
+}
+
+btQuaternion Vector4::getRotationInBullet() {
+	return btQuaternion(x, y, z);
+}
+
+void Vector4::rotate(float degrees, Vector3 axis) {
+
+	Ogre::Vector3f v = Ogre::Vector3f(x, y, z);
+	v.normalise();
+
+	const Ogre::Radian r = Ogre::Radian(degrees);
+
+	Ogre::Quaternion quat(r, axis.v3ToOgreV3());
+
+	x += quat.x;
+	y += quat.y;
+	z += quat.z;
+	w += quat.w;
 }
 

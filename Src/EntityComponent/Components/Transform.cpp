@@ -5,9 +5,9 @@
 me::Transform::Transform()
 {
 	// Initialize position, rotation, size and scale vectors
-	mPosition = new Vector3(0.0, 0.0, 0.0);
-	mRotation = new Vector4(0.0, 0.0, 0.0, 0.0);
-	mScale = new Vector3(1.0, 1.0, 1.0);
+	mPosition = Vector3(0.0, 0.0, 0.0);
+	mRotation = Vector4(0.0, 0.0, 0.0);
+	mScale = Vector3(1.0, 1.0, 1.0);
 
 	// Set parent to null
 	mParent = nullptr;
@@ -43,8 +43,7 @@ me::Vector3 me::Transform::getPosition()
 	return mPosition;
 }
 
-me::Vector4 me::Transform::getRotation()
-{
+me::Vector4 me::Transform::getRotation() {
 	return mRotation;
 }
 
@@ -56,6 +55,11 @@ me::Vector3 me::Transform::getScale()
 void me::Transform::setPosition(Vector3 newPosition)
 {
 	mPosition = newPosition;
+}
+
+void me::Transform::setRotation(Vector3 newRotation)
+{
+	mRotation = Vector4(newRotation);
 }
 
 void me::Transform::setRotation(Vector4 newRotation)
@@ -73,30 +77,9 @@ void me::Transform::translate(Vector3 translation)
 	mPosition += translation;
 }
 
-void me::Transform::rotate(int degrees, AxisRotations axis)
+void me::Transform::rotate(float degrees, Vector3 axis)
 {
-
-	//To be implemented
-
-	//Meter en v4 la rotacion y q me devuelva el v4
-
-	Vector3 v;
-
-	switch (axis)
-	{
-	case me::AXIS_ROTATIONS_X:
-		//v = v.x();
-		break;
-	case me::AXIS_ROTATIONS_Y:
-		//v = Ogre::Vector3::UNIT_Y;
-		break;
-	case me::AXIS_ROTATIONS_Z:
-		//v = Ogre::Vector3::UNIT_Z;
-		break;
-	}
-
-	//mRotation = Ogre::Quaternion(Ogre::Degree(degrees), v);
-
+	mRotation.rotate(degrees, axis);
 }
 
 void me::Transform::scaleF(float scaleF)

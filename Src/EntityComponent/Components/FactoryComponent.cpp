@@ -44,9 +44,8 @@ Component* FactoryTransform::create(Parameters params)
     Transform* transform = new Transform();
     transform->setPosition(Vector3(value(params, "position_x", 0.0f),
         value(params, "position_y", 0.0f), value(params, "position_z", 0.0f)));
-    transform->setRotation(Vector4(value(params, "rotation_x", 0.0f),
-        value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f),
-        value(params, "rotation_w", 0.0f)));
+    transform->setRotation(Vector3(value(params, "rotation_x", 0.0f),
+        value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f)));
     transform->setScale(Vector3(value(params, "scale_x", 1.0f),
         value(params, "scale_y", 1.0f), value(params, "scale_z", 1.0f)));
     return transform;
@@ -54,23 +53,42 @@ Component* FactoryTransform::create(Parameters params)
 
 me::Component* me::FactoryAudioListener::create(Parameters params)
 {
-    return nullptr;
+
+    AudioListener* audioListener = new AudioListener();
+
+    return audioListener;
 }
 
 me::Component* me::FactoryAudioSource::create(Parameters params)
 {
-    return nullptr;
+    AudioSource* audioSource = new AudioSource();
+
+    audioSource->setSource(value(params, "source", std::string()));
+    audioSource->setPlayOnStart(value(params, "onStart", false));
+    audioSource->setVolume(value(params, "volume", 1));
+    audioSource->setIs3D(value(params, "3D", false));
+    audioSource->setLoop(value(params, "loop", false));
+
+    return audioSource;
 }
 
 me::Component* me::FactoryCamera::create(Parameters params)
 {
-    return nullptr;
+    Camera* camera = new Camera();
+
+    camera->setName(value(params, "name", std::string()));
+    camera->setNearDistance(value(params, "nearDistance", 1));
+    camera->setFarDistance(value(params, "farDistance", 1));
+    camera->setAutoRadio(value(params, "autoRadio", false));
+    camera->setZOrder(value(params, "zOrder", false));
+    camera->setLookAt(Vector3(value(params, "lookAt_x", 0), value(params, "lookAt_y", 0), value(params, "lookAt_y", 0)));
+
+    return camera;
 }
 
 me::Component* me::FactoryCollider::create(Parameters params)
 {
     Collider* collider = new Collider();
-    // TODO: Y los setters????
 
     return collider;
 }
@@ -109,13 +127,13 @@ me::Component* me::FactoryParticleSystem::create(Parameters params)
 me::Component* me::FactoryRigidBody::create(Parameters params)
 {
     RigidBody* rigidbody = new RigidBody();
+
     rigidbody->setMass(value(params, "mass", 0.0f));
     rigidbody->setRestitution(value(params, "restitution", 0.0f));
     rigidbody->setFriction(value(params, "friction", 0.0f));
     rigidbody->setTrigger(value(params, "istrigger", false));
-    
-    // TODO: colShape??
-    // TODO: mvType??
+    rigidbody->setColShape(value(params, "colShape", 1));
+    rigidbody->setMomeventType(value(params, "mvType", 1));
 
     return rigidbody;
 }

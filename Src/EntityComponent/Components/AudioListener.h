@@ -11,6 +11,8 @@ namespace me {
 		AudioListener();
 		~AudioListener();
 
+		void start() override;
+
 		/**
 		* Update the position of the audio listener based on the position of the entity it is attached to.
 		*/

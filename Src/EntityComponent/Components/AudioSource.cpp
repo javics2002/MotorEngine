@@ -3,30 +3,28 @@
 #include "Transform.h"
 #include "EntityComponent/Entity.h"
 
-me::AudioSource::AudioSource(const char* source, float volume, bool playOnStart, bool is3D, bool loop)
+me::AudioSource::AudioSource()
 {
-    mSource = source;
-    mVolume = volume;
-    mLoop = loop;
-    mIs3D = is3D;
-
-    // Create a 3D sound or a normal sound
-    if (is3D)
-        // sm().create3DSound(source, mSound, 1);
-    // else sm().createNormalSound(source, mSound, 1);
-
-    // If the sound was not created, output an error message
-    if (!mSound) 
-        std::cout << "ERROR: Sound is null\n";
-
-    setVolume(volume);
-    if (playOnStart)
-        play();
 }
 
 me::AudioSource::~AudioSource()
 {
     soundManager().deleteSound(mSound);
+}
+
+void me::AudioSource::start()
+{
+    // Create a 3D sound or a normal sound
+    if (mIs3D)
+        // sm().create3DSound(source, mSound, 1);
+    // else sm().createNormalSound(source, mSound, 1);
+
+    // If the sound was not created, output an error message
+        if (!mSound)
+            std::cout << "ERROR: Sound is null\n";
+
+    if (mPlayOnStart)
+        play();
 }
 
 void me::AudioSource::update()
