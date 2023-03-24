@@ -101,8 +101,8 @@ void MotorEngine::loop()
 	unsigned int frameCounter = 0;
 	double fpsValue = 0;
 
-	// sceneManager().getActiveScene().get()->processNewEntities();
-	// sceneManager().getActiveScene().get()->start();
+	sceneManager().getActiveScene().get()->processNewEntities();
+	sceneManager().getActiveScene().get()->start();
 	
 	SDL_Event event;
 	bool quit = false;
