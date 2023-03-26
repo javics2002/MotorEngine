@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- exporter: blender2ogre 0.8.3 -->
+<!-- export_time: Sun, 26 Mar 2023 01:23:55 +0000 -->
+<scene author="Alfonso Rodulfo" formatVersion="1.1" >
+  <nodes />
+  <externals />
+  <environment >
+    <colourBackground b="0.050876" g="0.050876" r="0.050876" />
+  </environment>
+</scene>

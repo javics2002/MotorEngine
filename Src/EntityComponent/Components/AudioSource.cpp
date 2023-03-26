@@ -9,7 +9,7 @@ me::AudioSource::AudioSource()
 
 me::AudioSource::~AudioSource()
 {
-    soundManager().deleteSound(mSound);
+    //soundManager().deleteSound(mSound);
 }
 
 void me::AudioSource::start()
@@ -30,7 +30,7 @@ void me::AudioSource::start()
 void me::AudioSource::update()
 {
     if (mIs3D) {
-        soundManager().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
+        //soundManager().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
     }
 }
 
@@ -46,12 +46,12 @@ void me::AudioSource::stop()
 
 void me::AudioSource::pause()
 {
-    soundManager().pauseSound(mSound, true);
+    //soundManager().pauseSound(mSound, true);
 }
 
 void me::AudioSource::resume()
 {
-    soundManager().pauseSound(mSound, false);
+    //soundManager().pauseSound(mSound, false);
 }
 
 bool me::AudioSource::isPlaying()

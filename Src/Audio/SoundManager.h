@@ -2,10 +2,12 @@
 #ifndef _FMOD_SOUND_MANAGER
 #define _FMOD_SOUND_MANAGER
 
+#include <unordered_map>
+#include <algorithm>
+#include <cctype>
+#include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
-#include "MotorEngine/MotorEngineAPI.h"
-#include <unordered_map>
 
 namespace FMOD {
 	class Sound;
@@ -38,6 +40,8 @@ namespace me {
 	{
 		friend Singleton<SoundManager>;
 		SoundManager();
+		//Stores audio handles linked to their name.
+		std::unordered_map<std::string, FMOD::Sound*> mSoundsMap;
 		//Stores audio handles linked to the last channel they where played in.
 		std::unordered_map<FMOD::Sound*,CHANNEL_NUMBER> mLastPlayedMap;
 		//Stores channel group names linked to their handle.
@@ -58,25 +62,39 @@ namespace me {
 		bool checkFMODResult(FMOD_RESULT FMODResult);
 
 		/**
+		Gets a sound handle via the name of the sound.
+		@param soundName : the name of the sound linked to a channek needed to look for a certain channel.
+		@returns Nullptr if there is no sound with that given name.
+		*/
+		FMOD::Sound* getSound(std::string soundName);
+
+		/**
 		Gets a channel handle via the sound that was last played on it.
-		@param sound : the sound handle needed to look for a channel.
+		@param soundName : the name of the sound linked to a channel needed to look for a certain channel.
 		@returns Nullptr if there is no such channel or the correspondent channel.
 		*/
-		FMOD::Channel* getChannel(FMOD::Sound* sound);
+		FMOD::Channel* getChannel(std::string soundName);
 
 		/**
 		Gets a group channel handle via the name it was created with.
 		@param groupName : the name of the group channel.
 		@returns Nullptr if there is no such group channel or the correspondent group channel.
 		*/
-		FMOD::ChannelGroup* getGroupChannel(std::string groupName);
+		FMOD::ChannelGroup* getGroupChannel(std::string channelGroupName);
 
 		/**
 		Changes the volume of a channel.
-		@param group : the handle of the group channel we want to change the volume of.
+		@param groupName : the name of the group channel which volume will be changed.
 		@param volume : the new value the volume will have now.
+		@returns False if there is no such channel os ir an FMOD error, true if the volume is changed.
 		*/
-		void changeChannelVolume(FMOD::ChannelGroup* group, float volume);
+		bool changeChannelVolume(std::string channelGroupName, float volume);
+
+		/**
+		Makes sure the sound name is in all lower case with no spaces.
+		@param name : the name to change.
+		*/
+		void nameToLower(std::string &name);
 
 		FMOD_RESULT mResult;
 
@@ -88,68 +106,72 @@ namespace me {
 		/**
 		Creates a 3D sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
-		@param soundHandle : the specific sound variable that will be used to play sounds.
-		@param channel : the first channel the sound will be linked to.
+		@param soundName : the especific name of the sound which mode will be changed.
 		@param minDistance : minimum audible distance for a 3D sound.
 		@param maxDistance : maximum audible distance for a 3D sound.
+		@return A boolean representing whether or not a the sound was created.
 		*/
-		void create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel, float minDistance, float maxDistance);
+		bool create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance);
 		/**
 		Creates a normal sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
-		@param soundHandle : the specific sound variable that will be used to play sounds.
-		@param channel : the first channel the sound will be linked to.
+		@param soundName : the especific name of the sound which mode will be changed.
+		@return A boolean representing whether or not a the sound was created.
 		*/
-		void createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel = 0);
+		bool createNormalSound(const char* soundPath, std::string soundName);
 		/**
 		Sets the speed a certain sound wil be played at.
-		@param soundHandle : the especific sound which speed will be changed.
+		@param soundName : the especific name of the sound which speed will be changed.
 		@param newSpeed : the new value the sound will be played at.
+		@return A boolean showing wether or not the speed was changed.
 		*/
-		void setSpeed(FMOD::Sound* soundHandle, float newSpeed);
+		bool setSpeed(std::string soundName, float newSpeed);
 		/**
 		Sets the mode of a certain sound.
-		@param sound : the especific sound which mode will be changed.
+		@param soundName : the especific name of the sound which mode will be changed.
 		@param newMode: the new flag the sound will be changed to.
+		@return A boolean showing wether or not the mode was set.
 		*/
-		void setMode(FMOD::Sound* sound, FMOD_MODE newMode);
+		bool setMode(std::string soundName, FMOD_MODE newMode);
 		/**
 		Create a channel group if a channel with the same name doesn't already exists.
 		@param newChannelGroup : the name for the new channel group.
 		@return A boolean representing whether or not a new channel was indeed created.
 		*/
-		bool createChannelGroup(char* newChannelGroup);
+		bool createChannelGroup(std::string groupName);
 		/**
 		Changes the volume of a certain group channel if it exists.
-		@param channelGroup : the name of the channel group.
+		@param groupName : the name of the channel group.
 		@param newVolume : the volume value the group channel will be changed to.
 		@return A boolean representing whether or not a the volume was changed.
 		*/
-		bool setChannelVolume(const char* channelGroup, float newVolume);
+		bool setChannelVolume(std::string groupName, float newVolume);
 		/**
 		Changes the volume of a certain channel if it exists.
-		@param sound : the sound handle needed to look for a channel.
+		@param soundName : the especific name of the sound which volume will be changed.
 		@param newVolume : the volume value the channel will be changed to.
+		@return A boolean representing wether or not the volume was changed.
 		*/
-		void setVolume(FMOD::Sound* sound, float newVolume);
+		bool setVolume(std::string soundName, float newVolume);
 
 		/**
 		Checks the volume of a certain channel if it exists.
-		@param sound : the sound handle needed to look for a channel.
+		@param soundName : the especific name of the sound which speed will be changed.
 		@return The specific float of the volume.
 		*/
-		float getVolume(FMOD::Sound* sound);
+		float getVolume(std::string soundName);
 
 		/**
 		Looks for a sound channel and in case that it exists, sets the pause state of that channel to "pause".
-		@param sound : the sound handle needed to look for a channel.
+		@param soundName : the especific name of the sound which speed will be paused.
 		@param pause : the new pause value the channel will get.
+		@return True if the sound is pauded, false if the sound didn't exist.
 		*/
-		void pauseSound(FMOD::Sound* sound, bool pause);
+		bool pauseSound(std::string soundName, bool pause);
 		/**
 		Sets the loopability of a certain sound  dependind on "isLoop".
 		It checks for available channels to play the sound and assigns a group channel depending on the user input.
-		@param soundHandle : the sound handle that will be played out.
+		@param soundName : the especific name of the sound which will be played.
 		@param isLoop : the value of loopability that will be used to play the sound.
 		@param channelGroup : the channel group where the sound will played on.
 		@param channelPos : the channel's position used for panning and attenuation.
@@ -158,12 +180,13 @@ namespace me {
 		By default it is set to constant loop.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped);
+		bool playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
-		@param soundHandle : the sound handle which dynamic memory will be released.
+		@param soundName : the especific name of the sound which speed will be changed.
+		@return A boolean showing wether or not the sound was eliminated.
 		*/
-		void deleteSound(FMOD::Sound* soundHandle);
+		bool deleteSound(std::string soundName);
 		/**
 		Updates the position of a sound listener relative to a certain sound.
 		@param index : the index that refers to a certain listener.
@@ -182,10 +205,11 @@ namespace me {
 
 		/**
 		Sets the global position of a sound i.
-		@param sound : the sound handle which position will be set.
+		@param soundName : the especific name of the sound which position will be set.
 		@param position : the value of the position of the sound.
+		@return A boolean showing wether or not the position was set.
 		*/
-		void setSoundPosition(FMOD::Sound*& sound, Vector3 position);
+		bool setSoundPosition(std::string soundName, Vector3 position);
 
 		/**
 		Gets the useful listener which will be able to listen to a new sound.
@@ -198,7 +222,7 @@ namespace me {
 			}
 			return -1;
 		}
-		
+
 		
 	};
 

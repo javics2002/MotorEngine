@@ -1,8 +1,7 @@
 #include "SoundManager.h"
-
 #include <fmod.hpp>
 #include <fmod_errors.h>
-#include <Utils/Vector3.h>
+#include <iostream>
 
 me::SoundManager::SoundManager() {
 
@@ -34,77 +33,142 @@ bool me::SoundManager::checkFMODResult(FMOD_RESULT FMODResult)
 	if (FMODResult != FMOD_OK)
 	{
 		printf("FMOD error! (%d) %s\n", FMODResult, FMOD_ErrorString(FMODResult));
-#ifdef DEBUG
+#ifdef _DEBUG
 		exit(-1);
 #endif // DEBUG
+		return false;
 	}
 	return true;
 }
 
-FMOD::Channel* me::SoundManager::getChannel(FMOD::Sound* sound)
+FMOD::Sound* me::SoundManager::getSound(std::string soundName)
 {
-	auto returnedChannel = mLastPlayedMap.find(sound);
-	if (returnedChannel == mLastPlayedMap.end()) return nullptr;
-	return mChannelsVector[returnedChannel->second];
+	nameToLower(soundName);
+	auto returnedSound= mSoundsMap.find(soundName);
+	if (returnedSound == mSoundsMap.end()) return nullptr;
+	return returnedSound->second;
 }
 
-FMOD::ChannelGroup* me::SoundManager::getGroupChannel(std::string groupName)
+FMOD::Channel* me::SoundManager::getChannel(std::string soundName)
 {
-	auto returnedGroup = mChannelGroupMaps.find(groupName);
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle != nullptr) {
+		auto returnedChannel = mLastPlayedMap.find(soundHandle);
+		if (returnedChannel == mLastPlayedMap.end()) return nullptr;
+		return mChannelsVector[returnedChannel->second];
+	}
+	else {
+		return nullptr;
+	}
+}
+
+FMOD::ChannelGroup* me::SoundManager::getGroupChannel(std::string channelGroupName)
+{
+	nameToLower(channelGroupName);
+	auto returnedGroup = mChannelGroupMaps.find(channelGroupName);
 	if (returnedGroup == mChannelGroupMaps.end()) return nullptr;
 	return returnedGroup->second;
 }
 
-void me::SoundManager::changeChannelVolume(FMOD::ChannelGroup* group, float volume)
+bool me::SoundManager::changeChannelVolume(std::string channelGroupName, float volume)
 {
-	mResult = group->setVolume(volume);
-	checkFMODResult(mResult);
+	nameToLower(channelGroupName);
+	auto returnedGroup = mChannelGroupMaps.find(channelGroupName);
+	if (returnedGroup == mChannelGroupMaps.end()) return false;
+	mResult = returnedGroup->second->setVolume(volume);
+	return checkFMODResult(mResult);
+}
+
+void me::SoundManager::nameToLower(std::string& name)
+{
+	name.erase(std::remove_if(name.begin(), name.end(), ::isspace),
+		name.end());
+	std::transform(name.begin(), name.end(), name.begin(), ::tolower);
 }
 
 void me::SoundManager::systemRefresh()
 {
 	mResult = mSoundSystem->update();
-	if (mResult != FMOD_OK)
-	{
-		printf("FMOD error! (%d) %s\n", mResult, FMOD_ErrorString(mResult));
-		exit(-1);
-	}
+	checkFMODResult(mResult);
+#ifdef _DEBUG
+	//std::cout << "System refreshed." << "\n";
+#endif // DEBUG
 }
 
-void me::SoundManager::create3DSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel, float minDistance, float maxDistance)
+bool me::SoundManager::create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance)
 {
-	mResult = mSoundSystem->createSound(soundPath, FMOD_3D, 0, &soundHandle);
+	nameToLower(soundName);
+	FMOD::Sound* newSoundHandle;
+	auto sound = mSoundsMap.find(soundName);
+	if (sound != mSoundsMap.end()) return false;
+
+	mResult = mSoundSystem->createSound(soundPath, FMOD_3D, 0, &newSoundHandle);
+	if(!checkFMODResult(mResult)) return false;
+
+	mResult = newSoundHandle->set3DMinMaxDistance(minDistance * DISTANCE_FACTOR, maxDistance * DISTANCE_FACTOR);
+	if (!checkFMODResult(mResult)) return false;
 
 	if (checkFMODResult(mResult)) {
-		std::pair<FMOD::Sound*, int> newSound(soundHandle, channel);
-		mLastPlayedMap.insert(newSound);
+		std::pair<std::string, FMOD::Sound*> newSound(soundName, newSoundHandle);
+		mSoundsMap.insert(newSound);
+#ifdef _DEBUG
+		std::cout << "Sound created." << "\n";
+#endif // DEBUG
+		return true;
+	} 
+	else {
+		return false;
 	}
-	mResult = soundHandle->set3DMinMaxDistance(minDistance * DISTANCE_FACTOR, maxDistance * DISTANCE_FACTOR);
-	checkFMODResult(mResult);
+
+	
 }
 
-void me::SoundManager::createNormalSound(const char* soundPath, FMOD::Sound*& soundHandle, int channel)
+bool me::SoundManager::createNormalSound(const char* soundPath, std::string soundName)
 {
-	mResult = mSoundSystem->createSound(soundPath, FMOD_DEFAULT, 0, &soundHandle);
+	nameToLower(soundName);
+	FMOD::Sound* newSoundHandle;
+	auto sound = mSoundsMap.find(soundName);
+	if (sound != mSoundsMap.end()) return false;
+
+	mResult = mSoundSystem->createSound(soundPath, FMOD_DEFAULT, 0, &newSoundHandle);
+
 	if(checkFMODResult(mResult)){
-		std::pair<FMOD::Sound*, int> newSound(soundHandle, channel);
-		mLastPlayedMap.insert(newSound);
+		std::pair<std::string, FMOD::Sound*> newSound(soundName, newSoundHandle);
+		mSoundsMap.insert(newSound);
+#ifdef _DEBUG
+		std::cout << "Sound created." << "\n";
+#endif // DEBUG
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
-void me::SoundManager::pauseSound(FMOD::Sound* sound, bool pause)
+bool me::SoundManager::pauseSound(std::string soundName, bool pause)
 {
+	nameToLower(soundName);
 	bool isPaused;
-	auto channel = getChannel(sound);
-	if (channel != nullptr){
+	FMOD::Channel* channel = getChannel(soundName);
+	if (channel != nullptr) {
 		mResult = channel->getPaused(&isPaused);
 		checkFMODResult(mResult);
 		channel->setPaused(pause);
+		return true;
 	}
+	else {
+		return false;
+	}
+
 }
 
-bool me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped)
+bool me::SoundManager::playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped)
 {
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle == nullptr) return false;
+
 	if (isLoop) {
 		mResult = soundHandle->setMode(FMOD_LOOP_NORMAL);
 		checkFMODResult(mResult);
@@ -143,12 +207,17 @@ bool me::SoundManager::playSound(FMOD::Sound* soundHandle, bool isLoop, const ch
 	return true;
 }
 
-void me::SoundManager::deleteSound(FMOD::Sound* soundHandle)
+bool me::SoundManager::deleteSound(std::string soundName)
 {
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle == nullptr) return false;
+
 	mResult = soundHandle->release();
-	checkFMODResult(mResult);
 
 	mLastPlayedMap.erase(soundHandle);
+
+	return checkFMODResult(mResult);
 }
 
 void me::SoundManager::updateListenersPosition(int index, Vector3 listenerPos, Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel)
@@ -162,28 +231,43 @@ void me::SoundManager::removeListener(int index)
 	updateListenersPosition(index, { 999999,999999,999999 }, { 0,0,0 }, { 0,0,0 }, { 0,0,0 });
 }
 
-void me::SoundManager::setSoundPosition(FMOD::Sound*& sound, Vector3 position)
+bool me::SoundManager::setSoundPosition(std::string soundName, Vector3 position)
 {
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle == nullptr) return false;
 	//TO BE IMPLEMENTED
 }
 
-void me::SoundManager::setSpeed(FMOD::Sound* soundHandle, float newSpeed)
+bool me::SoundManager::setSpeed(std::string soundName, float newSpeed)
 {
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle == nullptr) return false;
+
 	mResult = soundHandle->setMusicSpeed(newSpeed);
-	checkFMODResult(mResult);
+
+	return checkFMODResult(mResult);
 }
 
-void me::SoundManager::setMode(FMOD::Sound* sound, FMOD_MODE newMode)
+bool me::SoundManager::setMode(std::string soundName, FMOD_MODE newMode)
 {
-	sound->setMode(newMode);
+	nameToLower(soundName);
+	FMOD::Sound* soundHandle = getSound(soundName);
+	if (soundHandle == nullptr) return false;
+
+	mResult = soundHandle->setMode(newMode);
+	return checkFMODResult(mResult);
 }
-bool me::SoundManager::createChannelGroup(char* channelGroupName)
+
+bool me::SoundManager::createChannelGroup(std::string groupName)
 {
+	nameToLower(groupName);
+	const char* channelGroupName = groupName.c_str();
 	if ((int(channelGroupName[0]) > 96) && (int(channelGroupName[0]) < 122)) channelGroupName[0] - 32;
 	auto channelGroup = mChannelGroupMaps.find(channelGroupName);
 	if (channelGroup == mChannelGroupMaps.end()) {
 			FMOD::ChannelGroup* newChannelGroup;
-	
 			mSoundSystem->createChannelGroup(channelGroupName, &newChannelGroup);
 			std::pair<std::string, FMOD::ChannelGroup*> newGroup(channelGroupName, newChannelGroup);
 			mChannelGroupMaps.insert(newGroup);
@@ -193,29 +277,40 @@ bool me::SoundManager::createChannelGroup(char* channelGroupName)
 	return false;
 }
 
-bool me::SoundManager::setChannelVolume(const char* channelGroup, float newVolume)
+bool me::SoundManager::setChannelVolume(std::string groupName, float newVolume)
 {
-	auto changedGroup = getGroupChannel(channelGroup);
+	nameToLower(groupName);
+	const char* channelGroup = groupName.c_str();
+	FMOD::ChannelGroup* changedGroup = getGroupChannel(channelGroup);
 	if (changedGroup == nullptr) {
 		return false;
 	}
 	else {
-		changeChannelVolume(changedGroup, newVolume);
+		return changeChannelVolume(channelGroup, newVolume);
 	}
 }
 
-void me::SoundManager::setVolume(FMOD::Sound* sound, float newVolume)
+bool me::SoundManager::setVolume(std::string soundName, float newVolume)
 {
-	auto channel = getChannel(sound);
-	if (channel != nullptr) channel->setVolume(newVolume);
+	nameToLower(soundName);
+	FMOD::Channel* channel = getChannel(soundName);
+	if (channel != nullptr) {
+		mResult = channel->setVolume(newVolume);
+		return checkFMODResult(mResult);
+	}
+	else {
+		return false;
+	}
 }
 
-float me::SoundManager::getVolume(FMOD::Sound* sound)
+float me::SoundManager::getVolume(std::string soundName)
 {
-	auto channel = getChannel(sound);
+	nameToLower(soundName);
+	FMOD::Channel* channel = getChannel(soundName);
 	float volume;
 	if (channel != nullptr) {
-		channel->getVolume(&volume);
+		mResult = channel->getVolume(&volume);
+		checkFMODResult(mResult);
 		return volume;
 	}
 }

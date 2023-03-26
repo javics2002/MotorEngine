@@ -2,7 +2,7 @@ Entities = {
 	Circuit = {
 	    Transform = {
             position = { x = 0, y = 0, z = 0 },
-            scale = { x = 1, y = 1, z = 1 }
+            scale = { x = 5.3, y = 1, z = 1.4 }
 	    },
 	    -- RigidBody = {
 		--     colShape = 1,
@@ -18,14 +18,21 @@ Entities = {
         -- },
         meshrenderer = {
             mesh = "p",
-            meshName = "cube.mesh",
-            materialName = "Material/roja"
+            meshName = "Circuito.mesh",
+            --materialName = "Material/roja"
         }
 	},
 
 	Car = {
         Transform = {
-            position = { y = 1 }
+            position = { x= -1.3, y = 0.1, z = -1 },
+            scale = { x = 0.015, y = 0.015, z = 0.015 }
+
+        },
+        meshrenderer = {
+            mesh = "kart",
+            meshName = "Kart.mesh",
+            --materialName = "Material/roja"
         }
 	},
     
