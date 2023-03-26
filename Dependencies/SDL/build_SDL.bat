@@ -22,31 +22,10 @@ call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 
 rem Parámetros de instalación
 set "project=SDL3" 
-set "target=SDL3" 
 set "src=SDL" 
-set "repo=https://github.com/libsdl-org/SDL.git"
-
-
-
-rem Download  
-if not exist "src/CMakeLists.txt" (
-
-    rem Descarga recursiva del repositorio y los posibles submódulos
-    git clone --recursive %repo%
-
-    ren "%src%" src
-    rmdir /s /q "src\.git"
-
-    echo: && echo "> El codigo fuente %src% ha sido creado." && echo:     
-) else (
-    echo: && echo "> El codigo %src% fuente ya existe." && echo: 
-)
-if /i "%pause_option%"=="S" ( pause )
-
-
 
 rem Build  
-if not exist "build/%target%.sln" (
+if not exist "build/%project%.sln" (
 
     mkdir build
 
@@ -73,17 +52,17 @@ set "origen=.\build\Release\"
 set "destino=.\bin\Release\" 
 
 rem Release
-if not exist "bin\Release\%target%.dll" (
+if not exist "bin\Release\%project%.dll" (
 
 
-    if not exist "build\Release\%target%.dll" ( 
+    if not exist "build\Release\%project%.dll" ( 
     
         rem Compilación en modo Release
         msbuild build\%project%.sln /t:ALL_BUILD /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 
 
-        echo: && echo "> Biblioteca %target% release generada." && echo: 
+        echo: && echo "> Biblioteca %project% release generada." && echo: 
     ) else (
-        echo: && echo "> La biblioteca %target% release ya existe." && echo: 
+        echo: && echo "> La biblioteca %project% release ya existe." && echo: 
     )
     if /i "%pause_option%"=="S" ( pause )
 
@@ -103,17 +82,17 @@ set "origen=.\build\Debug\"
 set "destino=.\bin\Debug\" 
 
 rem Debug
-if not exist "bin\Debug\%target%.dll" (
+if not exist "bin\Debug\%project%.dll" (
 
 
-    if not exist "build\Debug\%target%.dll" ( 
+    if not exist "build\Debug\%project%.dll" ( 
     
         rem Compilación en modo Debug
         msbuild build\%project%.sln /t:ALL_BUILD /p:Configuration=Debug /p:Platform=x64 /p:PlatformToolset=v143 
         
-        echo: && echo "> Biblioteca %target% debug generada." && echo: 
+        echo: && echo "> Biblioteca %project% debug generada." && echo: 
     ) else (
-        echo: && echo "> La biblioteca %target% debug ya existe." && echo: 
+        echo: && echo "> La biblioteca %project% debug ya existe." && echo: 
     )
     if /i "%pause_option%"=="S" ( pause )
 

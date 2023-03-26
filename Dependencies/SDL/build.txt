@@ -2,10 +2,9 @@
 
 SDL3
 
-1. descargar deL repo: https://github.com/libsdl-org/SDL.git
-2. crear build con cmake y src.
-3. compilar build en release y debug.
-4. todo el material final en bin.
+1. crear build con cmake y src.
+2. compilar build en release y debug.
+3. todo el material (dll) final en bin.
 
 ---
 

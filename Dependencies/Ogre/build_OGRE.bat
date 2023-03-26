@@ -27,38 +27,6 @@ rem Parámetros de instalación
 set "project0=ALL_BUILD" 
 set "project=OGRE" 
 set "target=OgreMain"
-set "src=ogre-master" 
-set "repo=https://github.com/OGRECave/ogre/archive/refs/heads/master.zip"
-
-
-if not exist "src/CMakeLists.txt" (    
-
-    rem Download  
-    if not exist "%src%.zip" (
-
-        rem Descarga compacta 
-        curl -L %repo% -o %src%.zip
-
-        echo: && echo "> La descarga de %src%.zip ha sido realizada." && echo: 
-    ) else (
-        echo: && echo "> La descarga de %src%.zip ya existe." && echo: 
-    )
-    if /i "%pause_option%"=="S" ( pause )
-
-
-
-    rem Extracción del contenido 
-    powershell Expand-Archive -Path %src%.zip -DestinationPath .
-
-    ren %src% "src"
-    del %src%.zip
-
-    echo: && echo "> El codigo fuente %project% ha sido creado." && echo: 
-) else (
-    echo: && echo "> El codigo %project% fuente ya existe." && echo: 
-)
-if /i "%pause_option%"=="S" ( pause )
-
 
 
 rem Build  

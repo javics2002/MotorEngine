@@ -1,10 +1,7 @@
 # Builds
-/Dependencies/*/src/
 /Dependencies/*/build/
 /Dependencies/*/bin/
-/Dependencies/utilidades/
-/Dependencies/FMOD/FMOD_Src/
-
+/Dependencies/LuaBridge/src/
 
 # Visual Studio Data
 /.vs
