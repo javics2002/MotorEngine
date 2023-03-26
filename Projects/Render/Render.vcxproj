@@ -141,7 +141,7 @@
       <PreprocessorDefinitions>_DEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Src\PlugIns\ParticleFX\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Dependencies\Ogre\Src\Components\Overlay\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\src\Components\Overlay\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\build\include-config-debug;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,7 +150,7 @@
       <AdditionalDependencies>OgreMain_d.lib;SDL3.lib;OgreRTShaderSystem_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;Plugin_ParticleFX_d.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
@@ -163,7 +163,7 @@
       <PreprocessorDefinitions>NDEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Src/;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Src\PlugIns\ParticleFX\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Build\include-config-debug;$(SolutionDir)Dependencies\SDL\Src\include;$(SolutionDir)Dependencies\Ogre\Src\Components\Overlay\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\src\Components\Overlay\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\build\include-config-debug;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -174,7 +174,7 @@
       <AdditionalDependencies>OgreMain.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies/SDL/Build/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;Plugin_ParticleFX.lib;SDL3.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>

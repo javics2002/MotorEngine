@@ -1,8 +1,7 @@
 # Builds
-/Dependencies/*/src/
 /Dependencies/*/build/
 /Dependencies/*/bin/
-
+/Dependencies/LuaBridge/src/
 
 # Visual Studio Data
 /.vs

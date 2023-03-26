@@ -1,0 +1,12 @@
+---
+
+SDL3
+
+1. crear build con cmake y src.
+2. compilar build en release y debug.
+3. todo el material (dll) final en bin.
+
+---
+
+
+

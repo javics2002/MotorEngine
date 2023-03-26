@@ -97,6 +97,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,6 +112,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,7 +139,7 @@
       <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,7 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\SDL\Src\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,7 +163,7 @@
       <AdditionalDependencies>fmod_vc.lib;fmodstudio_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

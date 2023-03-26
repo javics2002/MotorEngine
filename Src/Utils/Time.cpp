@@ -2,16 +2,19 @@
 
 Time::Time()
 {
-	// TODO: INIT VARIABLES?
-	frameCounter = 0;
-
-	deltaTime = 1 / fpsValue;
+	mFrameValue = 60;
+	mPhysicsFrameValue = 50;
 }
 
-float Time::getFPS() {
-	return frameCounter / gameStartTime * 1000;
+float Time::getGameFrameValue()
+{
+	return mFrameValue;
 }
 
+float Time::getPhysicsFrameValue()
+{
+	return mPhysicsFrameValue;
+}
 
 // TODO: VSYNC
 void Time::enableVSYNC()
@@ -23,3 +26,4 @@ void Time::disableVSYNC()
 {
 
 }
+
