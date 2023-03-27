@@ -8,10 +8,8 @@ instancias de singleton.*/
 #define __UTILS_SINGLETON
 
 #include <memory>
-#ifdef _DEBUG
 #include <typeinfo>
 #include <iostream>
-#endif
 
 namespace me {
 	

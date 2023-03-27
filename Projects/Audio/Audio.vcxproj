@@ -160,7 +160,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\lib\x64; $(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalDependencies>fmod_vc.lib;fmodstudio_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>fmodL_vc.lib;fmodstudioL_vc.lib;</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\FMOD\src\api\core\lib\x64\;$(SolutionDir)Dependencies\FMOD\src\api\studio\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
