@@ -132,8 +132,8 @@ me::Component* me::FactoryRigidBody::create(Parameters params)
     rigidbody->setRestitution(value(params, "restitution", 0.0f));
     rigidbody->setFriction(value(params, "friction", 0.0f));
     rigidbody->setTrigger(value(params, "istrigger", false));
-    rigidbody->setColShape(value(params, "colShape", 1));
-    rigidbody->setMomeventType(value(params, "mvType", 1));
+    rigidbody->setColShape(value(params, "colshape", 1));
+    rigidbody->setMomeventType(value(params, "mvtype", 1));
 
     return rigidbody;
 }

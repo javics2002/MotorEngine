@@ -29,6 +29,19 @@ Entities = {
             scale = { x = 0.015, y = 0.015, z = 0.015 },
             rotation = {x = 0, y = 180, z = 0}
         },
+        RigidBody = {
+            colShape = 1,
+            mvType = 2,
+            mass = 5,
+            restitution = .5,
+            friction = .3,
+            isTrigger = false
+        },
+        vehicleController = {
+            speed = 0.05;
+            rotationspeed = 3;
+            driftFactor = 1;
+        },
         meshrenderer = {
             mesh = "kart",
             meshName = "Kart.mesh",

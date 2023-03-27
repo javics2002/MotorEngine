@@ -141,11 +141,12 @@ void MotorEngine::loop()
 		* Update physics
 		*/
 		dtAccum += dt;
+		physicsManager().update(0.016);
+
 		if (dtAccum >= pInterval) { // Limitado a 50 fps
 			fixedDt = std::chrono::high_resolution_clock::now() - lastPhysicsTick;
 			timeUtils->fixedDeltaTime = fixedDt.count();
 
-			physicsManager().update(timeUtils->fixedDeltaTime);
 			dtAccum = std::chrono::duration<double>();
 
 			lastPhysicsTick = std::chrono::high_resolution_clock::now();

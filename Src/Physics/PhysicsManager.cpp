@@ -113,7 +113,7 @@ void me::PhysicsManager::start()
 //	mDynamicsWorld->setDebugDrawer(mDebug);
 //#endif
 
-	mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
+	//mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
 
 }
 
@@ -173,7 +173,7 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 		colShape->calculateLocalInertia(mass, reposeInertia);
 	}
 
-	else mass = 0;
+	else if(mvType == MOVEMENT_TYPE_STATIC) mass = 0;
 
 	//Info to create rigidBody
 	btRigidBody::btRigidBodyConstructionInfo rbContruction = btRigidBody::btRigidBodyConstructionInfo(mass, dfMotionState, colShape, reposeInertia);
