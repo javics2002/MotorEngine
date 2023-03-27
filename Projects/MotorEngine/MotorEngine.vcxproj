@@ -152,7 +152,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\Bullet\Src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -170,7 +170,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\Bullet\Src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
