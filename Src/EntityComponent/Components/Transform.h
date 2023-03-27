@@ -10,11 +10,6 @@
 
 namespace me {
 
-	enum AxisRotations
-	{
-		AXIS_ROTATIONS_X, AXIS_ROTATIONS_Y, AXIS_ROTATIONS_Z
-	};
-
 	/*
 	*The Transform class represents a position, rotation, and scale in 3D space and can be attached to entities.
 	*/
@@ -68,6 +63,13 @@ namespace me {
 
 		@param newRotation A Vector3 object representing the new rotation.
 		*/
+		void setRotation(Vector3 newRotation);
+
+		/**
+		Set the rotation vector of the Transform object.
+
+		@param newRotation A Vector4 object representing the new rotation.
+		*/
 		void setRotation(Vector4 newRotation);
 
 		/**
@@ -91,7 +93,7 @@ namespace me {
 		@param degrees the number of degrees to turn
 		@param degrees the axis where to apply the rotation 
 		*/
-		void rotate(int degrees, AxisRotations axis);
+		void rotate(float degrees, Vector3 axis);
 
 
 		/**

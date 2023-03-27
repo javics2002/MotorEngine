@@ -2,8 +2,6 @@
 #include <stdio.h>
 //#include "Utils/checkML.h"
 
-#include <fmod.hpp>
-#include <fmod_errors.h>
 #include "SoundManager.h"
 #include "Input/InputManager.h"
 #include "Render/Window.h"
@@ -13,7 +11,7 @@
 #include <SDL3/SDL_mouse.h>
 #include <SDL3/SDL_gamepad.h>
 
-const int MAX_CHANNELS = 36;
+using namespace me;
 
 struct TestSound {
 	FMOD::Sound* sound;
@@ -27,7 +25,7 @@ int shoot(void* userdata)
 
 	TestSound test = *(TestSound*)userdata;
 
-	test.system->playSound(test.sound, 0, false, &test.channel);
+	//test.system->playSound(test.sound, 0, false, &test.channel);
 
 	return 0;
 }
@@ -37,49 +35,27 @@ int main() {
 	FMOD_RESULT result;
 	//FMOD_SOUND sonido{};
 	FMOD::System* Sound_System = NULL;
-	FMOD::Sound* sonido, * disparo;
+	FMOD::Sound* doppler, * disparo;
 	FMOD::Channel* canal1 = nullptr;
-	//me::SoundManager &sm  = me::sm();
-
+	me::soundManager();
 	me::inputManager();
+
 	me::Window::init(SDL_INIT_EVERYTHING, "Sound Manager Test",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 	
 	
 
-	result = FMOD::System_Create(&Sound_System);      // Create the main system object.
-	if (result != FMOD_OK)
-	{
-		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-		exit(-1);
-	}
-
-	result = Sound_System->init(MAX_CHANNELS, FMOD_INIT_NORMAL, 0);    // Initialize FMOD.
-	if (result != FMOD_OK)
-	{
-		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-		exit(-1);
-	}
 	
-	result = Sound_System->createSound("Assets/Sounds/fire.wav", FMOD_DEFAULT, 0, &disparo);
-	if (result != FMOD_OK)
-	{
-		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-		exit(-1);
-	}
+	
+	//soundManager().createNormalSound("Assets/Sounds/fire.wav", disparo);
 
-	/*result = Sound_System->playSound(sonido, 0, false, &canal1);
-	if (result != FMOD_OK)
-	{
-		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-		exit(-1);
-	}*/
+	//soundManager().create3DSound("Assets/Sounds/wave.mp3", doppler, 0.5f * DISTANCE_FACTOR, 5000.0f* DISTANCE_FACTOR);
 	
 
 	static TestSound testSound;
 
 	testSound.system = Sound_System;
-	testSound.sound = disparo;
+	//testSound.sound = disparo;
 	testSound.channel = canal1;
 
 	me::Input botonA;
@@ -94,12 +70,8 @@ int main() {
 			while (SDL_PollEvent(&event)) {
 
 			}
-			result = Sound_System->update();
-			if (result != FMOD_OK)
-			{
-				printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-				exit(-1);
-			}
+			soundManager().systemRefresh();
+			
 	}
 	return 0;
 

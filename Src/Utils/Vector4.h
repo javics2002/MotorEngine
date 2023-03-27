@@ -16,6 +16,9 @@ namespace Ogre {
 class btQuaternion;
 
 namespace me {
+
+	class Vector3;
+
 	class __MOTORENGINE_API Vector4
 	{
 
@@ -39,19 +42,13 @@ namespace me {
 
 		Vector4();
 
+		Vector4(float a, float b, float c);
+
+		Vector4(const Vector3& v_);
+
 		Vector4(float a, float b, float c, float d);
 
 		Vector4(const Vector4& v);
-
-		/**
-		Return the conversion Vector4 - Ogre::Quaternion
-		*/
-		Ogre::Quaternion v4ToQuaternion();
-
-		/**
-		Returns the current Rotation in btQuaternion
-		*/
-		btQuaternion getRotationInBullet();
 
 		/**
 		*  Returns the linear interpolation between "a" and "b" by a factor of "f"
@@ -64,6 +61,21 @@ namespace me {
 
 		void operator=(const Vector4& v);
 		void operator=(const Vector4* v);
+
+		/**
+		Return the conversion Vector3 - Ogre::Quaternion
+		*/
+		Ogre::Quaternion v4ToOgreQuaternion();
+
+		/**
+		Returns the current Rotation in btQuaternion
+		*/
+		btQuaternion getRotationInBullet();
+
+		/*
+		Do the rotation in specify axis
+		*/
+		void rotate(float degrees, Vector3 axis);
 	};
 }
 

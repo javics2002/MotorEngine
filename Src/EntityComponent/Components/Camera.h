@@ -33,13 +33,39 @@ namespace me {
 
 	public:
 
-		/**
-		Construct a new Camera component and save necesary info
-		@param name: name saved in om() map and used for entity that attached in node
+		/*
+		Default constructor
 		*/
-		Camera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder,Vector3 lookAt);
+		Camera();
 		//Destroy om() map saved camera (ogreCamera)
 		~Camera();
+
+		/*
+		Set the name saved in om() map and used for entity that attached in node
+		*/
+		inline void setName(std::string name) {
+			mName = name;
+		}
+
+		inline void setNearDistance(int nearDistance) {
+			mNearDistance = nearDistance;
+		}
+
+		inline void setFarDistance(int farDistance) {
+			mFarDistance = farDistance;
+		}
+
+		inline void setAutoRadio(bool autoRadio) {
+			mAutoRadio = autoRadio;
+		}
+
+		inline void setZOrder(int zOrder) {
+			mZOrder = zOrder;
+		}
+
+		inline void setLookAt(Vector3 lookAt) {
+			mLookAt = lookAt;
+		}
 
 		/**
 		Get info for mTransform and create ogreCamera and set the start pos

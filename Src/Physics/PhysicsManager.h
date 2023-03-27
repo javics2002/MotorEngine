@@ -4,56 +4,7 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
-#include "EntityComponent/Components/Transform.h"
 #include "DebugDrawer.h"
-
-/*
-This class represents the physics world and handles the simulation of rigid bodies.
-It is responsible for collision detection and response, 
-as well as integrating forces and updating the positions and orientations of bodies.
-*/
-#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
-
-/*
-This class represents a rigid body in the simulation. It has properties like mass,
-velocity, and position, and can have forces and torques applied to it.
-*/
-#include <BulletDynamics/Dynamics/btRigidBody.h>
-
-/*
-* It is responsible for creating collision algorithms and managing memory for collision detection. 
-This configuration class sets up a dispatcher to handle collisions between pairs of objects, 
-and it can be used with any kind of rigid bodies or soft bodies
-*/
-#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
-
-/*
-* This class is used for broadphase collision detection,
-which is a way to quickly discard pairs of bodies that are not close enough to collide. 
-There are several implementations available, like a simple axis-aligned bounding box (AABB) 
-algorithm or a more advanced sweep-and-prune (SAP) algorithm.
-*/
-#include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
-
-/*
-* Defines an interface for objects that can be integrated into the physics simulation as action. 
-*/
-#include <BulletDynamics/Dynamics/btActionInterface.h>
-
-/*
-* Is a btCollisionObject that has a collision shape but does not have a mass or physical properties. 
-It is useful for representing objects that should interact with other rigid bodies 
-but do not themselves move or have physics responses.
-*/
-#include <BulletCollision/CollisionDispatch/btGhostObject.h>
-
-#include <BulletCollision/CollisionShapes/btCollisionShape.h>
-
-#include <BulletDynamics/ConstraintSolver/btConstraintSolver.h>
-
-#include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
-
-#include <LinearMath/btDefaultMotionState.h>
 
 enum Shapes {
 	SHAPES_SPHERE,
@@ -68,6 +19,20 @@ enum MovementType {
 	MOVEMENT_TYPE_KINEMATIC
 };
 
+class btDiscreteDynamicsWorld;
+class btRigidBody;
+class btDefaultCollisionConfiguration;
+class btDbvBroadphase;
+class btActionInterface;
+class btCollisionShape;
+class btConstrainSolver;
+class btSequentialImpulseConstraintSolver;
+class btDefaultMotionState;
+class btDispatcher;
+class btBroadphaseInterface;
+class btCollisionConfiguration;
+
+
 namespace me {
 
 	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
@@ -78,8 +43,6 @@ namespace me {
 		friend Singleton<PhysicsManager>;
 
 		PhysicsManager();
-
-		btAlignedObjectArray<btCollisionShape*> collisionShapes;
 
 		//DynamicWorld
 		btDiscreteDynamicsWorld* mDynamicsWorld;

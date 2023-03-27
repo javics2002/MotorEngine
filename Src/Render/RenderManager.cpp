@@ -1,4 +1,7 @@
 #include "RenderManager.h"
+#include "Utils/Vector3.h"
+#include "Utils/Vector4.h"
+
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreSceneNode.h>
@@ -277,35 +280,35 @@ bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
-bool me::RenderManager::setMeshPosition(std::string name, const Ogre::Vector3f &pos)
+bool me::RenderManager::setMeshPosition(std::string name, Vector3 pos)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setPosition( pos);
+	mesh->setPosition(pos.v3ToOgreV3());
 
 	return true;
 }
 
-bool me::RenderManager::setMeshScale(std::string name, const Ogre::Vector3f &scale)
+bool me::RenderManager::setMeshScale(std::string name, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setScale(scale);
+	mesh->setScale(scale.v3ToOgreV3());
 	
 	return true;
 }
 
-bool me::RenderManager::setMeshRotation(std::string name, Ogre::Quaternion rot)
+bool me::RenderManager::setMeshRotation(std::string name, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setRotation(rot);
+	mesh->setRotation(rot.v4ToOgreQuaternion());
 
 	return true;
 }
@@ -336,25 +339,24 @@ void me::RenderManager::destroyMesh(std::string name)
 
 }
 
-
-bool me::RenderManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale)
+bool me::RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setTransform(pos, scale , Ogre::Quaternion::IDENTITY);
+	mesh->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), Ogre::Quaternion::IDENTITY);
 
 	return true;
 }
 
-bool me::RenderManager::setMeshTransform(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion&rot)
+bool me::RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 scale, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
-
-	mesh->setTransform(pos, scale, rot);
+	
+	mesh->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), rot.v4ToOgreQuaternion());
 
 	return true;
 }
@@ -374,57 +376,57 @@ bool me::RenderManager::createParticle(std::string name, std::string nameParticl
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale)
+bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
-	particle->setTransform(pos, scale, Ogre::Quaternion::IDENTITY);
+	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), Ogre::Quaternion::IDENTITY);
 
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, const Ogre::Vector3f& pos, const Ogre::Vector3f& scale, const Ogre::Quaternion& rot)
+bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
-	particle->setTransform(pos, scale, rot);
+	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), rot.v4ToOgreQuaternion());
 
 	return true;
 }
 
-bool me::RenderManager::setParticlePosition(std::string name, const Ogre::Vector3f& pos)
+bool me::RenderManager::setParticlePosition(std::string name, Vector3 pos)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
-	particle->setPosition(pos);
+	particle->setPosition(pos.v3ToOgreV3());
 
 	return true;
 }
 
-bool me::RenderManager::setParticleScale(std::string name, const Ogre::Vector3f& scale)
+bool me::RenderManager::setParticleScale(std::string name, Vector3 scale)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
-	particle->setScale(scale);
+	particle->setScale(scale.v3ToOgreV3());
 
 	return true;
 }
 
-bool me::RenderManager::setParticleRotation(std::string name, Ogre::Quaternion rot)
+bool me::RenderManager::setParticleRotation(std::string name, Vector4 rot)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
 		return false;
 
-	particle->setRotation(rot);
+	particle->setRotation(rot.v4ToOgreQuaternion());
 
 	return true;
 }

@@ -2,6 +2,8 @@
 #ifndef __ENTITYCOMPONENT_AUDIOSOURCE
 #define __ENTITYCOMPONENT_AUDIOSOURCE
 
+#include <string>
+
 #include "Component.h"
 
 namespace FMOD {
@@ -13,16 +15,13 @@ namespace me {
 	{
 	public:
 
-		/**
-		* Constructor for AudioSource class.
-		* @param source The audio file to play.
-		* @param volume The volume of the audio.
-		* @param playOnStart Whether the audio should start playing on object start.
-		* @param is3D Whether the audio should be treated as a 3D sound or not.
-		* @param loop Whether the audio should loop or not.
+		/*
+		Default constructor
 		*/
-		AudioSource(const char*,float volume,bool playOnStart,bool is3D,bool loop);
+		AudioSource();
 		~AudioSource();
+
+		void start();
 
 		void update();
 
@@ -62,6 +61,35 @@ namespace me {
 		}
 
 		/**
+		* Set the source of the audio
+		* @param source The audio file to play.
+		*/
+		inline void setSource(std::string source) {
+			mSource = source;
+		}
+
+		/**
+		* Set if the audio will play in a loop
+		*/
+		inline void setLoop(bool loop) {
+			mLoop = loop;
+		}
+
+		/**
+		* Set if the audio will be a 3D audio
+		*/
+		inline void setIs3D(bool is3D) {
+			mIs3D = is3D;
+		}
+
+		/**
+		* Set if the adio will play at the start
+		*/
+		inline void setPlayOnStart(bool playOnStart) {
+			mPlayOnStart = playOnStart;
+		}
+
+		/**
 		* Get the volume of the audio.
 		* @return The current volume value.
 		*/
@@ -73,10 +101,11 @@ namespace me {
 	private:
 		float mVolume;  // The volume of the audio
 		FMOD::Sound* mSound; // The FMOD sound object
-		const char* mSource; // The audio file to play
+		std::string mSource; // The audio file to play
 		bool mPlaying; // Whether the audio is currently playing or not
 		bool mLoop; // Whether the audio should loop or not
 		bool mIs3D;
+		bool mPlayOnStart;
 
 	};
 }

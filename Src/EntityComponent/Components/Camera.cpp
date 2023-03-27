@@ -7,14 +7,8 @@
 
 
 
-me::Camera::Camera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder,Vector3 lookAt)
+me::Camera::Camera()
 {
-	mName = name;
-	mNearDistance = nearDist;
-	mFarDistance = farDist;
-	mAutoRadio = autoRadio;
-	mZOrder = zOrder;
-	mLookAt = lookAt;
 }
 
 me::Camera::~Camera()

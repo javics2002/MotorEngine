@@ -5,7 +5,17 @@
 #include <BulletCollision/CollisionShapes/btCylinderShape.h>
 #include <BulletCollision/CollisionShapes/btCapsuleShape.h>
 #include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
+#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
+#include <BulletDynamics/Dynamics/btRigidBody.h>
+#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
+#include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
+#include <BulletDynamics/Dynamics/btActionInterface.h>
+#include <BulletCollision/CollisionShapes/btCollisionShape.h>
+#include <BulletDynamics/ConstraintSolver/btConstraintSolver.h>
+#include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
+#include <LinearMath/btDefaultMotionState.h>
 
+#include "DebugDrawer.h"
 #include "EntityComponent/Components/Collider.h"
 #include "Render/RenderManager.h"
 
@@ -103,7 +113,7 @@ void me::PhysicsManager::start()
 //	mDynamicsWorld->setDebugDrawer(mDebug);
 //#endif
 
-	mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
+	//mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
 
 }
 
@@ -163,7 +173,7 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 		colShape->calculateLocalInertia(mass, reposeInertia);
 	}
 
-	else mass = 0;
+	else if(mvType == MOVEMENT_TYPE_STATIC) mass = 0;
 
 	//Info to create rigidBody
 	btRigidBody::btRigidBodyConstructionInfo rbContruction = btRigidBody::btRigidBodyConstructionInfo(mass, dfMotionState, colShape, reposeInertia);

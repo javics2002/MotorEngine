@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- exporter: blender2ogre 0.8.3 -->
+<!-- export_time: Sun, 26 Mar 2023 17:37:42 +0000 -->
+<!-- previous_export_time: Sun, 26 Mar 2023 17:10:32 +0000 -->
+<scene author="Alfonso Rodulfo" formatVersion="1.1" >
+  <nodes >
+    <node name="Circuito" >
+      <position x="-8.458099" y="7.142998" z="-0.000000" />
+      <rotation qw="1.000000" qx="-0.000000" qy="0.000000" qz="-0.000000" />
+      <scale x="311.371857" y="60.363865" z="71.380966" />
+      <entity meshFile="Plane.mesh" name="Circuito" >
+        <userData />
+      </entity>
+    </node>
+    <node name="NaturePack" >
+      <position x="6.335772" y="9.929578" z="-0.000000" />
+      <rotation qw="0.707107" qx="0.707107" qy="0.000000" qz="-0.000000" />
+      <scale x="0.044639" y="0.044639" z="0.044639" />
+    </node>
+    <node name="NaturePack.001" >
+      <position x="1.571028" y="7.142998" z="-0.000000" />
+      <rotation qw="0.707107" qx="0.707107" qy="0.000000" qz="-0.000000" />
+      <scale x="0.044639" y="0.044639" z="0.044639" />
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="Mushroom4_1.material" />
+    </item>
+    <item type="material" >
+      <file name="Rock1_1.material" />
+    </item>
+    <item type="material" >
+      <file name="Branch1_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Rojo.material" />
+    </item>
+    <item type="material" >
+      <file name="Bush1_1.material" />
+    </item>
+    <item type="material" >
+      <file name="Bush1_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Amarillo.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree3_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom3_2.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom4_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="DefaultMaterial.material" />
+    </item>
+    <item type="material" >
+      <file name="Branch1_1.material" />
+    </item>
+    <item type="material" >
+      <file name="branch_color.003.material" />
+    </item>
+    <item type="material" >
+      <file name="Grass1_1.002.material" />
+    </item>
+    <item type="material" >
+      <file name="Azul.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree3_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Rock1_1.003.material" />
+    </item>
+    <item type="material" >
+      <file name="Naranja.material" />
+    </item>
+    <item type="material" >
+      <file name="Stump1_2.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree3_1.002.material" />
+    </item>
+    <item type="material" >
+      <file name="trunk_color.material" />
+    </item>
+    <item type="material" >
+      <file name="Branch1_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Negro.material" />
+    </item>
+    <item type="material" >
+      <file name="Rock1_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Stump1_1.material" />
+    </item>
+    <item type="material" >
+      <file name="Stump1_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="branch_color.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Stump1_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="branch_color.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree1_2.002.material" />
+    </item>
+    <item type="material" >
+      <file name="Rock1_1.002.material" />
+    </item>
+    <item type="material" >
+      <file name="Grass1_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom4_2.material" />
+    </item>
+    <item type="material" >
+      <file name="Green.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree3_2.002.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom3_1.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree1.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom3_1.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom4_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Tree1_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Branch1_2.material" />
+    </item>
+    <item type="material" >
+      <file name="Mushroom3_2.001.material" />
+    </item>
+    <item type="material" >
+      <file name="Blanco.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourBackground b="0.050876" g="0.050876" r="0.050876" />
+  </environment>
+</scene>

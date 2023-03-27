@@ -1,4 +1,5 @@
 #include "Vector4.h"
+#include "Vector3.h"
 
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
@@ -13,10 +14,41 @@ float Vector4::lerp(float a, float b, float f)
 
 Vector4::Vector4()
 {
-	x = 1;
-	y = 1;
-	z = 1;
-	w = 1;
+	x = 0;
+	y = 0;
+	z = 0;
+	w = 0;
+}
+
+Vector4::Vector4(float a, float b, float c) {
+
+	double cy = cos(c * Ogre::Math::PI / 180.0 / 2.0);
+	double sy = sin(c * Ogre::Math::PI / 180.0 / 2.0);
+	double cp = cos(b * Ogre::Math::PI / 180.0 / 2.0);
+	double sp = sin(b * Ogre::Math::PI / 180.0 / 2.0);
+	double cr = cos(a * Ogre::Math::PI / 180.0 / 2.0);
+	double sr = sin(a * Ogre::Math::PI / 180.0 / 2.0);
+
+	w = cy * cp * cr + sy * sp * sr;
+	x = cy * cp * sr - sy * sp * cr;
+	y = sy * cp * sr + cy * sp * cr;
+	z = sy * cp * cr - cy * sp * sr;
+}
+
+Vector4::Vector4(const Vector3& v_) {
+	
+	double cy = cos(v_.z * Ogre::Math::PI / 180.0 / 2.0);
+	double sy = sin(v_.z * Ogre::Math::PI / 180.0 / 2.0);
+	double cp = cos(v_.y * Ogre::Math::PI / 180.0 / 2.0);
+	double sp = sin(v_.y * Ogre::Math::PI / 180.0 / 2.0);
+	double cr = cos(v_.x * Ogre::Math::PI / 180.0 / 2.0);
+	double sr = sin(v_.x * Ogre::Math::PI / 180.0 / 2.0);
+
+	w = cy * cp * cr + sy * sp * sr;
+	x = cy * cp * sr - sy * sp * cr;
+	y = sy * cp * sr + cy * sp * cr;
+	z = sy * cp * cr - cy * sp * sr;
+	
 }
 
 Vector4::Vector4(float a, float b, float c, float d) {
@@ -31,22 +63,6 @@ Vector4::Vector4(const Vector4 &v) {
 	y = v.y;
 	z = v.z;
 	w = v.w;
-}
-
-Ogre::Quaternion Vector4::v4ToQuaternion() {
-
-	Ogre::Vector3f xAxis(x,y,z);
-	Ogre::Vector3f yAxis(w, z, -y);
-	Ogre::Vector3f zAxis = xAxis.crossProduct(yAxis);
-
-	Ogre::Quaternion quat;
-	quat.FromAxes(xAxis, yAxis, zAxis);
-
-	return quat;
-}
-
-btQuaternion Vector4::getRotationInBullet() {
-	return btQuaternion(x, y, z, w);
 }
 
 Vector4 Vector4::lerp(const Vector4& a, const Vector4& b, float f)
@@ -68,5 +84,28 @@ void Vector4::operator=(const Vector4* v)
 	y = v->y;
 	z = v->z;
 	w = v->w;
+}
+
+Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
+	return Ogre::Quaternion(w, x, y, z);
+}
+
+btQuaternion Vector4::getRotationInBullet() {
+	return btQuaternion(x, y, z);
+}
+
+void Vector4::rotate(float degrees, Vector3 axis) {
+
+	Ogre::Vector3f v = Ogre::Vector3f(x, y, z);
+	v.normalise();
+
+	const Ogre::Radian r = Ogre::Radian(degrees * (Ogre::Math::PI / 180.0));
+
+	Ogre::Quaternion quat(r, axis.v3ToOgreV3());
+
+	w = w * quat.w - x * quat.x - y * quat.y - z * quat.z;
+	x = w * quat.x + x * quat.w + y * quat.z - z * quat.y;
+	y = w * quat.y - x * quat.z + y * quat.w + z * quat.x;
+	z = w * quat.z + x * quat.y - y * quat.x + z * quat.w;
 }
 

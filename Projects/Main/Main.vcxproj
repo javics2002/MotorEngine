@@ -138,12 +138,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Lib\MotorEngineDll\$(Platform)\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Lib\MotorEngineDll\$(Platform)\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>MotorEngine_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -155,14 +155,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\FMOD_Src\api\core\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\Bullet\Build\src;$(SolutionDir)Dependencies\Bullet\Src\src;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Src\;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Lib\MotorEngineDll\$(Platform)\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Lib\MotorEngineDll\$(Platform)\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>MotorEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
