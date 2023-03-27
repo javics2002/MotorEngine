@@ -22,32 +22,33 @@ Vector4::Vector4()
 
 Vector4::Vector4(float a, float b, float c) {
 
-	Ogre::Vector3f* v = new Ogre::Vector3f(a, b, c);
-	v->normalise();
+	double cy = cos(c * Ogre::Math::PI / 180.0 / 2.0);
+	double sy = sin(c * Ogre::Math::PI / 180.0 / 2.0);
+	double cp = cos(b * Ogre::Math::PI / 180.0 / 2.0);
+	double sp = sin(b * Ogre::Math::PI / 180.0 / 2.0);
+	double cr = cos(a * Ogre::Math::PI / 180.0 / 2.0);
+	double sr = sin(a * Ogre::Math::PI / 180.0 / 2.0);
 
-	Ogre::Quaternion quat(v);
-
-	x = quat.x;
-	y = quat.y;
-	z = quat.z;
-	w = quat.w;
-
-	delete v;
+	w = cy * cp * cr + sy * sp * sr;
+	x = cy * cp * sr - sy * sp * cr;
+	y = sy * cp * sr + cy * sp * cr;
+	z = sy * cp * cr - cy * sp * sr;
 }
 
 Vector4::Vector4(const Vector3& v_) {
 	
-	Ogre::Vector3f *v = new Ogre::Vector3f(v_.x, v_.y, v_.z);
-	v->normalise();
+	double cy = cos(v_.z * Ogre::Math::PI / 180.0 / 2.0);
+	double sy = sin(v_.z * Ogre::Math::PI / 180.0 / 2.0);
+	double cp = cos(v_.y * Ogre::Math::PI / 180.0 / 2.0);
+	double sp = sin(v_.y * Ogre::Math::PI / 180.0 / 2.0);
+	double cr = cos(v_.x * Ogre::Math::PI / 180.0 / 2.0);
+	double sr = sin(v_.x * Ogre::Math::PI / 180.0 / 2.0);
 
-	Ogre::Quaternion quat(v);
+	w = cy * cp * cr + sy * sp * sr;
+	x = cy * cp * sr - sy * sp * cr;
+	y = sy * cp * sr + cy * sp * cr;
+	z = sy * cp * cr - cy * sp * sr;
 	
-	x = quat.x;
-	y = quat.y;
-	z = quat.z;
-	w = quat.w;
-
-	delete v;
 }
 
 Vector4::Vector4(float a, float b, float c, float d) {
@@ -86,7 +87,7 @@ void Vector4::operator=(const Vector4* v)
 }
 
 Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
-	return Ogre::Quaternion(x, y, z, w);
+	return Ogre::Quaternion(w, x, y, z);
 }
 
 btQuaternion Vector4::getRotationInBullet() {
@@ -98,13 +99,13 @@ void Vector4::rotate(float degrees, Vector3 axis) {
 	Ogre::Vector3f v = Ogre::Vector3f(x, y, z);
 	v.normalise();
 
-	const Ogre::Radian r = Ogre::Radian(degrees);
+	const Ogre::Radian r = Ogre::Radian(degrees * (Ogre::Math::PI / 180.0));
 
 	Ogre::Quaternion quat(r, axis.v3ToOgreV3());
 
-	x += quat.x;
-	y += quat.y;
-	z += quat.z;
-	w += quat.w;
+	w = w * quat.w - x * quat.x - y * quat.y - z * quat.z;
+	x = w * quat.x + x * quat.w + y * quat.z - z * quat.y;
+	y = w * quat.y - x * quat.z + y * quat.w + z * quat.x;
+	z = w * quat.z + x * quat.y - y * quat.x + z * quat.w;
 }
 
