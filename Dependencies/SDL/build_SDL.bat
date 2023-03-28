@@ -1,13 +1,25 @@
 @echo off
+setlocal
 
-set /p pause_option="> Quieres que se generen pausas? [S/N]: "
+
+rem Configuración de paradas
+if /I "%1"=="" (
+
+    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
+
+) else ( set "pause_option=%1" )
+
+
+rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
 set "cmake=..\CMake\bin\cmake.exe"
+
 
 rem Herramientas necesarias:
 rem 1. git          -- Descargar repositorios
 rem 2. cmake        -- Generar builds configuradas
 rem 3. msbuild      -- Compilar usando las herramientas de visual studio
+
 
 
 rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
@@ -23,6 +35,7 @@ call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 rem Parámetros de instalación
 set "project=SDL3" 
 set "src=SDL" 
+
 
 rem Build  
 if not exist "build/%project%.sln" (
@@ -41,13 +54,6 @@ if /i "%pause_option%"=="S" ( pause )
 
 
 
-rem Prepara los directorios finales
-mkdir bin
-mkdir bin\Release
-mkdir bin\Debug
-
-
-
 set "origen=.\build\Release\" 
 set "destino=.\bin\Release\" 
 
@@ -60,7 +66,7 @@ if not exist "bin\Release\%project%.dll" (
         rem Compilación en modo Release
         msbuild build\%project%.sln /t:ALL_BUILD /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 
 
-        echo: && echo "> Biblioteca %project% release generada." && echo: 
+        echo: && echo "> Biblioteca %project% release compilada." && echo: 
     ) else (
         echo: && echo "> La biblioteca %project% release ya existe." && echo: 
     )
@@ -70,9 +76,9 @@ if not exist "bin\Release\%project%.dll" (
     rem Copia los binarios .dll
     robocopy %origen% %destino% *.dll
 
-    echo: && echo "> Los binarios (.dll) de %project% han sido copiados." && echo: 
+    echo: && echo "> Los binarios (.dll) de %project% en modo release han sido copiados." && echo: 
 ) else (
-    echo: && echo "> Los binarios (.dll) de %project% ya estaban copiados." && echo: 
+    echo: && echo "> Los binarios (.dll) de %project% en modo release ya estaban copiados." && echo: 
 )
 if /i "%pause_option%"=="S" ( pause ) 
 
@@ -90,7 +96,7 @@ if not exist "bin\Debug\%project%.dll" (
         rem Compilación en modo Debug
         msbuild build\%project%.sln /t:ALL_BUILD /p:Configuration=Debug /p:Platform=x64 /p:PlatformToolset=v143 
         
-        echo: && echo "> Biblioteca %project% debug generada." && echo: 
+        echo: && echo "> Biblioteca %project% debug compilada." && echo: 
     ) else (
         echo: && echo "> La biblioteca %project% debug ya existe." && echo: 
     )
@@ -100,8 +106,12 @@ if not exist "bin\Debug\%project%.dll" (
     rem Copia los binarios .dll
     robocopy %origen% %destino% *.dll
 
-    echo: && echo "> Los binarios (.dll) de %project% han sido copiados." && echo: 
+    echo: && echo "> Los binarios (.dll) de %project% en modo debug han sido copiados." && echo: 
 ) else (
-    echo: && echo "> Los binarios (.dll) de %project% ya estaban copiados." && echo: 
+    echo: && echo "> Los binarios (.dll) de %project% en modo debug ya estaban copiados." && echo: 
 )
 if /i "%pause_option%"=="S" ( pause ) 
+
+
+rem pause 
+endlocal
