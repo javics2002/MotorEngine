@@ -6,8 +6,8 @@
 #include <iostream>
 
 #include <CEGUI/RendererModules/Ogre/Renderer.h>
-#include <Render/OgreManager.h>
-#include <Render/OgreWindow.h>
+#include <Render/RenderManager.h>
+#include <Render/RenderWindow.h>
 #include <OgreRenderTarget.h>
 #include <OgreRenderWindow.h>
 

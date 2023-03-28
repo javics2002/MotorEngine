@@ -19,6 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.vcxproj">
+      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\Src\EntityComponent\Components\Animator.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\AudioListener.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\AudioSource.cpp" />
@@ -38,7 +43,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h" />
@@ -61,11 +66,6 @@
     <ClInclude Include="..\..\Src\EntityComponent\InfoScene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.vcxproj">
-      <Project>{e37b8fff-2c86-46a5-b2a6-635658143588}</Project>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

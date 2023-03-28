@@ -22,9 +22,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{73a7a28d-6005-4dc0-9a11-d511f4e7465a}</ProjectGuid>
-    <RootNamespace>Nuklear</RootNamespace>
+    <RootNamespace>GUI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>CEGUI</ProjectName>
+    <ProjectName>GUI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -114,7 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\Src\Components\RTShaderSystem\include;$(SolutionDir)Src;$(SolutionDir)Dependencies\CEGUI\Build\cegui\include;$(SolutionDir)Dependencies\CEGUI\Src\cegui\include;$(SolutionDir)Dependencies\SDL\Build\include;$(SolutionDir)Dependencies\Ogre\Build\include;$(SolutionDir)Dependencies\Ogre\Src\OgreMain\include;$(SolutionDir)Dependencies\SDL\Src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Src;$(SolutionDir)Dependencies\CEGUI\build\cegui\include;$(SolutionDir)Dependencies\CEGUI\src\cegui\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\SDL\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,8 +123,8 @@
       <AdditionalDependencies>SDL3.lib;CEGUIBase-0_d.lib;CEGUIOgreRenderer-0_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL3.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/CEGUI/Build/Debug;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;CEGUIBase-0_d.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\SDL\build\$(Configuration);$(SolutionDir)Dependencies/CEGUI/build/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,6 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Src;$(SolutionDir)Dependencies\CEGUI\build\cegui\include;$(SolutionDir)Dependencies\CEGUI\src\cegui\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\SDL\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,16 +144,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL3.lib;CEGUIBase-0.lib;CEGUIOgreRenderer-0.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL3.lib;CEGUIBase-0.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\SDL\build\$(Configuration);$(SolutionDir)Dependencies\CEGUI\build\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Nuklear\main.cpp" />
+    <ClCompile Include="..\..\Src\GUI\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Render\Render.vcxproj">
       <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\GUI\nuklear.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
