@@ -1,6 +1,6 @@
 #include "GUIManager.h"
-#include <Render/OgreManager.h>
-#include <Render/OgreWindow.h>
+#include <Render/RenderManager.h>
+#include <Render/RenderWindow.h>
 #include <OgreRenderTarget.h>
 #include <OgreRenderWindow.h>
 
@@ -14,7 +14,7 @@ CEGUI::OgreRenderer* me::GUIManager::mRenderer = nullptr;
 me::GUIManager::GUIManager()
 {
 	if (mRenderer == nullptr) {
-		mRenderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(om().getOgreWindow()->getRenderWindow()));
+		mRenderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(renderManager().getOgreWindow()->getRenderWindow()));
 
 		CEGUI::ImageManager::setImagesetDefaultResourceGroup("Imagesets");
 		CEGUI::Scheme::setDefaultResourceGroup("Schemes");

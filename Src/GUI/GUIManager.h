@@ -97,7 +97,7 @@ namespace me {
 		This macro defines a compact way for using the singleton GUIManager, instead of
 		writing GUIManager::instance()->method() we write guim().method()
 	*/
-	inline GUIManager& guim() {
+	inline GUIManager& guiManager() {
 		return *GUIManager::instance();
 	}
 }
