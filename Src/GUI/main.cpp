@@ -8,6 +8,10 @@
 #include "Render/OgreManager.h"
 #include "Render/Window.h"
 #include "GUI/GUIManager.h"
+#include "Render/OgreWindow.h"
+
+#include <OgreRenderWindow.h>
+#include <CEGUI/Window.h>
 
 using namespace me;
 
@@ -19,9 +23,13 @@ int main() {
     GUIManager::init();
     guim().loadScheme("TaharezLook.scheme");
     guim().setFont("DejaVuSans-10");
-    guim().createWidget("TaharezLook/Button", Vector4(0.5f, 0.5f, 0.1f, 0.05f), Vector4(), "TestButton");
+    CEGUI::Window* uiWin = guim().createWidget("TaharezLook/Button", Vector4(0.5f, 0.5f, 0.3f, 0.2f), Vector4(-150, -25, 300, 50), "TestButton");
+    uiWin->setText("ExampleText");
 
-    guim().draw();
+    while (true) {
+        guim().draw();
+        om().getOgreWindow()->getRenderWindow()->update();
+    }
 
     return 0;
 }

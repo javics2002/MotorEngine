@@ -2,13 +2,17 @@
 #ifndef __GUI_MANAGER
 #define __GUI_MANAGER
 
-#include <CEGUI/CEGUI.h>
-#include <CEGUI/RendererModules/Ogre/Renderer.h>
-
 #include "Utils/Singleton.h"
 #include "Utils/Vector4.h"
 
+namespace CEGUI {
+	class OgreRenderer;
+	class GUIContext;
+	class Window;
+}
+
 namespace me {
+
 
 	/**
 	GUIManager initializes CEGUI (Renderer, System, etc.),

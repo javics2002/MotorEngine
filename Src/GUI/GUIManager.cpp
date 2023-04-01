@@ -4,6 +4,11 @@
 #include <OgreRenderTarget.h>
 #include <OgreRenderWindow.h>
 
+#include <CEGUI/CEGUI.h>
+#include <CEGUI/RendererModules/Ogre/Renderer.h>
+#include <CEGUI/Logger.h>
+#include <CEGUI/DefaultLogger.h>
+
 CEGUI::OgreRenderer* me::GUIManager::mRenderer = nullptr;
 
 me::GUIManager::GUIManager()
@@ -22,6 +27,7 @@ me::GUIManager::GUIManager()
 	mContext = &CEGUI::System::getSingleton().createGUIContext(mRenderer->getDefaultRenderTarget());
 	mRoot = CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "Root");
 	mContext->setRootWindow(mRoot);
+	mRenderer->setUsingShaders(true);
 }
 
 me::GUIManager::~GUIManager()
