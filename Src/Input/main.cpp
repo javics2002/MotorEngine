@@ -4,14 +4,12 @@
 #define __INPUT_MAIN
 
 #include "InputManager.h"
+#include "InputCode.h"
 #include "Render/Window.h"
 #include "Utils/checkML.h"
 #include <iostream>
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_events.h>
-#include <SDL3/SDL_keyboard.h>
-#include <SDL3/SDL_mouse.h>
-#include <SDL3/SDL_gamepad.h>
 
 #define KEY_NAME SDL_GetKeyName(event->key.keysym.sym)
 
@@ -58,6 +56,13 @@ int shoot(void* userdata)
     return 0;
 }
 
+int shoot2(void* userdata)
+{
+    std::cout << "Shooting 2!\n";
+
+    return 0;
+}
+
 int getAxisValue(void* userdata) {
     char* name = (char*) userdata;
     std::cout << name << " axis value: " << inputManager().getAxis(name) << "\n";
@@ -84,7 +89,7 @@ int main() {
 
     Input keyboardE;
     keyboardE.type = INPUTTYPE_KEYBOARD;
-    keyboardE.which = SDLK_e;
+    keyboardE.which = KEYBOARDCODE_E;
 
     inputManager().addButton("Interact", keyboardE);
 
@@ -111,6 +116,14 @@ int main() {
     inputManager().addButton("A", controllerA, 0); //Solo P1
 
     inputManager().addOnButtonPressedEvent("A", shoot);
+
+    Input controllerA2;
+    controllerA2.type = INPUTTYPE_GAMEPAD_BUTTON;
+    controllerA2.which = SDL_GAMEPAD_BUTTON_A;
+
+    inputManager().addButton("A2", controllerA2, 1); //Solo P2
+
+    inputManager().addOnButtonPressedEvent("A2", shoot2);
 
     AxisInput horizontal;
     horizontal.type = INPUTTYPE_KEYBOARD;

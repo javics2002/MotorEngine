@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Src\Input\Axis.h" />
     <ClInclude Include="..\..\Src\Input\Button.h" />
+    <ClInclude Include="..\..\Src\Input\InputCode.h" />
     <ClInclude Include="..\..\Src\Input\InputManager.h" />
     <ClInclude Include="..\..\Src\Input\Input.h" />
   </ItemGroup>

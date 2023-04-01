@@ -1,6 +1,13 @@
 #pragma once
-#ifndef __INPUT_INPUT_MANAGER
-#define __INPUT_INPUT_MANAGER
+#ifndef __INPUT_INPUTMANAGER
+#define __INPUT_INPUTMANAGER
+
+//Warning C4251: 'type' : class 'type1' needs to have dll-interface to be used by clients of class 'type2'
+//Ignored because STL classes used in InputManager are private and cannot be accessed from the dll.
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable:4251)
+#endif
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
@@ -12,16 +19,6 @@
 #include <unordered_map>
 
 namespace me {
-	enum __MOTORENGINE_API InputType {
-		INPUTTYPE_KEYBOARD, 
-		INPUTTYPE_MOUSE_CLICK,
-		INPUTTYPE_MOUSE_MOTION,
-		INPUTTYPE_MOUSE_WHEEL,
-		INPUTTYPE_GAMEPAD_BUTTON,
-		INPUTTYPE_GAMEPAD_AXIS,
-		INPUTTYPE_NULL 
-	};
-
 	/**
 	InputManager provides information and callbacks for any user input from
 	keyboard, mouse and game controller.
@@ -33,18 +30,30 @@ namespace me {
 
 		InputManager();
 
-		std::unordered_map<std::string, Button> mButtons;		//Pairs each button with its name.
-		std::unordered_map<std::string, Axis> mAxis;			//Pairs each axis with its name.
+		typedef std::unordered_map<std::string, Button> ButtonMap;
+		typedef std::unordered_map<std::string, Axis> AxisMap;
+
+		ButtonMap mButtons;		//Pairs each button with its name.
+		AxisMap mAxis;			//Pairs each axis with its name.
+
+		typedef std::unordered_multimap<Input, std::string, InputHasher> InputBinding;
 
 		//Stores virtual button names linked to their physical input.
-		std::unordered_multimap<Input, std::string, InputHasher> mButtonBindings;
+		InputBinding mButtonBindings;
 		//Stores virtual axis names linked to their physical positive input.
-		std::unordered_multimap<Input, std::string, InputHasher> mPositiveAxisBindings;
+		InputBinding mPositiveAxisBindings;
 		//Stores virtual axis names linked to their physical negative input.
-		std::unordered_multimap<Input, std::string, InputHasher> mNegativeAxisBindings;
+		InputBinding mNegativeAxisBindings;
+
+		typedef std::unordered_multimap<std::string, OnButtonPressedInfo> OnButtonPressedMap;
 
 		//Stores callback data for virtual buttons.
-		std::unordered_multimap<std::string, OnButtonPressedInfo> mOnButtonPressed;
+		OnButtonPressedMap mOnButtonPressed;
+
+		/*
+		Mouse position. Distance in pixels from the upper left corner of the screen.
+		*/
+		float mouseX, mouseY;
 
 		/*
 		Manages the connection and disconnection of controllers.
@@ -61,14 +70,10 @@ namespace me {
 		*/
 		static Input getInput(SDL_Event* event);
 
-		float mouseX, mouseY;
-
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
 		InputManager(const InputManager& o) = delete;
 		~InputManager() override;
-		
-		bool justClicked();
 
 		/**
 		Calls filter everytime an SDL_Event is processed.

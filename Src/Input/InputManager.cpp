@@ -1,5 +1,6 @@
 #include "InputManager.h"
 
+#include "InputCode.h"
 #include <SDL3/SDL_events.h>
 #ifdef _DEBUG
 #include <iostream>
@@ -23,11 +24,6 @@ InputManager::InputManager()
 
 InputManager::~InputManager()
 {
-}
-
-bool me::InputManager::justClicked()
-{
-	return true;
 }
 
 void InputManager::addEvent(SDL_EventFilter filter, void* userdata)

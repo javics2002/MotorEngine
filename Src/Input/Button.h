@@ -36,7 +36,8 @@ namespace me {
 		InputType type;
 		
 		/*Which key, mouse button, or controller button has been pressed.
-		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event.*/
+		Represents a value of KeyboardCode, MouseClickCode, MouseWheelCode,
+		GamepadButtonCode or GamepadAxisCode depending on the type of the event*/
 		int which;
 
 		/*In case it is a gamepad axis motion, or a mouse motion, the value will be stored here*/

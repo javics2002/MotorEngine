@@ -31,16 +31,17 @@ namespace me {
 
 	//Represents two physical buttons or keys that can trigger a virtual axis
 	struct __MOTORENGINE_API AxisInput {
-		/*
+		/*																	 
 		INPUTTYPE_KEYBOARD for keyboard key presses
-		INPUTTYPE_MOUSE for mouse clicks
+		INPUTTYPE_MOUSE for mouse clicks									 
 		INPUTTYPE_GAMEPAD for controller presses
-		INPUTTYPE_NULL for invalid input
+		INPUTTYPE_NULL for invalid input									 
 		*/
-		InputType type;
+		InputType type;														 
 
 		/*Which key, mouse button, or controller button has been pressed.
-		Represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event*/
+		Represents a value of KeyboardCode, MouseClickCode, MouseWheelCode, 
+		GamepadButtonCode or GamepadAxisCode depending on the type of the event*/
 		union {
 			/*In case it is a physical axis, which will be used instead of two buttons.*/
 			int which;
