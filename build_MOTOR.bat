@@ -2,25 +2,75 @@
 setlocal
 
 
+rem Pregunta si generar paradas de comprobación entre cada paso
+set /p pause_option="> Quieres que se generen pausas? [S/N]: "
+
+
+rem Fecha inicio: 
 set start_time=%time%
 
 
+rem Elimina si existe el anterior registro
+if exist "./build_Output.txt" (
+
+    del "./build_Output.txt"
+
+)
+
+
+rem Establece las dependencias a tener en cuenta
+set deps=Bullet CEGUI FMOD LuaBridge Ogre SDL
+
+rem Borra los registros genereados en las dependencias
+for %%i in (%deps%) do (
+
+    if exist ".\%%i\build_Output.txt" ( 
+        
+        rem Elimina el anterior registro
+        del ".\%%i\build_Output.txt"
+        
+    )
+
+)
+
+
+
+rem Establece el tipo de configuración para la ejecución global 
 :loop
-set /p pause_option="> Quieres que se generen pausas? [S/N]: " 
 set /p exec_option="> Quieres que se ejecute en serie o en paralelo? [S/P]: " 
 
 rem Comprueba si ha elegido bien la opción de buildeo: 
 if /i "%exec_option%"=="S" ( 
+
     echo: && echo "> COMENZANDO EN SERIE!!" && echo:
+
 ) else if /i "%exec_option%"=="P" (
+
     echo: && echo "> COMENZANDO EN PARALELO!!" && echo:
+
 ) else ( 
-    echo "La opcion %exec_option% no es valida. Prueba otra vez."
+
+    echo: && echo "La opcion %exec_option% no es valida. Prueba otra vez." && echo:
+    goto loop
+
 )
 if /i "%pause_option%"=="S" ( pause ) 
 
+
+
 rem Plataforma destino: 
 set "platform=x64"
+
+
+
+echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
+
+rem Búsqueda y guardado de la ruta al shell Developer command prompt for Visual Studio 2022 más actualizado
+call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
+set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
+
+if /i "%pause_option%"=="S" ( pause )
+
 
 
 rem Llamadas a la automatización de cada dependencia: 
@@ -60,6 +110,33 @@ cd ..
 cd ..
 
 
+
+rem Espera hasta que finalicen los scripts 
+echo: && echo "> Espere a que finalicen los scripts..." && echo: 
+
+rem Comprueba si han terminado todas las build's, se ejecuta hasta que terminan!
+cd .\Dependencies
+
+:check
+for %%i in (%deps%) do (
+
+    if not exist ".\%%i\build_Output.txt" ( 
+        
+        rem Esperar 1 segundo antes de volver a comprobar
+        timeout /t 1 /nobreak > nul
+        goto check 
+        
+    )
+
+)
+
+cd ..
+
+rem Continuar con el archivo por lotes 
+echo: && echo "> Todos los scripts han terminado!!" && echo: 
+
+
+
 rem Copia iterativa de las .dll's a través del directorio .\Dependencies y sus subdirectorios: 
 
 set "origen=.\Dependencies\*" 
@@ -81,13 +158,9 @@ for /d %%d in (%origen%) do (
 
 
 
-rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
-call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
-
-set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
-del "%temp%\VSWhereOutput.txt"
-
+rem LLamada al DCP: Developer Command Prompt
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
+del "%temp%\VSWhereOutput.txt"
 
 
 
@@ -123,29 +196,19 @@ if not exist "Exe\Main\x64\Debug\%target%_d.dll" (
 if /i "%pause_option%"=="S" ( pause ) 
 
 
+rem Fecha final: 
 set end_time=%time%
 
 
-rem Convierte las cadenas en objetos de tiempo
-for /f "tokens=1-3 delims=:" %%a in ("%start_time%") do (
-    set /a "start_seconds=(((%%a*60)+%%b)*60)+%%c"
-)
-for /f "tokens=1-3 delims=:" %%a in ("%end_time%") do (
-    set /a "end_seconds=(((%%a*60)+%%b)*60)+%%c"
-)
-
-rem Calcula la diferencia de tiempo
-set /a "elapsed_seconds=%end_seconds%-%start_seconds%"
-
-rem Convierte los segundos en minutos y segundos
-set /a "elapsed_minutes=%elapsed_seconds%/60"
-set /a "elapsed_seconds=%elapsed_seconds%%%60"
-
+echo:
 echo ----------------------------
 echo Fecha inicio: %start_time% 
-echo Fecha final: %end_time%
-echo Tiempo transcurrido: %elapsed_minutes% minutos y %elapsed_seconds% segundos.
-echo Tiempo de ejecucion: %start_time% - %end_time% = %elapsed_minutes% minutos y %elapsed_seconds% segundos. > building-time.log
+echo Fecha final: %end_time% 
+echo:
+
+
+rem Check final
+echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
 pause
 endlocal

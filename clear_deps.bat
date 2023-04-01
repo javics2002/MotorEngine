@@ -3,9 +3,54 @@ setlocal
 
 set /p pause_option="> Quieres que se generen pausas? [S/N]: " 
 
-cd .\Dependencies
-set deps=Bullet CEGUI FMOD LuaBridge Ogre SDL
 
+echo:
+echo Se va ha proceder a borrar el directorio EXE de ./root_project:
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+rmdir /s /q .\Exe 2>nul && echo - Borrado el directorio ./Exe
+
+
+echo:
+echo Se va ha proceder a borrar el registro de la build general:
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+
+rem Elimina si existe el anterior registro
+if exist "./build_Output.txt" (
+
+    del "./build_Output.txt"
+    echo - Borrado el registro general
+
+)
+
+
+echo:
+echo Se va ha proceder a borrar el anterior registro de cada dependecncia (si existe):
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+
+rem Establece las dependencias a tener en cuenta
+set deps=Bullet CEGUI FMOD LuaBridge Ogre SDL
+cd .\Dependencies
+
+rem Borra los registros autogenereados en las dependencias
+for %%i in (%deps%) do (
+
+    if exist ".\%%i\build_Output.txt" ( 
+        
+        rem Elimina el anterior registro
+        del ".\%%i\build_Output.txt"
+        echo - Borrado el registro de %%i
+        
+    )
+
+)
+
+
+rem Borra los directorios autogenerados
+
+rem ./bin
 echo:
 echo Se va ha proceder a borrar el directorio BIN de ./Dependencies:
 if /i "%pause_option%"=="S" ( pause ) && echo:
@@ -26,6 +71,7 @@ for %%i in (%deps%) do (
 
 )
 
+rem ./build
 echo:
 echo Se va ha proceder a borrar el directorio BUILD de ./Dependencies:
 if /i "%pause_option%"=="S" ( pause ) && echo:
@@ -39,5 +85,7 @@ for %%i in (%deps%) do (
 )
 
 echo:
+
+
 pause
 endlocal

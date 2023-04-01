@@ -2,6 +2,18 @@
 setlocal
 
 
+rem Fecha inicio: 
+set start_time=%time%
+
+
+rem Elimina si existe el anterior registro
+if exist "./build_Output.txt" (
+
+    del "./build_Output.txt"
+
+)
+
+
 rem Configuración de paradas
 if /I "%1"=="" (
 
@@ -20,13 +32,21 @@ rem 2. cmake        -- Generar builds configuradas
 rem 3. msbuild      -- Compilar usando las herramientas de visual studio
 
 
-rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
-call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
+
+rem Configuración del shell de Visual Studio 
+if not exist "%temp%\VSWhereOutput.txt" (
+
+    echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
+
+    rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
+    call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
+
+) else ( echo: && echo "> Arranque instantaneo!!" && echo: )
 
 set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
-del "%temp%\VSWhereOutput.txt"
-
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
+
+if /i "%pause_option%"=="S" ( pause )
 
 
 
@@ -81,6 +101,21 @@ if not exist "build\lib\Debug\%target%_Debug.lib" (
     echo: && echo "> Build %project% solucion en modo debug ya existe." && echo: 
 )
 if /i "%pause_option%"=="S" ( pause ) 
+
+
+rem Fecha final: 
+set end_time=%time%
+
+
+echo:
+echo ----------------------------
+echo Fecha inicio: %start_time% 
+echo Fecha final: %end_time% 
+echo:
+
+
+rem Check final
+echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
 
 rem pause 
