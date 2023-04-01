@@ -15,12 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\GUI\GUIManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Src\GUI\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\GUI\nuklear.h">
+    <ClInclude Include="..\..\Src\GUI\GUIManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

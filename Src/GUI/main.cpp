@@ -5,23 +5,31 @@
 
 #include <iostream>
 
-#include <CEGUI/RendererModules/Ogre/Renderer.h>
-#include <Render/RenderManager.h>
-#include <Render/RenderWindow.h>
-#include <OgreRenderTarget.h>
-#include <OgreRenderWindow.h>
-
+#include "Render/OgreManager.h"
 #include "Render/Window.h"
+#include "GUI/GUIManager.h"
+#include "Render/OgreWindow.h"
+
+#include <OgreRenderWindow.h>
+#include <CEGUI/Window.h>
 
 using namespace me;
 
 int main() {
+    
+    win();
+    om().render();
 
-    window();
-    renderManager().render();
+    GUIManager::init();
+    guim().loadScheme("TaharezLook.scheme");
+    guim().setFont("DejaVuSans-10");
+    CEGUI::Window* uiWin = guim().createWidget("TaharezLook/Button", Vector4(0.5f, 0.5f, 0.3f, 0.2f), Vector4(-150, -25, 300, 50), "TestButton");
+    uiWin->setText("ExampleText");
 
-    // Ogre::RenderWindow* rendTarget = om().getOgreWindow()->getRenderWindow();
-    CEGUI::OgreRenderer* renderer = &CEGUI::OgreRenderer::bootstrapSystem(*static_cast<Ogre::RenderTarget*>(renderManager().getOgreWindow()->getRenderWindow()));
+    while (true) {
+        guim().draw();
+        om().getOgreWindow()->getRenderWindow()->update();
+    }
 
     return 0;
 }
