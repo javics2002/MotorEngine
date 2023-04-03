@@ -8,12 +8,17 @@
 #include <string>
 #include "RenderManager.h"
 #include <OgreVector.h>
+#include "Utils/checkML.h"
+
+
 
 using namespace me;
 
 
 
 int main() {
+
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	RenderManager* ogreMgr= RenderManager::instance();
 	std::string camJ1 = "CameraJugador1";
@@ -36,16 +41,9 @@ int main() {
 	ogreMgr->createMesh(cubo, "cube.mesh");
 	ogreMgr->setMeshMaterial(cubo, "Material/roja");
 	
+	ogreMgr->render();
 	
-	//ogreMgr->scene1();
 	
-	while (true)
-	{
-		ogreMgr->render();
-	}
-	
-	int a;
-	std::cin >> a;
 	return 0;
 }
 

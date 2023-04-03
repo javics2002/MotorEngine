@@ -69,6 +69,17 @@ void RenderManager::initRoot()
 
 }
 
+void me::RenderManager::shutdown()
+{
+	// Destroy the RT Shader System.
+	destroyRTShaderSystem();
+	delete mFSLayer;
+	delete mOgreWindow;
+	
+
+
+}
+
 void me::RenderManager::initWindow()
 {
 	mOgreWindow = new RenderWindow("OgreWindow");
@@ -133,6 +144,27 @@ bool RenderManager::initialiseRTShaderSystem() {
 	return true;
 }
 
+void me::RenderManager::destroyRTShaderSystem()
+{
+	// Restore default scheme.
+	Ogre::MaterialManager::getSingleton().setActiveScheme(Ogre::MaterialManager::DEFAULT_SCHEME_NAME);
+
+	// Unregister the material manager listener.
+	if (mMaterialMgrListener != nullptr)
+	{
+		Ogre::MaterialManager::getSingleton().removeListener(mMaterialMgrListener);
+		delete mMaterialMgrListener;
+		mMaterialMgrListener = nullptr;
+	}
+
+	// Destroy RTShader system.
+	if (mShaderGenerator != nullptr)
+	{
+		Ogre::RTShader::ShaderGenerator::destroy();
+		mShaderGenerator = nullptr;
+	}
+}
+
 RenderMesh* me::RenderManager::getMesh(std::string name)
 {
 	if (!mMeshes.count(name))
@@ -170,7 +202,22 @@ me::RenderManager::~RenderManager()
 		delete it2.second;
 	}
 	mMeshes.clear();
-	delete mOgreWindow;
+
+	for (auto& it3 : mLights) {
+		Ogre::SceneNode* node = it3.second->getParentSceneNode();
+		node->detachAllObjects();
+		mSM->destroyLight(it3.second);
+		mSM->destroySceneNode(node);
+	}
+	mLights.clear();
+
+	if (mRoot != nullptr)
+	{
+		mRoot->saveConfig();
+	}
+	shutdown();
+	delete mRoot;
+	mRoot = nullptr;
 }
 
 bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
@@ -261,6 +308,7 @@ void me::RenderManager::createNewLight(std::string name, const Ogre::Vector3f &p
 	lightNode->attachObject(light);
 	lightNode->setDirection(dir);
 	lightNode->setPosition(pos);
+	mLights[name] = light;
 	
 
 }
@@ -484,7 +532,7 @@ Ogre::SceneManager* me::RenderManager::getSceneManager()
 {
 	return mSM;
 }
-
+/*
 void me::RenderManager::scene1()
 {
 	Ogre::SceneNode* mSinbadNode;
@@ -535,3 +583,4 @@ void me::RenderManager::scene1()
 
 	
 }
+*/

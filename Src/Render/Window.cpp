@@ -19,6 +19,13 @@ Window::Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, 
 
 Window::~Window()
 {
+	if (window != nullptr)
+	{
+		SDL_DestroyWindow(window);
+		SDL_QuitSubSystem(SDL_INIT_VIDEO);
+		SDL_Quit();
+		window = nullptr;
+	}
 }
 
 SDL_Window* Window::get()

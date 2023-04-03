@@ -17,6 +17,11 @@ RenderWindow::RenderWindow(const std::string windowName)
 
 RenderWindow::~RenderWindow()
 {
+	if (mRenderWindow != nullptr)
+	{
+		mRenderWindow->destroy();
+		mRenderWindow = nullptr;
+	}
 
 }
 
@@ -65,13 +70,13 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	
 	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
-	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
+	SDL_SysWMinfo wmInfo;
 	SDL_version version;
 	SDL_GetVersion(&version);
-	wmInfo->version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
-	SDL_GetWindowWMInfo(mSdlWindow, wmInfo,wmInfo->version);
+	wmInfo.version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
+	SDL_GetWindowWMInfo(mSdlWindow, &wmInfo,wmInfo.version);
 
-	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo->info.win.window));
+	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
 	mRenderWindow = root->createRenderWindow(mWindowName, w, h, false, &miscParams);
 
 	SDL_ShowCursor();

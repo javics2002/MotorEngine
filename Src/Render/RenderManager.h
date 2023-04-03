@@ -106,16 +106,21 @@ namespace me {
 		//Reference to RenderWindow class
 		RenderWindow* mOgreWindow;
 
-		//Store camera name to ogreCamera
+		//Store camera name to renderCamera
 		std::unordered_map<std::string, RenderCamera*> mCameras;			//Pairs each cameras with its name
-		//Store mesh name to ogreMesh
+		//Store mesh name to renderMesh
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
-		//Store mesh name to ogreParticleSystem
+		//Store mesh name to renderParticleSystem
 		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
+		//Store light entities
+		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
 		void initRoot();
+
+		//Destroy Ogre::Root
+		void shutdown();
 		/**
 		Creates OgreWindow (RenderWindow)
 		*/
@@ -133,6 +138,9 @@ namespace me {
 		initialize RTShaderSystem (Shader Generator) and add Ogre:: Material Manager Listener
 		*/
 		bool initialiseRTShaderSystem();
+
+		//Destroy RTShaderSystem (Shader Generator) and add Ogre:: Material Manager Listener
+		void destroyRTShaderSystem();
 
 		/**
 		@param name: Name of the camera
@@ -308,7 +316,7 @@ namespace me {
 		/**
 		Example scene where rendering a sinbad with 2 camera,viewport
 		*/
-		void scene1();
+		//void scene1();
 
 		/**
 		Render one frame of Ogre::Root -> current scene manager
