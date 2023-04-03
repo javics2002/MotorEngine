@@ -1,0 +1,158 @@
+\hypertarget{classme_1_1_vector4}{}\doxysection{me\+::Vector4 Class Reference}
+\label{classme_1_1_vector4}\index{me::Vector4@{me::Vector4}}
+
+
+{\ttfamily \#include $<$Vector4.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4}} ()
+\item 
+\mbox{\hyperlink{classme_1_1_vector4_a3b12319a0f131f0f09a3f2d199a608fe}{Vector4}} (float a, float b, float c)
+\item 
+\mbox{\hyperlink{classme_1_1_vector4_af9381073e9854cf1190ef98198ddfbff}{Vector4}} (const \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} \&v\+\_\+)
+\item 
+\mbox{\hyperlink{classme_1_1_vector4_a3eb2c9782d2a1e5e685bd74354eea8a7}{Vector4}} (float a, float b, float c, float d)
+\item 
+\mbox{\hyperlink{classme_1_1_vector4_a94bbd0b53dab7d48aa762bbeb7179b2d}{Vector4}} (const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&v)
+\item 
+\mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \mbox{\hyperlink{classme_1_1_vector4_a012f2571ce91aaf30d264205311a549d}{lerp}} (const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&a, const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&b, float f)
+\item 
+void \mbox{\hyperlink{classme_1_1_vector4_a1eec9b1b9fa503b79f278a46c1472db6}{operator=}} (const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&v)
+\item 
+void \mbox{\hyperlink{classme_1_1_vector4_a09de4f22f759dab56add186a2da30208}{operator=}} (const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} $\ast$v)
+\item 
+Ogre\+::\+Quaternion \mbox{\hyperlink{classme_1_1_vector4_aa244b8042c59647c594f4309e0131768}{v4\+To\+Ogre\+Quaternion}} ()
+\item 
+bt\+Quaternion \mbox{\hyperlink{classme_1_1_vector4_a85ff06f21db94a8f2d39892413669b85}{get\+Rotation\+In\+Bullet}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_vector4_adac0e47d5dfad5b0fdcc47371d162113}{rotate}} (float degrees, \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} axis)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classme_1_1_vector4_a0a3f1fd1a3730d3952333adc4b3d7fce}{x}}
+\item 
+float \mbox{\hyperlink{classme_1_1_vector4_afd7d4bd8ac3bd548c768834b86a77336}{y}}
+\item 
+float \mbox{\hyperlink{classme_1_1_vector4_a1462b316f647c24854fe7494182eccd4}{z}}
+\item 
+float \mbox{\hyperlink{classme_1_1_vector4_a1d1c75c33c8c82efd70cbd1e77effb31}{w}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_vector4_a511b4d9c8326c235b76d794eea018921}\label{classme_1_1_vector4_a511b4d9c8326c235b76d794eea018921}} 
+\index{me::Vector4@{me::Vector4}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Vector4\+::\+Vector4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a3b12319a0f131f0f09a3f2d199a608fe}\label{classme_1_1_vector4_a3b12319a0f131f0f09a3f2d199a608fe}} 
+\index{me::Vector4@{me::Vector4}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Vector4\+::\+Vector4 (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_af9381073e9854cf1190ef98198ddfbff}\label{classme_1_1_vector4_af9381073e9854cf1190ef98198ddfbff}} 
+\index{me::Vector4@{me::Vector4}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Vector4\+::\+Vector4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} \&}]{v\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a3eb2c9782d2a1e5e685bd74354eea8a7}\label{classme_1_1_vector4_a3eb2c9782d2a1e5e685bd74354eea8a7}} 
+\index{me::Vector4@{me::Vector4}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Vector4\+::\+Vector4 (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{c,  }\item[{float}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a94bbd0b53dab7d48aa762bbeb7179b2d}\label{classme_1_1_vector4_a94bbd0b53dab7d48aa762bbeb7179b2d}} 
+\index{me::Vector4@{me::Vector4}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Vector4\+::\+Vector4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_vector4_a85ff06f21db94a8f2d39892413669b85}\label{classme_1_1_vector4_a85ff06f21db94a8f2d39892413669b85}} 
+\index{me::Vector4@{me::Vector4}!getRotationInBullet@{getRotationInBullet}}
+\index{getRotationInBullet@{getRotationInBullet}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{getRotationInBullet()}{getRotationInBullet()}}
+{\footnotesize\ttfamily bt\+Quaternion Vector4\+::get\+Rotation\+In\+Bullet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current Rotation in bt\+Quaternion \mbox{\Hypertarget{classme_1_1_vector4_a012f2571ce91aaf30d264205311a549d}\label{classme_1_1_vector4_a012f2571ce91aaf30d264205311a549d}} 
+\index{me::Vector4@{me::Vector4}!lerp@{lerp}}
+\index{lerp@{lerp}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} Vector4\+::lerp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&}]{a,  }\item[{const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&}]{b,  }\item[{float}]{f }\end{DoxyParamCaption})}
+
+Returns the linear interpolation between \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{} by a factor of \char`\"{}f\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The starting vector to interpolate from \\
+\hline
+{\em b} & The ending vector to interpolate to \\
+\hline
+{\em f} & The interpolation factor, a value between 0 and 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_vector4_a1eec9b1b9fa503b79f278a46c1472db6}\label{classme_1_1_vector4_a1eec9b1b9fa503b79f278a46c1472db6}} 
+\index{me::Vector4@{me::Vector4}!operator=@{operator=}}
+\index{operator=@{operator=}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vector4\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a09de4f22f759dab56add186a2da30208}\label{classme_1_1_vector4_a09de4f22f759dab56add186a2da30208}} 
+\index{me::Vector4@{me::Vector4}!operator=@{operator=}}
+\index{operator=@{operator=}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vector4\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_vector4}{Vector4}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_adac0e47d5dfad5b0fdcc47371d162113}\label{classme_1_1_vector4_adac0e47d5dfad5b0fdcc47371d162113}} 
+\index{me::Vector4@{me::Vector4}!rotate@{rotate}}
+\index{rotate@{rotate}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Vector4\+::rotate (\begin{DoxyParamCaption}\item[{float}]{degrees,  }\item[{\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}}]{axis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_vector4_aa244b8042c59647c594f4309e0131768}\label{classme_1_1_vector4_aa244b8042c59647c594f4309e0131768}} 
+\index{me::Vector4@{me::Vector4}!v4ToOgreQuaternion@{v4ToOgreQuaternion}}
+\index{v4ToOgreQuaternion@{v4ToOgreQuaternion}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{v4ToOgreQuaternion()}{v4ToOgreQuaternion()}}
+{\footnotesize\ttfamily Ogre\+::\+Quaternion Vector4\+::v4\+To\+Ogre\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the conversion \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} -\/ Ogre\+::\+Quaternion 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_vector4_a1d1c75c33c8c82efd70cbd1e77effb31}\label{classme_1_1_vector4_a1d1c75c33c8c82efd70cbd1e77effb31}} 
+\index{me::Vector4@{me::Vector4}!w@{w}}
+\index{w@{w}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily float me\+::\+Vector4\+::w}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a0a3f1fd1a3730d3952333adc4b3d7fce}\label{classme_1_1_vector4_a0a3f1fd1a3730d3952333adc4b3d7fce}} 
+\index{me::Vector4@{me::Vector4}!x@{x}}
+\index{x@{x}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily float me\+::\+Vector4\+::x}
+
+\mbox{\Hypertarget{classme_1_1_vector4_afd7d4bd8ac3bd548c768834b86a77336}\label{classme_1_1_vector4_afd7d4bd8ac3bd548c768834b86a77336}} 
+\index{me::Vector4@{me::Vector4}!y@{y}}
+\index{y@{y}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily float me\+::\+Vector4\+::y}
+
+\mbox{\Hypertarget{classme_1_1_vector4_a1462b316f647c24854fe7494182eccd4}\label{classme_1_1_vector4_a1462b316f647c24854fe7494182eccd4}} 
+\index{me::Vector4@{me::Vector4}!z@{z}}
+\index{z@{z}!me::Vector4@{me::Vector4}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily float me\+::\+Vector4\+::z}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Utils/\mbox{\hyperlink{_vector4_8h}{Vector4.\+h}}\item 
+Src/\+Utils/\mbox{\hyperlink{_vector4_8cpp}{Vector4.\+cpp}}\end{DoxyCompactItemize}

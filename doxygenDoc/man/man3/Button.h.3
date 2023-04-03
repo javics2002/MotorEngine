@@ -1,0 +1,68 @@
+.TH "Src/Input/Button.h" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Src/Input/Button.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MotorEngine/MotorEngineAPI\&.h'\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBme::Button\fP"
+.br
+.ti -1c
+.RI "struct \fBme::Input\fP"
+.br
+.ti -1c
+.RI "struct \fBme::InputHasher\fP"
+.br
+.ti -1c
+.RI "struct \fBme::OnButtonPressedInfo\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBme\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__INPUT_BUTTON\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef union \fBSDL_Event\fP \fBSDL_Event\fP"
+.br
+.ti -1c
+.RI "typedef int(__cdecl * \fBSDL_EventFilter\fP) (void *userdata, \fBSDL_Event\fP *event)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __INPUT_BUTTON"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef union \fBSDL_Event\fP \fBSDL_Event\fP"
+
+.SS "typedef int(__cdecl * SDL_EventFilter) (void *userdata, \fBSDL_Event\fP *event)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

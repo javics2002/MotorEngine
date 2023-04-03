@@ -1,0 +1,72 @@
+\hypertarget{_sound_manager_8h}{}\doxysection{Src/\+Audio/\+Sound\+Manager.h File Reference}
+\label{_sound_manager_8h}\index{Src/Audio/SoundManager.h@{Src/Audio/SoundManager.h}}
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include \char`\"{}Motor\+Engine/\+Motor\+Engine\+API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utils/\+Singleton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utils/\+Vector3.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classme_1_1_sound_manager}{me\+::\+Sound\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_m_o_d}{FMOD}}
+\item 
+namespace \mbox{\hyperlink{namespaceme}{me}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sound_manager_8h_a4d6d4145f8c3f65e5d922d879bf8cd66}{\+\_\+\+FMOD\+\_\+\+SOUND\+\_\+\+MANAGER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{_sound_manager_8h_ab817628375dd23c707108f7d9fd302ca}{FMOD\+\_\+\+MODE}}
+\item 
+typedef int \mbox{\hyperlink{_sound_manager_8h_ae3f91b6700d531ec62e89650ab25b9e6}{CHANNEL\+\_\+\+NUMBER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Sound\+Manager \& \mbox{\hyperlink{namespaceme_a625a6e78ea8ccf4bb78d65e645513dd1}{me\+::sound\+Manager}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{namespaceme_a15c4fa676c025760938ddb5ba349c4e1}{me\+::\+MAX\+\_\+\+CHANNELS}} = 36
+\item 
+const float \mbox{\hyperlink{namespaceme_a481a0c381d7e955f1654c93f4a046839}{me\+::\+DOPPLER\+\_\+\+SCALE}} = 1
+\item 
+const float \mbox{\hyperlink{namespaceme_a439b64171f81c9557e8dab9df2adc081}{me\+::\+DISTANCE\+\_\+\+FACTOR}} = 1
+\item 
+const float \mbox{\hyperlink{namespaceme_a266976037dee6b06b15e6604621b0adf}{me\+::\+ROLLOFF\+\_\+\+SCALE}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sound_manager_8h_a4d6d4145f8c3f65e5d922d879bf8cd66}\label{_sound_manager_8h_a4d6d4145f8c3f65e5d922d879bf8cd66}} 
+\index{SoundManager.h@{SoundManager.h}!\_FMOD\_SOUND\_MANAGER@{\_FMOD\_SOUND\_MANAGER}}
+\index{\_FMOD\_SOUND\_MANAGER@{\_FMOD\_SOUND\_MANAGER}!SoundManager.h@{SoundManager.h}}
+\doxysubsubsection{\texorpdfstring{\_FMOD\_SOUND\_MANAGER}{\_FMOD\_SOUND\_MANAGER}}
+{\footnotesize\ttfamily \#define \+\_\+\+FMOD\+\_\+\+SOUND\+\_\+\+MANAGER}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_sound_manager_8h_ae3f91b6700d531ec62e89650ab25b9e6}\label{_sound_manager_8h_ae3f91b6700d531ec62e89650ab25b9e6}} 
+\index{SoundManager.h@{SoundManager.h}!CHANNEL\_NUMBER@{CHANNEL\_NUMBER}}
+\index{CHANNEL\_NUMBER@{CHANNEL\_NUMBER}!SoundManager.h@{SoundManager.h}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_NUMBER}{CHANNEL\_NUMBER}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{_sound_manager_8h_ae3f91b6700d531ec62e89650ab25b9e6}{CHANNEL\+\_\+\+NUMBER}}}
+
+\mbox{\Hypertarget{_sound_manager_8h_ab817628375dd23c707108f7d9fd302ca}\label{_sound_manager_8h_ab817628375dd23c707108f7d9fd302ca}} 
+\index{SoundManager.h@{SoundManager.h}!FMOD\_MODE@{FMOD\_MODE}}
+\index{FMOD\_MODE@{FMOD\_MODE}!SoundManager.h@{SoundManager.h}}
+\doxysubsubsection{\texorpdfstring{FMOD\_MODE}{FMOD\_MODE}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{_sound_manager_8h_ab817628375dd23c707108f7d9fd302ca}{FMOD\+\_\+\+MODE}}}
+

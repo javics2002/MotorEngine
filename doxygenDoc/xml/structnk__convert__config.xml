@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__convert__config" kind="struct" language="C++" prot="public">
+    <compoundname>nk_convert_config</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__convert__config_1ad344c555b0c1ce0a07dded48860ceb00" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_convert_config::global_alpha</definition>
+        <argsstring></argsstring>
+        <name>global_alpha</name>
+        <qualifiedname>nk_convert_config::global_alpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="953" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="953" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1a7279543367b1ad0e5f183491233cedad" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a9b070460af54cd26421eb7d000956f38" kindref="member">nk_anti_aliasing</ref></type>
+        <definition>enum nk_anti_aliasing nk_convert_config::line_AA</definition>
+        <argsstring></argsstring>
+        <name>line_AA</name>
+        <qualifiedname>nk_convert_config::line_AA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="954" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="954" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1a1d0cf3e01234c636729dfd0fddf5b2c7" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a9b070460af54cd26421eb7d000956f38" kindref="member">nk_anti_aliasing</ref></type>
+        <definition>enum nk_anti_aliasing nk_convert_config::shape_AA</definition>
+        <argsstring></argsstring>
+        <name>shape_AA</name>
+        <qualifiedname>nk_convert_config::shape_AA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="955" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="955" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1ae62d641bf9c5bc6b3e66c6071f4a8267" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned nk_convert_config::circle_segment_count</definition>
+        <argsstring></argsstring>
+        <name>circle_segment_count</name>
+        <qualifiedname>nk_convert_config::circle_segment_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="956" column="14" bodyfile="Src/GUI/nuklear.h" bodystart="956" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1ae367d812c2f866e843f9684b3a920e73" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned nk_convert_config::arc_segment_count</definition>
+        <argsstring></argsstring>
+        <name>arc_segment_count</name>
+        <qualifiedname>nk_convert_config::arc_segment_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="957" column="14" bodyfile="Src/GUI/nuklear.h" bodystart="957" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1afcf45f3fc6e3f043b572b59cb04424c5" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned nk_convert_config::curve_segment_count</definition>
+        <argsstring></argsstring>
+        <name>curve_segment_count</name>
+        <qualifiedname>nk_convert_config::curve_segment_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="958" column="14" bodyfile="Src/GUI/nuklear.h" bodystart="958" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1afe7d1907a295a3db7bbb11e3f0f98c1e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__draw__null__texture" kindref="compound">nk_draw_null_texture</ref></type>
+        <definition>struct nk_draw_null_texture nk_convert_config::tex_null</definition>
+        <argsstring></argsstring>
+        <name>tex_null</name>
+        <qualifiedname>nk_convert_config::tex_null</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="959" column="31" bodyfile="Src/GUI/nuklear.h" bodystart="959" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1addeb894f54f2ba1dbe3d5bf887b27776" prot="public" static="no" mutable="no">
+        <type>const struct nk_draw_vertex_layout_element *</type>
+        <definition>const struct nk_draw_vertex_layout_element* nk_convert_config::vertex_layout</definition>
+        <argsstring></argsstring>
+        <name>vertex_layout</name>
+        <qualifiedname>nk_convert_config::vertex_layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="960" column="46" bodyfile="Src/GUI/nuklear.h" bodystart="960" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1acf0d9e08220c6e29ee9d2753f9273591" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_convert_config::vertex_size</definition>
+        <argsstring></argsstring>
+        <name>vertex_size</name>
+        <qualifiedname>nk_convert_config::vertex_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="961" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="961" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__convert__config_1a92519fe62ef0e8f0d7180dbd874c775f" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_convert_config::vertex_alignment</definition>
+        <argsstring></argsstring>
+        <name>vertex_alignment</name>
+        <qualifiedname>nk_convert_config::vertex_alignment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="962" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="962" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_convert_config</label>
+        <link refid="structnk__convert__config"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>tex_null</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_draw_null_texture</label>
+        <link refid="structnk__draw__null__texture"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>uv</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="4">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="952" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="952" bodyend="963"/>
+    <listofallmembers>
+      <member refid="structnk__convert__config_1ae367d812c2f866e843f9684b3a920e73" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>arc_segment_count</name></member>
+      <member refid="structnk__convert__config_1ae62d641bf9c5bc6b3e66c6071f4a8267" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>circle_segment_count</name></member>
+      <member refid="structnk__convert__config_1afcf45f3fc6e3f043b572b59cb04424c5" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>curve_segment_count</name></member>
+      <member refid="structnk__convert__config_1ad344c555b0c1ce0a07dded48860ceb00" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>global_alpha</name></member>
+      <member refid="structnk__convert__config_1a7279543367b1ad0e5f183491233cedad" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>line_AA</name></member>
+      <member refid="structnk__convert__config_1a1d0cf3e01234c636729dfd0fddf5b2c7" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>shape_AA</name></member>
+      <member refid="structnk__convert__config_1afe7d1907a295a3db7bbb11e3f0f98c1e" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>tex_null</name></member>
+      <member refid="structnk__convert__config_1a92519fe62ef0e8f0d7180dbd874c775f" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>vertex_alignment</name></member>
+      <member refid="structnk__convert__config_1addeb894f54f2ba1dbe3d5bf887b27776" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>vertex_layout</name></member>
+      <member refid="structnk__convert__config_1acf0d9e08220c6e29ee9d2753f9273591" prot="public" virt="non-virtual"><scope>nk_convert_config</scope><name>vertex_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,51 @@
+\hypertarget{_mesh_renderer_8h_source}{}\doxysection{Mesh\+Renderer.\+h}
+\label{_mesh_renderer_8h_source}\index{Src/EntityComponent/Components/MeshRenderer.h@{Src/EntityComponent/Components/MeshRenderer.h}}
+\mbox{\hyperlink{_mesh_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ \_\_ENTITYCOMPONENT\_MESHRENDERER}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_\_ENTITYCOMPONENT\_MESHRENDERER}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }Transform;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_mesh_renderer}{MeshRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_component}{Component}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//name\ for\ om()\ map\ and\ for\ entity\ that\ attached\ in\ node}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_mesh_renderer_a9f15f9f36f6de10ea5a8578dd7efc652}{mName}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//name\ of\ .mesh\ file}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_mesh_renderer_a6085a2c25d3cce0ee8675ac9bec28c35}{mMeshName}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//componenet\ transform\ of\ this.Entity}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_transform}{Transform}}*\ \mbox{\hyperlink{classme_1_1_mesh_renderer_ab22b272fb14e13aa3bac331ad27a0fe0}{mTransform}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//static\ state\ of\ this.Entity\ }}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mStaticObject\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_mesh_renderer}{MeshRenderer}}(std::string\ name,\ std::string\ meshName);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Destroy\ om()\ map\ saved\ mesh\ (ogreMesh)}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_mesh_renderer}{\string~MeshRenderer}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ start()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setMaterial(std::string\ materialName);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setStatic(\textcolor{keywordtype}{bool}\ stat);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::string\ getName();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+
+\end{DoxyCode}

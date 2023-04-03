@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__scenemanager_8cpp" xml:lang="en-US">
+<title>Src/EntityComponent/Scenemanager.cpp File Reference</title>
+<indexterm><primary>Src/EntityComponent/Scenemanager.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SceneManager.h&quot;<?linebreak?>#include &quot;Scene.h&quot;<?linebreak?>#include &lt;lua.hpp&gt;<?linebreak?>#include &lt;LuaBridge/LuaBridge.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

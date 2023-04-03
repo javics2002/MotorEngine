@@ -1,0 +1,118 @@
+.TH "me::Component" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::Component
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Component\&.h>\fP
+.PP
+Inherited by \fBme::Animator\fP, \fBme::AudioListener\fP, \fBme::AudioSource\fP, \fBme::Camera\fP, \fBme::Collider\fP, \fBme::MeshRenderer\fP, \fBme::ParticleSystem\fP, \fBme::RigidBody\fP, \fBme::Transform\fP, and \fBme::UIElement\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::Component::Component ()"
+Build the foundation of the \fBComponent\fP\&. 
+.SS "me::Component::~Component ()\fC [virtual]\fP"
+This method is meant to be the definition of the dynamic memory that has to be safely delete\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBEntity\fP * me::Component::getEntity ()\fC [inline]\fP"
+Get the entity associated reference\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the entity\&. 
+.RE
+.PP
+
+.SS "void me::Component::lateUpdate ()\fC [virtual]\fP"
+This method is meant to be the definition of those updates that has to be processed at the end of the game cycle\&.
+.PP
+For example: render and collisions\&. 
+.PP
+Reimplemented in \fBme::RigidBody\fP, and \fBme::Transform\fP\&.
+.SS "void me::Component::OnCollisionEnter (\fBEntity\fP * other)\fC [virtual]\fP"
+
+.SS "void me::Component::OnCollisionExit (\fBEntity\fP * other)\fC [virtual]\fP"
+
+.SS "void me::Component::OnCollisionStay (\fBEntity\fP * other)\fC [virtual]\fP"
+
+.SS "void me::Component::setEntity (\fBEntity\fP * e)\fC [inline]\fP"
+Set the associated entity to the component\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fI\fBEntity\fP\fP to which it belongs\&.
+.RE
+.PP
+This method is meant to be use at the same time as start, because it's not recomended to switch the entity at execution\&. 
+.SS "void me::Component::start ()\fC [virtual]\fP"
+This method is only ever called once\&. This must be called at the instantiation of the script\&. 
+.PP
+Reimplemented in \fBme::AudioSource\fP, \fBme::AudioListener\fP, \fBme::Camera\fP, \fBme::MeshRenderer\fP, \fBme::ParticleSystem\fP, \fBme::RigidBody\fP, and \fBme::Transform\fP\&.
+.SS "void me::Component::update ()\fC [virtual]\fP"
+This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle\&.
+.PP
+Almost all the logic updates\&. 
+.PP
+Reimplemented in \fBme::AudioListener\fP, \fBme::AudioSource\fP, \fBme::Animator\fP, \fBme::Camera\fP, \fBme::MeshRenderer\fP, \fBme::ParticleSystem\fP, \fBme::RigidBody\fP, \fBme::Transform\fP, and \fBme::UIButton\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool me::Component::enabled = true"
+
+.SS "\fBEntity\fP* me::Component::mEntity\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

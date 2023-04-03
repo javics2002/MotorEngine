@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structme_1_1_input_hasher" kind="struct" language="C++" prot="public">
+    <compoundname>me::InputHasher</compoundname>
+    <includes refid="_button_8h" local="no">Button.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structme_1_1_input_hasher_1a73c49166daa33d72cebb98c59c4bcbc3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t me::InputHasher::operator()</definition>
+        <argsstring>(const Input &amp;t) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>me::InputHasher::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="structme_1_1_input" kindref="compound">Input</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="55" column="8" bodyfile="Src/Input/Button.h" bodystart="55" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Input/Button.h" line="54" column="1" bodyfile="Src/Input/Button.h" bodystart="54" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structme_1_1_input_hasher_1a73c49166daa33d72cebb98c59c4bcbc3" prot="public" virt="non-virtual"><scope>me::InputHasher</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

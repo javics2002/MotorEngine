@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_animator" kind="class" language="C++" prot="public">
+    <compoundname>me::Animator</compoundname>
+    <basecompoundref refid="classme_1_1_component" prot="public" virt="non-virtual">me::Component</basecompoundref>
+    <includes refid="_animator_8h" local="no">Animator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classme_1_1_animator_1ad0a46d340316901096f029b129072352" prot="private" static="no" mutable="no">
+        <type>Ogre::AnimationState *</type>
+        <definition>Ogre::AnimationState* me::Animator::mCurrentState</definition>
+        <argsstring></argsstring>
+        <name>mCurrentState</name>
+        <qualifiedname>me::Animator::mCurrentState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="81" column="22" bodyfile="Src/EntityComponent/Components/Animator.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_animator_1a62c51884bab7494d680a4359f42be9dd" prot="private" static="no" mutable="no">
+        <type>Ogre::AnimationStateSet *</type>
+        <definition>Ogre::AnimationStateSet* me::Animator::mAnimStatesMap</definition>
+        <argsstring></argsstring>
+        <name>mAnimStatesMap</name>
+        <qualifiedname>me::Animator::mAnimStatesMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="83" column="25" bodyfile="Src/EntityComponent/Components/Animator.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_animator_1a588bde416c9af1ead878b5b05bf27c72" prot="private" static="no" mutable="no">
+        <type><ref refid="classme_1_1_mesh_renderer" kindref="compound">MeshRenderer</ref> *</type>
+        <definition>MeshRenderer* me::Animator::mMesh</definition>
+        <argsstring></argsstring>
+        <name>mMesh</name>
+        <qualifiedname>me::Animator::mMesh</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="85" column="14" bodyfile="Src/EntityComponent/Components/Animator.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_animator_1a2900cb67b896783688119a814215211d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::Animator::mStop</definition>
+        <argsstring></argsstring>
+        <name>mStop</name>
+        <qualifiedname>me::Animator::mStop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="87" column="6" bodyfile="Src/EntityComponent/Components/Animator.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_animator_1a701eeb9283612be2027425efb06bbff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animator::Animator</definition>
+        <argsstring>()</argsstring>
+        <name>Animator</name>
+        <qualifiedname>me::Animator::Animator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="19" column="1" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a5af4797549f9f466a88657899e17c6ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Animator::~Animator</definition>
+        <argsstring>()</argsstring>
+        <name>~Animator</name>
+        <qualifiedname>me::Animator::~Animator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="20" column="1" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a59b9903253d8ce084048f7600e956735" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Animator::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>me::Animator::update</qualifiedname>
+        <reimplements refid="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+<para>Almost all the logic updates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="23" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="22" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a85aaf640ac6224644f15ccfffb9c5748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animator::setActive</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setActive</name>
+        <qualifiedname>me::Animator::setActive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref>&apos;s active state <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value indicating whether the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref> should be active or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="29" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1aeba3c634f367f9d24021c3d62e8b852c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animator::setLoop</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setLoop</name>
+        <qualifiedname>me::Animator::setLoop</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref>&apos;s loop state <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value indicating whether the current animation should loop or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="35" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="36" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a9da14b69ed5e949d3511e533c470279b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Animator::getCurrAnimName</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrAnimName</name>
+        <qualifiedname>me::Animator::getCurrAnimName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the name of the current animation being played <simplesect kind="return"><para>A string containing the name of the current animation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="42" column="13" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1afa86b70a468766c7d5e7e309a5bf7445" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Animator::isActive</definition>
+        <argsstring>()</argsstring>
+        <name>isActive</name>
+        <qualifiedname>me::Animator::isActive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref>&apos;s active state <simplesect kind="return"><para>A boolean value indicating whether the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref> is active or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="48" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a89886f13f2eb12cd3184de012fffb98a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Animator::isLoop</definition>
+        <argsstring>()</argsstring>
+        <name>isLoop</name>
+        <qualifiedname>me::Animator::isLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the <ref refid="classme_1_1_animator" kindref="compound">Animator</ref>&apos;s loop state <simplesect kind="return"><para>A boolean value indicating whether the current animation should loop or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="54" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a93618b388a74a2344368be260b236395" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Animator::animHasEnded</definition>
+        <argsstring>()</argsstring>
+        <name>animHasEnded</name>
+        <qualifiedname>me::Animator::animHasEnded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="60" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a79b32b578adc9d452977cadc4c77c7f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animator::playAnim</definition>
+        <argsstring>(std::string anim, bool loop=true)</argsstring>
+        <name>playAnim</name>
+        <qualifiedname>me::Animator::playAnim</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>anim</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>loop</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays a specified animation on the <ref refid="classme_1_1_entity" kindref="compound">Entity</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string containing the name of the animation to be played </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean value indicating whether the animation should loop or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="68" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="66" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a1872695c1e9f83ab70d02bda72200a52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animator::stopAnim</definition>
+        <argsstring>()</argsstring>
+        <name>stopAnim</name>
+        <qualifiedname>me::Animator::stopAnim</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops the current animation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="73" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="81" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_animator_1a7946f90f69f5497b75ccd7e10f69b8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Animator::resumeAnim</definition>
+        <argsstring>()</argsstring>
+        <name>resumeAnim</name>
+        <qualifiedname>me::Animator::resumeAnim</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resumes the current animation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Animator.h" line="78" column="6" bodyfile="Src/EntityComponent/Components/Animator.cpp" bodystart="87" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>me::Animator</label>
+        <link refid="classme_1_1_animator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>me::Animator</label>
+        <link refid="classme_1_1_animator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/Animator.h" line="16" column="1" bodyfile="Src/EntityComponent/Components/Animator.h" bodystart="17" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classme_1_1_animator_1a701eeb9283612be2027425efb06bbff7" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>Animator</name></member>
+      <member refid="classme_1_1_animator_1a93618b388a74a2344368be260b236395" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>animHasEnded</name></member>
+      <member refid="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>Component</name></member>
+      <member refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>enabled</name></member>
+      <member refid="classme_1_1_animator_1a9da14b69ed5e949d3511e533c470279b" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>getCurrAnimName</name></member>
+      <member refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>getEntity</name></member>
+      <member refid="classme_1_1_animator_1afa86b70a468766c7d5e7e309a5bf7445" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>isActive</name></member>
+      <member refid="classme_1_1_animator_1a89886f13f2eb12cd3184de012fffb98a" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>isLoop</name></member>
+      <member refid="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" virt="virtual"><scope>me::Animator</scope><name>lateUpdate</name></member>
+      <member refid="classme_1_1_animator_1a62c51884bab7494d680a4359f42be9dd" prot="private" virt="non-virtual"><scope>me::Animator</scope><name>mAnimStatesMap</name></member>
+      <member refid="classme_1_1_animator_1ad0a46d340316901096f029b129072352" prot="private" virt="non-virtual"><scope>me::Animator</scope><name>mCurrentState</name></member>
+      <member refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" virt="non-virtual"><scope>me::Animator</scope><name>mEntity</name></member>
+      <member refid="classme_1_1_animator_1a588bde416c9af1ead878b5b05bf27c72" prot="private" virt="non-virtual"><scope>me::Animator</scope><name>mMesh</name></member>
+      <member refid="classme_1_1_animator_1a2900cb67b896783688119a814215211d" prot="private" virt="non-virtual"><scope>me::Animator</scope><name>mStop</name></member>
+      <member refid="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" virt="virtual"><scope>me::Animator</scope><name>OnCollisionEnter</name></member>
+      <member refid="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" virt="virtual"><scope>me::Animator</scope><name>OnCollisionExit</name></member>
+      <member refid="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" virt="virtual"><scope>me::Animator</scope><name>OnCollisionStay</name></member>
+      <member refid="classme_1_1_animator_1a79b32b578adc9d452977cadc4c77c7f4" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>playAnim</name></member>
+      <member refid="classme_1_1_animator_1a7946f90f69f5497b75ccd7e10f69b8f6" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>resumeAnim</name></member>
+      <member refid="classme_1_1_animator_1a85aaf640ac6224644f15ccfffb9c5748" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>setActive</name></member>
+      <member refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>setEntity</name></member>
+      <member refid="classme_1_1_animator_1aeba3c634f367f9d24021c3d62e8b852c" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>setLoop</name></member>
+      <member refid="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae" prot="public" virt="virtual"><scope>me::Animator</scope><name>start</name></member>
+      <member refid="classme_1_1_animator_1a1872695c1e9f83ab70d02bda72200a52" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>stopAnim</name></member>
+      <member refid="classme_1_1_animator_1a59b9903253d8ce084048f7600e956735" prot="public" virt="virtual"><scope>me::Animator</scope><name>update</name></member>
+      <member refid="classme_1_1_animator_1a5af4797549f9f466a88657899e17c6ab" prot="public" virt="non-virtual"><scope>me::Animator</scope><name>~Animator</name></member>
+      <member refid="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" virt="virtual"><scope>me::Animator</scope><name>~Component</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__user__font" xml:lang="en-US">
+<title>nk_user_font Struct Reference</title>
+<indexterm><primary>nk_user_font</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__user__font_1a227c31a1ef360c78c98678d8d8546c03">userdata</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__user__font_1ab98ed37df408e0c2febfe448897ccf82">height</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a980ba414f6e3d6490236a688e7b51b1a">nk_text_width_f</link> <link linkend="_structnk__user__font_1aac686ca3e72208ddfb982caa7c89293a">width</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__user__font_1ab98ed37df408e0c2febfe448897ccf82"/><section>
+    <title>height</title>
+<indexterm><primary>height</primary><secondary>nk_user_font</secondary></indexterm>
+<indexterm><primary>nk_user_font</primary><secondary>height</secondary></indexterm>
+<para><computeroutput>float nk_user_font::height</computeroutput></para></section>
+<anchor xml:id="_structnk__user__font_1a227c31a1ef360c78c98678d8d8546c03"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_user_font</secondary></indexterm>
+<indexterm><primary>nk_user_font</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_user_font::userdata</computeroutput></para></section>
+<anchor xml:id="_structnk__user__font_1aac686ca3e72208ddfb982caa7c89293a"/><section>
+    <title>width</title>
+<indexterm><primary>width</primary><secondary>nk_user_font</secondary></indexterm>
+<indexterm><primary>nk_user_font</primary><secondary>width</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a980ba414f6e3d6490236a688e7b51b1a">nk_text_width_f</link> nk_user_font::width</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

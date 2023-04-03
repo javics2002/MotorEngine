@@ -15,7 +15,6 @@ namespace me {
 		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
 		~UIText();
 
-
 		/**
 		* Set the position of the UIText instance
 		* @param x The x coordinate of the position

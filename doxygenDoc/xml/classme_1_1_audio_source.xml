@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_audio_source" kind="class" language="C++" prot="public">
+    <compoundname>me::AudioSource</compoundname>
+    <basecompoundref refid="classme_1_1_component" prot="public" virt="non-virtual">me::Component</basecompoundref>
+    <includes refid="_audio_source_8h" local="no">AudioSource.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classme_1_1_audio_source_1aa486d5e4274991ea1e8838d0eaf26ec5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::AudioSource::mVolume</definition>
+        <argsstring></argsstring>
+        <name>mVolume</name>
+        <qualifiedname>me::AudioSource::mVolume</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="102" column="7" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1a679c108ae505cadb096e66ca59273b38" prot="private" static="no" mutable="no">
+        <type>FMOD::Sound *</type>
+        <definition>FMOD::Sound* me::AudioSource::mSound</definition>
+        <argsstring></argsstring>
+        <name>mSound</name>
+        <qualifiedname>me::AudioSource::mSound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="103" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1ae0f22a9134665d99e31488ccd20f2a51" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string me::AudioSource::mSource</definition>
+        <argsstring></argsstring>
+        <name>mSource</name>
+        <qualifiedname>me::AudioSource::mSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="104" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1ab0feec0439247c25d2315d9b0b0b3522" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::AudioSource::mPlaying</definition>
+        <argsstring></argsstring>
+        <name>mPlaying</name>
+        <qualifiedname>me::AudioSource::mPlaying</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="105" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1aa4150099e49d66961abf5bcbf71fe42c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::AudioSource::mLoop</definition>
+        <argsstring></argsstring>
+        <name>mLoop</name>
+        <qualifiedname>me::AudioSource::mLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="106" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1a2c61c4d89c53d58accacb65826dd4172" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::AudioSource::mIs3D</definition>
+        <argsstring></argsstring>
+        <name>mIs3D</name>
+        <qualifiedname>me::AudioSource::mIs3D</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="107" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_audio_source_1a4b88156985360724a9f01278e1925bc4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::AudioSource::mPlayOnStart</definition>
+        <argsstring></argsstring>
+        <name>mPlayOnStart</name>
+        <qualifiedname>me::AudioSource::mPlayOnStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="108" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_audio_source_1a480cd7b2e14a1aee36070243eba2f2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::AudioSource::AudioSource</definition>
+        <argsstring>()</argsstring>
+        <name>AudioSource</name>
+        <qualifiedname>me::AudioSource::AudioSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="21" column="1" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1ac3056e1326e2e4fc27bfdd88fd46ee80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::AudioSource::~AudioSource</definition>
+        <argsstring>()</argsstring>
+        <name>~AudioSource</name>
+        <qualifiedname>me::AudioSource::~AudioSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="22" column="1" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>me::AudioSource::start</qualifiedname>
+        <reimplements refid="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is only ever called once. This must be called at the instantiation of the script. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="24" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="15" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>me::AudioSource::update</qualifiedname>
+        <reimplements refid="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+<para>Almost all the logic updates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="26" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1acad5444f563d9a45c6624754fc6b12c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::play</definition>
+        <argsstring>()</argsstring>
+        <name>play</name>
+        <qualifiedname>me::AudioSource::play</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Play the audio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="31" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a47ffb38b7350317309e6d37c95e67de3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>me::AudioSource::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop the audio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="36" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a0b0e6b9666e5bb2391f15eaa6a3e85ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::pause</definition>
+        <argsstring>()</argsstring>
+        <name>pause</name>
+        <qualifiedname>me::AudioSource::pause</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pause the audio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="41" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a4352d14298b27b78c7caa5624700f1f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::resume</definition>
+        <argsstring>()</argsstring>
+        <name>resume</name>
+        <qualifiedname>me::AudioSource::resume</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resume playing the audio after it has been paused. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="46" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1aacd8d5bebdae9e1a161cfb87db102edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::AudioSource::isPlaying</definition>
+        <argsstring>()</argsstring>
+        <name>isPlaying</name>
+        <qualifiedname>me::AudioSource::isPlaying</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the audio is currently playing. <simplesect kind="return"><para>True if the audio is playing, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="52" column="6" bodyfile="Src/EntityComponent/Components/AudioSource.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a5ca6a460d477f066272381801a3bee99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::setVolume</definition>
+        <argsstring>(float value)</argsstring>
+        <name>setVolume</name>
+        <qualifiedname>me::AudioSource::setVolume</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the volume of the audio. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new volume value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="59" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1aeb8529bf0253d9b5a381590e51c5895b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::setSource</definition>
+        <argsstring>(std::string source)</argsstring>
+        <name>setSource</name>
+        <qualifiedname>me::AudioSource::setSource</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the source of the audio <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The audio file to play. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="67" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a2f5c395ed054590810167de8bee36340" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::setLoop</definition>
+        <argsstring>(bool loop)</argsstring>
+        <name>setLoop</name>
+        <qualifiedname>me::AudioSource::setLoop</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set if the audio will play in a loop </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="74" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1a99a58dc68d3016d54ebb5e9f8cbfc49a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::setIs3D</definition>
+        <argsstring>(bool is3D)</argsstring>
+        <name>setIs3D</name>
+        <qualifiedname>me::AudioSource::setIs3D</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>is3D</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set if the audio will be a 3D audio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="81" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1aa2bc76ebd47588a27e223f2eb67d012f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::AudioSource::setPlayOnStart</definition>
+        <argsstring>(bool playOnStart)</argsstring>
+        <name>setPlayOnStart</name>
+        <qualifiedname>me::AudioSource::setPlayOnStart</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>playOnStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set if the adio will play at the start </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="88" column="13" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_audio_source_1af282226ee2ddb7fea0fb920ed189cf41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float me::AudioSource::getVolume</definition>
+        <argsstring>()</argsstring>
+        <name>getVolume</name>
+        <qualifiedname>me::AudioSource::getVolume</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the volume of the audio. <simplesect kind="return"><para>The current volume value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/AudioSource.h" line="96" column="14" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="96" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>me::AudioSource</label>
+        <link refid="classme_1_1_audio_source"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>me::AudioSource</label>
+        <link refid="classme_1_1_audio_source"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/AudioSource.h" line="14" column="1" bodyfile="Src/EntityComponent/Components/AudioSource.h" bodystart="15" bodyend="110"/>
+    <listofallmembers>
+      <member refid="classme_1_1_audio_source_1a480cd7b2e14a1aee36070243eba2f2e3" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>AudioSource</name></member>
+      <member refid="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>Component</name></member>
+      <member refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>enabled</name></member>
+      <member refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>getEntity</name></member>
+      <member refid="classme_1_1_audio_source_1af282226ee2ddb7fea0fb920ed189cf41" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>getVolume</name></member>
+      <member refid="classme_1_1_audio_source_1aacd8d5bebdae9e1a161cfb87db102edc" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>isPlaying</name></member>
+      <member refid="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>lateUpdate</name></member>
+      <member refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" virt="non-virtual"><scope>me::AudioSource</scope><name>mEntity</name></member>
+      <member refid="classme_1_1_audio_source_1a2c61c4d89c53d58accacb65826dd4172" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mIs3D</name></member>
+      <member refid="classme_1_1_audio_source_1aa4150099e49d66961abf5bcbf71fe42c" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mLoop</name></member>
+      <member refid="classme_1_1_audio_source_1ab0feec0439247c25d2315d9b0b0b3522" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mPlaying</name></member>
+      <member refid="classme_1_1_audio_source_1a4b88156985360724a9f01278e1925bc4" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mPlayOnStart</name></member>
+      <member refid="classme_1_1_audio_source_1a679c108ae505cadb096e66ca59273b38" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mSound</name></member>
+      <member refid="classme_1_1_audio_source_1ae0f22a9134665d99e31488ccd20f2a51" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mSource</name></member>
+      <member refid="classme_1_1_audio_source_1aa486d5e4274991ea1e8838d0eaf26ec5" prot="private" virt="non-virtual"><scope>me::AudioSource</scope><name>mVolume</name></member>
+      <member refid="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>OnCollisionEnter</name></member>
+      <member refid="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>OnCollisionExit</name></member>
+      <member refid="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>OnCollisionStay</name></member>
+      <member refid="classme_1_1_audio_source_1a0b0e6b9666e5bb2391f15eaa6a3e85ec" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>pause</name></member>
+      <member refid="classme_1_1_audio_source_1acad5444f563d9a45c6624754fc6b12c3" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>play</name></member>
+      <member refid="classme_1_1_audio_source_1a4352d14298b27b78c7caa5624700f1f7" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>resume</name></member>
+      <member refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setEntity</name></member>
+      <member refid="classme_1_1_audio_source_1a99a58dc68d3016d54ebb5e9f8cbfc49a" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setIs3D</name></member>
+      <member refid="classme_1_1_audio_source_1a2f5c395ed054590810167de8bee36340" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setLoop</name></member>
+      <member refid="classme_1_1_audio_source_1aa2bc76ebd47588a27e223f2eb67d012f" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setPlayOnStart</name></member>
+      <member refid="classme_1_1_audio_source_1aeb8529bf0253d9b5a381590e51c5895b" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setSource</name></member>
+      <member refid="classme_1_1_audio_source_1a5ca6a460d477f066272381801a3bee99" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>setVolume</name></member>
+      <member refid="classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>start</name></member>
+      <member refid="classme_1_1_audio_source_1a47ffb38b7350317309e6d37c95e67de3" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>stop</name></member>
+      <member refid="classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>update</name></member>
+      <member refid="classme_1_1_audio_source_1ac3056e1326e2e4fc27bfdd88fd46ee80" prot="public" virt="non-virtual"><scope>me::AudioSource</scope><name>~AudioSource</name></member>
+      <member refid="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" virt="virtual"><scope>me::AudioSource</scope><name>~Component</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

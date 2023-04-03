@@ -1,0 +1,60 @@
+.TH "nk_pool" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nk_pool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nuklear\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnk_allocator\fP \fBalloc\fP"
+.br
+.ti -1c
+.RI "enum \fBnk_allocation_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBpage_count\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_page\fP * \fBpages\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_page_element\fP * \fBfreelist\fP"
+.br
+.ti -1c
+.RI "unsigned \fBcapacity\fP"
+.br
+.ti -1c
+.RI "\fBnk_size\fP \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBnk_size\fP \fBcap\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "struct \fBnk_allocator\fP nk_pool::alloc"
+
+.SS "\fBnk_size\fP nk_pool::cap"
+
+.SS "unsigned nk_pool::capacity"
+
+.SS "struct \fBnk_page_element\fP* nk_pool::freelist"
+
+.SS "unsigned int nk_pool::page_count"
+
+.SS "struct \fBnk_page\fP* nk_pool::pages"
+
+.SS "\fBnk_size\fP nk_pool::size"
+
+.SS "enum \fBnk_allocation_type\fP nk_pool::type"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

@@ -1,8 +1,6 @@
 #include "Entity.h"
 #include "Components/Component.h"
 
-#include "Components/ComponentsFactory.h"
-
 #ifdef _DEBUG
 #include <iostream>
 #endif
@@ -17,7 +15,7 @@ namespace me {
 #ifdef _DEBUG
 		std::cout << " > Entity ( " << mName << " ) created." << std::endl;
 #endif
-	};
+	}
 
 	Entity::Entity(const SceneName name) :
 		mActive(true),
@@ -27,7 +25,7 @@ namespace me {
 #ifdef _DEBUG
 		std::cout << " > Entity " << mName << " created.";
 #endif
-	};
+	}
 
 	Entity::~Entity() {
 		for (auto &c : mComponents) {
@@ -38,26 +36,7 @@ namespace me {
 #ifdef _DEBUG
 		std::cout << " >>> Entity ( " << mName << " ) deleted..." << std::endl;
 #endif
-	};
-
-	template<typename T>
-	T* Entity::addComponent(const ComponentName& componentName) {
-
-		T* c = componentsFactory().create(componentName);
-
-		if (!hasComponent(componentName)) {
-
-			mComponents.insert({ componentName, c });
-			c->setEntity(this);
-			c->start();
-		}
-
-#ifdef _DEBUG
-		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
-#endif
-
-		return c;
-	};
+	}
 	
 	Component* Entity::addComponent(const ComponentName& componentName, Parameters& params) {
 		Component* c = componentsFactory().create(componentName, params);
@@ -73,10 +52,19 @@ namespace me {
 #endif
 
 		return c;
-	};
+	}
 
-	
-	
+	bool Entity::removeComponent(const ComponentName& componentName)
+	{
+		if (hasComponent(componentName)) {
+			delete mComponents.find(componentName)->second;
+			mComponents.erase(componentName);
+			return true;
+		}
+
+		return false;
+	}
+
 	void Entity::start()
 	{
 		for (auto c : mComponents) {
@@ -91,7 +79,7 @@ namespace me {
 			if(c.second->enabled)
 				c.second->update();
 		};
-	};
+	}
 
 	void Entity::lateUpdate() {
 		if (!mActive) return;
@@ -99,27 +87,29 @@ namespace me {
 			if (c.second->enabled)
 				c.second->lateUpdate();
 		};
-	};
+	}
 
-	void Entity::OnCollisionEnter(Entity* other)
+	void Entity::onCollisionEnter(Entity* other)
 	{
 		for (auto &c : mComponents) {
 			if(c.second->enabled)
-				c.second->OnCollisionEnter(other);
+				c.second->onCollisionEnter(other);
 		}
 	}
-	void Entity::OnCollisionStay(Entity* other)
+
+	void Entity::onCollisionStay(Entity* other)
 	{
 		for (auto &c : mComponents) {
 			if (c.second->enabled)
-				c.second->OnCollisionStay(other);
+				c.second->onCollisionStay(other);
 		}
 	}
-	void Entity::OnCollisionExit(Entity* other)
+
+	void Entity::onCollisionExit(Entity* other)
 	{
 		for (auto &c : mComponents) {
 			if (c.second->enabled)
-				c.second->OnCollisionExit(other);
+				c.second->onCollisionExit(other);
 		}
 	}
 };

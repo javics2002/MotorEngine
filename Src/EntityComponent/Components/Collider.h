@@ -15,7 +15,6 @@ namespace me{
 		Collider();
 		virtual ~Collider();
 
-
 		/**
 		Set the entity activity to the boolean petition.
 		@param Boolean state activity.

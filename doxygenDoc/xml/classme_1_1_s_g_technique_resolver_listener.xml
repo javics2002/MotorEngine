@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_s_g_technique_resolver_listener" kind="class" language="C++" prot="public">
+    <compoundname>me::SGTechniqueResolverListener</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Ogre::MaterialManager::Listener</basecompoundref>
+    <includes refid="_s_g_technique_resolver_listener_8h" local="no">SGTechniqueResolverListener.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_s_g_technique_resolver_listener_1a91f6b1c04aa719d64755b6db5a22ceb5" prot="protected" static="no" mutable="no">
+        <type>Ogre::RTShader::ShaderGenerator *</type>
+        <definition>Ogre::RTShader::ShaderGenerator* me::SGTechniqueResolverListener::mShaderGenerator</definition>
+        <argsstring></argsstring>
+        <name>mShaderGenerator</name>
+        <qualifiedname>me::SGTechniqueResolverListener::mShaderGenerator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="37" column="41" bodyfile="Src/Render/SGTechniqueResolverListener.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_s_g_technique_resolver_listener_1a9cc216a56f6a8af0dc98a28967c2d1a3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::SGTechniqueResolverListener::SGTechniqueResolverListener</definition>
+        <argsstring>(Ogre::RTShader::ShaderGenerator *pShaderGenerator)</argsstring>
+        <name>SGTechniqueResolverListener</name>
+        <qualifiedname>me::SGTechniqueResolverListener::SGTechniqueResolverListener</qualifiedname>
+        <param>
+          <type>Ogre::RTShader::ShaderGenerator *</type>
+          <declname>pShaderGenerator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="18" column="18" bodyfile="Src/Render/SGTechniqueResolverListener.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_s_g_technique_resolver_listener_1abc31ab50e9f0b9f8bf3b4054de39d727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ogre::Technique *</type>
+        <definition>Ogre::Technique * me::SGTechniqueResolverListener::handleSchemeNotFound</definition>
+        <argsstring>(unsigned short schemeIndex, const Ogre::String &amp;schemeName, Ogre::Material *originalMaterial, unsigned short lodIndex, const Ogre::Renderable *rend) override</argsstring>
+        <name>handleSchemeNotFound</name>
+        <qualifiedname>me::SGTechniqueResolverListener::handleSchemeNotFound</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>schemeIndex</declname>
+        </param>
+        <param>
+          <type>const Ogre::String &amp;</type>
+          <declname>schemeName</declname>
+        </param>
+        <param>
+          <type>Ogre::Material *</type>
+          <declname>originalMaterial</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>lodIndex</declname>
+        </param>
+        <param>
+          <type>const Ogre::Renderable *</type>
+          <declname>rend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the hook point where shader based technique will be created. It will be called whenever the material manager won&apos;t find appropriate technique that satisfy the target scheme name. If the scheme name is out target RT Shader System scheme name we will try to create shader generated technique for it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="26" column="25" bodyfile="Src/Render/SGTechniqueResolverListener.cpp" bodystart="11" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_s_g_technique_resolver_listener_1a5d20371aca4ef2710ea67cd3da66fe10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::SGTechniqueResolverListener::afterIlluminationPassesCreated</definition>
+        <argsstring>(Ogre::Technique *tech) override</argsstring>
+        <name>afterIlluminationPassesCreated</name>
+        <qualifiedname>me::SGTechniqueResolverListener::afterIlluminationPassesCreated</qualifiedname>
+        <param>
+          <type>Ogre::Technique *</type>
+          <declname>tech</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="31" column="14" bodyfile="Src/Render/SGTechniqueResolverListener.cpp" bodystart="49" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_s_g_technique_resolver_listener_1a3491c60cfd064a7501b34e0f179aded7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::SGTechniqueResolverListener::beforeIlluminationPassesCleared</definition>
+        <argsstring>(Ogre::Technique *tech) override</argsstring>
+        <name>beforeIlluminationPassesCleared</name>
+        <qualifiedname>me::SGTechniqueResolverListener::beforeIlluminationPassesCleared</qualifiedname>
+        <param>
+          <type>Ogre::Technique *</type>
+          <declname>tech</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="33" column="14" bodyfile="Src/Render/SGTechniqueResolverListener.cpp" bodystart="61" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Default implementation of a Listener to use with the <ref refid="namespace_ogre_1_1_r_t_shader" kindref="compound">Ogre::RTShader</ref> system. When a target scheme callback is invoked with the shader generator scheme it tries to create an equivalent shader based technique based on the default technique of the given material. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Ogre::MaterialManager::Listener</label>
+      </node>
+      <node id="1">
+        <label>me::SGTechniqueResolverListener</label>
+        <link refid="classme_1_1_s_g_technique_resolver_listener"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Ogre::MaterialManager::Listener</label>
+      </node>
+      <node id="1">
+        <label>me::SGTechniqueResolverListener</label>
+        <link refid="classme_1_1_s_g_technique_resolver_listener"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/Render/SGTechniqueResolverListener.h" line="16" column="5" bodyfile="Src/Render/SGTechniqueResolverListener.h" bodystart="16" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classme_1_1_s_g_technique_resolver_listener_1a5d20371aca4ef2710ea67cd3da66fe10" prot="public" virt="non-virtual"><scope>me::SGTechniqueResolverListener</scope><name>afterIlluminationPassesCreated</name></member>
+      <member refid="classme_1_1_s_g_technique_resolver_listener_1a3491c60cfd064a7501b34e0f179aded7" prot="public" virt="non-virtual"><scope>me::SGTechniqueResolverListener</scope><name>beforeIlluminationPassesCleared</name></member>
+      <member refid="classme_1_1_s_g_technique_resolver_listener_1abc31ab50e9f0b9f8bf3b4054de39d727" prot="public" virt="non-virtual"><scope>me::SGTechniqueResolverListener</scope><name>handleSchemeNotFound</name></member>
+      <member refid="classme_1_1_s_g_technique_resolver_listener_1a91f6b1c04aa719d64755b6db5a22ceb5" prot="protected" virt="non-virtual"><scope>me::SGTechniqueResolverListener</scope><name>mShaderGenerator</name></member>
+      <member refid="classme_1_1_s_g_technique_resolver_listener_1a9cc216a56f6a8af0dc98a28967c2d1a3" prot="public" virt="non-virtual"><scope>me::SGTechniqueResolverListener</scope><name>SGTechniqueResolverListener</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

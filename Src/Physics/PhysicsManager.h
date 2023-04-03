@@ -113,7 +113,7 @@ namespace me {
 
 	/**
 	This macro defines a compact way for using the singleton PhysicsManager, instead of
-	writing InputHandler::instance()->method() we write ih().method()
+	writing PhysicsManager::instance()->method() we write physicsManager().method()
 	*/
 	inline PhysicsManager& physicsManager() {
 		return *PhysicsManager::instance();

@@ -1,0 +1,996 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_render_manager" xml:lang="en-US">
+<title>me::RenderManager Class Reference</title>
+<indexterm><primary>me::RenderManager</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RenderManager.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::RenderManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_render_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_render_manager">RenderManager</link> &amp; <link linkend="_classme_1_1_render_manager_1a9d9d473840134f9d316ed90af0b503d9">operator=</link> (const <link linkend="_classme_1_1_render_manager">RenderManager</link> &amp;o)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_manager_1a7fc7bb82c0ea308eaf15bac7420abf1d">RenderManager</link> (const <link linkend="_classme_1_1_render_manager">RenderManager</link> &amp;o)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_manager_1a4e8f5da096fccb3eee6dc3e9e7a7b88b">~RenderManager</link> () override</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a178464764e348339c8238b9749fa062a">createCamera</link> (std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color=Ogre::ColourValue(0, 0, 0, 1))</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a188eed7bd77088c42aa6d0217a880b9a">createCamera</link> (std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color=Ogre::ColourValue(0, 0, 0, 1))</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a6fe9e6d618c9e37586a9c3ee59ece096">setCameraInfo</link> (std::string name, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;look)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1aa2e15751a8ec07e3fea41fe4c1fb1095">setViewportDimension</link> (std::string name, float left, float top, float width, float height)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a4d85ad792a6f416d66d933854297877e">destroyCamera</link> (std::string name)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a1d03ebb0bd03b0ab64d8313e58f6ff43">createNewLight</link> (std::string name, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;dir)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1aacc79cca3a6fdb50ddaa1f5db77a3279">createMesh</link> (std::string name, std::string nameMesh)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a34ccc88afee1b20d186a0818659e1d0a">setMeshTransform</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a6cf65413fcbfb7054864830e3f9b1046">setMeshTransform</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a62f200bfaa4528060e0e2bd5207e3533">setMeshPosition</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a1840dca2798f59b099679d62063693e2">setMeshScale</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1ac06471cccbe6477e420b70aecac959b3">setMeshRotation</link> (std::string name, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a9f4f2896ea0286162c8ea85670464166">setMeshMaterial</link> (std::string name, std::string nameMaterial)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1ae0d233f967e9433e003d80cda98b03a6">destroyMesh</link> (std::string name)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a87af12e2020d8b3f76b712248957bcfe">createParticle</link> (std::string name, std::string nameMesh)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1aa20b643ba1272a7b078f478699f06aa8">setParticleTransform</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1ab003f01906a74adc7a893450dfd34087">setParticleTransform</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1aff4e5fb9981b8b9f74af4bbabace4217">setParticlePosition</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a1d609edefb8b1ac1196d14c01894ea3f">setParticleScale</link> (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a82fcf6a5a0af7b65a9e764118add1529">setParticleRotation</link> (std::string name, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1acabbd450883ec93eecb2ce704a983062">setParticleEmitting</link> (std::string name, bool emitted)</para>
+</listitem>
+            <listitem><para>Ogre::SceneNode * <link linkend="_classme_1_1_render_manager_1a805b50ba9a7d6a52de14b9ad30886e07">createNode</link> (std::string name)</para>
+</listitem>
+            <listitem><para>Ogre::SceneNode * <link linkend="_classme_1_1_render_manager_1ae0c411b5780e0516f005f532e65e3de9">createChildNode</link> (std::string name, std::string parent)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_window">RenderWindow</link> * <link linkend="_classme_1_1_render_manager_1a542bc4658bce9fbfd206bbf06ac0b700">getOgreWindow</link> ()</para>
+</listitem>
+            <listitem><para>Ogre::SceneNode * <link linkend="_classme_1_1_render_manager_1a79b8d85b9e2fcffbcc6bc117905dce5c">getRootSceneNode</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1aebed1880a067088857492bca872c6e31">scene1</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a7b55b3550af4f044f269817de60bb3c6">render</link> ()</para>
+</listitem>
+            <listitem><para>Ogre::Entity * <link linkend="_classme_1_1_render_manager_1aca01cdecef083ab1865ad8c452edff75">getOgreEntity</link> (std::string name)</para>
+</listitem>
+            <listitem><para>Ogre::TextAreaOverlayElement * <link linkend="_classme_1_1_render_manager_1a6a0af2feb18bba99c075690de30150c5">createOverlayElement</link> ()</para>
+</listitem>
+            <listitem><para>Ogre::SceneManager * <link linkend="_classme_1_1_render_manager_1a3b10d8c4a4309582272390b2ec5c368c">getSceneManager</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; RenderManager &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1a70f85c079fd020a8655eed54e7189845">Singleton</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_render_manager">RenderManager</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_render_manager">RenderManager</link> &gt; &amp; <link linkend="_classme_1_1_singleton_1a6745ba60837f9347a75c0cfc27fadfb0">operator=</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_render_manager">RenderManager</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_singleton_1a576834dfbf95c3b929511d2a588866d1">~Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a327860ebd386e3e29fe0e2ab84bb1626">initRoot</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a248dfd42322988090961d41f784cfb48">initWindow</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1a999b08c25f41f73e9dd0a162b63ca7e9">locateResources</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_manager_1ac844509911cebc08bd84b34f61a43a2d">loadResources</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_render_manager_1a70e7170efc33cc5a3f4ad06ac5c2486f">initialiseRTShaderSystem</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_camera">RenderCamera</link> * <link linkend="_classme_1_1_render_manager_1ae84cecebafea02a888bae13f8bfe2100">getCamera</link> (std::string name)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_mesh">RenderMesh</link> * <link linkend="_classme_1_1_render_manager_1a0ed927a29f4fc0b31e99f6a7aac8499c">getMesh</link> (std::string name)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_particle_system">RenderParticleSystem</link> * <link linkend="_classme_1_1_render_manager_1aaba7ea7edc8557cad2ccc15d8938136c">getParticle</link> (std::string name)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; RenderManager &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1af5127d54d6c6904173541b404903b599">Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Ogre::Root * <link linkend="_classme_1_1_render_manager_1a576a756c04044763622b72c4b7e6e408">mRoot</link></para>
+</listitem>
+            <listitem><para>Ogre::SceneManager * <link linkend="_classme_1_1_render_manager_1a3117d5e10383c6b0404554b3e47667d0">mSM</link> = nullptr</para>
+</listitem>
+            <listitem><para>Ogre::AnimationState * <link linkend="_classme_1_1_render_manager_1a29da0fdf6dcdbb47720d300688a43ecf">ogreAnimState</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_manager_1a317bc83673486fbea07f73c5c1204ddc">mResourceCfgPath</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_manager_1a7d869efc48f5f6c524ff99abb74a460b">mPluginCfgPath</link></para>
+</listitem>
+            <listitem><para>OverlayManager * <link linkend="_classme_1_1_render_manager_1ab2a905f7d6c2aad56c8069f983df346c">mOverlayManager</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_manager_1ada59f65deb076e29c41816b7e28a1ebb">mOgreCfgPath</link></para>
+</listitem>
+            <listitem><para>Ogre::FileSystemLayer * <link linkend="_classme_1_1_render_manager_1ad8430f766674f86c92404dfc32fc19da">mFSLayer</link></para>
+</listitem>
+            <listitem><para>Ogre::RTShader::ShaderGenerator * <link linkend="_classme_1_1_render_manager_1a860b0a5af9a7f30d2c38fb5e09c7011a">mShaderGenerator</link></para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_s_g_technique_resolver_listener">SGTechniqueResolverListener</link> * <link linkend="_classme_1_1_render_manager_1a23ad00e18700c36aac44b597525af289">mMaterialMgrListener</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_manager_1aac24973efc5fb20e2a3f4b6d484dea82">mSolutionPath</link></para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_window">RenderWindow</link> * <link linkend="_classme_1_1_render_manager_1a87ae76e5b7a96184679e7973bba7ef75">mOgreWindow</link></para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_classme_1_1_render_camera">RenderCamera</link> * &gt; <link linkend="_classme_1_1_render_manager_1ab9321ec98f6b4b3d3e8bff1c0a44e6e3">mCameras</link></para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_classme_1_1_render_mesh">RenderMesh</link> * &gt; <link linkend="_classme_1_1_render_manager_1a67cc796cabfa82831eb2e85fd92a1f94">mMeshes</link></para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_classme_1_1_render_particle_system">RenderParticleSystem</link> * &gt; <link linkend="_classme_1_1_render_manager_1a6dbe72bad91d0c42c98c3ad3e0098369">mParticles</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; RenderManager &gt;</link>        <itemizedlist>
+            <listitem><para>static <link linkend="_classme_1_1_render_manager">RenderManager</link> * <link linkend="_classme_1_1_singleton_1a919633966a5db8336cffa09f28fc2623">init</link> (Targs &amp;&amp;...args)</para>
+</listitem>
+            <listitem><para>static <link linkend="_classme_1_1_render_manager">RenderManager</link> * <link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">instance</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>OgreManager initialize <link linkend="_namespace_ogre">Ogre</link> (Root, RTShaderSystem, <link linkend="_classme_1_1_scene_manager">SceneManager</link>, <link linkend="_classme_1_1_render_window">RenderWindow</link>), locate and load resources (from resource.cfg) and handle the creation of camera, light, mesh You can access the OgreManager just calling om(). </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_render_manager_1a7fc7bb82c0ea308eaf15bac7420abf1d"/><section>
+    <title>RenderManager()</title>
+<indexterm><primary>RenderManager</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>RenderManager</secondary></indexterm>
+<para><computeroutput>me::RenderManager::RenderManager (const <link linkend="_classme_1_1_render_manager">RenderManager</link> &amp; o)<computeroutput>[delete]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a4e8f5da096fccb3eee6dc3e9e7a7b88b"/><section>
+    <title>~RenderManager()</title>
+<indexterm><primary>~RenderManager</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>~RenderManager</secondary></indexterm>
+<para><computeroutput>me::RenderManager::~RenderManager ( )<computeroutput>[override]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_render_manager_1a188eed7bd77088c42aa6d0217a880b9a"/><section>
+    <title>createCamera()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>createCamera</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createCamera</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::createCamera (std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = <computeroutput>Ogre::ColourValue(0,&#160;0,&#160;0,&#160;1)</computeroutput>
+)</computeroutput></para>
+<para>Create the camera with this name and store it 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of camera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nearDist</entry><entry>
+<para>near clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>farDist</entry><entry>
+<para>far clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>autoRadio</entry><entry>
+<para>if viewport calculate aspect radio automatically </para>
+</entry>
+                            </row>
+                            <row>
+<entry>zOrder</entry><entry>
+<para>relative order of viewport </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if renamed </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a178464764e348339c8238b9749fa062a"/><section>
+    <title>createCamera()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>createCamera</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createCamera</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::createCamera (std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = <computeroutput>Ogre::ColourValue(0,&#160;0,&#160;0,&#160;1)</computeroutput>
+)</computeroutput></para>
+<para>Create the camera that is a child of another Ogre::SceneNode with this name and store it 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of camera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>parentName</entry><entry>
+<para>name of parent Ogre::SceneNode </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nearDist</entry><entry>
+<para>near clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>farDist</entry><entry>
+<para>far clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>autoRadio</entry><entry>
+<para>if viewport calculate aspect radio automatically </para>
+</entry>
+                            </row>
+                            <row>
+<entry>zOrder</entry><entry>
+<para>relative order of viewport </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if renamed </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1ae0c411b5780e0516f005f532e65e3de9"/><section>
+    <title>createChildNode()</title>
+<indexterm><primary>createChildNode</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createChildNode</secondary></indexterm>
+<para><computeroutput>Ogre::SceneNode * me::RenderManager::createChildNode (std::string name, std::string parent)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of node </para>
+</entry>
+                            </row>
+                            <row>
+<entry>parent</entry><entry>
+<para>name of parent node </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Ogre::SceneNodo created with this name and it is child node of another node </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1aacc79cca3a6fdb50ddaa1f5db77a3279"/><section>
+    <title>createMesh()</title>
+<indexterm><primary>createMesh</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createMesh</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::createMesh (std::string name, std::string nameMesh)</computeroutput></para>
+<para>Create the ogreMesh with this name 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of Ogre::SceneNode &amp;&amp;unordered_map </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nameMesh</entry><entry>
+<para>name of file (xxx.mesh) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if renamed </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a1d03ebb0bd03b0ab64d8313e58f6ff43"/><section>
+    <title>createNewLight()</title>
+<indexterm><primary>createNewLight</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createNewLight</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::createNewLight (std::string name, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; dir)</computeroutput></para>
+<para>Create the light with this name 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of light </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pos</entry><entry>
+<para>position of light </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dir</entry><entry>
+<para>direction of light </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a805b50ba9a7d6a52de14b9ad30886e07"/><section>
+    <title>createNode()</title>
+<indexterm><primary>createNode</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createNode</secondary></indexterm>
+<para><computeroutput>Ogre::SceneNode * me::RenderManager::createNode (std::string name)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of node </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Ogre::SceneNodo created with this name and it is in root node </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a6a0af2feb18bba99c075690de30150c5"/><section>
+    <title>createOverlayElement()</title>
+<indexterm><primary>createOverlayElement</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createOverlayElement</secondary></indexterm>
+<para><computeroutput>Ogre::TextAreaOverlayElement * me::RenderManager::createOverlayElement ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a87af12e2020d8b3f76b712248957bcfe"/><section>
+    <title>createParticle()</title>
+<indexterm><primary>createParticle</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>createParticle</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::createParticle (std::string name, std::string nameMesh)</computeroutput></para>
+<para>Create the ogreParticleSystem with this name 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of Ogre::SceneNode &amp;&amp;unordered_map </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nameParticle</entry><entry>
+<para>name of partcile system that is written int ParticleResource.particle </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if renamed </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a4d85ad792a6f416d66d933854297877e"/><section>
+    <title>destroyCamera()</title>
+<indexterm><primary>destroyCamera</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>destroyCamera</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::destroyCamera (std::string name)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ae0d233f967e9433e003d80cda98b03a6"/><section>
+    <title>destroyMesh()</title>
+<indexterm><primary>destroyMesh</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>destroyMesh</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::destroyMesh (std::string name)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ae84cecebafea02a888bae13f8bfe2100"/><section>
+    <title>getCamera()</title>
+<indexterm><primary>getCamera</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getCamera</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_camera">RenderCamera</link> * me::RenderManager::getCamera (std::string name)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>Name of the camera </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>OgreCamera: that was created with this name </para>
+
+<para>nullptr: if it doesn&apos;t exist </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a0ed927a29f4fc0b31e99f6a7aac8499c"/><section>
+    <title>getMesh()</title>
+<indexterm><primary>getMesh</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getMesh</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_mesh">RenderMesh</link> * me::RenderManager::getMesh (std::string name)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>Name of the mesh </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>OgreMesh: that was created with this name </para>
+
+<para>nullptr: if it doesn&apos;t exist </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1aca01cdecef083ab1865ad8c452edff75"/><section>
+    <title>getOgreEntity()</title>
+<indexterm><primary>getOgreEntity</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getOgreEntity</secondary></indexterm>
+<para><computeroutput>Ogre::Entity * me::RenderManager::getOgreEntity (std::string name)</computeroutput></para>
+<para>Return the Ogre::Entity asociated </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a542bc4658bce9fbfd206bbf06ac0b700"/><section>
+    <title>getOgreWindow()</title>
+<indexterm><primary>getOgreWindow</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getOgreWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_window">RenderWindow</link> * me::RenderManager::getOgreWindow ( )</computeroutput></para>
+<para>Returns a pointer to the OgreWindow used for rendering. <formalpara><title>Returns</title>
+
+<para>The Render <link linkend="_classme_1_1_window">Window</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1aaba7ea7edc8557cad2ccc15d8938136c"/><section>
+    <title>getParticle()</title>
+<indexterm><primary>getParticle</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getParticle</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_particle_system">RenderParticleSystem</link> * me::RenderManager::getParticle (std::string name)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>Name of the particle </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>OgreParticleSystem: that was created with this name </para>
+
+<para>nullptr: if it doesn&apos;t exist </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a79b8d85b9e2fcffbcc6bc117905dce5c"/><section>
+    <title>getRootSceneNode()</title>
+<indexterm><primary>getRootSceneNode</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getRootSceneNode</secondary></indexterm>
+<para><computeroutput>Ogre::SceneNode * me::RenderManager::getRootSceneNode ( )</computeroutput></para>
+<para>Returns a pointer to the Root SceneNode. <formalpara><title>Returns</title>
+
+<para>returns the root scene node </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a3b10d8c4a4309582272390b2ec5c368c"/><section>
+    <title>getSceneManager()</title>
+<indexterm><primary>getSceneManager</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>getSceneManager</secondary></indexterm>
+<para><computeroutput>Ogre::SceneManager * me::RenderManager::getSceneManager ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a70e7170efc33cc5a3f4ad06ac5c2486f"/><section>
+    <title>initialiseRTShaderSystem()</title>
+<indexterm><primary>initialiseRTShaderSystem</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>initialiseRTShaderSystem</secondary></indexterm>
+<para><computeroutput>bool RenderManager::initialiseRTShaderSystem ( )<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>initialize RTShaderSystem (Shader Generator) and add <link linkend="_namespace_ogre">Ogre</link>:: Material Manager Listener </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a327860ebd386e3e29fe0e2ab84bb1626"/><section>
+    <title>initRoot()</title>
+<indexterm><primary>initRoot</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>initRoot</secondary></indexterm>
+<para><computeroutput>void RenderManager::initRoot ( )<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>initializes FileSystem, find m_Paths and initialize Ogre::Root </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a248dfd42322988090961d41f784cfb48"/><section>
+    <title>initWindow()</title>
+<indexterm><primary>initWindow</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>initWindow</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::initWindow ( )<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Creates OgreWindow (<link linkend="_classme_1_1_render_window">RenderWindow</link>) </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1ac844509911cebc08bd84b34f61a43a2d"/><section>
+    <title>loadResources()</title>
+<indexterm><primary>loadResources</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>loadResources</secondary></indexterm>
+<para><computeroutput>void RenderManager::loadResources ( )<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Call Ogre::ResourceGroupManager to load added resources </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a999b08c25f41f73e9dd0a162b63ca7e9"/><section>
+    <title>locateResources()</title>
+<indexterm><primary>locateResources</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>locateResources</secondary></indexterm>
+<para><computeroutput>void RenderManager::locateResources ( )<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a9d9d473840134f9d316ed90af0b503d9"/><section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_manager">RenderManager</link> &amp; me::RenderManager::operator= (const <link linkend="_classme_1_1_render_manager">RenderManager</link> &amp; o)<computeroutput>[delete]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a7b55b3550af4f044f269817de60bb3c6"/><section>
+    <title>render()</title>
+<indexterm><primary>render</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>render</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::render ( )</computeroutput></para>
+<para>Render one frame of Ogre::Root -&gt; current scene manager </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1aebed1880a067088857492bca872c6e31"/><section>
+    <title>scene1()</title>
+<indexterm><primary>scene1</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>scene1</secondary></indexterm>
+<para><computeroutput>void me::RenderManager::scene1 ( )</computeroutput></para>
+<para>Example scene where rendering a sinbad with 2 camera,viewport </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a6fe9e6d618c9e37586a9c3ee59ece096"/><section>
+    <title>setCameraInfo()</title>
+<indexterm><primary>setCameraInfo</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setCameraInfo</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setCameraInfo (std::string name, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; look)</computeroutput></para>
+<para>Set location and direction to the camera with this name 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of camera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pos</entry><entry>
+<para>position of camera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>look</entry><entry>
+<para>camera look at </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if it doesn&apos;t exist </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a9f4f2896ea0286162c8ea85670464166"/><section>
+    <title>setMeshMaterial()</title>
+<indexterm><primary>setMeshMaterial</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshMaterial</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshMaterial (std::string name, std::string nameMaterial)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a62f200bfaa4528060e0e2bd5207e3533"/><section>
+    <title>setMeshPosition()</title>
+<indexterm><primary>setMeshPosition</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshPosition</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshPosition (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ac06471cccbe6477e420b70aecac959b3"/><section>
+    <title>setMeshRotation()</title>
+<indexterm><primary>setMeshRotation</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshRotation</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshRotation (std::string name, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a1840dca2798f59b099679d62063693e2"/><section>
+    <title>setMeshScale()</title>
+<indexterm><primary>setMeshScale</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshScale</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshScale (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a34ccc88afee1b20d186a0818659e1d0a"/><section>
+    <title>setMeshTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>setMeshTransform</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshTransform</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshTransform (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</computeroutput></para>
+<para>Set <link linkend="_classme_1_1_transform">Transform</link> info to the mesh with this name (for static object) 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of ogreMesh </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pos</entry><entry>
+<para>position of ogreMesh </para>
+</entry>
+                            </row>
+                            <row>
+<entry>scale</entry><entry>
+<para>scale of ogreMesh </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if it doesn&apos;t exist </para>
+
+<para>true: if succeed <?linebreak?> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a6cf65413fcbfb7054864830e3f9b1046"/><section>
+    <title>setMeshTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>setMeshTransform</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setMeshTransform</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setMeshTransform (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1acabbd450883ec93eecb2ce704a983062"/><section>
+    <title>setParticleEmitting()</title>
+<indexterm><primary>setParticleEmitting</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticleEmitting</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticleEmitting (std::string name, bool emitted)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1aff4e5fb9981b8b9f74af4bbabace4217"/><section>
+    <title>setParticlePosition()</title>
+<indexterm><primary>setParticlePosition</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticlePosition</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticlePosition (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a82fcf6a5a0af7b65a9e764118add1529"/><section>
+    <title>setParticleRotation()</title>
+<indexterm><primary>setParticleRotation</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticleRotation</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticleRotation (std::string name, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a1d609edefb8b1ac1196d14c01894ea3f"/><section>
+    <title>setParticleScale()</title>
+<indexterm><primary>setParticleScale</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticleScale</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticleScale (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1aa20b643ba1272a7b078f478699f06aa8"/><section>
+    <title>setParticleTransform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>setParticleTransform</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticleTransform</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticleTransform (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale)</computeroutput></para>
+<para>Set <link linkend="_classme_1_1_transform">Transform</link> info to the particle with this name (for static object) 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of ogreParticleSystem </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pos</entry><entry>
+<para>position of ogreParticleSystem </para>
+</entry>
+                            </row>
+                            <row>
+<entry>scale</entry><entry>
+<para>scale of ogreParticleSystem </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if it doesn&apos;t exist </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1ab003f01906a74adc7a893450dfd34087"/><section>
+    <title>setParticleTransform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>setParticleTransform</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setParticleTransform</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setParticleTransform (std::string name, <link linkend="_classme_1_1_vector3">Vector3</link> pos, <link linkend="_classme_1_1_vector3">Vector3</link> scale, <link linkend="_classme_1_1_vector4">Vector4</link> rot)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1aa2e15751a8ec07e3fea41fe4c1fb1095"/><section>
+    <title>setViewportDimension()</title>
+<indexterm><primary>setViewportDimension</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>setViewportDimension</secondary></indexterm>
+<para><computeroutput>bool me::RenderManager::setViewportDimension (std::string name, float left, float top, float width, float height)</computeroutput></para>
+<para>Set dimension to the viewport of the camera with this name 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of camera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>left</entry><entry>
+<para>left point of viewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>top</entry><entry>
+<para>top point of viewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>width</entry><entry>
+<para>width of viewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>height</entry><entry>
+<para>height of viewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>false: if it doesn&apos;t exist </para>
+
+<para>true: if succeed </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_render_manager_1ab9321ec98f6b4b3d3e8bff1c0a44e6e3"/><section>
+    <title>mCameras</title>
+<indexterm><primary>mCameras</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mCameras</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt;std::string, <link linkend="_classme_1_1_render_camera">RenderCamera</link>*&gt; me::RenderManager::mCameras<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ad8430f766674f86c92404dfc32fc19da"/><section>
+    <title>mFSLayer</title>
+<indexterm><primary>mFSLayer</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mFSLayer</secondary></indexterm>
+<para><computeroutput>Ogre::FileSystemLayer* me::RenderManager::mFSLayer<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a23ad00e18700c36aac44b597525af289"/><section>
+    <title>mMaterialMgrListener</title>
+<indexterm><primary>mMaterialMgrListener</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mMaterialMgrListener</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_s_g_technique_resolver_listener">SGTechniqueResolverListener</link>* me::RenderManager::mMaterialMgrListener<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a67cc796cabfa82831eb2e85fd92a1f94"/><section>
+    <title>mMeshes</title>
+<indexterm><primary>mMeshes</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mMeshes</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt;std::string, <link linkend="_classme_1_1_render_mesh">RenderMesh</link>*&gt; me::RenderManager::mMeshes<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ada59f65deb076e29c41816b7e28a1ebb"/><section>
+    <title>mOgreCfgPath</title>
+<indexterm><primary>mOgreCfgPath</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mOgreCfgPath</secondary></indexterm>
+<para><computeroutput>std::string me::RenderManager::mOgreCfgPath<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Path of the &quot;Ogre.cfg&quot; configuration file where it indicates all the configurations proposed for &quot;Renderer DirectX11&quot; </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a87ae76e5b7a96184679e7973bba7ef75"/><section>
+    <title>mOgreWindow</title>
+<indexterm><primary>mOgreWindow</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mOgreWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_render_window">RenderWindow</link>* me::RenderManager::mOgreWindow<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1ab2a905f7d6c2aad56c8069f983df346c"/><section>
+    <title>mOverlayManager</title>
+<indexterm><primary>mOverlayManager</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mOverlayManager</secondary></indexterm>
+<para><computeroutput>OverlayManager* me::RenderManager::mOverlayManager<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a6dbe72bad91d0c42c98c3ad3e0098369"/><section>
+    <title>mParticles</title>
+<indexterm><primary>mParticles</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mParticles</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt;std::string, <link linkend="_classme_1_1_render_particle_system">RenderParticleSystem</link>*&gt; me::RenderManager::mParticles<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a7d869efc48f5f6c524ff99abb74a460b"/><section>
+    <title>mPluginCfgPath</title>
+<indexterm><primary>mPluginCfgPath</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mPluginCfgPath</secondary></indexterm>
+<para><computeroutput>std::string me::RenderManager::mPluginCfgPath<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Path of the &quot;plugins.cfg&quot; Add all necessary <link linkend="_namespace_ogre">Ogre</link> plugins in &quot;plugins.cfg&quot; like this: Plugin=Codec_STBI Remember to add all the .dll of the written plugins </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a317bc83673486fbea07f73c5c1204ddc"/><section>
+    <title>mResourceCfgPath</title>
+<indexterm><primary>mResourceCfgPath</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mResourceCfgPath</secondary></indexterm>
+<para><computeroutput>std::string me::RenderManager::mResourceCfgPath<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Path of the &quot;resource.cfg&quot; Add all resources (mesh, zip, particles, material, animation) to the subfolder of Asset And they are accessed by putting paths in &quot;resource.cfg&quot; like this: Zip= ../../Assets/packs/Sinbad.zip FileSystem=../../Assets/Main Be careful, our working directory is &quot;Exe/Main/&quot;, so we have to go to the above directory 2 times to access the &quot;Assets&quot; directory. </para>
+</section>
+<anchor xml:id="_classme_1_1_render_manager_1a576a756c04044763622b72c4b7e6e408"/><section>
+    <title>mRoot</title>
+<indexterm><primary>mRoot</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mRoot</secondary></indexterm>
+<para><computeroutput>Ogre::Root* me::RenderManager::mRoot<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a860b0a5af9a7f30d2c38fb5e09c7011a"/><section>
+    <title>mShaderGenerator</title>
+<indexterm><primary>mShaderGenerator</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mShaderGenerator</secondary></indexterm>
+<para><computeroutput>Ogre::RTShader::ShaderGenerator* me::RenderManager::mShaderGenerator<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a3117d5e10383c6b0404554b3e47667d0"/><section>
+    <title>mSM</title>
+<indexterm><primary>mSM</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mSM</secondary></indexterm>
+<para><computeroutput>Ogre::SceneManager* me::RenderManager::mSM = nullptr<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1aac24973efc5fb20e2a3f4b6d484dea82"/><section>
+    <title>mSolutionPath</title>
+<indexterm><primary>mSolutionPath</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>mSolutionPath</secondary></indexterm>
+<para><computeroutput>std::string me::RenderManager::mSolutionPath<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_manager_1a29da0fdf6dcdbb47720d300688a43ecf"/><section>
+    <title>ogreAnimState</title>
+<indexterm><primary>ogreAnimState</primary><secondary>me::RenderManager</secondary></indexterm>
+<indexterm><primary>me::RenderManager</primary><secondary>ogreAnimState</secondary></indexterm>
+<para><computeroutput>Ogre::AnimationState* me::RenderManager::ogreAnimState<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Render/<link linkend="__render_manager_8h">RenderManager.h</link>Src/Render/<link linkend="__render_manager_8cpp">RenderManager.cpp</link></section>
+</section>

@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_entity" xml:lang="en-US">
+<title>me::Entity Class Reference</title>
+<indexterm><primary>me::Entity</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Entity.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity_1a3872e571420ba75d34d686c3a34c2ed3">Entity</link> (<link linkend="_classme_1_1_scene">Scene</link> *scn, const <link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link> name)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity_1acdb7b868378c42efa0665209ba972988">Entity</link> (const <link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link> name)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_entity_1a68039babe5f4ee8e22626c0af1ea85a7">~Entity</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_component">Component</link> * <link linkend="_classme_1_1_entity_1a0978a842685ed86f12463cb748ff3450">addComponent</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;componentName, <link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link> &amp;params)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>T * <link linkend="_classme_1_1_entity_1a3d1f664bff54302a41c42406b3ff332e">addComponent</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;componentName)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>bool <link linkend="_classme_1_1_entity_1adaeec09d928ca00a2f5a2329bca24050">removeComponent</link> (<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;component)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>T * <link linkend="_classme_1_1_entity_1aeaef76f73c6151b49e42d50a8413b58d">getComponent</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;component)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_entity_1a7ebe4d3e6714b7137bd0f1ba10b6c534">hasComponent</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;component)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_entity_1af281b0f49e07ed9a5f929eca83c7dec1">isActive</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1ae184b463755cd3e4ba197e13b4aeb6ed">destroy</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link> <link linkend="_classme_1_1_entity_1abc0320faa7eaf15f59313ba7e8af3ed7">getName</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1a3b6879a58a088f983340a36bd7fddc87">setName</link> (const <link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link> name)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_scene">Scene</link> * <link linkend="_classme_1_1_entity_1a885d6740184376cf9846bd913b07e323">getScene</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1aedfffd74e7631f78a2dc04740f569397">setScene</link> (<link linkend="_classme_1_1_scene">Scene</link> *scn)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1a29967c230baf1977377dcd2ea0385b64">start</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1ae76a31d7eee409a6c19d6040474cf04f">update</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1a9e2497930618c8d33ca5a9de849d3000">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1abd151bfab563e823ed2d7ea58f93c0cc">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1aa20d48364dc6c9d06f3265499392e303">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_entity_1aecbaadc28dac88c0534d620d40035c70">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_entity_1a3872e571420ba75d34d686c3a34c2ed3"/><section>
+    <title>Entity()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Entity</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>Entity</secondary></indexterm>
+<para><computeroutput>me::Entity::Entity (<link linkend="_classme_1_1_scene">Scene</link> * scn, const <link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link> name)</computeroutput></para>
+<para>Build the foundation of the <link linkend="_classme_1_1_entity">Entity</link>. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_classme_1_1_scene">Scene</link></entry><entry>
+<para>to which it belongs. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>String</entry><entry>
+<para>name to identify it. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1acdb7b868378c42efa0665209ba972988"/><section>
+    <title>Entity()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Entity</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>Entity</secondary></indexterm>
+<para><computeroutput>me::Entity::Entity (const <link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link> name)</computeroutput></para>
+<para>Build the foundation of the <link linkend="_classme_1_1_entity">Entity</link>. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>String</entry><entry>
+<para>name to identify it. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a68039babe5f4ee8e22626c0af1ea85a7"/><section>
+    <title>~Entity()</title>
+<indexterm><primary>~Entity</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>~Entity</secondary></indexterm>
+<para><computeroutput>me::Entity::~Entity ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Delete all the components added to the entity. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_entity_1a3d1f664bff54302a41c42406b3ff332e"/><section>
+    <title>addComponent()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>addComponent</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>addComponent</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * me::Entity::addComponent (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; componentName)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_entity_1a0978a842685ed86f12463cb748ff3450"/><section>
+    <title>addComponent()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>addComponent</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>addComponent</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_component">Component</link> * me::Entity::addComponent (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; componentName, <link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link> &amp; params)</computeroutput></para>
+<para>Add a new component. If the component already exists, write a cout in debug mode 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>component</entry><entry>
+<para>the key of the component in the map </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Variable</entry><entry>
+<para>number of arguments of any type. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Reference to the new component. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1ae184b463755cd3e4ba197e13b4aeb6ed"/><section>
+    <title>destroy()</title>
+<indexterm><primary>destroy</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>destroy</secondary></indexterm>
+<para><computeroutput>void me::Entity::destroy ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the entity activity to false. This will cause to be safely delete by the scene. </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1aeaef76f73c6151b49e42d50a8413b58d"/><section>
+    <title>getComponent()</title>
+<indexterm><primary>getComponent</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>getComponent</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * me::Entity::getComponent (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; component)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Get the reference a suggested component. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>name in the map </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Reference to the component. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1abc0320faa7eaf15f59313ba7e8af3ed7"/><section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput><link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link> me::Entity::getName ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Get the entity name. <formalpara><title>Returns</title>
+
+<para>String name. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a885d6740184376cf9846bd913b07e323"/><section>
+    <title>getScene()</title>
+<indexterm><primary>getScene</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>getScene</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_scene">Scene</link> * me::Entity::getScene ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Get the associated scene of the entity. <formalpara><title>Returns</title>
+
+<para><link linkend="_classme_1_1_scene">Scene</link> to which it belongs. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a7ebe4d3e6714b7137bd0f1ba10b6c534"/><section>
+    <title>hasComponent()</title>
+<indexterm><primary>hasComponent</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>hasComponent</secondary></indexterm>
+<para><computeroutput>bool me::Entity::hasComponent (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; component)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Check if the component has already been added. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>name in the map </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Boolean confirmation. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1af281b0f49e07ed9a5f929eca83c7dec1"/><section>
+    <title>isActive()</title>
+<indexterm><primary>isActive</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>isActive</secondary></indexterm>
+<para><computeroutput>bool me::Entity::isActive ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Check if the entity is active. <formalpara><title>Returns</title>
+
+<para>Boolean confirmation. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a9e2497930618c8d33ca5a9de849d3000"/><section>
+    <title>lateUpdate()</title>
+<indexterm><primary>lateUpdate</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>lateUpdate</secondary></indexterm>
+<para><computeroutput>void me::Entity::lateUpdate ( )</computeroutput></para>
+<para>Run all the added components lateUpdate method. </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1abd151bfab563e823ed2d7ea58f93c0cc"/><section>
+    <title>OnCollisionEnter()</title>
+<indexterm><primary>OnCollisionEnter</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>OnCollisionEnter</secondary></indexterm>
+<para><computeroutput>void me::Entity::OnCollisionEnter (<link linkend="_classme_1_1_entity">Entity</link> * other)</computeroutput></para>
+<para>This function is called when the object collides with another object </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1aecbaadc28dac88c0534d620d40035c70"/><section>
+    <title>OnCollisionExit()</title>
+<indexterm><primary>OnCollisionExit</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>OnCollisionExit</secondary></indexterm>
+<para><computeroutput>void me::Entity::OnCollisionExit (<link linkend="_classme_1_1_entity">Entity</link> * other)</computeroutput></para>
+<para>This function is called when the object stops colliding with another object </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1aa20d48364dc6c9d06f3265499392e303"/><section>
+    <title>OnCollisionStay()</title>
+<indexterm><primary>OnCollisionStay</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>OnCollisionStay</secondary></indexterm>
+<para><computeroutput>void me::Entity::OnCollisionStay (<link linkend="_classme_1_1_entity">Entity</link> * other)</computeroutput></para>
+<para>This function is called every frame while the object is colliding with another object </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1adaeec09d928ca00a2f5a2329bca24050"/><section>
+    <title>removeComponent()</title>
+<indexterm><primary>removeComponent</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>removeComponent</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>bool me::Entity::removeComponent (<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; component)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Remove completely a typed component. </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a3b6879a58a088f983340a36bd7fddc87"/><section>
+    <title>setName()</title>
+<indexterm><primary>setName</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>setName</secondary></indexterm>
+<para><computeroutput>void me::Entity::setName (const <link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link> name)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the entity name to the new one. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>String</entry><entry>
+<para>name. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1aedfffd74e7631f78a2dc04740f569397"/><section>
+    <title>setScene()</title>
+<indexterm><primary>setScene</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>setScene</secondary></indexterm>
+<para><computeroutput>void me::Entity::setScene (<link linkend="_classme_1_1_scene">Scene</link> * scn)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the associated scene for the entity. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_classme_1_1_scene">Scene</link></entry><entry>
+<para>to which it belongs. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_entity_1a29967c230baf1977377dcd2ea0385b64"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void me::Entity::start ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_entity_1ae76a31d7eee409a6c19d6040474cf04f"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::Entity</secondary></indexterm>
+<indexterm><primary>me::Entity</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void me::Entity::update ( )</computeroutput></para>
+<para>Run all the added components update method. </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/<link linkend="__entity_8h">Entity.h</link>Src/EntityComponent/<link linkend="__entity_8cpp">Entity.cpp</link></section>
+</section>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__debug_drawer_8h_source" xml:lang="en-US">
+<title>DebugDrawer.h</title>
+<indexterm><primary>Src/Physics/DebugDrawer.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__DEBUG_DRAWER</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__DEBUG_DRAWER</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;LinearMath/btIDebugDraw.h&gt;</emphasis>
+7 
+8 <emphasis role="preprocessor">#include&#32;&lt;Ogre.h&gt;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_debug_drawer">DebugDrawer</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;btIDebugDraw&#32;<emphasis role="comment">//&#32;public&#32;Ogre::FrameListener</emphasis>
+13 &#32;&#32;&#32;&#32;{
+14 
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::ManualObject*&#32;mTriangles;
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DebugDrawModes&#32;mDebugDrawModes;
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//struct&#32;ContactPoint&#32;{</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;Ogre::Vector3&#32;from;</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;Ogre::Vector3&#32;to;</emphasis>
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;Ogre::ColourValue&#32;color;</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;size_t&#32;dieTime;</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//};</emphasis>
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Ogre::ManualObject*&#32;mTriangles_;</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::vector&lt;ContactPoint&gt;*&#32;mContactPoints_;</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::vector&lt;ContactPoint&gt;&#32;mContactPoints1_;</emphasis>
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::vector&lt;ContactPoint&gt;&#32;mContactPoints2_;</emphasis>
+29 
+30 &#32;&#32;&#32;&#32;<emphasis role="comment">//protected:</emphasis>
+31 
+32 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;bool&#32;frameStarted(const&#32;Ogre::FrameEvent&amp;&#32;evt)&#32;override;</emphasis>
+33 &#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;bool&#32;frameEnded(const&#32;Ogre::FrameEvent&amp;&#32;evt)&#32;override;</emphasis>
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_debug_drawer">DebugDrawer</link>();
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_debug_drawer">~DebugDrawer</link>();
+38 
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;drawTriangle(<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;v0,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;v1,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;v2,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;color,&#32;btScalar&#32;alpha)&#32;<emphasis role="keyword">override</emphasis>;
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;drawLine(<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;from,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;to,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;color)&#32;<emphasis role="keyword">override</emphasis>;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;drawContactPoint(<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;PointOnB,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;normalOnB,
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;btScalar&#32;distance,&#32;<emphasis role="keywordtype">int</emphasis>&#32;lifeTime,&#32;<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;color)&#32;<emphasis role="keyword">override</emphasis>;
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;reportErrorWarning(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;warningString)&#32;<emphasis role="keyword">override</emphasis>;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;draw3dText(<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;&#32;location,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;textString)&#32;<emphasis role="keyword">override</emphasis>;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setDebugMode(<emphasis role="keywordtype">int</emphasis>&#32;debugMode)<emphasis role="keyword">override</emphasis>;
+47 
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;getDebugMode()&#32;<emphasis role="keyword">const&#32;override</emphasis>;
+49 
+50 &#32;&#32;&#32;&#32;};
+51 
+52 }
+53 
+54 <emphasis role="preprocessor">#endif</emphasis>
+55 
+</programlisting></section>

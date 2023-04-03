@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__custom" xml:lang="en-US">
+<title>nk_command_custom Struct Reference</title>
+<indexterm><primary>nk_command_custom</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__custom_1a2694ddc1418ae575b1f2a594327a113a">header</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__custom_1a847207902e09d1aa6dc974fc226c463b">x</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__custom_1a11a17cf05108285041473a0b44c81154">y</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__custom_1a13aad7adc5361402e2f375bde35c6cae">w</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__custom_1aeeef97c98b0b23de526713fcb88fb536">h</link></para>
+</listitem>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__command__custom_1ae4d6bed7d6f565ecf799ad64e06be834">callback_data</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a31909395d6066c8b4a31d1a371816a37">nk_command_custom_callback</link> <link linkend="_structnk__command__custom_1ada2427e791d8e1d96264f9873b1d5e08">callback</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__custom_1ada2427e791d8e1d96264f9873b1d5e08"/><section>
+    <title>callback</title>
+<indexterm><primary>callback</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>callback</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a31909395d6066c8b4a31d1a371816a37">nk_command_custom_callback</link> nk_command_custom::callback</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1ae4d6bed7d6f565ecf799ad64e06be834"/><section>
+    <title>callback_data</title>
+<indexterm><primary>callback_data</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>callback_data</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_command_custom::callback_data</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1aeeef97c98b0b23de526713fcb88fb536"/><section>
+    <title>h</title>
+<indexterm><primary>h</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>h</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_custom::h</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1a2694ddc1418ae575b1f2a594327a113a"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_custom::header</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1a13aad7adc5361402e2f375bde35c6cae"/><section>
+    <title>w</title>
+<indexterm><primary>w</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>w</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_custom::w</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1a847207902e09d1aa6dc974fc226c463b"/><section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>short nk_command_custom::x</computeroutput></para></section>
+<anchor xml:id="_structnk__command__custom_1a11a17cf05108285041473a0b44c81154"/><section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>nk_command_custom</secondary></indexterm>
+<indexterm><primary>nk_command_custom</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>short nk_command_custom::y</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

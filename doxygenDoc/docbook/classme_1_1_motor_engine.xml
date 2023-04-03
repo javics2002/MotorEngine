@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_motor_engine" xml:lang="en-US">
+<title>me::MotorEngine Class Reference</title>
+<indexterm><primary>me::MotorEngine</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MotorEngine.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_motor_engine_1a82c5f33e6397046f65117b5897c01f9d">MotorEngine</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_motor_engine_1ab4e97a750c7ed94386edfe8f280a08d3">~MotorEngine</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_motor_engine_1a147a555b5db9124403dd5065c57a4167">setup</link> (std::string gameName=&quot;VroomVroom&quot;)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_motor_engine_1a0c14616b91b39841ea62594ab6503a61">loop</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_motor_engine_1a2fa0f6a7710153ac3b9caa8dad206839">exit</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_motor_engine_1a82c5f33e6397046f65117b5897c01f9d"/><section>
+    <title>MotorEngine()</title>
+<indexterm><primary>MotorEngine</primary><secondary>me::MotorEngine</secondary></indexterm>
+<indexterm><primary>me::MotorEngine</primary><secondary>MotorEngine</secondary></indexterm>
+<para><computeroutput>MotorEngine::MotorEngine ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_motor_engine_1ab4e97a750c7ed94386edfe8f280a08d3"/><section>
+    <title>~MotorEngine()</title>
+<indexterm><primary>~MotorEngine</primary><secondary>me::MotorEngine</secondary></indexterm>
+<indexterm><primary>me::MotorEngine</primary><secondary>~MotorEngine</secondary></indexterm>
+<para><computeroutput>MotorEngine::~MotorEngine ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_motor_engine_1a2fa0f6a7710153ac3b9caa8dad206839"/><section>
+    <title>exit()</title>
+<indexterm><primary>exit</primary><secondary>me::MotorEngine</secondary></indexterm>
+<indexterm><primary>me::MotorEngine</primary><secondary>exit</secondary></indexterm>
+<para><computeroutput>void MotorEngine::exit ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_motor_engine_1a0c14616b91b39841ea62594ab6503a61"/><section>
+    <title>loop()</title>
+<indexterm><primary>loop</primary><secondary>me::MotorEngine</secondary></indexterm>
+<indexterm><primary>me::MotorEngine</primary><secondary>loop</secondary></indexterm>
+<para><computeroutput>void MotorEngine::loop ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_motor_engine_1a147a555b5db9124403dd5065c57a4167"/><section>
+    <title>setup()</title>
+<indexterm><primary>setup</primary><secondary>me::MotorEngine</secondary></indexterm>
+<indexterm><primary>me::MotorEngine</primary><secondary>setup</secondary></indexterm>
+<para><computeroutput>bool MotorEngine::setup (std::string gameName = <computeroutput>&quot;VroomVroom&quot;</computeroutput>
+)</computeroutput></para>
+<para>Loads and initializates the engine and the game. Automatically loads a _d sufix dll if _DEBUG flags is defined. @params gameName Name of the .dll of the game, without any sufixes </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/MotorEngine/<link linkend="__motor_engine_8h">MotorEngine.h</link>Src/MotorEngine/<link linkend="__motor_engine_8cpp">MotorEngine.cpp</link></section>
+</section>

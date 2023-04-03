@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__buffer" xml:lang="en-US">
+<title>nk_command_buffer Struct Reference</title>
+<indexterm><primary>nk_command_buffer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__buffer">nk_buffer</link> * <link linkend="_structnk__command__buffer_1a2f4ee111972e35eb24365a245f858006">base</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__rect">nk_rect</link> <link linkend="_structnk__command__buffer_1a65da2f77d2ce8eb0a6ac6a0861e39382">clip</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__command__buffer_1a65f789788b8a857efa0c4080781591f7">use_clipping</link></para>
+</listitem>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__command__buffer_1adc12ff0f2c3965f2df8da6d83c5b9903">userdata</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__command__buffer_1a7c3c96052c6c8461ea78e7c4c6ed8ab2">begin</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__command__buffer_1a12fd620faceb994143967021e44a8b71">end</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__command__buffer_1a6334ab37cb3c65736585a30fc3e19c01">last</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__buffer_1a2f4ee111972e35eb24365a245f858006"/><section>
+    <title>base</title>
+<indexterm><primary>base</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>base</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__buffer">nk_buffer</link>* nk_command_buffer::base</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1a7c3c96052c6c8461ea78e7c4c6ed8ab2"/><section>
+    <title>begin</title>
+<indexterm><primary>begin</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_command_buffer::begin</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1a65da2f77d2ce8eb0a6ac6a0861e39382"/><section>
+    <title>clip</title>
+<indexterm><primary>clip</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>clip</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__rect">nk_rect</link> nk_command_buffer::clip</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1a12fd620faceb994143967021e44a8b71"/><section>
+    <title>end</title>
+<indexterm><primary>end</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>end</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_command_buffer::end</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1a6334ab37cb3c65736585a30fc3e19c01"/><section>
+    <title>last</title>
+<indexterm><primary>last</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>last</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_command_buffer::last</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1a65f789788b8a857efa0c4080781591f7"/><section>
+    <title>use_clipping</title>
+<indexterm><primary>use_clipping</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>use_clipping</secondary></indexterm>
+<para><computeroutput>int nk_command_buffer::use_clipping</computeroutput></para></section>
+<anchor xml:id="_structnk__command__buffer_1adc12ff0f2c3965f2df8da6d83c5b9903"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_command_buffer</secondary></indexterm>
+<indexterm><primary>nk_command_buffer</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_command_buffer::userdata</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

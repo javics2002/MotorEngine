@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_component_8h" kind="file" language="C++">
+    <compoundname>Component.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includedby refid="_animator_8h" local="yes">Src/EntityComponent/Components/Animator.h</includedby>
+    <includedby refid="_audio_listener_8h" local="yes">Src/EntityComponent/Components/AudioListener.h</includedby>
+    <includedby refid="_audio_source_8h" local="yes">Src/EntityComponent/Components/AudioSource.h</includedby>
+    <includedby refid="_camera_8h" local="yes">Src/EntityComponent/Components/Camera.h</includedby>
+    <includedby refid="_collider_8h" local="yes">Src/EntityComponent/Components/Collider.h</includedby>
+    <includedby refid="_component_8cpp" local="yes">Src/EntityComponent/Components/Component.cpp</includedby>
+    <includedby refid="_components_factory_8cpp" local="yes">Src/EntityComponent/Components/ComponentsFactory.cpp</includedby>
+    <includedby refid="_mesh_renderer_8h" local="yes">Src/EntityComponent/Components/MeshRenderer.h</includedby>
+    <includedby refid="_particle_system_8h" local="yes">Src/EntityComponent/Components/ParticleSystem.h</includedby>
+    <includedby refid="_rigid_body_8h" local="yes">Src/EntityComponent/Components/RigidBody.h</includedby>
+    <includedby refid="_transform_8h" local="yes">Src/EntityComponent/Components/Transform.h</includedby>
+    <includedby refid="_u_i_element_8h" local="yes">Src/EntityComponent/Components/UIElement.h</includedby>
+    <includedby refid="_u_i_text_8h" local="yes">Src/EntityComponent/Components/UIText.h</includedby>
+    <includedby refid="_entity_8cpp" local="yes">Src/EntityComponent/Entity.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/EntityComponent/Components/Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>Src/EntityComponent/Components/Animator.cpp</label>
+        <link refid="_animator_8cpp"/>
+      </node>
+      <node id="2">
+        <label>Src/EntityComponent/Components/Animator.h</label>
+        <link refid="_animator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/AudioListener.h</label>
+        <link refid="_audio_listener_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/AudioSource.cpp</label>
+        <link refid="_audio_source_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Src/EntityComponent/Components/AudioSource.h</label>
+        <link refid="_audio_source_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Src/EntityComponent/Components/Camera.cpp</label>
+        <link refid="_camera_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Src/EntityComponent/Components/Camera.h</label>
+        <link refid="_camera_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Src/EntityComponent/Components/Collider.cpp</label>
+        <link refid="_collider_8cpp"/>
+      </node>
+      <node id="11">
+        <label>Src/EntityComponent/Components/Collider.h</label>
+        <link refid="_collider_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Src/EntityComponent/Components/Component.cpp</label>
+        <link refid="_component_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Src/EntityComponent/Components/ComponentsFactory.cpp</label>
+        <link refid="_components_factory_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/FactoryComponent.cpp</label>
+        <link refid="_factory_component_8cpp"/>
+      </node>
+      <node id="17">
+        <label>Src/EntityComponent/Components/MeshRenderer.cpp</label>
+        <link refid="_mesh_renderer_8cpp"/>
+      </node>
+      <node id="16">
+        <label>Src/EntityComponent/Components/MeshRenderer.h</label>
+        <link refid="_mesh_renderer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Src/EntityComponent/Components/ParticleSystem.cpp</label>
+        <link refid="_particle_system_8cpp"/>
+      </node>
+      <node id="18">
+        <label>Src/EntityComponent/Components/ParticleSystem.h</label>
+        <link refid="_particle_system_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Src/EntityComponent/Components/RigidBody.cpp</label>
+        <link refid="_rigid_body_8cpp"/>
+      </node>
+      <node id="20">
+        <label>Src/EntityComponent/Components/RigidBody.h</label>
+        <link refid="_rigid_body_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Src/EntityComponent/Components/Transform.cpp</label>
+        <link refid="_transform_8cpp"/>
+      </node>
+      <node id="22">
+        <label>Src/EntityComponent/Components/Transform.h</label>
+        <link refid="_transform_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Src/EntityComponent/Components/UIButton.cpp</label>
+        <link refid="_u_i_button_8cpp"/>
+      </node>
+      <node id="25">
+        <label>Src/EntityComponent/Components/UIButton.h</label>
+        <link refid="_u_i_button_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Src/EntityComponent/Components/UIContainer.cpp</label>
+        <link refid="_u_i_container_8cpp"/>
+      </node>
+      <node id="27">
+        <label>Src/EntityComponent/Components/UIContainer.h</label>
+        <link refid="_u_i_container_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Src/EntityComponent/Components/UIElement.cpp</label>
+        <link refid="_u_i_element_8cpp"/>
+      </node>
+      <node id="24">
+        <label>Src/EntityComponent/Components/UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Src/EntityComponent/Components/UIText.cpp</label>
+        <link refid="_u_i_text_8cpp"/>
+      </node>
+      <node id="31">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>Src/EntityComponent/Entity.cpp</label>
+        <link refid="_entity_8cpp"/>
+      </node>
+      <node id="13">
+        <label>Src/Physics/PhysicsManager.cpp</label>
+        <link refid="_physics_manager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_component" prot="public">me::Component</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_component_8h_1a529ddd4e711e7b2d658891f5cbd92bb4" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_COMPONENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This undefined class interface that is meant to be the root for any behavior designed as a component. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="9" column="9" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_COMPONENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="_component_8h_1a529ddd4e711e7b2d658891f5cbd92bb4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_COMPONENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Entity;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classme_1_1_component" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_component" kindref="compound">~Component</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" kindref="member">setEntity</ref>(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mEntity<sp/>=<sp/>e;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/><ref refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" kindref="member">getEntity</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mEntity;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>lateUpdate();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionEnter(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionStay(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionExit(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82" refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/><ref refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" kindref="member">mEntity</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Identificar<sp/>cada<sp/>componente<sp/>con<sp/>un<sp/>nombre</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/Component.h"/>
+  </compounddef>
+</doxygen>

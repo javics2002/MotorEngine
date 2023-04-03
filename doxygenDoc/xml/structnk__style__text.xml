@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__style__text" kind="struct" language="C++" prot="public">
+    <compoundname>nk_style_text</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__style__text_1a21064eb801febacffa14146f95ca7d74" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_text::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>nk_style_text::color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4656" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4656" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__text_1a1939fda3b4e6295ec5645394a4fbc538" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_text::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <qualifiedname>nk_style_text::padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4657" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4657" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="1">
+        <label>nk_style_text</label>
+        <link refid="structnk__style__text"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4655" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4655" bodyend="4658"/>
+    <listofallmembers>
+      <member refid="structnk__style__text_1a21064eb801febacffa14146f95ca7d74" prot="public" virt="non-virtual"><scope>nk_style_text</scope><name>color</name></member>
+      <member refid="structnk__style__text_1a1939fda3b4e6295ec5645394a4fbc538" prot="public" virt="non-virtual"><scope>nk_style_text</scope><name>padding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

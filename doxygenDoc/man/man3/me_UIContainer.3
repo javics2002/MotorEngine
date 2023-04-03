@@ -1,0 +1,151 @@
+.TH "me::UIContainer" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::UIContainer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UIContainer\&.h>\fP
+.PP
+Inherits \fBme::UIElement\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddElement\fP (\fBComponent\fP *c)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::UIElement\fP
+.in +1c
+.ti -1c
+.RI "\fBUIElement\fP ()"
+.br
+.ti -1c
+.RI "\fB~UIElement\fP ()"
+.br
+.ti -1c
+.RI "void \fBshow\fP ()"
+.br
+.ti -1c
+.RI "void \fBhide\fP ()"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBgetSize\fP ()"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBgetPos\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (\fBVector2\fP size)"
+.br
+.ti -1c
+.RI "bool \fBisVisible\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTop\fP (float top)"
+.br
+.ti -1c
+.RI "void \fBsetLeft\fP (float left)"
+.br
+.ti -1c
+.RI "void \fBsetWidth\fP (float wifth)"
+.br
+.ti -1c
+.RI "void \fBsetHeight\fP (float height)"
+.br
+.ti -1c
+.RI "void \fBsetInteractive\fP (bool interactive)"
+.br
+.ti -1c
+.RI "void \fBsetFocusNow\fP (bool focus)"
+.br
+.ti -1c
+.RI "bool \fBgetIsInteractive\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetIsFocusNow\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::UIElement\fP
+.in +1c
+.ti -1c
+.RI "Ogre::OverlayManager * \fBmOverlayManager\fP"
+.br
+.ti -1c
+.RI "Ogre::Overlay * \fBmOverlay\fP"
+.br
+.ti -1c
+.RI "Ogre::OverlayContainer * \fBmOverlayContainer\fP"
+.br
+.ti -1c
+.RI "bool \fBmInteractive\fP"
+.br
+.ti -1c
+.RI "bool \fBmFocus\fP"
+.br
+.ti -1c
+.RI "int \fBmElems\fP =0"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void UIContainer::addElement (\fBComponent\fP * c)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

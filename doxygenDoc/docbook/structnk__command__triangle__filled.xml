@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__triangle__filled" xml:lang="en-US">
+<title>nk_command_triangle_filled Struct Reference</title>
+<indexterm><primary>nk_command_triangle_filled</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__triangle__filled_1aba10245834e42312409e2b46e89364c5">header</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle__filled_1aca4ee3d0be539c944ee86758fa434cd4">a</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle__filled_1a74a97afd25d3ca85f507f0fef6f7a3a7">b</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle__filled_1a74aedb1be3f5af2aa0f11ec82fe25389">c</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__command__triangle__filled_1af1a8f938d6b75eafc0212ab4c5a1baf8">color</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__triangle__filled_1aca4ee3d0be539c944ee86758fa434cd4"/><section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>nk_command_triangle_filled</secondary></indexterm>
+<indexterm><primary>nk_command_triangle_filled</primary><secondary>a</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle_filled::a</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle__filled_1a74a97afd25d3ca85f507f0fef6f7a3a7"/><section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>nk_command_triangle_filled</secondary></indexterm>
+<indexterm><primary>nk_command_triangle_filled</primary><secondary>b</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle_filled::b</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle__filled_1a74aedb1be3f5af2aa0f11ec82fe25389"/><section>
+    <title>c</title>
+<indexterm><primary>c</primary><secondary>nk_command_triangle_filled</secondary></indexterm>
+<indexterm><primary>nk_command_triangle_filled</primary><secondary>c</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle_filled::c</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle__filled_1af1a8f938d6b75eafc0212ab4c5a1baf8"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_command_triangle_filled</secondary></indexterm>
+<indexterm><primary>nk_command_triangle_filled</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_command_triangle_filled::color</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle__filled_1aba10245834e42312409e2b46e89364c5"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_triangle_filled</secondary></indexterm>
+<indexterm><primary>nk_command_triangle_filled</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_triangle_filled::header</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

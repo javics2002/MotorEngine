@@ -13,6 +13,9 @@
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
 #include "EntityComponent/Scene.h"
+#include "EntityComponent/Entity.h" //Borrar
+#include "EntityComponent/Components/Transform.h" //Borrar
+
 #include "Render/Window.h"
 // --- Components
 #include "EntityComponent/Components/ComponentsFactory.h"

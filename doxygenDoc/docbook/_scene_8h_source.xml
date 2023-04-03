@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__scene_8h_source" xml:lang="en-US">
+<title>Scene.h</title>
+<indexterm><primary>Src/EntityComponent/Scene.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+6 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+7 
+8 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_SCENE</emphasis>
+9 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_SCENE</emphasis>
+10 
+11 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__info_scene_8h">InfoScene.h</link>&quot;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;initializer_list&gt;</emphasis>
+15 
+16 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Entity;
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_scene">Scene</link>&#32;{
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+21 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_scene">Scene</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link>&#32;name);
+27 
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classme_1_1_scene">~Scene</link>();
+33 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::shared_ptr&lt;Entity&gt;&#32;addEntity(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&#32;name);
+41 
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;removeEntity(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&amp;&#32;name);
+48 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::shared_ptr&lt;Entity&gt;&gt;&#32;getEntities()&#32;<emphasis role="keyword">const</emphasis>;
+54 
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::shared_ptr&lt;Entity&gt;&#32;findEntity(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&amp;&#32;name)&#32;<emphasis role="keyword">const</emphasis>;
+66 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&#32;<link linkend="_classme_1_1_scene_1ad3a4b63860b58bd6099c642edfcd0b37">getName</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mName;
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+74 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classme_1_1_scene_1aab34b49d48da59f38b1353a11f638109">setName</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link>&#32;name)&#32;{
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mName&#32;=&#32;name;
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+82 
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;renameEntity(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&amp;&#32;oldName,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&amp;&#32;newName);
+89 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;start();
+95 
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;update();
+104 
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;lateUpdate();
+113 
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;refresh();
+120 
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;processNewEntities();
+127 
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;pushEntities(<link linkend="_namespaceme_1a37719813e3fb0545c6e4b9165b9215c1">InfoScene</link>&amp;&#32;entitiesMap);
+133 
+134 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link>&#32;<link linkend="_classme_1_1_scene_1aeb63ee8ae73ceeead581c3cde895291e">mName</link>;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::shared_ptr&lt;Entity&gt;&gt;&#32;<link linkend="_classme_1_1_scene_1ade7e79aada5fbdbf408f05f19da86226">mNewEntities</link>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;EntityName,&#32;std::shared_ptr&lt;Entity&gt;&gt;&#32;<link linkend="_classme_1_1_scene_1ab142ec1bded6510e2cc2d8df88eab0b2">mEntities</link>;
+138 &#32;&#32;&#32;&#32;};
+139 };
+140 
+141 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

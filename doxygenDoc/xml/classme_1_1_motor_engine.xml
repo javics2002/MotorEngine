@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_motor_engine" kind="class" language="C++" prot="public">
+    <compoundname>me::MotorEngine</compoundname>
+    <includes refid="_motor_engine_8h" local="no">MotorEngine.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classme_1_1_motor_engine_1a9df2c311429b07d55b0769f34abd5589" prot="private" static="no" mutable="no">
+        <type>HMODULE</type>
+        <definition>HMODULE me::MotorEngine::game</definition>
+        <argsstring></argsstring>
+        <name>game</name>
+        <qualifiedname>me::MotorEngine::game</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="54" column="9" bodyfile="Src/MotorEngine/MotorEngine.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_motor_engine_1a6a3a9d7bfb3134748a7cb6d5ddc5ed4b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_time" kindref="compound">Time</ref> *</type>
+        <definition>Time* me::MotorEngine::timeUtils</definition>
+        <argsstring></argsstring>
+        <name>timeUtils</name>
+        <qualifiedname>me::MotorEngine::timeUtils</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="59" column="6" bodyfile="Src/MotorEngine/MotorEngine.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a82c5f33e6397046f65117b5897c01f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MotorEngine::MotorEngine</definition>
+        <argsstring>()</argsstring>
+        <name>MotorEngine</name>
+        <qualifiedname>me::MotorEngine::MotorEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="20" column="1" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="219" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_motor_engine_1ab4e97a750c7ed94386edfe8f280a08d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MotorEngine::~MotorEngine</definition>
+        <argsstring>()</argsstring>
+        <name>~MotorEngine</name>
+        <qualifiedname>me::MotorEngine::~MotorEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="21" column="1" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="222" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a147a555b5db9124403dd5065c57a4167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MotorEngine::setup</definition>
+        <argsstring>(std::string gameName=&quot;VroomVroom&quot;)</argsstring>
+        <name>setup</name>
+        <qualifiedname>me::MotorEngine::setup</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>gameName</declname>
+          <defval>&quot;VroomVroom&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads and initializates the engine and the game. Automatically loads a _d sufix dll if _DEBUG flags is defined. @params gameName Name of the .dll of the game, without any sufixes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="28" column="6" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="33" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a0c14616b91b39841ea62594ab6503a61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorEngine::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <qualifiedname>me::MotorEngine::loop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="29" column="6" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="71" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a2fa0f6a7710153ac3b9caa8dad206839" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorEngine::exit</definition>
+        <argsstring>()</argsstring>
+        <name>exit</name>
+        <qualifiedname>me::MotorEngine::exit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="30" column="6" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="164" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a7dad86c815212fbfe4cc80f3c2f466d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MotorEngine::loadGame</definition>
+        <argsstring>(std::string gameDllname)</argsstring>
+        <name>loadGame</name>
+        <qualifiedname>me::MotorEngine::loadGame</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>gameDllname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="39" column="6" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="173" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a8c5c885c4eac257455f92da8f14fe8ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::MotorEngine::initFactories</definition>
+        <argsstring>()</argsstring>
+        <name>initFactories</name>
+        <qualifiedname>me::MotorEngine::initFactories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="44" column="6" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="196" bodyend="203"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classme_1_1_motor_engine_1a778326d03b500e276e339ba0fbc540c4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MotorEngine::quitLoop</definition>
+        <argsstring>(void *userdata, SDL_Event *event)</argsstring>
+        <name>quitLoop</name>
+        <qualifiedname>me::MotorEngine::quitLoop</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <param>
+          <type><ref refid="_button_8h_1a33fcc6aa445cb781bfca881e39e5333e" kindref="member">SDL_Event</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngine.h" line="52" column="12" bodyfile="Src/MotorEngine/MotorEngine.cpp" bodystart="205" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/MotorEngine/MotorEngine.h" line="18" column="1" bodyfile="Src/MotorEngine/MotorEngine.h" bodystart="18" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classme_1_1_motor_engine_1a2fa0f6a7710153ac3b9caa8dad206839" prot="public" virt="non-virtual"><scope>me::MotorEngine</scope><name>exit</name></member>
+      <member refid="classme_1_1_motor_engine_1a9df2c311429b07d55b0769f34abd5589" prot="private" virt="non-virtual"><scope>me::MotorEngine</scope><name>game</name></member>
+      <member refid="classme_1_1_motor_engine_1a8c5c885c4eac257455f92da8f14fe8ad" prot="private" virt="non-virtual"><scope>me::MotorEngine</scope><name>initFactories</name></member>
+      <member refid="classme_1_1_motor_engine_1a7dad86c815212fbfe4cc80f3c2f466d1" prot="private" virt="non-virtual"><scope>me::MotorEngine</scope><name>loadGame</name></member>
+      <member refid="classme_1_1_motor_engine_1a0c14616b91b39841ea62594ab6503a61" prot="public" virt="non-virtual"><scope>me::MotorEngine</scope><name>loop</name></member>
+      <member refid="classme_1_1_motor_engine_1a82c5f33e6397046f65117b5897c01f9d" prot="public" virt="non-virtual"><scope>me::MotorEngine</scope><name>MotorEngine</name></member>
+      <member refid="classme_1_1_motor_engine_1a778326d03b500e276e339ba0fbc540c4" prot="private" virt="non-virtual"><scope>me::MotorEngine</scope><name>quitLoop</name></member>
+      <member refid="classme_1_1_motor_engine_1a147a555b5db9124403dd5065c57a4167" prot="public" virt="non-virtual"><scope>me::MotorEngine</scope><name>setup</name></member>
+      <member refid="classme_1_1_motor_engine_1a6a3a9d7bfb3134748a7cb6d5ddc5ed4b" prot="private" virt="non-virtual"><scope>me::MotorEngine</scope><name>timeUtils</name></member>
+      <member refid="classme_1_1_motor_engine_1ab4e97a750c7ed94386edfe8f280a08d3" prot="public" virt="non-virtual"><scope>me::MotorEngine</scope><name>~MotorEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

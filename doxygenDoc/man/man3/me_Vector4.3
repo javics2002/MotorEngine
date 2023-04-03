@@ -1,0 +1,114 @@
+.TH "me::Vector4" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::Vector4
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vector4\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVector4\fP ()"
+.br
+.ti -1c
+.RI "\fBVector4\fP (float a, float b, float c)"
+.br
+.ti -1c
+.RI "\fBVector4\fP (const \fBVector3\fP &v_)"
+.br
+.ti -1c
+.RI "\fBVector4\fP (float a, float b, float c, float d)"
+.br
+.ti -1c
+.RI "\fBVector4\fP (const \fBVector4\fP &v)"
+.br
+.ti -1c
+.RI "\fBVector4\fP \fBlerp\fP (const \fBVector4\fP &a, const \fBVector4\fP &b, float f)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBVector4\fP &v)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBVector4\fP *v)"
+.br
+.ti -1c
+.RI "Ogre::Quaternion \fBv4ToOgreQuaternion\fP ()"
+.br
+.ti -1c
+.RI "btQuaternion \fBgetRotationInBullet\fP ()"
+.br
+.ti -1c
+.RI "void \fBrotate\fP (float degrees, \fBVector3\fP axis)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "float \fBz\fP"
+.br
+.ti -1c
+.RI "float \fBw\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Vector4::Vector4 ()"
+
+.SS "Vector4::Vector4 (float a, float b, float c)"
+
+.SS "Vector4::Vector4 (const \fBVector3\fP & v_)"
+
+.SS "Vector4::Vector4 (float a, float b, float c, float d)"
+
+.SS "Vector4::Vector4 (const \fBVector4\fP & v)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "btQuaternion Vector4::getRotationInBullet ()"
+Returns the current Rotation in btQuaternion 
+.SS "\fBVector4\fP Vector4::lerp (const \fBVector4\fP & a, const \fBVector4\fP & b, float f)"
+Returns the linear interpolation between 'a' and 'b' by a factor of 'f'
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The starting vector to interpolate from 
+.br
+\fIb\fP The ending vector to interpolate to 
+.br
+\fIf\fP The interpolation factor, a value between 0 and 1 
+.RE
+.PP
+
+.SS "void Vector4::operator= (const \fBVector4\fP & v)"
+
+.SS "void Vector4::operator= (const \fBVector4\fP * v)"
+
+.SS "void Vector4::rotate (float degrees, \fBVector3\fP axis)"
+
+.SS "Ogre::Quaternion Vector4::v4ToOgreQuaternion ()"
+Return the conversion \fBVector3\fP - Ogre::Quaternion 
+.SH "Member Data Documentation"
+.PP 
+.SS "float me::Vector4::w"
+
+.SS "float me::Vector4::x"
+
+.SS "float me::Vector4::y"
+
+.SS "float me::Vector4::z"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

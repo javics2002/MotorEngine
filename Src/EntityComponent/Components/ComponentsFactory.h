@@ -16,16 +16,18 @@ namespace me {
 		ComponentsFactory();
 
 		std::unordered_map<ComponentName, FactoryComponent*> mFactories;
+
 	public:
 		~ComponentsFactory();
 
+		me::Component* create(const ComponentName& name);
 		me::Component* create(const ComponentName& name, Parameters& params);
 		void addFactoryComponent(const ComponentName& name, FactoryComponent* factoryComponent);
 	};
 
 	/**
-	This macro defines a compact way for using the singleton InputHandler, instead of
-	writing InputHandler::instance()->method() we write ih().method()
+	This macro defines a compact way for using the singleton ComponentsFactory, instead of
+	writing ComponentsFactory::instance()->method() we write componentsFactory().method()
 	*/
 	inline ComponentsFactory& componentsFactory() {
 		return *ComponentsFactory::instance();

@@ -1,0 +1,1101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__input_code_8h" xml:lang="en-US">
+<title>Src/Input/InputCode.h File Reference</title>
+<indexterm><primary>Src/Input/InputCode.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &lt;SDL3/SDL_keyboard.h&gt;<?linebreak?>#include &lt;SDL3/SDL_mouse.h&gt;<?linebreak?>#include &lt;SDL3/SDL_gamepad.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__input_code_8h_1ac7c7a0599c4567dcd674958285a02b79">__INPUT_INPUTCODE</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__input_code_8h_1a61e09791908c72d6b1c7925b572f9e12">INPUTTYPE_KEYBOARD</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a050b99cc3d5ccd12e45d851a374679e0">INPUTTYPE_MOUSE_CLICK</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae66d321e0f39d7fcd3ccf20178d6ac57">INPUTTYPE_MOUSE_MOTION</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae18f6374fb2d9d9a506e9c89b5ba703c">INPUTTYPE_MOUSE_WHEEL</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af2b3cde4571722accd4729ef14d6d656">INPUTTYPE_GAMEPAD_BUTTON</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a9a0d03c83c7c1cd83a6d67f47c70e25d">INPUTTYPE_GAMEPAD_AXIS</link></para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab73c7860e1188cd6a50c54d8b3cd0a52">KEYBOARDCODE_UNKNOWN</link> = SDLK_UNKNOWN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a0211e587c2f803377e948efafda52eeb">KEYBOARDCODE_RETURN</link> = SDLK_RETURN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a2c0b7c3834705ddf7a8a55df514c2cda">KEYBOARDCODE_ESCAPE</link> = SDLK_ESCAPE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa9d8e2011b9f1b2b611890b5a102af1f">KEYBOARDCODE_BACKSPACE</link> = SDLK_BACKSPACE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab4517dd3306bf5dce95578029f270140">KEYBOARDCODE_TAB</link> = SDLK_TAB</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a43f9338feeaaa67939c5430ac3abcf4f">KEYBOARDCODE_SPACE</link> = SDLK_SPACE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a968c5c8e505334302c7fc24ac1801247">KEYBOARDCODE_EXCLAIM</link> = SDLK_EXCLAIM</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a8ccf3ea3b51a74d305d0902386794e1a">KEYBOARDCODE_DOUBLEQUOTE</link> = SDLK_QUOTEDBL</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a8a90637e286dd817634be408765abdda">KEYBOARDCODE_HASH</link> = SDLK_HASH</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3e1e3e0a0c41740ae42984823a71a662">KEYBOARDCODE_PERCENT</link> = SDLK_PERCENT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a9f14b6c754523ac70231665360f5cdfa">KEYBOARDCODE_DOLLAR</link> = SDLK_DOLLAR</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a2c9552d0e3c1055523e28520e43cf188">KEYBOARDCODE_AMPERSAND</link> = SDLK_AMPERSAND</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ad71ef69b9a1c7947d1cd8a3667a68321">KEYBOARDCODE_QUOTE</link> = SDLK_QUOTE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab00ec94704b3153e74f24824ea394360">KEYBOARDCODE_LEFTPARENTHESIS</link> = SDLK_LEFTPAREN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a5e3217dec8fc7971f27579335ffcbd05">KEYBOARDCODE_RIGHTPARENTHESIS</link> = SDLK_RIGHTPAREN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af8080a114d98c82e1068927b698baf01">KEYBOARDCODE_ASTERISK</link> = SDLK_ASTERISK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ac648b0f57dfc80f7d7e497fef46f323e">KEYBOARDCODE_PLUS</link> = SDLK_PLUS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a39e9ac85a095a1c196eb90a498baa225">KEYBOARDCODE_COMMA</link> = SDLK_COMMA</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7edc5edfc604b1109dc690d005fb8af0">KEYBOARDCODE_MINUS</link> = SDLK_MINUS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af27a70c0a4eea01cb1d2c4dbcf1f6fcf">KEYBOARDCODE_PERIOD</link> = SDLK_PERIOD</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1afab3bd92053ea1d746537e7bcd54d9ed">KEYBOARDCODE_SLASH</link> = SDLK_SLASH</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a0c8cfa51bbb142851a378a2bf7dc92c4">KEYBOARDCODE_0</link> = SDLK_0</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ac62d53627deab84cef1c634297abbf29">KEYBOARDCODE_1</link> = SDLK_1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7953cf4dfdb97b2ccf1ba1b97ccbb344">KEYBOARDCODE_2</link> = SDLK_2</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a54d8516a93fb9404f9ff162ce6a9157b">KEYBOARDCODE_3</link> = SDLK_3</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7102d65f526a8a358907cf470a4cf901">KEYBOARDCODE_4</link> = SDLK_4</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a6cec7602273a8e25b8c1446314762b8b">KEYBOARDCODE_5</link> = SDLK_5</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ad871da6690fe7c3de9f498bb372b6a6e">KEYBOARDCODE_6</link> = SDLK_6</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a4dbb6295658aeeb817fb9833e349bb18">KEYBOARDCODE_7</link> = SDLK_7</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a36a11e5d9e4a468155ca5c89cbee4291">KEYBOARDCODE_8</link> = SDLK_8</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a920f582cdacdcab5302bc12e5f5922c2">KEYBOARDCODE_9</link> = SDLK_9</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ad26706238c13bd0fae1ad28ac422da2b">KEYBOARDCODE_COLON</link> = SDLK_COLON</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a886079cef1a0f6f046df699530d59900">KEYBOARDCODE_SEMICOLON</link> = SDLK_SEMICOLON</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a8180d36508b4348f149f7731fa8b5150">KEYBOARDCODE_LESS</link> = SDLK_LESS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aedab066051f910ecf8855eb91f4e3417">KEYBOARDCODE_EQUALS</link> = SDLK_EQUALS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a913916fa5a7692a3a7fbf3d2567bcf70">KEYBOARDCODE_GREATER</link> = SDLK_GREATER</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1235abb40c7c6649d9cb242fc33a8ac8">KEYBOARDCODE_QUESTION</link> = SDLK_QUESTION</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa72f0a0ae46249560e7c75f3d0427780">KEYBOARDCODE_AT</link> = SDLK_AT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7fcc49f4f1b80a1e870e4da9bd3d0293">KEYBOARDCODE_LEFTBRACKET</link> = SDLK_LEFTBRACKET</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae96329c4fd183e4637836d94ec003eef">KEYBOARDCODE_BACKSLASH</link> = SDLK_BACKSLASH</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a39c31957fdf1fb8c8524b2036f8b3330">KEYBOARDCODE_RIGHTBRACKET</link> = SDLK_RIGHTBRACKET</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a2738a0d1ec3bf9c32918021f1f8228da">KEYBOARDCODE_CARET</link> = SDLK_CARET</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1abd8113d5f7bdc8ed154a30727a312a53">KEYBOARDCODE_UNDERSCORE</link> = SDLK_UNDERSCORE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7f1c7277feb57a0445666a22753cdb01">KEYBOARDCODE_BACKQUOTE</link> = SDLK_BACKQUOTE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a337123828af455e7ad26663643bb41ee">KEYBOARDCODE_A</link> = SDLK_a</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa5376d036a52666170b739686f7235bd">KEYBOARDCODE_B</link> = SDLK_b</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1a5498c40105417cc3469928f62f4844">KEYBOARDCODE_C</link> = SDLK_c</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a36e191d9a8a327f892e6a06fb2c18652">KEYBOARDCODE_D</link> = SDLK_d</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a934cbbea454fc2380acd02a2c28f5c78">KEYBOARDCODE_E</link> = SDLK_e</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a7c8dd1e52031d4957337ff6717edb638">KEYBOARDCODE_F</link> = SDLK_f</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3f1f74f50730c50334363ad9da05ced8">KEYBOARDCODE_G</link> = SDLK_g</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3769c99911bef83e7b2ad9cdfc915645">KEYBOARDCODE_H</link> = SDLK_h</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3ec902fe3d2c64acf96f4013d96e8146">KEYBOARDCODE_I</link> = SDLK_i</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a649aadd5dd30cbc9d7bd1350135b9d65">KEYBOARDCODE_J</link> = SDLK_j</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a364bc5157c48a2793d09676dd886e4dc">KEYBOARDCODE_K</link> = SDLK_k</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae3e615915e490d6e52cd657f1b551d6d">KEYBOARDCODE_L</link> = SDLK_l</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a556f7ec7c50f9fae2f25d13f114d7f04">KEYBOARDCODE_M</link> = SDLK_m</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1abfd07819923f6a731e67b83a96f60974">KEYBOARDCODE_N</link> = SDLK_n</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a30fb8c547fbbfa5699d7d3e0f03a552c">KEYBOARDCODE_O</link> = SDLK_o</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1afea2516353b50e25ca46809ad061493d">KEYBOARDCODE_P</link> = SDLK_p</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aaec00b2f80070b15b19d5d05586c23b4">KEYBOARDCODE_Q</link> = SDLK_q</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a948fda1a6bbab5ccbb8a16d6d7cef493">KEYBOARDCODE_R</link> = SDLK_r</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a52fc145780abe1e921bd46ba9ee9a817">KEYBOARDCODE_S</link> = SDLK_s</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1abc9c4cc55f79a9540408ce39e86c4c01">KEYBOARDCODE_T</link> = SDLK_t</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aadf3f2fac4b2435137b69c71d688cbf7">KEYBOARDCODE_U</link> = SDLK_u</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3487e958ed18ab358a2f9d1689c9f00c">KEYBOARDCODE_V</link> = SDLK_v</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1adab5e8cb0ff0fb0abd0186b033e8b242">KEYBOARDCODE_W</link> = SDLK_w</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae744d85ba3830d3736bbd6f572687614">KEYBOARDCODE_X</link> = SDLK_x</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a654add366d4293452ddfce7926f246b1">KEYBOARDCODE_Y</link> = SDLK_y</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a6233e8447a62d7e850c837c997927dae">KEYBOARDCODE_Z</link> = SDLK_z</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a76e007eb65671727ab7b9f0945cf944e">KEYBOARDCODE_CAPSLOCK</link> = SDLK_CAPSLOCK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a12b571ded60738221198dffac6b6f678">KEYBOARDCODE_F1</link> = SDLK_F1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a5b7e90973fee3030bb4b820d18a92b94">KEYBOARDCODE_F2</link> = SDLK_F2</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa1be7dc8a729c7f36d8813991b2eb95b">KEYBOARDCODE_F3</link> = SDLK_F3</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a141cb709d559ddd45751c810251cc56a">KEYBOARDCODE_F4</link> = SDLK_F4</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa8033ee63f15e1d7eea131860312e436">KEYBOARDCODE_F5</link> = SDLK_F5</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af02f77ea15fe97a0d02392db3cd52a07">KEYBOARDCODE_F6</link> = SDLK_F6</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a14b2d37a126d1a981220afb301666ba7">KEYBOARDCODE_F7</link> = SDLK_F7</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae1f5865af1eab1f4e18b6db8a381f69b">KEYBOARDCODE_F8</link> = SDLK_F8</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a737c6cbadb4460ac674ab8ccd674b1a1">KEYBOARDCODE_F9</link> = SDLK_F9</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1de7c582c3be70a4f11b4dac49cd32c4">KEYBOARDCODE_F10</link> = SDLK_F10</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a2457b7cfb460fb7c8685a5c1b8b67e4a">KEYBOARDCODE_F11</link> = SDLK_F11</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1932ab718cfaec3517b1bafacd908568">KEYBOARDCODE_F12</link> = SDLK_F12</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a5c66be23609855550b7d212d76fbabfd">KEYBOARDCODE_PRINTSCREEN</link> = SDLK_PRINTSCREEN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a5047bf4663f3f4a0e99ab468d19f1bd3">KEYBOARDCODE_SCROLLLOCK</link> = SDLK_SCROLLLOCK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a0962cd0a6b8c69f9cbb1d7865f94369e">KEYBOARDCODE_PAUSE</link> = SDLK_PAUSE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a15730a6f886b6c5ae7994267a695c74e">KEYBOARDCODE_INSERT</link> = SDLK_INSERT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a21735c84952b3ce8ac3a2fe18217bfae">KEYBOARDCODE_HOME</link> = SDLK_HOME</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ad311cb4feff5bb330f616c622a478a9f">KEYBOARDCODE_PAGEUP</link> = SDLK_PAGEUP</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae539e2c8f0b2e73b3a4e3585fd73990f">KEYBOARDCODE_DELETE</link> = SDLK_DELETE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a6064e2c1d0e3e68e3b87e0cbf231df45">KEYBOARDCODE_END</link> = SDLK_END</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a71acc49a29d1421df21349f5ad000618">KEYBOARDCODE_PAGEDOWN</link> = SDLK_PAGEDOWN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3cce219934f6cc29c5c7da1bdfddf2ed">KEYBOARDCODE_RIGHT</link> = SDLK_RIGHT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a983691b81a5f85e5c1de7d4fc5ca31ad">KEYBOARDCODE_LEFT</link> = SDLK_LEFT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ad786c2730be02d36573c683512f3e792">KEYBOARDCODE_DOWN</link> = SDLK_DOWN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a66b8fe00a52286533290d34fbc6f5390">KEYBOARDCODE_UP</link> = SDLK_UP</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ac64ef1b36f0d3570c43b0c484629ac93">KEYBOARDCODE_NUMPAD_NUMLOCKCLEAR</link> = SDLK_NUMLOCKCLEAR</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a404628241af4425f38bd429500e157c9">KEYBOARDCODE_NUMPAD_DIVIDE</link> = SDLK_KP_DIVIDE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aa020041ed0230dca04613bab5c4c548b">KEYBOARDCODE_NUMPAD_MULTIPLY</link> = SDLK_KP_MULTIPLY</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a876967464718a6dcea529943bf1a7e4c">KEYBOARDCODE_NUMPAD_MINUS</link> = SDLK_KP_MINUS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aca6f2b51748bcdc9fd117120b85be8dd">KEYBOARDCODE_NUMPAD_PLUS</link> = SDLK_KP_PLUS</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a304983baea2fc361891e3a038ef37f06">KEYBOARDCODE_NUMPAD_ENTER</link> = SDLK_KP_ENTER</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab5e6654c63e8dbbc41d11e16f8466691">KEYBOARDCODE_NUMPAD_1</link> = SDLK_KP_1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af5877a68bf8226b0504333d9db4a5ea0">KEYBOARDCODE_NUMPAD_2</link> = SDLK_KP_2</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a641d6d0625724de986df811eafeeb23a">KEYBOARDCODE_NUMPAD_3</link> = SDLK_KP_3</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aafd1b9a261f88da7fc9a0b478b79931c">KEYBOARDCODE_NUMPAD_4</link> = SDLK_KP_4</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a35236d91383a38d11cce0f1ceca5a617">KEYBOARDCODE_NUMPAD_5</link> = SDLK_KP_5</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a693b8ac0a2991862f0922ad0bd09566d">KEYBOARDCODE_NUMPAD_6</link> = SDLK_KP_6</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a671c3896a706ec7cbd4c8d48dfae5005">KEYBOARDCODE_NUMPAD_7</link> = SDLK_KP_7</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a6a2e9b98e46919fcc3ebe58f958c3113">KEYBOARDCODE_NUMPAD_8</link> = SDLK_KP_8</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a9a82fff72df6dbdac892a263d771e4c2">KEYBOARDCODE_NUMPAD_9</link> = SDLK_KP_9</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab862c615573622dc110eb5a53367bdeb">KEYBOARDCODE_NUMPAD_0</link> = SDLK_KP_0</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a03b3b48e497113aeff927d3d9448deee">MOUSE_LEFTCLICK</link> = SDL_BUTTON_LEFT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab69d524698b94d84f20a015a9294043d">MOUSE_MIDDLECLICK</link> = SDL_BUTTON_MIDDLE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a75b25dd69de785df85627a3772b1177c">MOUSE_RIGHTCLICK</link> = SDL_BUTTON_RIGHT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1daab5b6a13f1bdd91ea5c590848c92b">MOUSE_X1</link> = SDL_BUTTON_X1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a02b2e262991e96d791928ceaed4b9813">MOUSEWHEELCODE_NORMAL</link> = SDL_MOUSEWHEEL_NORMAL</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a40bbee39662e0640ee1b3525e752b402">GAMEPAD_BUTTONCODE_INVALID</link> = SDL_GAMEPAD_BUTTON_INVALID</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab2338bd3bc207c725775c2ac985ab174">GAMEPAD_BUTTONCODE_A</link> = SDL_GAMEPAD_BUTTON_A</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1360a1b8884b51e39e1287e3e2474e43">GAMEPAD_BUTTONCODE_B</link> = SDL_GAMEPAD_BUTTON_B</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1aadd258a1e428dc3bbf4a0427d81bcd81">GAMEPAD_BUTTONCODE_X</link> = SDL_GAMEPAD_BUTTON_X</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a0d3afee1cd798e7ac52a2878118f8d70">GAMEPAD_BUTTONCODE_Y</link> = SDL_GAMEPAD_BUTTON_Y</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1af0916d6e7cf5e2b795843f843c999e04">GAMEPAD_BUTTONCODE_BACK</link> = SDL_GAMEPAD_BUTTON_BACK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab091a86c639386f0791d948aa328e0c1">GAMEPAD_BUTTONCODE_GUIDE</link> = SDL_GAMEPAD_BUTTON_GUIDE</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1afea6c46e3edf7472b6c34e6b6467799d">GAMEPAD_BUTTONCODE_START</link> = SDL_GAMEPAD_BUTTON_START</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a36dea76f1c3b6f5651146415997b5b86">GAMEPAD_BUTTONCODE_LEFT_STICK</link> = SDL_GAMEPAD_BUTTON_LEFT_STICK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1afdaab4e99726c0ff7678b021abd1e337">GAMEPAD_BUTTONCODE_RIGHT_STICK</link> = SDL_GAMEPAD_BUTTON_RIGHT_STICK</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a117cbb95b20ef279bb6dffc39a47e993">GAMEPAD_BUTTONCODE_LEFT_SHOULDER</link> = SDL_GAMEPAD_BUTTON_LEFT_SHOULDER</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1abd6238ab30a6a548d4fd3d1f77396579">GAMEPAD_BUTTONCODE_RIGHT_SHOULDER</link> = SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1acd98d1e2f81cb0265369884b3c210b38">GAMEPAD_BUTTONCODE_DPAD_UP</link> = SDL_GAMEPAD_BUTTON_DPAD_UP</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1f17ed45c631d8d5661e30fd72be889e">GAMEPAD_BUTTONCODE_DPAD_DOWN</link> = SDL_GAMEPAD_BUTTON_DPAD_DOWN</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab8d8ef752b42d39a1f8fae116544aae7">GAMEPAD_BUTTONCODE_DPAD_LEFT</link> = SDL_GAMEPAD_BUTTON_DPAD_LEFT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a41cc2fff4fbe957848a64c5c53001ccb">GAMEPAD_BUTTONCODE_DPAD_RIGHT</link> = SDL_GAMEPAD_BUTTON_DPAD_RIGHT</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1addcf16a453c9708d6234957dbce75881">GAMEPAD_BUTTONCODE_MISC1</link> = SDL_GAMEPAD_BUTTON_MISC1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1adc54bae718f78b2a8485eedc30a7c606">GAMEPAD_BUTTONCODE_PADDLE1</link> = SDL_GAMEPAD_BUTTON_PADDLE1</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a1aed1aafab31718decfdb7a24a492c8e">GAMEPAD_BUTTONCODE_PADDLE2</link> = SDL_GAMEPAD_BUTTON_PADDLE2</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a3f62b4d6f3953c18272ac27841e5033c">GAMEPAD_BUTTONCODE_PADDLE3</link> = SDL_GAMEPAD_BUTTON_PADDLE3</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a17336a9e7589ec35748994985eef6eb2">GAMEPAD_BUTTONCODE_PADDLE4</link> = SDL_GAMEPAD_BUTTON_PADDLE4</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ae1bba0029f70cd51523456e8c59eb7f9">GAMEPAD_BUTTONCODE_TOUCHPAD</link> = SDL_GAMEPAD_BUTTON_TOUCHPAD</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a42807591a8bac488a8a3254a24e345de">GAMEPAD_AXISCODE_INVALID</link> = SDL_GAMEPAD_AXIS_INVALID</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a41e2fe020202fd8f6c751490a51e760b">GAMEPAD_AXISCODE_LEFTX</link> = SDL_GAMEPAD_AXIS_LEFTX</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a293674fedf6eb265faddf058500d1494">GAMEPAD_AXISCODE_LEFTY</link> = SDL_GAMEPAD_AXIS_LEFTY</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a85dedadf0168fe746857a46e17ef8a00">GAMEPAD_AXISCODE_RIGHTX</link> = SDL_GAMEPAD_AXIS_RIGHTX</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1ab38b61f203f1d724c79e974af048dd10">GAMEPAD_AXISCODE_RIGHTY</link> = SDL_GAMEPAD_AXIS_RIGHTY</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1a270ef9f0429ab36041193ee8b168f81c">GAMEPAD_AXISCODE_LEFT_TRIGGER</link> = SDL_GAMEPAD_AXIS_LEFT_TRIGGER</para>
+</listitem>
+            <listitem><para><link linkend="__input_code_8h_1afeea0ea7e3c617871d71685f9827a5e1">GAMEPAD_AXISCODE_RIGHT_TRIGGER</link> = SDL_GAMEPAD_AXIS_RIGHT_TRIGGER</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__input_code_8h_1ac7c7a0599c4567dcd674958285a02b79"/><section>
+    <title>__INPUT_INPUTCODE</title>
+<indexterm><primary>__INPUT_INPUTCODE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>__INPUT_INPUTCODE</secondary></indexterm>
+<para><computeroutput>#define __INPUT_INPUTCODE</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__input_code_8h_1a42807591a8bac488a8a3254a24e345de"/><section>
+    <title>GAMEPAD_AXISCODE_INVALID</title>
+<indexterm><primary>GAMEPAD_AXISCODE_INVALID</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_INVALID</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_INVALID = SDL_GAMEPAD_AXIS_INVALID</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a270ef9f0429ab36041193ee8b168f81c"/><section>
+    <title>GAMEPAD_AXISCODE_LEFT_TRIGGER</title>
+<indexterm><primary>GAMEPAD_AXISCODE_LEFT_TRIGGER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_LEFT_TRIGGER</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_LEFT_TRIGGER = SDL_GAMEPAD_AXIS_LEFT_TRIGGER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a41e2fe020202fd8f6c751490a51e760b"/><section>
+    <title>GAMEPAD_AXISCODE_LEFTX</title>
+<indexterm><primary>GAMEPAD_AXISCODE_LEFTX</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_LEFTX</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_LEFTX = SDL_GAMEPAD_AXIS_LEFTX</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a293674fedf6eb265faddf058500d1494"/><section>
+    <title>GAMEPAD_AXISCODE_LEFTY</title>
+<indexterm><primary>GAMEPAD_AXISCODE_LEFTY</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_LEFTY</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_LEFTY = SDL_GAMEPAD_AXIS_LEFTY</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1afeea0ea7e3c617871d71685f9827a5e1"/><section>
+    <title>GAMEPAD_AXISCODE_RIGHT_TRIGGER</title>
+<indexterm><primary>GAMEPAD_AXISCODE_RIGHT_TRIGGER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_RIGHT_TRIGGER</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_RIGHT_TRIGGER = SDL_GAMEPAD_AXIS_RIGHT_TRIGGER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a85dedadf0168fe746857a46e17ef8a00"/><section>
+    <title>GAMEPAD_AXISCODE_RIGHTX</title>
+<indexterm><primary>GAMEPAD_AXISCODE_RIGHTX</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_RIGHTX</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_RIGHTX = SDL_GAMEPAD_AXIS_RIGHTX</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab38b61f203f1d724c79e974af048dd10"/><section>
+    <title>GAMEPAD_AXISCODE_RIGHTY</title>
+<indexterm><primary>GAMEPAD_AXISCODE_RIGHTY</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_AXISCODE_RIGHTY</secondary></indexterm>
+<para><computeroutput>GAMEPAD_AXISCODE_RIGHTY = SDL_GAMEPAD_AXIS_RIGHTY</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab2338bd3bc207c725775c2ac985ab174"/><section>
+    <title>GAMEPAD_BUTTONCODE_A</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_A</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_A</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_A = SDL_GAMEPAD_BUTTON_A</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1360a1b8884b51e39e1287e3e2474e43"/><section>
+    <title>GAMEPAD_BUTTONCODE_B</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_B</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_B</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_B = SDL_GAMEPAD_BUTTON_B</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af0916d6e7cf5e2b795843f843c999e04"/><section>
+    <title>GAMEPAD_BUTTONCODE_BACK</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_BACK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_BACK</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_BACK = SDL_GAMEPAD_BUTTON_BACK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1f17ed45c631d8d5661e30fd72be889e"/><section>
+    <title>GAMEPAD_BUTTONCODE_DPAD_DOWN</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_DPAD_DOWN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_DPAD_DOWN</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_DPAD_DOWN = SDL_GAMEPAD_BUTTON_DPAD_DOWN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab8d8ef752b42d39a1f8fae116544aae7"/><section>
+    <title>GAMEPAD_BUTTONCODE_DPAD_LEFT</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_DPAD_LEFT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_DPAD_LEFT</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_DPAD_LEFT = SDL_GAMEPAD_BUTTON_DPAD_LEFT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a41cc2fff4fbe957848a64c5c53001ccb"/><section>
+    <title>GAMEPAD_BUTTONCODE_DPAD_RIGHT</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_DPAD_RIGHT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_DPAD_RIGHT</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_DPAD_RIGHT = SDL_GAMEPAD_BUTTON_DPAD_RIGHT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1acd98d1e2f81cb0265369884b3c210b38"/><section>
+    <title>GAMEPAD_BUTTONCODE_DPAD_UP</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_DPAD_UP</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_DPAD_UP</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_DPAD_UP = SDL_GAMEPAD_BUTTON_DPAD_UP</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab091a86c639386f0791d948aa328e0c1"/><section>
+    <title>GAMEPAD_BUTTONCODE_GUIDE</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_GUIDE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_GUIDE</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_GUIDE = SDL_GAMEPAD_BUTTON_GUIDE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a40bbee39662e0640ee1b3525e752b402"/><section>
+    <title>GAMEPAD_BUTTONCODE_INVALID</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_INVALID</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_INVALID</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_INVALID = SDL_GAMEPAD_BUTTON_INVALID</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a117cbb95b20ef279bb6dffc39a47e993"/><section>
+    <title>GAMEPAD_BUTTONCODE_LEFT_SHOULDER</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_LEFT_SHOULDER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_LEFT_SHOULDER</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_LEFT_SHOULDER = SDL_GAMEPAD_BUTTON_LEFT_SHOULDER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a36dea76f1c3b6f5651146415997b5b86"/><section>
+    <title>GAMEPAD_BUTTONCODE_LEFT_STICK</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_LEFT_STICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_LEFT_STICK</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_LEFT_STICK = SDL_GAMEPAD_BUTTON_LEFT_STICK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1addcf16a453c9708d6234957dbce75881"/><section>
+    <title>GAMEPAD_BUTTONCODE_MISC1</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_MISC1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_MISC1</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_MISC1 = SDL_GAMEPAD_BUTTON_MISC1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1adc54bae718f78b2a8485eedc30a7c606"/><section>
+    <title>GAMEPAD_BUTTONCODE_PADDLE1</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_PADDLE1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_PADDLE1</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_PADDLE1 = SDL_GAMEPAD_BUTTON_PADDLE1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1aed1aafab31718decfdb7a24a492c8e"/><section>
+    <title>GAMEPAD_BUTTONCODE_PADDLE2</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_PADDLE2</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_PADDLE2</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_PADDLE2 = SDL_GAMEPAD_BUTTON_PADDLE2</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3f62b4d6f3953c18272ac27841e5033c"/><section>
+    <title>GAMEPAD_BUTTONCODE_PADDLE3</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_PADDLE3</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_PADDLE3</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_PADDLE3 = SDL_GAMEPAD_BUTTON_PADDLE3</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a17336a9e7589ec35748994985eef6eb2"/><section>
+    <title>GAMEPAD_BUTTONCODE_PADDLE4</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_PADDLE4</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_PADDLE4</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_PADDLE4 = SDL_GAMEPAD_BUTTON_PADDLE4</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1abd6238ab30a6a548d4fd3d1f77396579"/><section>
+    <title>GAMEPAD_BUTTONCODE_RIGHT_SHOULDER</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_RIGHT_SHOULDER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_RIGHT_SHOULDER</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_RIGHT_SHOULDER = SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1afdaab4e99726c0ff7678b021abd1e337"/><section>
+    <title>GAMEPAD_BUTTONCODE_RIGHT_STICK</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_RIGHT_STICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_RIGHT_STICK</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_RIGHT_STICK = SDL_GAMEPAD_BUTTON_RIGHT_STICK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1afea6c46e3edf7472b6c34e6b6467799d"/><section>
+    <title>GAMEPAD_BUTTONCODE_START</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_START</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_START</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_START = SDL_GAMEPAD_BUTTON_START</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae1bba0029f70cd51523456e8c59eb7f9"/><section>
+    <title>GAMEPAD_BUTTONCODE_TOUCHPAD</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_TOUCHPAD</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_TOUCHPAD</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_TOUCHPAD = SDL_GAMEPAD_BUTTON_TOUCHPAD</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aadd258a1e428dc3bbf4a0427d81bcd81"/><section>
+    <title>GAMEPAD_BUTTONCODE_X</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_X</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_X</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_X = SDL_GAMEPAD_BUTTON_X</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a0d3afee1cd798e7ac52a2878118f8d70"/><section>
+    <title>GAMEPAD_BUTTONCODE_Y</title>
+<indexterm><primary>GAMEPAD_BUTTONCODE_Y</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>GAMEPAD_BUTTONCODE_Y</secondary></indexterm>
+<para><computeroutput>GAMEPAD_BUTTONCODE_Y = SDL_GAMEPAD_BUTTON_Y</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a9a0d03c83c7c1cd83a6d67f47c70e25d"/><section>
+    <title>INPUTTYPE_GAMEPAD_AXIS</title>
+<indexterm><primary>INPUTTYPE_GAMEPAD_AXIS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_GAMEPAD_AXIS</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_GAMEPAD_AXIS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af2b3cde4571722accd4729ef14d6d656"/><section>
+    <title>INPUTTYPE_GAMEPAD_BUTTON</title>
+<indexterm><primary>INPUTTYPE_GAMEPAD_BUTTON</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_GAMEPAD_BUTTON</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_GAMEPAD_BUTTON</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a61e09791908c72d6b1c7925b572f9e12"/><section>
+    <title>INPUTTYPE_KEYBOARD</title>
+<indexterm><primary>INPUTTYPE_KEYBOARD</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_KEYBOARD</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_KEYBOARD</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a050b99cc3d5ccd12e45d851a374679e0"/><section>
+    <title>INPUTTYPE_MOUSE_CLICK</title>
+<indexterm><primary>INPUTTYPE_MOUSE_CLICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_MOUSE_CLICK</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_MOUSE_CLICK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae66d321e0f39d7fcd3ccf20178d6ac57"/><section>
+    <title>INPUTTYPE_MOUSE_MOTION</title>
+<indexterm><primary>INPUTTYPE_MOUSE_MOTION</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_MOUSE_MOTION</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_MOUSE_MOTION</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae18f6374fb2d9d9a506e9c89b5ba703c"/><section>
+    <title>INPUTTYPE_MOUSE_WHEEL</title>
+<indexterm><primary>INPUTTYPE_MOUSE_WHEEL</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>INPUTTYPE_MOUSE_WHEEL</secondary></indexterm>
+<para><computeroutput>INPUTTYPE_MOUSE_WHEEL</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a0c8cfa51bbb142851a378a2bf7dc92c4"/><section>
+    <title>KEYBOARDCODE_0</title>
+<indexterm><primary>KEYBOARDCODE_0</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_0</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_0 = SDLK_0</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ac62d53627deab84cef1c634297abbf29"/><section>
+    <title>KEYBOARDCODE_1</title>
+<indexterm><primary>KEYBOARDCODE_1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_1</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_1 = SDLK_1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7953cf4dfdb97b2ccf1ba1b97ccbb344"/><section>
+    <title>KEYBOARDCODE_2</title>
+<indexterm><primary>KEYBOARDCODE_2</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_2</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_2 = SDLK_2</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a54d8516a93fb9404f9ff162ce6a9157b"/><section>
+    <title>KEYBOARDCODE_3</title>
+<indexterm><primary>KEYBOARDCODE_3</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_3</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_3 = SDLK_3</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7102d65f526a8a358907cf470a4cf901"/><section>
+    <title>KEYBOARDCODE_4</title>
+<indexterm><primary>KEYBOARDCODE_4</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_4</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_4 = SDLK_4</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a6cec7602273a8e25b8c1446314762b8b"/><section>
+    <title>KEYBOARDCODE_5</title>
+<indexterm><primary>KEYBOARDCODE_5</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_5</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_5 = SDLK_5</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ad871da6690fe7c3de9f498bb372b6a6e"/><section>
+    <title>KEYBOARDCODE_6</title>
+<indexterm><primary>KEYBOARDCODE_6</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_6</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_6 = SDLK_6</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a4dbb6295658aeeb817fb9833e349bb18"/><section>
+    <title>KEYBOARDCODE_7</title>
+<indexterm><primary>KEYBOARDCODE_7</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_7</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_7 = SDLK_7</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a36a11e5d9e4a468155ca5c89cbee4291"/><section>
+    <title>KEYBOARDCODE_8</title>
+<indexterm><primary>KEYBOARDCODE_8</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_8</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_8 = SDLK_8</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a920f582cdacdcab5302bc12e5f5922c2"/><section>
+    <title>KEYBOARDCODE_9</title>
+<indexterm><primary>KEYBOARDCODE_9</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_9</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_9 = SDLK_9</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a337123828af455e7ad26663643bb41ee"/><section>
+    <title>KEYBOARDCODE_A</title>
+<indexterm><primary>KEYBOARDCODE_A</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_A</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_A = SDLK_a</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a2c9552d0e3c1055523e28520e43cf188"/><section>
+    <title>KEYBOARDCODE_AMPERSAND</title>
+<indexterm><primary>KEYBOARDCODE_AMPERSAND</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_AMPERSAND</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_AMPERSAND = SDLK_AMPERSAND</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af8080a114d98c82e1068927b698baf01"/><section>
+    <title>KEYBOARDCODE_ASTERISK</title>
+<indexterm><primary>KEYBOARDCODE_ASTERISK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_ASTERISK</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_ASTERISK = SDLK_ASTERISK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa72f0a0ae46249560e7c75f3d0427780"/><section>
+    <title>KEYBOARDCODE_AT</title>
+<indexterm><primary>KEYBOARDCODE_AT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_AT</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_AT = SDLK_AT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa5376d036a52666170b739686f7235bd"/><section>
+    <title>KEYBOARDCODE_B</title>
+<indexterm><primary>KEYBOARDCODE_B</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_B</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_B = SDLK_b</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7f1c7277feb57a0445666a22753cdb01"/><section>
+    <title>KEYBOARDCODE_BACKQUOTE</title>
+<indexterm><primary>KEYBOARDCODE_BACKQUOTE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_BACKQUOTE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_BACKQUOTE = SDLK_BACKQUOTE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae96329c4fd183e4637836d94ec003eef"/><section>
+    <title>KEYBOARDCODE_BACKSLASH</title>
+<indexterm><primary>KEYBOARDCODE_BACKSLASH</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_BACKSLASH</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_BACKSLASH = SDLK_BACKSLASH</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa9d8e2011b9f1b2b611890b5a102af1f"/><section>
+    <title>KEYBOARDCODE_BACKSPACE</title>
+<indexterm><primary>KEYBOARDCODE_BACKSPACE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_BACKSPACE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_BACKSPACE = SDLK_BACKSPACE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1a5498c40105417cc3469928f62f4844"/><section>
+    <title>KEYBOARDCODE_C</title>
+<indexterm><primary>KEYBOARDCODE_C</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_C</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_C = SDLK_c</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a76e007eb65671727ab7b9f0945cf944e"/><section>
+    <title>KEYBOARDCODE_CAPSLOCK</title>
+<indexterm><primary>KEYBOARDCODE_CAPSLOCK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_CAPSLOCK</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_CAPSLOCK = SDLK_CAPSLOCK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a2738a0d1ec3bf9c32918021f1f8228da"/><section>
+    <title>KEYBOARDCODE_CARET</title>
+<indexterm><primary>KEYBOARDCODE_CARET</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_CARET</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_CARET = SDLK_CARET</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ad26706238c13bd0fae1ad28ac422da2b"/><section>
+    <title>KEYBOARDCODE_COLON</title>
+<indexterm><primary>KEYBOARDCODE_COLON</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_COLON</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_COLON = SDLK_COLON</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a39e9ac85a095a1c196eb90a498baa225"/><section>
+    <title>KEYBOARDCODE_COMMA</title>
+<indexterm><primary>KEYBOARDCODE_COMMA</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_COMMA</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_COMMA = SDLK_COMMA</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a36e191d9a8a327f892e6a06fb2c18652"/><section>
+    <title>KEYBOARDCODE_D</title>
+<indexterm><primary>KEYBOARDCODE_D</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_D</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_D = SDLK_d</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae539e2c8f0b2e73b3a4e3585fd73990f"/><section>
+    <title>KEYBOARDCODE_DELETE</title>
+<indexterm><primary>KEYBOARDCODE_DELETE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_DELETE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_DELETE = SDLK_DELETE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a9f14b6c754523ac70231665360f5cdfa"/><section>
+    <title>KEYBOARDCODE_DOLLAR</title>
+<indexterm><primary>KEYBOARDCODE_DOLLAR</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_DOLLAR</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_DOLLAR = SDLK_DOLLAR</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a8ccf3ea3b51a74d305d0902386794e1a"/><section>
+    <title>KEYBOARDCODE_DOUBLEQUOTE</title>
+<indexterm><primary>KEYBOARDCODE_DOUBLEQUOTE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_DOUBLEQUOTE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_DOUBLEQUOTE = SDLK_QUOTEDBL</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ad786c2730be02d36573c683512f3e792"/><section>
+    <title>KEYBOARDCODE_DOWN</title>
+<indexterm><primary>KEYBOARDCODE_DOWN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_DOWN</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_DOWN = SDLK_DOWN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a934cbbea454fc2380acd02a2c28f5c78"/><section>
+    <title>KEYBOARDCODE_E</title>
+<indexterm><primary>KEYBOARDCODE_E</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_E</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_E = SDLK_e</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a6064e2c1d0e3e68e3b87e0cbf231df45"/><section>
+    <title>KEYBOARDCODE_END</title>
+<indexterm><primary>KEYBOARDCODE_END</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_END</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_END = SDLK_END</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aedab066051f910ecf8855eb91f4e3417"/><section>
+    <title>KEYBOARDCODE_EQUALS</title>
+<indexterm><primary>KEYBOARDCODE_EQUALS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_EQUALS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_EQUALS = SDLK_EQUALS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a2c0b7c3834705ddf7a8a55df514c2cda"/><section>
+    <title>KEYBOARDCODE_ESCAPE</title>
+<indexterm><primary>KEYBOARDCODE_ESCAPE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_ESCAPE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_ESCAPE = SDLK_ESCAPE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a968c5c8e505334302c7fc24ac1801247"/><section>
+    <title>KEYBOARDCODE_EXCLAIM</title>
+<indexterm><primary>KEYBOARDCODE_EXCLAIM</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_EXCLAIM</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_EXCLAIM = SDLK_EXCLAIM</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7c8dd1e52031d4957337ff6717edb638"/><section>
+    <title>KEYBOARDCODE_F</title>
+<indexterm><primary>KEYBOARDCODE_F</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F = SDLK_f</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a12b571ded60738221198dffac6b6f678"/><section>
+    <title>KEYBOARDCODE_F1</title>
+<indexterm><primary>KEYBOARDCODE_F1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F1</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F1 = SDLK_F1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1de7c582c3be70a4f11b4dac49cd32c4"/><section>
+    <title>KEYBOARDCODE_F10</title>
+<indexterm><primary>KEYBOARDCODE_F10</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F10</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F10 = SDLK_F10</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a2457b7cfb460fb7c8685a5c1b8b67e4a"/><section>
+    <title>KEYBOARDCODE_F11</title>
+<indexterm><primary>KEYBOARDCODE_F11</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F11</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F11 = SDLK_F11</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1932ab718cfaec3517b1bafacd908568"/><section>
+    <title>KEYBOARDCODE_F12</title>
+<indexterm><primary>KEYBOARDCODE_F12</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F12</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F12 = SDLK_F12</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a5b7e90973fee3030bb4b820d18a92b94"/><section>
+    <title>KEYBOARDCODE_F2</title>
+<indexterm><primary>KEYBOARDCODE_F2</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F2</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F2 = SDLK_F2</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa1be7dc8a729c7f36d8813991b2eb95b"/><section>
+    <title>KEYBOARDCODE_F3</title>
+<indexterm><primary>KEYBOARDCODE_F3</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F3</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F3 = SDLK_F3</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a141cb709d559ddd45751c810251cc56a"/><section>
+    <title>KEYBOARDCODE_F4</title>
+<indexterm><primary>KEYBOARDCODE_F4</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F4</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F4 = SDLK_F4</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa8033ee63f15e1d7eea131860312e436"/><section>
+    <title>KEYBOARDCODE_F5</title>
+<indexterm><primary>KEYBOARDCODE_F5</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F5</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F5 = SDLK_F5</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af02f77ea15fe97a0d02392db3cd52a07"/><section>
+    <title>KEYBOARDCODE_F6</title>
+<indexterm><primary>KEYBOARDCODE_F6</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F6</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F6 = SDLK_F6</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a14b2d37a126d1a981220afb301666ba7"/><section>
+    <title>KEYBOARDCODE_F7</title>
+<indexterm><primary>KEYBOARDCODE_F7</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F7</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F7 = SDLK_F7</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae1f5865af1eab1f4e18b6db8a381f69b"/><section>
+    <title>KEYBOARDCODE_F8</title>
+<indexterm><primary>KEYBOARDCODE_F8</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F8</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F8 = SDLK_F8</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a737c6cbadb4460ac674ab8ccd674b1a1"/><section>
+    <title>KEYBOARDCODE_F9</title>
+<indexterm><primary>KEYBOARDCODE_F9</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_F9</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_F9 = SDLK_F9</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3f1f74f50730c50334363ad9da05ced8"/><section>
+    <title>KEYBOARDCODE_G</title>
+<indexterm><primary>KEYBOARDCODE_G</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_G</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_G = SDLK_g</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a913916fa5a7692a3a7fbf3d2567bcf70"/><section>
+    <title>KEYBOARDCODE_GREATER</title>
+<indexterm><primary>KEYBOARDCODE_GREATER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_GREATER</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_GREATER = SDLK_GREATER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3769c99911bef83e7b2ad9cdfc915645"/><section>
+    <title>KEYBOARDCODE_H</title>
+<indexterm><primary>KEYBOARDCODE_H</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_H</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_H = SDLK_h</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a8a90637e286dd817634be408765abdda"/><section>
+    <title>KEYBOARDCODE_HASH</title>
+<indexterm><primary>KEYBOARDCODE_HASH</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_HASH</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_HASH = SDLK_HASH</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a21735c84952b3ce8ac3a2fe18217bfae"/><section>
+    <title>KEYBOARDCODE_HOME</title>
+<indexterm><primary>KEYBOARDCODE_HOME</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_HOME</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_HOME = SDLK_HOME</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3ec902fe3d2c64acf96f4013d96e8146"/><section>
+    <title>KEYBOARDCODE_I</title>
+<indexterm><primary>KEYBOARDCODE_I</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_I</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_I = SDLK_i</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a15730a6f886b6c5ae7994267a695c74e"/><section>
+    <title>KEYBOARDCODE_INSERT</title>
+<indexterm><primary>KEYBOARDCODE_INSERT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_INSERT</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_INSERT = SDLK_INSERT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a649aadd5dd30cbc9d7bd1350135b9d65"/><section>
+    <title>KEYBOARDCODE_J</title>
+<indexterm><primary>KEYBOARDCODE_J</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_J</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_J = SDLK_j</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a364bc5157c48a2793d09676dd886e4dc"/><section>
+    <title>KEYBOARDCODE_K</title>
+<indexterm><primary>KEYBOARDCODE_K</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_K</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_K = SDLK_k</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae3e615915e490d6e52cd657f1b551d6d"/><section>
+    <title>KEYBOARDCODE_L</title>
+<indexterm><primary>KEYBOARDCODE_L</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_L</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_L = SDLK_l</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a983691b81a5f85e5c1de7d4fc5ca31ad"/><section>
+    <title>KEYBOARDCODE_LEFT</title>
+<indexterm><primary>KEYBOARDCODE_LEFT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_LEFT</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_LEFT = SDLK_LEFT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7fcc49f4f1b80a1e870e4da9bd3d0293"/><section>
+    <title>KEYBOARDCODE_LEFTBRACKET</title>
+<indexterm><primary>KEYBOARDCODE_LEFTBRACKET</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_LEFTBRACKET</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_LEFTBRACKET = SDLK_LEFTBRACKET</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab00ec94704b3153e74f24824ea394360"/><section>
+    <title>KEYBOARDCODE_LEFTPARENTHESIS</title>
+<indexterm><primary>KEYBOARDCODE_LEFTPARENTHESIS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_LEFTPARENTHESIS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_LEFTPARENTHESIS = SDLK_LEFTPAREN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a8180d36508b4348f149f7731fa8b5150"/><section>
+    <title>KEYBOARDCODE_LESS</title>
+<indexterm><primary>KEYBOARDCODE_LESS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_LESS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_LESS = SDLK_LESS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a556f7ec7c50f9fae2f25d13f114d7f04"/><section>
+    <title>KEYBOARDCODE_M</title>
+<indexterm><primary>KEYBOARDCODE_M</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_M</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_M = SDLK_m</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a7edc5edfc604b1109dc690d005fb8af0"/><section>
+    <title>KEYBOARDCODE_MINUS</title>
+<indexterm><primary>KEYBOARDCODE_MINUS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_MINUS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_MINUS = SDLK_MINUS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1abfd07819923f6a731e67b83a96f60974"/><section>
+    <title>KEYBOARDCODE_N</title>
+<indexterm><primary>KEYBOARDCODE_N</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_N</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_N = SDLK_n</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab862c615573622dc110eb5a53367bdeb"/><section>
+    <title>KEYBOARDCODE_NUMPAD_0</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_0</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_0</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_0 = SDLK_KP_0</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab5e6654c63e8dbbc41d11e16f8466691"/><section>
+    <title>KEYBOARDCODE_NUMPAD_1</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_1</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_1 = SDLK_KP_1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af5877a68bf8226b0504333d9db4a5ea0"/><section>
+    <title>KEYBOARDCODE_NUMPAD_2</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_2</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_2</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_2 = SDLK_KP_2</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a641d6d0625724de986df811eafeeb23a"/><section>
+    <title>KEYBOARDCODE_NUMPAD_3</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_3</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_3</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_3 = SDLK_KP_3</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aafd1b9a261f88da7fc9a0b478b79931c"/><section>
+    <title>KEYBOARDCODE_NUMPAD_4</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_4</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_4</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_4 = SDLK_KP_4</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a35236d91383a38d11cce0f1ceca5a617"/><section>
+    <title>KEYBOARDCODE_NUMPAD_5</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_5</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_5</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_5 = SDLK_KP_5</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a693b8ac0a2991862f0922ad0bd09566d"/><section>
+    <title>KEYBOARDCODE_NUMPAD_6</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_6</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_6</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_6 = SDLK_KP_6</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a671c3896a706ec7cbd4c8d48dfae5005"/><section>
+    <title>KEYBOARDCODE_NUMPAD_7</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_7</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_7</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_7 = SDLK_KP_7</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a6a2e9b98e46919fcc3ebe58f958c3113"/><section>
+    <title>KEYBOARDCODE_NUMPAD_8</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_8</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_8</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_8 = SDLK_KP_8</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a9a82fff72df6dbdac892a263d771e4c2"/><section>
+    <title>KEYBOARDCODE_NUMPAD_9</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_9</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_9</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_9 = SDLK_KP_9</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a404628241af4425f38bd429500e157c9"/><section>
+    <title>KEYBOARDCODE_NUMPAD_DIVIDE</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_DIVIDE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_DIVIDE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_DIVIDE = SDLK_KP_DIVIDE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a304983baea2fc361891e3a038ef37f06"/><section>
+    <title>KEYBOARDCODE_NUMPAD_ENTER</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_ENTER</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_ENTER</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_ENTER = SDLK_KP_ENTER</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a876967464718a6dcea529943bf1a7e4c"/><section>
+    <title>KEYBOARDCODE_NUMPAD_MINUS</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_MINUS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_MINUS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_MINUS = SDLK_KP_MINUS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aa020041ed0230dca04613bab5c4c548b"/><section>
+    <title>KEYBOARDCODE_NUMPAD_MULTIPLY</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_MULTIPLY</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_MULTIPLY</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_MULTIPLY = SDLK_KP_MULTIPLY</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ac64ef1b36f0d3570c43b0c484629ac93"/><section>
+    <title>KEYBOARDCODE_NUMPAD_NUMLOCKCLEAR</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_NUMLOCKCLEAR</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_NUMLOCKCLEAR</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_NUMLOCKCLEAR = SDLK_NUMLOCKCLEAR</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aca6f2b51748bcdc9fd117120b85be8dd"/><section>
+    <title>KEYBOARDCODE_NUMPAD_PLUS</title>
+<indexterm><primary>KEYBOARDCODE_NUMPAD_PLUS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_NUMPAD_PLUS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_NUMPAD_PLUS = SDLK_KP_PLUS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a30fb8c547fbbfa5699d7d3e0f03a552c"/><section>
+    <title>KEYBOARDCODE_O</title>
+<indexterm><primary>KEYBOARDCODE_O</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_O</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_O = SDLK_o</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1afea2516353b50e25ca46809ad061493d"/><section>
+    <title>KEYBOARDCODE_P</title>
+<indexterm><primary>KEYBOARDCODE_P</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_P</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_P = SDLK_p</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a71acc49a29d1421df21349f5ad000618"/><section>
+    <title>KEYBOARDCODE_PAGEDOWN</title>
+<indexterm><primary>KEYBOARDCODE_PAGEDOWN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PAGEDOWN</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PAGEDOWN = SDLK_PAGEDOWN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ad311cb4feff5bb330f616c622a478a9f"/><section>
+    <title>KEYBOARDCODE_PAGEUP</title>
+<indexterm><primary>KEYBOARDCODE_PAGEUP</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PAGEUP</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PAGEUP = SDLK_PAGEUP</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a0962cd0a6b8c69f9cbb1d7865f94369e"/><section>
+    <title>KEYBOARDCODE_PAUSE</title>
+<indexterm><primary>KEYBOARDCODE_PAUSE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PAUSE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PAUSE = SDLK_PAUSE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3e1e3e0a0c41740ae42984823a71a662"/><section>
+    <title>KEYBOARDCODE_PERCENT</title>
+<indexterm><primary>KEYBOARDCODE_PERCENT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PERCENT</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PERCENT = SDLK_PERCENT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1af27a70c0a4eea01cb1d2c4dbcf1f6fcf"/><section>
+    <title>KEYBOARDCODE_PERIOD</title>
+<indexterm><primary>KEYBOARDCODE_PERIOD</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PERIOD</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PERIOD = SDLK_PERIOD</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ac648b0f57dfc80f7d7e497fef46f323e"/><section>
+    <title>KEYBOARDCODE_PLUS</title>
+<indexterm><primary>KEYBOARDCODE_PLUS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PLUS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PLUS = SDLK_PLUS</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a5c66be23609855550b7d212d76fbabfd"/><section>
+    <title>KEYBOARDCODE_PRINTSCREEN</title>
+<indexterm><primary>KEYBOARDCODE_PRINTSCREEN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_PRINTSCREEN</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_PRINTSCREEN = SDLK_PRINTSCREEN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aaec00b2f80070b15b19d5d05586c23b4"/><section>
+    <title>KEYBOARDCODE_Q</title>
+<indexterm><primary>KEYBOARDCODE_Q</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_Q</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_Q = SDLK_q</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1235abb40c7c6649d9cb242fc33a8ac8"/><section>
+    <title>KEYBOARDCODE_QUESTION</title>
+<indexterm><primary>KEYBOARDCODE_QUESTION</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_QUESTION</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_QUESTION = SDLK_QUESTION</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ad71ef69b9a1c7947d1cd8a3667a68321"/><section>
+    <title>KEYBOARDCODE_QUOTE</title>
+<indexterm><primary>KEYBOARDCODE_QUOTE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_QUOTE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_QUOTE = SDLK_QUOTE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a948fda1a6bbab5ccbb8a16d6d7cef493"/><section>
+    <title>KEYBOARDCODE_R</title>
+<indexterm><primary>KEYBOARDCODE_R</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_R</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_R = SDLK_r</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a0211e587c2f803377e948efafda52eeb"/><section>
+    <title>KEYBOARDCODE_RETURN</title>
+<indexterm><primary>KEYBOARDCODE_RETURN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_RETURN</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_RETURN = SDLK_RETURN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3cce219934f6cc29c5c7da1bdfddf2ed"/><section>
+    <title>KEYBOARDCODE_RIGHT</title>
+<indexterm><primary>KEYBOARDCODE_RIGHT</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_RIGHT</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_RIGHT = SDLK_RIGHT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a39c31957fdf1fb8c8524b2036f8b3330"/><section>
+    <title>KEYBOARDCODE_RIGHTBRACKET</title>
+<indexterm><primary>KEYBOARDCODE_RIGHTBRACKET</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_RIGHTBRACKET</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_RIGHTBRACKET = SDLK_RIGHTBRACKET</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a5e3217dec8fc7971f27579335ffcbd05"/><section>
+    <title>KEYBOARDCODE_RIGHTPARENTHESIS</title>
+<indexterm><primary>KEYBOARDCODE_RIGHTPARENTHESIS</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_RIGHTPARENTHESIS</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_RIGHTPARENTHESIS = SDLK_RIGHTPAREN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a52fc145780abe1e921bd46ba9ee9a817"/><section>
+    <title>KEYBOARDCODE_S</title>
+<indexterm><primary>KEYBOARDCODE_S</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_S</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_S = SDLK_s</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a5047bf4663f3f4a0e99ab468d19f1bd3"/><section>
+    <title>KEYBOARDCODE_SCROLLLOCK</title>
+<indexterm><primary>KEYBOARDCODE_SCROLLLOCK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_SCROLLLOCK</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_SCROLLLOCK = SDLK_SCROLLLOCK</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a886079cef1a0f6f046df699530d59900"/><section>
+    <title>KEYBOARDCODE_SEMICOLON</title>
+<indexterm><primary>KEYBOARDCODE_SEMICOLON</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_SEMICOLON</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_SEMICOLON = SDLK_SEMICOLON</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1afab3bd92053ea1d746537e7bcd54d9ed"/><section>
+    <title>KEYBOARDCODE_SLASH</title>
+<indexterm><primary>KEYBOARDCODE_SLASH</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_SLASH</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_SLASH = SDLK_SLASH</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a43f9338feeaaa67939c5430ac3abcf4f"/><section>
+    <title>KEYBOARDCODE_SPACE</title>
+<indexterm><primary>KEYBOARDCODE_SPACE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_SPACE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_SPACE = SDLK_SPACE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1abc9c4cc55f79a9540408ce39e86c4c01"/><section>
+    <title>KEYBOARDCODE_T</title>
+<indexterm><primary>KEYBOARDCODE_T</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_T</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_T = SDLK_t</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab4517dd3306bf5dce95578029f270140"/><section>
+    <title>KEYBOARDCODE_TAB</title>
+<indexterm><primary>KEYBOARDCODE_TAB</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_TAB</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_TAB = SDLK_TAB</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1aadf3f2fac4b2435137b69c71d688cbf7"/><section>
+    <title>KEYBOARDCODE_U</title>
+<indexterm><primary>KEYBOARDCODE_U</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_U</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_U = SDLK_u</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1abd8113d5f7bdc8ed154a30727a312a53"/><section>
+    <title>KEYBOARDCODE_UNDERSCORE</title>
+<indexterm><primary>KEYBOARDCODE_UNDERSCORE</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_UNDERSCORE</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_UNDERSCORE = SDLK_UNDERSCORE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab73c7860e1188cd6a50c54d8b3cd0a52"/><section>
+    <title>KEYBOARDCODE_UNKNOWN</title>
+<indexterm><primary>KEYBOARDCODE_UNKNOWN</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_UNKNOWN</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_UNKNOWN = SDLK_UNKNOWN</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a66b8fe00a52286533290d34fbc6f5390"/><section>
+    <title>KEYBOARDCODE_UP</title>
+<indexterm><primary>KEYBOARDCODE_UP</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_UP</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_UP = SDLK_UP</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a3487e958ed18ab358a2f9d1689c9f00c"/><section>
+    <title>KEYBOARDCODE_V</title>
+<indexterm><primary>KEYBOARDCODE_V</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_V</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_V = SDLK_v</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1adab5e8cb0ff0fb0abd0186b033e8b242"/><section>
+    <title>KEYBOARDCODE_W</title>
+<indexterm><primary>KEYBOARDCODE_W</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_W</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_W = SDLK_w</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ae744d85ba3830d3736bbd6f572687614"/><section>
+    <title>KEYBOARDCODE_X</title>
+<indexterm><primary>KEYBOARDCODE_X</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_X</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_X = SDLK_x</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a654add366d4293452ddfce7926f246b1"/><section>
+    <title>KEYBOARDCODE_Y</title>
+<indexterm><primary>KEYBOARDCODE_Y</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_Y</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_Y = SDLK_y</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a6233e8447a62d7e850c837c997927dae"/><section>
+    <title>KEYBOARDCODE_Z</title>
+<indexterm><primary>KEYBOARDCODE_Z</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>KEYBOARDCODE_Z</secondary></indexterm>
+<para><computeroutput>KEYBOARDCODE_Z = SDLK_z</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a03b3b48e497113aeff927d3d9448deee"/><section>
+    <title>MOUSE_LEFTCLICK</title>
+<indexterm><primary>MOUSE_LEFTCLICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>MOUSE_LEFTCLICK</secondary></indexterm>
+<para><computeroutput>MOUSE_LEFTCLICK = SDL_BUTTON_LEFT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1ab69d524698b94d84f20a015a9294043d"/><section>
+    <title>MOUSE_MIDDLECLICK</title>
+<indexterm><primary>MOUSE_MIDDLECLICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>MOUSE_MIDDLECLICK</secondary></indexterm>
+<para><computeroutput>MOUSE_MIDDLECLICK = SDL_BUTTON_MIDDLE</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a75b25dd69de785df85627a3772b1177c"/><section>
+    <title>MOUSE_RIGHTCLICK</title>
+<indexterm><primary>MOUSE_RIGHTCLICK</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>MOUSE_RIGHTCLICK</secondary></indexterm>
+<para><computeroutput>MOUSE_RIGHTCLICK = SDL_BUTTON_RIGHT</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a1daab5b6a13f1bdd91ea5c590848c92b"/><section>
+    <title>MOUSE_X1</title>
+<indexterm><primary>MOUSE_X1</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>MOUSE_X1</secondary></indexterm>
+<para><computeroutput>MOUSE_X1 = SDL_BUTTON_X1</computeroutput></para></section>
+<anchor xml:id="__input_code_8h_1a02b2e262991e96d791928ceaed4b9813"/><section>
+    <title>MOUSEWHEELCODE_NORMAL</title>
+<indexterm><primary>MOUSEWHEELCODE_NORMAL</primary><secondary>InputCode.h</secondary></indexterm>
+<indexterm><primary>InputCode.h</primary><secondary>MOUSEWHEELCODE_NORMAL</secondary></indexterm>
+<para><computeroutput>MOUSEWHEELCODE_NORMAL = SDL_MOUSEWHEEL_NORMAL</computeroutput></para>
+<para>The scroll direction is normal </para>
+</section>
+</section>
+</section>

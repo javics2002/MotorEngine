@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_u_i_text" xml:lang="en-US">
+<title>me::UIText Class Reference</title>
+<indexterm><primary>me::UIText</primary></indexterm>
+<para>
+<computeroutput>#include &lt;UIText.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::UIText:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_u_i_text.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Member Functions inherited from <link linkend="_classme_1_1_u_i_element">me::UIElement</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_u_i_element_1a879373496189cf55ae04abaf5abec1fc">UIElement</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_u_i_element_1a61d3cbf59484f740216c1ee77393a0e9">~UIElement</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a750ca74e512eb5e414279d6076e94c47">show</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a4cda600b5c3189985df9db518f2c6874">hide</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_vector2">Vector2</link> <link linkend="_classme_1_1_u_i_element_1a4d202dcf70aeea95c78bb271605ac389">getSize</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_vector2">Vector2</link> <link linkend="_classme_1_1_u_i_element_1a1636761026397c61838e78fe9ffc023b">getPos</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1aaa30c97b12f4d43c44081224c1fd0199">setSize</link> (<link linkend="_class_vector2">Vector2</link> size)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_u_i_element_1ad1bc15050541c2a5f2f0b17cdc5c97a0">isVisible</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a67ffd299a2d16537316c96d66926b43d">setTop</link> (float top)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a56c2bab5a90e09e841afe007badd9e4e">setLeft</link> (float left)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a48c74046686a52b34045e909a8565aaf">setWidth</link> (float wifth)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a628e925b6913ee1155f23e8ad37815e7">setHeight</link> (float height)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a54d484900df2197fe8ff757db9e0e0cb">setInteractive</link> (bool interactive)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_u_i_element_1a3e827c9c20affb185bc5486868017c1d">setFocusNow</link> (bool focus)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_u_i_element_1ab0eb35fb5e951f927251d4c739dfc197">getIsInteractive</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_u_i_element_1adba1eadd91cf561d06d15e09c8ed1879">getIsFocusNow</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+Public Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+Protected Attributes inherited from <link linkend="_classme_1_1_u_i_element">me::UIElement</link>        <itemizedlist>
+            <listitem><para>Ogre::OverlayManager * <link linkend="_classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50">mOverlayManager</link></para>
+</listitem>
+            <listitem><para>Ogre::Overlay * <link linkend="_classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb">mOverlay</link></para>
+</listitem>
+            <listitem><para>Ogre::OverlayContainer * <link linkend="_classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752">mOverlayContainer</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c">mInteractive</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca">mFocus</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5">mElems</link> =0</para>
+</listitem>
+        </itemizedlist>
+Protected Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__u_i_text_8h">UIText.h</link>Src/EntityComponent/Components/<link linkend="__u_i_text_8cpp">UIText.cpp</link></section>

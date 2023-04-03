@@ -1,0 +1,181 @@
+\hypertarget{classme_1_1_particle_system}{}\doxysection{me\+::Particle\+System Class Reference}
+\label{classme_1_1_particle_system}\index{me::ParticleSystem@{me::ParticleSystem}}
+
+
+{\ttfamily \#include $<$Particle\+System.\+h$>$}
+
+Inheritance diagram for me\+::Particle\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classme_1_1_particle_system}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_particle_system_a2dbd29f07988c69014758847ebcd7680}{Particle\+System}} (std\+::string name, std\+::string particle\+Name)
+\item 
+\mbox{\hyperlink{classme_1_1_particle_system_a8e228ecd1d9d759c1b784cfef5c4d389}{$\sim$\+Particle\+System}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_particle_system_aae4f5e2597b60eb13806ede0320fed6d}{start}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_particle_system_ae9553e4244f97cc49c4f44b08096bb4d}{update}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_particle_system_a844a04e4dc959dc3c1070f87ef2c4570}{set\+Emitting}} (bool emitted)
+\item 
+void \mbox{\hyperlink{classme_1_1_particle_system_a1027ef30bf9435150c2aa617b67699aa}{set\+Offset\+Pos}} (\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} offset)
+\item 
+void \mbox{\hyperlink{classme_1_1_particle_system_a0bec91f37c753a5fcfce427be7f47710}{set\+Offset\+Scale}} (\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} offset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_component_a4dae1070d5cb2b14b49466e64b3095d6}{Component}} ()
+\item 
+virtual \mbox{\hyperlink{classme_1_1_component_ab2a3844334f7d532196025c32e100799}{$\sim$\+Component}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_component_a7c5786c94bfaf7b6e110f9fa30feafb3}{set\+Entity}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$e)
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a1c8917fcfda2d8ad66ab487ab726a0cd}{get\+Entity}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{start}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_af9625b0308ccd7b22c7871922de0b0a0}{late\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a4d98175f03ee8266f71d9237b3d23748}{On\+Collision\+Enter}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a9e024171b2bbed0cedf1476e2879081f}{On\+Collision\+Stay}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a643aad67bcb41b2c936e49e25b78342e}{On\+Collision\+Exit}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_particle_system_ada09ae2be897ba4f732f47999c4ef276}{m\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_particle_system_a21a259a3b70a9148483b7d6c23270854}{m\+Particle\+Name}}
+\item 
+\mbox{\hyperlink{classme_1_1_transform}{Transform}} $\ast$ \mbox{\hyperlink{classme_1_1_particle_system_a6a94325bf928e26192d758cd9adebf85}{m\+Transform}}
+\item 
+\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} \mbox{\hyperlink{classme_1_1_particle_system_aa403cd5a34a33e79091543878cacebb5}{m\+Offset\+Pos}}
+\item 
+\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} \mbox{\hyperlink{classme_1_1_particle_system_a30c0a6ed66e7410efa94c255d7b2c4f0}{m\+Offset\+Scale}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a89862182926907ae608d3244d1d4e6d1}{m\+Entity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classme_1_1_component_ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3}{enabled}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classme_1_1_particle_system}{Particle\+System}} class represents a visual particle system in 3D space and can be attached to entities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_particle_system_a2dbd29f07988c69014758847ebcd7680}\label{classme_1_1_particle_system_a2dbd29f07988c69014758847ebcd7680}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!ParticleSystem@{ParticleSystem}}
+\index{ParticleSystem@{ParticleSystem}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{ParticleSystem()}{ParticleSystem()}}
+{\footnotesize\ttfamily me\+::\+Particle\+System\+::\+Particle\+System (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{particle\+Name }\end{DoxyParamCaption})}
+
+Construct a new particle system component and save necesary info 
+\begin{DoxyParams}{Parameters}
+{\em name} & name saved in om() map and used for particle that attached in node \\
+\hline
+{\em particle\+Name} & name of particle that is written int Particle\+Resource.\+particle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_particle_system_a8e228ecd1d9d759c1b784cfef5c4d389}\label{classme_1_1_particle_system_a8e228ecd1d9d759c1b784cfef5c4d389}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!````~ParticleSystem@{$\sim$ParticleSystem}}
+\index{````~ParticleSystem@{$\sim$ParticleSystem}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ParticleSystem()}{~ParticleSystem()}}
+{\footnotesize\ttfamily me\+::\+Particle\+System\+::$\sim$\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_particle_system_a844a04e4dc959dc3c1070f87ef2c4570}\label{classme_1_1_particle_system_a844a04e4dc959dc3c1070f87ef2c4570}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!setEmitting@{setEmitting}}
+\index{setEmitting@{setEmitting}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setEmitting()}{setEmitting()}}
+{\footnotesize\ttfamily void me\+::\+Particle\+System\+::set\+Emitting (\begin{DoxyParamCaption}\item[{bool}]{emitted }\end{DoxyParamCaption})}
+
+Set it emitting state \mbox{\Hypertarget{classme_1_1_particle_system_a1027ef30bf9435150c2aa617b67699aa}\label{classme_1_1_particle_system_a1027ef30bf9435150c2aa617b67699aa}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!setOffsetPos@{setOffsetPos}}
+\index{setOffsetPos@{setOffsetPos}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setOffsetPos()}{setOffsetPos()}}
+{\footnotesize\ttfamily void me\+::\+Particle\+System\+::set\+Offset\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_a0bec91f37c753a5fcfce427be7f47710}\label{classme_1_1_particle_system_a0bec91f37c753a5fcfce427be7f47710}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!setOffsetScale@{setOffsetScale}}
+\index{setOffsetScale@{setOffsetScale}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setOffsetScale()}{setOffsetScale()}}
+{\footnotesize\ttfamily void me\+::\+Particle\+System\+::set\+Offset\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_aae4f5e2597b60eb13806ede0320fed6d}\label{classme_1_1_particle_system_aae4f5e2597b60eb13806ede0320fed6d}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!start@{start}}
+\index{start@{start}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void me\+::\+Particle\+System\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get info for m\+Transform and create (ogre\+Particle\+System) and set the start pos 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{me\+::\+Component}}.
+
+\mbox{\Hypertarget{classme_1_1_particle_system_ae9553e4244f97cc49c4f44b08096bb4d}\label{classme_1_1_particle_system_ae9553e4244f97cc49c4f44b08096bb4d}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!update@{update}}
+\index{update@{update}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void me\+::\+Particle\+System\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update transform info to particle(ogre\+Particle\+System) 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{me\+::\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_particle_system_ada09ae2be897ba4f732f47999c4ef276}\label{classme_1_1_particle_system_ada09ae2be897ba4f732f47999c4ef276}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!mName@{mName}}
+\index{mName@{mName}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Particle\+System\+::m\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_aa403cd5a34a33e79091543878cacebb5}\label{classme_1_1_particle_system_aa403cd5a34a33e79091543878cacebb5}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!mOffsetPos@{mOffsetPos}}
+\index{mOffsetPos@{mOffsetPos}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mOffsetPos}{mOffsetPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} me\+::\+Particle\+System\+::m\+Offset\+Pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_a30c0a6ed66e7410efa94c255d7b2c4f0}\label{classme_1_1_particle_system_a30c0a6ed66e7410efa94c255d7b2c4f0}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!mOffsetScale@{mOffsetScale}}
+\index{mOffsetScale@{mOffsetScale}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mOffsetScale}{mOffsetScale}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} me\+::\+Particle\+System\+::m\+Offset\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_a21a259a3b70a9148483b7d6c23270854}\label{classme_1_1_particle_system_a21a259a3b70a9148483b7d6c23270854}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!mParticleName@{mParticleName}}
+\index{mParticleName@{mParticleName}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mParticleName}{mParticleName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Particle\+System\+::m\+Particle\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_particle_system_a6a94325bf928e26192d758cd9adebf85}\label{classme_1_1_particle_system_a6a94325bf928e26192d758cd9adebf85}} 
+\index{me::ParticleSystem@{me::ParticleSystem}!mTransform@{mTransform}}
+\index{mTransform@{mTransform}!me::ParticleSystem@{me::ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mTransform}{mTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_transform}{Transform}}$\ast$ me\+::\+Particle\+System\+::m\+Transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_particle_system_8h}{Particle\+System.\+h}}\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_particle_system_8cpp}{Particle\+System.\+cpp}}\end{DoxyCompactItemize}

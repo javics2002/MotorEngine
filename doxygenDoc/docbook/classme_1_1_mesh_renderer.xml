@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_mesh_renderer" xml:lang="en-US">
+<title>me::MeshRenderer Class Reference</title>
+<indexterm><primary>me::MeshRenderer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;MeshRenderer.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::MeshRenderer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_mesh_renderer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_mesh_renderer_1a51a9270b5d7fa21754f10807feda4f68">MeshRenderer</link> (std::string name, std::string meshName)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_mesh_renderer_1a31dbd94c837b79c98ea2cbf060e34421">~MeshRenderer</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977">start</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437">update</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_mesh_renderer_1ad812ec39c9b5752b2d1699f4baf6898c">setMaterial</link> (std::string materialName)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_mesh_renderer_1a2b3bd27f68a453df055d3b47c493060c">setStatic</link> (bool stat)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_mesh_renderer_1afd5521dfdc1df9b4475613e8d514c815">getName</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652">mName</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35">mMeshName</link></para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_transform">Transform</link> * <link linkend="_classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0">mTransform</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_mesh_renderer_1a9b89d29d56b623da82cbaa5c11eb1fe7">mStaticObject</link> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_classme_1_1_mesh_renderer">MeshRenderer</link> class represents a visual object in 3D space and can be attached to entities. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a51a9270b5d7fa21754f10807feda4f68"/><section>
+    <title>MeshRenderer()</title>
+<indexterm><primary>MeshRenderer</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>MeshRenderer</secondary></indexterm>
+<para><computeroutput>me::MeshRenderer::MeshRenderer (std::string name, std::string meshName)</computeroutput></para>
+<para>Construct a new <link linkend="_classme_1_1_mesh_renderer">MeshRenderer</link> component and save necesary info 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name saved in om() map and used for entity that attached in node </para>
+</entry>
+                            </row>
+                            <row>
+<entry>meshName</entry><entry>
+<para>name of .mesh file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a31dbd94c837b79c98ea2cbf060e34421"/><section>
+    <title>~MeshRenderer()</title>
+<indexterm><primary>~MeshRenderer</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>~MeshRenderer</secondary></indexterm>
+<para><computeroutput>me::MeshRenderer::~MeshRenderer ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_mesh_renderer_1afd5521dfdc1df9b4475613e8d514c815"/><section>
+    <title>getName()</title>
+<indexterm><primary>getName</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>getName</secondary></indexterm>
+<para><computeroutput>std::string me::MeshRenderer::getName ( )</computeroutput></para>
+<para>Set it is static entity or not </para>
+</section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1ad812ec39c9b5752b2d1699f4baf6898c"/><section>
+    <title>setMaterial()</title>
+<indexterm><primary>setMaterial</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>setMaterial</secondary></indexterm>
+<para><computeroutput>void me::MeshRenderer::setMaterial (std::string materialName)</computeroutput></para>
+<para>Set material to mesh (ogreMesh). 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>materialName</entry><entry>
+<para>name of material that is written in MaterialResource.material. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a2b3bd27f68a453df055d3b47c493060c"/><section>
+    <title>setStatic()</title>
+<indexterm><primary>setStatic</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>setStatic</secondary></indexterm>
+<para><computeroutput>void me::MeshRenderer::setStatic (bool stat)</computeroutput></para>
+<para>Set it is static entity or not </para>
+</section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void me::MeshRenderer::start ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Get info for mTransform and create ogreMesh and set the start pos </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">me::Component</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void me::MeshRenderer::update ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Update transform info to mesh(ogreMesh) </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">me::Component</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35"/><section>
+    <title>mMeshName</title>
+<indexterm><primary>mMeshName</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>mMeshName</secondary></indexterm>
+<para><computeroutput>std::string me::MeshRenderer::mMeshName<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652"/><section>
+    <title>mName</title>
+<indexterm><primary>mName</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>mName</secondary></indexterm>
+<para><computeroutput>std::string me::MeshRenderer::mName<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1a9b89d29d56b623da82cbaa5c11eb1fe7"/><section>
+    <title>mStaticObject</title>
+<indexterm><primary>mStaticObject</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>mStaticObject</secondary></indexterm>
+<para><computeroutput>bool me::MeshRenderer::mStaticObject = false<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0"/><section>
+    <title>mTransform</title>
+<indexterm><primary>mTransform</primary><secondary>me::MeshRenderer</secondary></indexterm>
+<indexterm><primary>me::MeshRenderer</primary><secondary>mTransform</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_transform">Transform</link>* me::MeshRenderer::mTransform<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__mesh_renderer_8h">MeshRenderer.h</link>Src/EntityComponent/Components/<link linkend="__mesh_renderer_8cpp">MeshRenderer.cpp</link></section>
+</section>

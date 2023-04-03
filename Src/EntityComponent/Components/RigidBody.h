@@ -51,7 +51,6 @@ namespace me{
 		void update() override;
 		void lateUpdate() override;
 
-
 		void setTrigger(bool isTrigger);
 		void setMass (float mass);
 		void setFriction(float friction);

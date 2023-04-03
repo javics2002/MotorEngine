@@ -11,27 +11,27 @@
 
 using namespace me;
 
-float me::FactoryComponent::value(Parameters params, const ParameterName& parameter, float defaultValue)
+float me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, float defaultValue)
 {
     return params.count(parameter) ? std::stof(params[parameter]) : defaultValue;
 }
 
-int me::FactoryComponent::value(Parameters params, const ParameterName& parameter, int defaultValue)
+int me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, int defaultValue)
 {
     return params.count(parameter) ? std::stoi(params[parameter]) : defaultValue;
 }
 
-bool me::FactoryComponent::value(Parameters params, const ParameterName& parameter, bool defaultValue)
+bool me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, bool defaultValue)
 {
     return params.count(parameter) ? (bool)std::stoi(params[parameter]) : defaultValue;
 }
 
-std::string me::FactoryComponent::value(Parameters params, const ParameterName& parameter, std::string defaultValue)
+std::string me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
 {
     return params.count(parameter) ? params[parameter] : defaultValue;
 }
 
-Component* FactoryAnimator::create(Parameters params)
+Component* FactoryAnimator::create(Parameters& params)
 {
     Animator* animator = new Animator();
     /*if(params.count("animation"))
@@ -39,7 +39,7 @@ Component* FactoryAnimator::create(Parameters params)
     return animator;
 }
 
-Component* FactoryTransform::create(Parameters params)
+Component* FactoryTransform::create(Parameters& params)
 {
     Transform* transform = new Transform();
     transform->setPosition(Vector3(value(params, "position_x", 0.0f),
@@ -51,15 +51,14 @@ Component* FactoryTransform::create(Parameters params)
     return transform;
 }
 
-me::Component* me::FactoryAudioListener::create(Parameters params)
+me::Component* me::FactoryAudioListener::create(Parameters& params)
 {
-
     AudioListener* audioListener = new AudioListener();
 
     return audioListener;
 }
 
-me::Component* me::FactoryAudioSource::create(Parameters params)
+me::Component* me::FactoryAudioSource::create(Parameters& params)
 {
     AudioSource* audioSource = new AudioSource();
 
@@ -72,7 +71,7 @@ me::Component* me::FactoryAudioSource::create(Parameters params)
     return audioSource;
 }
 
-me::Component* me::FactoryCamera::create(Parameters params)
+me::Component* me::FactoryCamera::create(Parameters& params)
 {
     Camera* camera = new Camera();
 
@@ -86,14 +85,14 @@ me::Component* me::FactoryCamera::create(Parameters params)
     return camera;
 }
 
-me::Component* me::FactoryCollider::create(Parameters params)
+me::Component* me::FactoryCollider::create(Parameters& params)
 {
     Collider* collider = new Collider();
 
     return collider;
 }
 
-me::Component* me::FactoryMeshRenderer::create(Parameters params)
+me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
     std::string mesh = value(params, "mesh", std::string());
     std::string meshName = value(params, "meshname", std::string());
@@ -107,7 +106,7 @@ me::Component* me::FactoryMeshRenderer::create(Parameters params)
     return meshRenderer;
 }
 
-me::Component* me::FactoryParticleSystem::create(Parameters params)
+me::Component* me::FactoryParticleSystem::create(Parameters& params)
 {
 
     std::string particle = value(params, "particle", std::string());
@@ -124,7 +123,7 @@ me::Component* me::FactoryParticleSystem::create(Parameters params)
     return particleSystem;
 }
 
-me::Component* me::FactoryRigidBody::create(Parameters params)
+me::Component* me::FactoryRigidBody::create(Parameters& params)
 {
     RigidBody* rigidbody = new RigidBody();
 

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__configuration__stacks" kind="struct" language="C++" prot="public">
+    <compoundname>nk_configuration_stacks</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__configuration__stacks_1a55967201de962032e2f803bca733bb31" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_style_item</type>
+        <definition>struct nk_config_stack_style_item nk_configuration_stacks::style_items</definition>
+        <argsstring></argsstring>
+        <name>style_items</name>
+        <qualifiedname>nk_configuration_stacks::style_items</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5353" column="37" bodyfile="Src/GUI/nuklear.h" bodystart="5353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1aaa0169624803bd2dbb6c871930901ba5" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_float</type>
+        <definition>struct nk_config_stack_float nk_configuration_stacks::floats</definition>
+        <argsstring></argsstring>
+        <name>floats</name>
+        <qualifiedname>nk_configuration_stacks::floats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5354" column="32" bodyfile="Src/GUI/nuklear.h" bodystart="5354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1a24a2fbd356785b0ac5dc302605dbe736" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_vec2</type>
+        <definition>struct nk_config_stack_vec2 nk_configuration_stacks::vectors</definition>
+        <argsstring></argsstring>
+        <name>vectors</name>
+        <qualifiedname>nk_configuration_stacks::vectors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5355" column="31" bodyfile="Src/GUI/nuklear.h" bodystart="5355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1a54e6f345ddb5f80b1b5c4985f3bad922" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_flags</type>
+        <definition>struct nk_config_stack_flags nk_configuration_stacks::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>nk_configuration_stacks::flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5356" column="32" bodyfile="Src/GUI/nuklear.h" bodystart="5356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1a72201e81abce704239551304a41d43bb" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_color</type>
+        <definition>struct nk_config_stack_color nk_configuration_stacks::colors</definition>
+        <argsstring></argsstring>
+        <name>colors</name>
+        <qualifiedname>nk_configuration_stacks::colors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5357" column="32" bodyfile="Src/GUI/nuklear.h" bodystart="5357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1addf7cdf072a4c6cc7fc5a545b578b892" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_user_font</type>
+        <definition>struct nk_config_stack_user_font nk_configuration_stacks::fonts</definition>
+        <argsstring></argsstring>
+        <name>fonts</name>
+        <qualifiedname>nk_configuration_stacks::fonts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5358" column="36" bodyfile="Src/GUI/nuklear.h" bodystart="5358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__configuration__stacks_1acdd04ace1959669efbcf441cd6c154e0" prot="public" static="no" mutable="no">
+        <type>struct nk_config_stack_button_behavior</type>
+        <definition>struct nk_config_stack_button_behavior nk_configuration_stacks::button_behaviors</definition>
+        <argsstring></argsstring>
+        <name>button_behaviors</name>
+        <qualifiedname>nk_configuration_stacks::button_behaviors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5359" column="42" bodyfile="Src/GUI/nuklear.h" bodystart="5359" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="5352" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5352" bodyend="5360"/>
+    <listofallmembers>
+      <member refid="structnk__configuration__stacks_1acdd04ace1959669efbcf441cd6c154e0" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>button_behaviors</name></member>
+      <member refid="structnk__configuration__stacks_1a72201e81abce704239551304a41d43bb" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>colors</name></member>
+      <member refid="structnk__configuration__stacks_1a54e6f345ddb5f80b1b5c4985f3bad922" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>flags</name></member>
+      <member refid="structnk__configuration__stacks_1aaa0169624803bd2dbb6c871930901ba5" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>floats</name></member>
+      <member refid="structnk__configuration__stacks_1addf7cdf072a4c6cc7fc5a545b578b892" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>fonts</name></member>
+      <member refid="structnk__configuration__stacks_1a55967201de962032e2f803bca733bb31" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>style_items</name></member>
+      <member refid="structnk__configuration__stacks_1a24a2fbd356785b0ac5dc302605dbe736" prot="public" virt="non-virtual"><scope>nk_configuration_stacks</scope><name>vectors</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

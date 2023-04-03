@@ -1,0 +1,96 @@
+.TH "Time" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Time
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Time\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTime\fP ()"
+.br
+.ti -1c
+.RI "float \fBgetGameFrameValue\fP ()"
+.br
+.ti -1c
+.RI "float \fBgetPhysicsFrameValue\fP ()"
+.br
+.ti -1c
+.RI "void \fBenableVSYNC\fP ()"
+.br
+.ti -1c
+.RI "void \fBdisableVSYNC\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBdeltaTime\fP"
+.br
+.ti -1c
+.RI "double \fBfixedDeltaTime\fP"
+.br
+.ti -1c
+.RI "float \fBcurrentFPSValue\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBmFrameValue\fP"
+.br
+.ti -1c
+.RI "float \fBmPhysicsFrameValue\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Time::Time ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Time::disableVSYNC ()"
+Function used to disable vertical syncronization to uncap the framerate of the game 
+.SS "void Time::enableVSYNC ()"
+Function used to enable vertical syncronization to cap the framerate of the game 
+.SS "float Time::getGameFrameValue ()"
+Read Only Function used to get the framerate value 
+.PP
+\fBReturns\fP
+.RS 4
+A float number representing the framerate value (Example: 60fps, 144fps) 
+.RE
+.PP
+
+.SS "float Time::getPhysicsFrameValue ()"
+Read Only Function used to get the physics framerate value 
+.PP
+\fBReturns\fP
+.RS 4
+A float number representing the framerate value (Example: 50\&.0f) 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "float Time::currentFPSValue"
+
+.SS "double Time::deltaTime"
+
+.SS "double Time::fixedDeltaTime"
+
+.SS "float Time::mFrameValue\fC [protected]\fP"
+
+.SS "float Time::mPhysicsFrameValue\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

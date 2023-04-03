@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__property__state" kind="struct" language="C++" prot="public">
+    <compoundname>nk_property_state</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__property__state_1a70348c13baea22b6df6ad5fa1ef84f0a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>nk_property_state::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5232" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1ac200409ca5d075add6a4b68c3943e080" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>nk_property_state::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5232" column="16" bodyfile="Src/GUI/nuklear.h" bodystart="5232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1aba9b0d6a242c09b6c949f933a3c4d6c0" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char nk_property_state::buffer[NK_MAX_NUMBER_BUFFER]</definition>
+        <argsstring>[NK_MAX_NUMBER_BUFFER]</argsstring>
+        <name>buffer</name>
+        <qualifiedname>nk_property_state::buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5233" column="10" bodyfile="Src/GUI/nuklear.h" bodystart="5233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a7fb78c3d605eeda826192d5cb52bc65a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>nk_property_state::length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5234" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a39f7b5ce4bacdc4dc826c13081b13a16" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::cursor</definition>
+        <argsstring></argsstring>
+        <name>cursor</name>
+        <qualifiedname>nk_property_state::cursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5235" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a5a6dca290782c4691a70948aa6a2d403" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::select_start</definition>
+        <argsstring></argsstring>
+        <name>select_start</name>
+        <qualifiedname>nk_property_state::select_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5236" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a4387cb65804a20dc3cc03b8a7bf388e5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::select_end</definition>
+        <argsstring></argsstring>
+        <name>select_end</name>
+        <qualifiedname>nk_property_state::select_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5237" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a6f05883484dcfe7d79af5dd6fda2b2ed" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757" kindref="member">nk_hash</ref></type>
+        <definition>nk_hash nk_property_state::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>nk_property_state::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5238" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a17a7408517599a09e6244421b2f06f9b" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_property_state::seq</definition>
+        <argsstring></argsstring>
+        <name>seq</name>
+        <qualifiedname>nk_property_state::seq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5239" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1a425994ca840cd84b4bb43c14cc761f19" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_property_state::old</definition>
+        <argsstring></argsstring>
+        <name>old</name>
+        <qualifiedname>nk_property_state::old</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5240" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__property__state_1acb8b93d0b35c75577a73362e05617259" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_property_state::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>nk_property_state::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5241" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5241" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="5231" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5231" bodyend="5242"/>
+    <listofallmembers>
+      <member refid="structnk__property__state_1a70348c13baea22b6df6ad5fa1ef84f0a" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>active</name></member>
+      <member refid="structnk__property__state_1aba9b0d6a242c09b6c949f933a3c4d6c0" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>buffer</name></member>
+      <member refid="structnk__property__state_1a39f7b5ce4bacdc4dc826c13081b13a16" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>cursor</name></member>
+      <member refid="structnk__property__state_1a7fb78c3d605eeda826192d5cb52bc65a" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>length</name></member>
+      <member refid="structnk__property__state_1a6f05883484dcfe7d79af5dd6fda2b2ed" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>name</name></member>
+      <member refid="structnk__property__state_1a425994ca840cd84b4bb43c14cc761f19" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>old</name></member>
+      <member refid="structnk__property__state_1ac200409ca5d075add6a4b68c3943e080" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>prev</name></member>
+      <member refid="structnk__property__state_1a4387cb65804a20dc3cc03b8a7bf388e5" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>select_end</name></member>
+      <member refid="structnk__property__state_1a5a6dca290782c4691a70948aa6a2d403" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>select_start</name></member>
+      <member refid="structnk__property__state_1a17a7408517599a09e6244421b2f06f9b" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>seq</name></member>
+      <member refid="structnk__property__state_1acb8b93d0b35c75577a73362e05617259" prot="public" virt="non-virtual"><scope>nk_property_state</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__cursor" xml:lang="en-US">
+<title>nk_cursor Struct Reference</title>
+<indexterm><primary>nk_cursor</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__image">nk_image</link> <link linkend="_structnk__cursor_1ae85598fd872f474a4e63e92bbee10a92">img</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> size <link linkend="_structnk__cursor_1ae01b7938eb679481a8ef549c27a59080">offset</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__cursor_1ae85598fd872f474a4e63e92bbee10a92"/><section>
+    <title>img</title>
+<indexterm><primary>img</primary><secondary>nk_cursor</secondary></indexterm>
+<indexterm><primary>nk_cursor</primary><secondary>img</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__image">nk_image</link> nk_cursor::img</computeroutput></para></section>
+<anchor xml:id="_structnk__cursor_1ae01b7938eb679481a8ef549c27a59080"/><section>
+    <title>offset</title>
+<indexterm><primary>offset</primary><secondary>nk_cursor</secondary></indexterm>
+<indexterm><primary>nk_cursor</primary><secondary>offset</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> size nk_cursor::offset</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

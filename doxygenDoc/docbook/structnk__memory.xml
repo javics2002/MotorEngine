@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__memory" xml:lang="en-US">
+<title>nk_memory Struct Reference</title>
+<indexterm><primary>nk_memory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>void * <link linkend="_structnk__memory_1a844a5bebb33c6e11678e4e1ad5a9762c">ptr</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__memory_1a02e6260408d501c5c06c6a73189b5e23">size</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__memory_1a844a5bebb33c6e11678e4e1ad5a9762c"/><section>
+    <title>ptr</title>
+<indexterm><primary>ptr</primary><secondary>nk_memory</secondary></indexterm>
+<indexterm><primary>nk_memory</primary><secondary>ptr</secondary></indexterm>
+<para><computeroutput>void* nk_memory::ptr</computeroutput></para></section>
+<anchor xml:id="_structnk__memory_1a02e6260408d501c5c06c6a73189b5e23"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>nk_memory</secondary></indexterm>
+<indexterm><primary>nk_memory</primary><secondary>size</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_memory::size</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

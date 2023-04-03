@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__button" xml:lang="en-US">
+<title>nk_style_button Struct Reference</title>
+<indexterm><primary>nk_style_button</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__button_1a61dc3620dafc66cc38eeafca37a4b248">normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__button_1a79019a05062f31a26cee5270f31a1c92">hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__button_1a69e536c30da388a84eed8f605e860129">active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__button_1aa89ff1863884006ea538cf4f5be8780a">border_color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__button_1a043c53b3664b19ad638c3e4aade0cb78">text_background</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__button_1a70eabd8d45ca4dc60c0753c75b3b1b25">text_normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__button_1a7e9e7511d72f41d83dccbb9af9b5dd33">text_hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__button_1a20188ac9f2d9353b770875ee1610126d">text_active</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> <link linkend="_structnk__style__button_1a3d8e4dc9e256e06ac66d9790403c79e4">text_alignment</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__button_1a1f6e003617c76e6d7012ad4a64671303">border</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__button_1ae1d141c0c8d52167d779fb4173b2da6b">rounding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__button_1a415445397a06f67cfe32516aeaac3683">padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__button_1ab53cdca97ddb24dea561e1cec88b3ba2">image_padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__button_1a70e4b8b7bc59f9b06e477c003bfab855">touch_padding</link></para>
+</listitem>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43">userdata</link></para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__button_1a802641ef81a16f9d78c4a6758a3109b6">draw_begin</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43">userdata</link>)</para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__button_1a10cbc466ee1819b82fa19867095141a1">draw_end</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43">userdata</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__button_1a69e536c30da388a84eed8f605e860129"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_button::active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a1f6e003617c76e6d7012ad4a64671303"/><section>
+    <title>border</title>
+<indexterm><primary>border</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>border</secondary></indexterm>
+<para><computeroutput>float nk_style_button::border</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1aa89ff1863884006ea538cf4f5be8780a"/><section>
+    <title>border_color</title>
+<indexterm><primary>border_color</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>border_color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_button::border_color</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a802641ef81a16f9d78c4a6758a3109b6"/><section>
+    <title>draw_begin</title>
+<indexterm><primary>draw_begin</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>draw_begin</secondary></indexterm>
+<para><computeroutput>void(* nk_style_button::draw_begin) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43">userdata</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a10cbc466ee1819b82fa19867095141a1"/><section>
+    <title>draw_end</title>
+<indexterm><primary>draw_end</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>draw_end</secondary></indexterm>
+<para><computeroutput>void(* nk_style_button::draw_end) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43">userdata</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a79019a05062f31a26cee5270f31a1c92"/><section>
+    <title>hover</title>
+<indexterm><primary>hover</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_button::hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1ab53cdca97ddb24dea561e1cec88b3ba2"/><section>
+    <title>image_padding</title>
+<indexterm><primary>image_padding</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>image_padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_button::image_padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a61dc3620dafc66cc38eeafca37a4b248"/><section>
+    <title>normal</title>
+<indexterm><primary>normal</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_button::normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a415445397a06f67cfe32516aeaac3683"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_button::padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1ae1d141c0c8d52167d779fb4173b2da6b"/><section>
+    <title>rounding</title>
+<indexterm><primary>rounding</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>rounding</secondary></indexterm>
+<para><computeroutput>float nk_style_button::rounding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a20188ac9f2d9353b770875ee1610126d"/><section>
+    <title>text_active</title>
+<indexterm><primary>text_active</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>text_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_button::text_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a3d8e4dc9e256e06ac66d9790403c79e4"/><section>
+    <title>text_alignment</title>
+<indexterm><primary>text_alignment</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>text_alignment</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> nk_style_button::text_alignment</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a043c53b3664b19ad638c3e4aade0cb78"/><section>
+    <title>text_background</title>
+<indexterm><primary>text_background</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>text_background</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_button::text_background</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a7e9e7511d72f41d83dccbb9af9b5dd33"/><section>
+    <title>text_hover</title>
+<indexterm><primary>text_hover</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>text_hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_button::text_hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a70eabd8d45ca4dc60c0753c75b3b1b25"/><section>
+    <title>text_normal</title>
+<indexterm><primary>text_normal</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>text_normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_button::text_normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a70e4b8b7bc59f9b06e477c003bfab855"/><section>
+    <title>touch_padding</title>
+<indexterm><primary>touch_padding</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>touch_padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_button::touch_padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__button_1a486c8383bd02dae018cacaa370bf0c43"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_style_button</secondary></indexterm>
+<indexterm><primary>nk_style_button</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_style_button::userdata</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

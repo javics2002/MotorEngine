@@ -1,0 +1,60 @@
+\hypertarget{_time_8h_source}{}\doxysection{Time.\+h}
+\label{_time_8h_source}\index{Src/Utils/Time.h@{Src/Utils/Time.h}}
+\mbox{\hyperlink{_time_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_UTILS\_TIME}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_UTILS\_TIME}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00008\ \textcolor{comment}{class\ Time\ provides/has\ information\ about\ time\ between\ frames,\ }}
+\DoxyCodeLine{00009\ \textcolor{comment}{physics\ time\ between\ frames,\ time\ scale\ and\ framerate.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{class_time}{Time}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_time}{Time}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ getGameFrameValue();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ getPhysicsFrameValue();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ enableVSYNC();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ disableVSYNC();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ Delta\ time\ describes\ the\ time\ difference\ between\ the\ previous\ frame\ that\ was\ drawn\ and\ the\ current\ frame.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_time_ac80d4360b9928730fb071843f2e387e2}{deltaTime}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ Fixed\ Delta\ time\ describes\ the\ time\ difference\ between\ the\ previous\ PHYSICS\ frame\ that\ was\ calculated\ and\ the\ current\ PHYSICS\ frame.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_time_a392f74c55779960792e13a71564b921c}{fixedDeltaTime}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ *\ Current\ Framerate\ value}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_time_a561b4617629ba2326030e6c4ba4390bd}{currentFPSValue}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ *\ Framerate\ value\ (60,\ 144)}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_time_ad768483aa6f9b6e80620ec7038b5d82e}{mFrameValue}};\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ *\ \ Physics\ framerate\ value\ (50)}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_time_af6c1ba39d39ac08547cf64b281283016}{mPhysicsFrameValue}};}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__pool" xml:lang="en-US">
+<title>nk_pool Struct Reference</title>
+<indexterm><primary>nk_pool</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__allocator">nk_allocator</link> <link linkend="_structnk__pool_1a2644741d1433862d67e1046fb2101f10">alloc</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1aa988e58afebdfa0bbd380ed643f913ec">nk_allocation_type</link> <link linkend="_structnk__pool_1ae622d2f8662677712eb3644a8dd4008c">type</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__pool_1a36add32173cf3c647a13bf163a26384b">page_count</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__page">nk_page</link> * <link linkend="_structnk__pool_1ae85bca8b0974e60bdf2dfadc3587848f">pages</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__page__element">nk_page_element</link> * <link linkend="_structnk__pool_1a63aca14faed2e7d08a74d7bc3bd06872">freelist</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__pool_1ad65a0bf770d9244c15d76669082249a1">capacity</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__pool_1a5995fa53f2098e079e47928e260120ac">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__pool_1a7eb35ea500f4832024688285f1394df0">cap</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__pool_1a2644741d1433862d67e1046fb2101f10"/><section>
+    <title>alloc</title>
+<indexterm><primary>alloc</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>alloc</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__allocator">nk_allocator</link> nk_pool::alloc</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1a7eb35ea500f4832024688285f1394df0"/><section>
+    <title>cap</title>
+<indexterm><primary>cap</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>cap</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_pool::cap</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1ad65a0bf770d9244c15d76669082249a1"/><section>
+    <title>capacity</title>
+<indexterm><primary>capacity</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>capacity</secondary></indexterm>
+<para><computeroutput>unsigned nk_pool::capacity</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1a63aca14faed2e7d08a74d7bc3bd06872"/><section>
+    <title>freelist</title>
+<indexterm><primary>freelist</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>freelist</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__page__element">nk_page_element</link>* nk_pool::freelist</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1a36add32173cf3c647a13bf163a26384b"/><section>
+    <title>page_count</title>
+<indexterm><primary>page_count</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>page_count</secondary></indexterm>
+<para><computeroutput>unsigned int nk_pool::page_count</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1ae85bca8b0974e60bdf2dfadc3587848f"/><section>
+    <title>pages</title>
+<indexterm><primary>pages</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>pages</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__page">nk_page</link>* nk_pool::pages</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1a5995fa53f2098e079e47928e260120ac"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>size</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_pool::size</computeroutput></para></section>
+<anchor xml:id="_structnk__pool_1ae622d2f8662677712eb3644a8dd4008c"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>nk_pool</secondary></indexterm>
+<indexterm><primary>nk_pool</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1aa988e58afebdfa0bbd380ed643f913ec">nk_allocation_type</link> nk_pool::type</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

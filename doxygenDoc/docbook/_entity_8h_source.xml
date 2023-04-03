@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__entity_8h_source" xml:lang="en-US">
+<title>Entity.h</title>
+<indexterm><primary>Src/EntityComponent/Entity.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+6 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+7 
+8 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_ENTITY</emphasis>
+9 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_ENTITY</emphasis>
+10 
+11 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__info_scene_8h">InfoScene.h</link>&quot;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;map&gt;</emphasis>
+15 
+16 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Scene;
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Component;
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_entity">Entity</link>&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classme_1_1_scene">Scene</link>;
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_entity">Entity</link>(<link linkend="_classme_1_1_scene">Scene</link>*&#32;scn,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link>&#32;name);
+30 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_entity">Entity</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3">SceneName</link>&#32;name);
+36 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classme_1_1_entity">~Entity</link>();
+41 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">Component</link>*&#32;addComponent(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link>&amp;&#32;componentName,&#32;<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&amp;&#32;params);
+51 
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T*&#32;addComponent(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link>&amp;&#32;componentName);
+54 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classme_1_1_entity_1adaeec09d928ca00a2f5a2329bca24050">removeComponent</link>(<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link>&amp;&#32;component)&#32;{
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(hasComponent(component))&#32;{
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;mComponents.find(component)-&gt;second;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mComponents.erase(component);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+68 
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;T*&#32;<link linkend="_classme_1_1_entity_1aeaef76f73c6151b49e42d50a8413b58d">getComponent</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link>&amp;&#32;component)&#32;{
+76 
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!hasComponent(component))&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+78 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T*<emphasis role="keyword">&gt;</emphasis>(mComponents.find(component)-&gt;second);
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+81 
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classme_1_1_entity_1a7ebe4d3e6714b7137bd0f1ba10b6c534">hasComponent</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link>&amp;&#32;component)&#32;{
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mComponents.find(component)&#32;!=&#32;mComponents.end();
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+90 
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classme_1_1_entity_1af281b0f49e07ed9a5f929eca83c7dec1">isActive</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mActive;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+98 
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classme_1_1_entity_1ae184b463755cd3e4ba197e13b4aeb6ed">destroy</link>()&#32;{
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mActive&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+106 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&#32;<link linkend="_classme_1_1_entity_1abc0320faa7eaf15f59313ba7e8af3ed7">getName</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mName;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+114 
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classme_1_1_entity_1a3b6879a58a088f983340a36bd7fddc87">setName</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1a4549e57e933271d021f2d5b4cd46c84e">EntityName</link>&#32;name)&#32;{
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mName&#32;=&#32;name;
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+122 
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_classme_1_1_scene">Scene</link>*&#32;<link linkend="_classme_1_1_entity_1a885d6740184376cf9846bd913b07e323">getScene</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mScn;
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+130 
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classme_1_1_entity_1aedfffd74e7631f78a2dc04740f569397">setScene</link>(<link linkend="_classme_1_1_scene">Scene</link>*&#32;scn)&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mScn&#32;=&#32;scn;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+138 
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;start();
+140 
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;update();
+145 
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;lateUpdate();
+150 
+151 
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;OnCollisionEnter(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+156 
+157 
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;OnCollisionStay(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+162 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;OnCollisionExit(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+167 
+168 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+169 
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;mActive;
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;mName;
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_scene">Scene</link>*&#32;mScn;
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::map&lt;ComponentName,&#32;Component*&gt;&#32;mComponents;
+174 &#32;&#32;&#32;&#32;};
+175 };
+176 
+177 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

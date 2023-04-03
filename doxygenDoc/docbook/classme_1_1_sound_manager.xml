@@ -1,0 +1,624 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_sound_manager" xml:lang="en-US">
+<title>me::SoundManager Class Reference</title>
+<indexterm><primary>me::SoundManager</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SoundManager.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::SoundManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_sound_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classme_1_1_sound_manager_1afc245c5926bb7220f96e9b2423abdccc">systemRefresh</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a3141d0d6d213e4869cb9eb03a2143a02">create3DSound</link> (const char *soundPath, std::string soundName, float minDistance, float maxDistance)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a0bb521cbfa59616365a33db702790c6d">createNormalSound</link> (const char *soundPath, std::string soundName)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1afd52cef648f883f140ecdf503bf50cc6">setSpeed</link> (std::string soundName, float newSpeed)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a6a5fe4cec8ec72e7b5acce74475d3396">setMode</link> (std::string soundName, <link linkend="__sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca">FMOD_MODE</link> newMode)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a8889e16fb53250251a659d5742a29b1c">createChannelGroup</link> (std::string groupName)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a70964114d6b76ca12ce5e457caacf74e">setChannelVolume</link> (std::string groupName, float newVolume)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a8b5c1b4fab4ba23443bce940b8939794">setVolume</link> (std::string soundName, float newVolume)</para>
+</listitem>
+            <listitem><para>float <link linkend="_classme_1_1_sound_manager_1a9c0b431d92b944f0a1e79cfc24915a39">getVolume</link> (std::string soundName)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a7b71e6f378405d67ca184444c6e1c936">pauseSound</link> (std::string soundName, bool pause)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a673e40d5edd145f89730bf35e3da085b">playSound</link> (std::string soundName, bool isLoop, const char *channelGroup, FMOD_VECTOR *channelPos, FMOD_VECTOR *channelVel, int timesLooped)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a0f475e7e7f54957100b6fe59c1454e29">deleteSound</link> (std::string soundName)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_sound_manager_1af78cde6c156326cec930337d6f886a1c">updateListenersPosition</link> (int index, <link linkend="_classme_1_1_vector3">Vector3</link> listenerPos, <link linkend="_classme_1_1_vector3">Vector3</link> listenerFW, <link linkend="_classme_1_1_vector3">Vector3</link> listenerUP, <link linkend="_classme_1_1_vector3">Vector3</link> listenerVel={ 0, 0, 0 })</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_sound_manager_1afff7f6e5fd095e3a411f106b3d74f078">removeListener</link> (int index)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_sound_manager_1a784b2a3fd06000bf1a135832362fc04e">setSoundPosition</link> (std::string soundName, <link linkend="_classme_1_1_vector3">Vector3</link> position)</para>
+</listitem>
+            <listitem><para>int <link linkend="_classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160">getNextUsefulListenerIndex</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; SoundManager &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1a70f85c079fd020a8655eed54e7189845">Singleton</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_sound_manager">SoundManager</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_sound_manager">SoundManager</link> &gt; &amp; <link linkend="_classme_1_1_singleton_1a6745ba60837f9347a75c0cfc27fadfb0">operator=</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_sound_manager">SoundManager</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_singleton_1a576834dfbf95c3b929511d2a588866d1">~Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; SoundManager &gt;</link>        <itemizedlist>
+            <listitem><para>static <link linkend="_classme_1_1_sound_manager">SoundManager</link> * <link linkend="_classme_1_1_singleton_1a919633966a5db8336cffa09f28fc2623">init</link> (Targs &amp;&amp;...args)</para>
+</listitem>
+            <listitem><para>static <link linkend="_classme_1_1_sound_manager">SoundManager</link> * <link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">instance</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; SoundManager &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1af5127d54d6c6904173541b404903b599">Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_classme_1_1_sound_manager">SoundManager</link> provides <link linkend="_namespace_f_m_o_d">FMOD</link> wrappers to manage audio creation and modulation, audio channel and audio channel groups. You can access the <link linkend="_classme_1_1_input_manager">InputManager</link> calling sm(). </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_sound_manager_1a3141d0d6d213e4869cb9eb03a2143a02"/><section>
+    <title>create3DSound()</title>
+<indexterm><primary>create3DSound</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>create3DSound</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::create3DSound (const char * soundPath, std::string soundName, float minDistance, float maxDistance)</computeroutput></para>
+<para>Creates a 3D sound. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundPath</entry><entry>
+<para>: relative path to the sound that will be loaded in the sound handle. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which mode will be changed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>minDistance</entry><entry>
+<para>: minimum audible distance for a 3D sound. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>maxDistance</entry><entry>
+<para>: maximum audible distance for a 3D sound. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean representing whether or not a the sound was created. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a8889e16fb53250251a659d5742a29b1c"/><section>
+    <title>createChannelGroup()</title>
+<indexterm><primary>createChannelGroup</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>createChannelGroup</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::createChannelGroup (std::string groupName)</computeroutput></para>
+<para>Create a channel group if a channel with the same name doesn&apos;t already exists. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newChannelGroup</entry><entry>
+<para>: the name for the new channel group. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean representing whether or not a new channel was indeed created. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a0bb521cbfa59616365a33db702790c6d"/><section>
+    <title>createNormalSound()</title>
+<indexterm><primary>createNormalSound</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>createNormalSound</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::createNormalSound (const char * soundPath, std::string soundName)</computeroutput></para>
+<para>Creates a normal sound. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundPath</entry><entry>
+<para>: relative path to the sound that will be loaded in the sound handle. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which mode will be changed. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean representing whether or not a the sound was created. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a0f475e7e7f54957100b6fe59c1454e29"/><section>
+    <title>deleteSound()</title>
+<indexterm><primary>deleteSound</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>deleteSound</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::deleteSound (std::string soundName)</computeroutput></para>
+<para>Releases the dynamic memory created on runtime when creating new sounds. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which speed will be changed. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean showing wether or not the sound was eliminated. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160"/><section>
+    <title>getNextUsefulListenerIndex()</title>
+<indexterm><primary>getNextUsefulListenerIndex</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>getNextUsefulListenerIndex</secondary></indexterm>
+<para><computeroutput>int me::SoundManager::getNextUsefulListenerIndex ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Gets the useful listener which will be able to listen to a new sound. <formalpara><title>Returns</title>
+
+<para>A integer showing whether or not a useful listener was found. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a9c0b431d92b944f0a1e79cfc24915a39"/><section>
+    <title>getVolume()</title>
+<indexterm><primary>getVolume</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>getVolume</secondary></indexterm>
+<para><computeroutput>float me::SoundManager::getVolume (std::string soundName)</computeroutput></para>
+<para>Checks the volume of a certain channel if it exists. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which speed will be changed. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The specific float of the volume. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a7b71e6f378405d67ca184444c6e1c936"/><section>
+    <title>pauseSound()</title>
+<indexterm><primary>pauseSound</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>pauseSound</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::pauseSound (std::string soundName, bool pause)</computeroutput></para>
+<para>Looks for a sound channel and in case that it exists, sets the pause state of that channel to &quot;pause&quot;. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which speed will be paused. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pause</entry><entry>
+<para>: the new pause value the channel will get. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if the sound is pauded, false if the sound didn&apos;t exist. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a673e40d5edd145f89730bf35e3da085b"/><section>
+    <title>playSound()</title>
+<indexterm><primary>playSound</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>playSound</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::playSound (std::string soundName, bool isLoop, const char * channelGroup, FMOD_VECTOR * channelPos, FMOD_VECTOR * channelVel, int timesLooped)</computeroutput></para>
+<para>Sets the loopability of a certain sound dependind on &quot;isLoop&quot;. It checks for available channels to play the sound and assigns a group channel depending on the user input. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which will be played. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>isLoop</entry><entry>
+<para>: the value of loopability that will be used to play the sound. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>channelGroup</entry><entry>
+<para>: the channel group where the sound will played on. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>channelPos</entry><entry>
+<para>: the channel&apos;s position used for panning and attenuation. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>channelVel</entry><entry>
+<para>: the channel&apos; group where the sound will played on&apos;s velocity in 3D space used for doppler. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>timesLooped</entry><entry>
+<para>: the number of times the sound will be looped. By default it is set to constant loop. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean showing whether or not a channel group was found to play the sound. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1afff7f6e5fd095e3a411f106b3d74f078"/><section>
+    <title>removeListener()</title>
+<indexterm><primary>removeListener</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>removeListener</secondary></indexterm>
+<para><computeroutput>void me::SoundManager::removeListener (int index)</computeroutput></para>
+<para>Removes the listener from its vector and resets its values. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>: the index that refers to a certain listener. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a70964114d6b76ca12ce5e457caacf74e"/><section>
+    <title>setChannelVolume()</title>
+<indexterm><primary>setChannelVolume</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>setChannelVolume</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::setChannelVolume (std::string groupName, float newVolume)</computeroutput></para>
+<para>Changes the volume of a certain group channel if it exists. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>groupName</entry><entry>
+<para>: the name of the channel group. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newVolume</entry><entry>
+<para>: the volume value the group channel will be changed to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean representing whether or not a the volume was changed. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a6a5fe4cec8ec72e7b5acce74475d3396"/><section>
+    <title>setMode()</title>
+<indexterm><primary>setMode</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>setMode</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::setMode (std::string soundName, <link linkend="__sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca">FMOD_MODE</link> newMode)</computeroutput></para>
+<para>Sets the mode of a certain sound. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which mode will be changed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newMode</entry><entry>
+<para>the new flag the sound will be changed to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean showing wether or not the mode was set. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a784b2a3fd06000bf1a135832362fc04e"/><section>
+    <title>setSoundPosition()</title>
+<indexterm><primary>setSoundPosition</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>setSoundPosition</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::setSoundPosition (std::string soundName, <link linkend="_classme_1_1_vector3">Vector3</link> position)</computeroutput></para>
+<para>Sets the global position of a sound i. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which position will be set. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>position</entry><entry>
+<para>: the value of the position of the sound. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean showing wether or not the position was set. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1afd52cef648f883f140ecdf503bf50cc6"/><section>
+    <title>setSpeed()</title>
+<indexterm><primary>setSpeed</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>setSpeed</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::setSpeed (std::string soundName, float newSpeed)</computeroutput></para>
+<para>Sets the speed a certain sound wil be played at. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which speed will be changed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newSpeed</entry><entry>
+<para>: the new value the sound will be played at. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean showing wether or not the speed was changed. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1a8b5c1b4fab4ba23443bce940b8939794"/><section>
+    <title>setVolume()</title>
+<indexterm><primary>setVolume</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>setVolume</secondary></indexterm>
+<para><computeroutput>bool me::SoundManager::setVolume (std::string soundName, float newVolume)</computeroutput></para>
+<para>Changes the volume of a certain channel if it exists. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry>
+<para>: the especific name of the sound which volume will be changed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newVolume</entry><entry>
+<para>: the volume value the channel will be changed to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A boolean representing wether or not the volume was changed. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1afc245c5926bb7220f96e9b2423abdccc"/><section>
+    <title>systemRefresh()</title>
+<indexterm><primary>systemRefresh</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>systemRefresh</secondary></indexterm>
+<para><computeroutput>void me::SoundManager::systemRefresh ( )</computeroutput></para>
+<para>Updates the sound system every step of the game loop. </para>
+</section>
+<anchor xml:id="_classme_1_1_sound_manager_1af78cde6c156326cec930337d6f886a1c"/><section>
+    <title>updateListenersPosition()</title>
+<indexterm><primary>updateListenersPosition</primary><secondary>me::SoundManager</secondary></indexterm>
+<indexterm><primary>me::SoundManager</primary><secondary>updateListenersPosition</secondary></indexterm>
+<para><computeroutput>void me::SoundManager::updateListenersPosition (int index, <link linkend="_classme_1_1_vector3">Vector3</link> listenerPos, <link linkend="_classme_1_1_vector3">Vector3</link> listenerFW, <link linkend="_classme_1_1_vector3">Vector3</link> listenerUP, <link linkend="_classme_1_1_vector3">Vector3</link> listenerVel = <computeroutput>{&#160;0,0,0&#160;}</computeroutput>
+)</computeroutput></para>
+<para>Updates the position of a sound listener relative to a certain sound. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>: the index that refers to a certain listener. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>listenerPos</entry><entry>
+<para>: the position of the listener. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>listenerFW</entry><entry>
+<para>: </para>
+</entry>
+                            </row>
+                            <row>
+<entry>listenerUP</entry><entry>
+<para>: </para>
+</entry>
+                            </row>
+                            <row>
+<entry>listenerVel</entry><entry>
+<para>: the velocity of the listener. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Audio/<link linkend="__sound_manager_8h">SoundManager.h</link>Src/Audio/<link linkend="__sound_manager_8cpp">SoundManager.cpp</link></section>
+</section>

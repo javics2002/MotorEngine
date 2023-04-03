@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_factory_mesh_renderer" kind="class" language="C++" prot="public">
+    <compoundname>me::FactoryMeshRenderer</compoundname>
+    <basecompoundref refid="classme_1_1_factory_component" prot="public" virt="non-virtual">me::FactoryComponent</basecompoundref>
+    <includes refid="_factory_component_8h" local="no">FactoryComponent.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_factory_mesh_renderer_1a86f57a95037ffb710b99ad0977e98707" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classme_1_1_component" kindref="compound">me::Component</ref> *</type>
+        <definition>me::Component * me::FactoryMeshRenderer::create</definition>
+        <argsstring>(Parameters params)</argsstring>
+        <name>create</name>
+        <qualifiedname>me::FactoryMeshRenderer::create</qualifiedname>
+        <reimplements refid="classme_1_1_factory_component_1a4e2dd5c566003c4c846ec968d494d094">create</reimplements>
+        <param>
+          <type><ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref></type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/FactoryComponent.h" line="58" column="15" bodyfile="Src/EntityComponent/Components/FactoryComponent.cpp" bodystart="96" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>me::FactoryComponent</label>
+        <link refid="classme_1_1_factory_component"/>
+      </node>
+      <node id="1">
+        <label>me::FactoryMeshRenderer</label>
+        <link refid="classme_1_1_factory_mesh_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>me::FactoryComponent</label>
+        <link refid="classme_1_1_factory_component"/>
+      </node>
+      <node id="1">
+        <label>me::FactoryMeshRenderer</label>
+        <link refid="classme_1_1_factory_mesh_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/FactoryComponent.h" line="56" column="1" bodyfile="Src/EntityComponent/Components/FactoryComponent.h" bodystart="56" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classme_1_1_factory_mesh_renderer_1a86f57a95037ffb710b99ad0977e98707" prot="public" virt="virtual"><scope>me::FactoryMeshRenderer</scope><name>create</name></member>
+      <member refid="classme_1_1_factory_component_1a494ea3a746bc7e6e127f9fff8731a41e" prot="protected" virt="non-virtual"><scope>me::FactoryMeshRenderer</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a5a017735ff95dcab5d1e49706e9ec4a6" prot="protected" virt="non-virtual"><scope>me::FactoryMeshRenderer</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a49176230fa6a8e59c3cb7be92cb3bbe2" prot="protected" virt="non-virtual"><scope>me::FactoryMeshRenderer</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a0a1ce0b3cc6055b37efcf80beaf9a626" prot="protected" virt="non-virtual"><scope>me::FactoryMeshRenderer</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

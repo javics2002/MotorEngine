@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_u_i_button_8cpp" kind="file" language="C++">
+    <compoundname>UIButton.cpp</compoundname>
+    <includes refid="_u_i_button_8h" local="yes">UIButton.h</includes>
+    <includes refid="_input_manager_8h" local="yes">Input/InputManager.h</includes>
+    <includes local="no">OgreOverlay.h</includes>
+    <includes local="no">OgreOverlayContainer.h</includes>
+    <includes local="no">OgreOverlayManager.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/UIButton.cpp</label>
+        <link refid="_u_i_button_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>UIButton.h</label>
+        <link refid="_u_i_button_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Axis.h</label>
+        <link refid="_axis_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Input/InputManager.h</label>
+        <link refid="_input_manager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="13">
+        <label>Utils/Singleton.h</label>
+        <link refid="_singleton_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>OgreOverlay.h</label>
+      </node>
+      <node id="21">
+        <label>OgreOverlayContainer.h</label>
+      </node>
+      <node id="22">
+        <label>OgreOverlayManager.h</label>
+      </node>
+      <node id="11">
+        <label>OgreTextAreaOverlayElement.h</label>
+      </node>
+      <node id="8">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>unordered_map</label>
+      </node>
+      <node id="19">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_u_i_button_8h" kindref="compound">UIButton.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_input_manager_8h" kindref="compound">Input/InputManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OgreOverlay.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OgreOverlayContainer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OgreOverlayManager.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="classme_1_1_u_i_button_1a4badcebd8f4673c47da04251e674627b" kindref="member">me::UIButton::UIButton</ref>(std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>mButtonArea<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Ogre::TextAreaOverlayElement*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" kindref="member">mOverlayManager</ref>-&gt;createOverlayElement(</highlight><highlight class="stringliteral">&quot;TextArea&quot;</highlight><highlight class="normal">,<sp/>name<sp/>+<sp/>std::to_string(<ref refid="classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5" kindref="member">mElems</ref>)));</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" kindref="member">mOverlay</ref><sp/>=<sp/><ref refid="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" kindref="member">mOverlayManager</ref>-&gt;create(name<sp/>+<sp/>std::to_string(<ref refid="classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5" kindref="member">mElems</ref>));</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a67ffd299a2d16537316c96d66926b43d" kindref="member">setTop</ref>(top);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a56c2bab5a90e09e841afe007badd9e4e" kindref="member">setLeft</ref>(left);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1aaa30c97b12f4d43c44081224c1fd0199" kindref="member">setSize</ref>(<ref refid="class_vector2" kindref="compound">Vector2</ref>(width,height));</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a48c74046686a52b34045e909a8565aaf" kindref="member">setWidth</ref>(width);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a628e925b6913ee1155f23e8ad37815e7" kindref="member">setHeight</ref>(height);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c" kindref="member">mInteractive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" kindref="member">mOverlay</ref>-&gt;add2D((Ogre::OverlayContainer*)mButtonArea);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="classme_1_1_u_i_button_1a9ad86b3ef9094f90d00ff40a9e7544dd" kindref="member">me::UIButton::~UIButton</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_button_1a6f23eed6a44e48a048b8f27dc5833e02" kindref="member">me::UIButton::update</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mInteractive)<sp/>handleInput();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_button_1a905067005975c623c949084da80862ff" kindref="member">me::UIButton::handleInput</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>mousePosition<sp/>=<sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">me::inputManager</ref>().<ref refid="classme_1_1_input_manager_1a4c24100552d97f3d2a88e535e0f87ea8" kindref="member">getMousePositon</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mFocus<sp/>&amp;&amp;<sp/>mousePosition.<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref><sp/>&gt;=<sp/>getPos().x<sp/>&amp;&amp;<sp/>mousePosition.<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref><sp/>&lt;=<sp/>getPos().x<sp/>+<sp/>getSize().x<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mousePosition.<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref><sp/>&gt;=<sp/>getPos().y<sp/>&amp;&amp;<sp/>mousePosition.<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref><sp/>&lt;=<sp/>getPos().y<sp/>+<sp/>getSize().y)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*if<sp/>(me::inputManager().justClicked())<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>l<sp/>:<sp/>mLambda)<sp/>l();</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_button_1a4b56be5e35fa2983c5cb13c8d75744eb" kindref="member">me::UIButton::onClick</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/>l)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>mLambda.push_back(l);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/UIButton.cpp"/>
+  </compounddef>
+</doxygen>

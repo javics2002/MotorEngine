@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__scroll" xml:lang="en-US">
+<title>nk_scroll Struct Reference</title>
+<indexterm><primary>nk_scroll</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> <link linkend="_structnk__scroll_1a6aa7dbdff410aadfde55e7514aca101d">x</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> <link linkend="_structnk__scroll_1a44fba8e9fb1e206f240e20257aad50b7">y</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__scroll_1a6aa7dbdff410aadfde55e7514aca101d"/><section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>nk_scroll</secondary></indexterm>
+<indexterm><primary>nk_scroll</primary><secondary>x</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> nk_scroll::x</computeroutput></para></section>
+<anchor xml:id="_structnk__scroll_1a44fba8e9fb1e206f240e20257aad50b7"/><section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>nk_scroll</secondary></indexterm>
+<indexterm><primary>nk_scroll</primary><secondary>y</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> nk_scroll::y</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

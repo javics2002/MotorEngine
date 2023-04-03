@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_sound_manager_8h" kind="file" language="C++">
+    <compoundname>SoundManager.h</compoundname>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cctype</includes>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includes refid="_singleton_8h" local="yes">Utils/Singleton.h</includes>
+    <includes refid="_vector3_8h" local="yes">Utils/Vector3.h</includes>
+    <includedby refid="_sound_manager_8cpp" local="yes">Src/Audio/SoundManager.cpp</includedby>
+    <includedby refid="_audio_2main_8cpp" local="yes">Src/Audio/main.cpp</includedby>
+    <includedby refid="_audio_listener_8cpp" local="yes">Src/EntityComponent/Components/AudioListener.cpp</includedby>
+    <includedby refid="_audio_source_8cpp" local="yes">Src/EntityComponent/Components/AudioSource.cpp</includedby>
+    <includedby refid="_motor_engine_8cpp" local="yes">Src/MotorEngine/MotorEngine.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/Audio/SoundManager.h</label>
+        <link refid="_sound_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="6">
+        <label>Utils/Singleton.h</label>
+        <link refid="_singleton_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>algorithm</label>
+      </node>
+      <node id="4">
+        <label>cctype</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="9">
+        <label>math.h</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="2">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/Audio/SoundManager.cpp</label>
+        <link refid="_sound_manager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/Audio/SoundManager.h</label>
+        <link refid="_sound_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Src/Audio/main.cpp</label>
+        <link refid="_audio_2main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/AudioSource.cpp</label>
+        <link refid="_audio_source_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Src/MotorEngine/MotorEngine.cpp</label>
+        <link refid="_motor_engine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_sound_manager" prot="public">me::SoundManager</innerclass>
+    <innernamespace refid="namespace_f_m_o_d">FMOD</innernamespace>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_sound_manager_8h_1a4d6d4145f8c3f65e5d922d879bf8cd66" prot="public" static="no">
+        <name>_FMOD_SOUND_MANAGER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="3" column="9" bodyfile="Src/Audio/SoundManager.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int FMOD_MODE</definition>
+        <argsstring></argsstring>
+        <name>FMOD_MODE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="21" column="22" bodyfile="Src/Audio/SoundManager.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_sound_manager_8h_1ae3f91b6700d531ec62e89650ab25b9e6" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int CHANNEL_NUMBER</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_NUMBER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="22" column="13" bodyfile="Src/Audio/SoundManager.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_FMOD_SOUND_MANAGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="_sound_manager_8h_1a4d6d4145f8c3f65e5d922d879bf8cd66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_FMOD_SOUND_MANAGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cctype&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_singleton_8h" kindref="compound">Utils/Singleton.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector3_8h" kindref="compound">Utils/Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespace_f_m_o_d" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_f_m_o_d" kindref="compound">FMOD</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Sound;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ChannelGroup;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Channel;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>FMOD_RESULT;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">FMOD_VECTOR;</highlight></codeline>
+<codeline lineno="21" refid="_sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca" kindref="member">FMOD_MODE</ref>;</highlight></codeline>
+<codeline lineno="22" refid="_sound_manager_8h_1ae3f91b6700d531ec62e89650ab25b9e6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_sound_manager_8h_1ae3f91b6700d531ec62e89650ab25b9e6" kindref="member">CHANNEL_NUMBER</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="namespaceme" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Maximum<sp/>number<sp/>of<sp/>channels<sp/>allowed<sp/>to<sp/>exist<sp/>in<sp/>this<sp/>particular<sp/>system<sp/>setting.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespaceme_1a15c4fa676c025760938ddb5ba349c4e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a15c4fa676c025760938ddb5ba349c4e1" kindref="member">MAX_CHANNELS</ref><sp/>=<sp/>36;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Scaling<sp/>factor<sp/>for<sp/>how<sp/>much<sp/>the<sp/>pitch<sp/>varies<sp/>due<sp/>to<sp/>doppler<sp/>shifting<sp/>in<sp/>3D<sp/>sound.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="namespaceme_1a481a0c381d7e955f1654c93f4a046839" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a481a0c381d7e955f1654c93f4a046839" kindref="member">DOPPLER_SCALE</ref><sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Relative<sp/>distance<sp/>factor,<sp/>compared<sp/>to<sp/>1.0<sp/>meters.<sp/>How<sp/>many<sp/>units<sp/>per<sp/>meter<sp/>my<sp/>engine<sp/>have.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespaceme_1a439b64171f81c9557e8dab9df2adc081" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a439b64171f81c9557e8dab9df2adc081" kindref="member">DISTANCE_FACTOR</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Global<sp/>attenuation<sp/>rolloff<sp/>factor.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="namespaceme_1a266976037dee6b06b15e6604621b0adf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a266976037dee6b06b15e6604621b0adf" kindref="member">ROLLOFF_SCALE</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classme_1_1_sound_manager" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_sound_manager" kindref="compound">SoundManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_singleton" kindref="compound">Singleton</ref>&lt;SoundManager&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_singleton" kindref="compound">Singleton&lt;SoundManager&gt;</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_sound_manager" kindref="compound">SoundManager</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stores<sp/>audio<sp/>handles<sp/>linked<sp/>to<sp/>their<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>FMOD::Sound*&gt;<sp/>mSoundsMap;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stores<sp/>audio<sp/>handles<sp/>linked<sp/>to<sp/>the<sp/>last<sp/>channel<sp/>they<sp/>where<sp/>played<sp/>in.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;FMOD::Sound*,CHANNEL_NUMBER&gt;<sp/>mLastPlayedMap;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stores<sp/>channel<sp/>group<sp/>names<sp/>linked<sp/>to<sp/>their<sp/>handle.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>FMOD::ChannelGroup*&gt;<sp/>mChannelGroupMaps;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stores<sp/>every<sp/>audio<sp/>channel.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;FMOD::Channel*&gt;<sp/>mChannelsVector;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Basic<sp/>channel<sp/>groups<sp/>provided<sp/>by<sp/>the<sp/>SoundManager.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD::ChannelGroup*<sp/>mEffects,<sp/>*<sp/>mMusic,<sp/>*mMaster;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;bool&gt;<sp/>mListeners;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//The<sp/>sound<sp/>system<sp/>over<sp/>which<sp/>every<sp/>bit<sp/>of<sp/>audio<sp/>gets<sp/>created.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD::System*<sp/>mSoundSystem<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkFMODResult(FMOD_RESULT<sp/>FMODResult);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD::Sound*<sp/>getSound(std::string<sp/>soundName);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD::Channel*<sp/>getChannel(std::string<sp/>soundName);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD::ChannelGroup*<sp/>getGroupChannel(std::string<sp/>channelGroupName);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>changeChannelVolume(std::string<sp/>channelGroupName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>volume);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>nameToLower(std::string<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FMOD_RESULT<sp/>mResult;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>systemRefresh();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>create3DSound(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>soundPath,<sp/>std::string<sp/>soundName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minDistance,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxDistance);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createNormalSound(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>soundPath,<sp/>std::string<sp/>soundName);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setSpeed(std::string<sp/>soundName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>newSpeed);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setMode(std::string<sp/>soundName,<sp/><ref refid="_sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca" kindref="member">FMOD_MODE</ref><sp/>newMode);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createChannelGroup(std::string<sp/>groupName);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setChannelVolume(std::string<sp/>groupName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>newVolume);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setVolume(std::string<sp/>soundName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>newVolume);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getVolume(std::string<sp/>soundName);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pauseSound(std::string<sp/>soundName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pause);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>playSound(std::string<sp/>soundName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isLoop,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>channelGroup,<sp/>FMOD_VECTOR*<sp/>channelPos,<sp/>FMOD_VECTOR*<sp/>channelVel,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timesLooped);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>deleteSound(std::string<sp/>soundName);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateListenersPosition(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>listenerPos,<sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>listenerFW,<sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>listenerUP,<sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>listenerVel<sp/>=<sp/>{<sp/>0,0,0<sp/>});</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeListener(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setSoundPosition(std::string<sp/>soundName,<sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>position);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160" kindref="member">getNextUsefulListenerIndex</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>mListeners.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mListeners[i])</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_sound_manager" kindref="compound">SoundManager</ref>&amp;<sp/><ref refid="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" kindref="member">soundManager</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260" kindref="member">SoundManager::instance</ref>();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!_FMOD_SOUND_MANAGER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/Audio/SoundManager.h"/>
+  </compounddef>
+</doxygen>

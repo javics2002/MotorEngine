@@ -1,0 +1,873 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_vector3" kind="class" language="C++" prot="public">
+    <compoundname>me::Vector3</compoundname>
+    <includes refid="_vector3_8h" local="no">Vector3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classme_1_1_vector3_1a9c64642050dc360a016090fc80c063c4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector3::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>me::Vector3::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="40" column="7" bodyfile="Src/Utils/Vector3.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_vector3_1ae5654880d96f9bc0b064db5058149bee" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector3::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>me::Vector3::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="40" column="9" bodyfile="Src/Utils/Vector3.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_vector3_1ac32ec3fedcfc9ca6a6e1260bf55cbeaa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector3::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>me::Vector3::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="40" column="11" bodyfile="Src/Utils/Vector3.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classme_1_1_vector3_1acfb578ff423971d7e263869dd1d54e3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::lerp</definition>
+        <argsstring>(float a, float b, float f)</argsstring>
+        <name>lerp</name>
+        <qualifiedname>me::Vector3::lerp</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="37" column="7" bodyfile="Src/Utils/Vector3.cpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_vector3_1ac8821c6d2b9ed58a7f9b8c88305e4d36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>me::Vector3::Vector3</definition>
+        <argsstring>()</argsstring>
+        <name>Vector3</name>
+        <qualifiedname>me::Vector3::Vector3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="43" column="1" bodyfile="Src/Utils/Vector3.h" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a1de965b6eb0a8481deae2c985cb61828" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>me::Vector3::Vector3</definition>
+        <argsstring>(float a, float b, float c)</argsstring>
+        <name>Vector3</name>
+        <qualifiedname>me::Vector3::Vector3</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="49" column="1" bodyfile="Src/Utils/Vector3.h" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1acedcce13ac1b0827a208c86afe28cd6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>me::Vector3::Vector3</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>Vector3</name>
+        <qualifiedname>me::Vector3::Vector3</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="55" column="1" bodyfile="Src/Utils/Vector3.h" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a99f85da3057603ccb39f6eb763034f04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator-</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>me::Vector3::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the difference between this vector and another vector</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to subtract from this vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The difference between this vector and the other vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="68" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1af53975ac627719c8f5cec4d993109a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator-=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>me::Vector3::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the difference between this vector and another vector</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to subtract from this vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The difference between this vector and the other vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="76" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a9228f34c33c47c753442a5402aaaf0ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator+</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>me::Vector3::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the sum of this vector and another vector</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to add to this vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sum of this vector and the other vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="84" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a463d61af7a0820031e0380b0a5843194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator+=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>me::Vector3::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the sum of this vector and another vector</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to add to this vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sum of this vector and the other vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="92" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1ac57cc7f826080b81bb18a98a7fbd5b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator*</definition>
+        <argsstring>(const float &amp;s)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>me::Vector3::operator*</qualifiedname>
+        <param>
+          <type>const float &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the product of this vector and a scalar</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scalar to multiply this vector by </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The product of this vector and the scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="100" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a9a86611849b69a8a0a999a792b429b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator*=</definition>
+        <argsstring>(const float &amp;s)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>me::Vector3::operator*=</qualifiedname>
+        <param>
+          <type>const float &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the product of this vector and a scalar</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scalar to multiply this vector by </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The product of this vector and the scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="108" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a7042bc8cf846ecfe090472cafd19c4de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::operator=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>me::Vector3::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="111" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="40" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a969763079ad5dc688c283b316c58f04b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::operator=</definition>
+        <argsstring>(const Vector3 *v)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>me::Vector3::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="112" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a2c44bbfe8c2b0c594ce59a0d21dc9e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::operator=</definition>
+        <argsstring>(const btVector3 &amp;v)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>me::Vector3::operator=</qualifiedname>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="113" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="59" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a6ec99d2e2c0f781c257bf9c2e665ee40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::operator==</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>me::Vector3::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if this vector is equal to another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to check equality with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the two vectors are equal, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="121" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a3bb95b94a0911ae9f1eae66695f65c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::operator!=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>me::Vector3::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if this vector is not equal to another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to check inequality with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the two vectors are not equal, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="129" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1aeea975239841f3092d46e3b5fc00e650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::lerp</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b, float f)</argsstring>
+        <name>lerp</name>
+        <qualifiedname>me::Vector3::lerp</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting vector to interpolate from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending vector to interpolate to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolation factor, a value between 0 and 1 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="138" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a0502f6bddb56abe607b38ab71cf836cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::magnitude</definition>
+        <argsstring>()</argsstring>
+        <name>magnitude</name>
+        <qualifiedname>me::Vector3::magnitude</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the magnitude (length) of the vector</para>
+<para><simplesect kind="return"><para>The magnitude of the vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="145" column="7" bodyfile="Src/Utils/Vector3.cpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a27f9aa009d2bc1bcb04b0ec131808e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <qualifiedname>me::Vector3::normalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Normalize the vector to have a magnitude of 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="150" column="6" bodyfile="Src/Utils/Vector3.cpp" bodystart="81" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a84741e7d6dfbfffb99f003b553999311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::dot</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>dot</name>
+        <qualifiedname>me::Vector3::dot</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the dot product between this vector and another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to calculate the dot product with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The dot product of the two vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="158" column="7" bodyfile="Src/Utils/Vector3.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1ad2a9b10b8f2f2781005cd75d0298484e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::cross</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>cross</name>
+        <qualifiedname>me::Vector3::cross</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the cross product between this vector and another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to calculate the cross product with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The cross product of the two vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="166" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a5bca587233ee8c0c680cf78e90dc9fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::zero</definition>
+        <argsstring>()</argsstring>
+        <name>zero</name>
+        <qualifiedname>me::Vector3::zero</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="171" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1af06c065a31f91da96512e66470a5b2d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::up</definition>
+        <argsstring>()</argsstring>
+        <name>up</name>
+        <qualifiedname>me::Vector3::up</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing upwards along the y-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="176" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1afc3e8c147fa86dfc49d34ec718c3965f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::down</definition>
+        <argsstring>()</argsstring>
+        <name>down</name>
+        <qualifiedname>me::Vector3::down</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing downwards along the y-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="181" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1ae8ce996e2ba77eb37eee8ce08cf0dcc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::left</definition>
+        <argsstring>()</argsstring>
+        <name>left</name>
+        <qualifiedname>me::Vector3::left</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing to the left along the x-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="186" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a5141f62fab57a78d67362f610a80e78d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::right</definition>
+        <argsstring>()</argsstring>
+        <name>right</name>
+        <qualifiedname>me::Vector3::right</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing to the right along the x-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="191" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a5728ce1ca8624d278e426d31ac94afaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::back</definition>
+        <argsstring>()</argsstring>
+        <name>back</name>
+        <qualifiedname>me::Vector3::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing backwards along the z-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="196" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1aaff942df255dceef6ed6e67e2f3a5e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::forward</definition>
+        <argsstring>()</argsstring>
+        <name>forward</name>
+        <qualifiedname>me::Vector3::forward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a unit vector pointing forwards along the z-axis </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="201" column="9" bodyfile="Src/Utils/Vector3.cpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a4deee5dd2e7d7987aeae0f4801853012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::distance</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>distance</name>
+        <qualifiedname>me::Vector3::distance</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the distance between this vector and another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The distance between the two vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="209" column="7" bodyfile="Src/Utils/Vector3.cpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a669c925db6273fd5d5998109c0e8f479" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::angle</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>angle</name>
+        <qualifiedname>me::Vector3::angle</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the angle between this vector and another vector &quot;v&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle between the two vectors in degrees </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="217" column="7" bodyfile="Src/Utils/Vector3.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1a0be34d0f041fc68996ec5cdd0bff584a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" kindref="member">Ogre::Vector3f</ref></type>
+        <definition>Ogre::Vector3f me::Vector3::v3ToOgreV3</definition>
+        <argsstring>()</argsstring>
+        <name>v3ToOgreV3</name>
+        <qualifiedname>me::Vector3::v3ToOgreV3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the conversion of a <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> to an <ref refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" kindref="member">Ogre::Vector3f</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="231" column="16" bodyfile="Src/Utils/Vector3.cpp" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector3_1acf528d3a6b29fc816a4e3b75b358c878" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>btVector3</type>
+        <definition>btVector3 me::Vector3::v3ToBulletV3</definition>
+        <argsstring>()</argsstring>
+        <name>v3ToBulletV3</name>
+        <qualifiedname>me::Vector3::v3ToBulletV3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the conversion of a <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> to an btVector3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="236" column="11" bodyfile="Src/Utils/Vector3.cpp" bodystart="158" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classme_1_1_vector3_1a3958b94f7c0d4e6620dd4566b49c7676" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacestd_1a6a5cbaba415722865ff10d1ee0c559d0" kindref="member">std::ostream</ref> &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Vector3 &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>me::Vector3::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type><ref refid="namespacestd_1a6a5cbaba415722865ff10d1ee0c559d0" kindref="member">std::ostream</ref> &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a formatted string representation of the vector</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream with the formatted string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector3.h" line="226" column="8" bodyfile="Src/Utils/Vector3.cpp" bodystart="142" bodyend="146"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Utils/Vector3.h" line="33" column="1" bodyfile="Src/Utils/Vector3.h" bodystart="34" bodyend="238"/>
+    <listofallmembers>
+      <member refid="classme_1_1_vector3_1a669c925db6273fd5d5998109c0e8f479" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>angle</name></member>
+      <member refid="classme_1_1_vector3_1a5728ce1ca8624d278e426d31ac94afaa" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>back</name></member>
+      <member refid="classme_1_1_vector3_1ad2a9b10b8f2f2781005cd75d0298484e" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>cross</name></member>
+      <member refid="classme_1_1_vector3_1a4deee5dd2e7d7987aeae0f4801853012" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>distance</name></member>
+      <member refid="classme_1_1_vector3_1a84741e7d6dfbfffb99f003b553999311" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>dot</name></member>
+      <member refid="classme_1_1_vector3_1afc3e8c147fa86dfc49d34ec718c3965f" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>down</name></member>
+      <member refid="classme_1_1_vector3_1aaff942df255dceef6ed6e67e2f3a5e0a" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>forward</name></member>
+      <member refid="classme_1_1_vector3_1ae8ce996e2ba77eb37eee8ce08cf0dcc3" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>left</name></member>
+      <member refid="classme_1_1_vector3_1acfb578ff423971d7e263869dd1d54e3e" prot="private" virt="non-virtual"><scope>me::Vector3</scope><name>lerp</name></member>
+      <member refid="classme_1_1_vector3_1aeea975239841f3092d46e3b5fc00e650" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>lerp</name></member>
+      <member refid="classme_1_1_vector3_1a0502f6bddb56abe607b38ab71cf836cd" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>magnitude</name></member>
+      <member refid="classme_1_1_vector3_1a27f9aa009d2bc1bcb04b0ec131808e4e" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>normalize</name></member>
+      <member refid="classme_1_1_vector3_1a3bb95b94a0911ae9f1eae66695f65c70" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator!=</name></member>
+      <member refid="classme_1_1_vector3_1ac57cc7f826080b81bb18a98a7fbd5b03" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator*</name></member>
+      <member refid="classme_1_1_vector3_1a9a86611849b69a8a0a999a792b429b30" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator*=</name></member>
+      <member refid="classme_1_1_vector3_1a9228f34c33c47c753442a5402aaaf0ba" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator+</name></member>
+      <member refid="classme_1_1_vector3_1a463d61af7a0820031e0380b0a5843194" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator+=</name></member>
+      <member refid="classme_1_1_vector3_1a99f85da3057603ccb39f6eb763034f04" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator-</name></member>
+      <member refid="classme_1_1_vector3_1af53975ac627719c8f5cec4d993109a1b" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator-=</name></member>
+      <member refid="classme_1_1_vector3_1a3958b94f7c0d4e6620dd4566b49c7676" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classme_1_1_vector3_1a7042bc8cf846ecfe090472cafd19c4de" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator=</name></member>
+      <member refid="classme_1_1_vector3_1a969763079ad5dc688c283b316c58f04b" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator=</name></member>
+      <member refid="classme_1_1_vector3_1a2c44bbfe8c2b0c594ce59a0d21dc9e6a" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator=</name></member>
+      <member refid="classme_1_1_vector3_1a6ec99d2e2c0f781c257bf9c2e665ee40" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>operator==</name></member>
+      <member refid="classme_1_1_vector3_1a5141f62fab57a78d67362f610a80e78d" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>right</name></member>
+      <member refid="classme_1_1_vector3_1af06c065a31f91da96512e66470a5b2d8" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>up</name></member>
+      <member refid="classme_1_1_vector3_1acf528d3a6b29fc816a4e3b75b358c878" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>v3ToBulletV3</name></member>
+      <member refid="classme_1_1_vector3_1a0be34d0f041fc68996ec5cdd0bff584a" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>v3ToOgreV3</name></member>
+      <member refid="classme_1_1_vector3_1ac8821c6d2b9ed58a7f9b8c88305e4d36" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>Vector3</name></member>
+      <member refid="classme_1_1_vector3_1a1de965b6eb0a8481deae2c985cb61828" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>Vector3</name></member>
+      <member refid="classme_1_1_vector3_1acedcce13ac1b0827a208c86afe28cd6f" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>Vector3</name></member>
+      <member refid="classme_1_1_vector3_1a9c64642050dc360a016090fc80c063c4" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>x</name></member>
+      <member refid="classme_1_1_vector3_1ae5654880d96f9bc0b064db5058149bee" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>y</name></member>
+      <member refid="classme_1_1_vector3_1ac32ec3fedcfc9ca6a6e1260bf55cbeaa" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>z</name></member>
+      <member refid="classme_1_1_vector3_1a5bca587233ee8c0c680cf78e90dc9fc5" prot="public" virt="non-virtual"><scope>me::Vector3</scope><name>zero</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

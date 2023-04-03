@@ -1,0 +1,91 @@
+.TH "me::Window" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::Window
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Window\&.h>\fP
+.PP
+Inherits \fBme::Singleton< Window >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Window\fP ()"
+.br
+.ti -1c
+.RI "\fBSDL_Window\fP * \fBget\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Singleton< Window >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP (const \fBSingleton\fP< \fBWindow\fP > &o)=delete"
+.br
+.ti -1c
+.RI "\fBSingleton\fP< \fBWindow\fP > & \fBoperator=\fP (const \fBSingleton\fP< \fBWindow\fP > &o)=delete"
+.br
+.ti -1c
+.RI "virtual \fB~Singleton\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBme::Singleton< Window >\fP
+.in +1c
+.ti -1c
+.RI "static \fBWindow\fP * \fBinit\fP (Targs &&\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "static \fBWindow\fP * \fBinstance\fP ()"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBme::Singleton< Window >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages a SDL_Window instance so it can be shared among several modules like \fBOgre\fP and Bullet\&. By default, it'll initialize SDL and create an 854x480 SDL window named 'Motor Engine', and will take input focus\&. Initialize the window with: Window::init(Uint32 sdlFlags, const char* name, int x, int y, int w, int h, Uint32 windowFlags); and access the window with win()\&.\fBget()\fP; 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsdlFlags\fP 0, or one or more SDL_InitFlags OR'd together 
+.br
+\fIname\fP name of the window in UTF-8 encoding\&. 
+.br
+\fIx,y\fP position of the window\&. Use \fCSDL_WINDOWPOS_CENTERED\fP or \fCSDL_WINDOWPOS_UNDEFINED\fP\&. 
+.br
+\fIw,h\fP width and height of the window in screen coordinates 
+.br
+\fIwindowFlags\fP 0, or one or more SDL_WindowFlags OR'd together 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Window::~Window ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSDL_Window\fP * Window::get ()"
+
+.PP
+\fBReturns\fP
+.RS 4
+The window that was created or NULL on failure\&. Call SDL_GetError() for more information\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

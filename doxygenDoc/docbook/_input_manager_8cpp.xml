@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__input_manager_8cpp" xml:lang="en-US">
+<title>Src/Input/InputManager.cpp File Reference</title>
+<indexterm><primary>Src/Input/InputManager.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;InputManager.h&quot;<?linebreak?>#include &quot;InputCode.h&quot;<?linebreak?>#include &lt;SDL3/SDL_events.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__input_manager_8cpp_1af1497234f027fd77d5dbe17e8e63c96f">EVENT_BUTTON_DOWN</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="__input_manager_8cpp_1ae673ee4177404af25fa2a21d9be1deb9">EVENT_BUTTON_UP</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__input_manager_8cpp_1af1497234f027fd77d5dbe17e8e63c96f"/><section>
+    <title>EVENT_BUTTON_DOWN</title>
+<indexterm><primary>EVENT_BUTTON_DOWN</primary><secondary>InputManager.cpp</secondary></indexterm>
+<indexterm><primary>InputManager.cpp</primary><secondary>EVENT_BUTTON_DOWN</secondary></indexterm>
+<para><computeroutput>#define EVENT_BUTTON_DOWN</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_KEY_DOWN&#32;||&#32;\
+&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_MOUSE_BUTTON_DOWN&#32;||&#32;\
+&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_GAMEPAD_BUTTON_DOWN
+</programlisting></section>
+<anchor xml:id="__input_manager_8cpp_1ae673ee4177404af25fa2a21d9be1deb9"/><section>
+    <title>EVENT_BUTTON_UP</title>
+<indexterm><primary>EVENT_BUTTON_UP</primary><secondary>InputManager.cpp</secondary></indexterm>
+<indexterm><primary>InputManager.cpp</primary><secondary>EVENT_BUTTON_UP</secondary></indexterm>
+<para><computeroutput>#define EVENT_BUTTON_UP</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_KEY_UP&#32;||&#32;\
+&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_MOUSE_BUTTON_UP&#32;||&#32;\
+&#32;&#32;&#32;&#32;<emphasis role="keyword">event</emphasis>-&gt;type&#32;==&#32;SDL_EVENT_GAMEPAD_BUTTON_UP
+</programlisting></section>
+</section>
+</section>

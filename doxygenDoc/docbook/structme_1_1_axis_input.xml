@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structme_1_1_axis_input" xml:lang="en-US">
+<title>me::AxisInput Struct Reference</title>
+<indexterm><primary>me::AxisInput</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Axis.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>InputType <link linkend="_structme_1_1_axis_input_1a51b46317cbbcb1bdc4e83d8e23ee14ca">type</link></para>
+</listitem>
+            <listitem><para>union {</para>
+        <itemizedlist>
+            <listitem><para>&#160;&#160;&#160;int <link linkend="_structme_1_1_axis_input_1a2649597beb9c3361d20740ce4f37e744">which</link></para>
+</listitem>
+            <listitem><para>&#160;&#160;&#160;int <link linkend="_structme_1_1_axis_input_1a939f0dee47aee351580ad07978474483">positive</link></para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>}; </para>
+</listitem>
+            <listitem><para>int <link linkend="_structme_1_1_axis_input_1a642b59ba47eea1e1696770088835119c">negative</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structme_1_1_axis_input_1a37547d4ae0ed7aabd6dca3fe388eaade"/><section>
+    <title></title>
+<para><computeroutput>union  { ... }  me::AxisInput::@2</computeroutput></para></section>
+<anchor xml:id="_structme_1_1_axis_input_1a642b59ba47eea1e1696770088835119c"/><section>
+    <title>negative</title>
+<indexterm><primary>negative</primary><secondary>me::AxisInput</secondary></indexterm>
+<indexterm><primary>me::AxisInput</primary><secondary>negative</secondary></indexterm>
+<para><computeroutput>int me::AxisInput::negative</computeroutput></para></section>
+<anchor xml:id="_structme_1_1_axis_input_1a939f0dee47aee351580ad07978474483"/><section>
+    <title>positive</title>
+<indexterm><primary>positive</primary><secondary>me::AxisInput</secondary></indexterm>
+<indexterm><primary>me::AxisInput</primary><secondary>positive</secondary></indexterm>
+<para><computeroutput>int me::AxisInput::positive</computeroutput></para></section>
+<anchor xml:id="_structme_1_1_axis_input_1a51b46317cbbcb1bdc4e83d8e23ee14ca"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>me::AxisInput</secondary></indexterm>
+<indexterm><primary>me::AxisInput</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>InputType me::AxisInput::type</computeroutput></para></section>
+<anchor xml:id="_structme_1_1_axis_input_1a2649597beb9c3361d20740ce4f37e744"/><section>
+    <title>which</title>
+<indexterm><primary>which</primary><secondary>me::AxisInput</secondary></indexterm>
+<indexterm><primary>me::AxisInput</primary><secondary>which</secondary></indexterm>
+<para><computeroutput>int me::AxisInput::which</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/Input/<link linkend="__axis_8h">Axis.h</link></section>
+</section>

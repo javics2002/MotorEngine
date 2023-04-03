@@ -12,14 +12,17 @@ namespace Ogre {
 
 namespace me {
 	class MeshRenderer;
+	
+	/**
 
+	*/
 	class __MOTORENGINE_API Animator : public Component
 	{
 	public:
 		Animator();
 		~Animator();
 
-
+		void start() override;
 		void update() override;
 
 		/**

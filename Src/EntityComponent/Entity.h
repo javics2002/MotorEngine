@@ -10,6 +10,7 @@ of a set of components.
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "InfoScene.h"
+#include "Components/ComponentsFactory.h"
 #include <vector>
 #include <map>
 
@@ -17,6 +18,12 @@ namespace me {
 	class Scene;
 	class Component;
 
+	/**
+	An Entity is anything that exists in a scene.
+	An Entity by itself doesn´t do anything - its behaviour is defined by the Components 
+	it possesses, which are stored in the mComponents map.
+	An Entity has a name, a reference to the scene it exists in and can be active or not.
+	*/
 	class __MOTORENGINE_API Entity {
 		friend Scene;
 
@@ -41,42 +48,51 @@ namespace me {
 
 		
 		/**
-		Add a new component. If the component
-		already exists, write a cout in debug mode
-		@param component the key  of the component in the map
-		@param Variable number of arguments of any type.
+		Add a new component. If the component already exists, write a cout in debug mode
+		@param componentName The key of the component in the map
+		@param params std::unordered_map<std::string parameterName, std::string parameterValue> 
 		@return Reference to the new component.
 		*/
 		Component* addComponent(const ComponentName& componentName, Parameters& params);
 
+		/**
+		Add a new component. If the component already exists, returns a reference to the existing component.
+		@tparam T component type to be returned
+		@param params std::unordered_map<std::string parameterName, std::string parameterValue>
+		@return Reference to the new component.
+		*/
 		template<typename T>
-		T* addComponent(const ComponentName& componentName);
+		T* addComponent(const ComponentName& componentName) {
+			T* component = static_cast<T*>(componentsFactory().create(componentName));
+
+			if (!hasComponent(componentName)) {
+
+				mComponents.insert({ componentName, component });
+				component->setEntity(this);
+				component->start();
+			}
+			else
+				return getComponent<T>(componentName);
+
+			return component;
+		};
 
 		/**
 		Remove completely a typed component.
 		*/
-		template<typename T>
-		bool removeComponent(ComponentName& component) {
-			if (hasComponent(component)) {
-				delete mComponents.find(component)->second;
-				mComponents.erase(component);
-				return true;
-			}
-			return false;
-		}
+		bool removeComponent(const ComponentName& componentName);
 		
-
 		/**
 		Get the reference a suggested component.
 		@param key name  in the map
 		@return Reference to the component.
 		*/
 		template<typename T>
-		inline T* getComponent(const ComponentName& component) {
+		inline T* getComponent(const ComponentName& componentName) {
+			if (!hasComponent(componentName))
+				return nullptr;
 
-			if (!hasComponent(component)) return nullptr;
-
-			return static_cast<T*>(mComponents.find(component)->second);
+			return static_cast<T*>(mComponents.find(componentName)->second);
 		};
 
 		/**
@@ -84,8 +100,8 @@ namespace me {
 		@param key name  in the map
 		@return Boolean confirmation.
 		*/
-		inline bool hasComponent(const ComponentName& component) {
-			return mComponents.find(component) != mComponents.end();
+		inline bool hasComponent(const ComponentName& name) {
+			return mComponents.find(name) != mComponents.end();
 		};
 
 		/**
@@ -152,18 +168,18 @@ namespace me {
 		/**
 		This function is called when the object collides with another object
 		*/
-		void OnCollisionEnter(Entity* other);
+		void onCollisionEnter(Entity* other);
 
 
 		/**
 		This function is called every frame while the object is colliding with another object
 		*/
-		void OnCollisionStay(Entity* other);
+		void onCollisionStay(Entity* other);
 
 		/**
 		This function is called when the object stops colliding with another object
 		*/
-		void OnCollisionExit(Entity* other);
+		void onCollisionExit(Entity* other);
 
 	private:
 

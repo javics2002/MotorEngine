@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__text" xml:lang="en-US">
+<title>nk_style_text Struct Reference</title>
+<indexterm><primary>nk_style_text</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__text_1a21064eb801febacffa14146f95ca7d74">color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__text_1a1939fda3b4e6295ec5645394a4fbc538">padding</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__text_1a21064eb801febacffa14146f95ca7d74"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_style_text</secondary></indexterm>
+<indexterm><primary>nk_style_text</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_text::color</computeroutput></para></section>
+<anchor xml:id="_structnk__style__text_1a1939fda3b4e6295ec5645394a4fbc538"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_text</secondary></indexterm>
+<indexterm><primary>nk_style_text</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_text::padding</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

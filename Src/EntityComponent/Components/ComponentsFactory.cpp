@@ -20,6 +20,13 @@ me::ComponentsFactory::~ComponentsFactory()
     mFactories.clear();
 }
 
+me::Component* me::ComponentsFactory::create(const ComponentName& name)
+{
+    assert(mFactories.count(name));
+    Parameters noParams;
+    return mFactories[name]->create(noParams);
+}
+
 me::Component* ComponentsFactory::create(const ComponentName& name, Parameters& params)
 {
     assert(mFactories.count(name));

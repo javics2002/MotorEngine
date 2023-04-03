@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__str" kind="struct" language="C++" prot="public">
+    <compoundname>nk_str</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__str_1af09f932d4972189976784f9f6974e894" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__buffer" kindref="compound">nk_buffer</ref></type>
+        <definition>struct nk_buffer nk_str::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <qualifiedname>nk_str::buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="3993" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="3993" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__str_1a3190eef31e3749578754e537adb19610" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_str::len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <qualifiedname>nk_str::len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="3994" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="3994" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>nk_allocator</label>
+        <link refid="structnk__allocator"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>alloc</edgelabel>
+          <edgelabel>free</edgelabel>
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_buffer</label>
+        <link refid="structnk__buffer"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>marker</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_buffer_marker</label>
+        <link refid="structnk__buffer__marker"/>
+      </node>
+      <node id="5">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="6">
+        <label>nk_memory</label>
+        <link refid="structnk__memory"/>
+      </node>
+      <node id="1">
+        <label>nk_str</label>
+        <link refid="structnk__str"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="3992" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="3992" bodyend="3995"/>
+    <listofallmembers>
+      <member refid="structnk__str_1af09f932d4972189976784f9f6974e894" prot="public" virt="non-virtual"><scope>nk_str</scope><name>buffer</name></member>
+      <member refid="structnk__str_1a3190eef31e3749578754e537adb19610" prot="public" virt="non-virtual"><scope>nk_str</scope><name>len</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

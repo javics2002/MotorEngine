@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_button_8h" xml:lang="en-US">
+<title>Src/EntityComponent/Components/UIButton.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/Components/UIButton.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;UIElement.h&quot;<?linebreak?>#include &lt;functional&gt;<?linebreak?>#include &lt;OgreTextAreaOverlayElement.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_u_i_button">me::UIButton</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__u_i_button_8h_1a60e8f443bedce9e217949e81a171ca35">__ENTITYCOMPONENT_UIBUTTON</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__u_i_button_8h_1a60e8f443bedce9e217949e81a171ca35"/><section>
+    <title>__ENTITYCOMPONENT_UIBUTTON</title>
+<indexterm><primary>__ENTITYCOMPONENT_UIBUTTON</primary><secondary>UIButton.h</secondary></indexterm>
+<indexterm><primary>UIButton.h</primary><secondary>__ENTITYCOMPONENT_UIBUTTON</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_UIBUTTON</computeroutput></para></section>
+</section>
+</section>

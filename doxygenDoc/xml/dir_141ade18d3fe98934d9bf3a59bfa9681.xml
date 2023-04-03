@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_141ade18d3fe98934d9bf3a59bfa9681" kind="dir">
+    <compoundname>Src/Utils</compoundname>
+    <innerfile refid="check_m_l_8h">checkML.h</innerfile>
+    <innerfile refid="_singleton_8h">Singleton.h</innerfile>
+    <innerfile refid="_time_8cpp">Time.cpp</innerfile>
+    <innerfile refid="_time_8h">Time.h</innerfile>
+    <innerfile refid="_utils_8h">Utils.h</innerfile>
+    <innerfile refid="_vector2_8cpp">Vector2.cpp</innerfile>
+    <innerfile refid="_vector2_8h">Vector2.h</innerfile>
+    <innerfile refid="_vector3_8cpp">Vector3.cpp</innerfile>
+    <innerfile refid="_vector3_8h">Vector3.h</innerfile>
+    <innerfile refid="_vector4_8cpp">Vector4.cpp</innerfile>
+    <innerfile refid="_vector4_8h">Vector4.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Utils/"/>
+  </compounddef>
+</doxygen>

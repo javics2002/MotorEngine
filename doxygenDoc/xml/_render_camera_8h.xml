@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_render_camera_8h" kind="file" language="C++">
+    <compoundname>RenderCamera.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includedby refid="_render_camera_8cpp" local="yes">Src/Render/RenderCamera.cpp</includedby>
+    <includedby refid="_render_manager_8cpp" local="yes">Src/Render/RenderManager.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="1">
+        <label>Src/Render/RenderCamera.h</label>
+        <link refid="_render_camera_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/Render/RenderCamera.cpp</label>
+        <link refid="_render_camera_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/Render/RenderCamera.h</label>
+        <link refid="_render_camera_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Src/Render/RenderManager.cpp</label>
+        <link refid="_render_manager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_render_camera" prot="public">me::RenderCamera</innerclass>
+    <innernamespace refid="namespace_ogre">Ogre</innernamespace>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_render_camera_8h_1afccb6235bc3a2a169056a0a46747b29a" prot="public" static="no">
+        <name>__RENDER_RENDERCAMERA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="3" column="9" bodyfile="Src/Render/RenderCamera.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__RENDER_RENDERCAMERA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="_render_camera_8h_1afccb6235bc3a2a169056a0a46747b29a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__RENDER_RENDERCAMERA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ogre" kindref="compound">Ogre</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Camera;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Viewport;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SceneNode;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SceneManager;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RenderWindow;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ColourValue;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dism,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="15" refid="class_ogre_1_1_vector" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_ogre_1_1_vector" kindref="compound">Vector</ref>;</highlight></codeline>
+<codeline lineno="16" refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Vector&lt;3, float&gt;</ref><sp/><ref refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" kindref="member">Vector3f</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="20" refid="classme_1_1_render_camera" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_render_camera" kindref="compound">RenderCamera</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>Ogre::Camera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::Camera*<sp/><ref refid="classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf" kindref="member">mCamera</ref><sp/>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>Ogre::Viewport<sp/>of<sp/>mCamera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::Viewport*<sp/><ref refid="classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f" kindref="member">mViewport</ref><sp/>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>Ogre::SceneNode<sp/>of<sp/>mCamera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::SceneNode*<sp/><ref refid="classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572" kindref="member">mCameraNode</ref><sp/>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>Ogre::SceneManager<sp/>created<sp/>by<sp/>RenderManager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::SceneManager*<sp/><ref refid="classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444" kindref="member">mSceneMgr</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>Ogre::RenderWindow<sp/>created<sp/>by<sp/>RenderManager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::RenderWindow*<sp/><ref refid="classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f" kindref="member">mRenderWindow</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_render_camera" kindref="compound">RenderCamera</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_render_camera" kindref="compound">~RenderCamera</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Assign<sp/>references</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>init(Ogre::SceneNode*<sp/>CameraNode,<sp/>Ogre::SceneManager*<sp/>SceneMgr,<sp/>Ogre::RenderWindow*<sp/><ref refid="classme_1_1_render_window" kindref="compound">RenderWindow</ref><sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>createCamera(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nearDist,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>farDist,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>autoRadio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zOrder,<sp/>Ogre::ColourValue<sp/>color);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>position<sp/>to<sp/>mCameraNode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref><sp/>&amp;pos);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>lookAT<sp/>to<sp/>mCameraNode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>lookAt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref><sp/>&amp;look);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setViewportDimension(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>setPosition(Vector3<sp/>pos);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>lookAt(Vector3<sp/>pos);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/Render/RenderCamera.h"/>
+  </compounddef>
+</doxygen>

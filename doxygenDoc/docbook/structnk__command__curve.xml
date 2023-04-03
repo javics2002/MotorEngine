@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__curve" xml:lang="en-US">
+<title>nk_command_curve Struct Reference</title>
+<indexterm><primary>nk_command_curve</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__curve_1a4a83c7e8c5ba8b4340238f9a7401461d">header</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__curve_1ae780aa8003d662d9873cba9527b0a02c">line_thickness</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__curve_1ac90ce7358b1ed8d529d2cbaec92c2fd7">begin</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__curve_1aa69e2aea76ec8cadbf55fd27557d6582">end</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__curve_1a237c28ec24d044902526a37ba721d325">ctrl</link> [2]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__command__curve_1a9e3bd7fb76b0ca7be0fd1a215bf28858">color</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__curve_1ac90ce7358b1ed8d529d2cbaec92c2fd7"/><section>
+    <title>begin</title>
+<indexterm><primary>begin</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_curve::begin</computeroutput></para></section>
+<anchor xml:id="_structnk__command__curve_1a9e3bd7fb76b0ca7be0fd1a215bf28858"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_command_curve::color</computeroutput></para></section>
+<anchor xml:id="_structnk__command__curve_1a237c28ec24d044902526a37ba721d325"/><section>
+    <title>ctrl</title>
+<indexterm><primary>ctrl</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>ctrl</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_curve::ctrl[2]</computeroutput></para></section>
+<anchor xml:id="_structnk__command__curve_1aa69e2aea76ec8cadbf55fd27557d6582"/><section>
+    <title>end</title>
+<indexterm><primary>end</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>end</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_curve::end</computeroutput></para></section>
+<anchor xml:id="_structnk__command__curve_1a4a83c7e8c5ba8b4340238f9a7401461d"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_curve::header</computeroutput></para></section>
+<anchor xml:id="_structnk__command__curve_1ae780aa8003d662d9873cba9527b0a02c"/><section>
+    <title>line_thickness</title>
+<indexterm><primary>line_thickness</primary><secondary>nk_command_curve</secondary></indexterm>
+<indexterm><primary>nk_command_curve</primary><secondary>line_thickness</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_curve::line_thickness</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_element_8h_source" xml:lang="en-US">
+<title>UIElement.h</title>
+<indexterm><primary>Src/EntityComponent/Components/UIElement.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_UIELEMENT</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_UIELEMENT</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__component_8h">Component.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__vector3_8h">Utils/Vector3.h</link>&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__vector2_8h">Utils/Vector2.h</link>&quot;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Overlay;
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>OverlayContainer;
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>OverlayManager;
+14 }
+15 
+16 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+17 
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_u_i_element">UIElement</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_component">Component</link>
+24 &#32;&#32;&#32;&#32;{
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_u_i_element">UIElement</link>();
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_u_i_element">~UIElement</link>();
+28 
+29 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;show();&#32;
+34 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;hide();&#32;
+39 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;getSize();
+45 
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;getPos();
+51 
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setSize(<link linkend="_class_vector2">Vector2</link>&#32;size);
+57 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isVisible();
+63 
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setTop(<emphasis role="keywordtype">float</emphasis>&#32;top);
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setLeft(<emphasis role="keywordtype">float</emphasis>&#32;left);
+74 
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setWidth(<emphasis role="keywordtype">float</emphasis>&#32;wifth);
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setHeight(<emphasis role="keywordtype">float</emphasis>&#32;height);
+85 
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setInteractive(<emphasis role="keywordtype">bool</emphasis>&#32;interactive);
+91 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setFocusNow(<emphasis role="keywordtype">bool</emphasis>&#32;focus);
+97 
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;getIsInteractive();
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;getIsFocusNow();
+108 
+109 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+110 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::OverlayManager*&#32;<link linkend="_classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50">mOverlayManager</link>;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Overlay*&#32;<link linkend="_classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb">mOverlay</link>;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::OverlayContainer*&#32;<link linkend="_classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752">mOverlayContainer</link>;
+114 
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c">mInteractive</link>;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca">mFocus</link>;
+117 
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;mElems=0;
+119 
+120 
+121 &#32;&#32;&#32;&#32;};
+122 }
+123 
+124 
+125 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;!__EC_UI:ELEMENT</emphasis>
+126 
+127 
+128 
+129 
+</programlisting></section>

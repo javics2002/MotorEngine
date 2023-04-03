@@ -1,0 +1,187 @@
+\hypertarget{_render_manager_8h_source}{}\doxysection{Render\+Manager.\+h}
+\label{_render_manager_8h_source}\index{Src/Render/RenderManager.h@{Src/Render/RenderManager.h}}
+\mbox{\hyperlink{_render_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_RENDER\_MANAGER}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_RENDER\_MANAGER}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{Utils/Singleton.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <OgreColourValue.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ogre}{Ogre}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }Root;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }FileSystemLayer;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }SceneManager;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }SceneNode;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }Quaternion;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }ColourValue;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }AnimationState;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}\ dism,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }Vector;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typedef}\ Vector<3,\ float>\ \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Vector3f}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{namespace\ }RTShader\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }ShaderGenerator;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }TextAreaOverlayElement;}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }RenderCamera;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }RenderMesh;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }RenderParticleSystem;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }SGTechniqueResolverListener;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }OverlayManager;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }Vector3;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }Vector4;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}<RenderManager>\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classme_1_1_singleton}{Singleton<RenderManager>}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Root\ de\ Ogre}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Ogre::Root*\ \mbox{\hyperlink{classme_1_1_render_manager_a576a756c04044763622b72c4b7e6e408}{mRoot}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//SceneManager\ de\ Ogre}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Ogre::SceneManager*\ mSM\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TEMPORAL\ VALUE\ FOR\ ANIMATION\ HITO1}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Ogre::AnimationState*\ \mbox{\hyperlink{classme_1_1_render_manager_a29da0fdf6dcdbb47720d300688a43ecf}{ogreAnimState}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_manager_a317bc83673486fbea07f73c5c1204ddc}{mResourceCfgPath}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_manager_a7d869efc48f5f6c524ff99abb74a460b}{mPluginCfgPath}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ OverlayManager*\ \mbox{\hyperlink{classme_1_1_render_manager_ab2a905f7d6c2aad56c8069f983df346c}{mOverlayManager}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_manager_ada59f65deb076e29c41816b7e28a1ebb}{mOgreCfgPath}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ogre\ fileSystem}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Ogre::FileSystemLayer*\ \mbox{\hyperlink{classme_1_1_render_manager_ad8430f766674f86c92404dfc32fc19da}{mFSLayer}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ogre\ ShaderGenerator}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ Ogre::RTShader::ShaderGenerator*\ \mbox{\hyperlink{classme_1_1_render_manager_a860b0a5af9a7f30d2c38fb5e09c7011a}{mShaderGenerator}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ogre\ Material\ Manager\ Listener}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_s_g_technique_resolver_listener}{SGTechniqueResolverListener}}*\ \mbox{\hyperlink{classme_1_1_render_manager_a23ad00e18700c36aac44b597525af289}{mMaterialMgrListener}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Path\ pointing\ to\ "{}/Main/x64/debug"{}}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_manager_aac24973efc5fb20e2a3f4b6d484dea82}{mSolutionPath}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ RenderWindow\ class}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_window}{RenderWindow}}*\ \mbox{\hyperlink{classme_1_1_render_manager_a87ae76e5b7a96184679e7973bba7ef75}{mOgreWindow}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Store\ camera\ name\ to\ ogreCamera}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ RenderCamera*>\ \mbox{\hyperlink{classme_1_1_render_manager_ab9321ec98f6b4b3d3e8bff1c0a44e6e3}{mCameras}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pairs\ each\ cameras\ with\ its\ name}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Store\ mesh\ name\ to\ ogreMesh}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ RenderMesh*>\ \mbox{\hyperlink{classme_1_1_render_manager_a67cc796cabfa82831eb2e85fd92a1f94}{mMeshes}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pairs\ each\ mesh\ with\ its\ name}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Store\ mesh\ name\ to\ ogreParticleSystem}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ RenderParticleSystem*>\ \mbox{\hyperlink{classme_1_1_render_manager_a6dbe72bad91d0c42c98c3ad3e0098369}{mParticles}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pairs\ each\ mesh\ with\ its\ name}}
+\DoxyCodeLine{00118\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initRoot();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initWindow();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ \ \ \ \ \ \ \ Find\ mResourcePath\ and\ add\ all\ written\ resources\ to\ Ogre::ResourceGroupManager}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ locateResources();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ loadResources();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ initialiseRTShaderSystem();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_camera}{RenderCamera}}*\ getCamera(std::string\ name);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_mesh}{RenderMesh}}*\ getMesh(std::string\ name);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_particle_system}{RenderParticleSystem}}*\ getParticle(std::string\ name);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}\&\mbox{\hyperlink{classme_1_1_render_manager_a9d9d473840134f9d316ed90af0b503d9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}\&o)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_manager_a7fc7bb82c0ea308eaf15bac7420abf1d}{RenderManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}\&o)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_manager}{\string~RenderManager}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ createCamera(std::string\ name,\ std::string\ parentName,\ \textcolor{keywordtype}{int}\ nearDist,\ \textcolor{keywordtype}{int}\ farDist,\ \textcolor{keywordtype}{bool}\ autoRadio,\ \textcolor{keywordtype}{int}\ zOrder,\ Ogre::ColourValue\ color\ =\ Ogre::ColourValue(0,\ 0,\ 0,\ 1));}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//bool\ createCamera(std::string\ name,\ int\ nearDist,\ int\ farDist,\ bool\ autoRadio,\ int\ zOrder,\ Ogre::ColourValue\ color);}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ createCamera(std::string\ name,\ \textcolor{keywordtype}{int}\ nearDist,\ \textcolor{keywordtype}{int}\ farDist,\ \textcolor{keywordtype}{bool}\ autoRadio,\ \textcolor{keywordtype}{int}\ zOrder,\ Ogre::ColourValue\ color\ =\ Ogre::ColourValue(0,\ 0,\ 0,\ 1));}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setCameraInfo(std::string\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&look);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setViewportDimension(std::string\ name,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//destroy\ OgreCamera\ created\ }}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ destroyCamera(std::string\ name);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createNewLight(std::string\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&dir);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ createMesh(std::string\ name,\ std::string\ nameMesh);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshTransform(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshTransform(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale,\ \mbox{\hyperlink{classme_1_1_vector4}{Vector4}}\ rot);}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ position\ info\ to\ the\ mesh\ with\ this\ name}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshPosition(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos);}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ scale\ info\ to\ the\ mesh\ with\ this\ name}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshScale(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ rotation\ info\ to\ the\ mesh\ with\ this\ name}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshRotation(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector4}{Vector4}}\ rot);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ material\ to\ the\ mesh\ with\ this\ name}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setMeshMaterial(std::string\ name,\ std::string\ nameMaterial);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{//destroy\ OgreMesh\ created\ }}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ destroyMesh(std::string\ name);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ createParticle(std::string\ name,\ std::string\ nameMesh);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticleTransform(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticleTransform(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale,\ \mbox{\hyperlink{classme_1_1_vector4}{Vector4}}\ rot);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ position\ info\ to\ the\ particle\ with\ this\ name}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticlePosition(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ pos);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ scale\ info\ to\ the\ particle\ with\ this\ name}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticleScale(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ scale);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ rotation\ info\ to\ the\ particle\ with\ this\ name}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticleRotation(std::string\ name,\ \mbox{\hyperlink{classme_1_1_vector4}{Vector4}}\ rot);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ emitting\ state\ to\ the\ particle\ with\ this\ name}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setParticleEmitting(std::string\ name,\ \textcolor{keywordtype}{bool}\ emitted);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ Ogre::SceneNode*\ createNode(std::string\ name);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ Ogre::SceneNode*\ createChildNode(std::string\ name,\ std::string\ parent);}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_window}{RenderWindow}}*\ getOgreWindow();}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ Ogre::SceneNode*\ getRootSceneNode();}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ scene1();}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ Ogre::Entity*\ getOgreEntity(std::string\ name);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Text\ UI}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ Ogre::TextAreaOverlayElement*\ createOverlayElement();}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Getter\ for\ scene\ manager}}
+\DoxyCodeLine{00327\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ Ogre::SceneManager*\ getSceneManager();}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classme_1_1_render_manager}{RenderManager}}\&\ \mbox{\hyperlink{namespaceme_af8da8de4d9ebcdaa653b23af353b5edc}{renderManager}}()\ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}{RenderManager::instance}}();}
+\DoxyCodeLine{00339\ \ \ \ \ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

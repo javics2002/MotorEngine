@@ -15,10 +15,10 @@ namespace me {
 
 	void Component::lateUpdate() {};
 
-	void Component::OnCollisionEnter(Entity* other) {};
+	void Component::onCollisionEnter(Entity* other) {};
 
-	void Component::OnCollisionStay(Entity* other) {};
+	void Component::onCollisionStay(Entity* other) {};
 
-	void Component::OnCollisionExit(Entity* other) {};
+	void Component::onCollisionExit(Entity* other) {};
 
 };

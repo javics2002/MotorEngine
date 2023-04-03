@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__input_manager_8h_source" xml:lang="en-US">
+<title>InputManager.h</title>
+<indexterm><primary>Src/Input/InputManager.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__INPUT_INPUTMANAGER</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__INPUT_INPUTMANAGER</emphasis>
+4 
+5 <emphasis role="comment">//Warning&#32;C4251:&#32;&apos;type&apos;&#32;:&#32;class&#32;&apos;type1&apos;&#32;needs&#32;to&#32;have&#32;dll-interface&#32;to&#32;be&#32;used&#32;by&#32;clients&#32;of&#32;class&#32;&apos;type2&apos;</emphasis>
+6 <emphasis role="comment">//Ignored&#32;because&#32;STL&#32;classes&#32;used&#32;in&#32;InputManager&#32;are&#32;private&#32;and&#32;cannot&#32;be&#32;accessed&#32;from&#32;the&#32;dll.</emphasis>
+7 <emphasis role="preprocessor">#ifdef&#32;_MSC_VER</emphasis>
+8 <emphasis role="preprocessor">#pragma&#32;warning(push)</emphasis>
+9 <emphasis role="preprocessor">#pragma&#32;warning(disable:4251)</emphasis>
+10 <emphasis role="preprocessor">#endif</emphasis>
+11 
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__singleton_8h">Utils/Singleton.h</link>&quot;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__vector2_8h">Utils/Vector2.h</link>&quot;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__button_8h">Button.h</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__axis_8h">Axis.h</link>&quot;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+19 <emphasis role="preprocessor">#include&#32;&lt;unordered_map&gt;</emphasis>
+20 
+21 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+28 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton</link>&lt;InputManager&gt;&#32;{
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton&lt;InputManager&gt;</link>;
+30 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>();
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;std::unordered_map&lt;std::string,&#32;Button&gt;&#32;ButtonMap;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;std::unordered_map&lt;std::string,&#32;Axis&gt;&#32;AxisMap;
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ButtonMap&#32;mButtons;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Pairs&#32;each&#32;button&#32;with&#32;its&#32;name.</emphasis>
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AxisMap&#32;mAxis;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Pairs&#32;each&#32;axis&#32;with&#32;its&#32;name.</emphasis>
+38 
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;std::unordered_multimap&lt;Input,&#32;std::string,&#32;InputHasher&gt;&#32;InputBinding;
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;virtual&#32;button&#32;names&#32;linked&#32;to&#32;their&#32;physical&#32;input.</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;InputBinding&#32;mButtonBindings;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;virtual&#32;axis&#32;names&#32;linked&#32;to&#32;their&#32;physical&#32;positive&#32;input.</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;InputBinding&#32;mPositiveAxisBindings;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;virtual&#32;axis&#32;names&#32;linked&#32;to&#32;their&#32;physical&#32;negative&#32;input.</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;InputBinding&#32;mNegativeAxisBindings;
+47 
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;std::unordered_multimap&lt;std::string,&#32;OnButtonPressedInfo&gt;&#32;OnButtonPressedMap;
+49 
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;callback&#32;data&#32;for&#32;virtual&#32;buttons.</emphasis>
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;OnButtonPressedMap&#32;mOnButtonPressed;
+52 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+54 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Mouse&#32;position.&#32;Distance&#32;in&#32;pixels&#32;from&#32;the&#32;upper&#32;left&#32;corner&#32;of&#32;the&#32;screen.</emphasis>
+55 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;mouseX,&#32;mouseY;
+57 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+59 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Manages&#32;the&#32;connection&#32;and&#32;disconnection&#32;of&#32;controllers.</emphasis>
+60 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;watchControllers(<emphasis role="keywordtype">void</emphasis>*&#32;userdata,&#32;<link linkend="__button_8h_1a33fcc6aa445cb781bfca881e39e5333e">SDL_Event</link>*&#32;event);
+62 
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+64 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Updates&#32;button&#32;and&#32;axis&apos;&#32;data</emphasis>
+65 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;updateInputData(<emphasis role="keywordtype">void</emphasis>*&#32;userdata,&#32;<link linkend="__button_8h_1a33fcc6aa445cb781bfca881e39e5333e">SDL_Event</link>*&#32;event);
+67 
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+69 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Constructs&#32;input&#32;struct&#32;for&#32;any&#32;given&#32;event</emphasis>
+70 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_structme_1_1_input">Input</link>&#32;getInput(<link linkend="__button_8h_1a33fcc6aa445cb781bfca881e39e5333e">SDL_Event</link>*&#32;event);
+72 
+73 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>&amp;&#32;<link linkend="_classme_1_1_input_manager_1a097291ca4204112b88c9e011a841cd44">operator=</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>&amp;&#32;o)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_input_manager_1a76af2005ae1b8b392e07c1729165e228">InputManager</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>&amp;&#32;o)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_input_manager">~InputManager</link>()&#32;<emphasis role="keyword">override</emphasis>;
+77 
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;addEvent(<link linkend="__button_8h_1aeb0e500783d5ab2d59cb0509da33af0c">SDL_EventFilter</link>&#32;filter,&#32;<emphasis role="keywordtype">void</emphasis>*&#32;userdata&#32;=&#32;NULL);
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;deleteEvent(<link linkend="__button_8h_1aeb0e500783d5ab2d59cb0509da33af0c">SDL_EventFilter</link>&#32;filter,&#32;<emphasis role="keywordtype">void</emphasis>*&#32;userdata&#32;=&#32;NULL);
+93 
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addButton(std::string&#32;name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;player&#32;=&#32;-1);
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addButton(std::string&#32;name,&#32;<link linkend="_structme_1_1_input">Input</link>&#32;input,&#32;<emphasis role="keywordtype">int</emphasis>&#32;player&#32;=&#32;-1);
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteButton(std::string&#32;name);
+124 
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addAxis(std::string&#32;name,&#32;<link linkend="_structme_1_1_axis_info">AxisInfo</link>&#32;info);
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addAxis(std::string&#32;name,&#32;<link linkend="_structme_1_1_axis_info">AxisInfo</link>&#32;info,&#32;<link linkend="_structme_1_1_axis_input">AxisInput</link>&#32;input);
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteAxis(std::string&#32;name);
+159 
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addBinding(std::string&#32;name,&#32;<link linkend="_structme_1_1_input">Input</link>&#32;input);
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addBinding(std::string&#32;name,&#32;<link linkend="_structme_1_1_axis_input">AxisInput</link>&#32;input);
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteBinding(std::string&#32;name,&#32;<link linkend="_structme_1_1_input">Input</link>&#32;input);
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteBinding(std::string&#32;name,&#32;<link linkend="_structme_1_1_axis_input">AxisInput</link>&#32;input);
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;getButton(std::string&#32;name);
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;getAxis(std::string&#32;name);
+221 
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;addOnButtonPressedEvent(std::string&#32;name,&#32;<emphasis role="keywordtype">int</emphasis>(*callback)(<emphasis role="keywordtype">void</emphasis>*),&#32;<emphasis role="keywordtype">void</emphasis>*&#32;additionalData&#32;=&#32;NULL);
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteOnButtonPressedEvent(std::string&#32;name,&#32;<emphasis role="keywordtype">int</emphasis>(*callback)(<emphasis role="keywordtype">void</emphasis>*),&#32;<emphasis role="keywordtype">void</emphasis>*&#32;additionalData&#32;=&#32;NULL);
+238 
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+240 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;@returns&#32;Current&#32;mouse&#32;position</emphasis>
+241 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;getMousePositon();
+243 &#32;&#32;&#32;&#32;};
+244 
+249 &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_classme_1_1_input_manager">InputManager</link>&amp;&#32;<link linkend="_namespaceme_1afd92726e761ee88a793af225d8f55d7a">inputManager</link>()&#32;{
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">InputManager::instance</link>();
+251 &#32;&#32;&#32;&#32;}
+252 }
+253 
+254 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

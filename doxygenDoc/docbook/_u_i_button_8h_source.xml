@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_button_8h_source" xml:lang="en-US">
+<title>UIButton.h</title>
+<indexterm><primary>Src/EntityComponent/Components/UIButton.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_UIBUTTON</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_UIBUTTON</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__u_i_element_8h">UIElement.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;functional&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;OgreTextAreaOverlayElement.h&gt;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+10 
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_u_i_button">UIButton</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_u_i_element">me::UIElement</link>
+12 &#32;&#32;&#32;&#32;{
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_u_i_button">UIButton</link>(std::string&#32;name,<emphasis role="keywordtype">float</emphasis>&#32;width,<emphasis role="keywordtype">float</emphasis>&#32;height,&#32;<emphasis role="keywordtype">float</emphasis>&#32;left,&#32;<emphasis role="keywordtype">float</emphasis>&#32;top);
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_u_i_button">~UIButton</link>();
+16 
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;update()<emphasis role="keyword">override</emphasis>;
+18 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;handleInput();
+23 
+24 
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;onClick(std::function&lt;<emphasis role="keywordtype">void</emphasis>()&gt;&#32;l);
+31 
+32 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::function&lt;void()&gt;&gt;&#32;mLambda;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::TextAreaOverlayElement*&#32;mButtonArea;
+35 &#32;&#32;&#32;&#32;};
+36 }
+37 
+38 
+39 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;!__EC_UI_BUTTON</emphasis>
+40 
+41 
+</programlisting></section>

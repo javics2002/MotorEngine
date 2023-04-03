@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__lua_bridge_2pch_8h_source" xml:lang="en-US">
+<title>pch.h</title>
+<indexterm><primary>Src/LuaBridge/pch.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;pch.h:&#32;este&#32;es&#32;un&#32;archivo&#32;de&#32;encabezado&#32;precompilado.</emphasis>
+2 <emphasis role="comment">//&#32;Los&#32;archivos&#32;que&#32;se&#32;muestran&#32;a&#32;continuación&#32;se&#32;compilan&#32;solo&#32;una&#32;vez,&#32;lo&#32;que&#32;mejora&#32;el&#32;rendimiento&#32;de&#32;la&#32;compilación&#32;en&#32;futuras&#32;compilaciones.</emphasis>
+3 <emphasis role="comment">//&#32;Esto&#32;también&#32;afecta&#32;al&#32;rendimiento&#32;de&#32;IntelliSense,&#32;incluida&#32;la&#32;integridad&#32;del&#32;código&#32;y&#32;muchas&#32;funciones&#32;de&#32;exploración&#32;del&#32;código.</emphasis>
+4 <emphasis role="comment">//&#32;Sin&#32;embargo,&#32;los&#32;archivos&#32;que&#32;se&#32;muestran&#32;aquí&#32;se&#32;vuelven&#32;TODOS&#32;a&#32;compilar&#32;si&#32;alguno&#32;de&#32;ellos&#32;se&#32;actualiza&#32;entre&#32;compilaciones.</emphasis>
+5 <emphasis role="comment">//&#32;No&#32;agregue&#32;aquí&#32;los&#32;archivos&#32;que&#32;se&#32;vayan&#32;a&#32;actualizar&#32;con&#32;frecuencia,&#32;ya&#32;que&#32;esto&#32;invalida&#32;la&#32;ventaja&#32;de&#32;rendimiento.</emphasis>
+6 
+7 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+8 <emphasis role="preprocessor">#ifndef&#32;PCH_H</emphasis>
+9 <emphasis role="preprocessor">#define&#32;PCH_H</emphasis>
+10 
+11 <emphasis role="comment">//&#32;agregue&#32;aquí&#32;los&#32;encabezados&#32;que&#32;desea&#32;precompilar</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_2framework_8h">framework.h</link>&quot;</emphasis>
+13 
+14 <emphasis role="preprocessor">#include&#32;&lt;lua.hpp&gt;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&lt;LuaBridge/LuaBridge.h&gt;</emphasis>
+16 
+17 <emphasis role="comment">//#include&#32;&quot;</emphasis>
+18 <emphasis role="comment">//&#32;/Array.h&quot;</emphasis>
+19 <emphasis role="comment">//#include&#32;&quot;LuaBridge/List.h&quot;</emphasis>
+20 <emphasis role="comment">//#include&#32;&quot;LuaBridge/Map.h&quot;</emphasis>
+21 <emphasis role="comment">//#include&#32;&quot;LuaBridge/Optional.h&quot;</emphasis>
+22 <emphasis role="comment">//#include&#32;&quot;LuaBridge/Pair.h&quot;</emphasis>
+23 <emphasis role="comment">//#include&#32;&quot;LuaBridge/RefCountedObject.h&quot;</emphasis>
+24 <emphasis role="comment">//#include&#32;&quot;LuaBridge/RefCountedPtr.h&quot;</emphasis>
+25 <emphasis role="comment">//#include&#32;&quot;LuaBridge/UnorderedMap.h&quot;</emphasis>
+26 <emphasis role="comment">//#include&#32;&quot;LuaBridge/Vector.h&quot;</emphasis>
+27 
+28 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//PCH_H</emphasis>
+</programlisting></section>

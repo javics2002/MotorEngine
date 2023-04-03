@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__input" kind="struct" language="C++" prot="public">
+    <compoundname>nk_input</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__input_1a07db4d8c752d4e9fcc7e18638dfa8740" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__keyboard" kindref="compound">nk_keyboard</ref></type>
+        <definition>struct nk_keyboard nk_input::keyboard</definition>
+        <argsstring></argsstring>
+        <name>keyboard</name>
+        <qualifiedname>nk_input::keyboard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4458" column="22" bodyfile="Src/GUI/nuklear.h" bodystart="4458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__input_1ac34a784eebb90e3c839a8008f2127c61" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__mouse" kindref="compound">nk_mouse</ref></type>
+        <definition>struct nk_mouse nk_input::mouse</definition>
+        <argsstring></argsstring>
+        <name>mouse</name>
+        <qualifiedname>nk_input::mouse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4459" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4459" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_input</label>
+        <link refid="structnk__input"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keyboard</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mouse</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_key</label>
+        <link refid="structnk__key"/>
+      </node>
+      <node id="2">
+        <label>nk_keyboard</label>
+        <link refid="structnk__keyboard"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nk_mouse</label>
+        <link refid="structnk__mouse"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>buttons</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>delta</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>prev</edgelabel>
+          <edgelabel>scroll_delta</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>nk_mouse_button</label>
+        <link refid="structnk__mouse__button"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>clicked_pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4457" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4457" bodyend="4460"/>
+    <listofallmembers>
+      <member refid="structnk__input_1a07db4d8c752d4e9fcc7e18638dfa8740" prot="public" virt="non-virtual"><scope>nk_input</scope><name>keyboard</name></member>
+      <member refid="structnk__input_1ac34a784eebb90e3c839a8008f2127c61" prot="public" virt="non-virtual"><scope>nk_input</scope><name>mouse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

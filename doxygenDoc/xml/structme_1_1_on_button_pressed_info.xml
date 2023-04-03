@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structme_1_1_on_button_pressed_info" kind="struct" language="C++" prot="public">
+    <compoundname>me::OnButtonPressedInfo</compoundname>
+    <includes refid="_button_8h" local="no">Button.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1abfecc66cb9912c7c05f55506ae95c53d" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* me::OnButtonPressedInfo::callback) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>callback</name>
+        <qualifiedname>me::OnButtonPressedInfo::callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="65" column="1" bodyfile="Src/Input/Button.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1a7f08adf20c54925200f25cdd51ac15d7" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* me::OnButtonPressedInfo::additionalData</definition>
+        <argsstring></argsstring>
+        <name>additionalData</name>
+        <qualifiedname>me::OnButtonPressedInfo::additionalData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="68" column="6" bodyfile="Src/Input/Button.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1a8b77a2514ed3f32f28e6c2bc7638856c" prot="public" static="no" mutable="no">
+        <type><ref refid="_button_8h_1aeb0e500783d5ab2d59cb0509da33af0c" kindref="member">SDL_EventFilter</ref></type>
+        <definition>SDL_EventFilter me::OnButtonPressedInfo::filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <qualifiedname>me::OnButtonPressedInfo::filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="71" column="17" bodyfile="Src/Input/Button.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1a763217dc1bcd45569a6c7ebe08106cf1" prot="public" static="no" mutable="no">
+        <type>std::unordered_multimap&lt; <ref refid="structme_1_1_input" kindref="compound">Input</ref>, std::string, <ref refid="structme_1_1_input_hasher" kindref="compound">InputHasher</ref> &gt; *</type>
+        <definition>std::unordered_multimap&lt;Input, std::string, InputHasher&gt;* me::OnButtonPressedInfo::buttonBindings</definition>
+        <argsstring></argsstring>
+        <name>buttonBindings</name>
+        <qualifiedname>me::OnButtonPressedInfo::buttonBindings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="74" column="25" bodyfile="Src/Input/Button.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1a49ee0adbdae15793f2f29ce77fd5a706" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string me::OnButtonPressedInfo::buttonName</definition>
+        <argsstring></argsstring>
+        <name>buttonName</name>
+        <qualifiedname>me::OnButtonPressedInfo::buttonName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="77" column="13" bodyfile="Src/Input/Button.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_on_button_pressed_info_1ab6d8a7a6dbd3afc4ebfe924588c83a77" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int me::OnButtonPressedInfo::player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <qualifiedname>me::OnButtonPressedInfo::player</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Button.h" line="82" column="5" bodyfile="Src/Input/Button.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Input/Button.h" line="63" column="1" bodyfile="Src/Input/Button.h" bodystart="63" bodyend="83"/>
+    <listofallmembers>
+      <member refid="structme_1_1_on_button_pressed_info_1a7f08adf20c54925200f25cdd51ac15d7" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>additionalData</name></member>
+      <member refid="structme_1_1_on_button_pressed_info_1a763217dc1bcd45569a6c7ebe08106cf1" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>buttonBindings</name></member>
+      <member refid="structme_1_1_on_button_pressed_info_1a49ee0adbdae15793f2f29ce77fd5a706" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>buttonName</name></member>
+      <member refid="structme_1_1_on_button_pressed_info_1abfecc66cb9912c7c05f55506ae95c53d" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>callback</name></member>
+      <member refid="structme_1_1_on_button_pressed_info_1a8b77a2514ed3f32f28e6c2bc7638856c" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>filter</name></member>
+      <member refid="structme_1_1_on_button_pressed_info_1ab6d8a7a6dbd3afc4ebfe924588c83a77" prot="public" virt="non-virtual"><scope>me::OnButtonPressedInfo</scope><name>player</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

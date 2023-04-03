@@ -1,0 +1,82 @@
+\hypertarget{_factory_component_8h_source}{}\doxysection{Factory\+Component.\+h}
+\label{_factory_component_8h_source}\index{Src/EntityComponent/Components/FactoryComponent.h@{Src/EntityComponent/Components/FactoryComponent.h}}
+\mbox{\hyperlink{_factory_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ \_\_ENTITYCOMPONENT\_FACTORYCOMPONENT}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_\_ENTITYCOMPONENT\_FACTORYCOMPONENT}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_info_scene_8h}{EntityComponent/InfoScene.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }Component;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ \ \ \ Checks\ if\ a\ parameter\ is\ especified\ in\ the\ Parameters\ map\ and\ returns\ its\ value\ if\ its\ found.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ \ \ \ \ Otherwise\ sets\ it\ to\ defaultValue.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ \ \ \ @params\ parameter\ String\ representing\ the\ name\ of\ the\ parameter.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ \ \ \ @params\ defaultValue\ Value\ returned\ in\ case\ parameter\ is\ not\ specified.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ @returns\ The\ value\ of\ the\ parameter.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ value(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceme_ad830450629248f34d5ce0ae49268edfa}{ParameterName}}\&\ parameter,\ \textcolor{keywordtype}{float}\ defaultValue\ =\ 0.0f);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ value(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceme_ad830450629248f34d5ce0ae49268edfa}{ParameterName}}\&\ parameter,\ \textcolor{keywordtype}{int}\ defaultValue\ =\ 0);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ value(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceme_ad830450629248f34d5ce0ae49268edfa}{ParameterName}}\&\ parameter,\ \textcolor{keywordtype}{bool}\ defaultValue);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ value(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceme_ad830450629248f34d5ce0ae49268edfa}{ParameterName}}\&\ parameter,\ std::string\ defaultValue\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_component_a4e2dd5c566003c4c846ec968d494d094}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params)\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_animator}{FactoryAnimator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_animator_a27d0257039dcec27525701ea7a20452f}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_audio_listener}{FactoryAudioListener}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_audio_listener_ab9680c41ce5b1ca56aa408b0adf143ed}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_audio_source}{FactoryAudioSource}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_audio_source_a32a7220c332b19d049d2d4b7a307fddb}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_camera}{FactoryCamera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_camera_a89b0f0035a6fc7af68640d1148d09b1b}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_collider}{FactoryCollider}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_collider_a80d2627182246f0b82134e51a63af34a}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_mesh_renderer}{FactoryMeshRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_mesh_renderer_a86f57a95037ffb710b99ad0977e98707}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_particle_system}{FactoryParticleSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_particle_system_ac97a8b19ba38e29fb466fd2dc8f874cb}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_rigid_body}{FactoryRigidBody}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_rigid_body_ac4649e941f35106db5e4cc49e7b76acc}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classme_1_1_factory_transform}{FactoryTransform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_factory_component}{FactoryComponent}}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_component}{me::Component}}*\ \mbox{\hyperlink{classme_1_1_factory_transform_ad554b91529ec8e8ccc45e95a57064a48}{create}}(\mbox{\hyperlink{namespaceme_aa32db0f4d84698471d693fe90639d8e6}{Parameters}}\ params);}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

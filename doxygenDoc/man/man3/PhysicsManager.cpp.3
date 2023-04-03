@@ -1,0 +1,69 @@
+.TH "Src/Physics/PhysicsManager.cpp" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Src/Physics/PhysicsManager.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'PhysicsManager\&.h'\fP
+.br
+\fC#include <BulletCollision/CollisionShapes/btBoxShape\&.h>\fP
+.br
+\fC#include <BulletCollision/CollisionShapes/btSphereShape\&.h>\fP
+.br
+\fC#include <BulletCollision/CollisionShapes/btCylinderShape\&.h>\fP
+.br
+\fC#include <BulletCollision/CollisionShapes/btCapsuleShape\&.h>\fP
+.br
+\fC#include <BulletCollision/NarrowPhaseCollision/btPersistentManifold\&.h>\fP
+.br
+\fC#include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld\&.h>\fP
+.br
+\fC#include <BulletDynamics/Dynamics/btRigidBody\&.h>\fP
+.br
+\fC#include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration\&.h>\fP
+.br
+\fC#include <BulletCollision/BroadphaseCollision/btDbvtBroadphase\&.h>\fP
+.br
+\fC#include <BulletDynamics/Dynamics/btActionInterface\&.h>\fP
+.br
+\fC#include <BulletCollision/CollisionShapes/btCollisionShape\&.h>\fP
+.br
+\fC#include <BulletDynamics/ConstraintSolver/btConstraintSolver\&.h>\fP
+.br
+\fC#include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver\&.h>\fP
+.br
+\fC#include <LinearMath/btDefaultMotionState\&.h>\fP
+.br
+\fC#include 'DebugDrawer\&.h'\fP
+.br
+\fC#include 'EntityComponent/Components/Collider\&.h'\fP
+.br
+\fC#include 'Render/RenderManager\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallBackEnter\fP (btPersistentManifold *const &manifold)"
+.br
+.ti -1c
+.RI "bool \fBcallBackStay\fP (btManifoldPoint &manifold, void *obj1, void *obj2)"
+.br
+.ti -1c
+.RI "void \fBcallBackExit\fP (btPersistentManifold *const &manifold)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void callBackEnter (btPersistentManifold *const & manifold)"
+
+.SS "void callBackExit (btPersistentManifold *const & manifold)"
+
+.SS "bool callBackStay (btManifoldPoint & manifold, void * obj1, void * obj2)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

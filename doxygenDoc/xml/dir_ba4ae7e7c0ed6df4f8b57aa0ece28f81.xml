@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_ba4ae7e7c0ed6df4f8b57aa0ece28f81" kind="dir">
+    <compoundname>Src/Render</compoundname>
+    <innerfile refid="main_render_8cpp">mainRender.cpp</innerfile>
+    <innerfile refid="_render_camera_8cpp">RenderCamera.cpp</innerfile>
+    <innerfile refid="_render_camera_8h">RenderCamera.h</innerfile>
+    <innerfile refid="_render_manager_8cpp">RenderManager.cpp</innerfile>
+    <innerfile refid="_render_manager_8h">RenderManager.h</innerfile>
+    <innerfile refid="_render_mesh_8cpp">RenderMesh.cpp</innerfile>
+    <innerfile refid="_render_mesh_8h">RenderMesh.h</innerfile>
+    <innerfile refid="_render_particle_system_8cpp">RenderParticleSystem.cpp</innerfile>
+    <innerfile refid="_render_particle_system_8h">RenderParticleSystem.h</innerfile>
+    <innerfile refid="_render_window_8cpp">RenderWindow.cpp</innerfile>
+    <innerfile refid="_render_window_8h">RenderWindow.h</innerfile>
+    <innerfile refid="_s_g_technique_resolver_listener_8cpp">SGTechniqueResolverListener.cpp</innerfile>
+    <innerfile refid="_s_g_technique_resolver_listener_8h">SGTechniqueResolverListener.h</innerfile>
+    <innerfile refid="_window_8cpp">Window.cpp</innerfile>
+    <innerfile refid="_window_8h">Window.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Render/"/>
+  </compounddef>
+</doxygen>

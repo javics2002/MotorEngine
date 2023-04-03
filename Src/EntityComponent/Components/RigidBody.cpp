@@ -20,7 +20,6 @@ me::RigidBody::~RigidBody()
 
 void me::RigidBody::start()
 {
-
 	mTransform = mEntity->getComponent<Transform>("transform");
 	
 	assert(mTransform && "An Entity doesn't have the transform component");

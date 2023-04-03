@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_motor_engine_a_p_i_8h" kind="file" language="C++">
+    <compoundname>MotorEngineAPI.h</compoundname>
+    <includedby refid="_sound_manager_8h" local="yes">Src/Audio/SoundManager.h</includedby>
+    <includedby refid="_component_8h" local="yes">Src/EntityComponent/Components/Component.h</includedby>
+    <includedby refid="_components_factory_8h" local="yes">Src/EntityComponent/Components/ComponentsFactory.h</includedby>
+    <includedby refid="_factory_component_8h" local="yes">Src/EntityComponent/Components/FactoryComponent.h</includedby>
+    <includedby refid="_u_i_element_8h" local="yes">Src/EntityComponent/Components/UIElement.h</includedby>
+    <includedby refid="_entity_8h" local="yes">Src/EntityComponent/Entity.h</includedby>
+    <includedby refid="_scene_8h" local="yes">Src/EntityComponent/Scene.h</includedby>
+    <includedby refid="_scene_manager_8h" local="yes">Src/EntityComponent/SceneManager.h</includedby>
+    <includedby refid="_button_8h" local="yes">Src/Input/Button.h</includedby>
+    <includedby refid="_input_code_8h" local="yes">Src/Input/InputCode.h</includedby>
+    <includedby refid="_input_manager_8h" local="yes">Src/Input/InputManager.h</includedby>
+    <includedby refid="_motor_engine_8h" local="yes">Src/MotorEngine/MotorEngine.h</includedby>
+    <includedby refid="_debug_drawer_8h" local="yes">Src/Physics/DebugDrawer.h</includedby>
+    <includedby refid="_physics_manager_8h" local="yes">Src/Physics/PhysicsManager.h</includedby>
+    <includedby refid="_render_camera_8h" local="yes">Src/Render/RenderCamera.h</includedby>
+    <includedby refid="_render_manager_8h" local="yes">Src/Render/RenderManager.h</includedby>
+    <includedby refid="_render_mesh_8h" local="yes">Src/Render/RenderMesh.h</includedby>
+    <includedby refid="_render_particle_system_8h" local="yes">Src/Render/RenderParticleSystem.h</includedby>
+    <includedby refid="_render_window_8h" local="yes">Src/Render/RenderWindow.h</includedby>
+    <includedby refid="_s_g_technique_resolver_listener_8h" local="yes">Src/Render/SGTechniqueResolverListener.h</includedby>
+    <includedby refid="_window_8h" local="yes">Src/Render/Window.h</includedby>
+    <includedby refid="_time_8h" local="yes">Src/Utils/Time.h</includedby>
+    <includedby refid="_vector2_8h" local="yes">Src/Utils/Vector2.h</includedby>
+    <includedby refid="_vector3_8h" local="yes">Src/Utils/Vector3.h</includedby>
+    <includedby refid="_vector4_8h" local="yes">Src/Utils/Vector4.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>Src/Audio/SoundManager.cpp</label>
+        <link refid="_sound_manager_8cpp"/>
+      </node>
+      <node id="2">
+        <label>Src/Audio/SoundManager.h</label>
+        <link refid="_sound_manager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Src/Audio/main.cpp</label>
+        <link refid="_audio_2main_8cpp"/>
+      </node>
+      <node id="10">
+        <label>Src/EntityComponent/Components/Animator.cpp</label>
+        <link refid="_animator_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Src/EntityComponent/Components/Animator.h</label>
+        <link refid="_animator_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+      </node>
+      <node id="12">
+        <label>Src/EntityComponent/Components/AudioListener.h</label>
+        <link refid="_audio_listener_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Src/EntityComponent/Components/AudioSource.cpp</label>
+        <link refid="_audio_source_8cpp"/>
+      </node>
+      <node id="13">
+        <label>Src/EntityComponent/Components/AudioSource.h</label>
+        <link refid="_audio_source_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Src/EntityComponent/Components/Camera.cpp</label>
+        <link refid="_camera_8cpp"/>
+      </node>
+      <node id="14">
+        <label>Src/EntityComponent/Components/Camera.h</label>
+        <link refid="_camera_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Src/EntityComponent/Components/Collider.cpp</label>
+        <link refid="_collider_8cpp"/>
+      </node>
+      <node id="16">
+        <label>Src/EntityComponent/Components/Collider.h</label>
+        <link refid="_collider_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Src/EntityComponent/Components/Component.cpp</label>
+        <link refid="_component_8cpp"/>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Src/EntityComponent/Components/ComponentsFactory.cpp</label>
+        <link refid="_components_factory_8cpp"/>
+      </node>
+      <node id="38">
+        <label>Src/EntityComponent/Components/ComponentsFactory.h</label>
+        <link refid="_components_factory_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Src/EntityComponent/Components/FactoryComponent.cpp</label>
+        <link refid="_factory_component_8cpp"/>
+      </node>
+      <node id="40">
+        <label>Src/EntityComponent/Components/FactoryComponent.h</label>
+        <link refid="_factory_component_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Src/EntityComponent/Components/MeshRenderer.cpp</label>
+        <link refid="_mesh_renderer_8cpp"/>
+      </node>
+      <node id="21">
+        <label>Src/EntityComponent/Components/MeshRenderer.h</label>
+        <link refid="_mesh_renderer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>Src/EntityComponent/Components/ParticleSystem.cpp</label>
+        <link refid="_particle_system_8cpp"/>
+      </node>
+      <node id="23">
+        <label>Src/EntityComponent/Components/ParticleSystem.h</label>
+        <link refid="_particle_system_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Src/EntityComponent/Components/RigidBody.cpp</label>
+        <link refid="_rigid_body_8cpp"/>
+      </node>
+      <node id="25">
+        <label>Src/EntityComponent/Components/RigidBody.h</label>
+        <link refid="_rigid_body_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Src/EntityComponent/Components/Transform.cpp</label>
+        <link refid="_transform_8cpp"/>
+      </node>
+      <node id="27">
+        <label>Src/EntityComponent/Components/Transform.h</label>
+        <link refid="_transform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Src/EntityComponent/Components/UIButton.cpp</label>
+        <link refid="_u_i_button_8cpp"/>
+      </node>
+      <node id="30">
+        <label>Src/EntityComponent/Components/UIButton.h</label>
+        <link refid="_u_i_button_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Src/EntityComponent/Components/UIContainer.cpp</label>
+        <link refid="_u_i_container_8cpp"/>
+      </node>
+      <node id="32">
+        <label>Src/EntityComponent/Components/UIContainer.h</label>
+        <link refid="_u_i_container_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Src/EntityComponent/Components/UIElement.cpp</label>
+        <link refid="_u_i_element_8cpp"/>
+      </node>
+      <node id="29">
+        <label>Src/EntityComponent/Components/UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Src/EntityComponent/Components/UIText.cpp</label>
+        <link refid="_u_i_text_8cpp"/>
+      </node>
+      <node id="36">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Src/EntityComponent/Entity.cpp</label>
+        <link refid="_entity_8cpp"/>
+      </node>
+      <node id="41">
+        <label>Src/EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>Src/EntityComponent/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="42">
+        <label>Src/EntityComponent/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Src/EntityComponent/SceneManager.h</label>
+        <link refid="_scene_manager_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Src/EntityComponent/Scenemanager.cpp</label>
+        <link refid="_scenemanager_8cpp"/>
+      </node>
+      <node id="45">
+        <label>Src/Input/Button.h</label>
+        <link refid="_button_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>Src/Input/InputCode.h</label>
+        <link refid="_input_code_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>Src/Input/InputManager.cpp</label>
+        <link refid="_input_manager_8cpp"/>
+      </node>
+      <node id="46">
+        <label>Src/Input/InputManager.h</label>
+        <link refid="_input_manager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>Src/Main/main.cpp</label>
+        <link refid="_main_2main_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Src/MotorEngine/MotorEngine.cpp</label>
+        <link refid="_motor_engine_8cpp"/>
+      </node>
+      <node id="49">
+        <label>Src/MotorEngine/MotorEngine.h</label>
+        <link refid="_motor_engine_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>Src/Physics/DebugDrawer.cpp</label>
+        <link refid="_debug_drawer_8cpp"/>
+      </node>
+      <node id="51">
+        <label>Src/Physics/DebugDrawer.h</label>
+        <link refid="_debug_drawer_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Src/Physics/PhysicsManager.cpp</label>
+        <link refid="_physics_manager_8cpp"/>
+      </node>
+      <node id="53">
+        <label>Src/Physics/PhysicsManager.h</label>
+        <link refid="_physics_manager_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>Src/Render/RenderCamera.cpp</label>
+        <link refid="_render_camera_8cpp"/>
+      </node>
+      <node id="54">
+        <label>Src/Render/RenderCamera.h</label>
+        <link refid="_render_camera_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>Src/Render/RenderManager.cpp</label>
+        <link refid="_render_manager_8cpp"/>
+      </node>
+      <node id="57">
+        <label>Src/Render/RenderManager.h</label>
+        <link refid="_render_manager_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>Src/Render/RenderMesh.cpp</label>
+        <link refid="_render_mesh_8cpp"/>
+      </node>
+      <node id="58">
+        <label>Src/Render/RenderMesh.h</label>
+        <link refid="_render_mesh_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>Src/Render/RenderParticleSystem.cpp</label>
+        <link refid="_render_particle_system_8cpp"/>
+      </node>
+      <node id="60">
+        <label>Src/Render/RenderParticleSystem.h</label>
+        <link refid="_render_particle_system_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>Src/Render/RenderWindow.cpp</label>
+        <link refid="_render_window_8cpp"/>
+      </node>
+      <node id="62">
+        <label>Src/Render/RenderWindow.h</label>
+        <link refid="_render_window_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>Src/Render/SGTechniqueResolverListener.cpp</label>
+        <link refid="_s_g_technique_resolver_listener_8cpp"/>
+      </node>
+      <node id="64">
+        <label>Src/Render/SGTechniqueResolverListener.h</label>
+        <link refid="_s_g_technique_resolver_listener_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>Src/Render/Window.cpp</label>
+        <link refid="_window_8cpp"/>
+      </node>
+      <node id="66">
+        <label>Src/Render/Window.h</label>
+        <link refid="_window_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>Src/Utils/Time.cpp</label>
+        <link refid="_time_8cpp"/>
+      </node>
+      <node id="68">
+        <label>Src/Utils/Time.h</label>
+        <link refid="_time_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>Src/Utils/Vector2.cpp</label>
+        <link refid="_vector2_8cpp"/>
+      </node>
+      <node id="70">
+        <label>Src/Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>Src/Utils/Vector3.cpp</label>
+        <link refid="_vector3_8cpp"/>
+      </node>
+      <node id="72">
+        <label>Src/Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>Src/Utils/Vector4.cpp</label>
+        <link refid="_vector4_8cpp"/>
+      </node>
+      <node id="75">
+        <label>Src/Utils/Vector4.h</label>
+        <link refid="_vector4_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" prot="public" static="no">
+        <name>__MOTORENGINE_API</name>
+        <initializer>__declspec(dllimport)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/MotorEngine/MotorEngineAPI.h" line="6" column="10" bodyfile="Src/MotorEngine/MotorEngineAPI.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__MOTORENGINE_API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__MOTORENGINE_EXPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__MOTORENGINE_API<sp/>__declspec(dllexport)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__MOTORENGINE_API<sp/>__declspec(dllimport)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/MotorEngine/MotorEngineAPI.h"/>
+  </compounddef>
+</doxygen>

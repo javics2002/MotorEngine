@@ -1,0 +1,124 @@
+.TH "Vector2" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Vector2
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vector2\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVector2\fP ()"
+.br
+.ti -1c
+.RI "\fBVector2\fP (float a, float b)"
+.br
+.ti -1c
+.RI "\fBVector2\fP (const \fBVector2\fP &v)"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBoperator+\fP (const \fBVector2\fP &v)"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBoperator\-\fP (const \fBVector2\fP &v)"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBoperator*\fP (const float s)"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBlerp\fP (const \fBVector2\fP a, const \fBVector2\fP b, float f)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fBVector2\fP for represent the UI 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Vector2::Vector2 ()\fC [inline]\fP"
+Construct default \fBVector2\fP 
+.SS "Vector2::Vector2 (float a, float b)\fC [inline]\fP"
+Construct a new \fBVector2\fP with given x, y components 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP \fBVector2\fP first element 
+.br
+\fIb\fP \fBVector2\fP second element 
+.RE
+.PP
+
+.SS "Vector2::Vector2 (const \fBVector2\fP & v)\fC [inline]\fP"
+Construct a new \fBVector2\fP with given another \fBVector2\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP new \fBVector2\fP 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBVector2\fP Vector2::lerp (const \fBVector2\fP a, const \fBVector2\fP b, float f)\fC [inline]\fP"
+Returns a new \fBVector2\fP interpolating between the two given \fBVector2\fP based on the scalar value 'f'\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP first \fBVector2\fP 
+.br
+\fIb\fP second \fBVector2\fP 
+.br
+\fIf\fP interpolation factor 
+.RE
+.PP
+
+.SS "\fBVector2\fP Vector2::operator* (const float s)"
+Return a \fBVector2\fP scale 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP scale factor 
+.RE
+.PP
+
+.SS "\fBVector2\fP Vector2::operator+ (const \fBVector2\fP & v)"
+Return the sum of two \fBVector2\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP \fBVector2\fP 
+.RE
+.PP
+
+.SS "\fBVector2\fP Vector2::operator\- (const \fBVector2\fP & v)"
+Return the difference of two \fBVector2\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP \fBVector2\fP 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "float Vector2::x"
+
+.SS "float Vector2::y"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

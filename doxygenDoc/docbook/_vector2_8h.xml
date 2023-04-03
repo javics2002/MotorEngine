@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector2_8h" xml:lang="en-US">
+<title>Src/Utils/Vector2.h File Reference</title>
+<indexterm><primary>Src/Utils/Vector2.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_vector2">Vector2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__vector2_8h_1a2725662c3f72aaed980f858f666c14f0">__UTILS_VECTOR2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__vector2_8h_1a2725662c3f72aaed980f858f666c14f0"/><section>
+    <title>__UTILS_VECTOR2</title>
+<indexterm><primary>__UTILS_VECTOR2</primary><secondary>Vector2.h</secondary></indexterm>
+<indexterm><primary>Vector2.h</primary><secondary>__UTILS_VECTOR2</secondary></indexterm>
+<para><computeroutput>#define __UTILS_VECTOR2</computeroutput></para></section>
+</section>
+</section>

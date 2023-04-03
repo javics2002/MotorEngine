@@ -1,0 +1,277 @@
+.TH "me::Transform" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::Transform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Transform\&.h>\fP
+.PP
+Inherits \fBme::Component\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransform\fP ()"
+.br
+.ti -1c
+.RI "\fB~Transform\fP () override"
+.br
+.ti -1c
+.RI "void \fBstart\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBlateUpdate\fP () override"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBgetPosition\fP ()"
+.br
+.ti -1c
+.RI "\fBVector4\fP \fBgetRotation\fP ()"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBgetScale\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (\fBVector3\fP newPosition)"
+.br
+.ti -1c
+.RI "void \fBsetRotation\fP (\fBVector3\fP newRotation)"
+.br
+.ti -1c
+.RI "void \fBsetRotation\fP (\fBVector4\fP newRotation)"
+.br
+.ti -1c
+.RI "void \fBsetScale\fP (\fBVector3\fP newScale)"
+.br
+.ti -1c
+.RI "void \fBtranslate\fP (\fBVector3\fP translation)"
+.br
+.ti -1c
+.RI "void \fBrotate\fP (float degrees, \fBVector3\fP axis)"
+.br
+.ti -1c
+.RI "void \fBscaleF\fP (float scale)"
+.br
+.ti -1c
+.RI "int \fBchildCount\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (\fBTransform\fP *child)"
+.br
+.ti -1c
+.RI "void \fBremoveChild\fP (\fBTransform\fP *child)"
+.br
+.ti -1c
+.RI "\fBTransform\fP * \fBgetChild\fP (int index)"
+.br
+.ti -1c
+.RI "\fBTransform\fP * \fBgetParent\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::Transform::Transform ()"
+Construct a new \fBTransform\fP object with default position (0, 0, 0), rotation (0, 0, 0) and scale (1, 1, 1)\&. 
+.SS "me::Transform::~Transform ()\fC [override]\fP"
+Destroy the \fBTransform\fP object and its components\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void me::Transform::addChild (\fBTransform\fP * child)"
+Add a child \fBTransform\fP object to the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIchild\fP A pointer to the child \fBTransform\fP object\&. 
+.RE
+.PP
+
+.SS "int me::Transform::childCount ()"
+Get the number of child \fBTransform\fP objects\&. 
+.SS "\fBme::Transform\fP * me::Transform::getChild (int index)"
+Returns the child transform at the specified index\&. Returns nullptr if the index is out of range or if there are no children\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the child transform to retrieve\&. 
+.RE
+.PP
+
+.SS "\fBme::Transform\fP * me::Transform::getParent ()"
+Returns the parent transform of this transform\&.
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the parent transform of this transform\&. 
+.RE
+.PP
+
+.SS "\fBme::Vector3\fP me::Transform::getPosition ()"
+Get the position vector of the \fBTransform\fP object\&.
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVector3\fP object representing the position\&. 
+.RE
+.PP
+
+.SS "\fBme::Vector4\fP me::Transform::getRotation ()"
+Returns the current Rotation 
+.SS "\fBme::Vector3\fP me::Transform::getScale ()"
+Get the scale vector of the \fBTransform\fP object\&.
+.PP
+\fBReturns\fP
+.RS 4
+A \fBVector3\fP object representing the scale\&. 
+.RE
+.PP
+
+.SS "void me::Transform::lateUpdate ()\fC [override]\fP, \fC [virtual]\fP"
+This method is meant to be the definition of those updates that has to be processed at the end of the game cycle\&.
+.PP
+For example: render and collisions\&. 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SS "void me::Transform::removeChild (\fBTransform\fP * child)"
+Remove a child \fBTransform\fP object from the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIchild\fP A pointer to the child \fBTransform\fP object\&. 
+.RE
+.PP
+
+.SS "void me::Transform::rotate (float degrees, \fBVector3\fP axis)"
+Rotate the \fBTransform\fP object by a given vector\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdegrees\fP the number of degrees to turn 
+.br
+\fIdegrees\fP the axis where to apply the rotation 
+.RE
+.PP
+
+.SS "void me::Transform::scaleF (float scale)"
+Scale the \fBTransform\fP object by a given factor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIscaleF\fP A float representing the scale factor\&. 
+.RE
+.PP
+
+.SS "void me::Transform::setPosition (\fBVector3\fP newPosition)"
+Set the position vector of the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewPosition\fP A \fBVector3\fP object representing the new position\&. 
+.RE
+.PP
+
+.SS "void me::Transform::setRotation (\fBVector3\fP newRotation)"
+Set the rotation vector of the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewRotation\fP A \fBVector3\fP object representing the new rotation\&. 
+.RE
+.PP
+
+.SS "void me::Transform::setRotation (\fBVector4\fP newRotation)"
+Set the rotation vector of the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewRotation\fP A \fBVector4\fP object representing the new rotation\&. 
+.RE
+.PP
+
+.SS "void me::Transform::setScale (\fBVector3\fP newScale)"
+Set the scale vector of the \fBTransform\fP object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInewScale\fP A \fBVector3\fP object representing the new scale\&. 
+.RE
+.PP
+
+.SS "void me::Transform::start ()\fC [override]\fP, \fC [virtual]\fP"
+This method is only ever called once\&. This must be called at the instantiation of the script\&. 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SS "void me::Transform::translate (\fBVector3\fP translation)"
+Translate the \fBTransform\fP object by a given vector\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItranslation\fP A \fBVector3\fP object representing the translation\&. 
+.RE
+.PP
+
+.SS "void me::Transform::update ()\fC [override]\fP, \fC [virtual]\fP"
+This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle\&.
+.PP
+Almost all the logic updates\&. 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

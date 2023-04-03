@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__audio_2main_8cpp" xml:lang="en-US">
+<title>Src/Audio/main.cpp File Reference</title>
+<indexterm><primary>Src/Audio/main.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;iostream&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &quot;SoundManager.h&quot;<?linebreak?>#include &quot;Input/InputManager.h&quot;<?linebreak?>#include &quot;Render/Window.h&quot;<?linebreak?>#include &lt;SDL3/SDL_init.h&gt;<?linebreak?>#include &lt;SDL3/SDL_events.h&gt;<?linebreak?>#include &lt;SDL3/SDL_keyboard.h&gt;<?linebreak?>#include &lt;SDL3/SDL_mouse.h&gt;<?linebreak?>#include &lt;SDL3/SDL_gamepad.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_test_sound">TestSound</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__audio_2main_8cpp_1a7848fb72ebbb3a6120ebb47cffc20238">shoot</link> (void *userdata)</para>
+</listitem>
+            <listitem><para>int <link linkend="__audio_2main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__audio_2main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para></section>
+<anchor xml:id="__audio_2main_8cpp_1a7848fb72ebbb3a6120ebb47cffc20238"/><section>
+    <title>shoot()</title>
+<indexterm><primary>shoot</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>shoot</secondary></indexterm>
+<para><computeroutput>int shoot (void * userdata)</computeroutput></para></section>
+</section>
+</section>

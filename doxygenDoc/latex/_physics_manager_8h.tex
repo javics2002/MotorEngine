@@ -1,0 +1,95 @@
+\hypertarget{_physics_manager_8h}{}\doxysection{Src/\+Physics/\+Physics\+Manager.h File Reference}
+\label{_physics_manager_8h}\index{Src/Physics/PhysicsManager.h@{Src/Physics/PhysicsManager.h}}
+{\ttfamily \#include \char`\"{}Motor\+Engine/\+Motor\+Engine\+API.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utils/\+Singleton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Debug\+Drawer.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classme_1_1_physics_manager}{me\+::\+Physics\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceme}{me}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_physics_manager_8h_a917a206cf4c60d68ac87783b68e74372}{\+\_\+\+\_\+\+PHYSICS\+\_\+\+PHYSICSMANAGER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}{Shapes}} \{ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14bad234e1337b65f7d48adcec10b0a5233e}{SHAPES\+\_\+\+SPHERE}}
+, \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14baf52143b9efb76308441d30efa1013e8f}{SHAPES\+\_\+\+BOX}}
+, \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba9d9edaa5743e042d75e3a3cedcf17e5b}{SHAPES\+\_\+\+CYLINDER}}
+, \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba6e7c12404e97120c0a157da639dae55a}{SHAPES\+\_\+\+CAPSULE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}{Movement\+Type}} \{ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f3293f4fee67e119d537aba61589bc8}{MOVEMENT\+\_\+\+TYPE\+\_\+\+DYNAMIC}}
+, \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493aaff433b41af5badf4d9de6b351e1cf17}{MOVEMENT\+\_\+\+TYPE\+\_\+\+STATIC}}
+, \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f2da38a18deb028bb9707880ec80441}{MOVEMENT\+\_\+\+TYPE\+\_\+\+KINEMATIC}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Physics\+Manager \& \mbox{\hyperlink{namespaceme_a4c5f82cdd874c703ca40fb8fc4336d8d}{me\+::physics\+Manager}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_physics_manager_8h_a917a206cf4c60d68ac87783b68e74372}\label{_physics_manager_8h_a917a206cf4c60d68ac87783b68e74372}} 
+\index{PhysicsManager.h@{PhysicsManager.h}!\_\_PHYSICS\_PHYSICSMANAGER@{\_\_PHYSICS\_PHYSICSMANAGER}}
+\index{\_\_PHYSICS\_PHYSICSMANAGER@{\_\_PHYSICS\_PHYSICSMANAGER}!PhysicsManager.h@{PhysicsManager.h}}
+\doxysubsubsection{\texorpdfstring{\_\_PHYSICS\_PHYSICSMANAGER}{\_\_PHYSICS\_PHYSICSMANAGER}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+PHYSICS\+\_\+\+PHYSICSMANAGER}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}\label{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}} 
+\index{PhysicsManager.h@{PhysicsManager.h}!MovementType@{MovementType}}
+\index{MovementType@{MovementType}!PhysicsManager.h@{PhysicsManager.h}}
+\doxysubsubsection{\texorpdfstring{MovementType}{MovementType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}{Movement\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_TYPE\_DYNAMIC@{MOVEMENT\_TYPE\_DYNAMIC}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!MOVEMENT\_TYPE\_DYNAMIC@{MOVEMENT\_TYPE\_DYNAMIC}}}\mbox{\Hypertarget{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f3293f4fee67e119d537aba61589bc8}\label{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f3293f4fee67e119d537aba61589bc8}} 
+MOVEMENT\+\_\+\+TYPE\+\_\+\+DYNAMIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_TYPE\_STATIC@{MOVEMENT\_TYPE\_STATIC}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!MOVEMENT\_TYPE\_STATIC@{MOVEMENT\_TYPE\_STATIC}}}\mbox{\Hypertarget{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493aaff433b41af5badf4d9de6b351e1cf17}\label{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493aaff433b41af5badf4d9de6b351e1cf17}} 
+MOVEMENT\+\_\+\+TYPE\+\_\+\+STATIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVEMENT\_TYPE\_KINEMATIC@{MOVEMENT\_TYPE\_KINEMATIC}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!MOVEMENT\_TYPE\_KINEMATIC@{MOVEMENT\_TYPE\_KINEMATIC}}}\mbox{\Hypertarget{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f2da38a18deb028bb9707880ec80441}\label{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f2da38a18deb028bb9707880ec80441}} 
+MOVEMENT\+\_\+\+TYPE\+\_\+\+KINEMATIC&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}\label{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}} 
+\index{PhysicsManager.h@{PhysicsManager.h}!Shapes@{Shapes}}
+\index{Shapes@{Shapes}!PhysicsManager.h@{PhysicsManager.h}}
+\doxysubsubsection{\texorpdfstring{Shapes}{Shapes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}{Shapes}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHAPES\_SPHERE@{SHAPES\_SPHERE}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!SHAPES\_SPHERE@{SHAPES\_SPHERE}}}\mbox{\Hypertarget{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14bad234e1337b65f7d48adcec10b0a5233e}\label{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14bad234e1337b65f7d48adcec10b0a5233e}} 
+SHAPES\+\_\+\+SPHERE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHAPES\_BOX@{SHAPES\_BOX}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!SHAPES\_BOX@{SHAPES\_BOX}}}\mbox{\Hypertarget{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14baf52143b9efb76308441d30efa1013e8f}\label{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14baf52143b9efb76308441d30efa1013e8f}} 
+SHAPES\+\_\+\+BOX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHAPES\_CYLINDER@{SHAPES\_CYLINDER}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!SHAPES\_CYLINDER@{SHAPES\_CYLINDER}}}\mbox{\Hypertarget{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba9d9edaa5743e042d75e3a3cedcf17e5b}\label{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba9d9edaa5743e042d75e3a3cedcf17e5b}} 
+SHAPES\+\_\+\+CYLINDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHAPES\_CAPSULE@{SHAPES\_CAPSULE}!PhysicsManager.h@{PhysicsManager.h}}\index{PhysicsManager.h@{PhysicsManager.h}!SHAPES\_CAPSULE@{SHAPES\_CAPSULE}}}\mbox{\Hypertarget{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba6e7c12404e97120c0a157da639dae55a}\label{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba6e7c12404e97120c0a157da639dae55a}} 
+SHAPES\+\_\+\+CAPSULE&\\
+\hline
+
+\end{DoxyEnumFields}

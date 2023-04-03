@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector3_8h" xml:lang="en-US">
+<title>Src/Utils/Vector3.h File Reference</title>
+<indexterm><primary>Src/Utils/Vector3.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &lt;math.h&gt;<?linebreak?>#include &lt;cmath&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_vector3">me::Vector3</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_ogre">Ogre</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacestd">std</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__vector3_8h_1a0bf35bb17d45705ae7295667ae8f7854">__UTILS_VECTOR3</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_namespacestd_1a6a5cbaba415722865ff10d1ee0c559d0">std::ostream</link> = basic_ostream&lt; char, char_traits&lt; char &gt; &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__vector3_8h_1a0bf35bb17d45705ae7295667ae8f7854"/><section>
+    <title>__UTILS_VECTOR3</title>
+<indexterm><primary>__UTILS_VECTOR3</primary><secondary>Vector3.h</secondary></indexterm>
+<indexterm><primary>Vector3.h</primary><secondary>__UTILS_VECTOR3</secondary></indexterm>
+<para><computeroutput>#define __UTILS_VECTOR3</computeroutput></para></section>
+</section>
+</section>

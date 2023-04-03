@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_element_8h" xml:lang="en-US">
+<title>Src/EntityComponent/Components/UIElement.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/Components/UIElement.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &quot;Component.h&quot;<?linebreak?>#include &quot;Utils/Vector3.h&quot;<?linebreak?>#include &quot;Utils/Vector2.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_u_i_element">me::UIElement</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_ogre">Ogre</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__u_i_element_8h_1af8d5436047ecd9ec9f8c75a3f730baef">__ENTITYCOMPONENT_UIELEMENT</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__u_i_element_8h_1af8d5436047ecd9ec9f8c75a3f730baef"/><section>
+    <title>__ENTITYCOMPONENT_UIELEMENT</title>
+<indexterm><primary>__ENTITYCOMPONENT_UIELEMENT</primary><secondary>UIElement.h</secondary></indexterm>
+<indexterm><primary>UIElement.h</primary><secondary>__ENTITYCOMPONENT_UIELEMENT</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_UIELEMENT</computeroutput></para></section>
+</section>
+</section>

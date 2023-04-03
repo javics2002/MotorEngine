@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__style__tab" kind="struct" language="C++" prot="public">
+    <compoundname>nk_style_tab</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__style__tab_1a9f751874249b6e1a1d35a5e87eb95bda" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_tab::background</definition>
+        <argsstring></argsstring>
+        <name>background</name>
+        <qualifiedname>nk_style_tab::background</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4961" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4961" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1ae28051d435a882753fd267fef0637903" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_tab::border_color</definition>
+        <argsstring></argsstring>
+        <name>border_color</name>
+        <qualifiedname>nk_style_tab::border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4962" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4962" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1ad39a9118e595989bfe330ab5aad673a5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_tab::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <qualifiedname>nk_style_tab::text</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4963" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4963" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a249d7729ae42ddeb8a7791e359d05c19" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_tab::tab_maximize_button</definition>
+        <argsstring></argsstring>
+        <name>tab_maximize_button</name>
+        <qualifiedname>nk_style_tab::tab_maximize_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4966" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4966" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a1b7600272b1e49296d89e68fb993cae2" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_tab::tab_minimize_button</definition>
+        <argsstring></argsstring>
+        <name>tab_minimize_button</name>
+        <qualifiedname>nk_style_tab::tab_minimize_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4967" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4967" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a1148fc1c2ba4fc697619e27a480469a8" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_tab::node_maximize_button</definition>
+        <argsstring></argsstring>
+        <name>node_maximize_button</name>
+        <qualifiedname>nk_style_tab::node_maximize_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4968" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4968" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1aacb1b9a6300f86ffdcb4f8cf90a344d2" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_tab::node_minimize_button</definition>
+        <argsstring></argsstring>
+        <name>node_minimize_button</name>
+        <qualifiedname>nk_style_tab::node_minimize_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4969" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4969" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a50977cd5e3328ce1bed6e7a7abaf7855" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07" kindref="member">nk_symbol_type</ref></type>
+        <definition>enum nk_symbol_type nk_style_tab::sym_minimize</definition>
+        <argsstring></argsstring>
+        <name>sym_minimize</name>
+        <qualifiedname>nk_style_tab::sym_minimize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4970" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4970" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a55e66550b450cf00499636997b6e9c19" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07" kindref="member">nk_symbol_type</ref></type>
+        <definition>enum nk_symbol_type nk_style_tab::sym_maximize</definition>
+        <argsstring></argsstring>
+        <name>sym_maximize</name>
+        <qualifiedname>nk_style_tab::sym_maximize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4971" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4971" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a5fd25a46147bd54d7700563c2860d1e8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_tab::border</definition>
+        <argsstring></argsstring>
+        <name>border</name>
+        <qualifiedname>nk_style_tab::border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4974" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4974" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1abf1cfda005f683974f5ab213c5513ea3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_tab::rounding</definition>
+        <argsstring></argsstring>
+        <name>rounding</name>
+        <qualifiedname>nk_style_tab::rounding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4975" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4975" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1a535cb708f61a9cba5ee581ab044b8f71" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_tab::indent</definition>
+        <argsstring></argsstring>
+        <name>indent</name>
+        <qualifiedname>nk_style_tab::indent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4976" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4976" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1ae7f4a7d0f21e33ecc0bf892902d012ad" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_tab::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <qualifiedname>nk_style_tab::padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4977" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4977" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__tab_1acbaac49087d16fd6e755a125c4c23c84" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_tab::spacing</definition>
+        <argsstring></argsstring>
+        <name>spacing</name>
+        <qualifiedname>nk_style_tab::spacing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4978" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4978" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="6">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="5">
+        <label>nk_image</label>
+        <link refid="structnk__image"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nk_nine_slice</label>
+        <link refid="structnk__nine__slice"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>img</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nk_style_button</label>
+        <link refid="structnk__style__button"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>image_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_style_item</label>
+        <link refid="structnk__style__item"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_style_item_data</label>
+        <link refid="unionnk__style__item__data"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>slice</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nk_style_tab</label>
+        <link refid="structnk__style__tab"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>background</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>node_maximize_button</edgelabel>
+          <edgelabel>node_minimize_button</edgelabel>
+          <edgelabel>tab_maximize_button</edgelabel>
+          <edgelabel>tab_minimize_button</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4959" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4959" bodyend="4979"/>
+    <listofallmembers>
+      <member refid="structnk__style__tab_1a9f751874249b6e1a1d35a5e87eb95bda" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>background</name></member>
+      <member refid="structnk__style__tab_1a5fd25a46147bd54d7700563c2860d1e8" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>border</name></member>
+      <member refid="structnk__style__tab_1ae28051d435a882753fd267fef0637903" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>border_color</name></member>
+      <member refid="structnk__style__tab_1a535cb708f61a9cba5ee581ab044b8f71" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>indent</name></member>
+      <member refid="structnk__style__tab_1a1148fc1c2ba4fc697619e27a480469a8" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>node_maximize_button</name></member>
+      <member refid="structnk__style__tab_1aacb1b9a6300f86ffdcb4f8cf90a344d2" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>node_minimize_button</name></member>
+      <member refid="structnk__style__tab_1ae7f4a7d0f21e33ecc0bf892902d012ad" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>padding</name></member>
+      <member refid="structnk__style__tab_1abf1cfda005f683974f5ab213c5513ea3" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>rounding</name></member>
+      <member refid="structnk__style__tab_1acbaac49087d16fd6e755a125c4c23c84" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>spacing</name></member>
+      <member refid="structnk__style__tab_1a55e66550b450cf00499636997b6e9c19" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>sym_maximize</name></member>
+      <member refid="structnk__style__tab_1a50977cd5e3328ce1bed6e7a7abaf7855" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>sym_minimize</name></member>
+      <member refid="structnk__style__tab_1a249d7729ae42ddeb8a7791e359d05c19" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>tab_maximize_button</name></member>
+      <member refid="structnk__style__tab_1a1b7600272b1e49296d89e68fb993cae2" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>tab_minimize_button</name></member>
+      <member refid="structnk__style__tab_1ad39a9118e595989bfe330ab5aad673a5" prot="public" virt="non-virtual"><scope>nk_style_tab</scope><name>text</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

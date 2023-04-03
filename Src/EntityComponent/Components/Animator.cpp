@@ -9,14 +9,19 @@ using namespace me;
 
 Animator::Animator()
 {
-	mMesh = mEntity->getComponent<MeshRenderer>("meshRenderer");
-	mCurrentState = nullptr;
-	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
-	mStop = false;
+	
 }
 
 Animator::~Animator()
 {
+}
+
+void Animator::start()
+{
+	mMesh = mEntity->getComponent<MeshRenderer>("meshrenderer");
+	mCurrentState = nullptr;
+	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
+	mStop = false;
 }
 
 void Animator::update()

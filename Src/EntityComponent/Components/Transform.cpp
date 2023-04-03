@@ -4,6 +4,7 @@
 
 me::Transform::Transform()
 {
+	/*
 	// Initialize position, rotation, size and scale vectors
 	mPosition = Vector3(0.0, 0.0, 0.0);
 	mRotation = Vector4(0.0, 0.0, 0.0);
@@ -14,7 +15,7 @@ me::Transform::Transform()
 
 #ifdef _DEBUG
 	std::cout << " > Component ( Transform ) created." << std::endl;
-#endif
+#endif*/
 }
 
 me::Transform::~Transform()
@@ -27,6 +28,7 @@ me::Transform::~Transform()
 
 void me::Transform::start()
 {
+
 }
 
 void me::Transform::update()

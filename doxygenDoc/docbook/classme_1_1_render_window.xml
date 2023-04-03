@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_render_window" xml:lang="en-US">
+<title>me::RenderWindow Class Reference</title>
+<indexterm><primary>me::RenderWindow</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RenderWindow.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_render_window_1a6298a3ebb4dea583da69caaedf18338b">RenderWindow</link> (const std::string windowName)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_window_1ae17a8d98de14f8ddbbedbee39cf774e0">~RenderWindow</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_window_1a8fdca646c82fc5810af877acbf5b3237">init</link> (Ogre::Root *root)</para>
+</listitem>
+            <listitem><para>Ogre::RenderWindow * <link linkend="_classme_1_1_render_window_1abd3cb7d398d78613b873563fc89ea830">getRenderWindow</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * <link linkend="_classme_1_1_render_window_1a46404dc3243ebc43bbfdc5f500dc2234">getSdlWindow</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classme_1_1_render_window_1a4de1296fd4446c3a428077aaf647c789">createWindow</link> (Ogre::Root *root)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_window_1a75d8f3716021d5881dfbd80553ae3420">setWindowGrab</link> (bool _grab)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_window_1a54eeb4f08222f44ef0aa31a8a4796f93">mWindowName</link></para>
+</listitem>
+            <listitem><para><link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * <link linkend="_classme_1_1_render_window_1aa50efc07c5ad1cbea17e092945fc7080">mSdlWindow</link> = nullptr</para>
+</listitem>
+            <listitem><para>Ogre::RenderWindow * <link linkend="_classme_1_1_render_window_1a2066d07f287e6b68e82175959929b958">mRenderWindow</link> = nullptr</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Class to create linked window between SDL_window and Ogre::RendererWindow </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_render_window_1a6298a3ebb4dea583da69caaedf18338b"/><section>
+    <title>RenderWindow()</title>
+<indexterm><primary>RenderWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>RenderWindow</secondary></indexterm>
+<para><computeroutput>RenderWindow::RenderWindow (const std::string windowName)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_window_1ae17a8d98de14f8ddbbedbee39cf774e0"/><section>
+    <title>~RenderWindow()</title>
+<indexterm><primary>~RenderWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>~RenderWindow</secondary></indexterm>
+<para><computeroutput>RenderWindow::~RenderWindow ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_render_window_1a4de1296fd4446c3a428077aaf647c789"/><section>
+    <title>createWindow()</title>
+<indexterm><primary>createWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>createWindow</secondary></indexterm>
+<para><computeroutput>void RenderWindow::createWindow (Ogre::Root * root)<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Get configuration information, Sdl window, Sdl window information and create Ogre::Render window with all the information mentioned It is linked window between SDL window and Ogre::Render window 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>root:reference</entry><entry>
+<para>of Ogre::Root created by OgreManager </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_render_window_1abd3cb7d398d78613b873563fc89ea830"/><section>
+    <title>getRenderWindow()</title>
+<indexterm><primary>getRenderWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>getRenderWindow</secondary></indexterm>
+<para><computeroutput>Ogre::RenderWindow * me::RenderWindow::getRenderWindow ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_window_1a46404dc3243ebc43bbfdc5f500dc2234"/><section>
+    <title>getSdlWindow()</title>
+<indexterm><primary>getSdlWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>getSdlWindow</secondary></indexterm>
+<para><computeroutput><link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * me::RenderWindow::getSdlWindow ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_window_1a8fdca646c82fc5810af877acbf5b3237"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>void RenderWindow::init (Ogre::Root * root)</computeroutput></para>
+<para>Initialize linked window without automatically window created 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>root:reference</entry><entry>
+<para>of Ogre::Root created by OgreManager </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_render_window_1a75d8f3716021d5881dfbd80553ae3420"/><section>
+    <title>setWindowGrab()</title>
+<indexterm><primary>setWindowGrab</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>setWindowGrab</secondary></indexterm>
+<para><computeroutput>void RenderWindow::setWindowGrab (bool _grab)<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_render_window_1a2066d07f287e6b68e82175959929b958"/><section>
+    <title>mRenderWindow</title>
+<indexterm><primary>mRenderWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>mRenderWindow</secondary></indexterm>
+<para><computeroutput>Ogre::RenderWindow* me::RenderWindow::mRenderWindow = nullptr<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_window_1aa50efc07c5ad1cbea17e092945fc7080"/><section>
+    <title>mSdlWindow</title>
+<indexterm><primary>mSdlWindow</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>mSdlWindow</secondary></indexterm>
+<para><computeroutput><link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>* me::RenderWindow::mSdlWindow = nullptr<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_window_1a54eeb4f08222f44ef0aa31a8a4796f93"/><section>
+    <title>mWindowName</title>
+<indexterm><primary>mWindowName</primary><secondary>me::RenderWindow</secondary></indexterm>
+<indexterm><primary>me::RenderWindow</primary><secondary>mWindowName</secondary></indexterm>
+<para><computeroutput>std::string me::RenderWindow::mWindowName<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Render/<link linkend="__render_window_8h">RenderWindow.h</link>Src/Render/<link linkend="__render_window_8cpp">RenderWindow.cpp</link></section>
+</section>

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__sound_manager_8h_source" xml:lang="en-US">
+<title>SoundManager.h</title>
+<indexterm><primary>Src/Audio/SoundManager.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;_FMOD_SOUND_MANAGER</emphasis>
+3 <emphasis role="preprocessor">#define&#32;_FMOD_SOUND_MANAGER</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;unordered_map&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;algorithm&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;cctype&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__singleton_8h">Utils/Singleton.h</link>&quot;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__vector3_8h">Utils/Vector3.h</link>&quot;</emphasis>
+11 
+12 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_f_m_o_d">FMOD</link>&#32;{
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Sound;
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>ChannelGroup;
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Channel;
+16 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>System;
+17 }
+18 
+19 <emphasis role="keyword">enum</emphasis>&#32;FMOD_RESULT;
+20 <emphasis role="keyword">class&#32;</emphasis>FMOD_VECTOR;
+21 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca">FMOD_MODE</link>;
+22 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__sound_manager_8h_1ae3f91b6700d531ec62e89650ab25b9e6">CHANNEL_NUMBER</link>;
+23 
+24 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//Maximum&#32;number&#32;of&#32;channels&#32;allowed&#32;to&#32;exist&#32;in&#32;this&#32;particular&#32;system&#32;setting.</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_namespaceme_1a15c4fa676c025760938ddb5ba349c4e1">MAX_CHANNELS</link>&#32;=&#32;36;
+27 &#32;&#32;&#32;&#32;<emphasis role="comment">//Scaling&#32;factor&#32;for&#32;how&#32;much&#32;the&#32;pitch&#32;varies&#32;due&#32;to&#32;doppler&#32;shifting&#32;in&#32;3D&#32;sound.</emphasis>
+28 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_namespaceme_1a481a0c381d7e955f1654c93f4a046839">DOPPLER_SCALE</link>&#32;=&#32;1;&#32;
+29 &#32;&#32;&#32;&#32;<emphasis role="comment">//Relative&#32;distance&#32;factor,&#32;compared&#32;to&#32;1.0&#32;meters.&#32;How&#32;many&#32;units&#32;per&#32;meter&#32;my&#32;engine&#32;have.</emphasis>
+30 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_namespaceme_1a439b64171f81c9557e8dab9df2adc081">DISTANCE_FACTOR</link>&#32;=&#32;1;
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//Global&#32;attenuation&#32;rolloff&#32;factor.&#32;</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_namespaceme_1a266976037dee6b06b15e6604621b0adf">ROLLOFF_SCALE</link>&#32;=&#32;1;
+33 
+39 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_sound_manager">SoundManager</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton</link>&lt;SoundManager&gt;
+40 &#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton&lt;SoundManager&gt;</link>;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_sound_manager">SoundManager</link>();
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;audio&#32;handles&#32;linked&#32;to&#32;their&#32;name.</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;FMOD::Sound*&gt;&#32;mSoundsMap;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;audio&#32;handles&#32;linked&#32;to&#32;the&#32;last&#32;channel&#32;they&#32;where&#32;played&#32;in.</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;FMOD::Sound*,CHANNEL_NUMBER&gt;&#32;mLastPlayedMap;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;channel&#32;group&#32;names&#32;linked&#32;to&#32;their&#32;handle.</emphasis>
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;FMOD::ChannelGroup*&gt;&#32;mChannelGroupMaps;
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stores&#32;every&#32;audio&#32;channel.</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;FMOD::Channel*&gt;&#32;mChannelsVector;
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Basic&#32;channel&#32;groups&#32;provided&#32;by&#32;the&#32;SoundManager.</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD::ChannelGroup*&#32;mEffects,&#32;*&#32;mMusic,&#32;*mMaster;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;bool&gt;&#32;mListeners;
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//The&#32;sound&#32;system&#32;over&#32;which&#32;every&#32;bit&#32;of&#32;audio&#32;gets&#32;created.</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD::System*&#32;mSoundSystem&#32;=&#32;NULL;
+56 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;checkFMODResult(FMOD_RESULT&#32;FMODResult);
+63 
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD::Sound*&#32;getSound(std::string&#32;soundName);
+70 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD::Channel*&#32;getChannel(std::string&#32;soundName);
+77 
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD::ChannelGroup*&#32;getGroupChannel(std::string&#32;channelGroupName);
+84 
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;changeChannelVolume(std::string&#32;channelGroupName,&#32;<emphasis role="keywordtype">float</emphasis>&#32;volume);
+92 
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;nameToLower(std::string&#32;&amp;name);
+98 
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FMOD_RESULT&#32;mResult;
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;systemRefresh();
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;create3DSound(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;soundPath,&#32;std::string&#32;soundName,&#32;<emphasis role="keywordtype">float</emphasis>&#32;minDistance,&#32;<emphasis role="keywordtype">float</emphasis>&#32;maxDistance);
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createNormalSound(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;soundPath,&#32;std::string&#32;soundName);
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setSpeed(std::string&#32;soundName,&#32;<emphasis role="keywordtype">float</emphasis>&#32;newSpeed);
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMode(std::string&#32;soundName,&#32;<link linkend="__sound_manager_8h_1ab817628375dd23c707108f7d9fd302ca">FMOD_MODE</link>&#32;newMode);
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createChannelGroup(std::string&#32;groupName);
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setChannelVolume(std::string&#32;groupName,&#32;<emphasis role="keywordtype">float</emphasis>&#32;newVolume);
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setVolume(std::string&#32;soundName,&#32;<emphasis role="keywordtype">float</emphasis>&#32;newVolume);
+156 
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;getVolume(std::string&#32;soundName);
+163 
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;pauseSound(std::string&#32;soundName,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;pause);
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;playSound(std::string&#32;soundName,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isLoop,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;channelGroup,&#32;FMOD_VECTOR*&#32;channelPos,&#32;FMOD_VECTOR*&#32;channelVel,&#32;<emphasis role="keywordtype">int</emphasis>&#32;timesLooped);
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;deleteSound(std::string&#32;soundName);
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;updateListenersPosition(<emphasis role="keywordtype">int</emphasis>&#32;index,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;listenerPos,&#32;
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;listenerFW,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;listenerUP,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;listenerVel&#32;=&#32;{&#32;0,0,0&#32;});
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;removeListener(<emphasis role="keywordtype">int</emphasis>&#32;index);
+205 
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setSoundPosition(std::string&#32;soundName,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;position);
+213 
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160">getNextUsefulListenerIndex</link>()&#32;{
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;mListeners.size();&#32;i++)&#32;{
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!mListeners[i])
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;i;
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+225 
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+227 &#32;&#32;&#32;&#32;};
+228 
+233 &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_classme_1_1_sound_manager">SoundManager</link>&amp;&#32;<link linkend="_namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1">soundManager</link>()&#32;{
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">SoundManager::instance</link>();
+235 &#32;&#32;&#32;&#32;}
+236 }
+237 
+238 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;!_FMOD_SOUND_MANAGER</emphasis>
+239 
+</programlisting></section>

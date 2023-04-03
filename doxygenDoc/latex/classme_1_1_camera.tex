@@ -1,0 +1,256 @@
+\hypertarget{classme_1_1_camera}{}\doxysection{me\+::Camera Class Reference}
+\label{classme_1_1_camera}\index{me::Camera@{me::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for me\+::Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classme_1_1_camera}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_camera_ab056bc235ad9333533061de828040d9b}{Camera}} ()
+\item 
+\mbox{\hyperlink{classme_1_1_camera_a018b4f90ee65cba858d74b98a22afad9}{$\sim$\+Camera}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a2703d4f36193fa328b0fae6be26260e2}{set\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a086be3808300bb5f7381fb75c5dfcc39}{set\+Near\+Distance}} (int near\+Distance)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a7ebd57ecfe7fdac4f05ec17085a59894}{set\+Far\+Distance}} (int far\+Distance)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_afd714756c07e4e772affef8ce4e70fd2}{set\+Auto\+Radio}} (bool auto\+Radio)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_abb44256375ca1417fa507be047be96b2}{set\+ZOrder}} (int z\+Order)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a83dc55560d8b19a266afc5f2e079e3e9}{set\+Look\+At}} (\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} look\+At)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a733c8cf61120248beaa21cca6e2af3f1}{start}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_ad64b448ab73a9d402a22b212d321ad53}{update}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a252372e285f398b68f0dae0598e2b02c}{set\+Static}} (bool stat)
+\item 
+void \mbox{\hyperlink{classme_1_1_camera_a406770d1481fcf5628e69701ccaf5b19}{set\+Viewport\+Dimension}} (float left, float top, float width, float height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_component_a4dae1070d5cb2b14b49466e64b3095d6}{Component}} ()
+\item 
+virtual \mbox{\hyperlink{classme_1_1_component_ab2a3844334f7d532196025c32e100799}{$\sim$\+Component}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_component_a7c5786c94bfaf7b6e110f9fa30feafb3}{set\+Entity}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$e)
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a1c8917fcfda2d8ad66ab487ab726a0cd}{get\+Entity}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{start}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_af9625b0308ccd7b22c7871922de0b0a0}{late\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a4d98175f03ee8266f71d9237b3d23748}{On\+Collision\+Enter}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a9e024171b2bbed0cedf1476e2879081f}{On\+Collision\+Stay}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a643aad67bcb41b2c936e49e25b78342e}{On\+Collision\+Exit}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_camera_abdcff56f8591e11001a6e90d2813af9e}{m\+Name}}
+\item 
+int \mbox{\hyperlink{classme_1_1_camera_aeca43b11e5398b3c2fd879101234517c}{m\+Near\+Distance}}
+\item 
+int \mbox{\hyperlink{classme_1_1_camera_a9e635f68597a0be0836fd4981353c476}{m\+Far\+Distance}}
+\item 
+bool \mbox{\hyperlink{classme_1_1_camera_af9dc9156976b4d8c7c1e74c911491a7e}{m\+Auto\+Radio}}
+\item 
+int \mbox{\hyperlink{classme_1_1_camera_a163337a30044c6020e3771029738bea4}{m\+ZOrder}}
+\item 
+\mbox{\hyperlink{classme_1_1_vector3}{Vector3}} \mbox{\hyperlink{classme_1_1_camera_ae449ffbacf0da4c1ff0019223ec479d3}{m\+Look\+At}}
+\item 
+\mbox{\hyperlink{classme_1_1_transform}{Transform}} $\ast$ \mbox{\hyperlink{classme_1_1_camera_a99b0b0754bdc90cf1794df0e4f017d87}{m\+Transform}}
+\item 
+bool \mbox{\hyperlink{classme_1_1_camera_a91a53aeb26201c9c8f3a9c8e1484d0ce}{m\+Static\+Object}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a89862182926907ae608d3244d1d4e6d1}{m\+Entity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classme_1_1_component_ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3}{enabled}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classme_1_1_camera}{Camera}} class create camera(\+Viewer) in scene 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_camera_ab056bc235ad9333533061de828040d9b}\label{classme_1_1_camera_ab056bc235ad9333533061de828040d9b}} 
+\index{me::Camera@{me::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily me\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_camera_a018b4f90ee65cba858d74b98a22afad9}\label{classme_1_1_camera_a018b4f90ee65cba858d74b98a22afad9}} 
+\index{me::Camera@{me::Camera}!````~Camera@{$\sim$Camera}}
+\index{````~Camera@{$\sim$Camera}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{$\sim$Camera()}{~Camera()}}
+{\footnotesize\ttfamily me\+::\+Camera\+::$\sim$\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_camera_afd714756c07e4e772affef8ce4e70fd2}\label{classme_1_1_camera_afd714756c07e4e772affef8ce4e70fd2}} 
+\index{me::Camera@{me::Camera}!setAutoRadio@{setAutoRadio}}
+\index{setAutoRadio@{setAutoRadio}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setAutoRadio()}{setAutoRadio()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Auto\+Radio (\begin{DoxyParamCaption}\item[{bool}]{auto\+Radio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a7ebd57ecfe7fdac4f05ec17085a59894}\label{classme_1_1_camera_a7ebd57ecfe7fdac4f05ec17085a59894}} 
+\index{me::Camera@{me::Camera}!setFarDistance@{setFarDistance}}
+\index{setFarDistance@{setFarDistance}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setFarDistance()}{setFarDistance()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Far\+Distance (\begin{DoxyParamCaption}\item[{int}]{far\+Distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a83dc55560d8b19a266afc5f2e079e3e9}\label{classme_1_1_camera_a83dc55560d8b19a266afc5f2e079e3e9}} 
+\index{me::Camera@{me::Camera}!setLookAt@{setLookAt}}
+\index{setLookAt@{setLookAt}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setLookAt()}{setLookAt()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Look\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}}]{look\+At }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a2703d4f36193fa328b0fae6be26260e2}\label{classme_1_1_camera_a2703d4f36193fa328b0fae6be26260e2}} 
+\index{me::Camera@{me::Camera}!setName@{setName}}
+\index{setName@{setName}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a086be3808300bb5f7381fb75c5dfcc39}\label{classme_1_1_camera_a086be3808300bb5f7381fb75c5dfcc39}} 
+\index{me::Camera@{me::Camera}!setNearDistance@{setNearDistance}}
+\index{setNearDistance@{setNearDistance}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setNearDistance()}{setNearDistance()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Near\+Distance (\begin{DoxyParamCaption}\item[{int}]{near\+Distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a252372e285f398b68f0dae0598e2b02c}\label{classme_1_1_camera_a252372e285f398b68f0dae0598e2b02c}} 
+\index{me::Camera@{me::Camera}!setStatic@{setStatic}}
+\index{setStatic@{setStatic}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setStatic()}{setStatic()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Static (\begin{DoxyParamCaption}\item[{bool}]{stat }\end{DoxyParamCaption})}
+
+Set it is static entity or not \mbox{\Hypertarget{classme_1_1_camera_a406770d1481fcf5628e69701ccaf5b19}\label{classme_1_1_camera_a406770d1481fcf5628e69701ccaf5b19}} 
+\index{me::Camera@{me::Camera}!setViewportDimension@{setViewportDimension}}
+\index{setViewportDimension@{setViewportDimension}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setViewportDimension()}{setViewportDimension()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+Viewport\+Dimension (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{float}]{top,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+Set dimension to the viewport of the camera with this name 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of camera \\
+\hline
+{\em left} & left point of viewport in range 0.\+0 to 1.\+0 \\
+\hline
+{\em top} & top point of viewport in range 0.\+0 to 1.\+0 \\
+\hline
+{\em width} & width of viewport in range 0.\+0 to 1.\+0 \\
+\hline
+{\em height} & height of viewport in range 0.\+0 to 1.\+0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false\+: if it doesn\textquotesingle{}t exist 
+
+true\+: if succeed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_camera_abb44256375ca1417fa507be047be96b2}\label{classme_1_1_camera_abb44256375ca1417fa507be047be96b2}} 
+\index{me::Camera@{me::Camera}!setZOrder@{setZOrder}}
+\index{setZOrder@{setZOrder}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{setZOrder()}{setZOrder()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::set\+ZOrder (\begin{DoxyParamCaption}\item[{int}]{z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a733c8cf61120248beaa21cca6e2af3f1}\label{classme_1_1_camera_a733c8cf61120248beaa21cca6e2af3f1}} 
+\index{me::Camera@{me::Camera}!start@{start}}
+\index{start@{start}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get info for m\+Transform and create ogre\+Camera and set the start pos 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{me\+::\+Component}}.
+
+\mbox{\Hypertarget{classme_1_1_camera_ad64b448ab73a9d402a22b212d321ad53}\label{classme_1_1_camera_ad64b448ab73a9d402a22b212d321ad53}} 
+\index{me::Camera@{me::Camera}!update@{update}}
+\index{update@{update}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void me\+::\+Camera\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update transform info to camera node 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{me\+::\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_camera_af9dc9156976b4d8c7c1e74c911491a7e}\label{classme_1_1_camera_af9dc9156976b4d8c7c1e74c911491a7e}} 
+\index{me::Camera@{me::Camera}!mAutoRadio@{mAutoRadio}}
+\index{mAutoRadio@{mAutoRadio}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mAutoRadio}{mAutoRadio}}
+{\footnotesize\ttfamily bool me\+::\+Camera\+::m\+Auto\+Radio\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a9e635f68597a0be0836fd4981353c476}\label{classme_1_1_camera_a9e635f68597a0be0836fd4981353c476}} 
+\index{me::Camera@{me::Camera}!mFarDistance@{mFarDistance}}
+\index{mFarDistance@{mFarDistance}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mFarDistance}{mFarDistance}}
+{\footnotesize\ttfamily int me\+::\+Camera\+::m\+Far\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_ae449ffbacf0da4c1ff0019223ec479d3}\label{classme_1_1_camera_ae449ffbacf0da4c1ff0019223ec479d3}} 
+\index{me::Camera@{me::Camera}!mLookAt@{mLookAt}}
+\index{mLookAt@{mLookAt}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mLookAt}{mLookAt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_vector3}{Vector3}} me\+::\+Camera\+::m\+Look\+At\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_abdcff56f8591e11001a6e90d2813af9e}\label{classme_1_1_camera_abdcff56f8591e11001a6e90d2813af9e}} 
+\index{me::Camera@{me::Camera}!mName@{mName}}
+\index{mName@{mName}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Camera\+::m\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_aeca43b11e5398b3c2fd879101234517c}\label{classme_1_1_camera_aeca43b11e5398b3c2fd879101234517c}} 
+\index{me::Camera@{me::Camera}!mNearDistance@{mNearDistance}}
+\index{mNearDistance@{mNearDistance}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mNearDistance}{mNearDistance}}
+{\footnotesize\ttfamily int me\+::\+Camera\+::m\+Near\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a91a53aeb26201c9c8f3a9c8e1484d0ce}\label{classme_1_1_camera_a91a53aeb26201c9c8f3a9c8e1484d0ce}} 
+\index{me::Camera@{me::Camera}!mStaticObject@{mStaticObject}}
+\index{mStaticObject@{mStaticObject}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mStaticObject}{mStaticObject}}
+{\footnotesize\ttfamily bool me\+::\+Camera\+::m\+Static\+Object = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a99b0b0754bdc90cf1794df0e4f017d87}\label{classme_1_1_camera_a99b0b0754bdc90cf1794df0e4f017d87}} 
+\index{me::Camera@{me::Camera}!mTransform@{mTransform}}
+\index{mTransform@{mTransform}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mTransform}{mTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_transform}{Transform}}$\ast$ me\+::\+Camera\+::m\+Transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_camera_a163337a30044c6020e3771029738bea4}\label{classme_1_1_camera_a163337a30044c6020e3771029738bea4}} 
+\index{me::Camera@{me::Camera}!mZOrder@{mZOrder}}
+\index{mZOrder@{mZOrder}!me::Camera@{me::Camera}}
+\doxysubsubsection{\texorpdfstring{mZOrder}{mZOrder}}
+{\footnotesize\ttfamily int me\+::\+Camera\+::m\+ZOrder\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

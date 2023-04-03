@@ -1,0 +1,595 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__style__window" kind="struct" language="C++" prot="public">
+    <compoundname>nk_style_window</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__style__window_1ab7b7c6889cc1f8dd34e55b556835ccec" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__window__header" kindref="compound">nk_style_window_header</ref></type>
+        <definition>struct nk_style_window_header nk_style_window::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>nk_style_window::header</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5011" column="33" bodyfile="Src/GUI/nuklear.h" bodystart="5011" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a02b8b0446c123c39ac66bada5c85028d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_window::fixed_background</definition>
+        <argsstring></argsstring>
+        <name>fixed_background</name>
+        <qualifiedname>nk_style_window::fixed_background</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5012" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="5012" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a0e55fd791308fc8d44db3a28736597fb" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::background</definition>
+        <argsstring></argsstring>
+        <name>background</name>
+        <qualifiedname>nk_style_window::background</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5013" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5013" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a588fddddfff17e20424605dd0752c5e0" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::border_color</definition>
+        <argsstring></argsstring>
+        <name>border_color</name>
+        <qualifiedname>nk_style_window::border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5015" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5015" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a183e2d22fce0f95b1d4dca1a5df1fe95" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::popup_border_color</definition>
+        <argsstring></argsstring>
+        <name>popup_border_color</name>
+        <qualifiedname>nk_style_window::popup_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5016" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5016" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a4d713f3f55ceac37afd0325affec96c0" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::combo_border_color</definition>
+        <argsstring></argsstring>
+        <name>combo_border_color</name>
+        <qualifiedname>nk_style_window::combo_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5017" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5017" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1ab476750247048a6857f70c19e3f1f8db" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::contextual_border_color</definition>
+        <argsstring></argsstring>
+        <name>contextual_border_color</name>
+        <qualifiedname>nk_style_window::contextual_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5018" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5018" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1af0042cffbc72da702432ee1f3917d73c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::menu_border_color</definition>
+        <argsstring></argsstring>
+        <name>menu_border_color</name>
+        <qualifiedname>nk_style_window::menu_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5019" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5019" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a3f27932c225305d78887c18aeb788c37" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::group_border_color</definition>
+        <argsstring></argsstring>
+        <name>group_border_color</name>
+        <qualifiedname>nk_style_window::group_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5020" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5020" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1acfc60df8137d2d6dfa344a39a0fc50e7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_window::tooltip_border_color</definition>
+        <argsstring></argsstring>
+        <name>tooltip_border_color</name>
+        <qualifiedname>nk_style_window::tooltip_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5021" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5021" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a0b0b85091e31b0d2444e9cf761e9d878" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_window::scaler</definition>
+        <argsstring></argsstring>
+        <name>scaler</name>
+        <qualifiedname>nk_style_window::scaler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5022" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="5022" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1ad7fa0f645e10ec7bc6d62692e6d6edf9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::border</definition>
+        <argsstring></argsstring>
+        <name>border</name>
+        <qualifiedname>nk_style_window::border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5024" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5024" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a5ef574e571d5e4726852ad2f65c3bbaa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::combo_border</definition>
+        <argsstring></argsstring>
+        <name>combo_border</name>
+        <qualifiedname>nk_style_window::combo_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5025" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5025" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1ac4916772640d3241438c20c4a8ba0e50" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::contextual_border</definition>
+        <argsstring></argsstring>
+        <name>contextual_border</name>
+        <qualifiedname>nk_style_window::contextual_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5026" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5026" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a21ca38bdb7f780cf8d02e3f400397219" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::menu_border</definition>
+        <argsstring></argsstring>
+        <name>menu_border</name>
+        <qualifiedname>nk_style_window::menu_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5027" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5027" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a01f2264c6f00fbfb81418c14bcccdb84" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::group_border</definition>
+        <argsstring></argsstring>
+        <name>group_border</name>
+        <qualifiedname>nk_style_window::group_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5028" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5028" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a9b989c066564f6af652248abcbc342f6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::tooltip_border</definition>
+        <argsstring></argsstring>
+        <name>tooltip_border</name>
+        <qualifiedname>nk_style_window::tooltip_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5029" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5029" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1af8e78775dddd67f9e55ee160f8943a38" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::popup_border</definition>
+        <argsstring></argsstring>
+        <name>popup_border</name>
+        <qualifiedname>nk_style_window::popup_border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5030" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5030" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a8015008fdc925c60cda1a81688eb9017" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::min_row_height_padding</definition>
+        <argsstring></argsstring>
+        <name>min_row_height_padding</name>
+        <qualifiedname>nk_style_window::min_row_height_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5031" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5031" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a9be123b10d86541aa71dcb88272df015" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_window::rounding</definition>
+        <argsstring></argsstring>
+        <name>rounding</name>
+        <qualifiedname>nk_style_window::rounding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5033" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5033" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a890814c49e4b1da0c311b1c1521c508c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::spacing</definition>
+        <argsstring></argsstring>
+        <name>spacing</name>
+        <qualifiedname>nk_style_window::spacing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5034" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5034" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a22a4285cab4e629d1a22ffb5e4fa31b8" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::scrollbar_size</definition>
+        <argsstring></argsstring>
+        <name>scrollbar_size</name>
+        <qualifiedname>nk_style_window::scrollbar_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5035" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5035" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1af285fb50f2acd6562706b97ee3233b0c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::min_size</definition>
+        <argsstring></argsstring>
+        <name>min_size</name>
+        <qualifiedname>nk_style_window::min_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5036" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5036" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a445b869eddbbe4883259f03263fc49df" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <qualifiedname>nk_style_window::padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5038" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5038" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a86d3a9f2f90380097f15b5abf09b0254" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::group_padding</definition>
+        <argsstring></argsstring>
+        <name>group_padding</name>
+        <qualifiedname>nk_style_window::group_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5039" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5039" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a88ba604ec88fc6120dc7df0450b55a6c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::popup_padding</definition>
+        <argsstring></argsstring>
+        <name>popup_padding</name>
+        <qualifiedname>nk_style_window::popup_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5040" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5040" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a83a35e01cad6096a632917eec64e78d7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::combo_padding</definition>
+        <argsstring></argsstring>
+        <name>combo_padding</name>
+        <qualifiedname>nk_style_window::combo_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5041" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5041" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1ad5a1c6956c11037f90209d910d01bdc4" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::contextual_padding</definition>
+        <argsstring></argsstring>
+        <name>contextual_padding</name>
+        <qualifiedname>nk_style_window::contextual_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5042" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5042" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a10bea28d74c8475b42642fb6d7fd2a5e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::menu_padding</definition>
+        <argsstring></argsstring>
+        <name>menu_padding</name>
+        <qualifiedname>nk_style_window::menu_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5043" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5043" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__window_1a29a5792cc695d42f7d2509ebec405465" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_window::tooltip_padding</definition>
+        <argsstring></argsstring>
+        <name>tooltip_padding</name>
+        <qualifiedname>nk_style_window::tooltip_padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5044" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5044" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="7">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="6">
+        <label>nk_image</label>
+        <link refid="structnk__image"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nk_nine_slice</label>
+        <link refid="structnk__nine__slice"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>img</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nk_style_button</label>
+        <link refid="structnk__style__button"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>image_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_style_item</label>
+        <link refid="structnk__style__item"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nk_style_item_data</label>
+        <link refid="unionnk__style__item__data"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>slice</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nk_style_window</label>
+        <link refid="structnk__style__window"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>fixed_background</edgelabel>
+          <edgelabel>scaler</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>background</edgelabel>
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>combo_border_color</edgelabel>
+          <edgelabel>contextual_border_color</edgelabel>
+          <edgelabel>group_border_color</edgelabel>
+          <edgelabel>menu_border_color</edgelabel>
+          <edgelabel>popup_border_color</edgelabel>
+          <edgelabel>tooltip_border_color</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>combo_padding</edgelabel>
+          <edgelabel>contextual_padding</edgelabel>
+          <edgelabel>group_padding</edgelabel>
+          <edgelabel>menu_padding</edgelabel>
+          <edgelabel>min_size</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>popup_padding</edgelabel>
+          <edgelabel>scrollbar_size</edgelabel>
+          <edgelabel>spacing</edgelabel>
+          <edgelabel>tooltip_padding</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_style_window_header</label>
+        <link refid="structnk__style__window__header"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>close_button</edgelabel>
+          <edgelabel>minimize_button</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>label_active</edgelabel>
+          <edgelabel>label_hover</edgelabel>
+          <edgelabel>label_normal</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>label_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="5010" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5010" bodyend="5045"/>
+    <listofallmembers>
+      <member refid="structnk__style__window_1a0e55fd791308fc8d44db3a28736597fb" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>background</name></member>
+      <member refid="structnk__style__window_1ad7fa0f645e10ec7bc6d62692e6d6edf9" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>border</name></member>
+      <member refid="structnk__style__window_1a588fddddfff17e20424605dd0752c5e0" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>border_color</name></member>
+      <member refid="structnk__style__window_1a5ef574e571d5e4726852ad2f65c3bbaa" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>combo_border</name></member>
+      <member refid="structnk__style__window_1a4d713f3f55ceac37afd0325affec96c0" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>combo_border_color</name></member>
+      <member refid="structnk__style__window_1a83a35e01cad6096a632917eec64e78d7" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>combo_padding</name></member>
+      <member refid="structnk__style__window_1ac4916772640d3241438c20c4a8ba0e50" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>contextual_border</name></member>
+      <member refid="structnk__style__window_1ab476750247048a6857f70c19e3f1f8db" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>contextual_border_color</name></member>
+      <member refid="structnk__style__window_1ad5a1c6956c11037f90209d910d01bdc4" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>contextual_padding</name></member>
+      <member refid="structnk__style__window_1a02b8b0446c123c39ac66bada5c85028d" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>fixed_background</name></member>
+      <member refid="structnk__style__window_1a01f2264c6f00fbfb81418c14bcccdb84" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>group_border</name></member>
+      <member refid="structnk__style__window_1a3f27932c225305d78887c18aeb788c37" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>group_border_color</name></member>
+      <member refid="structnk__style__window_1a86d3a9f2f90380097f15b5abf09b0254" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>group_padding</name></member>
+      <member refid="structnk__style__window_1ab7b7c6889cc1f8dd34e55b556835ccec" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>header</name></member>
+      <member refid="structnk__style__window_1a21ca38bdb7f780cf8d02e3f400397219" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>menu_border</name></member>
+      <member refid="structnk__style__window_1af0042cffbc72da702432ee1f3917d73c" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>menu_border_color</name></member>
+      <member refid="structnk__style__window_1a10bea28d74c8475b42642fb6d7fd2a5e" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>menu_padding</name></member>
+      <member refid="structnk__style__window_1a8015008fdc925c60cda1a81688eb9017" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>min_row_height_padding</name></member>
+      <member refid="structnk__style__window_1af285fb50f2acd6562706b97ee3233b0c" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>min_size</name></member>
+      <member refid="structnk__style__window_1a445b869eddbbe4883259f03263fc49df" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>padding</name></member>
+      <member refid="structnk__style__window_1af8e78775dddd67f9e55ee160f8943a38" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>popup_border</name></member>
+      <member refid="structnk__style__window_1a183e2d22fce0f95b1d4dca1a5df1fe95" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>popup_border_color</name></member>
+      <member refid="structnk__style__window_1a88ba604ec88fc6120dc7df0450b55a6c" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>popup_padding</name></member>
+      <member refid="structnk__style__window_1a9be123b10d86541aa71dcb88272df015" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>rounding</name></member>
+      <member refid="structnk__style__window_1a0b0b85091e31b0d2444e9cf761e9d878" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>scaler</name></member>
+      <member refid="structnk__style__window_1a22a4285cab4e629d1a22ffb5e4fa31b8" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>scrollbar_size</name></member>
+      <member refid="structnk__style__window_1a890814c49e4b1da0c311b1c1521c508c" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>spacing</name></member>
+      <member refid="structnk__style__window_1a9b989c066564f6af652248abcbc342f6" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>tooltip_border</name></member>
+      <member refid="structnk__style__window_1acfc60df8137d2d6dfa344a39a0fc50e7" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>tooltip_border_color</name></member>
+      <member refid="structnk__style__window_1a29a5792cc695d42f7d2509ebec405465" prot="public" virt="non-virtual"><scope>nk_style_window</scope><name>tooltip_padding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

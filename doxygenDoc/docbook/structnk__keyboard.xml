@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__keyboard" xml:lang="en-US">
+<title>nk_keyboard Struct Reference</title>
+<indexterm><primary>nk_keyboard</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__key">nk_key</link> <link linkend="_structnk__keyboard_1a7f4bc6e6c826efeef5ac3ccfe7be2951">keys</link> [<link linkend="_nuklear_8h_1a167b9acb4687d274e2553658a4a70933a6375e27bbfaa7223347a27dc18be51d3">NK_KEY_MAX</link>]</para>
+</listitem>
+            <listitem><para>char <link linkend="_structnk__keyboard_1a9cdc372561fb571c1feb28837d5fc965">text</link> [<link linkend="_nuklear_8h_1a6e69058f808cd9f9af5c1b357dfdde57">NK_INPUT_MAX</link>]</para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__keyboard_1a17efc7c3577ba4ff1b3eb4a46bc6f082">text_len</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__keyboard_1a7f4bc6e6c826efeef5ac3ccfe7be2951"/><section>
+    <title>keys</title>
+<indexterm><primary>keys</primary><secondary>nk_keyboard</secondary></indexterm>
+<indexterm><primary>nk_keyboard</primary><secondary>keys</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__key">nk_key</link> nk_keyboard::keys[<link linkend="_nuklear_8h_1a167b9acb4687d274e2553658a4a70933a6375e27bbfaa7223347a27dc18be51d3">NK_KEY_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__keyboard_1a9cdc372561fb571c1feb28837d5fc965"/><section>
+    <title>text</title>
+<indexterm><primary>text</primary><secondary>nk_keyboard</secondary></indexterm>
+<indexterm><primary>nk_keyboard</primary><secondary>text</secondary></indexterm>
+<para><computeroutput>char nk_keyboard::text[<link linkend="_nuklear_8h_1a6e69058f808cd9f9af5c1b357dfdde57">NK_INPUT_MAX</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__keyboard_1a17efc7c3577ba4ff1b3eb4a46bc6f082"/><section>
+    <title>text_len</title>
+<indexterm><primary>text_len</primary><secondary>nk_keyboard</secondary></indexterm>
+<indexterm><primary>nk_keyboard</primary><secondary>text_len</secondary></indexterm>
+<para><computeroutput>int nk_keyboard::text_len</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

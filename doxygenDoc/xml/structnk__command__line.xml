@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__command__line" kind="struct" language="C++" prot="public">
+    <compoundname>nk_command_line</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__command__line_1a9ca513e60a7dabaaa4048ffecf0b86c9" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__command" kindref="compound">nk_command</ref></type>
+        <definition>struct nk_command nk_command_line::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>nk_command_line::header</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4240" column="21" bodyfile="Src/GUI/nuklear.h" bodystart="4240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__line_1a4cf2513ba2e852022553f1d7fff74d05" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short nk_command_line::line_thickness</definition>
+        <argsstring></argsstring>
+        <name>line_thickness</name>
+        <qualifiedname>nk_command_line::line_thickness</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4241" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="4241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__line_1aaebd3121f997d61e5cd2afbd2a63258e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2i" kindref="compound">nk_vec2i</ref></type>
+        <definition>struct nk_vec2i nk_command_line::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <qualifiedname>nk_command_line::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4242" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__line_1abae974f2c6c475c9cdd5d19e8c5a3ba1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2i" kindref="compound">nk_vec2i</ref></type>
+        <definition>struct nk_vec2i nk_command_line::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>nk_command_line::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4243" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__line_1abc13f5b8ba019c8b0ef619ee8a3fc73d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_command_line::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>nk_command_line::color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4244" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4244" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="2">
+        <label>nk_command</label>
+        <link refid="structnk__command"/>
+      </node>
+      <node id="1">
+        <label>nk_command_line</label>
+        <link refid="structnk__command__line"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_vec2i</label>
+        <link refid="structnk__vec2i"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4239" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4239" bodyend="4245"/>
+    <listofallmembers>
+      <member refid="structnk__command__line_1aaebd3121f997d61e5cd2afbd2a63258e" prot="public" virt="non-virtual"><scope>nk_command_line</scope><name>begin</name></member>
+      <member refid="structnk__command__line_1abc13f5b8ba019c8b0ef619ee8a3fc73d" prot="public" virt="non-virtual"><scope>nk_command_line</scope><name>color</name></member>
+      <member refid="structnk__command__line_1abae974f2c6c475c9cdd5d19e8c5a3ba1" prot="public" virt="non-virtual"><scope>nk_command_line</scope><name>end</name></member>
+      <member refid="structnk__command__line_1a9ca513e60a7dabaaa4048ffecf0b86c9" prot="public" virt="non-virtual"><scope>nk_command_line</scope><name>header</name></member>
+      <member refid="structnk__command__line_1a4cf2513ba2e852022553f1d7fff74d05" prot="public" virt="non-virtual"><scope>nk_command_line</scope><name>line_thickness</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

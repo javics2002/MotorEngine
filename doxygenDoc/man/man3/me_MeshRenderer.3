@@ -1,0 +1,158 @@
+.TH "me::MeshRenderer" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::MeshRenderer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MeshRenderer\&.h>\fP
+.PP
+Inherits \fBme::Component\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshRenderer\fP (std::string name, std::string meshName)"
+.br
+.ti -1c
+.RI "\fB~MeshRenderer\fP ()"
+.br
+.ti -1c
+.RI "void \fBstart\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetMaterial\fP (std::string materialName)"
+.br
+.ti -1c
+.RI "void \fBsetStatic\fP (bool stat)"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBmName\fP"
+.br
+.ti -1c
+.RI "std::string \fBmMeshName\fP"
+.br
+.ti -1c
+.RI "\fBTransform\fP * \fBmTransform\fP"
+.br
+.ti -1c
+.RI "bool \fBmStaticObject\fP = false"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMeshRenderer\fP class represents a visual object in 3D space and can be attached to entities\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::MeshRenderer::MeshRenderer (std::string name, std::string meshName)"
+Construct a new \fBMeshRenderer\fP component and save necesary info 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP name saved in om() map and used for entity that attached in node 
+.br
+\fImeshName\fP name of \&.mesh file 
+.RE
+.PP
+
+.SS "me::MeshRenderer::~MeshRenderer ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string me::MeshRenderer::getName ()"
+Set it is static entity or not 
+.SS "void me::MeshRenderer::setMaterial (std::string materialName)"
+Set material to mesh (ogreMesh)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImaterialName\fP name of material that is written in MaterialResource\&.material\&. 
+.RE
+.PP
+
+.SS "void me::MeshRenderer::setStatic (bool stat)"
+Set it is static entity or not 
+.SS "void me::MeshRenderer::start ()\fC [override]\fP, \fC [virtual]\fP"
+Get info for mTransform and create ogreMesh and set the start pos 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SS "void me::MeshRenderer::update ()\fC [override]\fP, \fC [virtual]\fP"
+Update transform info to mesh(ogreMesh) 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string me::MeshRenderer::mMeshName\fC [protected]\fP"
+
+.SS "std::string me::MeshRenderer::mName\fC [protected]\fP"
+
+.SS "bool me::MeshRenderer::mStaticObject = false\fC [protected]\fP"
+
+.SS "\fBTransform\fP* me::MeshRenderer::mTransform\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

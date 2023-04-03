@@ -1,0 +1,125 @@
+\hypertarget{_vector3_8h_source}{}\doxysection{Vector3.\+h}
+\label{_vector3_8h_source}\index{Src/Utils/Vector3.h@{Src/Utils/Vector3.h}}
+\mbox{\hyperlink{_vector3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ \_\_UTILS\_VECTOR3}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_\_UTILS\_VECTOR3}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ogre}{Ogre}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}\ dism,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }Vector;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{typedef}\ Vector<\ 3,\ float\ >\ \ \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Vector3f}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }Quaternion;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }btQuaternion;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacestd}{std}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstd_1_1char__traits}{char\_traits}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ \_Elem,\ \textcolor{keyword}{class}\ \_Traits>}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classstd_1_1basic__ostream}{basic\_ostream}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classstd_1_1basic__ostream}{ostream}}\ =\ \mbox{\hyperlink{classstd_1_1basic__ostream}{basic\_ostream<char,\ char\_traits<char>}}>;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }btVector3;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }btQuaternion;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lerp(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ f);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classme_1_1_vector3_a9c64642050dc360a016090fc80c063c4}{x}},\ y,\ z;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3_ac8821c6d2b9ed58a7f9b8c88305e4d36}{Vector3}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3_a1de965b6eb0a8481deae2c985cb61828}{Vector3}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ c)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ a;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ b;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ c;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3_acedcce13ac1b0827a208c86afe28cd6f}{Vector3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ v.\mbox{\hyperlink{classme_1_1_vector3_a9c64642050dc360a016090fc80c063c4}{x}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ v.\mbox{\hyperlink{classme_1_1_vector3_ae5654880d96f9bc0b064db5058149bee}{y}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ v.\mbox{\hyperlink{classme_1_1_vector3_ac32ec3fedcfc9ca6a6e1260bf55cbeaa}{z}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator-\/=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator*(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ s);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ operator*=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&\ s);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}*\ v);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ btVector3\&v);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ lerp(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \&\ b,\ \textcolor{keywordtype}{float}\ f);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ magnitude();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ normalize();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dot(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ cross(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\&\ v);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ zero();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ up();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ down();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ left();}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ right();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ back();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ forward();}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \&\ v);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angle(\textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \&\ v);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&\ \mbox{\hyperlink{_vector3_8cpp_a3958b94f7c0d4e6620dd4566b49c7676}{operator<<}}(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \&\ v);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ v3ToOgreV3();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ btVector3\ v3ToBulletV3();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \};}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

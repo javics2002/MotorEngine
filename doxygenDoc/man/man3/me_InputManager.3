@@ -1,0 +1,373 @@
+.TH "me::InputManager" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::InputManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InputManager\&.h>\fP
+.PP
+Inherits \fBme::Singleton< InputManager >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInputManager\fP & \fBoperator=\fP (const \fBInputManager\fP &o)=delete"
+.br
+.ti -1c
+.RI "\fBInputManager\fP (const \fBInputManager\fP &o)=delete"
+.br
+.ti -1c
+.RI "\fB~InputManager\fP () override"
+.br
+.ti -1c
+.RI "void \fBaddEvent\fP (\fBSDL_EventFilter\fP filter, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "void \fBdeleteEvent\fP (\fBSDL_EventFilter\fP filter, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "bool \fBaddButton\fP (std::string name, int player=\-1)"
+.br
+.ti -1c
+.RI "bool \fBaddButton\fP (std::string name, \fBInput\fP input, int player=\-1)"
+.br
+.ti -1c
+.RI "bool \fBdeleteButton\fP (std::string name)"
+.br
+.ti -1c
+.RI "bool \fBaddAxis\fP (std::string name, \fBAxisInfo\fP info)"
+.br
+.ti -1c
+.RI "bool \fBaddAxis\fP (std::string name, \fBAxisInfo\fP info, \fBAxisInput\fP input)"
+.br
+.ti -1c
+.RI "bool \fBdeleteAxis\fP (std::string name)"
+.br
+.ti -1c
+.RI "bool \fBaddBinding\fP (std::string name, \fBInput\fP input)"
+.br
+.ti -1c
+.RI "bool \fBaddBinding\fP (std::string name, \fBAxisInput\fP input)"
+.br
+.ti -1c
+.RI "bool \fBdeleteBinding\fP (std::string name, \fBInput\fP input)"
+.br
+.ti -1c
+.RI "bool \fBdeleteBinding\fP (std::string name, \fBAxisInput\fP input)"
+.br
+.ti -1c
+.RI "bool \fBgetButton\fP (std::string name)"
+.br
+.ti -1c
+.RI "float \fBgetAxis\fP (std::string name)"
+.br
+.ti -1c
+.RI "bool \fBaddOnButtonPressedEvent\fP (std::string name, int(*callback)(void *), void *additionalData=NULL)"
+.br
+.ti -1c
+.RI "bool \fBdeleteOnButtonPressedEvent\fP (std::string name, int(*callback)(void *), void *additionalData=NULL)"
+.br
+.ti -1c
+.RI "\fBVector2\fP \fBgetMousePositon\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Singleton< InputManager >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP (const \fBSingleton\fP< \fBInputManager\fP > &o)=delete"
+.br
+.ti -1c
+.RI "\fBSingleton\fP< \fBInputManager\fP > & \fBoperator=\fP (const \fBSingleton\fP< \fBInputManager\fP > &o)=delete"
+.br
+.ti -1c
+.RI "virtual \fB~Singleton\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBme::Singleton< InputManager >\fP
+.in +1c
+.ti -1c
+.RI "static \fBInputManager\fP * \fBinit\fP (Targs &&\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "static \fBInputManager\fP * \fBinstance\fP ()"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBme::Singleton< InputManager >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBInputManager\fP provides information and callbacks for any user input from keyboard, mouse and game controller\&. Define virtual buttons to easely remap your game's controls\&. You can access the \fBInputManager\fP just calling im()\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::InputManager::InputManager (const \fBInputManager\fP & o)\fC [delete]\fP"
+
+.SS "InputManager::~InputManager ()\fC [override]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool InputManager::addAxis (std::string name, \fBAxisInfo\fP info)"
+Creates an axis of name name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.br
+\fIinfo\fP Defines the behaviour of the axis\&. info\&.gravity is the speed in units per second that the axis falls toward neutral when no input is present and info\&.dead is how far the user needs to move an analog stick before your application registers the movement\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the button could be created\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addAxis (std::string name, \fBAxisInfo\fP info, \fBAxisInput\fP input)"
+Creates an axis of name name and binds it with some physical input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.br
+\fIinfo\fP Defines the behaviour of the axis\&. info\&.gravity is the speed in units per second that the axis falls toward neutral when no input is present and info\&.dead is how far the user needs to move an analog stick before your application registers the movement\&. 
+.br
+\fIinput\fP Represents two physical buttons or keys that can trigger a virtual axis\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.positive and input\&.negative represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the button could be created\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addBinding (std::string name, \fBAxisInput\fP input)"
+Binds some physical input with a virutal axis, so triggering said input will trigger the virtual axis\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.br
+\fIinput\fP Represents two physical buttons or keys that can trigger a virtual axis\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.positive and input\&.negative represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the binding was successful\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addBinding (std::string name, \fBInput\fP input)"
+Binds some physical input with a virutal button, so triggering said input will trigger the virtual button\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.br
+\fIinput\fP Representation of the physical input\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.which represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the binding was successful\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addButton (std::string name, \fBInput\fP input, int player = \fC\-1\fP)"
+Creates a button of name name and binds it with some physical input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.br
+\fIinput\fP Representation of the physical input\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.which represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.br
+\fIplayer\fP In case it is necessary to differenciate which player inputs a press, \fBInputManager\fP will dissmiss presses from other players\&. First player is 0\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the button could be created\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addButton (std::string name, int player = \fC\-1\fP)"
+Creates a button of name name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.br
+\fIplayer\fP In case it is necessary to differenciate which player inputs a press, \fBInputManager\fP will dissmiss presses from other players\&. First player is 0\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the button could be created\&. 
+.RE
+.PP
+
+.SS "void InputManager::addEvent (\fBSDL_EventFilter\fP filter, void * userdata = \fCNULL\fP)"
+Calls filter everytime an SDL_Event is processed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilter\fP is a function with the format: int (\fISDL_EventFilter)(void\fP userdata, SDL_Event* event)\&. It is recommended to check the type of the event in it\&. 
+.br
+\fIuserdata\fP is a pointer to additional information to use in the callback\&. It is NULL by default\&. 
+.RE
+.PP
+
+.SS "bool InputManager::addOnButtonPressedEvent (std::string name, int(*)(void *) callback, void * additionalData = \fCNULL\fP)"
+Binds a callback to a virtual button, so it's executed anytime it's triggered\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button 
+.br
+\fIcallback\fP Callback to be binded to button name 
+.br
+\fIadditionalData\fP Parameter that the callback would be called with and it may use\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Whether the callback could be binded to the button 
+.RE
+.PP
+
+.SS "bool InputManager::deleteAxis (std::string name)"
+Deletes axis name and any bindings it may have\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the axis was deleted\&. 
+.RE
+.PP
+
+.SS "bool InputManager::deleteBinding (std::string name, \fBAxisInput\fP input)"
+Unlinks an axis with some physical input 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.br
+\fIinput\fP Represents two physical buttons or keys that can trigger a virtual axis\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.positive and input\&.negative represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the binding was deleted\&. 
+.RE
+.PP
+
+.SS "bool InputManager::deleteBinding (std::string name, \fBInput\fP input)"
+Unlinks a button with some physical input 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.br
+\fIinput\fP Representation of the physical input\&. input\&.type can be SDL_KeyboardEvent for keyboard key presses, SDL_MouseButtonEvent for mouse clicks, or SDL_ControllerButtonEvent for controller presses; and input\&.which represents a value of SDL_KeyCode, SDL_BUTTON or SDL_GamepadButton depending on the type of the event 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the binding was deleted\&. 
+.RE
+.PP
+
+.SS "bool InputManager::deleteButton (std::string name)"
+Deletes button name and any bindings it may have\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean representing whether the button was deleted\&. 
+.RE
+.PP
+
+.SS "void InputManager::deleteEvent (\fBSDL_EventFilter\fP filter, void * userdata = \fCNULL\fP)"
+Deletes filter from the SDLEventWatch\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilter\fP is the same function used to add the callback\&. 
+.br
+\fIuserdata\fP is the same additional information used when adding the callback\&. 
+.RE
+.PP
+
+.SS "bool InputManager::deleteOnButtonPressedEvent (std::string name, int(*)(void *) callback, void * additionalData = \fCNULL\fP)"
+Unbinds a callback from its virtual button, so it's never executed again anytime its button is triggered\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button 
+.br
+\fIcallback\fP Callback to be unbinded to button name 
+.br
+\fIadditionalData\fP is the same additional information used when the callback was binded\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Whether the callback could be unbinded to the button 
+.RE
+.PP
+
+.SS "float InputManager::getAxis (std::string name)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the axis\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The value of the axis in range [-1, 1]\&. 
+.RE
+.PP
+
+.SS "bool InputManager::getButton (std::string name)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the button\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The state of the button\&. 
+.RE
+.PP
+
+.SS "\fBVector2\fP me::InputManager::getMousePositon ()"
+
+.SS "\fBInputManager\fP & me::InputManager::operator= (const \fBInputManager\fP & o)\fC [delete]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

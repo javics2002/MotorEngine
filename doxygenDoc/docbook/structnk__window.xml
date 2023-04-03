@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__window" xml:lang="en-US">
+<title>nk_window Struct Reference</title>
+<indexterm><primary>nk_window</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned int <link linkend="_structnk__window_1ac620283e47a5647e437a5f7742ac31bf">seq</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> <link linkend="_structnk__window_1afdb4b90e7f28cfec870cb349a5161ebc">name</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_structnk__window_1a5fbe50f169aa47cab86ebef31e43047a">name_string</link> [<link linkend="_nuklear_8h_1ae8c2d8ba66b02fdd1c64137904c83372">NK_WINDOW_MAX_NAME</link>]</para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> <link linkend="_structnk__window_1ab2c821a48b401380bc00031d5e7b9e87">flags</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__rect">nk_rect</link> <link linkend="_structnk__window_1a3faf3afe7ee63b8203eae8cf28bf1272">bounds</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__scroll">nk_scroll</link> <link linkend="_structnk__window_1a6a6e8fdf89a7039df725a14b640dc9df">scrollbar</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> <link linkend="_structnk__window_1ab1a260769cace3a808d1361feeeaa002">buffer</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__panel">nk_panel</link> * <link linkend="_structnk__window_1ad85f14784c55f21daa8e6bd9d226be43">layout</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__window_1ae1edf68bb62484a80ef588d2ab0fd210">scrollbar_hiding_timer</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__property__state">nk_property_state</link> <link linkend="_structnk__window_1ab9fedd0b171796592daf5fa41a08bcea">property</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__popup__state">nk_popup_state</link> <link linkend="_structnk__window_1aa5a5f13e1d678d56725eab9a0a130acd">popup</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__edit__state">nk_edit_state</link> <link linkend="_structnk__window_1a5ff816faab95d10bf9bdff4518c268ea">edit</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__window_1ae08590387048eac30fbfde13579ca39a">scrolled</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__table">nk_table</link> * <link linkend="_structnk__window_1a5e7118c3d6354cce7d0a6b6ab19f2267">tables</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__window_1a1a2c2bcd90b8f65838f0c4d38f9e3f6d">table_count</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__window">nk_window</link> * <link linkend="_structnk__window_1a43d9992fd6f4b1e86a325e099b7e49fa">next</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__window">nk_window</link> * <link linkend="_structnk__window_1a467a7e9298d91e5226774ff6061a73b5">prev</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__window">nk_window</link> * <link linkend="_structnk__window_1ade4eb319bf6471423d5d123a637f37c1">parent</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__window_1a3faf3afe7ee63b8203eae8cf28bf1272"/><section>
+    <title>bounds</title>
+<indexterm><primary>bounds</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>bounds</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__rect">nk_rect</link> nk_window::bounds</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ab1a260769cace3a808d1361feeeaa002"/><section>
+    <title>buffer</title>
+<indexterm><primary>buffer</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>buffer</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> nk_window::buffer</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a5ff816faab95d10bf9bdff4518c268ea"/><section>
+    <title>edit</title>
+<indexterm><primary>edit</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>edit</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__edit__state">nk_edit_state</link> nk_window::edit</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ab2c821a48b401380bc00031d5e7b9e87"/><section>
+    <title>flags</title>
+<indexterm><primary>flags</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>flags</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> nk_window::flags</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ad85f14784c55f21daa8e6bd9d226be43"/><section>
+    <title>layout</title>
+<indexterm><primary>layout</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>layout</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__panel">nk_panel</link>* nk_window::layout</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1afdb4b90e7f28cfec870cb349a5161ebc"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>name</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> nk_window::name</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a5fbe50f169aa47cab86ebef31e43047a"/><section>
+    <title>name_string</title>
+<indexterm><primary>name_string</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>name_string</secondary></indexterm>
+<para><computeroutput>char nk_window::name_string[<link linkend="_nuklear_8h_1ae8c2d8ba66b02fdd1c64137904c83372">NK_WINDOW_MAX_NAME</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a43d9992fd6f4b1e86a325e099b7e49fa"/><section>
+    <title>next</title>
+<indexterm><primary>next</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>next</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__window">nk_window</link>* nk_window::next</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ade4eb319bf6471423d5d123a637f37c1"/><section>
+    <title>parent</title>
+<indexterm><primary>parent</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>parent</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__window">nk_window</link>* nk_window::parent</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1aa5a5f13e1d678d56725eab9a0a130acd"/><section>
+    <title>popup</title>
+<indexterm><primary>popup</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>popup</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__popup__state">nk_popup_state</link> nk_window::popup</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a467a7e9298d91e5226774ff6061a73b5"/><section>
+    <title>prev</title>
+<indexterm><primary>prev</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>prev</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__window">nk_window</link>* nk_window::prev</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ab9fedd0b171796592daf5fa41a08bcea"/><section>
+    <title>property</title>
+<indexterm><primary>property</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>property</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__property__state">nk_property_state</link> nk_window::property</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a6a6e8fdf89a7039df725a14b640dc9df"/><section>
+    <title>scrollbar</title>
+<indexterm><primary>scrollbar</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>scrollbar</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__scroll">nk_scroll</link> nk_window::scrollbar</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ae1edf68bb62484a80ef588d2ab0fd210"/><section>
+    <title>scrollbar_hiding_timer</title>
+<indexterm><primary>scrollbar_hiding_timer</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>scrollbar_hiding_timer</secondary></indexterm>
+<para><computeroutput>float nk_window::scrollbar_hiding_timer</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ae08590387048eac30fbfde13579ca39a"/><section>
+    <title>scrolled</title>
+<indexterm><primary>scrolled</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>scrolled</secondary></indexterm>
+<para><computeroutput>unsigned int nk_window::scrolled</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1ac620283e47a5647e437a5f7742ac31bf"/><section>
+    <title>seq</title>
+<indexterm><primary>seq</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>seq</secondary></indexterm>
+<para><computeroutput>unsigned int nk_window::seq</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a1a2c2bcd90b8f65838f0c4d38f9e3f6d"/><section>
+    <title>table_count</title>
+<indexterm><primary>table_count</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>table_count</secondary></indexterm>
+<para><computeroutput>unsigned int nk_window::table_count</computeroutput></para></section>
+<anchor xml:id="_structnk__window_1a5e7118c3d6354cce7d0a6b6ab19f2267"/><section>
+    <title>tables</title>
+<indexterm><primary>tables</primary><secondary>nk_window</secondary></indexterm>
+<indexterm><primary>nk_window</primary><secondary>tables</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__table">nk_table</link>* nk_window::tables</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

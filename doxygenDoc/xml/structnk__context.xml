@@ -1,0 +1,1130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__context" kind="struct" language="C++" prot="public">
+    <compoundname>nk_context</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__context_1abee1c200e8e185fe718556c0ddff31ad" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__input" kindref="compound">nk_input</ref></type>
+        <definition>struct nk_input nk_context::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>nk_context::input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5407" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5407" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a39208175c061b8486ee8fb51e50a243e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style" kindref="compound">nk_style</ref></type>
+        <definition>struct nk_style nk_context::style</definition>
+        <argsstring></argsstring>
+        <name>style</name>
+        <qualifiedname>nk_context::style</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5408" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a678e6980553a5f32f7b59f2fbcebebe9" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__buffer" kindref="compound">nk_buffer</ref></type>
+        <definition>struct nk_buffer nk_context::memory</definition>
+        <argsstring></argsstring>
+        <name>memory</name>
+        <qualifiedname>nk_context::memory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5409" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a834f5a5fad2919a354472381b013a81f" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__clipboard" kindref="compound">nk_clipboard</ref></type>
+        <definition>struct nk_clipboard nk_context::clip</definition>
+        <argsstring></argsstring>
+        <name>clip</name>
+        <qualifiedname>nk_context::clip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5410" column="23" bodyfile="Src/GUI/nuklear.h" bodystart="5410" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a15a7e828c4fb1ac317c72f00ff278b95" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323" kindref="member">nk_flags</ref></type>
+        <definition>nk_flags nk_context::last_widget_state</definition>
+        <argsstring></argsstring>
+        <name>last_widget_state</name>
+        <qualifiedname>nk_context::last_widget_state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5411" column="14" bodyfile="Src/GUI/nuklear.h" bodystart="5411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a1b37f5fdd034ad23c79f90a0094ac349" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1aa9c50dd424dfcd57bab32dea3505ea26" kindref="member">nk_button_behavior</ref></type>
+        <definition>enum nk_button_behavior nk_context::button_behavior</definition>
+        <argsstring></argsstring>
+        <name>button_behavior</name>
+        <qualifiedname>nk_context::button_behavior</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5412" column="28" bodyfile="Src/GUI/nuklear.h" bodystart="5412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a86bc92d9133c81f3dd85c8ae99d612dc" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__configuration__stacks" kindref="compound">nk_configuration_stacks</ref></type>
+        <definition>struct nk_configuration_stacks nk_context::stacks</definition>
+        <argsstring></argsstring>
+        <name>stacks</name>
+        <qualifiedname>nk_context::stacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5413" column="34" bodyfile="Src/GUI/nuklear.h" bodystart="5413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a400eeefb70eab5d544831b856300ac06" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_context::delta_time_seconds</definition>
+        <argsstring></argsstring>
+        <name>delta_time_seconds</name>
+        <qualifiedname>nk_context::delta_time_seconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5414" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5414" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1aca8a2124af97661372f7b35d636c9bc6" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__text__edit" kindref="compound">nk_text_edit</ref></type>
+        <definition>struct nk_text_edit nk_context::text_edit</definition>
+        <argsstring></argsstring>
+        <name>text_edit</name>
+        <qualifiedname>nk_context::text_edit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5429" column="23" bodyfile="Src/GUI/nuklear.h" bodystart="5429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1ae51cac633c54b94a63c8fe77b9558f4a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__command__buffer" kindref="compound">nk_command_buffer</ref></type>
+        <definition>struct nk_command_buffer nk_context::overlay</definition>
+        <argsstring></argsstring>
+        <name>overlay</name>
+        <qualifiedname>nk_context::overlay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5431" column="28" bodyfile="Src/GUI/nuklear.h" bodystart="5431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a0d0f953ef2b6c56b046e4e5488d074e6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_context::build</definition>
+        <argsstring></argsstring>
+        <name>build</name>
+        <qualifiedname>nk_context::build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5434" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a10afb1419df73de41b2be1d0bff8523c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_context::use_pool</definition>
+        <argsstring></argsstring>
+        <name>use_pool</name>
+        <qualifiedname>nk_context::use_pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5435" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="5435" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a84dcedd9a6418f47d22f39e2b20d741d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__pool" kindref="compound">nk_pool</ref></type>
+        <definition>struct nk_pool nk_context::pool</definition>
+        <argsstring></argsstring>
+        <name>pool</name>
+        <qualifiedname>nk_context::pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5436" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a43a1c4cf1a69b90ad33b78789915d4eb" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_context::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <qualifiedname>nk_context::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5437" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a70f3687079206d314b2006db5fc3da05" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_context::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>nk_context::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5438" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1ab8d399ddadeb71a3d68fe6ec063a4eaf" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_context::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>nk_context::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5439" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a63efcbf544ff88f819f4d7e03927d7c6" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_context::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <qualifiedname>nk_context::current</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5440" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1aa66b352c5a05615e844a4e065186aa85" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__page__element" kindref="compound">nk_page_element</ref> *</type>
+        <definition>struct nk_page_element* nk_context::freelist</definition>
+        <argsstring></argsstring>
+        <name>freelist</name>
+        <qualifiedname>nk_context::freelist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5441" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="5441" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a332f044ac74fd5450fa61097ea45be65" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_context::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <qualifiedname>nk_context::count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5442" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__context_1a4ca2377a51d98a451bdcc61ccd967820" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_context::seq</definition>
+        <argsstring></argsstring>
+        <name>seq</name>
+        <qualifiedname>nk_context::seq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5443" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5443" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="33">
+        <label>nk_allocator</label>
+        <link refid="structnk__allocator"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>alloc</edgelabel>
+          <edgelabel>free</edgelabel>
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>nk_buffer</label>
+        <link refid="structnk__buffer"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>marker</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>nk_buffer_marker</label>
+        <link refid="structnk__buffer__marker"/>
+      </node>
+      <node id="52">
+        <label>nk_chart</label>
+        <link refid="structnk__chart"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="53">
+        <label>nk_chart_slot</label>
+        <link refid="structnk__chart__slot"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>color</edgelabel>
+          <edgelabel>highlight</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>last</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>nk_clipboard</label>
+        <link refid="structnk__clipboard"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>copy</edgelabel>
+          <edgelabel>paste</edgelabel>
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="41">
+        <label>nk_command_buffer</label>
+        <link refid="structnk__command__buffer"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>nk_configuration_stacks</label>
+        <link refid="structnk__configuration__stacks"/>
+      </node>
+      <node id="1">
+        <label>nk_context</label>
+        <link refid="structnk__context"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>input</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>style</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>stacks</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>text_edit</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>overlay</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>begin</edgelabel>
+          <edgelabel>current</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>freelist</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>nk_cursor</label>
+        <link refid="structnk__cursor"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>img</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
+        <label>nk_edit_state</label>
+        <link refid="structnk__edit__state"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="12">
+        <label>nk_image</label>
+        <link refid="structnk__image"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_input</label>
+        <link refid="structnk__input"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>keyboard</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>mouse</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nk_key</label>
+        <link refid="structnk__key"/>
+      </node>
+      <node id="3">
+        <label>nk_keyboard</label>
+        <link refid="structnk__keyboard"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>nk_memory</label>
+        <link refid="structnk__memory"/>
+      </node>
+      <node id="49">
+        <label>nk_menu_state</label>
+        <link refid="structnk__menu__state"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>nk_mouse</label>
+        <link refid="structnk__mouse"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>buttons</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>delta</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>prev</edgelabel>
+          <edgelabel>scroll_delta</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nk_mouse_button</label>
+        <link refid="structnk__mouse__button"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>clicked_pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>nk_nine_slice</label>
+        <link refid="structnk__nine__slice"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>img</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>nk_page</label>
+        <link refid="structnk__page"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>nk_page_data</label>
+        <link refid="unionnk__page__data"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>tbl</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>pan</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>nk_page_element</label>
+        <link refid="structnk__page__element"/>
+        <childnode refid="46" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>nk_panel</label>
+        <link refid="structnk__panel"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>bounds</edgelabel>
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>menu</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>row</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>chart</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>nk_pool</label>
+        <link refid="structnk__pool"/>
+        <childnode refid="33" relation="usage">
+          <edgelabel>alloc</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>pages</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>freelist</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>nk_popup_buffer</label>
+        <link refid="structnk__popup__buffer"/>
+      </node>
+      <node id="56">
+        <label>nk_popup_state</label>
+        <link refid="structnk__popup__state"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>buf</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="55">
+        <label>nk_property_state</label>
+        <link refid="structnk__property__state"/>
+      </node>
+      <node id="42">
+        <label>nk_rect</label>
+        <link refid="structnk__rect"/>
+      </node>
+      <node id="51">
+        <label>nk_row_layout</label>
+        <link refid="structnk__row__layout"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>item</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>nk_scroll</label>
+        <link refid="structnk__scroll"/>
+      </node>
+      <node id="38">
+        <label>nk_str</label>
+        <link refid="structnk__str"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nk_style</label>
+        <link refid="structnk__style"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>font</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>cursor_active</edgelabel>
+          <edgelabel>cursor_last</edgelabel>
+          <edgelabel>cursors</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>text</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>button</edgelabel>
+          <edgelabel>contextual_button</edgelabel>
+          <edgelabel>menu_button</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>checkbox</edgelabel>
+          <edgelabel>option</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>selectable</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>slider</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>progress</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>property</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>edit</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>chart</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>scrollh</edgelabel>
+          <edgelabel>scrollv</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>tab</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>combo</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>window</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>nk_style_button</label>
+        <link refid="structnk__style__button"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>image_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>nk_style_chart</label>
+        <link refid="structnk__style__chart"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>background</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>color</edgelabel>
+          <edgelabel>selected_color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>nk_style_combo</label>
+        <link refid="structnk__style__combo"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>label_active</edgelabel>
+          <edgelabel>label_hover</edgelabel>
+          <edgelabel>label_normal</edgelabel>
+          <edgelabel>symbol_active</edgelabel>
+          <edgelabel>symbol_hover</edgelabel>
+          <edgelabel>symbol_normal</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>button</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>button_padding</edgelabel>
+          <edgelabel>content_padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>nk_style_edit</label>
+        <link refid="structnk__style__edit"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>cursor_text_hover</edgelabel>
+          <edgelabel>cursor_text_normal</edgelabel>
+          <edgelabel>selected_hover</edgelabel>
+          <edgelabel>selected_normal</edgelabel>
+          <edgelabel>selected_text_hover</edgelabel>
+          <edgelabel>selected_text_normal</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+          <edgelabel>scrollbar_size</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>nk_style_item</label>
+        <link refid="structnk__style__item"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>nk_style_item_data</label>
+        <link refid="unionnk__style__item__data"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>slice</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>nk_style_progress</label>
+        <link refid="structnk__style__progress"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>cursor_active</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>cursor_border_color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>nk_style_property</label>
+        <link refid="structnk__style__property"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>label_active</edgelabel>
+          <edgelabel>label_hover</edgelabel>
+          <edgelabel>label_normal</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>edit</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>dec_button</edgelabel>
+          <edgelabel>inc_button</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>nk_style_scrollbar</label>
+        <link refid="structnk__style__scrollbar"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>cursor_active</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>cursor_border_color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>dec_button</edgelabel>
+          <edgelabel>inc_button</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>nk_style_selectable</label>
+        <link refid="structnk__style__selectable"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>hover</edgelabel>
+          <edgelabel>hover_active</edgelabel>
+          <edgelabel>normal</edgelabel>
+          <edgelabel>normal_active</edgelabel>
+          <edgelabel>pressed</edgelabel>
+          <edgelabel>pressed_active</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_hover_active</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+          <edgelabel>text_normal_active</edgelabel>
+          <edgelabel>text_pressed</edgelabel>
+          <edgelabel>text_pressed_active</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>image_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>nk_style_slider</label>
+        <link refid="structnk__style__slider"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>cursor_active</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>bar_active</edgelabel>
+          <edgelabel>bar_filled</edgelabel>
+          <edgelabel>bar_hover</edgelabel>
+          <edgelabel>bar_normal</edgelabel>
+          <edgelabel>border_color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>cursor_size</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>dec_button</edgelabel>
+          <edgelabel>inc_button</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>nk_style_tab</label>
+        <link refid="structnk__style__tab"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>background</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>node_maximize_button</edgelabel>
+          <edgelabel>node_minimize_button</edgelabel>
+          <edgelabel>tab_maximize_button</edgelabel>
+          <edgelabel>tab_minimize_button</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>nk_style_text</label>
+        <link refid="structnk__style__text"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>nk_style_toggle</label>
+        <link refid="structnk__style__toggle"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>nk_style_window</label>
+        <link refid="structnk__style__window"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>fixed_background</edgelabel>
+          <edgelabel>scaler</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>background</edgelabel>
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>combo_border_color</edgelabel>
+          <edgelabel>contextual_border_color</edgelabel>
+          <edgelabel>group_border_color</edgelabel>
+          <edgelabel>menu_border_color</edgelabel>
+          <edgelabel>popup_border_color</edgelabel>
+          <edgelabel>tooltip_border_color</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>combo_padding</edgelabel>
+          <edgelabel>contextual_padding</edgelabel>
+          <edgelabel>group_padding</edgelabel>
+          <edgelabel>menu_padding</edgelabel>
+          <edgelabel>min_size</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>popup_padding</edgelabel>
+          <edgelabel>scrollbar_size</edgelabel>
+          <edgelabel>spacing</edgelabel>
+          <edgelabel>tooltip_padding</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>nk_style_window_header</label>
+        <link refid="structnk__style__window__header"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>close_button</edgelabel>
+          <edgelabel>minimize_button</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>label_active</edgelabel>
+          <edgelabel>label_hover</edgelabel>
+          <edgelabel>label_normal</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>label_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>spacing</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>nk_table</label>
+        <link refid="structnk__table"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>nk_text_edit</label>
+        <link refid="structnk__text__edit"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>string</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>filter</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>undo</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>nk_text_undo_record</label>
+        <link refid="structnk__text__undo__record"/>
+      </node>
+      <node id="39">
+        <label>nk_text_undo_state</label>
+        <link refid="structnk__text__undo__state"/>
+        <childnode refid="40" relation="usage">
+          <edgelabel>undo_rec</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nk_user_font</label>
+        <link refid="structnk__user__font"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>userdata</edgelabel>
+          <edgelabel>width</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+      <node id="54">
+        <label>nk_window</label>
+        <link refid="structnk__window"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>layout</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>property</edgelabel>
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>popup</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>edit</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>tables</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>parent</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="5405" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5405" bodyend="5444"/>
+    <listofallmembers>
+      <member refid="structnk__context_1ab8d399ddadeb71a3d68fe6ec063a4eaf" prot="public" virt="non-virtual"><scope>nk_context</scope><name>active</name></member>
+      <member refid="structnk__context_1a43a1c4cf1a69b90ad33b78789915d4eb" prot="public" virt="non-virtual"><scope>nk_context</scope><name>begin</name></member>
+      <member refid="structnk__context_1a0d0f953ef2b6c56b046e4e5488d074e6" prot="public" virt="non-virtual"><scope>nk_context</scope><name>build</name></member>
+      <member refid="structnk__context_1a1b37f5fdd034ad23c79f90a0094ac349" prot="public" virt="non-virtual"><scope>nk_context</scope><name>button_behavior</name></member>
+      <member refid="structnk__context_1a834f5a5fad2919a354472381b013a81f" prot="public" virt="non-virtual"><scope>nk_context</scope><name>clip</name></member>
+      <member refid="structnk__context_1a332f044ac74fd5450fa61097ea45be65" prot="public" virt="non-virtual"><scope>nk_context</scope><name>count</name></member>
+      <member refid="structnk__context_1a63efcbf544ff88f819f4d7e03927d7c6" prot="public" virt="non-virtual"><scope>nk_context</scope><name>current</name></member>
+      <member refid="structnk__context_1a400eeefb70eab5d544831b856300ac06" prot="public" virt="non-virtual"><scope>nk_context</scope><name>delta_time_seconds</name></member>
+      <member refid="structnk__context_1a70f3687079206d314b2006db5fc3da05" prot="public" virt="non-virtual"><scope>nk_context</scope><name>end</name></member>
+      <member refid="structnk__context_1aa66b352c5a05615e844a4e065186aa85" prot="public" virt="non-virtual"><scope>nk_context</scope><name>freelist</name></member>
+      <member refid="structnk__context_1abee1c200e8e185fe718556c0ddff31ad" prot="public" virt="non-virtual"><scope>nk_context</scope><name>input</name></member>
+      <member refid="structnk__context_1a15a7e828c4fb1ac317c72f00ff278b95" prot="public" virt="non-virtual"><scope>nk_context</scope><name>last_widget_state</name></member>
+      <member refid="structnk__context_1a678e6980553a5f32f7b59f2fbcebebe9" prot="public" virt="non-virtual"><scope>nk_context</scope><name>memory</name></member>
+      <member refid="structnk__context_1ae51cac633c54b94a63c8fe77b9558f4a" prot="public" virt="non-virtual"><scope>nk_context</scope><name>overlay</name></member>
+      <member refid="structnk__context_1a84dcedd9a6418f47d22f39e2b20d741d" prot="public" virt="non-virtual"><scope>nk_context</scope><name>pool</name></member>
+      <member refid="structnk__context_1a4ca2377a51d98a451bdcc61ccd967820" prot="public" virt="non-virtual"><scope>nk_context</scope><name>seq</name></member>
+      <member refid="structnk__context_1a86bc92d9133c81f3dd85c8ae99d612dc" prot="public" virt="non-virtual"><scope>nk_context</scope><name>stacks</name></member>
+      <member refid="structnk__context_1a39208175c061b8486ee8fb51e50a243e" prot="public" virt="non-virtual"><scope>nk_context</scope><name>style</name></member>
+      <member refid="structnk__context_1aca8a2124af97661372f7b35d636c9bc6" prot="public" virt="non-virtual"><scope>nk_context</scope><name>text_edit</name></member>
+      <member refid="structnk__context_1a10afb1419df73de41b2be1d0bff8523c" prot="public" virt="non-virtual"><scope>nk_context</scope><name>use_pool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__window" kind="struct" language="C++" prot="public">
+    <compoundname>nk_window</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__window_1ac620283e47a5647e437a5f7742ac31bf" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_window::seq</definition>
+        <argsstring></argsstring>
+        <name>seq</name>
+        <qualifiedname>nk_window::seq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5245" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1afdb4b90e7f28cfec870cb349a5161ebc" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757" kindref="member">nk_hash</ref></type>
+        <definition>nk_hash nk_window::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>nk_window::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5246" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a5fbe50f169aa47cab86ebef31e43047a" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char nk_window::name_string[NK_WINDOW_MAX_NAME]</definition>
+        <argsstring>[NK_WINDOW_MAX_NAME]</argsstring>
+        <name>name_string</name>
+        <qualifiedname>nk_window::name_string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5247" column="10" bodyfile="Src/GUI/nuklear.h" bodystart="5247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ab2c821a48b401380bc00031d5e7b9e87" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323" kindref="member">nk_flags</ref></type>
+        <definition>nk_flags nk_window::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>nk_window::flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5248" column="14" bodyfile="Src/GUI/nuklear.h" bodystart="5248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a3faf3afe7ee63b8203eae8cf28bf1272" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__rect" kindref="compound">nk_rect</ref></type>
+        <definition>struct nk_rect nk_window::bounds</definition>
+        <argsstring></argsstring>
+        <name>bounds</name>
+        <qualifiedname>nk_window::bounds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5250" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a6a6e8fdf89a7039df725a14b640dc9df" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__scroll" kindref="compound">nk_scroll</ref></type>
+        <definition>struct nk_scroll nk_window::scrollbar</definition>
+        <argsstring></argsstring>
+        <name>scrollbar</name>
+        <qualifiedname>nk_window::scrollbar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5251" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ab1a260769cace3a808d1361feeeaa002" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__command__buffer" kindref="compound">nk_command_buffer</ref></type>
+        <definition>struct nk_command_buffer nk_window::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <qualifiedname>nk_window::buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5252" column="28" bodyfile="Src/GUI/nuklear.h" bodystart="5252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ad85f14784c55f21daa8e6bd9d226be43" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__panel" kindref="compound">nk_panel</ref> *</type>
+        <definition>struct nk_panel* nk_window::layout</definition>
+        <argsstring></argsstring>
+        <name>layout</name>
+        <qualifiedname>nk_window::layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5253" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ae1edf68bb62484a80ef588d2ab0fd210" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_window::scrollbar_hiding_timer</definition>
+        <argsstring></argsstring>
+        <name>scrollbar_hiding_timer</name>
+        <qualifiedname>nk_window::scrollbar_hiding_timer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5254" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="5254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ab9fedd0b171796592daf5fa41a08bcea" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__property__state" kindref="compound">nk_property_state</ref></type>
+        <definition>struct nk_property_state nk_window::property</definition>
+        <argsstring></argsstring>
+        <name>property</name>
+        <qualifiedname>nk_window::property</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5257" column="28" bodyfile="Src/GUI/nuklear.h" bodystart="5257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1aa5a5f13e1d678d56725eab9a0a130acd" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__popup__state" kindref="compound">nk_popup_state</ref></type>
+        <definition>struct nk_popup_state nk_window::popup</definition>
+        <argsstring></argsstring>
+        <name>popup</name>
+        <qualifiedname>nk_window::popup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5258" column="25" bodyfile="Src/GUI/nuklear.h" bodystart="5258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a5ff816faab95d10bf9bdff4518c268ea" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__edit__state" kindref="compound">nk_edit_state</ref></type>
+        <definition>struct nk_edit_state nk_window::edit</definition>
+        <argsstring></argsstring>
+        <name>edit</name>
+        <qualifiedname>nk_window::edit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5259" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="5259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ae08590387048eac30fbfde13579ca39a" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_window::scrolled</definition>
+        <argsstring></argsstring>
+        <name>scrolled</name>
+        <qualifiedname>nk_window::scrolled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5260" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a5e7118c3d6354cce7d0a6b6ab19f2267" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__table" kindref="compound">nk_table</ref> *</type>
+        <definition>struct nk_table* nk_window::tables</definition>
+        <argsstring></argsstring>
+        <name>tables</name>
+        <qualifiedname>nk_window::tables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5262" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a1a2c2bcd90b8f65838f0c4d38f9e3f6d" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_window::table_count</definition>
+        <argsstring></argsstring>
+        <name>table_count</name>
+        <qualifiedname>nk_window::table_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5263" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a43d9992fd6f4b1e86a325e099b7e49fa" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_window::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>nk_window::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5266" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1a467a7e9298d91e5226774ff6061a73b5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_window::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>nk_window::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5267" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__window_1ade4eb319bf6471423d5d123a637f37c1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__window" kindref="compound">nk_window</ref> *</type>
+        <definition>struct nk_window* nk_window::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <qualifiedname>nk_window::parent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5268" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="5268" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>nk_allocator</label>
+        <link refid="structnk__allocator"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>alloc</edgelabel>
+          <edgelabel>free</edgelabel>
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>nk_buffer</label>
+        <link refid="structnk__buffer"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>marker</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nk_buffer_marker</label>
+        <link refid="structnk__buffer__marker"/>
+      </node>
+      <node id="13">
+        <label>nk_chart</label>
+        <link refid="structnk__chart"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>nk_chart_slot</label>
+        <link refid="structnk__chart__slot"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>color</edgelabel>
+          <edgelabel>highlight</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>last</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="4">
+        <label>nk_command_buffer</label>
+        <link refid="structnk__command__buffer"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>nk_edit_state</label>
+        <link refid="structnk__edit__state"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="9">
+        <label>nk_memory</label>
+        <link refid="structnk__memory"/>
+      </node>
+      <node id="11">
+        <label>nk_menu_state</label>
+        <link refid="structnk__menu__state"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nk_panel</label>
+        <link refid="structnk__panel"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bounds</edgelabel>
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>menu</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>row</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>chart</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>nk_popup_buffer</label>
+        <link refid="structnk__popup__buffer"/>
+      </node>
+      <node id="18">
+        <label>nk_popup_state</label>
+        <link refid="structnk__popup__state"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>buf</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>nk_property_state</label>
+        <link refid="structnk__property__state"/>
+      </node>
+      <node id="2">
+        <label>nk_rect</label>
+        <link refid="structnk__rect"/>
+      </node>
+      <node id="12">
+        <label>nk_row_layout</label>
+        <link refid="structnk__row__layout"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>item</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_scroll</label>
+        <link refid="structnk__scroll"/>
+      </node>
+      <node id="21">
+        <label>nk_table</label>
+        <link refid="structnk__table"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+      <node id="1">
+        <label>nk_window</label>
+        <link refid="structnk__window"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>layout</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>property</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>popup</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>edit</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>tables</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>parent</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="5244" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5244" bodyend="5269"/>
+    <listofallmembers>
+      <member refid="structnk__window_1a3faf3afe7ee63b8203eae8cf28bf1272" prot="public" virt="non-virtual"><scope>nk_window</scope><name>bounds</name></member>
+      <member refid="structnk__window_1ab1a260769cace3a808d1361feeeaa002" prot="public" virt="non-virtual"><scope>nk_window</scope><name>buffer</name></member>
+      <member refid="structnk__window_1a5ff816faab95d10bf9bdff4518c268ea" prot="public" virt="non-virtual"><scope>nk_window</scope><name>edit</name></member>
+      <member refid="structnk__window_1ab2c821a48b401380bc00031d5e7b9e87" prot="public" virt="non-virtual"><scope>nk_window</scope><name>flags</name></member>
+      <member refid="structnk__window_1ad85f14784c55f21daa8e6bd9d226be43" prot="public" virt="non-virtual"><scope>nk_window</scope><name>layout</name></member>
+      <member refid="structnk__window_1afdb4b90e7f28cfec870cb349a5161ebc" prot="public" virt="non-virtual"><scope>nk_window</scope><name>name</name></member>
+      <member refid="structnk__window_1a5fbe50f169aa47cab86ebef31e43047a" prot="public" virt="non-virtual"><scope>nk_window</scope><name>name_string</name></member>
+      <member refid="structnk__window_1a43d9992fd6f4b1e86a325e099b7e49fa" prot="public" virt="non-virtual"><scope>nk_window</scope><name>next</name></member>
+      <member refid="structnk__window_1ade4eb319bf6471423d5d123a637f37c1" prot="public" virt="non-virtual"><scope>nk_window</scope><name>parent</name></member>
+      <member refid="structnk__window_1aa5a5f13e1d678d56725eab9a0a130acd" prot="public" virt="non-virtual"><scope>nk_window</scope><name>popup</name></member>
+      <member refid="structnk__window_1a467a7e9298d91e5226774ff6061a73b5" prot="public" virt="non-virtual"><scope>nk_window</scope><name>prev</name></member>
+      <member refid="structnk__window_1ab9fedd0b171796592daf5fa41a08bcea" prot="public" virt="non-virtual"><scope>nk_window</scope><name>property</name></member>
+      <member refid="structnk__window_1a6a6e8fdf89a7039df725a14b640dc9df" prot="public" virt="non-virtual"><scope>nk_window</scope><name>scrollbar</name></member>
+      <member refid="structnk__window_1ae1edf68bb62484a80ef588d2ab0fd210" prot="public" virt="non-virtual"><scope>nk_window</scope><name>scrollbar_hiding_timer</name></member>
+      <member refid="structnk__window_1ae08590387048eac30fbfde13579ca39a" prot="public" virt="non-virtual"><scope>nk_window</scope><name>scrolled</name></member>
+      <member refid="structnk__window_1ac620283e47a5647e437a5f7742ac31bf" prot="public" virt="non-virtual"><scope>nk_window</scope><name>seq</name></member>
+      <member refid="structnk__window_1a1a2c2bcd90b8f65838f0c4d38f9e3f6d" prot="public" virt="non-virtual"><scope>nk_window</scope><name>table_count</name></member>
+      <member refid="structnk__window_1a5e7118c3d6354cce7d0a6b6ab19f2267" prot="public" virt="non-virtual"><scope>nk_window</scope><name>tables</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_render_camera" xml:lang="en-US">
+<title>me::RenderCamera Class Reference</title>
+<indexterm><primary>me::RenderCamera</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RenderCamera.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_render_camera_1ad3e50bdafd713908a183a51e69274345">RenderCamera</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_camera_1ae975df58ebabe1b44690a5e86166f4f9">~RenderCamera</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_camera_1a5030de4d3ddce342e387346da3531dbb">init</link> (Ogre::SceneNode *CameraNode, Ogre::SceneManager *SceneMgr, Ogre::RenderWindow *<link linkend="_classme_1_1_render_window">RenderWindow</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_camera_1adbff2bc6f6ca0239143b65e34f641b31">createCamera</link> (const char *name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_camera_1a40571944be5859eef20d23181b4fa58d">setPosition</link> (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;pos)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_camera_1a32c5cbcf09efb64d1206c7430f55f807">lookAt</link> (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;look)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_camera_1abfc0b688fba15b95adbe1f3a397c2cc8">setViewportDimension</link> (float left, float top, float width, float height)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Ogre::Camera * <link linkend="_classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf">mCamera</link></para>
+</listitem>
+            <listitem><para>Ogre::Viewport * <link linkend="_classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f">mViewport</link></para>
+</listitem>
+            <listitem><para>Ogre::SceneNode * <link linkend="_classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572">mCameraNode</link></para>
+</listitem>
+            <listitem><para>Ogre::SceneManager * <link linkend="_classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444">mSceneMgr</link></para>
+</listitem>
+            <listitem><para>Ogre::RenderWindow * <link linkend="_classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f">mRenderWindow</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_render_camera_1ad3e50bdafd713908a183a51e69274345"/><section>
+    <title>RenderCamera()</title>
+<indexterm><primary>RenderCamera</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>RenderCamera</secondary></indexterm>
+<para><computeroutput>me::RenderCamera::RenderCamera ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1ae975df58ebabe1b44690a5e86166f4f9"/><section>
+    <title>~RenderCamera()</title>
+<indexterm><primary>~RenderCamera</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>~RenderCamera</secondary></indexterm>
+<para><computeroutput>me::RenderCamera::~RenderCamera ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_render_camera_1adbff2bc6f6ca0239143b65e34f641b31"/><section>
+    <title>createCamera()</title>
+<indexterm><primary>createCamera</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>createCamera</secondary></indexterm>
+<para><computeroutput>void me::RenderCamera::createCamera (const char * name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)</computeroutput></para>
+<para>Create mCamera with this informationand create mViewport for it 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name of mCamera </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nearDist</entry><entry>
+<para>near clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>farDist</entry><entry>
+<para>far clipping plane distancia </para>
+</entry>
+                            </row>
+                            <row>
+<entry>autoRadio</entry><entry>
+<para>if viewport calculate aspect radio automatically </para>
+</entry>
+                            </row>
+                            <row>
+<entry>zOrder</entry><entry>
+<para>relative order of mViewport </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_render_camera_1a5030de4d3ddce342e387346da3531dbb"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>void me::RenderCamera::init (Ogre::SceneNode * CameraNode, Ogre::SceneManager * SceneMgr, Ogre::RenderWindow * RenderWindow)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1a32c5cbcf09efb64d1206c7430f55f807"/><section>
+    <title>lookAt()</title>
+<indexterm><primary>lookAt</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>lookAt</secondary></indexterm>
+<para><computeroutput>void me::RenderCamera::lookAt (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; look)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1a40571944be5859eef20d23181b4fa58d"/><section>
+    <title>setPosition()</title>
+<indexterm><primary>setPosition</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>setPosition</secondary></indexterm>
+<para><computeroutput>void me::RenderCamera::setPosition (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; pos)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1abfc0b688fba15b95adbe1f3a397c2cc8"/><section>
+    <title>setViewportDimension()</title>
+<indexterm><primary>setViewportDimension</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>setViewportDimension</secondary></indexterm>
+<para><computeroutput>void me::RenderCamera::setViewportDimension (float left, float top, float width, float height)</computeroutput></para>
+<para>Set dimension to mViewport 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>left</entry><entry>
+<para>left point of mViewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>top</entry><entry>
+<para>top point of mViewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>width</entry><entry>
+<para>width of mViewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>height</entry><entry>
+<para>height of mViewport in range 0.0 to 1.0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf"/><section>
+    <title>mCamera</title>
+<indexterm><primary>mCamera</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>mCamera</secondary></indexterm>
+<para><computeroutput>Ogre::Camera* me::RenderCamera::mCamera<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572"/><section>
+    <title>mCameraNode</title>
+<indexterm><primary>mCameraNode</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>mCameraNode</secondary></indexterm>
+<para><computeroutput>Ogre::SceneNode* me::RenderCamera::mCameraNode<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f"/><section>
+    <title>mRenderWindow</title>
+<indexterm><primary>mRenderWindow</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>mRenderWindow</secondary></indexterm>
+<para><computeroutput>Ogre::RenderWindow* me::RenderCamera::mRenderWindow<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444"/><section>
+    <title>mSceneMgr</title>
+<indexterm><primary>mSceneMgr</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>mSceneMgr</secondary></indexterm>
+<para><computeroutput>Ogre::SceneManager* me::RenderCamera::mSceneMgr<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f"/><section>
+    <title>mViewport</title>
+<indexterm><primary>mViewport</primary><secondary>me::RenderCamera</secondary></indexterm>
+<indexterm><primary>me::RenderCamera</primary><secondary>mViewport</secondary></indexterm>
+<para><computeroutput>Ogre::Viewport* me::RenderCamera::mViewport<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Render/<link linkend="__render_camera_8h">RenderCamera.h</link>Src/Render/<link linkend="__render_camera_8cpp">RenderCamera.cpp</link></section>
+</section>

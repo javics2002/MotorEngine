@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__color" kind="struct" language="C++" prot="public">
+    <compoundname>nk_color</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__color_1a8c27a9094c4cc8a24adfd111f1c38812" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb" kindref="member">nk_byte</ref></type>
+        <definition>nk_byte nk_color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>nk_color::r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="254" column="23" bodyfile="Src/GUI/nuklear.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__color_1a5f9b6e27eec7cc99ab12fa52a31ca6d1" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb" kindref="member">nk_byte</ref></type>
+        <definition>nk_byte nk_color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <qualifiedname>nk_color::g</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="254" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__color_1abce18b5d5e10d175f553cf1b91fee9d4" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb" kindref="member">nk_byte</ref></type>
+        <definition>nk_byte nk_color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>nk_color::b</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="254" column="25" bodyfile="Src/GUI/nuklear.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__color_1a5201902552072c321cb43bb0e821fde8" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb" kindref="member">nk_byte</ref></type>
+        <definition>nk_byte nk_color::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <qualifiedname>nk_color::a</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="254" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="254" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="254" bodyend="254"/>
+    <listofallmembers>
+      <member refid="structnk__color_1a5201902552072c321cb43bb0e821fde8" prot="public" virt="non-virtual"><scope>nk_color</scope><name>a</name></member>
+      <member refid="structnk__color_1abce18b5d5e10d175f553cf1b91fee9d4" prot="public" virt="non-virtual"><scope>nk_color</scope><name>b</name></member>
+      <member refid="structnk__color_1a5f9b6e27eec7cc99ab12fa52a31ca6d1" prot="public" virt="non-virtual"><scope>nk_color</scope><name>g</name></member>
+      <member refid="structnk__color_1a8c27a9094c4cc8a24adfd111f1c38812" prot="public" virt="non-virtual"><scope>nk_color</scope><name>r</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

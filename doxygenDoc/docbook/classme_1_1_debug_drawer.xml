@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_debug_drawer" xml:lang="en-US">
+<title>me::DebugDrawer Class Reference</title>
+<indexterm><primary>me::DebugDrawer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;DebugDrawer.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::DebugDrawer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_debug_drawer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_debug_drawer_1a8e3da36b6f8ac2315af2b7222c55bdf6">DebugDrawer</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_debug_drawer_1a740459997cfcbb425667aac2b16b7a64">~DebugDrawer</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_debug_drawer_1acd5d796e721e5e848e4487bdb4c55d80">drawTriangle</link> (const btVector3 &amp;v0, const btVector3 &amp;v1, const btVector3 &amp;v2, const btVector3 &amp;color, btScalar alpha) override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_debug_drawer_1a980998a0528634eea920f30347da1e48">drawLine</link> (const btVector3 &amp;from, const btVector3 &amp;to, const btVector3 &amp;color) override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_debug_drawer_1a7d041bf17701d5551567ebe260bdbc19">drawContactPoint</link> (const btVector3 &amp;PointOnB, const btVector3 &amp;normalOnB, btScalar distance, int lifeTime, const btVector3 &amp;color) override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_debug_drawer_1a142dd72ddcc22144d7dbf9a493ad09e5">reportErrorWarning</link> (const char *warningString) override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_debug_drawer_1aa92e8f117210149c23846e8da24d44ab">draw3dText</link> (const btVector3 &amp;location, const char *textString) override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_debug_drawer_1aa4bd1992fc30d2acedc2dabb8d4e2390">setDebugMode</link> (int debugMode) override</para>
+</listitem>
+            <listitem><para>int <link linkend="_classme_1_1_debug_drawer_1a122dee73ce1f1dcb09c06a67019ee3f7">getDebugMode</link> () const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_debug_drawer_1a8e3da36b6f8ac2315af2b7222c55bdf6"/><section>
+    <title>DebugDrawer()</title>
+<indexterm><primary>DebugDrawer</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>DebugDrawer</secondary></indexterm>
+<para><computeroutput>me::DebugDrawer::DebugDrawer ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1a740459997cfcbb425667aac2b16b7a64"/><section>
+    <title>~DebugDrawer()</title>
+<indexterm><primary>~DebugDrawer</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>~DebugDrawer</secondary></indexterm>
+<para><computeroutput>me::DebugDrawer::~DebugDrawer ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_debug_drawer_1aa92e8f117210149c23846e8da24d44ab"/><section>
+    <title>draw3dText()</title>
+<indexterm><primary>draw3dText</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>draw3dText</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::draw3dText (const btVector3 &amp; location, const char * textString)<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1a7d041bf17701d5551567ebe260bdbc19"/><section>
+    <title>drawContactPoint()</title>
+<indexterm><primary>drawContactPoint</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>drawContactPoint</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::drawContactPoint (const btVector3 &amp; PointOnB, const btVector3 &amp; normalOnB, btScalar distance, int lifeTime, const btVector3 &amp; color)<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1a980998a0528634eea920f30347da1e48"/><section>
+    <title>drawLine()</title>
+<indexterm><primary>drawLine</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>drawLine</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::drawLine (const btVector3 &amp; from, const btVector3 &amp; to, const btVector3 &amp; color)<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1acd5d796e721e5e848e4487bdb4c55d80"/><section>
+    <title>drawTriangle()</title>
+<indexterm><primary>drawTriangle</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>drawTriangle</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::drawTriangle (const btVector3 &amp; v0, const btVector3 &amp; v1, const btVector3 &amp; v2, const btVector3 &amp; color, btScalar alpha)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1a122dee73ce1f1dcb09c06a67019ee3f7"/><section>
+    <title>getDebugMode()</title>
+<indexterm><primary>getDebugMode</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>getDebugMode</secondary></indexterm>
+<para><computeroutput>int me::DebugDrawer::getDebugMode ( ) const<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1a142dd72ddcc22144d7dbf9a493ad09e5"/><section>
+    <title>reportErrorWarning()</title>
+<indexterm><primary>reportErrorWarning</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>reportErrorWarning</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::reportErrorWarning (const char * warningString)<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_debug_drawer_1aa4bd1992fc30d2acedc2dabb8d4e2390"/><section>
+    <title>setDebugMode()</title>
+<indexterm><primary>setDebugMode</primary><secondary>me::DebugDrawer</secondary></indexterm>
+<indexterm><primary>me::DebugDrawer</primary><secondary>setDebugMode</secondary></indexterm>
+<para><computeroutput>void me::DebugDrawer::setDebugMode (int debugMode)<computeroutput>[override]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Physics/<link linkend="__debug_drawer_8h">DebugDrawer.h</link>Src/Physics/<link linkend="__debug_drawer_8cpp">DebugDrawer.cpp</link></section>
+</section>

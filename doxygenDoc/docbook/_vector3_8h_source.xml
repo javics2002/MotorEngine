@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector3_8h_source" xml:lang="en-US">
+<title>Vector3.h</title>
+<indexterm><primary>Src/Utils/Vector3.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#ifndef&#32;__UTILS_VECTOR3</emphasis>
+4 <emphasis role="preprocessor">#define&#32;__UTILS_VECTOR3</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;dism,&#32;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector;
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;Vector&lt;&#32;3,&#32;float&#32;&gt;&#32;&#32;<link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Vector3f</link>;
+14 
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Quaternion;
+16 }
+17 
+18 <emphasis role="keyword">class&#32;</emphasis>btQuaternion;
+19 
+20 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespacestd">std</link>&#32;{
+21 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_structstd_1_1char__traits">char_traits</link>;
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;_Elem,&#32;<emphasis role="keyword">class</emphasis>&#32;_Traits&gt;
+24 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classstd_1_1basic__ostream">basic_ostream</link>;
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis><link linkend="_classstd_1_1basic__ostream">ostream</link>&#32;=&#32;<link linkend="_classstd_1_1basic__ostream">basic_ostream&lt;char, char_traits&lt;char&gt;</link>&gt;;
+26 }
+27 
+28 <emphasis role="keyword">class&#32;</emphasis>btVector3;
+29 <emphasis role="keyword">class&#32;</emphasis>btQuaternion;
+30 
+31 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>
+34 &#32;&#32;&#32;&#32;{
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;lerp(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f);
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_classme_1_1_vector3_1a9c64642050dc360a016090fc80c063c4">x</link>,&#32;y,&#32;z;
+41 
+42 
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3_1ac8821c6d2b9ed58a7f9b8c88305e4d36">Vector3</link>()&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;0;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;0;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;z&#32;=&#32;0;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+48 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3_1a1de965b6eb0a8481deae2c985cb61828">Vector3</link>(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;c)&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;a;
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;b;
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;z&#32;=&#32;c;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+54 
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3_1acedcce13ac1b0827a208c86afe28cd6f">Vector3</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v)&#32;{
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;v.<link linkend="_classme_1_1_vector3_1a9c64642050dc360a016090fc80c063c4">x</link>;
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;v.<link linkend="_classme_1_1_vector3_1ae5654880d96f9bc0b064db5058149bee">y</link>;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;z&#32;=&#32;v.<link linkend="_classme_1_1_vector3_1ac32ec3fedcfc9ca6a6e1260bf55cbeaa">z</link>;
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+60 
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator-(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+69 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator-=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+77 
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator+(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+85 
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator+=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+93 
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator*(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&amp;&#32;s);
+101 
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;operator*=(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;&amp;&#32;s);
+109 
+110 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>*&#32;v);
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;btVector3&amp;v);
+114 
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;operator==(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+122 
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;operator!=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+130 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;lerp(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;&amp;&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f);
+139 
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;magnitude();
+146 
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;normalize();
+151 
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;dot(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+159 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;cross(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v);
+167 
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;zero();
+172 
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;up();
+177 
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;down();
+182 
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;left();
+187 
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;right();
+192 
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;back();
+197 
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;forward();
+202 
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;distance(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;&amp;&#32;v);
+210 
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;angle(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;&amp;&#32;v);
+218 
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classstd_1_1basic__ostream">std::ostream</link>&amp;&#32;<link linkend="__vector3_8cpp_1a3958b94f7c0d4e6620dd4566b49c7676">operator&lt;&lt;</link>(<link linkend="_classstd_1_1basic__ostream">std::ostream</link>&amp;&#32;os,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;&amp;&#32;v);
+227 
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;v3ToOgreV3();
+232 
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;btVector3&#32;v3ToBulletV3();
+237 
+238 &#32;&#32;&#32;&#32;};
+239 }
+240 
+241 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

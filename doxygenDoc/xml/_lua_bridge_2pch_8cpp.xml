@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_lua_bridge_2pch_8cpp" kind="file" language="C++">
+    <compoundname>pch.cpp</compoundname>
+    <includes refid="_lua_bridge_2pch_8h" local="yes">pch.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>framework.h</label>
+        <link refid="_lua_bridge_2framework_8h"/>
+      </node>
+      <node id="1">
+        <label>Src/LuaBridge/pch.cpp</label>
+        <link refid="_lua_bridge_2pch_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pch.h</label>
+        <link refid="_lua_bridge_2pch_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>LuaBridge/LuaBridge.h</label>
+      </node>
+      <node id="4">
+        <label>lua.hpp</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>pch.cpp:<sp/>el<sp/>archivo<sp/>de<sp/>código<sp/>fuente<sp/>correspondiente<sp/>al<sp/>encabezado<sp/>precompilado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_2pch_8h" kindref="compound">pch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Cuando<sp/>se<sp/>utilizan<sp/>encabezados<sp/>precompilados,<sp/>se<sp/>requiere<sp/>este<sp/>archivo<sp/>de<sp/>código<sp/>fuente<sp/>para<sp/>que<sp/>la<sp/>compilación<sp/>se<sp/>realice<sp/>correctamente.</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/LuaBridge/pch.cpp"/>
+  </compounddef>
+</doxygen>

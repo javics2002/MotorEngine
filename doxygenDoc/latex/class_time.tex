@@ -1,0 +1,116 @@
+\hypertarget{class_time}{}\doxysection{Time Class Reference}
+\label{class_time}\index{Time@{Time}}
+
+
+{\ttfamily \#include $<$Time.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_a4245e409c7347d1d671858962c2ca3b5}{Time}} ()
+\item 
+float \mbox{\hyperlink{class_time_a38946bbdc530450cdb2a9636ffb10b82}{get\+Game\+Frame\+Value}} ()
+\item 
+float \mbox{\hyperlink{class_time_a879bfedfffe323754165585e85bb1e46}{get\+Physics\+Frame\+Value}} ()
+\item 
+void \mbox{\hyperlink{class_time_a4b43b2ddd41c534daab9016e06440fbe}{enable\+VSYNC}} ()
+\item 
+void \mbox{\hyperlink{class_time_a824855d063b8e47e2e33ac556381ea3a}{disable\+VSYNC}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_time_ac80d4360b9928730fb071843f2e387e2}{delta\+Time}}
+\item 
+double \mbox{\hyperlink{class_time_a392f74c55779960792e13a71564b921c}{fixed\+Delta\+Time}}
+\item 
+float \mbox{\hyperlink{class_time_a561b4617629ba2326030e6c4ba4390bd}{current\+FPSValue}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_time_ad768483aa6f9b6e80620ec7038b5d82e}{m\+Frame\+Value}}
+\item 
+float \mbox{\hyperlink{class_time_af6c1ba39d39ac08547cf64b281283016}{m\+Physics\+Frame\+Value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_a4245e409c7347d1d671858962c2ca3b5}\label{class_time_a4245e409c7347d1d671858962c2ca3b5}} 
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}}
+{\footnotesize\ttfamily Time\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_time_a824855d063b8e47e2e33ac556381ea3a}\label{class_time_a824855d063b8e47e2e33ac556381ea3a}} 
+\index{Time@{Time}!disableVSYNC@{disableVSYNC}}
+\index{disableVSYNC@{disableVSYNC}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{disableVSYNC()}{disableVSYNC()}}
+{\footnotesize\ttfamily void Time\+::disable\+VSYNC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function used to disable vertical syncronization to uncap the framerate of the game \mbox{\Hypertarget{class_time_a4b43b2ddd41c534daab9016e06440fbe}\label{class_time_a4b43b2ddd41c534daab9016e06440fbe}} 
+\index{Time@{Time}!enableVSYNC@{enableVSYNC}}
+\index{enableVSYNC@{enableVSYNC}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{enableVSYNC()}{enableVSYNC()}}
+{\footnotesize\ttfamily void Time\+::enable\+VSYNC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function used to enable vertical syncronization to cap the framerate of the game \mbox{\Hypertarget{class_time_a38946bbdc530450cdb2a9636ffb10b82}\label{class_time_a38946bbdc530450cdb2a9636ffb10b82}} 
+\index{Time@{Time}!getGameFrameValue@{getGameFrameValue}}
+\index{getGameFrameValue@{getGameFrameValue}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{getGameFrameValue()}{getGameFrameValue()}}
+{\footnotesize\ttfamily float Time\+::get\+Game\+Frame\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Read Only Function used to get the framerate value \begin{DoxyReturn}{Returns}
+A float number representing the framerate value (Example\+: 60fps, 144fps) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_time_a879bfedfffe323754165585e85bb1e46}\label{class_time_a879bfedfffe323754165585e85bb1e46}} 
+\index{Time@{Time}!getPhysicsFrameValue@{getPhysicsFrameValue}}
+\index{getPhysicsFrameValue@{getPhysicsFrameValue}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{getPhysicsFrameValue()}{getPhysicsFrameValue()}}
+{\footnotesize\ttfamily float Time\+::get\+Physics\+Frame\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Read Only Function used to get the physics framerate value \begin{DoxyReturn}{Returns}
+A float number representing the framerate value (Example\+: 50.\+0f) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_time_a561b4617629ba2326030e6c4ba4390bd}\label{class_time_a561b4617629ba2326030e6c4ba4390bd}} 
+\index{Time@{Time}!currentFPSValue@{currentFPSValue}}
+\index{currentFPSValue@{currentFPSValue}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{currentFPSValue}{currentFPSValue}}
+{\footnotesize\ttfamily float Time\+::current\+FPSValue}
+
+\mbox{\Hypertarget{class_time_ac80d4360b9928730fb071843f2e387e2}\label{class_time_ac80d4360b9928730fb071843f2e387e2}} 
+\index{Time@{Time}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{deltaTime}{deltaTime}}
+{\footnotesize\ttfamily double Time\+::delta\+Time}
+
+\mbox{\Hypertarget{class_time_a392f74c55779960792e13a71564b921c}\label{class_time_a392f74c55779960792e13a71564b921c}} 
+\index{Time@{Time}!fixedDeltaTime@{fixedDeltaTime}}
+\index{fixedDeltaTime@{fixedDeltaTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{fixedDeltaTime}{fixedDeltaTime}}
+{\footnotesize\ttfamily double Time\+::fixed\+Delta\+Time}
+
+\mbox{\Hypertarget{class_time_ad768483aa6f9b6e80620ec7038b5d82e}\label{class_time_ad768483aa6f9b6e80620ec7038b5d82e}} 
+\index{Time@{Time}!mFrameValue@{mFrameValue}}
+\index{mFrameValue@{mFrameValue}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{mFrameValue}{mFrameValue}}
+{\footnotesize\ttfamily float Time\+::m\+Frame\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_time_af6c1ba39d39ac08547cf64b281283016}\label{class_time_af6c1ba39d39ac08547cf64b281283016}} 
+\index{Time@{Time}!mPhysicsFrameValue@{mPhysicsFrameValue}}
+\index{mPhysicsFrameValue@{mPhysicsFrameValue}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{mPhysicsFrameValue}{mPhysicsFrameValue}}
+{\footnotesize\ttfamily float Time\+::m\+Physics\+Frame\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Utils/\mbox{\hyperlink{_time_8h}{Time.\+h}}\item 
+Src/\+Utils/\mbox{\hyperlink{_time_8cpp}{Time.\+cpp}}\end{DoxyCompactItemize}

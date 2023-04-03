@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector2_8h_source" xml:lang="en-US">
+<title>Vector2.h</title>
+<indexterm><primary>Src/Utils/Vector2.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//TODO&#32;Pasar&#32;a&#32;cpp!!!</emphasis>
+2 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+3 
+4 <emphasis role="preprocessor">#ifndef&#32;__UTILS_VECTOR2</emphasis>
+5 <emphasis role="preprocessor">#define&#32;__UTILS_VECTOR2</emphasis>
+6 
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+8 
+13 <emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_class_vector2">Vector2</link>
+14 {
+15 
+16 <emphasis role="keyword">private</emphasis>:
+17 
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;lerp(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f)
+19 &#32;&#32;&#32;&#32;{
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a&#32;+&#32;f&#32;*&#32;(b&#32;-&#32;a);
+21 &#32;&#32;&#32;&#32;}
+22 
+23 <emphasis role="keyword">public</emphasis>:
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_vector2_1a046bb8d17a876acc49415128dc0502f2">x</link>&#32;,&#32;y;
+26 
+30 &#32;&#32;&#32;&#32;<link linkend="_class_vector2_1a22104d1809be26a419ef1f959e3761bf">Vector2</link>()&#32;{&#32;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;0;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;0;
+33 &#32;&#32;&#32;&#32;}
+34 
+40 &#32;&#32;&#32;&#32;<link linkend="_class_vector2_1afdb8d87b3eae80e7330d6fc0bfdb2d00">Vector2</link>(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b)&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;a;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;b;
+43 &#32;&#32;&#32;&#32;}
+44 
+49 &#32;&#32;&#32;&#32;<link linkend="_class_vector2_1a299d9e1cd67d3fb587f57170afab9741">Vector2</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&amp;&#32;v)&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;=&#32;v.<link linkend="_class_vector2_1a046bb8d17a876acc49415128dc0502f2">x</link>;
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y&#32;=&#32;v.<link linkend="_class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2">y</link>;
+52 &#32;&#32;&#32;&#32;}
+53 
+58 &#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;operator+(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&amp;&#32;v);
+59 
+64 &#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;operator-(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&amp;&#32;v);
+65 
+70 &#32;&#32;&#32;&#32;<link linkend="_class_vector2">Vector2</link>&#32;operator*(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;s);
+71 
+78 &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&#32;<link linkend="_class_vector2_1a8d571a2b35954247c869e30f753a59dd">lerp</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f)&#32;{
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_vector2">Vector2</link>(&#32;lerp(a.<link linkend="_class_vector2_1a046bb8d17a876acc49415128dc0502f2">x</link>,&#32;b.<link linkend="_class_vector2_1a046bb8d17a876acc49415128dc0502f2">x</link>,&#32;f),&#32;lerp(a.<link linkend="_class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2">y</link>,&#32;b.<link linkend="_class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2">y</link>,&#32;f));
+80 &#32;&#32;&#32;&#32;}
+81 
+82 };
+83 
+84 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

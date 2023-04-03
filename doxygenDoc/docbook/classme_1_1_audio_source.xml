@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_audio_source" xml:lang="en-US">
+<title>me::AudioSource Class Reference</title>
+<indexterm><primary>me::AudioSource</primary></indexterm>
+<para>
+<computeroutput>#include &lt;AudioSource.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::AudioSource:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_audio_source.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_audio_source_1a480cd7b2e14a1aee36070243eba2f2e3">AudioSource</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_audio_source_1ac3056e1326e2e4fc27bfdd88fd46ee80">~AudioSource</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec">start</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e">update</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1acad5444f563d9a45c6624754fc6b12c3">play</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a47ffb38b7350317309e6d37c95e67de3">stop</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a0b0e6b9666e5bb2391f15eaa6a3e85ec">pause</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a4352d14298b27b78c7caa5624700f1f7">resume</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_audio_source_1aacd8d5bebdae9e1a161cfb87db102edc">isPlaying</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a5ca6a460d477f066272381801a3bee99">setVolume</link> (float value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1aeb8529bf0253d9b5a381590e51c5895b">setSource</link> (std::string source)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a2f5c395ed054590810167de8bee36340">setLoop</link> (bool loop)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1a99a58dc68d3016d54ebb5e9f8cbfc49a">setIs3D</link> (bool is3D)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_audio_source_1aa2bc76ebd47588a27e223f2eb67d012f">setPlayOnStart</link> (bool playOnStart)</para>
+</listitem>
+            <listitem><para>float <link linkend="_classme_1_1_audio_source_1af282226ee2ddb7fea0fb920ed189cf41">getVolume</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_audio_source_1a480cd7b2e14a1aee36070243eba2f2e3"/><section>
+    <title>AudioSource()</title>
+<indexterm><primary>AudioSource</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>AudioSource</secondary></indexterm>
+<para><computeroutput>me::AudioSource::AudioSource ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_audio_source_1ac3056e1326e2e4fc27bfdd88fd46ee80"/><section>
+    <title>~AudioSource()</title>
+<indexterm><primary>~AudioSource</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>~AudioSource</secondary></indexterm>
+<para><computeroutput>me::AudioSource::~AudioSource ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_audio_source_1af282226ee2ddb7fea0fb920ed189cf41"/><section>
+    <title>getVolume()</title>
+<indexterm><primary>getVolume</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>getVolume</secondary></indexterm>
+<para><computeroutput>float me::AudioSource::getVolume ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Get the volume of the audio. <formalpara><title>Returns</title>
+
+<para>The current volume value. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1aacd8d5bebdae9e1a161cfb87db102edc"/><section>
+    <title>isPlaying()</title>
+<indexterm><primary>isPlaying</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>isPlaying</secondary></indexterm>
+<para><computeroutput>bool me::AudioSource::isPlaying ( )</computeroutput></para>
+<para>Check if the audio is currently playing. <formalpara><title>Returns</title>
+
+<para>True if the audio is playing, false otherwise. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a0b0e6b9666e5bb2391f15eaa6a3e85ec"/><section>
+    <title>pause()</title>
+<indexterm><primary>pause</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>pause</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::pause ( )</computeroutput></para>
+<para>Pause the audio. </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1acad5444f563d9a45c6624754fc6b12c3"/><section>
+    <title>play()</title>
+<indexterm><primary>play</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>play</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::play ( )</computeroutput></para>
+<para>Play the audio. </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a4352d14298b27b78c7caa5624700f1f7"/><section>
+    <title>resume()</title>
+<indexterm><primary>resume</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>resume</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::resume ( )</computeroutput></para>
+<para>Resume playing the audio after it has been paused. </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a99a58dc68d3016d54ebb5e9f8cbfc49a"/><section>
+    <title>setIs3D()</title>
+<indexterm><primary>setIs3D</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>setIs3D</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::setIs3D (bool is3D)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set if the audio will be a 3D audio </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a2f5c395ed054590810167de8bee36340"/><section>
+    <title>setLoop()</title>
+<indexterm><primary>setLoop</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>setLoop</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::setLoop (bool loop)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set if the audio will play in a loop </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1aa2bc76ebd47588a27e223f2eb67d012f"/><section>
+    <title>setPlayOnStart()</title>
+<indexterm><primary>setPlayOnStart</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>setPlayOnStart</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::setPlayOnStart (bool playOnStart)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set if the adio will play at the start </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1aeb8529bf0253d9b5a381590e51c5895b"/><section>
+    <title>setSource()</title>
+<indexterm><primary>setSource</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>setSource</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::setSource (std::string source)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the source of the audio 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>source</entry><entry>
+<para>The audio file to play. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a5ca6a460d477f066272381801a3bee99"/><section>
+    <title>setVolume()</title>
+<indexterm><primary>setVolume</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>setVolume</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::setVolume (float value)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the volume of the audio. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>The new volume value. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::start ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is only ever called once. This must be called at the instantiation of the script. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">me::Component</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a47ffb38b7350317309e6d37c95e67de3"/><section>
+    <title>stop()</title>
+<indexterm><primary>stop</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>stop</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::stop ( )</computeroutput></para>
+<para>Stop the audio. </para>
+</section>
+<anchor xml:id="_classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::AudioSource</secondary></indexterm>
+<indexterm><primary>me::AudioSource</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void me::AudioSource::update ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+
+<para>Almost all the logic updates. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">me::Component</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__audio_source_8h">AudioSource.h</link>Src/EntityComponent/Components/<link linkend="__audio_source_8cpp">AudioSource.cpp</link></section>
+</section>

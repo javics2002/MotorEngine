@@ -1,0 +1,98 @@
+.TH "me::AudioListener" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::AudioListener
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AudioListener\&.h>\fP
+.PP
+Inherits \fBme::Component\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioListener\fP ()"
+.br
+.ti -1c
+.RI "\fB~AudioListener\fP ()"
+.br
+.ti -1c
+.RI "void \fBstart\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::AudioListener::AudioListener ()"
+
+.SS "me::AudioListener::~AudioListener ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void me::AudioListener::start ()\fC [override]\fP, \fC [virtual]\fP"
+This method is only ever called once\&. This must be called at the instantiation of the script\&. 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SS "void me::AudioListener::update ()\fC [virtual]\fP"
+Update the position of the audio listener based on the position of the entity it is attached to\&. 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector4_8h_source" xml:lang="en-US">
+<title>Vector4.h</title>
+<indexterm><primary>Src/Utils/Vector4.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#ifndef&#32;__UTILS_VECTOR4</emphasis>
+4 <emphasis role="preprocessor">#define&#32;__UTILS_VECTOR4</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;dism,&#32;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector;
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;Vector&lt;&#32;3,&#32;float&#32;&gt;&#32;&#32;<link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Vector3f</link>;
+12 
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Quaternion;
+14 }
+15 
+16 <emphasis role="keyword">class&#32;</emphasis>btQuaternion;
+17 
+18 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+19 
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector3;
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>
+23 &#32;&#32;&#32;&#32;{
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+26 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;lerp(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f);
+36 
+37 
+38 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+39 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;x,&#32;y,&#32;z,&#32;<link linkend="_classme_1_1_vector4_1a1d1c75c33c8c82efd70cbd1e77effb31">w</link>;
+41 
+42 
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>();
+44 
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;c);
+46 
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&amp;&#32;v_);
+48 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>(<emphasis role="keywordtype">float</emphasis>&#32;a,&#32;<emphasis role="keywordtype">float</emphasis>&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;c,&#32;<emphasis role="keywordtype">float</emphasis>&#32;d);
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&amp;&#32;v);
+52 
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&#32;lerp(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&amp;&#32;b,&#32;<emphasis role="keywordtype">float</emphasis>&#32;f);
+61 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&amp;&#32;v);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_vector4">Vector4</link>*&#32;v);
+64 
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Quaternion&#32;v4ToOgreQuaternion();
+69 
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;btQuaternion&#32;getRotationInBullet();
+74 
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+76 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Do&#32;the&#32;rotation&#32;in&#32;specify&#32;axis</emphasis>
+77 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;rotate(<emphasis role="keywordtype">float</emphasis>&#32;degrees,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;axis);
+79 &#32;&#32;&#32;&#32;};
+80 }
+81 
+82 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

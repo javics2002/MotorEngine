@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__user__font" kind="struct" language="C++" prot="public">
+    <compoundname>nk_user_font</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__user__font_1a227c31a1ef360c78c98678d8d8546c03" prot="public" static="no" mutable="no">
+        <type><ref refid="unionnk__handle" kindref="compound">nk_handle</ref></type>
+        <definition>nk_handle nk_user_font::userdata</definition>
+        <argsstring></argsstring>
+        <name>userdata</name>
+        <qualifiedname>nk_user_font::userdata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="3743" column="15" bodyfile="Src/GUI/nuklear.h" bodystart="3743" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__user__font_1ab98ed37df408e0c2febfe448897ccf82" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_user_font::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>nk_user_font::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="3745" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="3745" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__user__font_1aac686ca3e72208ddfb982caa7c89293a" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a980ba414f6e3d6490236a688e7b51b1a" kindref="member">nk_text_width_f</ref></type>
+        <definition>nk_text_width_f nk_user_font::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>nk_user_font::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="3747" column="21" bodyfile="Src/GUI/nuklear.h" bodystart="3747" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="1">
+        <label>nk_user_font</label>
+        <link refid="structnk__user__font"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>userdata</edgelabel>
+          <edgelabel>width</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="3742" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="3742" bodyend="3755"/>
+    <listofallmembers>
+      <member refid="structnk__user__font_1ab98ed37df408e0c2febfe448897ccf82" prot="public" virt="non-virtual"><scope>nk_user_font</scope><name>height</name></member>
+      <member refid="structnk__user__font_1a227c31a1ef360c78c98678d8d8546c03" prot="public" virt="non-virtual"><scope>nk_user_font</scope><name>userdata</name></member>
+      <member refid="structnk__user__font_1aac686ca3e72208ddfb982caa7c89293a" prot="public" virt="non-virtual"><scope>nk_user_font</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

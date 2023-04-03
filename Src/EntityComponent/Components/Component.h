@@ -9,6 +9,7 @@ for any behavior designed as a component.
 #define __ENTITYCOMPONENT_COMPONENT
 
 #include "MotorEngine/MotorEngineAPI.h"
+#include <string>
 
 namespace me {
 
@@ -74,9 +75,9 @@ namespace me {
 		virtual void lateUpdate();
 
 
-		virtual void OnCollisionEnter(Entity* other);
-		virtual void OnCollisionStay(Entity* other);
-		virtual void OnCollisionExit(Entity* other);
+		virtual void onCollisionEnter(Entity* other);
+		virtual void onCollisionStay(Entity* other);
+		virtual void onCollisionExit(Entity* other);
 
 	protected:
 		Entity* mEntity;

@@ -1,0 +1,50 @@
+\hypertarget{_physics_manager_8cpp}{}\doxysection{Src/\+Physics/\+Physics\+Manager.cpp File Reference}
+\label{_physics_manager_8cpp}\index{Src/Physics/PhysicsManager.cpp@{Src/Physics/PhysicsManager.cpp}}
+{\ttfamily \#include \char`\"{}Physics\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Box\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Sphere\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Cylinder\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Capsule\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Persistent\+Manifold.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Dynamics/\+Dynamics/bt\+Discrete\+Dynamics\+World.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Dynamics/\+Dynamics/bt\+Rigid\+Body.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Dispatch/bt\+Default\+Collision\+Configuration.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Broadphase\+Collision/bt\+Dbvt\+Broadphase.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Dynamics/\+Dynamics/bt\+Action\+Interface.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Collision/\+Collision\+Shapes/bt\+Collision\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Dynamics/\+Constraint\+Solver/bt\+Constraint\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Bullet\+Dynamics/\+Constraint\+Solver/bt\+Sequential\+Impulse\+Constraint\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Linear\+Math/bt\+Default\+Motion\+State.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Debug\+Drawer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Entity\+Component/\+Components/\+Collider.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Render/\+Render\+Manager.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_physics_manager_8cpp_a0a570ed0920c72c3458c7280486dbe1b}{call\+Back\+Enter}} (bt\+Persistent\+Manifold $\ast$const \&manifold)
+\item 
+bool \mbox{\hyperlink{_physics_manager_8cpp_a15084152b34235233873fcb88f4f22f9}{call\+Back\+Stay}} (bt\+Manifold\+Point \&manifold, void $\ast$obj1, void $\ast$obj2)
+\item 
+void \mbox{\hyperlink{_physics_manager_8cpp_aa586de551661c3e5b7bdc3f6bc173cbb}{call\+Back\+Exit}} (bt\+Persistent\+Manifold $\ast$const \&manifold)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_physics_manager_8cpp_a0a570ed0920c72c3458c7280486dbe1b}\label{_physics_manager_8cpp_a0a570ed0920c72c3458c7280486dbe1b}} 
+\index{PhysicsManager.cpp@{PhysicsManager.cpp}!callBackEnter@{callBackEnter}}
+\index{callBackEnter@{callBackEnter}!PhysicsManager.cpp@{PhysicsManager.cpp}}
+\doxysubsubsection{\texorpdfstring{callBackEnter()}{callBackEnter()}}
+{\footnotesize\ttfamily void call\+Back\+Enter (\begin{DoxyParamCaption}\item[{bt\+Persistent\+Manifold $\ast$const \&}]{manifold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_physics_manager_8cpp_aa586de551661c3e5b7bdc3f6bc173cbb}\label{_physics_manager_8cpp_aa586de551661c3e5b7bdc3f6bc173cbb}} 
+\index{PhysicsManager.cpp@{PhysicsManager.cpp}!callBackExit@{callBackExit}}
+\index{callBackExit@{callBackExit}!PhysicsManager.cpp@{PhysicsManager.cpp}}
+\doxysubsubsection{\texorpdfstring{callBackExit()}{callBackExit()}}
+{\footnotesize\ttfamily void call\+Back\+Exit (\begin{DoxyParamCaption}\item[{bt\+Persistent\+Manifold $\ast$const \&}]{manifold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_physics_manager_8cpp_a15084152b34235233873fcb88f4f22f9}\label{_physics_manager_8cpp_a15084152b34235233873fcb88f4f22f9}} 
+\index{PhysicsManager.cpp@{PhysicsManager.cpp}!callBackStay@{callBackStay}}
+\index{callBackStay@{callBackStay}!PhysicsManager.cpp@{PhysicsManager.cpp}}
+\doxysubsubsection{\texorpdfstring{callBackStay()}{callBackStay()}}
+{\footnotesize\ttfamily bool call\+Back\+Stay (\begin{DoxyParamCaption}\item[{bt\+Manifold\+Point \&}]{manifold,  }\item[{void $\ast$}]{obj1,  }\item[{void $\ast$}]{obj2 }\end{DoxyParamCaption})}
+

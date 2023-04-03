@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_input_2main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__INPUT_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__INPUT_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_input_manager_8h" kindref="compound">InputManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_input_code_8h" kindref="compound">InputCode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_window_8h" kindref="compound">Render/Window.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="check_m_l_8h" kindref="compound">Utils/checkML.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL_init.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL_events.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KEY_NAME<sp/>SDL_GetKeyName(event-&gt;key.keysym.sym)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>revealKeyboardEvents(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata,<sp/><ref refid="_button_8h_1a33fcc6aa445cb781bfca881e39e5333e" kindref="member">SDL_Event</ref>*<sp/>event)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>userdata;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;type<sp/>==<sp/>SDL_EVENT_KEY_DOWN<sp/>&amp;&amp;<sp/>!event-&gt;key.repeat)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>ha<sp/>pulsado<sp/>la<sp/>tecla<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>KEY_NAME<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;type<sp/>==<sp/>SDL_EVENT_KEY_UP)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>ha<sp/>soltado<sp/>la<sp/>tecla<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>KEY_NAME<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;type<sp/>==<sp/>SDL_EVENT_GAMEPAD_BUTTON_DOWN)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>ha<sp/>pulsado<sp/>el<sp/>boton<sp/>del<sp/>mando<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;cbutton.button<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interact(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Interacting!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>toggleInteract(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>interactActive<sp/>=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*)<sp/>userdata;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*interactActive)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1a77f961528884908c89afb2a01d6f4da9" kindref="member">deleteOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;Interact&quot;</highlight><highlight class="normal">,<sp/>interact,<sp/>NULL);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;Interact&quot;</highlight><highlight class="normal">,<sp/>interact,<sp/>NULL);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>*interactActive<sp/>=<sp/>!*interactActive;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_2main_8cpp_1a7848fb72ebbb3a6120ebb47cffc20238" kindref="member">shoot</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Shooting!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>shoot2(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Shooting<sp/>2!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getAxisValue(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>userdata;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>axis<sp/>value:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ad1094f22aae49c3ff590780d8f8ecdbf" kindref="member">getAxis</ref>(name)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getMousePosition(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Mouse<sp/>pos:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1a4c24100552d97f3d2a88e535e0f87ea8" kindref="member">getMousePositon</ref>().<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1a4c24100552d97f3d2a88e535e0f87ea8" kindref="member">getMousePositon</ref>().<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_2main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>Window::init(SDL_INIT_EVERYTHING,<sp/></highlight><highlight class="stringliteral">&quot;Input<sp/>Manager<sp/>Test&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_WINDOWPOS_UNDEFINED,<sp/>SDL_WINDOWPOS_UNDEFINED,<sp/>854,<sp/>480,<sp/>SDL_WINDOW_INPUT_FOCUS);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//char*<sp/>name<sp/>=<sp/>(char*)<sp/>&quot;Javi&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SDL_AddEventWatch(revealKeyboardEvents,<sp/>name);</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//name<sp/>=<sp/>(char*)<sp/>&quot;Rayo&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>keyboardE;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardE.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a61e09791908c72d6b1c7925b572f9e12" kindref="member">INPUTTYPE_KEYBOARD</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardE.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/><ref refid="_input_code_8h_1a934cbbea454fc2380acd02a2c28f5c78" kindref="member">KEYBOARDCODE_E</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;Interact&quot;</highlight><highlight class="normal">,<sp/>keyboardE);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>interactActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>keyboardSpace;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardSpace.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a61e09791908c72d6b1c7925b572f9e12" kindref="member">INPUTTYPE_KEYBOARD</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardSpace.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDLK_SPACE;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;Space&quot;</highlight><highlight class="normal">,<sp/>keyboardSpace);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;Space&quot;</highlight><highlight class="normal">,<sp/>toggleInteract,<sp/>&amp;interactActive);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>leftClick;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>leftClick.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a050b99cc3d5ccd12e45d851a374679e0" kindref="member">INPUTTYPE_MOUSE_CLICK</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>leftClick.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDL_BUTTON_LEFT;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;Shoot&quot;</highlight><highlight class="normal">,<sp/>leftClick);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;Shoot&quot;</highlight><highlight class="normal">,<sp/><ref refid="_audio_2main_8cpp_1a7848fb72ebbb3a6120ebb47cffc20238" kindref="member">shoot</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>controllerA;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>controllerA.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1af2b3cde4571722accd4729ef14d6d656" kindref="member">INPUTTYPE_GAMEPAD_BUTTON</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>controllerA.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDL_GAMEPAD_BUTTON_A;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">,<sp/>controllerA,<sp/>0);<sp/></highlight><highlight class="comment">//Solo<sp/>P1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">,<sp/><ref refid="_audio_2main_8cpp_1a7848fb72ebbb3a6120ebb47cffc20238" kindref="member">shoot</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>controllerA2;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>controllerA2.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1af2b3cde4571722accd4729ef14d6d656" kindref="member">INPUTTYPE_GAMEPAD_BUTTON</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>controllerA2.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDL_GAMEPAD_BUTTON_A;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;A2&quot;</highlight><highlight class="normal">,<sp/>controllerA2,<sp/>1);<sp/></highlight><highlight class="comment">//Solo<sp/>P2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;A2&quot;</highlight><highlight class="normal">,<sp/>shoot2);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_axis_input" kindref="compound">AxisInput</ref><sp/>horizontal;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>horizontal.<ref refid="structme_1_1_axis_input_1a51b46317cbbcb1bdc4e83d8e23ee14ca" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a61e09791908c72d6b1c7925b572f9e12" kindref="member">INPUTTYPE_KEYBOARD</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>horizontal.<ref refid="structme_1_1_axis_input_1a939f0dee47aee351580ad07978474483" kindref="member">positive</ref><sp/>=<sp/>SDLK_d;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>horizontal.<ref refid="structme_1_1_axis_input_1a642b59ba47eea1e1696770088835119c" kindref="member">negative</ref><sp/>=<sp/>SDLK_a;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_axis_info" kindref="compound">AxisInfo</ref><sp/>horizontalInfo;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>horizontalInfo.<ref refid="structme_1_1_axis_info_1a7c82893ab4482ca590f21a427231dc22" kindref="member">dead</ref><sp/>=<sp/>.1f;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>horizontalInfo.<ref refid="structme_1_1_axis_info_1a9f84d7f79419c83bff7c123b7ccb0a7a" kindref="member">gravity</ref><sp/>=<sp/>.01f;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>horizontalName<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/></highlight><highlight class="stringliteral">&quot;Horizontal&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1a33e300808296f6b3e61b99c491fffd12" kindref="member">addAxis</ref>(horizontalName,<sp/>horizontalInfo,<sp/>horizontal);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_axis_input" kindref="compound">AxisInput</ref><sp/>gamepadLeftHorizontal;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>gamepadLeftHorizontal.<ref refid="structme_1_1_axis_input_1a51b46317cbbcb1bdc4e83d8e23ee14ca" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a9a0d03c83c7c1cd83a6d67f47c70e25d" kindref="member">INPUTTYPE_GAMEPAD_AXIS</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>gamepadLeftHorizontal.<ref refid="structme_1_1_axis_input_1a2649597beb9c3361d20740ce4f37e744" kindref="member">which</ref><sp/>=<sp/>SDL_GAMEPAD_AXIS_LEFTX;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1a8bebb9629b541d74f418bba91b027416" kindref="member">addBinding</ref>(</highlight><highlight class="stringliteral">&quot;Horizontal&quot;</highlight><highlight class="normal">,<sp/>gamepadLeftHorizontal);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>keyboardP;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardP.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a61e09791908c72d6b1c7925b572f9e12" kindref="member">INPUTTYPE_KEYBOARD</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardP.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDLK_p;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;P&quot;</highlight><highlight class="normal">,<sp/>keyboardP);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;P&quot;</highlight><highlight class="normal">,<sp/>getAxisValue,<sp/>horizontalName);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structme_1_1_input" kindref="compound">Input</ref><sp/>keyboardM;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardM.<ref refid="structme_1_1_input_1ad80a18dd05ad864a6da82e70dea1af1a" kindref="member">type</ref><sp/>=<sp/><ref refid="_input_code_8h_1a61e09791908c72d6b1c7925b572f9e12" kindref="member">INPUTTYPE_KEYBOARD</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>keyboardM.<ref refid="structme_1_1_input_1abb8d8dd9c37d1bea216affb4c9b8aa5a" kindref="member">which</ref><sp/>=<sp/>SDLK_m;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1ab7396a5ea3288379cd876b32b6fe2c8c" kindref="member">addButton</ref>(</highlight><highlight class="stringliteral">&quot;M&quot;</highlight><highlight class="normal">,<sp/>keyboardM);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1afd92726e761ee88a793af225d8f55d7a" kindref="member">inputManager</ref>().<ref refid="classme_1_1_input_manager_1aa212df8f68741f22a9b5410c6ea48f05" kindref="member">addOnButtonPressedEvent</ref>(</highlight><highlight class="stringliteral">&quot;M&quot;</highlight><highlight class="normal">,<sp/>getMousePosition);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Use<sp/>Space<sp/>to<sp/>toogle<sp/>Interact.<sp/>Use<sp/>E<sp/>to<sp/>interact<sp/>when<sp/>Interact<sp/>is<sp/>enabled.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_button_8h_1a33fcc6aa445cb781bfca881e39e5333e" kindref="member">SDL_Event</ref><sp/>event;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(SDL_WaitEvent(&amp;event))<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(event.type)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_QUIT:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>SDL_GetError();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/Input/main.cpp"/>
+  </compounddef>
+</doxygen>

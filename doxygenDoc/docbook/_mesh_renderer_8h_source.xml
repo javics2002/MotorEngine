@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__mesh_renderer_8h_source" xml:lang="en-US">
+<title>MeshRenderer.h</title>
+<indexterm><primary>Src/EntityComponent/Components/MeshRenderer.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_MESHRENDERER</emphasis>
+4 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_MESHRENDERER</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__component_8h">Component.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Transform;
+11 
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_mesh_renderer">MeshRenderer</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_component">Component</link>
+16 &#32;&#32;&#32;&#32;{
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//name&#32;for&#32;om()&#32;map&#32;and&#32;for&#32;entity&#32;that&#32;attached&#32;in&#32;node</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652">mName</link>;
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//name&#32;of&#32;.mesh&#32;file</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35">mMeshName</link>;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//componenet&#32;transform&#32;of&#32;this.Entity</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_transform">Transform</link>*&#32;<link linkend="_classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0">mTransform</link>;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//static&#32;state&#32;of&#32;this.Entity&#32;</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;mStaticObject&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+29 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_mesh_renderer">MeshRenderer</link>(std::string&#32;name,&#32;std::string&#32;meshName);
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Destroy&#32;om()&#32;map&#32;saved&#32;mesh&#32;(ogreMesh)</emphasis>
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_mesh_renderer">~MeshRenderer</link>();
+38 
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;start()&#32;<emphasis role="keyword">override</emphasis>;
+43 
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;update()&#32;<emphasis role="keyword">override</emphasis>;
+48 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setMaterial(std::string&#32;materialName);
+54 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setStatic(<emphasis role="keywordtype">bool</emphasis>&#32;stat);
+59 
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;getName();
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+65 &#32;&#32;&#32;&#32;};
+66 }
+67 <emphasis role="preprocessor">#endif</emphasis>
+68 
+69 
+</programlisting></section>

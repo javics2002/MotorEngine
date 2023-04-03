@@ -1,0 +1,125 @@
+.TH "nk_style_scrollbar" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nk_style_scrollbar
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nuklear\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBnormal\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBhover\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBactive\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_color\fP \fBborder_color\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBcursor_normal\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBcursor_hover\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_item\fP \fBcursor_active\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_color\fP \fBcursor_border_color\fP"
+.br
+.ti -1c
+.RI "float \fBborder\fP"
+.br
+.ti -1c
+.RI "float \fBrounding\fP"
+.br
+.ti -1c
+.RI "float \fBborder_cursor\fP"
+.br
+.ti -1c
+.RI "float \fBrounding_cursor\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_vec2\fP \fBpadding\fP"
+.br
+.ti -1c
+.RI "int \fBshow_buttons\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_button\fP \fBinc_button\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_style_button\fP \fBdec_button\fP"
+.br
+.ti -1c
+.RI "enum \fBnk_symbol_type\fP \fBinc_symbol\fP"
+.br
+.ti -1c
+.RI "enum \fBnk_symbol_type\fP \fBdec_symbol\fP"
+.br
+.ti -1c
+.RI "\fBnk_handle\fP \fBuserdata\fP"
+.br
+.ti -1c
+.RI "void(* \fBdraw_begin\fP )(struct \fBnk_command_buffer\fP *, \fBnk_handle\fP)"
+.br
+.ti -1c
+.RI "void(* \fBdraw_end\fP )(struct \fBnk_command_buffer\fP *, \fBnk_handle\fP)"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::active"
+
+.SS "float nk_style_scrollbar::border"
+
+.SS "struct \fBnk_color\fP nk_style_scrollbar::border_color"
+
+.SS "float nk_style_scrollbar::border_cursor"
+
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::cursor_active"
+
+.SS "struct \fBnk_color\fP nk_style_scrollbar::cursor_border_color"
+
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::cursor_hover"
+
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::cursor_normal"
+
+.SS "struct \fBnk_style_button\fP nk_style_scrollbar::dec_button"
+
+.SS "enum \fBnk_symbol_type\fP nk_style_scrollbar::dec_symbol"
+
+.SS "void(* nk_style_scrollbar::draw_begin) (struct \fBnk_command_buffer\fP *, \fBnk_handle\fP)"
+
+.SS "void(* nk_style_scrollbar::draw_end) (struct \fBnk_command_buffer\fP *, \fBnk_handle\fP)"
+
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::hover"
+
+.SS "struct \fBnk_style_button\fP nk_style_scrollbar::inc_button"
+
+.SS "enum \fBnk_symbol_type\fP nk_style_scrollbar::inc_symbol"
+
+.SS "struct \fBnk_style_item\fP nk_style_scrollbar::normal"
+
+.SS "struct \fBnk_vec2\fP nk_style_scrollbar::padding"
+
+.SS "float nk_style_scrollbar::rounding"
+
+.SS "float nk_style_scrollbar::rounding_cursor"
+
+.SS "int nk_style_scrollbar::show_buttons"
+
+.SS "\fBnk_handle\fP nk_style_scrollbar::userdata"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.
