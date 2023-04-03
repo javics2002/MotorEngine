@@ -108,12 +108,12 @@ void me::PhysicsManager::start()
 	gContactProcessedCallback = callBackStay;
 	gContactEndedCallback = callBackExit;
 
-//#ifdef _DEBUG
-//	mDebug = new DebugDrawer();
-//	mDynamicsWorld->setDebugDrawer(mDebug);
-//#endif
+#ifdef _DEBUG
+	mDebug = new DebugDrawer();
+	mDynamicsWorld->setDebugDrawer(mDebug);
+#endif
 
-	//mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
+	mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
 
 }
 
@@ -198,9 +198,10 @@ void me::PhysicsManager::update(const float& dt)
 {
 	mDynamicsWorld->stepSimulation(dt);
 
-//#ifdef _DEBUG
-//	mDynamicsWorld->debugDrawWorld();
-//#endif
+#ifdef _DEBUG
+	mDebug->clear();
+	mDynamicsWorld->debugDrawWorld();
+#endif
 
 }
 

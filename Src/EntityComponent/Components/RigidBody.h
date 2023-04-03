@@ -71,7 +71,7 @@ namespace me{
 		@param force is the vector of the force to apply
 		@param relativePos is the local pos of the rigidBody
 		*/
-		void addForce(Vector3 force, Vector3 relativePos);
+		void addForce(Vector3 force);
 
 		/**
 		Apply a impulse to the rigidBody
@@ -79,7 +79,7 @@ namespace me{
 		@param impulse is the vector of the impulse to apply
 		@param relativePos is the local pos of the rigidBody
 		*/
-		void addImpulse(Vector3 impulse, Vector3 relativePos);
+		void addImpulse(Vector3 impulse);
 
 	};
 

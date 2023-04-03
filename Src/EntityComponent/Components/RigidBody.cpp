@@ -32,16 +32,14 @@ void me::RigidBody::start()
 		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);
+	mBtRigidBody->setGravity(btVector3(0, 0, 0));
 	
 }
 
-//To implement
 void me::RigidBody::update()
 {
 	if (MovementType(mMvType) != MOVEMENT_TYPE_STATIC) {
 		btVector3 pos = mBtRigidBody->getWorldTransform().getOrigin();
-
-		pos += mBtRigidBody->getLinearVelocity();
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
 	}
 }
@@ -81,12 +79,12 @@ void me::RigidBody::setMomeventType(int mvType)
 	mMvType = mvType;
 }
 
-void me::RigidBody::addForce(Vector3 force, Vector3 relativePos)
+void me::RigidBody::addForce(Vector3 force)
 {
-	mBtRigidBody->applyForce(force.v3ToBulletV3(), relativePos.v3ToBulletV3());
+	mBtRigidBody->applyCentralForce(force.v3ToBulletV3());
 }
 
-void me::RigidBody::addImpulse(Vector3 impulse, Vector3 relativePos)
+void me::RigidBody::addImpulse(Vector3 impulse)
 {
 	mBtRigidBody->applyCentralImpulse(impulse.v3ToBulletV3());
 }

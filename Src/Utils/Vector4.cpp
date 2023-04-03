@@ -33,6 +33,18 @@ Vector4::Vector4(float a, float b, float c) {
 	x = cy * cp * sr - sy * sp * cr;
 	y = sy * cp * sr + cy * sp * cr;
 	z = sy * cp * cr - cy * sp * sr;
+
+	convertToZero(w);
+	convertToZero(x);
+	convertToZero(y);
+	convertToZero(z);
+}
+
+
+void Vector4::convertToZero(float &value) {
+	if (std::abs(value) < TOLERANCE) {
+		value =  0;
+	}
 }
 
 Vector4::Vector4(const Vector3& v_) {
@@ -48,6 +60,11 @@ Vector4::Vector4(const Vector3& v_) {
 	x = cy * cp * sr - sy * sp * cr;
 	y = sy * cp * sr + cy * sp * cr;
 	z = sy * cp * cr - cy * sp * sr;
+
+	convertToZero(w);
+	convertToZero(x);
+	convertToZero(y);
+	convertToZero(z);
 	
 }
 
@@ -91,7 +108,7 @@ Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
 }
 
 btQuaternion Vector4::getRotationInBullet() {
-	return btQuaternion(x, y, z);
+	return btQuaternion(x, y, z, w);
 }
 
 void Vector4::rotate(float degrees, Vector3 axis) {
@@ -107,5 +124,10 @@ void Vector4::rotate(float degrees, Vector3 axis) {
 	x = w * quat.x + x * quat.w + y * quat.z - z * quat.y;
 	y = w * quat.y - x * quat.z + y * quat.w + z * quat.x;
 	z = w * quat.z + x * quat.y - y * quat.x + z * quat.w;
+
+	convertToZero(w);
+	convertToZero(x);
+	convertToZero(y);
+	convertToZero(z);
 }
 

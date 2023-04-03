@@ -33,7 +33,9 @@ namespace me {
 		* @return The linear interpolation between "a" and "b" by a factor of "f"
 		*/
 		float lerp(float a, float b, float f);
+		void convertToZero(float &value);
 
+		const float TOLERANCE = 0.000001;
 
 	public:
 
@@ -76,6 +78,7 @@ namespace me {
 		Do the rotation in specify axis
 		*/
 		void rotate(float degrees, Vector3 axis);
+
 	};
 }
 
