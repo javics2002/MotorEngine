@@ -24,8 +24,8 @@ int main() {
 	RenderManager* ogreMgr= RenderManager::instance();
 	std::string camJ1 = "CameraJugador1";
 
-	ogreMgr->createCamera(camJ1, 5,10000,true,0, Ogre::ColourValue(0, 0, 0));
-	ogreMgr->setCameraInfo(camJ1,  Ogre::Vector3f( 0, 0, 500), Ogre::Vector3f( 0, 0, -1));
+	/*ogreMgr->createCamera(camJ1, 5,10000,true,0, Ogre::ColourValue(0, 0, 0));
+	ogreMgr->setCameraInfo(camJ1,  Ogre::Vector3f( 0, 0, 500), Ogre::Vector3f( 0, 0, -1));*/
 
 	//ogreMgr->setViewportDimension(camJ1, 0, 0, 0.3, 1);
 
@@ -37,7 +37,7 @@ int main() {
 
 	
 
-	ogreMgr->createNewLight("Luz", Ogre::Vector3f(0, 500, 500),  Ogre::Vector3f(0, -1, -1));
+	//ogreMgr->createNewLight("Luz", Ogre::Vector3f(0, 500, 500),  Ogre::Vector3f(0, -1, -1));
 	std::string cubo = "Cubo";
 	ogreMgr->createMesh(cubo, "cube.mesh");
 	ogreMgr->setMeshMaterial(cubo, "Material/roja");

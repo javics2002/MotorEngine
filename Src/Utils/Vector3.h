@@ -236,12 +236,12 @@ namespace me {
 		/**
 		Returns the conversion of a Vector3 to an Ogre::Vector3f
 		*/
-		Ogre::Vector3f v3ToOgreV3();
+		Ogre::Vector3f v3ToOgreV3() const;
 
 		/**
 		Returns the conversion of a Vector3 to an btVector3
 		*/
-		btVector3 v3ToBulletV3();
+		btVector3 v3ToBulletV3() const;
 
 	};
 }

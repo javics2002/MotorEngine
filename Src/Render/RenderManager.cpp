@@ -65,8 +65,6 @@ void RenderManager::initRoot()
 	if (!mRoot)
 		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreManager::initRoot");
 	mRoot->restoreConfig();
-
-
 }
 
 void me::RenderManager::shutdown()
@@ -75,9 +73,6 @@ void me::RenderManager::shutdown()
 	destroyRTShaderSystem();
 	delete mFSLayer;
 	delete mOgreWindow;
-	
-
-
 }
 
 void me::RenderManager::initWindow()
@@ -86,11 +81,8 @@ void me::RenderManager::initWindow()
 	mOgreWindow->init(mRoot);
 }
 
-
-
 void RenderManager::locateResources()
 {
-
 	// load resource paths from config file
 	Ogre::ConfigFile cf;
 
@@ -122,7 +114,6 @@ void RenderManager::locateResources()
 			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type, sec);
 		}
 	}
-
 }
 
 void RenderManager::loadResources() {
@@ -211,18 +202,19 @@ me::RenderManager::~RenderManager()
 	}
 	mLights.clear();
 
-	if (mRoot != nullptr)
+	/*if (mRoot != nullptr)
 	{
 		mRoot->saveConfig();
-	}
+	}*/
+
 	shutdown();
 	delete mRoot;
 	mRoot = nullptr;
 }
 
-bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, 
+	int farDist, bool autoRatio, int zOrder, Vector4 colour)
 {
-
 	if (mCameras.count(name))
 		return false;
 
@@ -230,15 +222,15 @@ bool me::RenderManager::createCamera(std::string name, std::string parentName, i
 	Ogre::SceneNode* cameraNode = createChildNode(name, parentName);
 	
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
-
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRatio, zOrder, colour.v4toOgreColourValue());
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
+bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist, bool autoRatio, 
+	int zOrder, Vector4 colour)
 {
 	if (mCameras.count(name))
 		return false;
@@ -247,26 +239,23 @@ bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist
 	Ogre::SceneNode* cameraNode = createNode(name);
 
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
-
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRatio, zOrder, colour.v4toOgreColourValue());
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::RenderManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look)
+bool me::RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Vector3& look)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
-	cam->setPosition(pos);
-	cam->lookAt(look);
-
+	cam->setPosition(pos.v3ToOgreV3());
+	cam->lookAt(look.v3ToOgreV3());
 
 	return true;
-
 }
 
 
@@ -277,7 +266,6 @@ bool me::RenderManager::setViewportDimension(std::string name, float left, float
 		return false;
 
 	cam->setViewportDimension(left, top, width, height);
-
 
 	return true;
 }
@@ -298,24 +286,20 @@ void me::RenderManager::destroyCamera(std::string name)
 
 }
 
-void me::RenderManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
+void me::RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir)
 {
-	
 	Ogre::Light* light = mSM->createLight(name);
 	light->setType(Ogre::Light::LT_DIRECTIONAL);
 	light->setVisible(true);
 	Ogre::SceneNode* lightNode = createNode(name);
 	lightNode->attachObject(light);
-	lightNode->setDirection(dir);
-	lightNode->setPosition(pos);
+	lightNode->setDirection(dir.v3ToOgreV3());
+	lightNode->setPosition(pos.v3ToOgreV3());
 	mLights[name] = light;
-	
-
 }
 
 bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
 {
-
 	if (mMeshes.count(name))
 		return false;
 

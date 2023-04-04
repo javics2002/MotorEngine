@@ -70,9 +70,9 @@ bool MotorEngine::setup(std::string gameName)
 	// Init managers
 	physicsManager().start();
 	std::string cam = "CameraDemo";
-	renderManager().createCamera(cam, 1, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
-	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 0.45, -0.8), Ogre::Vector3f(-1000, 0, 0));
-	renderManager().createNewLight("luz", Ogre::Vector3f(0, 500, 500), Ogre::Vector3f(0, -1, -1));
+	renderManager().createCamera(cam, 1, 10000, true, 0, Vector4(0, 0, 0.5, 1));
+	renderManager().setCameraInfo(cam, Vector3(0, 0.45, -0.8), Vector3(-1000, 0, 0));
+	renderManager().createNewLight("luz", Vector3(0, 500, 500), Vector3(0, -1, -1));
 
 	return entryPoint();
 }

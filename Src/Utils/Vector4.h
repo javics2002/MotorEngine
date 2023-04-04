@@ -11,6 +11,7 @@ namespace Ogre {
 	typedef Vector< 3, float > 	Vector3f;
 
 	class Quaternion;
+	class ColourValue;
 }
 
 class btQuaternion;
@@ -67,12 +68,12 @@ namespace me {
 		/**
 		Return the conversion Vector3 - Ogre::Quaternion
 		*/
-		Ogre::Quaternion v4ToOgreQuaternion();
+		Ogre::Quaternion v4ToOgreQuaternion() const;
 
 		/**
 		Returns the current Rotation in btQuaternion
 		*/
-		btQuaternion getRotationInBullet();
+		btQuaternion getRotationInBullet() const;
 
 		/*
 		Do the rotation in specify axis
@@ -83,6 +84,11 @@ namespace me {
 		* Transform quaternion rotation to Euler angles in degrees 
 		*/
 		Vector3 toEuler();
+
+		/**
+		Transform vector4 representing colour in RGBA 
+		*/
+		Ogre::ColourValue v4toOgreColourValue() const;
 	};
 }
 

@@ -18,12 +18,10 @@ me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode*
 
 me::RenderParticleSystem::~RenderParticleSystem()
 {
-	
 	Ogre::SceneManager* mSM = mNode->getCreator();
 	mNode->detachAllObjects();
 	mSM->destroyParticleSystem(mParticleSystem);
 	mSM->destroySceneNode(mNode);
-
 }
 
 void me::RenderParticleSystem::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)

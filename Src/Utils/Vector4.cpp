@@ -3,6 +3,7 @@
 
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
+#include <OgreColourValue.h>
 #include <LinearMath/btQuaternion.h>
 
 using namespace me;
@@ -103,11 +104,11 @@ void Vector4::operator=(const Vector4* v)
 	w = v->w;
 }
 
-Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
+Ogre::Quaternion Vector4::v4ToOgreQuaternion() const {
 	return Ogre::Quaternion(w, x, y, z);
 }
 
-btQuaternion Vector4::getRotationInBullet() {
+btQuaternion Vector4::getRotationInBullet() const {
 	return btQuaternion(x, y, z, w);
 }
 
@@ -154,5 +155,10 @@ Vector3 Vector4::toEuler() {
 	angles.x = pitch * 180.0 / Ogre::Math::PI;
 	angles.y = yaw * 180.0 / Ogre::Math::PI;
 	return angles;
+}
+
+Ogre::ColourValue me::Vector4::v4toOgreColourValue() const
+{
+	return Ogre::ColourValue(x, y, z, w);
 }
 
