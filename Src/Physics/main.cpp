@@ -39,8 +39,8 @@ int main() {
 
 	std::string cam = "CameraDemo";
 
-	renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
-	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));
+	/*renderManager().createCamera(cam, 5, 10000, true, 0, Ogre::ColourValue(0, 0, 0.5));
+	renderManager().setCameraInfo(cam, Ogre::Vector3f(0, 300, 600), Ogre::Vector3f(0, -1, 0.25));*/
 
 	me::Entity* plane = new me::Entity("plane");
 
@@ -80,7 +80,7 @@ int main() {
 	cubeMesh->setMaterial("Material/marronclaro");
 	cube->addComponent<Collider>("collider");
 
-	renderManager().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
+	//renderManager().createNewLight("Luz", Vector3(0, 500, 500).v3ToOgreV3(), Vector3(0, -1, -1).v3ToOgreV3());
 
 	/*SDL_Event event;
 	bool quit = false;

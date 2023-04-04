@@ -11,6 +11,10 @@ namespace FMOD {
 }
 
 namespace me {
+	/**
+	Plays an audio file in the scene. AudioListeners within range
+	will hear it with the intensity based in their position in the scene. 
+	*/
 	class __MOTORENGINE_API AudioSource : public Component
 	{
 	public:

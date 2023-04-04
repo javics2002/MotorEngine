@@ -78,6 +78,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Light.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h">
@@ -140,5 +141,6 @@
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Light.h" />
   </ItemGroup>
 </Project>

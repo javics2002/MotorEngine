@@ -8,7 +8,8 @@ me::DebugDrawer::DebugDrawer() {
 	mDebugDrawModes = DBG_DrawWireframe;
 }
 
-me::DebugDrawer::~DebugDrawer() {}
+me::DebugDrawer::~DebugDrawer() {
+}
 
 void me::DebugDrawer::clear()
 {
@@ -18,6 +19,8 @@ void me::DebugDrawer::clear()
 	}
 
 	lines.clear();
+
+	renderManager().getSceneManager()->destroyAllManualObjects();
 }
 
 void me::DebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& color)

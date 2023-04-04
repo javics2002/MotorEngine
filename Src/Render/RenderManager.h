@@ -4,6 +4,7 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
+#include "Utils/Vector4.h"
 #include <unordered_map>
 #include <string>
 #include <OgreColourValue.h>
@@ -29,7 +30,6 @@ namespace Ogre {
 }
 
 namespace me {
-
 	class RenderWindow;
 	class RenderCamera;
 	class RenderMesh;
@@ -37,7 +37,7 @@ namespace me {
 	class SGTechniqueResolverListener;
 	class OverlayManager;
 	class Vector3;
-	class Vector4;
+
 	/**
 	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
 	locate and load resources (from resource.cfg)
@@ -107,7 +107,7 @@ namespace me {
 		RenderWindow* mOgreWindow;
 
 		//Store camera name to renderCamera
-		std::unordered_map<std::string, RenderCamera*> mCameras;			//Pairs each cameras with its name
+		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
 		//Store mesh name to renderMesh
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
 		//Store mesh name to renderParticleSystem
@@ -174,26 +174,26 @@ namespace me {
 		@param parentName: name of parent Ogre::SceneNode
 		@param nearDist: near clipping plane distancia 
 		@param farDist: far clipping plane distancia 
-		@param autoRadio: if viewport calculate aspect radio automatically
+		@param autoRatio: if viewport calculate aspect radio automatically
 		@param zOrder: relative order of viewport
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
+		bool createCamera(std::string name, std::string parentName, int nearDist, 
+			int farDist, bool autoRatio, int zOrder, Vector4 colour = Vector4(0, 0, 0, 1));
 		
 		/**
 		Create the camera with this name and store it
 		@param name: name of camera
 		@param nearDist: near clipping plane distancia
 		@param farDist: far clipping plane distancia
-		@param autoRadio: if viewport calculate aspect radio automatically
+		@param autoRatio: if viewport calculate aspect ratio automatically
 		@param zOrder: relative order of viewport
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		//bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
-		
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
+		bool createCamera(std::string name, int nearDist, int farDist, bool autoRatio, 
+			int zOrder, Vector4 colour = Vector4(0, 0, 0, 1));
 
 		/**
 		Set location and direction to the camera with this name
@@ -203,7 +203,7 @@ namespace me {
 		@return false: if it doesn't exist
 		@return true: if succeed
 		*/
-		bool setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look);
+		bool setCameraInfo(std::string name, const Vector3& pos, const Vector3& look);
 
 		/**
 		Set dimension to the viewport of the camera with this name
@@ -226,7 +226,7 @@ namespace me {
 		@param pos: position of light
 		@param dir: direction of light
 		*/
-		void createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir);
+		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir);
 		
 		/**
 		Create the ogreMesh with this name 

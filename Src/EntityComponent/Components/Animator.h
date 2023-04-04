@@ -14,7 +14,7 @@ namespace me {
 	class MeshRenderer;
 	
 	/**
-
+	Manages the MeshRenderer Component to play animations of the mesh file in it.
 	*/
 	class __MOTORENGINE_API Animator : public Component
 	{

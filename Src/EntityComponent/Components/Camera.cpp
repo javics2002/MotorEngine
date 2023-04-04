@@ -5,8 +5,6 @@
 #include "Transform.h"
 #include "Utils/Vector3.h"
 
-
-
 me::Camera::Camera()
 {
 }
@@ -19,16 +17,15 @@ me::Camera::~Camera()
 void me::Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createCamera(mName,mNearDistance,mFarDistance,mAutoRadio,mZOrder);
-	renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
-
+	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRadio, mZOrder, mBackgroundColour);
+	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
 void me::Camera::update()
 {
 	if (!mStaticObject)
 	{
-		renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
+		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 	}
 }
 

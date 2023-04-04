@@ -9,6 +9,10 @@
 namespace me {
 	class Component;
 
+	/**
+	A FactoryComponent is responsible of creating and destroying a specific type 
+	of component.
+	*/
 	class __MOTORENGINE_API FactoryComponent
 	{
 	protected:
@@ -29,55 +33,72 @@ namespace me {
 		virtual void destroy(Component* component) = 0;
 	};
 
+	
+	//Creates and destroys Animator components
 	class FactoryAnimator : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys AudioListener components
 	class FactoryAudioListener : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys AudioSource components
 	class FactoryAudioSource : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Camera components
 	class FactoryCamera : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Collider components
 	class FactoryCollider : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys MeshRenderer components
 	class FactoryMeshRenderer : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys ParticleSystem components
 	class FactoryParticleSystem : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys RigidBody components
 	class FactoryRigidBody : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Transform components
 	class FactoryTransform : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+	//Creates and destroys Light components
+	class FactoryLight : public FactoryComponent {
 	public:
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;

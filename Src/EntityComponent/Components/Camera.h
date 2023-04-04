@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Utils/Vector3.h"
+#include "Utils/Vector4.h"
 #include <string>
 #include <list>
 
@@ -17,22 +18,27 @@ namespace me {
 	*/
 	class __MOTORENGINE_API Camera : public Component
 	{
-	private:
 	protected:
-		//name for om() map and for ogreCamera that attached in node
+		//Name for RenderManager map and for RenderCamera that attached in node
 		std::string mName;
+		//Distance from which objects will begin to render
 		int mNearDistance;
+		//Distance which objects stop rendering
 		int mFarDistance;
+		//Whether viewport calculates the aspect radio automatically
 		bool mAutoRadio;
+		//Relative order of viewport
 		int mZOrder;
+		//Point to look at
 		Vector3 mLookAt;
+		//Colour of the background
+		Vector4 mBackgroundColour;
 		//componenet transform of this.Entity
 		Transform* mTransform;
 		//static state of this.Entity 
 		bool mStaticObject = true;
 
 	public:
-
 		/*
 		Default constructor
 		*/
@@ -67,6 +73,10 @@ namespace me {
 			mLookAt = lookAt;
 		}
 
+		inline void setBackgroundColour(Vector4 colour) {
+			mBackgroundColour = colour;
+		}
+
 		/**
 		Get info for mTransform and create ogreCamera and set the start pos
 		*/
@@ -93,8 +103,6 @@ namespace me {
 		@return true: if succeed
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
-
-				
 	};
 }
 #endif

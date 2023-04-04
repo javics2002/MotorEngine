@@ -12,9 +12,12 @@ for any behavior designed as a component.
 #include <string>
 
 namespace me {
-
 	class Entity;
 
+	/**
+	Components define Entities behaviour by defining
+	start and update methods.
+	*/
 	class __MOTORENGINE_API Component {
 	public:
 

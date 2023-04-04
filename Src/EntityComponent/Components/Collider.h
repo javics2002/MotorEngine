@@ -7,8 +7,9 @@
 class Entity;
 
 namespace me{
-
-
+	/**
+	Calls onCollisionEnter, onCollisionStay and onCollisionExit callbacks
+	*/
 	class __MOTORENGINE_API Collider : public Component
 	{
 	public:

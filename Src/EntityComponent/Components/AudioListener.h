@@ -5,6 +5,10 @@
 #include "Component.h"
 
 namespace me {
+	/**
+	An Entity with this component will output the audio it listens
+	where it is located.
+	*/
 	class __MOTORENGINE_API  AudioListener : public me::Component
 	{
 	public:

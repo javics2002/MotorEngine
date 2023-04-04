@@ -8,6 +8,7 @@
 #include "ParticleSystem.h"
 #include "Rigidbody.h"
 #include "Transform.h"
+#include "Light.h"
 
 using namespace me;
 
@@ -182,6 +183,17 @@ me::Component* me::FactoryRigidBody::create(Parameters& params)
 }
 
 void me::FactoryRigidBody::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* me::FactoryLight::create(Parameters& params)
+{
+    Light* light = new Light();
+    return light;
+}
+
+void me::FactoryLight::destroy(Component* component)
 {
     delete component;
 }

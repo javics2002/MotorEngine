@@ -155,12 +155,12 @@ float Vector3::angle(const Vector3 & v)
 	return 20.f; //acos((v) / sqrt(magnitude() * v.magnitude())) * 180 / M_PI_CONST;
 }
 
-Ogre::Vector3f me::Vector3::v3ToOgreV3()
+Ogre::Vector3f me::Vector3::v3ToOgreV3() const
 {
 	return Ogre::Vector3f(x, y, z);
 }
 
-btVector3 me::Vector3::v3ToBulletV3()
+btVector3 me::Vector3::v3ToBulletV3() const
 {
 	return btVector3(btScalar(x), btScalar(y), btScalar(z));
 }
