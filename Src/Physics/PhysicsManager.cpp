@@ -25,6 +25,43 @@ me::PhysicsManager::PhysicsManager()
 
 me::PhysicsManager::~PhysicsManager()
 {
+	//cleanup in the reverse order of creation/initialization
+
+	//remove the rigidbodies from the dynamics world and delete them
+	int i;
+	for (i = mDynamicsWorld->getNumCollisionObjects() - 1; i >= 0; i--)
+	{
+		btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[i];
+		btRigidBody* body = btRigidBody::upcast(obj);
+		if (body && body->getMotionState())
+		{
+			delete body->getMotionState();
+		}
+		mDynamicsWorld->removeCollisionObject(obj);
+		delete obj;
+	}
+
+	//delete collision shapes
+	for (int j = 0; j < mCollisionShapes.size(); j++)
+	{
+		btCollisionShape* shape = mCollisionShapes[j];
+		delete shape;
+	}
+	mCollisionShapes.clear();
+
+	//delete dynamics world
+	delete mDynamicsWorld;
+
+	//delete solver
+	delete mConstraintSolver;
+
+	//delete broadphase
+	delete mBroadphaseInterface;
+
+	//delete dispatcher
+	delete mDispatcher;
+
+	delete mCollisionConfiguration;
 }
 
 /*
@@ -161,6 +198,7 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 	btCollisionShape* colShape;
 
 	colShape = createShape(shape, scale);
+	mCollisionShapes.push_back(colShape);
 	
 	//Initially the rigidBody  is in repose
 	btVector3 reposeInertia(0, 0, 0);

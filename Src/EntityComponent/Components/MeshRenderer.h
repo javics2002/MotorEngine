@@ -33,13 +33,17 @@ namespace me {
 		@param meshName: name of .mesh file
 		*/
 		MeshRenderer(std::string name, std::string meshName);
+		MeshRenderer();
 		//Destroy om() map saved mesh (ogreMesh)
 		~MeshRenderer();
+
+		void init(std::string name, std::string meshName);
 
 		/**
 		Get info for mTransform and create ogreMesh and set the start pos
 		*/
 		void start() override;
+		
 
 		/**
 		Update transform info to mesh(ogreMesh)

@@ -24,6 +24,9 @@ me::Transform::~Transform()
 #ifdef _DEBUG
 	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
 #endif
+
+
+	mChildren.clear();
 }
 
 void me::Transform::start()

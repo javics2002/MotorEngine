@@ -5,6 +5,7 @@
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "DebugDrawer.h"
+#include <vector>
 
 enum Shapes {
 	SHAPES_SPHERE,
@@ -54,6 +55,8 @@ namespace me {
 		btSequentialImpulseConstraintSolver* mConstraintSolver;
 
 		DebugDrawer* mDebug;
+
+		std::vector<btCollisionShape*>	mCollisionShapes;
 
 	public:
 

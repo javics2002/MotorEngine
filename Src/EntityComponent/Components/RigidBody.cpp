@@ -16,6 +16,7 @@ me::RigidBody::RigidBody()
 
 me::RigidBody::~RigidBody()
 {
+	delete mBtTransform;
 }
 
 void me::RigidBody::start()

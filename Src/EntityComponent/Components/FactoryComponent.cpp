@@ -94,6 +94,10 @@ me::Component* me::FactoryCollider::create(Parameters& params)
 
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
+    if (params.empty())
+    {
+        return new MeshRenderer();
+    }
     std::string mesh = value(params, "mesh", std::string());
     std::string meshName = value(params, "meshname", std::string());
     std::string materialName = value(params, "materialname", std::string());
