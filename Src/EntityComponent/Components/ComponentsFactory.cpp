@@ -33,6 +33,12 @@ me::Component* ComponentsFactory::create(const ComponentName& name, Parameters& 
     return mFactories[name]->create(params);
 }
 
+void me::ComponentsFactory::destroy(const ComponentName& name, Component* component)
+{
+    assert(mFactories.count(name));
+    mFactories[name]->destroy(component);
+}
+
 void ComponentsFactory::addFactoryComponent(const ComponentName& name, FactoryComponent* factoryComponent)
 {
     mFactories[name] = factoryComponent;

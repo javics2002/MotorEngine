@@ -28,9 +28,9 @@ namespace me {
 	}
 
 	Entity::~Entity() {
-		for (auto &c : mComponents) {
-			delete c.second; //No se pueden borrar componentes del juego -> hacerlo en factoria?
-		};
+		for (auto &c : mComponents)
+			componentsFactory().destroy(c.first, c.second);
+
 		mComponents.clear();
 
 #ifdef _DEBUG
@@ -57,7 +57,7 @@ namespace me {
 	bool Entity::removeComponent(const ComponentName& componentName)
 	{
 		if (hasComponent(componentName)) {
-			delete mComponents.find(componentName)->second;
+			componentsFactory().destroy(componentName, mComponents.find(componentName)->second);
 			mComponents.erase(componentName);
 			return true;
 		}

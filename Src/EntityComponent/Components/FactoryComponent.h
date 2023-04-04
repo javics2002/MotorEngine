@@ -25,52 +25,62 @@ namespace me {
 		static std::string value(Parameters& params, const ParameterName& parameter, std::string defaultValue = "");
 
 	public:
-		virtual me::Component* create(Parameters& params) = 0;
+		virtual Component* create(Parameters& params) = 0;
+		virtual void destroy(Component* component) = 0;
 	};
 
 	class FactoryAnimator : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryAudioListener : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryAudioSource : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryCamera : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryCollider : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryMeshRenderer : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryParticleSystem : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryRigidBody : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
 	class FactoryTransform : public FactoryComponent {
 	public:
-		me::Component* create(Parameters& params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 }
 #endif

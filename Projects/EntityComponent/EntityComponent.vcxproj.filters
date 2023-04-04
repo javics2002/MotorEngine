@@ -75,7 +75,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Scenemanager.cpp">
+    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
