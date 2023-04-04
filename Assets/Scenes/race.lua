@@ -31,14 +31,14 @@ Entities = {
         },
         RigidBody = {
             colShape = 1,
-            mvType = 2,
+            mvType = 0,
             mass = 5,
             restitution = .5,
-            friction = .3,
+            friction = .01,
             isTrigger = false
         },
         vehicleController = {
-            speed = 0.05;
+            speed = 3;
             rotationspeed = 3;
             driftFactor = 1;
         },

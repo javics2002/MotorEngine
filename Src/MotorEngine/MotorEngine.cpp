@@ -27,6 +27,7 @@
 typedef const char* (*GameName)();
 typedef bool(__cdecl* GameEntryPoint)();
 typedef void(*TypeDefinition)();
+typedef void(*InputDefinition)();
 
 using namespace me;
 
@@ -51,12 +52,20 @@ bool MotorEngine::setup(std::string gameName)
 	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
 	if (gameTypesDef == NULL)
 		return false;
+
+	// Register Motor Engine's default component factories
+	InputDefinition gameInputDef = (InputDefinition)GetProcAddress(game, "initInput");
+	if (gameInputDef == NULL)
+		return false;
 	
 	// Añadir componentes del juego
 	gameTypesDef();
 
 	// Añadir componentes del motor
 	initFactories();
+
+	// Inicializar Input
+	gameInputDef();
 
 	// Init managers
 	physicsManager().start();
@@ -137,15 +146,15 @@ void MotorEngine::loop()
 		*/
 		sceneManager().update();
 		
+		physicsManager().update(0.016);
 		/*
 		* Update physics
 		*/
 		dtAccum += dt;
-		physicsManager().update(0.016);
-
 		if (dtAccum >= pInterval) { // Limitado a 50 fps
 			fixedDt = std::chrono::high_resolution_clock::now() - lastPhysicsTick;
 			timeUtils->fixedDeltaTime = fixedDt.count();
+
 
 			dtAccum = std::chrono::duration<double>();
 
@@ -201,6 +210,8 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("animator", new FactoryAnimator());
 	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
 	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
+
+	// añadir componentes
 }
 
 int MotorEngine::quitLoop(void* userdata, SDL_Event* event)

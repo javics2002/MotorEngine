@@ -100,6 +100,14 @@ namespace me {
 		Vector3 operator*(const float& s);
 
 		/**
+		Returns the product of two vectors
+
+		@param other The vector used in the product
+		@return The final vector after the product
+		*/
+		Vector3 operator*(const Vector3& other);
+
+		/**
 		Returns the product of this vector and a scalar
 
 		@param s The scalar to multiply this vector by

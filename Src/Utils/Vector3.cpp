@@ -32,6 +32,11 @@ Vector3 Vector3::operator+=(const Vector3& v)
 	return Vector3 (x * s, y * s, z * s);
 }
 
+ Vector3 Vector3::operator*(const Vector3& other)
+ {
+	 return Vector3(x * other.x, y * other.y, z * other.z);
+ }
+
  Vector3 Vector3::operator*=(const float & s)
 {
 	return Vector3(x * s, y * s, z * s);

@@ -79,6 +79,10 @@ namespace me {
 		*/
 		void rotate(float degrees, Vector3 axis);
 
+		/*
+		* Transform quaternion rotation to Euler angles in degrees 
+		*/
+		Vector3 toEuler();
 	};
 }
 
