@@ -26,6 +26,7 @@ me::GUIManager::GUIManager()
 
 	mContext = &CEGUI::System::getSingleton().createGUIContext(mRenderer->getDefaultRenderTarget());
 	mRoot = CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "Root");
+	mRoot->setUsingAutoRenderingSurface(false);
 	mContext->setRootWindow(mRoot);
 	mRenderer->setUsingShaders(true);
 }
