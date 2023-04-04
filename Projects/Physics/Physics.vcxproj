@@ -146,8 +146,8 @@
       <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;OgreMain_d.lib;OgreRTShaderSystem_d.lib;Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);$(SolutionDir)Dependencies\LuaBridge\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
