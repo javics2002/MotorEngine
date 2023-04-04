@@ -34,26 +34,26 @@ namespace me {
         This assumes that the name is a unique identifier.
         @param String name to identify the new scene.
         */
-        std::shared_ptr<Scene> addScene(const std::string& name);
+        Scene* addScene(const SceneName& name);
 
         /**
         Remove an scene from the SceneManager.
         This assumes that the name is a unique identifier.
         @param String name to identify the scene to be remove.
         */
-        void removeScene(const std::string& name);
+        void removeScene(const SceneName& name);
 
         /**
         Get an scene from the SceneManager.
         This assumes that the name is a unique identifier.
         @param String name to identify the scene suggested.
         */
-        std::shared_ptr<Scene> getScene(const std::string& name) const;
+        Scene* getScene(const SceneName& name) const;
 
         /**
         Get the scene that is actually active from the SceneManager.
         */
-        inline std::shared_ptr<Scene> getActiveScene() const {
+        inline Scene* getActiveScene() const {
             return mActiveScene;
         };
 
@@ -62,14 +62,14 @@ namespace me {
         @param String oldName to be change.
         @param String newName to be set.
         */
-        void renameScene(const std::string& oldName, const std::string& newName);
+        void renameScene(const SceneName& oldName, const SceneName& newName);
 
         /**
         Set the active scene from the SceneManager.
         This assumes that the name is a unique identifier.
         @param String name to identify the scene suggested.
         */
-        void setActiveScene(const std::string& name);
+        void setActiveScene(const SceneName& name);
 
         /**
         Main loop of this manager, if there is an active scene 
@@ -86,7 +86,9 @@ namespace me {
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
         */
-        int loadEntities(const std::string& sceneName);
+        int loadEntities(const SceneName& sceneName);
+
+        void deleteAllScenes();
 
     private:
 
@@ -103,8 +105,8 @@ namespace me {
         */
         void pushEntities();
 
-        std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
-        std::shared_ptr<Scene> mActiveScene;
+        std::unordered_map<SceneName, Scene*> mScenes;
+        Scene* mActiveScene;
 
         InfoScene mEntitiesMap;
     };

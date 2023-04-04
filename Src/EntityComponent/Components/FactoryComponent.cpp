@@ -39,6 +39,11 @@ Component* FactoryAnimator::create(Parameters& params)
     return animator;
 }
 
+void me::FactoryAnimator::destroy(Component* component)
+{
+    delete component;
+}
+
 Component* FactoryTransform::create(Parameters& params)
 {
     Transform* transform = new Transform();
@@ -51,11 +56,21 @@ Component* FactoryTransform::create(Parameters& params)
     return transform;
 }
 
+void me::FactoryTransform::destroy(Component* component)
+{
+    delete component;
+}
+
 me::Component* me::FactoryAudioListener::create(Parameters& params)
 {
     AudioListener* audioListener = new AudioListener();
 
     return audioListener;
+}
+
+void me::FactoryAudioListener::destroy(Component* component)
+{
+    delete component;
 }
 
 me::Component* me::FactoryAudioSource::create(Parameters& params)
@@ -69,6 +84,11 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
     audioSource->setLoop(value(params, "loop", false));
 
     return audioSource;
+}
+
+void me::FactoryAudioSource::destroy(Component* component)
+{
+    delete component;
 }
 
 me::Component* me::FactoryCamera::create(Parameters& params)
@@ -85,11 +105,21 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     return camera;
 }
 
+void me::FactoryCamera::destroy(Component* component)
+{
+    delete component;
+}
+
 me::Component* me::FactoryCollider::create(Parameters& params)
 {
     Collider* collider = new Collider();
 
     return collider;
+}
+
+void me::FactoryCollider::destroy(Component* component)
+{
+    delete component;
 }
 
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
@@ -110,6 +140,11 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
     return meshRenderer;
 }
 
+void me::FactoryMeshRenderer::destroy(Component* component)
+{
+    delete component;
+}
+
 me::Component* me::FactoryParticleSystem::create(Parameters& params)
 {
 
@@ -127,6 +162,11 @@ me::Component* me::FactoryParticleSystem::create(Parameters& params)
     return particleSystem;
 }
 
+void me::FactoryParticleSystem::destroy(Component* component)
+{
+    delete component;
+}
+
 me::Component* me::FactoryRigidBody::create(Parameters& params)
 {
     RigidBody* rigidbody = new RigidBody();
@@ -139,4 +179,9 @@ me::Component* me::FactoryRigidBody::create(Parameters& params)
     rigidbody->setMomeventType(value(params, "mvtype", 1));
 
     return rigidbody;
+}
+
+void me::FactoryRigidBody::destroy(Component* component)
+{
+    delete component;
 }

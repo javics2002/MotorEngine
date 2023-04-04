@@ -13,9 +13,6 @@
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
 #include "EntityComponent/Scene.h"
-#include "EntityComponent/Entity.h" //Borrar
-#include "EntityComponent/Components/Transform.h" //Borrar
-
 #include "Render/Window.h"
 // --- Components
 #include "EntityComponent/Components/ComponentsFactory.h"
@@ -105,8 +102,8 @@ void MotorEngine::loop()
 	unsigned int frameCounter = 0;
 	double fpsValue = 0;
 
-	sceneManager().getActiveScene().get()->processNewEntities();
-	sceneManager().getActiveScene().get()->start();
+	sceneManager().getActiveScene()->processNewEntities();
+	sceneManager().getActiveScene()->start();
 	
 	SDL_Event event;
 	bool quit = false;
@@ -170,6 +167,7 @@ void MotorEngine::exit()
 	Clear the memory created in the execution of the program
 	*/
 
+	sceneManager().deleteAllScenes();
 	FreeLibrary(game);
 }
 

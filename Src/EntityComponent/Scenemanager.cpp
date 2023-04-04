@@ -10,38 +10,30 @@
 
 namespace me {
 
-    SceneManager::SceneManager() :
-        mActiveScene(nullptr)
-    {
+    SceneManager::SceneManager() : mActiveScene(nullptr) {
 #ifdef _DEBUG
         std::cout << " > SceneManager created." << std::endl;
 #endif
     };
 
     SceneManager::~SceneManager() {
-        mScenes.clear();
-
 #ifdef _DEBUG
         std::cout << " >>> SceneManager deleted..." << std::endl;
 #endif
     };
 
-    std::shared_ptr<Scene> SceneManager::addScene(const std::string& name) {
-        auto scene = std::make_shared<Scene>(name);
-        if (scene != nullptr) {
-            mScenes.emplace(name, scene);
-        };
-        return scene;
+    Scene* SceneManager::addScene(const SceneName& name) {
+        return mScenes[name] = new Scene(name);
     };
 
-    void SceneManager::removeScene(const std::string& name) {
+    void SceneManager::removeScene(const SceneName& name) {
         auto it = mScenes.find(name);
         if (it != mScenes.end()) {
             mScenes.erase(it);
         };
     };
 
-    std::shared_ptr<Scene> SceneManager::getScene(const std::string& name) const {
+    Scene* SceneManager::getScene(const SceneName& name) const {
         auto it = mScenes.find(name);
         if (it != mScenes.end()) {
             return it->second;
@@ -49,7 +41,7 @@ namespace me {
         return nullptr;
     };
 
-    void SceneManager::renameScene(const std::string& oldName, const std::string& newName) {
+    void SceneManager::renameScene(const SceneName& oldName, const SceneName& newName) {
         auto it = mScenes.find(oldName);
         auto dst = mScenes.find(newName);
         if (it != mScenes.end() && oldName != newName && dst == mScenes.end()) {
@@ -59,7 +51,7 @@ namespace me {
         };
     };
 
-    void SceneManager::setActiveScene(const std::string& name) {
+    void SceneManager::setActiveScene(const SceneName& name) {
         auto it = mScenes.find(name);
         if (it != mScenes.end()) {
             mActiveScene = it->second;
@@ -75,7 +67,7 @@ namespace me {
         };
     };
 
-    int SceneManager::loadEntities(const std::string& sceneName) {
+    int SceneManager::loadEntities(const SceneName& sceneName) {
         // Cargamos Lua Bridge
         lua_State* L = luaL_newstate();
         luaL_openlibs(L);
@@ -111,7 +103,15 @@ namespace me {
             return 1;
 
         return 0;
-    };
+    }
+
+    void SceneManager::deleteAllScenes()
+    {
+        for (auto scene : mScenes)
+            delete scene.second;
+
+        mScenes.clear();
+    }
 
     int SceneManager::readEntities(lua_State* L) {
 	    lua_pushnil(L);

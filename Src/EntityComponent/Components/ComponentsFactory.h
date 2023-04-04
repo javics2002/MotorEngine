@@ -20,8 +20,9 @@ namespace me {
 	public:
 		~ComponentsFactory();
 
-		me::Component* create(const ComponentName& name);
-		me::Component* create(const ComponentName& name, Parameters& params);
+		Component* create(const ComponentName& name);
+		Component* create(const ComponentName& name, Parameters& params);
+		void destroy(const ComponentName& name, Component* component);
 		void addFactoryComponent(const ComponentName& name, FactoryComponent* factoryComponent);
 	};
 
