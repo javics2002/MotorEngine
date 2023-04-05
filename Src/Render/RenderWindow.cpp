@@ -1,11 +1,11 @@
 #include "RenderWindow.h"
+#include "Window.h"
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
-#include <iostream>
-#include <SDL3/SDL.h>
 #include <SDL3/SDL_syswm.h>
-
-#include "Window.h"
+#include <SDL3/SDL_version.h>
+#include <SDL3/SDL_mouse.h>
+#include <iostream>
 
 
 using namespace me;
