@@ -35,12 +35,11 @@ class btCollisionConfiguration;
 
 
 namespace me {
-
+	/**
+	PhysicsManager manages physics using Bullet Engine.
+	*/
 	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
 	{
-
-	private:
-
 		friend Singleton<PhysicsManager>;
 
 		PhysicsManager();

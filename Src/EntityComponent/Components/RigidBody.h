@@ -12,16 +12,27 @@ class btQuaternion;
 class btCollisionShape;
 
 namespace me{
-
+	/**
+	Enables physical behaviour for the entity, based on its
+	parameters: mass, friction and restitution; its shape and type.
+	*/
 	class __MOTORENGINE_API RigidBody : public Component
 	{
-		int mColShape;
-		int mMvType;
+		//enum ??
+		int mColShape; //mCollisionShape?
+		int mMvType; //->mMovementType?
 
+		//Mass of the entity in kilograms
 		float mMass;
+		//Amount of friction with other surfaces. 0 means... and ...
 		float mFricion;
+		//...
 		float mRestitution;
 
+		/**
+		If the rigidbody is a trigger, it will detect collisions but will not influence 
+		in other entities nor itself.
+		*/
 		bool mIsTrigger;
 
 		btRigidBody* mBtRigidBody = nullptr;

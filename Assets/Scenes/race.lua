@@ -63,11 +63,19 @@ Entities = {
             zOrder = 0,
             backgroundColor = { r = .72, g = .92, b = 1, a = 1  }
         }
+        -- CameraFollow = { target = Car }
+    },
+
+    DirectionalLight = {
+        Transform = {
+            position = { x = 0, y = 500, z = 500 }
+        },
+        Light = {
+            name = "DirectionalLight",
+            direction = { x = 0, y = -1, z = -1 },
+            type = 0
+        }
     }
-
-    -- CameraFollow = { target = Car }
-
-    -- Lights
 }
 
 

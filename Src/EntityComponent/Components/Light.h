@@ -4,6 +4,7 @@
 
 #include "Component.h"
 #include "Utils/Vector3.h"
+#include <string>
 
 namespace me {
 	class Transform;
@@ -16,9 +17,11 @@ namespace me {
 	*/
 	class __MOTORENGINE_API Light : public Component
 	{
+		std::string mName;
 		LightType mType;
 		Vector3 mDirection;
 		Transform* mTransform;
+
 
 	public:
 		Light();
@@ -26,6 +29,10 @@ namespace me {
 
 		void start() override;
 		void update() override;
+
+		inline void setName(std::string name) {
+			mName = name;
+		}
 
 		inline void setLightType(LightType type) {
 			mType = type;

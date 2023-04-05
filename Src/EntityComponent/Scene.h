@@ -16,9 +16,13 @@ of a set of entities.
 namespace me {
 	class Entity;
 
+	/**
+	A Scene is a collection of Entities that exist in the same spatial context,
+	so they can aknowledge their presence and interact with each other.
+	The scene calls the start and update methods of all of its Entities
+	*/
 	class __MOTORENGINE_API Scene {
 	public:
-
 		/**
 		Build the foundation of the Scene.
 		@param String name to identify it.

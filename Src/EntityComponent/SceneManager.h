@@ -13,6 +13,10 @@ class lua_State;
 namespace me {
     class Scene;
 
+    /**
+    SceneManager stores all existing scenes and swaps which one is the active one
+    at will. All other scenes are inactive.
+    */
     class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
         friend Singleton<SceneManager>;
 

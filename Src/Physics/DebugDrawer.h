@@ -8,7 +8,9 @@
 #include <Ogre.h>
 
 namespace me {
-
+    /**
+    DebugDrawer ...
+    */
 	class __MOTORENGINE_API DebugDrawer : public btIDebugDraw // public Ogre::FrameListener
 	{
 

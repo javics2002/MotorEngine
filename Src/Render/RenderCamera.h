@@ -15,6 +15,9 @@ namespace Ogre {
 }
 
 namespace me {
+	/**
+	Manages OgreCamera
+	*/
 	class __MOTORENGINE_API RenderCamera
 	{
 	protected:
@@ -36,6 +39,7 @@ namespace me {
 
 		//Assign references
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );
+
 		/**Create mCamera with this informationand create mViewport for it
 		@param name: name of mCamera
 		@param nearDist: near clipping plane distancia

@@ -43,11 +43,11 @@ namespace me {
 		Default constructor
 		*/
 		Camera();
-		//Destroy om() map saved camera (ogreCamera)
+		//Destroy renderManager() map saved camera (RenderCamera)
 		~Camera();
 
 		/*
-		Set the name saved in om() map and used for entity that attached in node
+		Set the name saved in renderManager() map and used for entity that attached in node
 		*/
 		inline void setName(std::string name) {
 			mName = name;

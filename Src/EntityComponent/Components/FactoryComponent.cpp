@@ -192,6 +192,12 @@ void me::FactoryRigidBody::destroy(Component* component)
 Component* me::FactoryLight::create(Parameters& params)
 {
     Light* light = new Light();
+
+    light->setName(value(params, "name", std::string("Light")));
+    light->setDirection(Vector3(value(params, "direction_x", 0.0f),
+        value(params, "direction_y", -1.0f), value(params, "direction_z", 0.0f)));
+    light->setLightType((LightType) value(params, "type", 0));
+
     return light;
 }
 

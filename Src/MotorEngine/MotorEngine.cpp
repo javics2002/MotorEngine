@@ -69,8 +69,6 @@ bool MotorEngine::setup(std::string gameName)
 
 	// Init managers
 	physicsManager().start();
-	
-	renderManager().createNewLight("luz", Vector3(0, 500, 500), Vector3(0, -1, -1));
 
 	return entryPoint();
 }
