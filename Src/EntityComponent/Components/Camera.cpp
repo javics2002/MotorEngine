@@ -5,36 +5,38 @@
 #include "Transform.h"
 #include "Utils/Vector3.h"
 
-me::Camera::Camera()
+using namespace me;
+
+Camera::Camera()
 {
 }
 
-me::Camera::~Camera()
+Camera::~Camera()
 {
 	renderManager().destroyCamera(mName);
 }
 
-void me::Camera::start()
+void Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRadio, mZOrder, mBackgroundColour);
+	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
-void me::Camera::update()
+void Camera::update()
 {
 	if (!mStaticObject)
 	{
-		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
+		//renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 	}
 }
 
-void me::Camera::setStatic(bool stat)
+void Camera::setStatic(bool stat)
 {
 	mStaticObject = stat;
 }
 
-void me::Camera::setViewportDimension(float left, float top, float width, float height)
+void Camera::setViewportDimension(float left, float top, float width, float height)
 {
 	renderManager().setViewportDimension(mName, left, top, width, height);
 }

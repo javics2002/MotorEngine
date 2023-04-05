@@ -67,7 +67,7 @@ void RenderManager::initRoot()
 	mRoot->restoreConfig();
 }
 
-void me::RenderManager::shutdown()
+void RenderManager::shutdown()
 {
 	// Destroy the RT Shader System.
 	destroyRTShaderSystem();
@@ -75,7 +75,7 @@ void me::RenderManager::shutdown()
 	delete mOgreWindow;
 }
 
-void me::RenderManager::initWindow()
+void RenderManager::initWindow()
 {
 	mOgreWindow = new RenderWindow("OgreWindow");
 	mOgreWindow->init(mRoot);
@@ -135,7 +135,7 @@ bool RenderManager::initialiseRTShaderSystem() {
 	return true;
 }
 
-void me::RenderManager::destroyRTShaderSystem()
+void RenderManager::destroyRTShaderSystem()
 {
 	// Restore default scheme.
 	Ogre::MaterialManager::getSingleton().setActiveScheme(Ogre::MaterialManager::DEFAULT_SCHEME_NAME);
@@ -156,14 +156,14 @@ void me::RenderManager::destroyRTShaderSystem()
 	}
 }
 
-RenderMesh* me::RenderManager::getMesh(std::string name)
+RenderMesh* RenderManager::getMesh(std::string name)
 {
 	if (!mMeshes.count(name))
 		return nullptr;
 
 	return mMeshes[name];
 }
-RenderCamera* me::RenderManager::getCamera(std::string name)
+RenderCamera* RenderManager::getCamera(std::string name)
 {
 
 	if (!mCameras.count(name))
@@ -172,7 +172,7 @@ RenderCamera* me::RenderManager::getCamera(std::string name)
 	return mCameras[name];
 }
 
-RenderParticleSystem* me::RenderManager::getParticle(std::string name)
+RenderParticleSystem* RenderManager::getParticle(std::string name)
 {
 	if (!mParticles.count(name))
 		return nullptr;
@@ -212,7 +212,7 @@ me::RenderManager::~RenderManager()
 	mRoot = nullptr;
 }
 
-bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, 
+bool RenderManager::createCamera(std::string name, std::string parentName, int nearDist, 
 	int farDist, bool autoRatio, int zOrder, Vector4 colour)
 {
 	if (mCameras.count(name))
@@ -229,7 +229,7 @@ bool me::RenderManager::createCamera(std::string name, std::string parentName, i
 	return true;
 }
 
-bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist, bool autoRatio, 
+bool RenderManager::createCamera(std::string name, float nearDist, float farDist, bool autoRatio, 
 	int zOrder, Vector4 colour)
 {
 	if (mCameras.count(name))
@@ -246,20 +246,20 @@ bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist
 	return true;
 }
 
-bool me::RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Vector3& look)
+bool RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Vector3& look)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 		return false;
 
-	cam->setPosition(pos.v3ToOgreV3());
-	cam->lookAt(look.v3ToOgreV3());
+	cam->setPosition(pos);
+	cam->lookAt(look);
 
 	return true;
 }
 
 
-bool me::RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
+bool RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
@@ -271,7 +271,7 @@ bool me::RenderManager::setViewportDimension(std::string name, float left, float
 }
 
 
-void me::RenderManager::destroyCamera(std::string name)
+void RenderManager::destroyCamera(std::string name)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
@@ -286,7 +286,7 @@ void me::RenderManager::destroyCamera(std::string name)
 
 }
 
-void me::RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir)
+void RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir)
 {
 	Ogre::Light* light = mSM->createLight(name);
 	light->setType(Ogre::Light::LT_DIRECTIONAL);
@@ -298,7 +298,7 @@ void me::RenderManager::createNewLight(std::string name, const Vector3& pos, con
 	mLights[name] = light;
 }
 
-bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
+bool RenderManager::createMesh(std::string name, std::string nameMesh)
 {
 	if (mMeshes.count(name))
 		return false;
@@ -312,7 +312,7 @@ bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
-bool me::RenderManager::setMeshPosition(std::string name, Vector3 pos)
+bool RenderManager::setMeshPosition(std::string name, Vector3 pos)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -323,7 +323,7 @@ bool me::RenderManager::setMeshPosition(std::string name, Vector3 pos)
 	return true;
 }
 
-bool me::RenderManager::setMeshScale(std::string name, Vector3 scale)
+bool RenderManager::setMeshScale(std::string name, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -334,7 +334,7 @@ bool me::RenderManager::setMeshScale(std::string name, Vector3 scale)
 	return true;
 }
 
-bool me::RenderManager::setMeshRotation(std::string name, Vector4 rot)
+bool RenderManager::setMeshRotation(std::string name, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -345,7 +345,7 @@ bool me::RenderManager::setMeshRotation(std::string name, Vector4 rot)
 	return true;
 }
 
-bool me::RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
+bool RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -356,7 +356,7 @@ bool me::RenderManager::setMeshMaterial(std::string name, std::string nameMateri
 	return true;
 }
 
-void me::RenderManager::destroyMesh(std::string name)
+void RenderManager::destroyMesh(std::string name)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -371,7 +371,7 @@ void me::RenderManager::destroyMesh(std::string name)
 
 }
 
-bool me::RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
+bool RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -382,7 +382,7 @@ bool me::RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 
 	return true;
 }
 
-bool me::RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 scale, Vector4 rot)
+bool RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 scale, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -395,7 +395,7 @@ bool me::RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3
 
 
 
-bool me::RenderManager::createParticle(std::string name, std::string nameParticle)
+bool RenderManager::createParticle(std::string name, std::string nameParticle)
 {
 	if (mParticles.count(name))
 		return false;
@@ -408,7 +408,7 @@ bool me::RenderManager::createParticle(std::string name, std::string nameParticl
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)
+bool RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -419,7 +419,7 @@ bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vect
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot)
+bool RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -430,7 +430,7 @@ bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vect
 	return true;
 }
 
-bool me::RenderManager::setParticlePosition(std::string name, Vector3 pos)
+bool RenderManager::setParticlePosition(std::string name, Vector3 pos)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -441,7 +441,7 @@ bool me::RenderManager::setParticlePosition(std::string name, Vector3 pos)
 	return true;
 }
 
-bool me::RenderManager::setParticleScale(std::string name, Vector3 scale)
+bool RenderManager::setParticleScale(std::string name, Vector3 scale)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -452,7 +452,7 @@ bool me::RenderManager::setParticleScale(std::string name, Vector3 scale)
 	return true;
 }
 
-bool me::RenderManager::setParticleRotation(std::string name, Vector4 rot)
+bool RenderManager::setParticleRotation(std::string name, Vector4 rot)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -463,7 +463,7 @@ bool me::RenderManager::setParticleRotation(std::string name, Vector4 rot)
 	return true;
 }
 
-bool me::RenderManager::setParticleEmitting(std::string name, bool emitted)
+bool RenderManager::setParticleEmitting(std::string name, bool emitted)
 {
 	RenderParticleSystem* particle = getParticle(name);
 	if (particle == nullptr)
@@ -476,95 +476,43 @@ bool me::RenderManager::setParticleEmitting(std::string name, bool emitted)
 
 
 
-Ogre::SceneNode* me::RenderManager::createNode(std::string name)
+Ogre::SceneNode* RenderManager::createNode(std::string name)
 {
 	return  mSM->getRootSceneNode()->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::RenderManager::createChildNode(std::string name, std::string parent)
+Ogre::SceneNode* RenderManager::createChildNode(std::string name, std::string parent)
 {
 	return mSM->getSceneNode(parent)->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::RenderManager::getRootSceneNode()
+Ogre::SceneNode* RenderManager::getRootSceneNode()
 {
 	return mSM->getRootSceneNode();
 }
 
-void me::RenderManager::render()
+void RenderManager::render()
 {
 	mRoot->renderOneFrame();
-	//ogreAnimState->addTime(0.0166);
 }
 
-RenderWindow* me::RenderManager::getOgreWindow()
+RenderWindow* RenderManager::getOgreWindow()
 {
 	return mOgreWindow;
 }
 
-Ogre::Entity* me::RenderManager::getOgreEntity(std::string name)
+Ogre::Entity* RenderManager::getOgreEntity(std::string name)
 {
 	return getMesh(name)->getOgreEntity();
 }
 
-Ogre::TextAreaOverlayElement* me::RenderManager::createOverlayElement()
+Ogre::TextAreaOverlayElement* RenderManager::createOverlayElement()
 {
+	//TODO
 	return nullptr;
 }
 
-Ogre::SceneManager* me::RenderManager::getSceneManager()
+Ogre::SceneManager* RenderManager::getSceneManager()
 {
 	return mSM;
 }
-/*
-void me::RenderManager::scene1()
-{
-	Ogre::SceneNode* mSinbadNode;
-	Ogre::Entity* ent;
-	ent = mSM->createEntity("Sinbad.mesh");
-	mSinbadNode = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
-	mSinbadNode->attachObject(ent);
-	mSinbadNode->setPosition(0, 0, 0);
-	mSinbadNode->setScale(10, 10, 10);
-	mSinbadNode->setVisible(true);
-
-	// TEMPORAL ANIMATION
-	Ogre::Real duration = 4;
-	Ogre::Real step = duration / 4;
-
-	Ogre::Animation* anim;
-	anim = mSM->createAnimation("sinbadAnimation", duration);
-	Ogre::NodeAnimationTrack* track = anim->createNodeTrack(0, mSinbadNode);
-	anim->setInterpolationMode(Ogre::Animation::IM_LINEAR);
-
-	Ogre::TransformKeyFrame* key;
-
-	int counterStep = 0;
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion());
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-90), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-180), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-270), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-359), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	ogreAnimState = mSM->createAnimationState("sinbadAnimation");
-	ogreAnimState->setEnabled(true);
-	ogreAnimState->setLoop(true);
-
-	
-}
-*/

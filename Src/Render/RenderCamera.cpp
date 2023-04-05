@@ -21,7 +21,7 @@ void me::RenderCamera::init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* Sce
 	mRenderWindow = RenderWindow;
 }
 
-void me::RenderCamera::createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+void me::RenderCamera::createCamera(const char* name, float nearDist, float farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
 {
 	mCamera = mSceneMgr->createCamera(name);
 	mCamera->setNearClipDistance(nearDist);
@@ -46,14 +46,14 @@ me::RenderCamera::~RenderCamera()
 }
 
 
-void me::RenderCamera::setPosition(const Ogre::Vector3f &pos)
+void me::RenderCamera::setPosition(const Vector3& pos)
 {
-	mCameraNode->setPosition(pos);
+	mCameraNode->setPosition(pos.v3ToOgreV3());
 }
 
-void me::RenderCamera::lookAt(const Ogre::Vector3f &look)
+void me::RenderCamera::lookAt(const Vector3& look)
 {
-	mCameraNode->lookAt(look, Ogre::Node::TS_WORLD);
+	mCameraNode->lookAt(look.v3ToOgreV3(), Ogre::Node::TS_WORLD);
 }
 
 void me::RenderCamera::setViewportDimension(float left, float top, float width, float height)

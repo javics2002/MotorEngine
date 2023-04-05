@@ -3,6 +3,7 @@
 #define __RENDER_RENDERCAMERA
 
 #include "MotorEngine/MotorEngineAPI.h"
+#include "Utils/Vector3.h"
 
 namespace Ogre {
 	class Camera;
@@ -11,16 +12,11 @@ namespace Ogre {
 	class SceneManager;
 	class RenderWindow;
 	class ColourValue;
-	template<int dism, typename T>
-	class Vector;
-	typedef Vector<3, float> Vector3f;
 }
 
 namespace me {
 	class __MOTORENGINE_API RenderCamera
 	{
-
-	private:
 	protected:
 		//Reference to Ogre::Camera
 		Ogre::Camera* mCamera ;
@@ -47,12 +43,12 @@ namespace me {
 		@param autoRadio: if viewport calculate aspect radio automatically
 		@param zOrder: relative order of mViewport
 		*/
-		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		void createCamera(const char* name, float nearDist, float farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 
 		//Set position to mCameraNode
-		void setPosition(const Ogre::Vector3f &pos);
+		void setPosition(const Vector3& pos);
 		//Set lookAT to mCameraNode
-		void lookAt(const Ogre::Vector3f &look);
+		void lookAt(const Vector3& look);
 		/**
 		Set dimension to mViewport
 		@param left: left point of mViewport in range 0.0 to 1.0

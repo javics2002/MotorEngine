@@ -24,7 +24,7 @@ int me::FactoryComponent::value(Parameters& params, const ParameterName& paramet
 
 bool me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, bool defaultValue)
 {
-    return params.count(parameter) ? (bool)std::stoi(params[parameter]) : defaultValue;
+    return params.count(parameter) ? (bool) std::stoi(params[parameter]) : defaultValue;
 }
 
 std::string me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
@@ -79,9 +79,9 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
     AudioSource* audioSource = new AudioSource();
 
     audioSource->setSource(value(params, "source", std::string()));
-    audioSource->setPlayOnStart(value(params, "onStart", false));
+    audioSource->setPlayOnStart(value(params, "onstart", false));
     audioSource->setVolume(value(params, "volume", 1));
-    audioSource->setIs3D(value(params, "3D", false));
+    audioSource->setIs3D(value(params, "3d", false));
     audioSource->setLoop(value(params, "loop", false));
 
     return audioSource;
@@ -96,12 +96,14 @@ me::Component* me::FactoryCamera::create(Parameters& params)
 {
     Camera* camera = new Camera();
 
-    camera->setName(value(params, "name", std::string()));
-    camera->setNearDistance(value(params, "nearDistance", 1));
-    camera->setFarDistance(value(params, "farDistance", 1));
-    camera->setAutoRadio(value(params, "autoRadio", false));
-    camera->setZOrder(value(params, "zOrder", false));
-    camera->setLookAt(Vector3(value(params, "lookAt_x", 0), value(params, "lookAt_y", 0), value(params, "lookAt_y", 0)));
+    camera->setName(value(params, "name", std::string("Main")));
+    camera->setNearDistance(value(params, "neardistance", .1f));
+    camera->setFarDistance(value(params, "fardistance", 1000));
+    camera->setAutoRadio(value(params, "autoratio", false));
+    camera->setZOrder(value(params, "zorder", 0));
+    camera->setBackgroundColour(Vector4(value(params, "backgroundcolor_r", .0f), value(params, "backgroundcolor_g", .0f),
+        value(params, "backgroundcolor_b", .0f), value(params, "backgroundcolor_a", 1.0f)));
+    camera->setLookAt(Vector3(value(params, "lookat_x", 0), value(params, "lookat_y", 0), value(params, "lookat_y", 0)));
 
     return camera;
 }

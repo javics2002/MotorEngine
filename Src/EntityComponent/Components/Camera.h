@@ -22,11 +22,11 @@ namespace me {
 		//Name for RenderManager map and for RenderCamera that attached in node
 		std::string mName;
 		//Distance from which objects will begin to render
-		int mNearDistance;
+		float mNearDistance;
 		//Distance which objects stop rendering
-		int mFarDistance;
+		float mFarDistance;
 		//Whether viewport calculates the aspect radio automatically
-		bool mAutoRadio;
+		bool mAutoRatio;
 		//Relative order of viewport
 		int mZOrder;
 		//Point to look at
@@ -53,16 +53,16 @@ namespace me {
 			mName = name;
 		}
 
-		inline void setNearDistance(int nearDistance) {
+		inline void setNearDistance(float nearDistance) {
 			mNearDistance = nearDistance;
 		}
 
-		inline void setFarDistance(int farDistance) {
+		inline void setFarDistance(float farDistance) {
 			mFarDistance = farDistance;
 		}
 
-		inline void setAutoRadio(bool autoRadio) {
-			mAutoRadio = autoRadio;
+		inline void setAutoRadio(bool autoRatio) {
+			mAutoRatio = autoRatio;
 		}
 
 		inline void setZOrder(int zOrder) {

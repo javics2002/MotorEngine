@@ -192,7 +192,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRatio, 
+		bool createCamera(std::string name, float nearDist, float farDist, bool autoRatio,
 			int zOrder, Vector4 colour = Vector4(0, 0, 0, 1));
 
 		/**

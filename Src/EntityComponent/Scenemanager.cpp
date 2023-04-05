@@ -74,20 +74,11 @@ namespace me {
 
         // Abrimos el fichero
 
-        //std::string path = "Assets\\Scenes\\example.lua";
         std::string path = "Assets\\Scenes\\" + sceneName;
 
         if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
 #ifdef _DEBUG
-            char buffer[MAX_PATH];
-            GetCurrentDirectoryA(MAX_PATH, buffer);
-            std::string currentPath(buffer);
-
-            currentPath += "\\" + path;
-
-            //std::cout << "La ubicación del archivo es: " << currentPath << std::endl;
-
-            std::cout << "No se encontro el archivo " << currentPath << "\n";
+            std::cout << lua_tostring(L, -1) << "\n";
 #endif
             return 1;
         }

@@ -8,7 +8,7 @@ class Entity;
 
 namespace me{
 	/**
-	Calls onCollisionEnter, onCollisionStay and onCollisionExit callbacks
+	Enables the entity's onCollisionEnter, onCollisionStay and onCollisionExit callbacks
 	*/
 	class __MOTORENGINE_API Collider : public Component
 	{
@@ -17,21 +17,21 @@ namespace me{
 		virtual ~Collider();
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision starts.
+		@param other Entity that collides with this entity.
 		*/
 		void onCollisionEnter(Entity* other);
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision starts and every frame it lasts.
+		@param other Entity that collides with this entity.
 		*/
 		void onCollisionStay(Entity* other);
 
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision ends.
+		@param other Entity that collides with this entity.
 		*/
 		void onCollisionExit(Entity* other);
 

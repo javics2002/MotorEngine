@@ -41,6 +41,7 @@ Entities = {
             speed = 3;
             rotationspeed = 3;
             driftFactor = 1;
+            playerNumber = 0;
         },
         meshrenderer = {
             mesh = "kart",
@@ -51,6 +52,16 @@ Entities = {
     
     Camera = {
         Transform = {
+            position = { x = 0, y = .45, z = -.8 }
+        },
+        Camera = {
+            lookAt = { x = -1000, y = 0, z = 0 },
+            name = "Main",
+            nearDistance = 0.1,
+            farDistance = 10000,
+            autoRatio = true,
+            zOrder = 0,
+            backgroundColor = { r = .72, g = .92, b = 1, a = 1  }
         }
     }
 
