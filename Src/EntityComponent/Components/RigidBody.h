@@ -93,6 +93,12 @@ namespace me{
 		*/
 		void addImpulse(Vector3 impulse);
 
+		/*
+		Apply  a turning force
+
+		@param torque is the vector of the turning force
+		*/
+		void addTorque(Vector3 torque);
 	};
 
 }
