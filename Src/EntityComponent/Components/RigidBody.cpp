@@ -29,8 +29,8 @@ void me::RigidBody::start()
 
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 
-	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, Shapes(mColShape),
-		MovementType(mMvType), mIsTrigger, mFricion, mMass, mRestitution);
+	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, mColShape,
+										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);
 	mBtRigidBody->setGravity(btVector3(0, 0, 0));
@@ -70,12 +70,12 @@ void me::RigidBody::setRestitution(float restitution)
 	mRestitution = restitution;
 }
 
-void me::RigidBody::setColShape(int colShape)
+void me::RigidBody::setColShape(Shapes colShape)
 {
 	mColShape = colShape;
 }
 
-void me::RigidBody::setMomeventType(int mvType)
+void me::RigidBody::setMomeventType(MovementType mvType)
 {
 	mMvType = mvType;
 }

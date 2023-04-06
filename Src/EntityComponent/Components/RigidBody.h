@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Transform.h"
+#include "Physics/PhysicsEnums.h"
 
 class btRigidBody;
 class btTransform;
@@ -18,15 +19,15 @@ namespace me{
 	*/
 	class __MOTORENGINE_API RigidBody : public Component
 	{
-		//enum ??
-		int mColShape; //mCollisionShape?
-		int mMvType; //->mMovementType?
+
+		Shapes mColShape;
+		MovementType mMvType;
 
 		//Mass of the entity in kilograms
 		float mMass;
-		//Amount of friction with other surfaces. 0 means... and ...
+		//Amount of friction with other surfaces.
 		float mFricion;
-		//...
+		//amount of bounce of an object after a collision
 		float mRestitution;
 
 		/**
@@ -66,8 +67,8 @@ namespace me{
 		void setMass (float mass);
 		void setFriction(float friction);
 		void setRestitution(float restitution);
-		void setColShape(int colShape);
-		void setMomeventType(int mvType);
+		void setColShape(Shapes colShape);
+		void setMomeventType(MovementType mvType);
 
 		bool getTrigger();
 		float getMass();

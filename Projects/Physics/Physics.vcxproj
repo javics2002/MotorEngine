@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Physics\DebugDrawer.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsEnums.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsManager.h" />
   </ItemGroup>
   <ItemGroup>

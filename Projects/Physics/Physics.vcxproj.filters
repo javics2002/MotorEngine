@@ -32,5 +32,8 @@
     <ClInclude Include="..\..\Src\Physics\DebugDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\Physics\PhysicsEnums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

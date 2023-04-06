@@ -42,7 +42,9 @@ void me::DebugDrawer::reportErrorWarning(const char* warningString){}
 
 void me::DebugDrawer::draw3dText(const btVector3& location, const char* textString) {}
 
-void me::DebugDrawer::setDebugMode(int debugMode){}
+void me::DebugDrawer::setDebugMode(int debugMode){
+	mDebugDrawModes = DebugDrawModes(debugMode);
+}
 
 int me::DebugDrawer::getDebugMode() const 
 {
