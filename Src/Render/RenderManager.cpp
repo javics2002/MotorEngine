@@ -15,6 +15,13 @@
 #include <OgreMaterialManager.h>
 #include <OgreColourValue.h>
 #include <OgreVector.h>
+#include <OgreOverlayManager.h>
+#include <OgreOverlay.h>
+#include <OgreOverlayElementFactory.h>
+#include <OgreOverlayElement.h>
+#include <OgreOverlayContainer.h>
+#include <OgreOverlaySystem.h>
+#include <OgreTextureManager.h>
 #include <iostream>
 #include "OgreTextAreaOverlayElement.h"
 #include "Render/RenderWindow.h"
@@ -32,12 +39,16 @@ using namespace me;
 RenderManager::RenderManager()
 {
 	initRoot();
+	mOverlaySystem = new Ogre::OverlaySystem();
+	mOverlayManager = Ogre::OverlayManager::getSingletonPtr();
+	mOverlay = mOverlayManager->create("Scene");
 	initWindow();
 	locateResources();
 	loadResources();
 	initialiseRTShaderSystem();
 	mSM = mRoot->createSceneManager();
 	mShaderGenerator->addSceneManager(mSM);
+	mSM->addRenderQueueListener(mOverlaySystem);
 }
 
 void RenderManager::initRoot()
@@ -312,6 +323,22 @@ bool RenderManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
+bool me::RenderManager::createSprite(std::string name, std::string nameMesh)
+{
+	static int i = 0;
+	auto panel = mOverlayManager->createOverlayElement("Panel", "Test" + std::to_string(i++));
+	panel->setPosition(.1, .1);
+	panel->setDimensions(.1, .1);
+	panel->setMaterialName("test");
+
+	mOverlay->add2D(static_cast<Ogre::OverlayContainer*>(panel));
+	mOverlay->setZOrder(10);
+	mOverlay->show();
+	mOverlay->get2DElements();
+	
+	return mOverlay->isVisible();
+}
+
 bool RenderManager::setMeshPosition(std::string name, Vector3 pos)
 {
 	RenderMesh* mesh = getMesh(name);
@@ -508,7 +535,6 @@ Ogre::Entity* RenderManager::getOgreEntity(std::string name)
 
 Ogre::TextAreaOverlayElement* RenderManager::createOverlayElement()
 {
-	//TODO
 	return nullptr;
 }
 

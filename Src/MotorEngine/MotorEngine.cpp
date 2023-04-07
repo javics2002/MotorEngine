@@ -178,15 +178,8 @@ void MotorEngine::loop()
 		/*
 		* Render the scene
 		*/
-		//SDL_RenderClear(renderer);
-		
-		SDL_RenderClear(renderer);
-		SDL_RenderTexture(renderer, texture, NULL, &dest_rect);
+		renderManager().createSprite("a", "a");
 		renderManager().render();
-		SDL_RenderPresent(renderer);
-
-		int a;
-		std::cin >> a;
 
 		lastTick = std::chrono::high_resolution_clock::now();
 	}
