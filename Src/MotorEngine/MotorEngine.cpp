@@ -23,6 +23,12 @@
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
 
+//UI con SDL
+#include <SDL3/SDL_surface.h>
+#include <SDL3/SDL_render.h>
+#include <SDL3/SDL_video.h>
+#include "Render/RenderWindow.h"
+
 //typedef HRESULT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT*);
 typedef const char* (*GameName)();
 typedef bool(__cdecl* GameEntryPoint)();
@@ -109,6 +115,18 @@ void MotorEngine::loop()
 
 	sceneManager().getActiveScene()->processNewEntities();
 	sceneManager().getActiveScene()->start();
+
+	//UI con SDL
+	SDL_Surface* surface = SDL_LoadBMP("Assets/UISprites/OilSprite.bmp");
+	SDL_Renderer* renderer = SDL_GetRenderer(renderManager().getOgreWindow()->getSdlWindow());
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+	if (texture == NULL) {
+		std::cout << "Error: No se pudo crear la textura: " << SDL_GetError() << std::endl;
+		SDL_UnlockSurface(surface);
+		return;
+	}
+	const SDL_FRect dest_rect = { 0, 0, 200, 200 };
 	
 	SDL_Event event;
 	bool quit = false;
@@ -160,10 +178,15 @@ void MotorEngine::loop()
 		/*
 		* Render the scene
 		*/
+		renderManager().createSprite("a", "a");
 		renderManager().render();
 
 		lastTick = std::chrono::high_resolution_clock::now();
 	}
+
+	//UI con SDL
+	SDL_DestroyTexture(texture);
+	SDL_UnlockSurface(surface);
 }
 
 void MotorEngine::exit()

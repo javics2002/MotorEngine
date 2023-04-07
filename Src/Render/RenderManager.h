@@ -19,6 +19,9 @@ namespace Ogre {
 	class ColourValue;
 	class AnimationState;
 	class Entity;
+	class OverlayManager;
+	class OverlaySystem;
+	class Overlay;
 	template<int dism, typename T>
 	class Vector;
 	typedef Vector<3, float> Vector3f;
@@ -35,7 +38,6 @@ namespace me {
 	class RenderMesh;
 	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
-	class OverlayManager;
 	class Vector3;
 
 	/**
@@ -80,9 +82,25 @@ namespace me {
 		*/
 		std::string mPluginCfgPath;
 
+		/**
+		Manages Overlay objects, parsing them from .overlay files and 
+		storing a lookup library of them.
+		Also manages the creation of OverlayContainers and OverlayElements, 
+		used for non-interactive 2D elements such as HUDs.
+		*/
+		Ogre::OverlayManager* mOverlayManager;
 
-		OverlayManager* mOverlayManager;
+		/**
+		This class simplify initialization / finalization of the overlay system.
+		Before you create a concrete instance of the OverlaySystem the OGRE::Root 
+		must be created but not initialized. In the ctor all relevant systems are 
+		created and registered. The dtor must be called before you delete OGRE::Root. 
+		To make the overlays visible (= render into your viewports) you have to 
+		register this instance as a RenderQueueListener in your scenemanager(s).
+		*/
+		Ogre::OverlaySystem* mOverlaySystem;
 
+		Ogre::Overlay* mOverlay;
 
 		/**
 		Path of the "Ogre.cfg"
@@ -106,13 +124,10 @@ namespace me {
 		//Reference to RenderWindow class
 		RenderWindow* mOgreWindow;
 
-		//Store camera name to renderCamera
 		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
-		//Store mesh name to renderMesh
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
-		//Store mesh name to renderParticleSystem
+		//std::unordered_map<std::string, Overlay*> mOverlays;			//Pairs each mesh with its name
 		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
-		//Store light entities
 		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
@@ -236,6 +251,15 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool createMesh(std::string name, std::string nameMesh);
+
+		/**
+		Creates a 2D sprite in the overlay.
+		@param name: name of Ogre::SceneNode &&unordered_map
+		@param nameMesh: name of file (xxx.mesh)
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createSprite(std::string name, std::string nameMesh);
 
 		/**
 		Set Transform info to the mesh with this name (for static object)

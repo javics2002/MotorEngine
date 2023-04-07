@@ -70,3 +70,20 @@ material Material/naranja
 		}
 	}
 }
+
+material test // nombre
+{
+	technique // al menos una
+	{
+		pass // al menos uno
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit {
+				texture OilSprite.png
+				colour_op replace
+			}
+		}
+	}
+}

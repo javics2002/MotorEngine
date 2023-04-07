@@ -50,6 +50,33 @@ Entities = {
         }
 	},
     
+    Cube = {
+        Transform = {
+            position = { x = -10, y = 1, z = 0 },
+            scale = { x = .015, y = .015, z = .015 },
+            rotation = {x = 0, y = 0, z = 0}
+        },
+        RigidBody = {
+            colShape = 1,
+            mvType = 0,
+            mass = 5,
+            restitution = .5,
+            friction = .01,
+            isTrigger = false
+        },
+        vehicleController = {
+            speed = 3;
+            rotationspeed = 3;
+            driftFactor = 1;
+            playerNumber = 0;
+        },
+        meshrenderer = {
+            mesh = "cube",
+            meshName = "cube.mesh",
+            --materialName = "Material/roja"
+        }
+	},
+    
     Camera = {
         Transform = {
             position = { x = 0, y = .45, z = -.8 }
@@ -72,7 +99,7 @@ Entities = {
         },
         Light = {
             name = "DirectionalLight",
-            direction = { x = 0, y = -1, z = -1 },
+            direction = { x = 1, y = -1, z = 1 },
             type = 0
         }
     }

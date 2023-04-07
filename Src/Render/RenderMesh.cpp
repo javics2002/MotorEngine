@@ -17,12 +17,10 @@ me::RenderMesh::RenderMesh(Ogre::SceneNode* node, std::string meshName)
 
 me::RenderMesh::~RenderMesh()
 {
-	
 	Ogre::SceneManager* mSM = mNode->getCreator();
 	mNode->detachAllObjects();
 	mSM->destroyEntity(mEntity);
 	mSM->destroySceneNode(mNode);
-
 }
 
 void me::RenderMesh::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
