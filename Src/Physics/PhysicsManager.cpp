@@ -176,7 +176,7 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 		shape_ = new btSphereShape(scale.length());
 		break;
 	case SHAPES_BOX:
-		shape_ = new btBoxShape(btVector3(scale.x(), scale.y(), scale.z())*50);
+		shape_ = new btBoxShape(btVector3(scale.x(), scale.y(), scale.z()));
 		break;
 	case SHAPES_CYLINDER:
 		shape_ = new btCylinderShape(scale);

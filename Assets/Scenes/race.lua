@@ -1,96 +1,122 @@
 Entities = {
-	Circuit = {
-	    Transform = {
-            position = { x = 0, y = 0, z = 0 },
-            scale = { x = 5.3, y = 1, z = 1.4 }
-	    },
-	    -- RigidBody = {
-		--     colShape = 1,
-		--     mvType = static,
-		--     mass = 5,
-		--     restitution = .5,
-		--     friction = .3,
-		--     isTrigger = false
+	-- Circuit = {
+	    -- Transform = {
+            -- position = { x = 0, y = 0, z = 0 },
+			-- rotation = { x = -90, y = 0, z = 0 },
+            -- scale = { x = 1, y = 1, z = 1 }
 	    -- },
-        -- collider = {
-        --     shape = "box",
-        --     size = { x = 1, y = 1, z = 1 }
-        -- },
-        meshrenderer = {
-            mesh = "p",
-            meshName = "Circuito.mesh",
-            --materialName = "Material/roja"
-        }
-	},
+	    -- -- RigidBody = {
+		-- --     colShape = 1,
+		-- --     mvType = static,
+		-- --     mass = 5,
+		-- --     restitution = .5,
+		-- --     friction = .3,
+		-- --     isTrigger = false
+	    -- -- },
+        -- -- collider = {
+        -- --     shape = "box",
+        -- --     size = { x = 1, y = 1, z = 1 }
+        -- -- },
+        -- meshrenderer = {
+            -- mesh = "circuit",
+            -- meshName = "CircuitoEscalaArreglada.mesh",
+            -- -- materialName = "Material/roja"
+        -- }
+	-- },
 
-	Car = {
+	Cube = {
         Transform = {
-            position = { x= -1.3, y = 0.1, z = -1 },
-            scale = { x = 0.015, y = 0.015, z = 0.015 },
-            rotation = {x = 0, y = 180, z = 0}
-        },
-        RigidBody = {
-            colShape = 1,
-            mvType = 0,
-            mass = 5,
-            restitution = .5,
-            friction = .01,
-            isTrigger = false
-        },
-        vehicleController = {
-            speed = 3;
-            rotationspeed = 3;
-            driftFactor = 1;
-            playerNumber = 0;
-        },
-        meshrenderer = {
-            mesh = "kart",
-            meshName = "Kart.mesh",
-            --materialName = "Material/roja"
-        }
-	},
-    
-    Cube = {
-        Transform = {
-            position = { x = -10, y = 1, z = 0 },
-            scale = { x = .015, y = .015, z = .015 },
+            position = { x = 0, y = 10, z = 0 },
+            scale = { x = 1, y = 1, z = 1 },
             rotation = {x = 0, y = 0, z = 0}
         },
-        RigidBody = {
-            colShape = 1,
-            mvType = 0,
-            mass = 5,
-            restitution = .5,
-            friction = .01,
-            isTrigger = false
-        },
-        vehicleController = {
-            speed = 3;
-            rotationspeed = 3;
-            driftFactor = 1;
-            playerNumber = 0;
-        },
-        meshrenderer = {
+		meshrenderer = {
             mesh = "cube",
-            meshName = "cube.mesh",
-            --materialName = "Material/roja"
-        }
-	},
-    
-    Camera = {
-        Transform = {
-            position = { x = 0, y = .45, z = -.8 }
+            meshName = "Suzanne.mesh",
         },
-        Camera = {
-            lookAt = { x = -1000, y = 0, z = 0 },
-            name = "Main",
-            nearDistance = 0.1,
-            farDistance = 10000,
-            autoRatio = true,
-            zOrder = 0,
-            backgroundColor = { r = .72, g = .92, b = 1, a = 1  }
+		RigidBody = {
+		    colShape = 1,
+		    mvType = static,
+		    mass = 5,
+		    restitution = .5,
+		    friction = .3,
+		    isTrigger = true
+	    },
+        collider = {
+            shape = "box",
+            size = { x = 1, y = 1, z = 1 }
+        },
+		
+	},
+
+	-- Car = {
+        -- Transform = {
+            -- position = { x= 0, y = 0, z = 0 },
+            -- scale = { x = 0.8, y = 0.8, z = 0.8 },
+            -- rotation = {x = 0, y = 180, z = 0}
+        -- },
+        -- RigidBody = {
+            -- colShape = 1,
+            -- mvType = 0,
+            -- mass = 5,
+            -- restitution = .5,
+            -- friction = .1,
+            -- isTrigger = false
+        -- },
+        -- vehicleController = {
+            -- speed = 20;
+            -- rotationspeed = 5;
+            -- driftFactor = 1;
+            -- playerNumber = 0;
+        -- },
+        -- meshrenderer = {
+            -- mesh = "kart",
+            -- meshName = "Kart.mesh",
+            -- --materialName = "Material/roja"
+        -- }
+	-- },
+    
+    -- Cube = {
+        -- Transform = {
+            -- position = { x = -10, y = 1, z = 0 },
+            -- scale = { x = .015, y = .015, z = .015 },
+            -- rotation = {x = 0, y = 0, z = 0}
+        -- },
+        -- RigidBody = {
+            -- colShape = 1,
+            -- mvType = 0,
+            -- mass = 5,
+            -- restitution = .5,
+            -- friction = .01,
+            -- isTrigger = false
+        -- },
+        -- vehicleController = {
+            -- speed = 3;
+            -- rotationspeed = 3;
+            -- driftFactor = 1;
+            -- playerNumber = 0;
+        -- },
+        -- meshrenderer = {
+            -- mesh = "cube",
+            -- meshName = "cube.mesh",
+            -- --materialName = "Material/roja"
+        -- }
+	-- },
+    
+    camera = {
+        transform = {
+            position = { x = 30, y = 10, z = 0 }
+        },
+        camera = {
+            lookat = { x = 0, y = 10, z = 0 },
+            name = "main",
+            neardistance = 10,
+            fardistance = 100000,
+            autoratio = true,
+            zorder = 0,
+            backgroundcolor = { r = .72, g = .92, b = 1, a = 1  }
         }
-        -- CameraFollow = { target = Car }
+        -- camerafollow = { target = car }
     },
 
     DirectionalLight = {

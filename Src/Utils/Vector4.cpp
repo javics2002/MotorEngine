@@ -133,27 +133,15 @@ void Vector4::rotate(float degrees, Vector3 axis) {
 }
 
 Vector3 Vector4::toEuler() {
-	double sinr_cosp = 2.0 * (w * x + y * z);
-	double cosr_cosp = 1.0 - 2.0 * (x * x + y * y);
-	double roll = std::atan2(sinr_cosp, cosr_cosp);
-
-	double sinp = 2.0 * (w * y - z * x);
-	double pitch = 0.0;
-	if (std::abs(sinp) >= 1.0) {
-		pitch = std::copysign(Ogre::Math::PI / 2.0, sinp);
-	}
-	else {
-		pitch = std::asin(sinp);
-	}
-	
-	double siny_cosp = 2.0 * (w * z + x * y);
-	double cosy_cosp = 1.0 - 2.0 * (y * y + z * z);
-	double yaw = std::atan2(siny_cosp, cosy_cosp);
+	double roll = atan2(2.0 * (y * w + x * z), 1.0 - 2.0 * (y * y + x * x));
+	double pitch = asin(2.0 * (w * x - y * z));
+	double yaw = atan2(2.0 * (z * w + x * y), 1.0 - 2.0 * (z * z + x * x));
 
 	Vector3 angles;
-	angles.z = roll * 180.0 / Ogre::Math::PI;
-	angles.x = pitch * 180.0 / Ogre::Math::PI;
-	angles.y = yaw * 180.0 / Ogre::Math::PI;
+	angles.y = roll * 180.0 / Ogre::Math::PI;
+	angles.z = pitch * 180.0 / Ogre::Math::PI;
+	angles.x = yaw * 180.0 / Ogre::Math::PI;
+
 	return angles;
 }
 

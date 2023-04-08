@@ -103,7 +103,7 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setZOrder(value(params, "zorder", 0));
     camera->setBackgroundColour(Vector4(value(params, "backgroundcolor_r", .0f), value(params, "backgroundcolor_g", .0f),
         value(params, "backgroundcolor_b", .0f), value(params, "backgroundcolor_a", 1.0f)));
-    camera->setLookAt(Vector3(value(params, "lookat_x", 0), value(params, "lookat_y", 0), value(params, "lookat_y", 0)));
+    camera->setLookAt(Vector3(value(params, "lookat_x", 0), value(params, "lookat_y", 0), value(params, "lookat_z", 0)));
 
     return camera;
 }
