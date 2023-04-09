@@ -1,4 +1,5 @@
 #include "RenderManager.h"
+#include "Utils/Vector2.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
 
@@ -29,6 +30,7 @@
 #include "Render/RenderMesh.h"
 #include "Render/RenderParticleSystem.h"
 #include "Render/SGTechniqueResolverListener.h"
+#include "Render/RenderUISprite.h"
 
 // Animation includes
 #include <OgreAnimation.h>
@@ -41,7 +43,6 @@ RenderManager::RenderManager()
 	initRoot();
 	mOverlaySystem = new Ogre::OverlaySystem();
 	mOverlayManager = Ogre::OverlayManager::getSingletonPtr();
-	mOverlay = mOverlayManager->create("Scene");
 	initWindow();
 	locateResources();
 	loadResources();
@@ -84,6 +85,7 @@ void RenderManager::shutdown()
 	destroyRTShaderSystem();
 	delete mFSLayer;
 	delete mOgreWindow;
+	delete mOverlaySystem;
 }
 
 void RenderManager::initWindow()
@@ -167,6 +169,14 @@ void RenderManager::destroyRTShaderSystem()
 	}
 }
 
+RenderUISprite* RenderManager::getUISprite(std::string name)
+{
+	if (!mSprites.count(name))
+		return nullptr;
+
+	return mSprites[name];
+}
+
 RenderMesh* RenderManager::getMesh(std::string name)
 {
 	if (!mMeshes.count(name))
@@ -174,6 +184,7 @@ RenderMesh* RenderManager::getMesh(std::string name)
 
 	return mMeshes[name];
 }
+
 RenderCamera* RenderManager::getCamera(std::string name)
 {
 
@@ -204,6 +215,13 @@ me::RenderManager::~RenderManager()
 		delete it2.second;
 	}
 	mMeshes.clear();
+
+	for (auto& it3 : mSprites) {
+
+		destroyUISprite(it3.first);
+		delete it3.second;
+	}
+	mSprites.clear();
 
 	for (auto& it3 : mLights) {
 		Ogre::SceneNode* node = it3.second->getParentSceneNode();
@@ -323,22 +341,6 @@ bool RenderManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
-bool me::RenderManager::createSprite(std::string name, std::string nameMesh)
-{
-	static int i = 0;
-	auto panel = mOverlayManager->createOverlayElement("Panel", "Test" + std::to_string(i++));
-	panel->setPosition(.1, .1);
-	panel->setDimensions(.1, .1);
-	panel->setMaterialName("test");
-
-	mOverlay->add2D(static_cast<Ogre::OverlayContainer*>(panel));
-	mOverlay->setZOrder(10);
-	mOverlay->show();
-	mOverlay->get2DElements();
-	
-	return mOverlay->isVisible();
-}
-
 bool RenderManager::setMeshPosition(std::string name, Vector3 pos)
 {
 	RenderMesh* mesh = getMesh(name);
@@ -420,6 +422,87 @@ bool RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 sca
 	return true;
 }
 
+bool me::RenderManager::createSprite(std::string name, std::string spriteMaterialName)
+{
+	auto overlay = mOverlayManager->create(name + "Overlay");
+	auto panel = mOverlayManager->createOverlayElement("Panel", spriteMaterialName + "Panel");
+
+	RenderUISprite* uiSprite = new RenderUISprite(overlay, panel, spriteMaterialName);
+
+	return overlay->isVisible();
+}
+
+bool RenderManager::setUISpritePosition(std::string name, Vector2 pos)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+		return false;
+
+	sprite->setPosition(pos);
+
+	return true;
+}
+
+bool RenderManager::setUISpriteScale(std::string name, Vector2 scale)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+		return false;
+
+	sprite->setScale(scale);
+
+	return true;
+}
+
+bool RenderManager::setUISpriteRotation(std::string name, float rot)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+		return false;
+
+	sprite->setRotation(rot);
+
+	return true;
+}
+
+bool RenderManager::setUISpriteMaterial(std::string name, std::string nameMaterial)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+		return false;
+
+	sprite->setMaterial(nameMaterial);
+
+	return true;
+}
+
+void RenderManager::destroyUISprite(std::string name)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+	{
+		std::cout << "Try to destroy nullptr UISprite with name " << name << std::endl;
+	}
+	else
+	{
+		sprite->getOgreOverlay()->remove2D(dynamic_cast<Ogre::OverlayContainer*>(sprite->getOgreOverlayElement()));
+		mOverlayManager->destroyOverlayElement(sprite->getOgreOverlayElement());
+		delete sprite;
+		mSprites.erase(name);
+	}
+
+}
+
+bool RenderManager::setUISpriteTransform(std::string name, Vector2 pos, Vector2 scale, float rot)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+		return false;
+
+	sprite->setTransform(pos, scale, rot);
+
+	return true;
+}
 
 
 bool RenderManager::createParticle(std::string name, std::string nameParticle)

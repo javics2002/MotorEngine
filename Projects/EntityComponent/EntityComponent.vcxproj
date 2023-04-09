@@ -39,8 +39,10 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIButton.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIContainer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIElement.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIText.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
@@ -62,8 +64,10 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIButton.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIContainer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIElement.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIText.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
     <ClInclude Include="..\..\Src\EntityComponent\InfoScene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />

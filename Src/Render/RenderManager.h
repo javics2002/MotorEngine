@@ -5,6 +5,7 @@
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector4.h"
+#include "Utils/Vector2.h"
 #include <unordered_map>
 #include <string>
 #include <OgreColourValue.h>
@@ -36,6 +37,7 @@ namespace me {
 	class RenderWindow;
 	class RenderCamera;
 	class RenderMesh;
+	class RenderUISprite;
 	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
 	class Vector3;
@@ -100,8 +102,6 @@ namespace me {
 		*/
 		Ogre::OverlaySystem* mOverlaySystem;
 
-		Ogre::Overlay* mOverlay;
-
 		/**
 		Path of the "Ogre.cfg"
 		configuration file where it indicates all the configurations 
@@ -126,9 +126,10 @@ namespace me {
 
 		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
-		//std::unordered_map<std::string, Overlay*> mOverlays;			//Pairs each mesh with its name
+		std::unordered_map<std::string, RenderUISprite*> mSprites;			//Pairs each UISprite with its name
 		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
 		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
+
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
@@ -163,6 +164,13 @@ namespace me {
 		@return nullptr: if it doesn't exist
 		*/
 		RenderCamera* getCamera(std::string name);
+
+		/**
+		@param name: Name of the sprite
+		@return RenderUISprite: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		RenderUISprite* getUISprite(std::string name);
 
 		/**
 		@param name: Name of the mesh
@@ -254,8 +262,8 @@ namespace me {
 
 		/**
 		Creates a 2D sprite in the overlay.
-		@param name: name of Ogre::SceneNode &&unordered_map
-		@param nameMesh: name of file (xxx.mesh)
+		@param name: Name of Ogre::OverlayElement &&unordered_map
+		@param nameMesh: Name of file (xxx.png)
 		@return false: if renamed
 		@return true: if succeed
 		*/
@@ -283,6 +291,29 @@ namespace me {
 
 		//destroy OgreMesh created 
 		void destroyMesh(std::string name);
+
+		/**
+		Set UITransform info of the UISprite with this name (for static object)
+		@param name: name of UISprite
+		@param pos: position of UISprite
+		@param scale: scale of UISprite
+		@param rot: rotation of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded	
+		*/
+		bool setUISpriteTransform(std::string name, Vector2 pos, Vector2 scale, float rot);
+		//set position info to the mesh with this name
+		bool setUISpritePosition(std::string name, Vector2 pos);
+		//set scale info to the mesh with this name
+		bool setUISpriteScale(std::string name, Vector2 scale);
+		//set rotation info to the mesh with this name
+		bool setUISpriteRotation(std::string name, float rot);
+
+		//set material to the mesh with this name
+		bool setUISpriteMaterial(std::string name, std::string nameMaterial);
+
+		//destroy OgreMesh created 
+		void destroyUISprite(std::string name);
 
 		/**
 		Create the ogreParticleSystem with this name
