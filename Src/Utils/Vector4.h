@@ -34,10 +34,6 @@ namespace me {
 		* @return The linear interpolation between "a" and "b" by a factor of "f"
 		*/
 		float lerp(float a, float b, float f);
-		void convertToZero(float &value);
-
-		const float TOLERANCE = 0.000001;
-
 	public:
 
 		float x, y, z, w;

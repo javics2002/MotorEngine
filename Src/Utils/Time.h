@@ -35,6 +35,9 @@ public:
 	*/
 	void disableVSYNC();
 
+
+	double obtainActualTime();
+
 	/*
 	Delta time describes the time difference between the previous frame that was drawn and the current frame.
 	*/

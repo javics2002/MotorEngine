@@ -1,4 +1,5 @@
 #include "Time.h"
+#include <chrono>
 
 Time::Time()
 {
@@ -26,4 +27,10 @@ void Time::disableVSYNC()
 {
 
 }
+
+// Función para obtener el tiempo actual en segundos
+double Time::obtainActualTime() {
+	return std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+}
+
 

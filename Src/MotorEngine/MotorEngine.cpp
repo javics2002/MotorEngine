@@ -81,40 +81,16 @@ bool MotorEngine::setup(std::string gameName)
 
 void MotorEngine::loop()
 {
-	/*
-	Init Utils
-	*/
-	timeUtils = new Time();
-	
-	/*
-	Physics are calculated every 0.02 seconds (Fixed Update) while the rest of the game is calculated depending on the frames per second
-	of the computer
-	*/
-	float pFrameRate = timeUtils->getPhysicsFrameValue();
-	std::chrono::duration<double> pInterval = std::chrono::duration<double>(1.0 / pFrameRate); // -> 1 / 50
-
-	/*
-	* Two clocks that are used to calculate time between frames
-	*/
-	std::chrono::steady_clock::time_point lastTick = std::chrono::high_resolution_clock::now();
-	std::chrono::steady_clock::time_point lastPhysicsTick = std::chrono::high_resolution_clock::now();
-
-	/*
-	* Used to calculate Delta Time and Fixed Delta Time
-	*/
-	std::chrono::duration<double> dtAccum = std::chrono::duration<double>();
-	std::chrono::duration<double> dt = std::chrono::duration<double>();
-	std::chrono::duration<double> fixedDt = std::chrono::duration<double>();
-
-	/*
-	* FrameRate counter
-	*/
-	std::chrono::duration<double> timer = std::chrono::duration<double>();
-	unsigned int frameCounter = 0;
-	double fpsValue = 0;
-
 	sceneManager().getActiveScene()->processNewEntities();
 	sceneManager().getActiveScene()->start();
+
+	/*
+	Init Time Utils
+	*/
+	timeUtils = new Time();
+
+	double prevTime = timeUtils->obtainActualTime();
+	double actTime = 0.0;
 
 	//UI con SDL
 	SDL_Surface* surface = SDL_LoadBMP("Assets/UISprites/OilSprite.bmp");
@@ -137,51 +113,30 @@ void MotorEngine::loop()
 		}
 
 		/*
-		* Update the new frames values
-		*/
-		dt = std::chrono::high_resolution_clock::now() - lastTick;
-		timer += dt;
-		timeUtils->deltaTime = dt.count();
-
-		// FPS
-		frameCounter++;
-		if (timer.count() > 1.0) { //every second
-			fpsValue = frameCounter / 1000;
-			timeUtils->currentFPSValue = fpsValue;
-
-			std::cout << "FPS:" << timeUtils->currentFPSValue << std::endl;
-			
-			frameCounter = 0;
-			timer = std::chrono::duration<double>();
-		}
+		* Update Time Values
+		*/ 
+		actTime = timeUtils->obtainActualTime();
+		timeUtils->deltaTime = actTime - prevTime;
+		prevTime = actTime;
 
 		/*
 		* Update the scene
 		*/
 		sceneManager().update();
+
+		physicsManager().update(timeUtils->deltaTime);
 		
-		physicsManager().update(0.016);
-		/*
-		* Update physics
-		*/
-		dtAccum += dt;
-		if (dtAccum >= pInterval) { // Limitado a 50 fps
-			fixedDt = std::chrono::high_resolution_clock::now() - lastPhysicsTick;
-			timeUtils->fixedDeltaTime = fixedDt.count();
-
-
-			dtAccum = std::chrono::duration<double>();
-
-			lastPhysicsTick = std::chrono::high_resolution_clock::now();
-		}
-
 		/*
 		* Render the scene
 		*/
-		renderManager().createSprite("a", "a");
+
+		// renderManager().createSprite("a", "a");
 		renderManager().render();
 
-		lastTick = std::chrono::high_resolution_clock::now();
+		/*
+		* Wait time
+		*/
+		std::this_thread::sleep_for(std::chrono::milliseconds(16)); // 16ms para apuntar a 60 FPS (1000ms / 60FPS = ~16ms)
 	}
 
 	//UI con SDL
