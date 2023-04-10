@@ -13,6 +13,7 @@ me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode*
 
 	mParticleSystem = mSM->createParticleSystem(mName, mParticleName);
 	mParticleSystem->setEmitting(false);
+	mParticleSystem->setKeepParticlesInLocalSpace(true);
 	mNode->attachObject(mParticleSystem);
 }
 

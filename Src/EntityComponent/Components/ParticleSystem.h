@@ -51,11 +51,17 @@ namespace me {
 		void update() override;
 
 		/**
-		Set it emitting state
+		Set its emitting state
 		*/
 		void setEmitting(bool emitted);
 
+		/**
+		Set its offset position respective to its entity.
+		*/
 		void setOffsetPos(Vector3 offset);
+		/**
+		Set its offset scale respective to its entity.
+		*/
 		void setOffsetScale(Vector3 offset);
 			
 	};

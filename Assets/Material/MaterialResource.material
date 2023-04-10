@@ -87,3 +87,40 @@ material test // nombre
 		}
 	}
 }
+
+material Material/spark // nombre
+{
+	technique // al menos una
+	{
+		pass // al menos uno
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit 
+			{
+				texture chispa.png
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+material Material/dust // nombre
+{
+	technique // al menos una
+	{
+		pass // al menos uno
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit 
+			{
+				texture dust.png
+				tex_address_mode clamp
+			}
+		}
+	}
+}

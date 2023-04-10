@@ -10,7 +10,7 @@ me::ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
 {
 	mName = name;
 	mParticleName = nameParticle;
-
+	renderManager().createParticle(mName, mParticleName);
 }
 
 me::ParticleSystem::~ParticleSystem()
@@ -21,9 +21,7 @@ me::ParticleSystem::~ParticleSystem()
 void me::ParticleSystem::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createParticle(mName, mParticleName);
 	renderManager().setParticleTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
-
 }
 
 void me::ParticleSystem::update()
@@ -31,7 +29,7 @@ void me::ParticleSystem::update()
 	Vector3 pos = mTransform->getPosition() + mOffsetPos;
 	Vector3 scale = mTransform->getScale() + mOffsetScale;
 	renderManager().setParticleTransform(mName, pos, scale, mTransform->getRotation());
-
+	//{ 0.000000000001,0.000000000001,0.000000000001 }  { 1,1,1 }
 }
 
 void me::ParticleSystem::setOffsetPos(Vector3 offset)

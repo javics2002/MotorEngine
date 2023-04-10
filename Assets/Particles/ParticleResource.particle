@@ -1,6 +1,6 @@
-particle_system Practica1/chispas
+particle_system Particle/chispa
 {
-    material        Practica1/spark
+    material        Material/spark
     particle_width  40
     particle_height 40
     cull_each       false
@@ -15,7 +15,7 @@ particle_system Practica1/chispas
         emission_rate   75
         time_to_live    0.5
         //direction       0 10 10
-        direction_position_reference 0 -150 125 1
+        direction_position_reference 125 -150 0 1
         //duration 0.5
         //repeat_delay 1
         velocity_min    150
@@ -50,9 +50,9 @@ particle_system Practica1/chispas
     //}
 }
 
-particle_system Practica1/polvo
+particle_system Particle/polvo
 {
-    material        Practica1/dust
+    material        Material/dust
     particle_width  40
     particle_height 40
     cull_each       false
