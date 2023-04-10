@@ -71,7 +71,7 @@ material Material/naranja
 	}
 }
 
-material test // nombre
+material oil // nombre
 {
 	technique // al menos una
 	{

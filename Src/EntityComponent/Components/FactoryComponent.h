@@ -97,6 +97,20 @@ namespace me {
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys UISpriteRenderer components
+	class FactoryUISpriteRenderer : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+	//Creates and destroys UITransform components
+	class FactoryUITransform : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
 	//Creates and destroys Light components
 	class FactoryLight : public FactoryComponent {
 	public:

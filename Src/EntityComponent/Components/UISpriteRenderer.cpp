@@ -33,7 +33,7 @@ void me::UISpriteRenderer::init(std::string name, std::string nameSprite)
 
 void me::UISpriteRenderer::start()
 {
-	mUITransform = getEntity()->getComponent<UITransform>("uiTransform");
+	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
 
 	assert(mUITransform && "An Entity doesn't have the UITransform component");
 	if (mSpriteName.size() > 0)

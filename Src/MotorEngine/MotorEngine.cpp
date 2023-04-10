@@ -180,9 +180,11 @@ bool MotorEngine::loadGame(std::string gameDllName)
 void me::MotorEngine::initFactories()
 {
 	componentsFactory().addFactoryComponent("transform", new FactoryTransform());
+	componentsFactory().addFactoryComponent("uitransform", new FactoryUITransform());
 	componentsFactory().addFactoryComponent("rigidbody", new FactoryRigidBody());
 	componentsFactory().addFactoryComponent("animator", new FactoryAnimator());
 	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
+	componentsFactory().addFactoryComponent("uispriterenderer", new FactoryUISpriteRenderer());
 	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
 	componentsFactory().addFactoryComponent("particlesystem", new FactoryParticleSystem());
 	componentsFactory().addFactoryComponent("camera", new FactoryCamera());

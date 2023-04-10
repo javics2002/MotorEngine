@@ -5,10 +5,12 @@
 #include "Camera.h"
 #include "Collider.h"
 #include "MeshRenderer.h"
+#include "UISpriteRenderer.h"
 #include "ParticleSystem.h"
 #include "Rigidbody.h"
 #include "Transform.h"
 #include "Light.h"
+#include "UITransform.h"
 
 using namespace me;
 
@@ -202,6 +204,43 @@ Component* me::FactoryLight::create(Parameters& params)
 }
 
 void me::FactoryLight::destroy(Component* component)
+{
+    delete component;
+}
+
+me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
+{
+    if (params.empty())
+    {
+        return new UISpriteRenderer();
+    }
+    std::string sprite = value(params, "sprite", std::string());
+    std::string materialName = value(params, "materialname", std::string());
+    bool staticState = value(params, "staticobj", false);
+
+    UISpriteRenderer* spriteRenderer = new UISpriteRenderer(sprite, materialName);
+    spriteRenderer->setStatic(staticState);
+
+    return spriteRenderer;
+}
+
+void me::FactoryUISpriteRenderer::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* me::FactoryUITransform::create(Parameters& params)
+{
+    UITransform* transform = new UITransform();
+    transform->setPosition(Vector2(value(params, "position_x", 0.0f),
+        value(params, "position_y", 0.0f)));
+    transform->setRotation(value(params, "rotation", 0.0f));
+    transform->setScale(Vector2(value(params, "scale_x", 1.0f),
+        value(params, "scale_y", 1.0f)));
+    return transform;
+}
+
+void me::FactoryUITransform::destroy(Component* component)
 {
     delete component;
 }

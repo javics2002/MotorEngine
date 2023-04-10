@@ -11,8 +11,6 @@ me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement*
 	mOverlay = overlay;
 	mPanel = panel;
 
-	mPanel->setPosition(.1, .1);
-	panel->setDimensions(.1, .1);
 	panel->setMaterialName(spriteMaterialName);
 
 	overlay->add2D(dynamic_cast<Ogre::OverlayContainer*>(panel));

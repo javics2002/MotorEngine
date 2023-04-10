@@ -1,28 +1,52 @@
 Entities = {
 	-- Circuit = {
-	    -- Transform = {
-            -- position = { x = 0, y = 0, z = 0 },
-			-- rotation = { x = -90, y = 0, z = 0 },
-            -- scale = { x = 1, y = 1, z = 1 }
-	    -- },
-	    -- -- RigidBody = {
-		-- --     colShape = 1,
-		-- --     mvType = static,
-		-- --     mass = 5,
-		-- --     restitution = .5,
-		-- --     friction = .3,
-		-- --     isTrigger = false
-	    -- -- },
-        -- -- collider = {
-        -- --     shape = "box",
-        -- --     size = { x = 1, y = 1, z = 1 }
-        -- -- },
-        -- meshrenderer = {
-            -- mesh = "circuit",
-            -- meshName = "CircuitoEscalaArreglada.mesh",
-            -- -- materialName = "Material/roja"
-        -- }
+	--     Transform = {
+    --         position = { x = 0, y = 0, z = 0 },
+	-- 		rotation = { x = -90, y = 0, z = 0 },
+    --         scale = { x = 1, y = 1, z = 1 }
+	--     },
+	--     -- RigidBody = {
+	-- 	--     colShape = 1,
+	-- 	--     mvType = static,
+	-- 	--     mass = 5,
+	-- 	--     restitution = .5,
+	-- 	--     friction = .3,
+	-- 	--     isTrigger = false
+	--     -- },
+    --     -- collider = {
+    --     --     shape = "box",
+    --     --     size = { x = 1, y = 1, z = 1 }
+    --     -- },
+    --     meshrenderer = {
+    --         mesh = "circuit",
+    --         meshName = "CircuitoEscalaArreglada.mesh",
+    --         -- materialName = "Material/roja"
+    --     }
 	-- },
+
+    SpriteTest = {
+        UITransform = {
+            position = { x = 0.05, y = 0.07 },
+            scale = { x = 0.1, y = 0.15 },
+            rotation = 0
+        },
+        UISpriteRenderer = {
+            sprite = "oil",     -- Nombre Interno
+            materialName = "oil"  -- Nombre en MaterialsResource
+        }
+    },
+
+    SpriteTest2 = {
+        UITransform = {
+            position = { x = 0.8, y = 0.8 },
+            scale = { x = 0.1, y = 0.15 },
+            rotation = 0
+        },
+        UISpriteRenderer = {
+            sprite = "oil2TheSequel",     -- Nombre Interno
+            materialName = "oil"  -- Nombre en MaterialsResource
+        }
+    },
 
 	Cube = {
         Transform = {
