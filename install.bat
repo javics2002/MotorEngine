@@ -2,9 +2,6 @@
 setlocal
 
 
-rem Pregunta si generar paradas de comprobación entre cada paso
-set /p pause_option="> Quieres que se generen pausas? [S/N]: "
-
 
 rem Fecha inicio: 
 set start_time=%time%
@@ -35,39 +32,57 @@ for %%i in (%deps%) do (
 
 
 
-rem Establece el tipo de configuración para la ejecución global 
-:loop
-set /p exec_option="> Quieres que se ejecute en serie o en paralelo? [S/P]: " 
+rem Configuración de paradas
+if /I "%1"=="" (
 
-rem Comprueba si ha elegido bien la opción de buildeo: 
-if /i "%exec_option%"=="S" ( 
+    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
 
-    echo: && echo "> COMENZANDO EN SERIE!!" && echo:
+) else ( set "pause_option=%1" )
 
-) else if /i "%exec_option%"=="P" (
 
-    echo: && echo "> COMENZANDO EN PARALELO!!" && echo:
 
-) else ( 
+rem Configuración para la ejecución global 
+if /I "%2"=="" (
+    
+    :loop
+    set /p exec_option="> Quieres que se ejecute en serie o en paralelo? [S/P]: " 
 
-    echo: && echo "La opcion %exec_option% no es valida. Prueba otra vez." && echo:
-    goto loop
+    rem Comprueba la opción escogida: 
+    if /i "%exec_option%"=="S" ( 
+
+        echo: && echo "> COMENZANDO EN SERIE!!" && echo:
+
+    ) else if /i "%exec_option%"=="P" (
+
+        echo: && echo "> COMENZANDO EN PARALELO!!" && echo:
+
+    ) else ( 
+
+        echo: && echo "La opcion %exec_option% no es valida. Prueba otra vez." && echo:
+        goto loop
+
+    )
+
+) else (
+
+    set "exec_option=%2"
 
 )
 if /i "%pause_option%"=="S" ( pause ) 
 
 
 
-rem Plataforma destino: 
-set "platform=x64"
+rem Configuración del shell de Visual Studio 
+if not exist "%temp%\VSWhereOutput.txt" (
 
+    echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
 
+    rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
+    call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
 
-echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
+) else ( echo: && echo "> Arranque instantaneo!!" && echo: )
 
-rem Búsqueda y guardado de la ruta al shell Developer command prompt for Visual Studio 2022 más actualizado
-call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
-set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
+set /p VS_PATH=<"%temp%\VSWhereOutput.txt" 
 
 if /i "%pause_option%"=="S" ( pause )
 
@@ -134,6 +149,7 @@ echo: && echo "> Todos los scripts han terminado!!" && echo:
 
 rem Copia iterativa de las .dll's a través del directorio .\Dependencies y sus subdirectorios: 
 
+set "platform=x64"
 set "origen=.\Dependencies\*" 
 set "destino=.\Exe\Main\%platform%" 
 
@@ -153,7 +169,7 @@ for /d %%d in (%origen%) do (
 
 
 
-rem LLamada al DCP: Developer Command Prompt
+rem Llamada al DCP: Developer Command Prompt
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 del "%temp%\VSWhereOutput.txt"
 
