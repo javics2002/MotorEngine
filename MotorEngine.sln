@@ -19,8 +19,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Main", "Projects\Main\Main.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotorEngine", "Projects\MotorEngine\MotorEngine.vcxproj", "{A84AEEAC-343F-4D4E-AC76-F83AFDC68112}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUI", "Projects\GUI\GUI.vcxproj", "{73A7A28D-6005-4DC0-9A11-D511F4E7465A}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntityComponent", "Projects\EntityComponent\EntityComponent.vcxproj", "{E996E8C5-C183-4221-9A3E-4FC9E4475465}"
 EndProject
 Global
@@ -95,14 +93,6 @@ Global
 		{A84AEEAC-343F-4D4E-AC76-F83AFDC68112}.Release|x64.Build.0 = Release|x64
 		{A84AEEAC-343F-4D4E-AC76-F83AFDC68112}.Release|x86.ActiveCfg = Release|Win32
 		{A84AEEAC-343F-4D4E-AC76-F83AFDC68112}.Release|x86.Build.0 = Release|Win32
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Debug|x64.ActiveCfg = Debug|x64
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Debug|x64.Build.0 = Debug|x64
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Debug|x86.ActiveCfg = Debug|Win32
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Debug|x86.Build.0 = Debug|Win32
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Release|x64.ActiveCfg = Release|x64
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Release|x64.Build.0 = Release|x64
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Release|x86.ActiveCfg = Release|Win32
-		{73A7A28D-6005-4DC0-9A11-D511F4E7465A}.Release|x86.Build.0 = Release|Win32
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Debug|x64.ActiveCfg = Debug|x64
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Debug|x64.Build.0 = Debug|x64
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Debug|x86.ActiveCfg = Debug|Win32
