@@ -17,7 +17,7 @@ me::UISpriteRenderer::UISpriteRenderer()
 
 me::UISpriteRenderer::~UISpriteRenderer()
 {
-	renderManager().destroyMesh(mName);
+	renderManager().destroyUISprite(mName);
 }
 
 void me::UISpriteRenderer::init(std::string name, std::string nameSprite)

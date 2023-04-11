@@ -9,6 +9,7 @@ me::DebugDrawer::DebugDrawer() {
 }
 
 me::DebugDrawer::~DebugDrawer() {
+	clear();
 }
 
 void me::DebugDrawer::clear()

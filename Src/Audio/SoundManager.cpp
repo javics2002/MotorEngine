@@ -87,6 +87,19 @@ void me::SoundManager::nameToLower(std::string& name)
 	std::transform(name.begin(), name.end(), name.begin(), ::tolower);
 }
 
+me::SoundManager::~SoundManager()
+{
+	for (auto s : mSoundsMap)
+	{
+		mResult = s.second->release();
+		checkFMODResult(mResult);
+	}
+	mSoundsMap.clear();
+
+	mResult = mSoundSystem->release();
+	checkFMODResult(mResult);
+}
+
 void me::SoundManager::systemRefresh()
 {
 	mResult = mSoundSystem->update();

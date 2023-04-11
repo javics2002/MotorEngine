@@ -99,6 +99,11 @@ namespace me {
 		FMOD_RESULT mResult;
 
 	public:
+
+		/**
+		Destructor for the SoundManager class
+		*/
+		~SoundManager();
 		/**
 		Updates the sound system every step of the game loop.
 		*/
