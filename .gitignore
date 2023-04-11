@@ -3,6 +3,13 @@
 /Dependencies/*/bin/
 /Dependencies/LuaBridge/src/
 
+# No build-time data records
+build_Output.txt
+
+# Main project without external things
+/Projects/Main/*.cfg
+/Projects/Main/Assets/
+
 # Visual Studio Data
 /.vs
 

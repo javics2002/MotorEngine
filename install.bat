@@ -19,7 +19,7 @@ if exist "./build_Output.txt" (
 
 
 rem Establece las dependencias a tener en cuenta
-set deps=Bullet CEGUI FMOD LuaBridge Ogre SDL
+set deps=Bullet FMOD LuaBridge Ogre SDL
 
 rem Borra los registros genereados en las dependencias
 for %%i in (%deps%) do (
@@ -100,11 +100,6 @@ cd ..
 cd .\Bullet
 echo: && echo "> Instalando _BULLET_" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_BULLET.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_BULLET.bat %pause_option% ) 
-cd ..
-
-cd .\CEGUI
-echo: && echo "> Instalando _CEGUI_" && echo: 
-if /i "%exec_option%"=="S" ( call .\build_CEGUI.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_CEGUI.bat %pause_option% ) 
 cd ..
 
 cd ..

@@ -1,1 +1,0 @@
-"> Build BULLET_PHYSICS finalizada [ inicio: 13:02:24,68 // finalizado: 13:07:56,36 ]" 
