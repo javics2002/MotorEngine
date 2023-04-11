@@ -24,6 +24,19 @@ Entities = {
     --     }
 	-- },
 
+    CarMaterialTest = {
+        Transform = {
+            position = { x= 0, y = 0, z = 0 },
+            scale = { x = 0.8, y = 0.8, z = 0.8 },
+            rotation = {x = 0, y = 60, z = 0}
+        },
+        meshrenderer = {
+            mesh = "kart",
+            meshName = "Kart.mesh",
+            -- materialName = "kartA"
+        }
+	},
+
     SpriteTest = {
         UITransform = {
             position = { x = 0.05, y = 0.07 },
@@ -43,8 +56,20 @@ Entities = {
             rotation = 0
         },
         UISpriteRenderer = {
-            sprite = "oil2TheSequel",     -- Nombre Interno
-            materialName = "oil"  -- Nombre en MaterialsResource
+            sprite = "lightning",     -- Nombre Interno
+            materialName = "lightningBolt"  -- Nombre en MaterialsResource
+        }
+    },
+
+    SpriteTest3 = {
+        UITransform = {
+            position = { x = 0.05, y = 0.8 },
+            scale = { x = 0.1, y = 0.15 },
+            rotation = 0
+        },
+        UISpriteRenderer = {
+            sprite = "nerf",     -- Nombre Interno
+            materialName = "nerf"  -- Nombre en MaterialsResource
         }
     },
 
@@ -149,7 +174,7 @@ Entities = {
         },
         Light = {
             name = "DirectionalLight",
-            direction = { x = 1, y = -1, z = 1 },
+            direction = { x = 1, y = -1, z = -1 },
             type = 0
         }
     }

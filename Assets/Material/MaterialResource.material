@@ -88,6 +88,40 @@ material oil // nombre
 	}
 }
 
+material lightningBolt // nombre
+{
+	technique // al menos una
+	{
+		pass // al menos uno
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit {
+				texture LightningBoltSprite.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material nerf // nombre
+{
+	technique // al menos una
+	{
+		pass // al menos uno
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit {
+				texture NerfSprite.png
+				colour_op replace
+			}
+		}
+	}
+}
+
 material Material/spark // nombre
 {
 	technique // al menos una
