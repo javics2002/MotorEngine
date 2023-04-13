@@ -138,9 +138,27 @@ namespace me {
 		 */
 		Transform* getParent();
 
+		/**
+		Apply translation to each of the childs of a given entity.
+		*/
+		void childTranslation();
+
+		/**
+		Stablishes the relationship between the parent transform and the child.
+		*/
+		void setParent();
+
+		/**
+		Sets the name of the parent entity.
+
+		 @param name The name of the parent.
+		*/
+		void setParentName(std::string name);
+
 	private:
 
 		Vector3 mPosition;
+		Vector3 mTranslatePosition;
 		Vector4 mRotation;
 		Vector3  mScale;
 
@@ -149,6 +167,7 @@ namespace me {
 		Vector3  mLocalScale;
 
 		Transform* mParent;
+		std::string mParentName;
 
 		std::list<Transform*> mChildren;
 	};

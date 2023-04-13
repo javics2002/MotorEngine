@@ -1,4 +1,6 @@
 #include "Transform.h"
+#include "EntityComponent/Entity.h"
+#include "EntityComponent/Scene.h"
 
 #include <iostream>
 
@@ -31,12 +33,13 @@ me::Transform::~Transform()
 
 void me::Transform::start()
 {
-
+	setParent();
+	std::cout << "start transform";
 }
 
 void me::Transform::update()
 {
-
+	childTranslation();
 }
 
 void me::Transform::lateUpdate()
@@ -58,7 +61,8 @@ me::Vector3 me::Transform::getScale()
 }
 
 void me::Transform::setPosition(Vector3 newPosition)
-{
+{	
+	mTranslatePosition = newPosition - mPosition;
 	mPosition = newPosition;
 }
 
@@ -79,7 +83,7 @@ void me::Transform::setScale(Vector3 newScale)
 
 void me::Transform::translate(Vector3 translation)
 {
-	mPosition += translation;
+	mPosition = mPosition + translation;
 }
 
 void me::Transform::rotate(float degrees, Vector3 axis)
@@ -123,3 +127,29 @@ me::Transform* me::Transform::getParent()
 {
 	return mParent;
 }
+
+void me::Transform::childTranslation()
+{
+	if (childCount() > 0) {
+		for (auto child : mChildren) {
+			child->translate(mTranslatePosition);
+		}
+	}
+}
+
+void me::Transform::setParent()
+{
+	if (mParentName != "") {
+		mParent = getEntity()->getScene()->findEntity(mParentName)->getComponent<Transform>("transform");
+		mParent->addChild(this);
+	}	
+}
+
+void me::Transform::setParentName(std::string name) {
+	for (char& c : name)
+		c = tolower(c);
+	mParentName = name;
+}
+
+
+

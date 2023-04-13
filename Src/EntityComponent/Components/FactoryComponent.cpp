@@ -31,6 +31,7 @@ bool me::FactoryComponent::value(Parameters& params, const ParameterName& parame
 
 std::string me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
 {
+    auto ci = params.count(parameter);
     return params.count(parameter) ? params[parameter] : defaultValue;
 }
 
@@ -56,6 +57,8 @@ Component* FactoryTransform::create(Parameters& params)
         value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f)));
     transform->setScale(Vector3(value(params, "scale_x", 1.0f),
         value(params, "scale_y", 1.0f), value(params, "scale_z", 1.0f)));
+    std::string transformParent = value(params, "parentname", std::string());
+    transform->setParentName(transformParent);
     return transform;
 }
 
