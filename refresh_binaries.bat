@@ -14,16 +14,17 @@ set "destino=.\Exe\Main\%platform%"
 for /d %%d in (%origen%) do (
 
     if exist "%%d\bin\Debug" (
-        robocopy "%%d\bin\Debug" "%destino%\Debug" "*.dll"
+        robocopy /NJH "%%d\bin\Debug" "%destino%\Debug" "*.dll"
         if /i "%pause_option%"=="S" ( pause )
     )
 
     if exist "%%d\bin\Release" (
-        robocopy "%%d\bin\Release" "%destino%\Release" "*.dll"
+        robocopy /NJH "%%d\bin\Release" "%destino%\Release" "*.dll"
         if /i "%pause_option%"=="S" ( pause )
     )    
 
 )
 
 
-pause
+endlocal 
+exit 

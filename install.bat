@@ -2,9 +2,18 @@
 setlocal
 
 
-
 rem Fecha inicio: 
 set start_time=%time%
+
+
+
+rem Configuración de paradas
+if /I "%1"=="" (
+
+    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
+
+) else ( set "pause_option=%1" )
+
 
 
 rem Elimina si existe el anterior registro
@@ -28,44 +37,24 @@ for %%i in (%deps%) do (
         
     )
 
-)
+) 
 
 
 
-rem Configuración de paradas
-if /I "%1"=="" (
+:loop
+rem Configuración para la ejecución global de los procesos 
+if /i "%exec_option%"=="P" (
 
-    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
+    echo: && echo "> COMENZANDO EN PARALELO!!" && echo:
 
-) else ( set "pause_option=%1" )
-
-
-
-rem Configuración para la ejecución global 
-if /I "%2"=="" (
+) else if /i "%exec_option%"=="S" (  
     
-    :loop
-    set /p exec_option="> Quieres que se ejecute en serie o en paralelo? [S/P]: " 
-
-    rem Comprueba la opción escogida: 
-    if /i "%exec_option%"=="S" ( 
-
-        echo: && echo "> COMENZANDO EN SERIE!!" && echo:
-
-    ) else if /i "%exec_option%"=="P" (
-
-        echo: && echo "> COMENZANDO EN PARALELO!!" && echo:
-
-    ) else ( 
-
-        echo: && echo "La opcion %exec_option% no es valida. Prueba otra vez." && echo:
-        goto loop
-
-    )
+    echo: && echo "> COMENZANDO EN SERIE!!" && echo:
 
 ) else (
 
-    set "exec_option=%2"
+    set /p exec_option="> Quieres que se ejecute en serie o en paralelo? [S/P]: " 
+    goto loop
 
 )
 if /i "%pause_option%"=="S" ( pause ) 
@@ -93,27 +82,27 @@ rem Llamadas a la automatización de cada dependencia:
 cd .\Dependencies
 
 cd .\FMOD
-echo: && echo "> Instalando _FMOD_" && echo: 
+echo: && echo "> Instalando: FMOD" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_FMOD.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_FMOD.bat %pause_option% ) 
 cd ..
 
 cd .\SDL
-echo: && echo "> Instalando _SDL_" && echo: 
+echo: && echo "> Instalando: SDL" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_SDL.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_SDL.bat %pause_option% ) 
 cd ..
 
 cd .\LuaBridge
-echo: && echo "> Instalando _LUA_" && echo: 
+echo: && echo "> Instalando: LUA" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_LuaBridge.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_LuaBridge.bat %pause_option% ) 
 cd ..
 
 cd .\Ogre
-echo: && echo "> Instalando _OGRE_" && echo: 
+echo: && echo "> Instalando: OGRE" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_OGRE.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_OGRE.bat %pause_option% ) 
 cd ..
 
 cd .\Bullet
-echo: && echo "> Instalando _BULLET_" && echo: 
+echo: && echo "> Instalando: BULLET" && echo: 
 if /i "%exec_option%"=="S" ( call .\build_BULLET.bat %pause_option% ) else if /i "%exec_option%"=="P" ( start .\build_BULLET.bat %pause_option% ) 
 cd ..
 
@@ -156,16 +145,41 @@ set "destino=.\Exe\Main\%platform%"
 for /d %%d in (%origen%) do (
 
     if exist "%%d\bin\Debug" (
-        robocopy "%%d\bin\Debug" "%destino%\Debug" "*.dll"
+        robocopy /NJH "%%d\bin\Debug" "%destino%\Debug" "*.dll"
         if /i "%pause_option%"=="S" ( pause )
     )
 
     if exist "%%d\bin\Release" (
-        robocopy "%%d\bin\Release" "%destino%\Release" "*.dll"
+        robocopy /NJH "%%d\bin\Release" "%destino%\Release" "*.dll"
         if /i "%pause_option%"=="S" ( pause )
     )    
 
 )
+
+
+
+rem Prepara el proyecto ejecutable MAIN:
+
+rem Copia de archivos de configuración de Ogre 
+set "origen=.\Dependencies\Ogre\" 
+
+rem Copia para ejecutar desde Visual Studio 
+echo: && echo "> Copiando ficheros necesarios del motor de renderizado de MotorEngine para: desarrollador." && echo: 
+set "destino=.\Projects\Main\" 
+robocopy /NJH %origen% %destino% *.cfg 
+
+if /i "%pause_option%"=="S" ( pause ) 
+
+
+rem Dirección de recursos utilizados 
+set "origen=.\Assets\" 
+
+rem Copia para ejecutar desde Visual Studio 
+echo: && echo "> Copiando recursos almacenados para: desarrollador." && echo: 
+set "destino=.\Projects\Main\Assets\" 
+robocopy /NJH %origen% %destino% /E 
+
+if /i "%pause_option%"=="S" ( pause ) 
 
 
 
@@ -221,5 +235,6 @@ echo:
 rem Check final
 echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
-pause
-endlocal
+rem pause 
+endlocal 
+exit 

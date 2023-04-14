@@ -100,7 +100,7 @@ if not exist "bin\Release\%target%.dll" (
 
 
     rem Copia los binarios .dll
-    robocopy %origen% %destino% *.dll
+    robocopy /NJH %origen% %destino% *.dll
 
     echo: && echo "> Los binarios (.dll) de %project% en modo release han sido copiados." && echo: 
 ) else (
@@ -130,7 +130,7 @@ if not exist "bin\Debug\%target%_d.dll" (
 
 
     rem Copia los binarios .dll
-    robocopy %origen% %destino% *.dll
+    robocopy /NJH %origen% %destino% *.dll
 
     echo: && echo "> Los binarios (.dll) de %project% en modo debug han sido copiados." && echo: 
 ) else (
@@ -155,4 +155,5 @@ echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_ti
 
 
 rem pause 
-endlocal
+endlocal 
+exit 

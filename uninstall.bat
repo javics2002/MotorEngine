@@ -4,29 +4,65 @@ setlocal
 set /p pause_option="> Quieres que se generen pausas? [S/N]: " 
 
 
+
 echo:
 echo Se va ha proceder a borrar el directorio EXE de ./root_project:
 if /i "%pause_option%"=="S" ( pause ) && echo:
 
-rmdir /s /q .\Exe 2>nul && echo - Borrado el directorio ./Exe
+rmdir /s /q .\Exe 2>nul && echo - Borrado el directorio ./Exe || echo - No se ha encontrado el directorio ./Exe 
 
 
 echo:
-echo Se va ha proceder a borrar el registro de la build general:
+echo Se va ha proceder a borrar el directorio LIB de ./root_project:
 if /i "%pause_option%"=="S" ( pause ) && echo:
 
+rmdir /s /q .\Lib 2>nul && echo - Borrado el directorio ./Lib || echo - No se ha encontrado el directorio ./Lib 
 
-rem Elimina si existe el anterior registro
+
+echo:
+echo Se va ha proceder a borrar el directorio TEMP de ./root_project:
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+rmdir /s /q .\Temp 2>nul && echo - Borrado el directorio ./Temp || echo - No se ha encontrado el directorio ./Temp 
+
+
+
+rem Proyecto ejecutable MAIN
+echo:
+echo Se va ha proceder a borrar el directorio ASSETS de ./root_project/Projects/Main/:
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+rmdir /s /q .\Projects\Main\Assets 2>nul && echo - Borrado el directorio ./Projects/Main/Assets || echo - No se ha encontrado el directorio ./Projects/Main/Assets  
+
+if exist "./Projects/Main/*.cfg" ( 
+    
+    del ./Projects/Main/*.cfg 
+    echo - Borrados los ficheros .cfg de ./Projects/Main/ 
+
+) else (
+    echo - No se han encontrado los ficheros .cfg de ./Projects/Main/ 
+)
+
+
+
+echo:
+echo Se va ha proceder a borrar el registro general de la build del motor:
+if /i "%pause_option%"=="S" ( pause ) && echo:
+
+rem Elimina si existe el anterior registro general del motor
 if exist "./build_Output.txt" (
 
     del "./build_Output.txt"
     echo - Borrado el registro general
 
+) else (
+    echo - No se ha encontrado el registro general 
 )
 
 
+
 echo:
-echo Se va ha proceder a borrar el anterior registro de cada dependecncia (si existe):
+echo Se va ha proceder a borrar el anterior registro de cada dependencia (si existe):
 if /i "%pause_option%"=="S" ( pause ) && echo:
 
 
@@ -43,9 +79,12 @@ for %%i in (%deps%) do (
         del ".\%%i\build_Output.txt"
         echo - Borrado el registro de %%i
         
+    ) else (
+        echo - No se encuentra el registro de %%i
     )
 
 )
+
 
 
 rem Borra los directorios autogenerados
@@ -84,8 +123,7 @@ for %%i in (%deps%) do (
 
 )
 
-echo:
 
 
-pause
+echo: && pause 
 endlocal

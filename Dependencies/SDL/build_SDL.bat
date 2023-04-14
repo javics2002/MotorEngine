@@ -28,9 +28,8 @@ set "cmake=..\CMake\bin\cmake.exe"
 
 
 rem Herramientas necesarias:
-rem 1. git          -- Descargar repositorios
-rem 2. cmake        -- Generar builds configuradas
-rem 3. msbuild      -- Compilar usando las herramientas de visual studio
+rem 1. cmake        -- Generar builds configuradas
+rem 2. msbuild      -- Compilar usando las herramientas de visual studio
 
 
 
@@ -63,6 +62,7 @@ if not exist "build/%project%.sln" (
 
     rem Build del proyecto usando CMake
     %cmake% -DCMAKE_CONFIGURATION_TYPES:STRING="Debug;Release;" ^
+    -DSDL_TEST:BOOL="0" ^
     -S ./src -B ./build 
 
     echo: && echo "> La build %src% ha sido creada." && echo: 
@@ -93,7 +93,7 @@ if not exist "bin\Release\%project%.dll" (
 
 
     rem Copia los binarios .dll
-    robocopy %origen% %destino% *.dll
+    robocopy /NJH %origen% %destino% *.dll
 
     echo: && echo "> Los binarios (.dll) de %project% en modo release han sido copiados." && echo: 
 ) else (
@@ -123,7 +123,7 @@ if not exist "bin\Debug\%project%.dll" (
 
 
     rem Copia los binarios .dll
-    robocopy %origen% %destino% *.dll
+    robocopy /NJH %origen% %destino% *.dll
 
     echo: && echo "> Los binarios (.dll) de %project% en modo debug han sido copiados." && echo: 
 ) else (
@@ -148,4 +148,5 @@ echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_ti
 
 
 rem pause 
-endlocal
+endlocal 
+exit 

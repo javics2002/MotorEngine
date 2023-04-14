@@ -73,4 +73,5 @@ echo "> Build %target% finalizada [ inicio: %start_time% // finalizado: %end_tim
 
 
 rem pause 
-endlocal
+endlocal 
+exit 

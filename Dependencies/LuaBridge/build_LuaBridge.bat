@@ -79,6 +79,7 @@ if not exist "build/" (
 
     rem Build del proyecto usando CMake
     %cmake% -DCMAKE_CONFIGURATION_TYPES:STRING="Debug;Release;" ^
+    -DLUABRIDGE_CXX17:BOOL="1" -DBUILD_GMOCK:BOOL="0" -DINSTALL_GTEST:BOOL="0" ^
     -S ./src -B ./build 
 
     echo: && echo "> La build %src% ha sido creada." && echo: 
@@ -132,4 +133,5 @@ echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_ti
 
 
 rem pause 
-endlocal
+endlocal 
+exit 
