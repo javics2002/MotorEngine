@@ -159,7 +159,7 @@ material Material/dust // nombre
 	}
 }
 
-material menubackground
+material Main/background
 {
 	technique
 	{
@@ -170,14 +170,14 @@ material menubackground
 			scene_blend alpha_blend
 			texture_unit 
 			{
-				texture background.png
+				texture mainbackground.png
 				colour_op replace
 			}
 		}
 	}
 }
 
-material menutitle
+material Main/title
 {
 	technique
 	{
@@ -188,7 +188,7 @@ material menutitle
 			scene_blend alpha_blend
 			texture_unit 
 			{
-				texture title.png
+				texture maintitle.png
 				colour_op replace
 			}
 		}

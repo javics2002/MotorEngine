@@ -37,41 +37,41 @@ Entities = {
         }
 	},
 
-    SpriteTest = {
-        UITransform = {
-            position = { x = 0.05, y = 0.07 },
-            scale = { x = 0.1, y = 0.15 },
-            rotation = 0
-        },
-        UISpriteRenderer = {
-            sprite = "oil",     -- Nombre Interno
-            materialName = "oil"  -- Nombre en MaterialsResource
-        }
-    },
+    -- SpriteTest = {
+    --     UITransform = {
+    --         position = { x = 0.05, y = 0.07 },
+    --         scale = { x = 0.1, y = 0.15 },
+    --         rotation = 0
+    --     },
+    --     UISpriteRenderer = {
+    --         sprite = "oil",     -- Nombre Interno
+    --         materialName = "oil"  -- Nombre en MaterialsResource
+    --     }
+    -- },
 
-    SpriteTest2 = {
-        UITransform = {
-            position = { x = 0.8, y = 0.8 },
-            scale = { x = 0.1, y = 0.15 },
-            rotation = 0
-        },
-        UISpriteRenderer = {
-            sprite = "lightning",     -- Nombre Interno
-            materialName = "lightningBolt"  -- Nombre en MaterialsResource
-        }
-    },
+    -- SpriteTest2 = {
+    --     UITransform = {
+    --         position = { x = 0.8, y = 0.8 },
+    --         scale = { x = 0.1, y = 0.15 },
+    --         rotation = 0
+    --     },
+    --     UISpriteRenderer = {
+    --         sprite = "lightning",     -- Nombre Interno
+    --         materialName = "lightningBolt"  -- Nombre en MaterialsResource
+    --     }
+    -- },
 
-    SpriteTest3 = {
-        UITransform = {
-            position = { x = 0.05, y = 0.8 },
-            scale = { x = 0.1, y = 0.15 },
-            rotation = 0
-        },
-        UISpriteRenderer = {
-            sprite = "nerf",     -- Nombre Interno
-            materialName = "nerf"  -- Nombre en MaterialsResource
-        }
-    },
+    -- SpriteTest3 = {
+    --     UITransform = {
+    --         position = { x = 0.05, y = 0.8 },
+    --         scale = { x = 0.1, y = 0.15 },
+    --         rotation = 0
+    --     },
+    --     UISpriteRenderer = {
+    --         sprite = "nerf",     -- Nombre Interno
+    --         materialName = "nerf"  -- Nombre en MaterialsResource
+    --     }
+    -- },
 
 	Cube = {
         Transform = {

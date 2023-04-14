@@ -27,10 +27,17 @@ namespace me {
     };
 
     void SceneManager::removeScene(const SceneName& name) {
-        auto it = mScenes.find(name);
-        if (it != mScenes.end()) {
-            mScenes.erase(it);
-        };
+
+        if (!mScenes.count(name))
+        {
+            std::cout << "Try to remove nullptr Scene with this name " << name << std::endl;
+        }
+        else
+        {
+            Scene* scene = mScenes[name];
+            delete scene;
+            mScenes.erase(name);
+        }
     };
 
     Scene* SceneManager::getScene(const SceneName& name) const {
@@ -52,10 +59,19 @@ namespace me {
     };
 
     void SceneManager::setActiveScene(const SceneName& name) {
-        auto it = mScenes.find(name);
+        /*auto it = mScenes.find(name);
         if (it != mScenes.end()) {
             mActiveScene = it->second;
-        };
+        };*/
+        if (!mScenes.count(name))
+        {
+            std::cout << "Try to access a nullptr Scene with this name " << name << std::endl;
+        }
+        else
+        {
+            mActiveScene = mScenes[name];
+        }
+
     };
 
     void SceneManager::update() {

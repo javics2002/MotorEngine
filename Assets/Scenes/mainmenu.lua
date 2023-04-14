@@ -27,17 +27,10 @@ Entities = {
     },
 
 
-    Background = {
-        UITransform = {
-            position = { x = 0, y = 0 },
-            scale = { x = 1, y = 1},
-            rotation = 0
-        },
-        UISpriteRenderer = {
-            sprite = "menubackground",
-            materialName = "menubackground"
-        }
+    GameManager = {
+        GameManager = {}
     },
+    
 
     Title = {
         UITransform = {
@@ -46,10 +39,25 @@ Entities = {
             rotation = 0
         },
         UISpriteRenderer = {
-            sprite = "menutitle",
-            materialName = "menutitle"
+            sprite = "maintitle",
+            materialName = "Main/title"
+        }
+    },
+
+
+    Background = {
+        UITransform = {
+            position = { x = 0, y = 0 },
+            scale = { x = 1, y = 1},
+            rotation = 0
+        },
+        UISpriteRenderer = {
+            sprite = "mainbackground",
+            materialName = "Main/background"
         }
     }
+
+    
 }
 
 
