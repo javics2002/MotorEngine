@@ -94,7 +94,10 @@ namespace me {
 
         void deleteAllScenes();
 
-        void addGameManager();
+        int addGameManager(const SceneName& sceneName);
+
+        Entity* getGameManager();
+
 
 
     private:

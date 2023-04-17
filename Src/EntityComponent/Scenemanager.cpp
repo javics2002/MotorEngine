@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include "Scene.h"
+#include "Entity.h"
 
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>
@@ -69,7 +70,10 @@ namespace me {
         }
         else
         {
+            
+                
             mActiveScene = mScenes[name];
+           
         }
 
     };
@@ -81,6 +85,11 @@ namespace me {
             mActiveScene->lateUpdate();
             mActiveScene->refresh();
         };
+
+        if (mGameManager)
+        {
+            mGameManager->update();
+        }
     };
 
     int SceneManager::loadEntities(const SceneName& sceneName) {
@@ -109,6 +118,7 @@ namespace me {
         else
             return 1;
 
+         
         return 0;
     }
 
@@ -118,6 +128,57 @@ namespace me {
             delete scene.second;
 
         mScenes.clear();
+    }
+
+    int SceneManager::addGameManager(const SceneName& sceneName)
+    {
+        // Cargamos Lua Bridge
+        lua_State* L = luaL_newstate();
+        luaL_openlibs(L);
+
+        // Abrimos el fichero
+
+        std::string path = "Assets\\Scenes\\" + sceneName;
+
+        if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
+#ifdef _DEBUG
+            std::cout << lua_tostring(L, -1) << "\n";
+#endif
+            return 1;
+        }
+
+        // Comenzamos en el punto de partida
+        lua_getglobal(L, "Entities");
+
+        // Parseamos las entidades
+        if (readEntities(L) == 0)
+        {
+            // Recorrer el mapa de entidades
+            for (auto& infoEntity : mEntitiesMap) {
+                const EntityName entityName = infoEntity.first;
+                InfoEntity* entityComponents = &infoEntity.second;
+
+                // Crear entidad
+                mGameManager = new Entity(entityName);
+
+                // Crear y añadir componentes
+                for (auto& component : *entityComponents) {
+                    const ComponentName* componentName = &component.first;
+                    Parameters* componentInfo = &component.second;
+                    mGameManager->addComponent(*componentName, *componentInfo);
+                }
+            }
+        }
+        else
+            return 1;
+
+        return 0;
+
+    }
+
+    Entity* SceneManager::getGameManager()
+    {
+        return mGameManager;
     }
 
     int SceneManager::readEntities(lua_State* L) {
@@ -197,6 +258,9 @@ namespace me {
     void SceneManager::pushEntities() {
         // Get active scene and call it
         mActiveScene->pushEntities(mEntitiesMap);
+
+        mActiveScene->processNewEntities();
+        mActiveScene->start();
     };
 
 };

@@ -20,7 +20,7 @@ Entities = {
             position = { x = 0, y = 500, z = 500 }
         },
         Light = {
-            name = "DirectionalLight",
+            name = "mainlight",
             direction = { x = 1, y = -1, z = -1 },
             type = 0
         }
