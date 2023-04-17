@@ -28,8 +28,9 @@ void me::RigidBody::start()
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotation().getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
+	btVector3 colliderScale = mColliderScale.v3ToBulletV3();
 
-	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, mColShape,
+	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale, mColShape,
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);
@@ -58,6 +59,7 @@ void me::RigidBody::update()
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
 		mTransform->setRotation(Vector4(rot.x(), rot.y(), rot.z(), rot.w()));
 
+		std::cout << "rbtrx: " << mTransform->getPosition().x << " rbtry: " << mTransform->getPosition().y << " rbtrz: " << mTransform->getPosition().z << '\n';
 	}
 }
 
@@ -96,6 +98,11 @@ void me::RigidBody::setRestitution(float restitution)
 	if(mBtRigidBody != nullptr) mBtRigidBody->setRestitution(restitution);
 }
 
+void me::RigidBody::setColliderScale(Vector3 colliderScale)
+{
+	mColliderScale = colliderScale;
+}
+
 void me::RigidBody::setColShape(Shapes colShape)
 {
 	mColShape = colShape;
@@ -113,8 +120,9 @@ void me::RigidBody::setMomeventType(MovementType mvType)
 
 void me::RigidBody::addForce(Vector3 force)
 {
-	mBtRigidBody->applyCentralForce(force.v3ToBulletV3());
-	//std::cout << "x: " << mBtRigidBody->getTotalForce().x() << "y: " << mBtRigidBody->getTotalForce().y() << "z: " << mBtRigidBody->getTotalForce().z() << '\n';
+	btVector3 v = force.v3ToBulletV3();
+	mBtRigidBody->applyCentralForce(v);
+	std::cout << "rbx: " << mBtRigidBody->getTotalForce().x() << " rby: " << mBtRigidBody->getTotalForce().y() << " rbz: " << mBtRigidBody->getTotalForce().z() << '\n';
 }
 
 void me::RigidBody::addImpulse(Vector3 impulse)

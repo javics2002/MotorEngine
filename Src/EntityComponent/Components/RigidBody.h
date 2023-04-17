@@ -36,6 +36,8 @@ namespace me{
 		*/
 		bool mIsTrigger;
 
+		Vector3 mColliderScale;
+
 		btRigidBody* mBtRigidBody = nullptr;
 		btTransform* mBtTransform = nullptr;
 
@@ -67,6 +69,7 @@ namespace me{
 		void setMass (float mass);
 		void setFriction(float friction);
 		void setRestitution(float restitution);
+		void setColliderScale(Vector3 colliderScale);
 		void setColShape(Shapes colShape);
 		void setMomeventType(MovementType mvType);
 

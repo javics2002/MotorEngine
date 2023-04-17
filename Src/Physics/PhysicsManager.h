@@ -81,7 +81,7 @@ namespace me {
 		@param scale indicates the scale of transform
 		@param size indicates the size of transform
 		*/
-		btCollisionShape* createShape(Shapes shape, const btVector3 &scale);
+		btCollisionShape* createShape(Shapes shape, const btVector3 &scale, const btVector3 &colliderScale);
 
 		/*
 		Create and add a rigidbody to the dynamic world
@@ -96,7 +96,8 @@ namespace me {
 		@param mass mass of the object
 		@param restitution restitution of the object
 		*/
-		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
+		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
+			Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const float& dt);
 	};

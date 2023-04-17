@@ -184,6 +184,8 @@ me::Component* me::FactoryRigidBody::create(Parameters& params)
     rigidbody->setFriction(value(params, "friction", 0.0f));
     rigidbody->setTrigger(value(params, "istrigger", false));
     rigidbody->setColShape(Shapes(value(params, "colshape", SHAPES_BOX)));
+    rigidbody->setColliderScale(Vector3(value(params, "colliderscale_x", 1.0f),
+        value(params, "colliderscale_y", 1.0f), value(params, "colliderscale_z", 1.0f)));
     rigidbody->setMomeventType(MovementType(value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
 
     return rigidbody;
