@@ -38,6 +38,9 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = true;
 
+		int x = 0;
+
+
 	public:
 		/*
 		Default constructor

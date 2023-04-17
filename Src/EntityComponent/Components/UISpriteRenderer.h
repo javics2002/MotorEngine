@@ -25,6 +25,8 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = false;
 
+		int x = 0;
+
 	public:
 
 		/**

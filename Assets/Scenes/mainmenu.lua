@@ -27,19 +27,6 @@ Entities = {
     },
  
 
-    Title = {
-        UITransform = {
-            position = { x = 0.25, y = 0.1 },
-            scale = { x = 0.5, y = 0.2},
-            rotation = 0
-        },
-        UISpriteRenderer = {
-            sprite = "maintitle",
-            materialName = "Main/title"
-        }
-    },
-
-
     Background = {
         UITransform = {
             position = { x = 0, y = 0 },
@@ -49,6 +36,18 @@ Entities = {
         UISpriteRenderer = {
             sprite = "mainbackground",
             materialName = "Main/background"
+        }
+    },
+    Title = {
+
+        UISpriteRenderer = {
+            sprite = "maintitle",
+            materialName = "Main/title"
+        },
+        UITransform = {
+            position = { x = 0.25, y = 0.1 },
+            scale = { x = 0.5, y = 0.2},
+            rotation = 0
         }
     }
 

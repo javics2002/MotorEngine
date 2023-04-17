@@ -35,16 +35,23 @@ void me::UISpriteRenderer::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
 
-	assert(mUITransform && "An Entity doesn't have the UITransform component");
-	if (mSpriteName.size() > 0)
-	{
-		renderManager().createSprite(mName, mSpriteName);
-		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
-	}
+
 }
 
 void me::UISpriteRenderer::update()
 {
+	if (x == 0) {
+		x++;
+		mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+		assert(mUITransform && "An Entity doesn't have the UITransform component");
+		if (mSpriteName.size() > 0)
+		{
+			renderManager().createSprite(mName, mSpriteName);
+			renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
+		}
+
+	}
+
 	if (!mStaticObject)
 	{
 		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());

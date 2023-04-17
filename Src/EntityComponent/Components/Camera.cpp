@@ -18,15 +18,21 @@ Camera::~Camera()
 
 void Camera::start()
 {
-	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
-	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
+
 }
 
 void Camera::update()
 {
+	if (x == 0) {
+		x++;
+		mTransform = getEntity()->getComponent<Transform>("transform");
+		renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
+		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
+	}
+
 	if (!mStaticObject)
 	{
+		
 		//renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 	}
 }
