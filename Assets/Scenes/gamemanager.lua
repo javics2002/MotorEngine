@@ -1,0 +1,9 @@
+Entities = {
+
+    gameManager = {
+        GameManager = {}
+    }
+    
+}
+
+

@@ -25,12 +25,7 @@ Entities = {
             type = 0
         }
     },
-
-
-    GameManager = {
-        GameManager = {}
-    },
-    
+ 
 
     Title = {
         UITransform = {
@@ -57,7 +52,6 @@ Entities = {
         }
     }
 
-    
 }
 
 
