@@ -158,11 +158,11 @@ Entities = {
         },
         camera = {
             lookat = { x = 0, y = 10, z = 0 },
-            name = "main",
+            name = "game",
             neardistance = 10,
             fardistance = 100000,
             autoratio = true,
-            zorder = 0,
+            zorder = 1,
             backgroundcolor = { r = .72, g = .92, b = 1, a = 1  }
         }
         -- camerafollow = { target = car }

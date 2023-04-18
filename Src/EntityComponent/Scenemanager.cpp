@@ -1,4 +1,4 @@
-#include "SceneManager.h"
+ï»¿#include "SceneManager.h"
 #include "Scene.h"
 #include "Entity.h"
 
@@ -70,10 +70,10 @@ namespace me {
         }
         else
         {
-            
-                
+
+
             mActiveScene = mScenes[name];
-           
+
         }
 
     };
@@ -113,12 +113,14 @@ namespace me {
 
         // Parseamos las entidades
         if (readEntities(L) == 0)
-            // Las mandamos a la escena
+        {    // Las mandamos a la escena
             pushEntities();
+            mEntitiesMap.clear();
+        }
         else
             return 1;
 
-         
+
         return 0;
     }
 
@@ -161,13 +163,14 @@ namespace me {
                 // Crear entidad
                 mGameManager = new Entity(entityName);
 
-                // Crear y añadir componentes
+                // Crear y aï¿½adir componentes
                 for (auto& component : *entityComponents) {
                     const ComponentName* componentName = &component.first;
                     Parameters* componentInfo = &component.second;
                     mGameManager->addComponent(*componentName, *componentInfo);
                 }
             }
+            mEntitiesMap.clear();
         }
         else
             return 1;
@@ -182,75 +185,75 @@ namespace me {
     }
 
     int SceneManager::readEntities(lua_State* L) {
-	    lua_pushnil(L);
+        lua_pushnil(L);
 
-	    if (!lua_istable(L, -2)) {
-		    std::cout << "Expected a table of entities, got " << lua_typename(L, lua_type(L, -2)) << "\n";
-		    return 1;
-	    }
-	    else {
-		    // Hemos encontrado las entidades
-		    while (lua_next(L, -2) != 0) {
-			    if (lua_isstring(L, -2)) {
-				    // Nombre de las entidades
-				    std::string entityName = lua_tostring(L, -2);
-				
-				    for (char& c : entityName)
-					    c = tolower(c);
+        if (!lua_istable(L, -2)) {
+            std::cout << "Expected a table of entities, got " << lua_typename(L, lua_type(L, -2)) << "\n";
+            return 1;
+        }
+        else {
+            // Hemos encontrado las entidades
+            while (lua_next(L, -2) != 0) {
+                if (lua_isstring(L, -2)) {
+                    // Nombre de las entidades
+                    std::string entityName = lua_tostring(L, -2);
 
-				    mEntitiesMap[entityName];
+                    for (char& c : entityName)
+                        c = tolower(c);
 
-				    // Lectura de componentes
-				    lua_pushnil(L);
-				    while (lua_next(L, -2) != 0) {
-					    if (lua_isstring(L, -2)) {
-						    std::string componentName = lua_tostring(L, -2);
-						    for (char& c : componentName)
-							    c = tolower(c);
+                    mEntitiesMap[entityName];
+
+                    // Lectura de componentes
+                    lua_pushnil(L);
+                    while (lua_next(L, -2) != 0) {
+                        if (lua_isstring(L, -2)) {
+                            std::string componentName = lua_tostring(L, -2);
+                            for (char& c : componentName)
+                                c = tolower(c);
 
                             mEntitiesMap[entityName][componentName];
 
-						    // Lectura de información del componente
-						    lua_pushnil(L);
-						    while (lua_next(L, -2) != 0) {
-							    if (lua_isstring(L, -2)) {
-								    std::string fieldName = lua_tostring(L, -2);
-								    for (char& c : fieldName)
-									    c = tolower(c);
+                            // Lectura de informaciï¿½n del componente
+                            lua_pushnil(L);
+                            while (lua_next(L, -2) != 0) {
+                                if (lua_isstring(L, -2)) {
+                                    std::string fieldName = lua_tostring(L, -2);
+                                    for (char& c : fieldName)
+                                        c = tolower(c);
 
-								    // Valores del componente
-								    std::string fieldValue;
-								    if (lua_istable(L, -1)) {
-									    for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
-										    std::string key = fieldName + "_" + lua_tostring(L, -2);
-										    std::string value = lua_tostring(L, -1);
+                                    // Valores del componente
+                                    std::string fieldValue;
+                                    if (lua_istable(L, -1)) {
+                                        for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
+                                            std::string key = fieldName + "_" + lua_tostring(L, -2);
+                                            std::string value = lua_tostring(L, -1);
 
-										    fieldValue += key + ":" + value + ",";
+                                            fieldValue += key + ":" + value + ",";
 
                                             mEntitiesMap[entityName][componentName][key] = value;
-									    }
+                                        }
 
-									    if(fieldValue.size() > 0)
-										    fieldValue.pop_back(); // Eliminamos la ultima coma
-								    }
-								    else {
-									    if (lua_isstring(L, -1))
-										    fieldValue = lua_tostring(L, -1);
-									    else if (lua_isboolean(L, -1))
-										    fieldValue = std::to_string(lua_toboolean(L, -1));
+                                        if (fieldValue.size() > 0)
+                                            fieldValue.pop_back(); // Eliminamos la ultima coma
+                                    }
+                                    else {
+                                        if (lua_isstring(L, -1))
+                                            fieldValue = lua_tostring(L, -1);
+                                        else if (lua_isboolean(L, -1))
+                                            fieldValue = std::to_string(lua_toboolean(L, -1));
 
                                         mEntitiesMap[entityName][componentName][fieldName] = fieldValue;
-								    }
-							    }
-							    lua_pop(L, 1);
-						    }
-					    lua_pop(L, 1);
-					    }
-				    }
-			    }
-			    lua_pop(L, 1);
-		    }
-	    }
+                                    }
+                                }
+                                lua_pop(L, 1);
+                            }
+                            lua_pop(L, 1);
+                        }
+                    }
+                }
+                lua_pop(L, 1);
+            }
+        }
 
         return 0;
     };

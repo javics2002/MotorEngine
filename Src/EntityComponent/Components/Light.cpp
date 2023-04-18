@@ -11,6 +11,7 @@ Light::Light()
 
 Light::~Light()
 {
+	renderManager().destroyLight(mName);
 }
 
 void Light::start()

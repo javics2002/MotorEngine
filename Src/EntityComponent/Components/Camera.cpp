@@ -18,7 +18,9 @@ Camera::~Camera()
 
 void Camera::start()
 {
-
+	mTransform = getEntity()->getComponent<Transform>("transform");
+	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
+	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
 void Camera::update()

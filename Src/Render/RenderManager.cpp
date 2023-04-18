@@ -223,11 +223,9 @@ me::RenderManager::~RenderManager()
 	}
 	mSprites.clear();
 
-	for (auto& it3 : mLights) {
-		Ogre::SceneNode* node = it3.second->getParentSceneNode();
-		node->detachAllObjects();
-		mSM->destroyLight(it3.second);
-		mSM->destroySceneNode(node);
+	for (auto& it4 : mLights) {
+		delete it4.second;
+		
 	}
 	mLights.clear();
 
@@ -325,6 +323,24 @@ void RenderManager::createNewLight(std::string name, const Vector3& pos, const V
 	lightNode->setDirection(dir.v3ToOgreV3());
 	lightNode->setPosition(pos.v3ToOgreV3());
 	mLights[name] = light;
+}
+
+void me::RenderManager::destroyLight(std::string name)
+{
+	
+	if (!mLights.count(name))
+	{
+		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+	}
+	else
+	{
+		Ogre::Light* light = mLights[name];
+		Ogre::SceneNode* node = light->getParentSceneNode();
+		node->detachAllObjects();
+		mSM->destroyLight(light);
+		mSM->destroySceneNode(node);
+		mLights.erase(name);
+	}
 }
 
 bool RenderManager::createMesh(std::string name, std::string nameMesh)
@@ -492,6 +508,7 @@ void RenderManager::destroyUISprite(std::string name)
 	else
 	{
 		sprite->getOgreOverlay()->remove2D(dynamic_cast<Ogre::OverlayContainer*>(sprite->getOgreOverlayElement()));
+		mOverlayManager->destroy(sprite->getOgreOverlay());
 		mOverlayManager->destroyOverlayElement(sprite->getOgreOverlayElement());
 		delete sprite;
 		mSprites.erase(name);

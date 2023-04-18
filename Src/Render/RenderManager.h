@@ -242,6 +242,7 @@ namespace me {
 
 		//destroy OgreCamera created 
 		void destroyCamera(std::string name);
+		
 
 		/**
 		Create the light with this name
@@ -250,6 +251,9 @@ namespace me {
 		@param dir: direction of light
 		*/
 		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir);
+
+		//destroy Light created
+		void destroyLight(std::string name);
 		
 		/**
 		Create the ogreMesh with this name 
