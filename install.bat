@@ -12,7 +12,7 @@ if /I "%1"=="" (
 
     set /p pause_option="> Quieres que se generen pausas? [S/N]: "
 
-) else ( set "pause_option=%1" )
+) else ( set "pause_option=%1" ) 
 
 
 
