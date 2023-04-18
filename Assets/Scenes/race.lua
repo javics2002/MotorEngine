@@ -162,7 +162,7 @@ Entities = {
             neardistance = 10,
             fardistance = 100000,
             autoratio = true,
-            zorder = 1,
+            zorder = 0,
             backgroundcolor = { r = .72, g = .92, b = 1, a = 1  }
         }
         -- camerafollow = { target = car }

@@ -79,6 +79,11 @@ namespace me {
     };
 
     void SceneManager::update() {
+
+        if (mGameManager)
+        {
+            mGameManager->update();
+        }
         if (mActiveScene) {
             mActiveScene->processNewEntities();
             mActiveScene->update();
@@ -86,10 +91,7 @@ namespace me {
             mActiveScene->refresh();
         };
 
-        if (mGameManager)
-        {
-            mGameManager->update();
-        }
+        
     };
 
     int SceneManager::loadEntities(const SceneName& sceneName) {

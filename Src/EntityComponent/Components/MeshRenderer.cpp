@@ -11,23 +11,19 @@ me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
 	mMeshName = nameMesh;
 }
 
-me::MeshRenderer::MeshRenderer()
-{
-}
 
 me::MeshRenderer::~MeshRenderer()
 {
 	renderManager().destroyMesh(mName);
 }
 
-void me::MeshRenderer::init(std::string name, std::string nameMesh)
+void me::MeshRenderer::init()
 {
-	mName = name;
-	mMeshName = nameMesh;
+	
 	if (mMeshName.size() > 0)
 	{
 		renderManager().createMesh(mName, mMeshName);
-		renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
+		
 	}
 }
 
@@ -36,11 +32,8 @@ void me::MeshRenderer::start()
 	mTransform = getEntity()->getComponent<Transform>("transform");
 
 	assert(mTransform && "An Entity doesn't have the transform component");
-	if (mMeshName.size() > 0)
-	{
-		renderManager().createMesh(mName, mMeshName);
-		renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
-	}
+
+	renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }
 
 void me::MeshRenderer::update()

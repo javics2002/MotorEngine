@@ -507,9 +507,11 @@ void RenderManager::destroyUISprite(std::string name)
 	}
 	else
 	{
-		sprite->getOgreOverlay()->remove2D(dynamic_cast<Ogre::OverlayContainer*>(sprite->getOgreOverlayElement()));
+		Ogre::OverlayElement* ove = sprite->getOgreOverlayElement();
+		Ogre::Overlay* ov = sprite->getOgreOverlay();
+
+		mOverlayManager->destroyOverlayElement(ove);
 		mOverlayManager->destroy(sprite->getOgreOverlay());
-		mOverlayManager->destroyOverlayElement(sprite->getOgreOverlayElement());
 		delete sprite;
 		mSprites.erase(name);
 	}

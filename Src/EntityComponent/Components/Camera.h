@@ -85,6 +85,7 @@ namespace me {
 		*/
 		void start() override;
 
+		void init();
 		/**
 		Update transform info to camera node
 		*/
