@@ -186,6 +186,14 @@ namespace me {
         return mGameManager;
     }
 
+    void SceneManager::changeScene(std::string newScene)
+    {
+        removeScene(getActiveScene()->getName());
+        if (mGameManager != nullptr) {
+        }
+
+    }
+
     int SceneManager::readEntities(lua_State* L) {
         lua_pushnil(L);
 

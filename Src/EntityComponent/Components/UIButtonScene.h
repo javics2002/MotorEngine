@@ -1,10 +1,15 @@
 #pragma once
 
-#ifndef __ENTITYCOMPONENT_UISPRITERENDERER
-#define __ENTITYCOMPONENT_UISPRITERENDERER
+#ifndef __ENTITYCOMPONENT_UISBUTTONSCENE
+#define __ENTITYCOMPONENT_UISBUTTONSCENE
 
 #include "Component.h"
 #include <string>
+#include "UIElement.h"
+
+namespace Ogre {
+	class TextAreaOverlayElement;
+}
 
 namespace me {
 	class UITransform;
@@ -12,7 +17,7 @@ namespace me {
 	/**
 	The UISpriteRenderer class represents a visual object in 2D space as a screen overlay that will be attached to an entity.
 	*/
-	class __MOTORENGINE_API UISpriteRenderer : public Component
+	class __MOTORENGINE_API UIButtonScene : public UIElement
 	{
 	private:
 	protected:
@@ -25,6 +30,10 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = false;
 
+		std::string mNewScene;
+
+		Ogre::TextAreaOverlayElement* mButtonArea;
+
 		int x = 0;
 
 	public:
@@ -34,16 +43,18 @@ namespace me {
 		@param name: name saved in RenderManager map and used for entity that attached in node
 		@param meshName: name of .png file
 		*/
-		UISpriteRenderer();
+		UIButtonScene();
 		//Destroy RenderManager map saved image
-		~UISpriteRenderer();
+		~UIButtonScene();
 
-		void init(std::string name, std::string spriteName);
+		void init(std::string name, std::string materialName, float width, float height, float left, float top);
 
 		/**
 		Get info for UITransform, create the Sprite and set the start pos
 		*/
 		void start() override;
+
+		void setNewScene(std::string newScene);
 
 
 		/**
@@ -51,11 +62,7 @@ namespace me {
 		*/
 		void update() override;
 
-
-		/**
-		Set it is static entity or not
-		*/
-		void setStatic(bool stat);
+		void execute();
 
 		/**
 		 Set material.

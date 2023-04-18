@@ -85,6 +85,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Components\UIButtonScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h">
@@ -154,5 +155,6 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Components\UIButtonScene.h" />
   </ItemGroup>
 </Project>

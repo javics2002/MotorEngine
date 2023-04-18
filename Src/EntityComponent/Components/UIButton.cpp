@@ -7,6 +7,8 @@
 
 me::UIButton::UIButton(std::string name, float width, float height, float left, float top)
 {
+
+
 	mButtonArea = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + std::to_string(mElems)));
 	mOverlay = mOverlayManager->create(name + std::to_string(mElems));
 
@@ -40,6 +42,8 @@ void me::UIButton::handleInput()
 		}*/
 	}
 }
+
+
 
 void me::UIButton::onClick(std::function<void()> l)
 {

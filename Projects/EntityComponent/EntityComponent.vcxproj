@@ -37,6 +37,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\Transform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIButton.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Components\UIButtonScene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIContainer.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIElement.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp" />
@@ -62,6 +63,7 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\RigidBody.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\Transform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIButton.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Components\UIButtonScene.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIContainer.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIElement.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.h" />

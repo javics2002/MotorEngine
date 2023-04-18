@@ -98,6 +98,7 @@ namespace me {
 
         Entity* getGameManager();
 
+        void changeScene(std::string newScene);
 
 
     private:

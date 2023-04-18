@@ -221,7 +221,8 @@ me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
     std::string materialName = value(params, "materialname", std::string());
     bool staticState = value(params, "staticobj", false);
 
-    UISpriteRenderer* spriteRenderer = new UISpriteRenderer(sprite, materialName);
+    UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
+    spriteRenderer->init(sprite, materialName);
     spriteRenderer->setStatic(staticState);
 
     return spriteRenderer;
