@@ -34,7 +34,8 @@ void me::RigidBody::start()
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);
-	mBtRigidBody->setGravity(btVector3(0, 0, 0));
+	//mBtRigidBody->setGravity(btVector3(0, 0, 0));
+	//mBtRigidBody->setActivationState(DISABLE_DEACTIVATION);
 	
 }
 
@@ -58,8 +59,8 @@ void me::RigidBody::update()
 		//update transform position and rotation
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
 		mTransform->setRotation(Vector4(rot.x(), rot.y(), rot.z(), rot.w()));
-
-		std::cout << "rbtrx: " << mTransform->getPosition().x << " rbtry: " << mTransform->getPosition().y << " rbtrz: " << mTransform->getPosition().z << '\n';
+		mBtRigidBody->activate(true);
+		//std::cout << "rbtrx: " << mTransform->getPosition().x << " rbtry: " << mTransform->getPosition().y << " rbtrz: " << mTransform->getPosition().z << '\n';
 	}
 }
 
@@ -122,7 +123,6 @@ void me::RigidBody::addForce(Vector3 force)
 {
 	btVector3 v = force.v3ToBulletV3();
 	mBtRigidBody->applyCentralForce(v);
-	std::cout << "rbx: " << mBtRigidBody->getTotalForce().x() << " rby: " << mBtRigidBody->getTotalForce().y() << " rbz: " << mBtRigidBody->getTotalForce().z() << '\n';
 }
 
 void me::RigidBody::addImpulse(Vector3 impulse)
@@ -132,7 +132,7 @@ void me::RigidBody::addImpulse(Vector3 impulse)
 
 void me::RigidBody::addTorque(Vector3 torque)
 {
-	mBtRigidBody->applyTorque(torque.v3ToBulletV3());
+	mBtRigidBody->applyTorqueImpulse(torque.v3ToBulletV3());
 }
 
 bool me::RigidBody::getTrigger()

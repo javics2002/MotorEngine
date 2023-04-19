@@ -179,10 +179,10 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 		shape_ = new btBoxShape(btVector3(scale.x(), scale.y(), scale.z())*colliderScale);
 		break;
 	case SHAPES_CYLINDER:
-		shape_ = new btCylinderShape(scale);
+		shape_ = new btCylinderShape(scale*colliderScale);
 		break;
 	case SHAPES_CAPSULE:
-		shape_ = new btCapsuleShape(scale.x(), scale.y());
+		shape_ = new btCapsuleShape(scale.x()*colliderScale.x(), scale.y()*colliderScale.y());
 		break;
 	default:
 		shape_ = new btSphereShape(scale.length());
@@ -236,28 +236,7 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 void me::PhysicsManager::update(const float& dt)
 {
 
-	for (int j = mDynamicsWorld->getNumCollisionObjects() - 1; j >= 0; j--)
-	{
-		btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[j];
-		btRigidBody* body = btRigidBody::upcast(obj);
-		btTransform trans = body->getWorldTransform();
-		if (trans.getOrigin().y() != 10) {
-			std::cout << "dwx: " << body->getTotalForce().x() << " dwy: " << body->getTotalForce().y() << " dwz: " << body->getTotalForce().z() << '\n';
-			std::cout << "dwtrx: " << trans.getOrigin().x() << " dwtry: " << trans.getOrigin().y() << " dwtrz: " << trans.getOrigin().z() << '\n';
-		}
-	}
-
 	mDynamicsWorld->stepSimulation(dt);
-
-	//for (int j = mDynamicsWorld->getNumCollisionObjects() - 1; j >= 0; j--)
-	//{
-	//	btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[j];
-	//	btRigidBody* body = btRigidBody::upcast(obj);
-	//	btTransform trans = body->getWorldTransform();
-	//	if (trans.getOrigin().y() != 10) {
-	//		std::cout << "dw2x: " << body->getTotalForce().x() << " dw2y: " << body->getTotalForce().y() << " dw2z: " << body->getTotalForce().z() << '\n';
-	//	}
-	//}
 
 #ifdef _DEBUG
 	mDebug->clear();
