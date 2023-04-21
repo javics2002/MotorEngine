@@ -158,9 +158,7 @@ for /d %%d in (%origen%) do (
 
 
 
-rem Prepara el proyecto ejecutable MAIN:
-
-rem Copia de archivos de configuración de Ogre 
+rem ( OGRE .cfg ) actualiza los ficheros de configuración de Ogre
 set "origen=.\Dependencies\Ogre\" 
 
 rem Copia para ejecutar desde Visual Studio 
@@ -170,14 +168,12 @@ robocopy /NJH %origen% %destino% *.cfg
 
 if /i "%pause_option%"=="S" ( pause ) 
 
-
-rem Dirección de recursos utilizados 
-set "origen=.\Assets\" 
-
-rem Copia para ejecutar desde Visual Studio 
-echo: && echo "> Copiando recursos almacenados para: desarrollador." && echo: 
-set "destino=.\Projects\Main\Assets\" 
-robocopy /NJH %origen% %destino% /E 
+rem Copia para ejecutar directamente 
+echo: && echo "> Copiando ficheros necesarios del motor de renderizado de MotorEngine para: build final." && echo: 
+set "destino=.\Exe\Main\x64\Debug\" 
+robocopy /NJH %origen% %destino% *.cfg 
+set "destino=.\Exe\Main\x64\Release\" 
+robocopy /NJH %origen% %destino% *.cfg 
 
 if /i "%pause_option%"=="S" ( pause ) 
 
