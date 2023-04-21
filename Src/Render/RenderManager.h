@@ -8,7 +8,6 @@
 #include "Utils/Vector2.h"
 #include <unordered_map>
 #include <string>
-#include <OgreColourValue.h>
 
 namespace Ogre {
 	class Root;
@@ -23,6 +22,7 @@ namespace Ogre {
 	class OverlayManager;
 	class OverlaySystem;
 	class Overlay;
+	class Light;
 	template<int dism, typename T>
 	class Vector;
 	typedef Vector<3, float> Vector3f;
@@ -309,6 +309,7 @@ namespace me {
 		//set position info to the mesh with this name
 		bool setUISpritePosition(std::string name, Vector2 pos);
 		//set scale info to the mesh with this name
+
 		bool setUISpriteScale(std::string name, Vector2 scale);
 		//set rotation info to the mesh with this name
 		bool setUISpriteRotation(std::string name, float rot);

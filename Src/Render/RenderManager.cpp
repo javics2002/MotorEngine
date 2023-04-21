@@ -36,6 +36,7 @@
 #include <OgreAnimation.h>
 #include <OgreKeyFrame.h>
 
+
 using namespace me;
 
 RenderManager::RenderManager()
@@ -464,6 +465,7 @@ bool RenderManager::setUISpritePosition(std::string name, Vector2 pos)
 
 	return true;
 }
+
 
 bool RenderManager::setUISpriteScale(std::string name, Vector2 scale)
 {

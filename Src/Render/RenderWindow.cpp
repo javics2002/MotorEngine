@@ -77,7 +77,7 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	SDL_GetWindowWMInfo(mSdlWindow, &wmInfo,wmInfo.version);
 
 	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
-	mRenderWindow = root->createRenderWindow(mWindowName, w, h, false, &miscParams);
+	mRenderWindow = root->createRenderWindow(mWindowName, window().getWindowWidth(), window().getWindowHeight(), false, &miscParams);
 
 	SDL_ShowCursor();
 	//SDL_HideCursor();

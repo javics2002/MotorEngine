@@ -49,7 +49,22 @@ Entities = {
             scale = { x = 0.5, y = 0.2},
             rotation = 0
         }
+    },
+    PlayButton = {
+	
+        UIButtonScene = {
+            sprite = "mainbutton",
+            materialName = "Main/button",
+            scene = "Race"
+        },
+
+        UITransform = {
+            position = { x = 0.25, y = 0.35 },
+            scale = { x = 0.2, y = 0.2},
+            rotation = 0
+        }
     }
+    
 
 }
 

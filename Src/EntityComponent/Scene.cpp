@@ -95,9 +95,15 @@ namespace me {
 	void Scene::processNewEntities()
 	{
 		for (auto& entityPtr : mNewEntities) {
+			entityPtr->start();
+		};
+
+		for (auto& entityPtr : mNewEntities) {
 			mEntities.emplace(entityPtr->getName(), std::move(entityPtr));
 		};
+
 		mNewEntities.clear();
+
 	};
 
 	void Scene::pushEntities(InfoScene& entitiesMap)

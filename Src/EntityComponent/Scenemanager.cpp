@@ -273,7 +273,6 @@ namespace me {
         mActiveScene->pushEntities(mEntitiesMap);
 
         mActiveScene->processNewEntities();
-        mActiveScene->start();
     };
 
 };

@@ -45,6 +45,8 @@ namespace me {
 		//Reference to SDL Window class
 		SDL_Window* window;
 
+		int mWidth, mHeight;
+
 	public:
 		~Window();
 
@@ -52,6 +54,15 @@ namespace me {
 		* @returns The window that was created or NULL on failure. Call SDL_GetError() for more information.
 		*/
 		SDL_Window* get();
+
+		/**
+		* @returns The window width
+		*/
+		int getWindowWidth();
+		/**
+		* @returns The window height
+		*/
+		int getWindowHeight();
 	};
 
 	/**

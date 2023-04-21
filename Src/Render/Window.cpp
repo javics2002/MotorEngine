@@ -15,6 +15,8 @@ Window::Window()
 
 Window::Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, uint32_t windowFlags)
 {
+	mWidth = w;
+	mHeight = h;
 	SDL_Init(sdlFlags);
 	window = SDL_CreateWindow(name, x, y, w, h, windowFlags);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL, SDL_RENDERER_SOFTWARE);
@@ -33,4 +35,14 @@ Window::~Window()
 SDL_Window* Window::get()
 {
 	return window;
+}
+
+int me::Window::getWindowWidth()
+{
+	return mWidth;
+}
+
+int me::Window::getWindowHeight()
+{
+	return mHeight;
 }
