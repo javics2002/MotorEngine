@@ -64,6 +64,25 @@ me::PhysicsManager::~PhysicsManager()
 	delete mCollisionConfiguration;
 }
 
+void me::PhysicsManager::destroyRigidBody(btRigidBody *rb) {
+
+
+	if (rb && rb->getMotionState())
+	{
+		delete rb->getMotionState();
+	}
+	mDynamicsWorld->removeCollisionObject(rb);
+
+	btCollisionShape* shape = rb->getCollisionShape();
+	std::vector<btCollisionShape*>::iterator it = std::find(mCollisionShapes.begin(), mCollisionShapes.end(), shape);
+	if (it != mCollisionShapes.end()) {
+		delete shape;
+		mCollisionShapes.erase(it);
+	}
+	
+
+}
+
 /*
 Collision Enter Callback, mainfold can get the 
 pointers of the rigid bodies that have collided

@@ -52,6 +52,9 @@ namespace me {
 		*/
 		~PhysicsManager();
 
+
+		void destroyRigidBody(btRigidBody* rb);
+
 		/**
 		Initializes a default collision configuration,
 		a collision dispatcher, a broadphase interface, and a dynamics world.
@@ -100,6 +103,7 @@ namespace me {
 			Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const float& dt);
+
 	};
 
 	/**

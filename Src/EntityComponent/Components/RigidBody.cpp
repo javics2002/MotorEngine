@@ -16,7 +16,11 @@ me::RigidBody::RigidBody()
 
 me::RigidBody::~RigidBody()
 {
+	me::physicsManager().destroyRigidBody(mBtRigidBody);
+	mBtRigidBody = nullptr;
 	delete mBtTransform;
+	
+	
 }
 
 void me::RigidBody::start()
