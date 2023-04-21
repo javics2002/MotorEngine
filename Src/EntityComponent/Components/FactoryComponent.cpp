@@ -109,6 +109,7 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setBackgroundColour(Vector4(value(params, "backgroundcolor_r", .0f), value(params, "backgroundcolor_g", .0f),
         value(params, "backgroundcolor_b", .0f), value(params, "backgroundcolor_a", 1.0f)));
     camera->setLookAt(Vector3(value(params, "lookat_x", 0), value(params, "lookat_y", 0), value(params, "lookat_z", 0)));
+    camera->init();
 
     return camera;
 }
@@ -132,10 +133,7 @@ void me::FactoryCollider::destroy(Component* component)
 
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
-    if (params.empty())
-    {
-        return new MeshRenderer();
-    }
+    
     std::string mesh = value(params, "mesh", std::string());
     std::string meshName = value(params, "meshname", std::string());
     std::string materialName = value(params, "materialname", std::string());
@@ -144,6 +142,8 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
     MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
     meshRenderer->setMaterial(materialName);
     meshRenderer->setStatic(staticState);
+
+    meshRenderer->init();
 
     return meshRenderer;
 }
@@ -223,7 +223,8 @@ me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
     std::string materialName = value(params, "materialname", std::string());
     bool staticState = value(params, "staticobj", false);
 
-    UISpriteRenderer* spriteRenderer = new UISpriteRenderer(sprite, materialName);
+    UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
+    spriteRenderer->init(sprite, materialName);
     spriteRenderer->setStatic(staticState);
 
     return spriteRenderer;

@@ -12,7 +12,7 @@ class lua_State;
 
 namespace me {
     class Scene;
-
+    class Entity;
     /**
     SceneManager stores all existing scenes and swaps which one is the active one
     at will. All other scenes are inactive.
@@ -94,6 +94,13 @@ namespace me {
 
         void deleteAllScenes();
 
+        int addGameManager(const SceneName& sceneName);
+
+        Entity* getGameManager();
+
+        void changeScene(std::string newScene);
+
+
     private:
 
         /*
@@ -109,9 +116,10 @@ namespace me {
         */
         void pushEntities();
 
+
         std::unordered_map<SceneName, Scene*> mScenes;
         Scene* mActiveScene;
-
+        Entity* mGameManager = nullptr;
         InfoScene mEntitiesMap;
     };
 

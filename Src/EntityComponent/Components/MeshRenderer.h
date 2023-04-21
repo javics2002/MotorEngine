@@ -37,7 +37,7 @@ namespace me {
 		//Destroy om() map saved mesh (ogreMesh)
 		~MeshRenderer();
 
-		void init(std::string name, std::string meshName);
+		void init();
 
 		/**
 		Get info for mTransform and create ogreMesh and set the start pos

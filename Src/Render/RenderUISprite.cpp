@@ -11,10 +11,12 @@ me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement*
 	mOverlay = overlay;
 	mPanel = panel;
 
+	mMaterialName = spriteMaterialName;
+
 	panel->setMaterialName(spriteMaterialName);
 
 	overlay->add2D(dynamic_cast<Ogre::OverlayContainer*>(panel));
-	overlay->setZOrder(10);
+	overlay->setZOrder(1);
 	overlay->show();
 }
 

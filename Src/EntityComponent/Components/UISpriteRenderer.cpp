@@ -5,11 +5,6 @@
 #include "Utils/Vector2.h"
 #include <OgreVector3.h>
 
-me::UISpriteRenderer::UISpriteRenderer(std::string name, std::string nameSprite)
-{
-	mName = name;
-	mSpriteName = nameSprite;
-}
 
 me::UISpriteRenderer::UISpriteRenderer()
 {
@@ -24,27 +19,23 @@ void me::UISpriteRenderer::init(std::string name, std::string nameSprite)
 {
 	mName = name;
 	mSpriteName = nameSprite;
+
 	if (mSpriteName.size() > 0)
 	{
 		renderManager().createSprite(mName, mSpriteName);
-		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
 	}
 }
 
 void me::UISpriteRenderer::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
 
-	assert(mUITransform && "An Entity doesn't have the UITransform component");
-	if (mSpriteName.size() > 0)
-	{
-		renderManager().createSprite(mName, mSpriteName);
-		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
-	}
 }
 
 void me::UISpriteRenderer::update()
 {
+
 	if (!mStaticObject)
 	{
 		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());

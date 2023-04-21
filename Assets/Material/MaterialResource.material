@@ -158,3 +158,39 @@ material Material/dust // nombre
 		}
 	}
 }
+
+material Main/background
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture mainbackground.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material Main/title
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture maintitle.png
+				colour_op replace
+			}
+		}
+	}
+}

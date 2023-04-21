@@ -81,8 +81,8 @@ bool MotorEngine::setup(std::string gameName)
 
 void MotorEngine::loop()
 {
-	sceneManager().getActiveScene()->processNewEntities();
-	sceneManager().getActiveScene()->start();
+	//sceneManager().getActiveScene()->processNewEntities();
+	//sceneManager().getActiveScene()->start();
 
 	/*
 	Init Time Utils

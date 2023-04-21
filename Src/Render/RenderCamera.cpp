@@ -41,6 +41,7 @@ void me::RenderCamera::createCamera(const char* name, float nearDist, float farD
 me::RenderCamera::~RenderCamera()
 {
 	mCameraNode->detachAllObjects();
+	mRenderWindow->removeViewport(mViewport->getZOrder());
 	mSceneMgr->destroyCamera(mCamera);
 	mSceneMgr->destroySceneNode(mCameraNode);
 }
