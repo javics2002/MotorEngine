@@ -188,7 +188,6 @@ RenderMesh* RenderManager::getMesh(std::string name)
 
 RenderCamera* RenderManager::getCamera(std::string name)
 {
-
 	if (!mCameras.count(name))
 		return nullptr;
 
@@ -283,9 +282,20 @@ bool RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Ve
 	cam->setPosition(pos);
 	cam->lookAt(look);
 
+	
+
 	return true;
 }
 
+bool RenderManager::setCameraFixedY(std::string name, bool bFixed) {
+	RenderCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setFixedYAxis(bFixed);
+
+	return true;
+}
 
 bool RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {

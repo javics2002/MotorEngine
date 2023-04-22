@@ -56,6 +56,13 @@ namespace me {
 			mName = name;
 		}
 
+		/*
+		Set the name saved in renderManager() map and used for entity that attached in node
+		*/
+		inline std::string getName() {
+			return mName;
+		}
+
 		inline void setNearDistance(float nearDistance) {
 			mNearDistance = nearDistance;
 		}

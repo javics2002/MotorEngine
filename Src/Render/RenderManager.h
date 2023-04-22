@@ -228,6 +228,13 @@ namespace me {
 		*/
 		bool setCameraInfo(std::string name, const Vector3& pos, const Vector3& look);
 
+		/*
+		Locks camera orientation in Y Axis
+
+		@param bFixed: lock boolean
+		*/
+		bool setCameraFixedY(std::string name, bool bFixed);
+
 		/**
 		Set dimension to the viewport of the camera with this name
 		@param name: name of camera
