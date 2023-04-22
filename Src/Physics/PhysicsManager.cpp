@@ -257,10 +257,10 @@ void me::PhysicsManager::update(const float& dt)
 
 	mDynamicsWorld->stepSimulation(dt);
 
-#ifdef _DEBUG
-	mDebug->clear();
-	mDynamicsWorld->debugDrawWorld();
-#endif
+//#ifdef _DEBUG
+//	mDebug->clear();
+//	mDynamicsWorld->debugDrawWorld();
+//#endif
 
 }
 

@@ -1,4 +1,4 @@
-#include "Transform.h"
+﻿#include "Transform.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Scene.h"
 
@@ -94,6 +94,27 @@ void me::Transform::rotate(float degrees, Vector3 axis)
 void me::Transform::scaleF(float scaleF)
 {
 	mScale *= scaleF;
+}
+
+me::Vector3 me::Transform::forward()
+{
+	Vector3 rot = mRotation.toEuler();
+	Vector3 v;
+
+	Vector3 forwardVector;
+
+	Vector3 vector_radians = rot;
+	vector_radians.x = rot.x * 3.1415926 / 180.0;
+	vector_radians.y = rot.y * 3.1415926 / 180.0;
+	vector_radians.z = rot.z * 3.1415926 / 180.0;
+
+	forwardVector.x = cos(vector_radians.y);
+	forwardVector.y = -tan(vector_radians.x);
+	forwardVector.z = -sin(vector_radians.y);
+
+	forwardVector.dot(v.left());
+
+	return forwardVector;
 }
 
 int me::Transform::childCount()

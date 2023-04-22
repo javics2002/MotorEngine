@@ -36,7 +36,7 @@ namespace me {
 		//componenet transform of this.Entity
 		Transform* mTransform;
 		//static state of this.Entity 
-		bool mStaticObject = true;
+		bool mStaticObject = false;
 
 		int x = 0;
 

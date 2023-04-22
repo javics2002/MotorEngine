@@ -9,6 +9,7 @@ using namespace me;
 
 Camera::Camera()
 {
+
 }
 
 Camera::~Camera()
@@ -32,8 +33,7 @@ void Camera::update()
 	
 	if (!mStaticObject)
 	{
-		
-		//renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
+		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 	}
 }
 

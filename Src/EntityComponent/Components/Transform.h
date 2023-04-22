@@ -103,6 +103,13 @@ namespace me {
 		*/
 		void scaleF(float scale);
 
+		/*
+		Vector Forward of the transform
+
+		@return The vector3 value of the vector forward along z axis
+		*/
+		Vector3 forward();
+
 		/**
 		Get the number of child Transform objects.
 		*/

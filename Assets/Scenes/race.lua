@@ -709,12 +709,12 @@ Entities = {
             mask = 7,
             colliderscale = {x = 4, y = 2, z = 4},
             restitution = .5,
-            friction = 0.1,
+            friction = 0.5,
             isTrigger = false
         },
         vehicleController = {
-            speed = 40;
-            rotationspeed = 2;
+            speed = 20;
+            rotationspeed = 0.5;
             driftFactor = 1;
             playerNumber = 0;
         },
@@ -764,8 +764,11 @@ Entities = {
             autoratio = true,
             zorder = 0,
             backgroundcolor = { r = .72, g = .92, b = 1, a = 1  }
-        }
-        --camerafollow = { target = Car }
+        },
+		camerafollow = {
+			target = "car",
+			offset = { x= 20, y = 10, z = -10 }
+		}
     },
 
     -- DirectionalLight2 = {
