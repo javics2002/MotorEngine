@@ -49,7 +49,7 @@ namespace me {
 		* @param event is a SDL variable that contains information about the SDL_Event launched by any event.
 		* @returns is ignored
 		*/
-		static int quitLoop(void* userdata, SDL_Event* event);
+		static int QuitLoop(void* userdata, SDL_Event* event);
 
 		HMODULE game;
 

@@ -236,7 +236,7 @@ namespace me {
 	writing SoundManager::instance()->method() we write soundManager().method()
 	*/
 	inline SoundManager& soundManager() {
-		return *SoundManager::instance();
+		return *SoundManager::Instance();
 	}
 }
 

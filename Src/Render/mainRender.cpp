@@ -21,7 +21,7 @@ int main() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 
-	RenderManager* ogreMgr= RenderManager::instance();
+	RenderManager* ogreMgr = RenderManager::Instance();
 	std::string camJ1 = "CameraJugador1";
 
 	/*ogreMgr->createCamera(camJ1, 5,10000,true,0, Ogre::ColourValue(0, 0, 0));

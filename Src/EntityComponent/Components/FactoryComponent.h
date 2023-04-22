@@ -23,10 +23,10 @@ namespace me {
 		@params defaultValue Value returned in case parameter is not specified.
 		@returns The value of the parameter.
 		*/
-		static float value(Parameters& params, const ParameterName& parameter, float defaultValue = 0.0f);
-		static int value(Parameters& params, const ParameterName& parameter, int defaultValue = 0);
-		static bool value(Parameters& params, const ParameterName& parameter, bool defaultValue);
-		static std::string value(Parameters& params, const ParameterName& parameter, std::string defaultValue = "");
+		static float Value(Parameters& params, const ParameterName& parameter, float defaultValue = 0.0f);
+		static int Value(Parameters& params, const ParameterName& parameter, int defaultValue = 0);
+		static bool Value(Parameters& params, const ParameterName& parameter, bool defaultValue);
+		static std::string Value(Parameters& params, const ParameterName& parameter, std::string defaultValue = "");
 
 	public:
 		virtual Component* create(Parameters& params) = 0;

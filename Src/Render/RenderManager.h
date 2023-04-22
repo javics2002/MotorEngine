@@ -135,8 +135,6 @@ namespace me {
 		*/
 		void initRoot();
 
-		//Destroy Ogre::Root
-		void shutdown();
 		/**
 		Creates OgreWindow (RenderWindow)
 		*/
@@ -410,7 +408,7 @@ namespace me {
 		writing OgreManager::instance()->method() we write om().method()
 	*/
 	inline RenderManager& renderManager() {
-		return *RenderManager::instance();
+		return *RenderManager::Instance();
 	}
 
 }

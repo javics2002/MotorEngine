@@ -80,15 +80,6 @@ void RenderManager::initRoot()
 	mRoot->restoreConfig();
 }
 
-void RenderManager::shutdown()
-{
-	// Destroy the RT Shader System.
-	destroyRTShaderSystem();
-	delete mFSLayer;
-	delete mOgreWindow;
-	delete mOverlaySystem;
-}
-
 void RenderManager::initWindow()
 {
 	mOgreWindow = new RenderWindow("OgreWindow");
@@ -229,12 +220,12 @@ me::RenderManager::~RenderManager()
 	}
 	mLights.clear();
 
-	/*if (mRoot != nullptr)
-	{
-		mRoot->saveConfig();
-	}*/
+	// Destroy the RT Shader System.
+	destroyRTShaderSystem();
+	delete mFSLayer;
+	delete mOgreWindow;
+	delete mOverlaySystem;
 
-	shutdown();
 	delete mRoot;
 	mRoot = nullptr;
 }

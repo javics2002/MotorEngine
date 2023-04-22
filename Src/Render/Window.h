@@ -70,7 +70,7 @@ namespace me {
 	writing Window::instance()->method() we write window().method()
 	*/
 	inline Window& window() {
-		return *Window::instance();
+		return *Window::Instance();
 	};
 }
 

@@ -21,6 +21,12 @@ namespace me {
 #ifdef _DEBUG
         std::cout << " >>> SceneManager deleted..." << std::endl;
 #endif
+
+        for (auto scene : mScenes)
+            delete scene.second;
+        mScenes.clear();
+
+        mEntitiesMap.clear();
     };
 
     Scene* SceneManager::addScene(const SceneName& name) {
@@ -79,19 +85,12 @@ namespace me {
     };
 
     void SceneManager::update() {
-
-        if (mGameManager)
-        {
-            mGameManager->update();
-        }
         if (mActiveScene) {
             mActiveScene->processNewEntities();
             mActiveScene->update();
             mActiveScene->lateUpdate();
             mActiveScene->refresh();
         };
-
-        
     };
 
     int SceneManager::loadEntities(const SceneName& sceneName) {
@@ -134,64 +133,9 @@ namespace me {
         mScenes.clear();
     }
 
-    int SceneManager::addGameManager(const SceneName& sceneName)
-    {
-        // Cargamos Lua Bridge
-        lua_State* L = luaL_newstate();
-        luaL_openlibs(L);
-
-        // Abrimos el fichero
-
-        std::string path = "Assets\\Scenes\\" + sceneName;
-
-        if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
-#ifdef _DEBUG
-            std::cout << lua_tostring(L, -1) << "\n";
-#endif
-            return 1;
-        }
-
-        // Comenzamos en el punto de partida
-        lua_getglobal(L, "Entities");
-
-        // Parseamos las entidades
-        if (readEntities(L) == 0)
-        {
-            // Recorrer el mapa de entidades
-            for (auto& infoEntity : mEntitiesMap) {
-                const EntityName entityName = infoEntity.first;
-                InfoEntity* entityComponents = &infoEntity.second;
-
-                // Crear entidad
-                mGameManager = new Entity(entityName);
-
-                // Crear y a�adir componentes
-                for (auto& component : *entityComponents) {
-                    const ComponentName* componentName = &component.first;
-                    Parameters* componentInfo = &component.second;
-                    mGameManager->addComponent(*componentName, *componentInfo);
-                }
-            }
-            mEntitiesMap.clear();
-        }
-        else
-            return 1;
-
-        return 0;
-
-    }
-
-    Entity* SceneManager::getGameManager()
-    {
-        return mGameManager;
-    }
-
     void SceneManager::changeScene(std::string newScene)
     {
         removeScene(getActiveScene()->getName());
-        if (mGameManager != nullptr) {
-        }
-
     }
 
     int SceneManager::readEntities(lua_State* L) {

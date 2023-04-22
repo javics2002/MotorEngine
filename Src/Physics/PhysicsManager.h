@@ -46,12 +46,10 @@ namespace me {
 		std::vector<btCollisionShape*>	mCollisionShapes;
 
 	public:
-
 		/**
-		Destructor for the PhysicsManager class. TO DO.
+		Destructor for the PhysicsManager class.
 		*/
 		~PhysicsManager();
-
 
 		void destroyRigidBody(btRigidBody* rb);
 
@@ -111,7 +109,7 @@ namespace me {
 	writing PhysicsManager::instance()->method() we write physicsManager().method()
 	*/
 	inline PhysicsManager& physicsManager() {
-		return *PhysicsManager::instance();
+		return *PhysicsManager::Instance();
 	}
 
 }

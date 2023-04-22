@@ -12,7 +12,6 @@
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
-#include "EntityComponent/Scene.h"
 #include "Render/Window.h"
 // --- Components
 #include "EntityComponent/Components/ComponentsFactory.h"
@@ -22,12 +21,11 @@
 // --- SDL3
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
-
-//UI con SDL
-#include <SDL3/SDL_surface.h>
-#include <SDL3/SDL_render.h>
-#include <SDL3/SDL_video.h>
 #include "Render/RenderWindow.h"
+
+
+#include "EntityComponent/Scene.h"
+
 
 //typedef HRESULT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT*);
 typedef const char* (*GameName)();
@@ -51,7 +49,7 @@ bool MotorEngine::setup(std::string gameName)
 
 	GameName name = (GameName)GetProcAddress(game, "name");
 
-	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
+	Window::Init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 	// Register Motor Engine's default component factories
@@ -92,21 +90,9 @@ void MotorEngine::loop()
 	double prevTime = timeUtils->obtainActualTime();
 	double actTime = 0.0;
 
-	//UI con SDL
-	SDL_Surface* surface = SDL_LoadBMP("Assets/UISprites/OilSprite.bmp");
-	SDL_Renderer* renderer = SDL_GetRenderer(renderManager().getOgreWindow()->getSdlWindow());
-	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	if (texture == NULL) {
-		std::cout << "Error: No se pudo crear la textura: " << SDL_GetError() << std::endl;
-		SDL_UnlockSurface(surface);
-		return;
-	}
-	const SDL_FRect dest_rect = { 0, 0, 200, 200 };
-	
 	SDL_Event event;
 	bool quit = false;
-	inputManager().addEvent(quitLoop, &quit);
+	inputManager().addEvent(QuitLoop, &quit);
 	while (!quit) {
 		while (SDL_PollEvent(&event)) {
 
@@ -138,10 +124,6 @@ void MotorEngine::loop()
 		*/
 		std::this_thread::sleep_for(std::chrono::milliseconds(16)); // 16ms para apuntar a 60 FPS (1000ms / 60FPS = ~16ms)
 	}
-
-	//UI con SDL
-	SDL_DestroyTexture(texture);
-	SDL_UnlockSurface(surface);
 }
 
 void MotorEngine::exit()
@@ -151,6 +133,14 @@ void MotorEngine::exit()
 	*/
 
 	sceneManager().deleteAllScenes();
+
+	RenderManager::Shutdown();
+	SceneManager::Shutdown();
+	PhysicsManager::Shutdown();
+	InputManager::Shutdown();
+	Window::Shutdown();
+	SoundManager::Shutdown();
+
 	FreeLibrary(game);
 }
 
@@ -193,7 +183,7 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("light", new FactoryLight());
 }
 
-int MotorEngine::quitLoop(void* userdata, SDL_Event* event)
+int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 {
 	if (event->type == SDL_EVENT_QUIT || (event->type == SDL_EVENT_KEY_DOWN && event->key.keysym.sym == SDLK_ESCAPE)) {
 		bool* quit = (bool*)userdata;

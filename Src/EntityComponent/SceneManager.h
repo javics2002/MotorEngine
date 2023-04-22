@@ -94,15 +94,9 @@ namespace me {
 
         void deleteAllScenes();
 
-        int addGameManager(const SceneName& sceneName);
-
-        Entity* getGameManager();
-
         void changeScene(std::string newScene);
 
-
     private:
-
         /*
         This function parses the .lua file to the unordered_map.
         @param L is the lua_State that was opened by the function loadEntities
@@ -119,7 +113,6 @@ namespace me {
 
         std::unordered_map<SceneName, Scene*> mScenes;
         Scene* mActiveScene;
-        Entity* mGameManager = nullptr;
         InfoScene mEntitiesMap;
     };
 
@@ -128,7 +121,7 @@ namespace me {
     instead of writing SceneManager::instance()->method() we write sceneManager().method()
     */
     inline SceneManager& sceneManager() {
-        return *SceneManager::instance();
+        return *SceneManager::Instance();
     };
 
 };
