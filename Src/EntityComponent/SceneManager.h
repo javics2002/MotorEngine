@@ -79,8 +79,10 @@ namespace me {
         Main loop of this manager, if there is an active scene 
         this will call the scene loop mehtods by the order of: 
         processNewEntities, update, lateUpdate and refresh.
+
+        @param dt Seconds that have passed since last update.
         */
-        void update();
+        void update(const double& dt);
 
         /**
         Parse entities from .lua file to an unordered_map that will be passed to the current Scene

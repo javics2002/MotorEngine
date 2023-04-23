@@ -11,9 +11,9 @@ namespace me {
 
 	void Component::start() {};
 
-	void Component::update() {};
+	void Component::update(const double& dt) {};
 
-	void Component::lateUpdate() {};
+	void Component::lateUpdate(const double& dt) {};
 
 	void Component::onCollisionEnter(Entity* other) {};
 

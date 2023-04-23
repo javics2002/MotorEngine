@@ -19,17 +19,24 @@
 #include "EntityComponent/Components/Collider.h"
 #include "Render/RenderManager.h"
 
-me::PhysicsManager::PhysicsManager()
+using namespace me;
+
+PhysicsManager::PhysicsManager()
 {
+	mDynamicsWorld = nullptr;
+	mDispatcher = nullptr;
+	mBroadphaseInterface = nullptr;
+	mCollisionConfiguration = nullptr;
+	mConstraintSolver = nullptr;
+	mDebug = nullptr;
 }
 
-me::PhysicsManager::~PhysicsManager()
+PhysicsManager::~PhysicsManager()
 {
 	//cleanup in the reverse order of creation/initialization
 
 	//remove the rigidbodies from the dynamics world and delete them
-	int i;
-	for (i = mDynamicsWorld->getNumCollisionObjects() - 1; i >= 0; i--)
+	for (int i = mDynamicsWorld->getNumCollisionObjects() - 1; i >= 0; i--)
 	{
 		btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[i];
 		btRigidBody* body = btRigidBody::upcast(obj);
@@ -64,7 +71,7 @@ me::PhysicsManager::~PhysicsManager()
 	delete mCollisionConfiguration;
 }
 
-void me::PhysicsManager::destroyRigidBody(btRigidBody *rb) {
+void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
 
 
 	if (rb && rb->getMotionState())
@@ -140,8 +147,8 @@ void callBackExit(btPersistentManifold* const& manifold) {
 
 	if (body1 && body2) {
 
-		me::Collider* colliderBody1 = static_cast<me::Collider*>(body1->getUserPointer());
-		me::Collider* colliderBody2 = static_cast<me::Collider*>(body2->getUserPointer());
+		Collider* colliderBody1 = static_cast<Collider*>(body1->getUserPointer());
+		Collider* colliderBody2 = static_cast<Collider*>(body2->getUserPointer());
 
 		if (colliderBody1 && colliderBody2) {
 			colliderBody1->onCollisionExit(colliderBody2->getEntity());
@@ -151,7 +158,7 @@ void callBackExit(btPersistentManifold* const& manifold) {
 	}
 }
 
-void me::PhysicsManager::start()
+void PhysicsManager::start()
 {
 	mCollisionConfiguration = new btDefaultCollisionConfiguration();
 	mDispatcher = new btCollisionDispatcher(mCollisionConfiguration);
@@ -173,17 +180,17 @@ void me::PhysicsManager::start()
 
 }
 
-void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody)
+void PhysicsManager::addRigidBody(btRigidBody* rigidBody)
 {
 	mDynamicsWorld->addRigidBody(rigidBody);
 }
 
-void me::PhysicsManager::addVehicle(btActionInterface* vehicle)
+void PhysicsManager::addVehicle(btActionInterface* vehicle)
 {
 	mDynamicsWorld->addVehicle(vehicle);
 }
 
-btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 &scale, const btVector3 &colliderScale)
+btCollisionShape* PhysicsManager::createShape(Shapes shape, const btVector3 &scale, const btVector3 &colliderScale)
 {
 	
 	btCollisionShape* shape_;
@@ -211,7 +218,7 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 	return shape_;
 }
 
-btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
+btRigidBody* PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
 	Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
 {
 
@@ -252,16 +259,9 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 
 }
 
-void me::PhysicsManager::update(const float& dt)
+void PhysicsManager::update(const double& dt)
 {
-
 	mDynamicsWorld->stepSimulation(dt);
-
-//#ifdef _DEBUG
-//	mDebug->clear();
-//	mDynamicsWorld->debugDrawWorld();
-//#endif
-
 }
 
 

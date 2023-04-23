@@ -29,8 +29,7 @@ namespace me {
 		~Transform() override;
 
 		void start() override;
-		void update() override;
-		void lateUpdate() override;
+		void update(const double& dt) override;
 
 		/**
 		Get the position vector of the Transform object.

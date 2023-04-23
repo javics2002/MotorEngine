@@ -28,7 +28,6 @@ namespace me {
 		~Light();
 
 		void start() override;
-		void update() override;
 
 		inline void setName(std::string name) {
 			mName = name;

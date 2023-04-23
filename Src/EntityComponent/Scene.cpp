@@ -76,14 +76,14 @@ namespace me {
 			kv.second->start();
 	};
 
-	void Scene::update() {
+	void Scene::update(const double& dt) {
 		for (const auto& kv : mEntities)
-			kv.second->update();
+			kv.second->update(dt);
 	};
 
-	void Scene::lateUpdate() {
+	void Scene::lateUpdate(const double& dt) {
 		for (const auto& kv : mEntities)
-			kv.second->lateUpdate();
+			kv.second->lateUpdate(dt);
 	};
 
 	void Scene::refresh() {

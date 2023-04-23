@@ -5,29 +5,27 @@
 #include "Utils/Vector3.h"
 #include <OgreVector3.h>
 
-me::MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
+using namespace me;
+
+MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
 {
 	mName = name;
 	mMeshName = nameMesh;
 }
 
 
-me::MeshRenderer::~MeshRenderer()
+MeshRenderer::~MeshRenderer()
 {
 	renderManager().destroyMesh(mName);
 }
 
-void me::MeshRenderer::init()
+void MeshRenderer::init()
 {
-	
 	if (mMeshName.size() > 0)
-	{
 		renderManager().createMesh(mName, mMeshName);
-		
-	}
 }
 
-void me::MeshRenderer::start()
+void MeshRenderer::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 
@@ -36,26 +34,24 @@ void me::MeshRenderer::start()
 	renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }
 
-void me::MeshRenderer::update()
+void MeshRenderer::update(const double& dt)
 {
 	if (!mStaticObject)
-	{
 		renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
-	}
 }
 
-void me::MeshRenderer::setStatic(bool stat)
+void MeshRenderer::setStatic(bool stat)
 {
 	mStaticObject = stat;
 }
 
-std::string me::MeshRenderer::getName()
+std::string MeshRenderer::getName()
 {
 	return mName;
 }
 
 
-void me::MeshRenderer::setMaterial(std::string materialName)
+void MeshRenderer::setMaterial(std::string materialName)
 {
 	renderManager().setMeshMaterial(mName,materialName);
 }

@@ -96,7 +96,7 @@ namespace me {
 		/**
 		Update transform info to camera node
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		Set it is static entity or not

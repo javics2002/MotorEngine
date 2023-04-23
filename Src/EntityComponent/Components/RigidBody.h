@@ -62,8 +62,8 @@ namespace me{
 		Starts the RigidBody of the entity for the physics
 		*/
 		void start() override;
-		void update() override;
-		void lateUpdate() override;
+		void update(const double& dt) override;
+		void lateUpdate(const double& dt) override;
 
 		void setTrigger(bool isTrigger);
 		void setMass (float mass);

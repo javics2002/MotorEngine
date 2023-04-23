@@ -73,19 +73,19 @@ namespace me {
 		};
 	}
 
-	void Entity::update() {
+	void Entity::update(float dt) {
 		if (!mActive) return;
 		for (auto c : mComponents) {
 			if(c.second->enabled)
-				c.second->update();
+				c.second->update(dt);
 		};
 	}
 
-	void Entity::lateUpdate() {
+	void Entity::lateUpdate(float dt) {
 		if (!mActive) return;
 		for (auto c : mComponents) {
 			if (c.second->enabled)
-				c.second->lateUpdate();
+				c.second->lateUpdate(dt);
 		};
 	}
 

@@ -97,10 +97,10 @@ namespace me {
 		@param mass mass of the object
 		@param restitution restitution of the object
 		*/
-		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
+		btRigidBody* createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
 			Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
-		void update(const float& dt);
+		void update(const double& dt);
 
 	};
 

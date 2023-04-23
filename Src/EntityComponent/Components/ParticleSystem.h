@@ -48,7 +48,7 @@ namespace me {
 		/**
 		Update transform info to particle(ogreParticleSystem)
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		Set its emitting state

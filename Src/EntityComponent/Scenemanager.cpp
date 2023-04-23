@@ -84,11 +84,11 @@ namespace me {
 
     };
 
-    void SceneManager::update() {
+    void SceneManager::update(const double& dt) {
         if (mActiveScene) {
             mActiveScene->processNewEntities();
-            mActiveScene->update();
-            mActiveScene->lateUpdate();
+            mActiveScene->update(dt);
+            mActiveScene->lateUpdate(dt);
             mActiveScene->refresh();
         };
     };

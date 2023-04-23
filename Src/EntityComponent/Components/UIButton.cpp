@@ -4,11 +4,10 @@
 #include <OgreOverlayContainer.h>
 #include <OgreOverlayManager.h>
 
+using namespace me;
 
-me::UIButton::UIButton(std::string name, float width, float height, float left, float top)
+UIButton::UIButton(std::string name, float width, float height, float left, float top)
 {
-
-
 	mButtonArea = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + std::to_string(mElems)));
 	mOverlay = mOverlayManager->create(name + std::to_string(mElems));
 
@@ -23,21 +22,21 @@ me::UIButton::UIButton(std::string name, float width, float height, float left, 
 	mOverlay->add2D((Ogre::OverlayContainer*)mButtonArea);
 }
 
-me::UIButton::~UIButton()
+UIButton::~UIButton()
 {
 }
 
-void me::UIButton::update()
+void UIButton::update(const double& dt)
 {
-	if (mInteractive) handleInput();
+	if (mInteractive) handleInput(dt);
 }
 
-void me::UIButton::handleInput()
+void UIButton::handleInput(const double& dt)
 {
-	Vector2 mousePosition = me::inputManager().getMousePositon();
+	Vector2 mousePosition = inputManager().getMousePositon();
 	if (mFocus && mousePosition.x >= getPos().x && mousePosition.x <= getPos().x + getSize().x &&
 		mousePosition.y >= getPos().y && mousePosition.y <= getPos().y + getSize().y) {
-		/*if (me::inputManager().justClicked()) {
+		/*if (inputManager().justClicked()) {
 			for (auto l : mLambda) l();
 		}*/
 	}
@@ -45,7 +44,7 @@ void me::UIButton::handleInput()
 
 
 
-void me::UIButton::onClick(std::function<void()> l)
+void UIButton::onClick(std::function<void()> l)
 {
 	mLambda.push_back(l);
 }

@@ -1,5 +1,7 @@
 #include "Vector2.h"
 
+using namespace me;
+
 Vector2 Vector2::operator+(const  Vector2& v) {
 	return Vector2(x + v.x, y + v.y);
 }

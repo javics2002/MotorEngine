@@ -103,8 +103,10 @@ namespace me {
 		at the begining of the game cycle.
 
 		Almost all the logic updates.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		void update();
+		void update(const double& dt);
 
 		/**
 		This method is meant to be the definition 
@@ -112,8 +114,10 @@ namespace me {
 		at the end of the game cycle.
 
 		For example: render and collisions.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		void lateUpdate();
+		void lateUpdate(const double& dt);
 
 		/**
 		Safely deletes dead entities from map, 

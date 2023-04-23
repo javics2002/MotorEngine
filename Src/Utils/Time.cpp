@@ -1,36 +1,65 @@
 #include "Time.h"
 #include <chrono>
 
-Time::Time()
+using namespace me;
+
+Time::Time(float targetFrameRate, float timeScale) :
+	mTargetFrameRate(mTargetFrameRate), mTimeScale(timeScale),
+	mDeltaTime(0), mCurrentFrameTime(0), mPreviousFrameTime(0)
 {
-	mFrameValue = 60;
-	mPhysicsFrameValue = 50;
 }
 
-float Time::getGameFrameValue()
+Time::~Time()
 {
-	return mFrameValue;
 }
 
-float Time::getPhysicsFrameValue()
+double Time::update()
 {
-	return mPhysicsFrameValue;
+	mCurrentFrameTime = obtainCurrentTime();
+	mDeltaTime = mCurrentFrameTime - mPreviousFrameTime;
+	mPreviousFrameTime = mCurrentFrameTime;
+
+	return mDeltaTime;
 }
 
-// TODO: VSYNC
-void Time::enableVSYNC()
+double Time::getDeltaTime()
 {
-
+	return mDeltaTime;
 }
 
-void Time::disableVSYNC()
+double Time::timeToNextFrame()
 {
-
+	double frameTime = obtainCurrentTime() - mCurrentFrameTime;
+	return mTargetFrameRate - frameTime;
 }
 
-// Función para obtener el tiempo actual en segundos
-double Time::obtainActualTime() {
-	return std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+long long Time::millisecondsToNextFrame()
+{
+	return (long long) timeToNextFrame() * 1000;
 }
 
+double Time::getTargetFrameRate()
+{
+	return mTargetFrameRate;
+}
 
+void Time::setTargetFrameRate(float targetFrameRate)
+{
+	mTargetFrameRate = targetFrameRate;
+}
+
+void Time::setTimeScale(float timeScale)
+{
+	mTimeScale = timeScale;
+}
+
+float Time::getTimeScale()
+{
+	return mTimeScale;
+}
+
+double Time::obtainCurrentTime() {
+	return std::chrono::duration_cast<std::chrono::duration<double>>
+		(std::chrono::high_resolution_clock::now().time_since_epoch()).count()
+		* mTimeScale;
+}

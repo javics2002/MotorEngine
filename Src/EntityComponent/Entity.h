@@ -156,13 +156,15 @@ namespace me {
 
 		/**
 		Run all the added components update method.
+		@param dt Seconds that have passed since last update.
 		*/
-		void update();
+		void update(float dt);
 
 		/**
 		Run all the added components lateUpdate method.
+		@param dt Seconds that have passed since last update.
 		*/
-		void lateUpdate();
+		void lateUpdate(float dt);
 
 
 		/**
@@ -182,7 +184,6 @@ namespace me {
 		void onCollisionExit(Entity* other);
 
 	private:
-
 		bool mActive;
 		std::string mName;
 		Scene* mScn;
