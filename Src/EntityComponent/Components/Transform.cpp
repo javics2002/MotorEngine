@@ -12,17 +12,12 @@ Transform::Transform()
 
 Transform::~Transform()
 {
-#ifdef _DEBUG
-	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
-#endif
-
 	mChildren.clear();
 }
 
 void Transform::start()
 {
 	setParent();
-	std::cout << "start transform";
 }
 
 void Transform::update(const double& dt)

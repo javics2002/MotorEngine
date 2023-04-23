@@ -25,3 +25,5 @@ build_Output.txt
 
 # No logs
 *.log
+
+/Assets
