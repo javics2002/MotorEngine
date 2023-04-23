@@ -17,11 +17,9 @@ RigidBody::RigidBody()
 
 RigidBody::~RigidBody()
 {
-	me::physicsManager().destroyRigidBody(mBtRigidBody);
+	physicsManager().destroyRigidBody(mBtRigidBody);
 	mBtRigidBody = nullptr;
 	delete mBtTransform;
-	
-	
 }
 
 void RigidBody::start()
@@ -166,4 +164,11 @@ int RigidBody::getColShape()
 int RigidBody::getMovementType()
 {
 	return mMvType;
+}
+
+Vector3 RigidBody::getVelocity()
+{
+	Vector3 velocity = Vector3(0, 0, 0);
+	velocity = mBtRigidBody->getLinearVelocity();
+	return velocity;
 }

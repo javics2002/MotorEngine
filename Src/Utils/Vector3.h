@@ -176,37 +176,37 @@ namespace me {
 		/**
 		Returns the linear interpolation between "a" and "b" by a factor of "f"
 		*/
-		Vector3 zero();
+		static Vector3 zero();
 
 		/**
 		Returns a unit vector pointing upwards along the y-axis
 		*/
-		Vector3 up();
+		static Vector3 up();
 
 		/**
 		Returns a unit vector pointing downwards along the y-axis
 		*/
-		Vector3 down();
+		static Vector3 down();
 
 		/**
 		Returns a unit vector pointing to the left along the x-axis
 		*/
-		Vector3 left();
+		static Vector3 left();
 
 		/**
 		Returns a unit vector pointing to the right along the x-axis
 		*/
-		Vector3 right();
+		static Vector3 right();
 
 		/**
 		Returns a unit vector pointing backwards along the z-axis
 		*/
-		Vector3 back();
+		static Vector3 back();
 
 		/**
 		Returns a unit vector pointing forwards along the z-axis
 		*/
-		Vector3 forward();
+		static Vector3 forward();
 
 		/**
 		Returns the distance between this vector and another vector "v"

@@ -1,8 +1,8 @@
 ﻿#include "Transform.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Scene.h"
-
-#include <iostream>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 using namespace me;
 
@@ -75,23 +75,43 @@ void Transform::scaleF(float scaleF)
 	mScale *= scaleF;
 }
 
+Vector3 Transform::right()
+{
+	return up().cross(forward());
+}
+
+Vector3 Transform::up()
+{
+	Vector3 rot = mRotation.toEuler();
+
+	Vector3 upVector;
+
+	Vector3 vector_radians = rot;
+	vector_radians.x = rot.x * M_PI / 180.0;
+	vector_radians.y = rot.y * M_PI / 180.0;
+	vector_radians.z = rot.z * M_PI / 180.0;
+
+	upVector.x = sin(vector_radians.x);
+	upVector.y = cos(vector_radians.x) * cos(vector_radians.z);
+	upVector.z = cos(vector_radians.x) * sin(vector_radians.z);
+
+	return upVector;
+}
+
 Vector3 Transform::forward()
 {
 	Vector3 rot = mRotation.toEuler();
-	Vector3 v;
 
 	Vector3 forwardVector;
 
 	Vector3 vector_radians = rot;
-	vector_radians.x = rot.x * 3.1415926 / 180.0;
-	vector_radians.y = rot.y * 3.1415926 / 180.0;
-	vector_radians.z = rot.z * 3.1415926 / 180.0;
+	vector_radians.x = rot.x * M_PI / 180.0;
+	vector_radians.y = rot.y * M_PI / 180.0;
+	vector_radians.z = rot.z * M_PI / 180.0;
 
 	forwardVector.x = cos(vector_radians.y);
 	forwardVector.y = -tan(vector_radians.x);
 	forwardVector.z = -sin(vector_radians.y);
-
-	forwardVector.dot(v.left());
 
 	return forwardVector;
 }
