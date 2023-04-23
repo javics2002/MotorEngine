@@ -19,8 +19,6 @@ me::RigidBody::~RigidBody()
 	me::physicsManager().destroyRigidBody(mBtRigidBody);
 	mBtRigidBody = nullptr;
 	delete mBtTransform;
-	
-	
 }
 
 void me::RigidBody::start()
@@ -34,13 +32,11 @@ void me::RigidBody::start()
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 	btVector3 colliderScale = mColliderScale.v3ToBulletV3();
 
-	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale, mColShape,
+	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale,  mGroup, mMask, mColShape,
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
 	mBtRigidBody->setUserPointer(this);
-	//mBtRigidBody->setGravity(btVector3(0, 0, 0));
-	//mBtRigidBody->setActivationState(DISABLE_DEACTIVATION);
-	
+
 }
 
 void me::RigidBody::update()
@@ -63,7 +59,6 @@ void me::RigidBody::update()
 		//update transform position and rotation
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
 		mTransform->setRotation(Vector4(rot.x(), rot.y(), rot.z(), rot.w()));
-		mBtRigidBody->activate(true);
 		//std::cout << "rbtrx: " << mTransform->getPosition().x << " rbtry: " << mTransform->getPosition().y << " rbtrz: " << mTransform->getPosition().z << '\n';
 	}
 }
@@ -123,14 +118,34 @@ void me::RigidBody::setMomeventType(MovementType mvType)
 	mMvType = mvType;
 }
 
+void me::RigidBody::setMask(int mask)
+{
+	mMask = mask;
+	if(mBtRigidBody != nullptr){
+		btBroadphaseProxy* bdProxy = mBtRigidBody->getBroadphaseProxy();
+		bdProxy->m_collisionFilterMask = mask;
+	}
+}
+
+void me::RigidBody::setGroup(int group)
+{
+	mGroup = group;
+	if (mBtRigidBody != nullptr) {
+		btBroadphaseProxy* bdProxy = mBtRigidBody->getBroadphaseProxy();
+		bdProxy->m_collisionFilterGroup = group;
+	}
+}
+
 void me::RigidBody::addForce(Vector3 force)
 {
 	btVector3 v = force.v3ToBulletV3();
 	mBtRigidBody->applyCentralForce(v);
+	mBtRigidBody->activate(true);
 }
 
 void me::RigidBody::addImpulse(Vector3 impulse)
 {
+	mBtRigidBody->activate(true);
 	mBtRigidBody->applyCentralImpulse(impulse.v3ToBulletV3());
 }
 
@@ -166,4 +181,14 @@ int me::RigidBody::getColShape()
 int me::RigidBody::getMovementType()
 {
 	return mMvType;
+}
+
+int me::RigidBody::getMask()
+{
+	return mMask;
+}
+
+int me::RigidBody::getGroup()
+{
+	return mGroup;
 }

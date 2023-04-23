@@ -173,9 +173,9 @@ void me::PhysicsManager::start()
 
 }
 
-void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody)
+void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody, int group, int mask)
 {
-	mDynamicsWorld->addRigidBody(rigidBody);
+	mDynamicsWorld->addRigidBody(rigidBody, group, mask);
 }
 
 void me::PhysicsManager::addVehicle(btActionInterface* vehicle)
@@ -212,7 +212,7 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 }
 
 btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
-	Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
+	int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
 {
 
 	btCollisionShape* colShape;
@@ -246,7 +246,9 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 		rb->setCollisionFlags(btCollisionObject::CF_NO_CONTACT_RESPONSE);
 	}
 
-	addRigidBody(rb);
+	addRigidBody(rb, group, mask);
+
+
 
 	return rb;
 

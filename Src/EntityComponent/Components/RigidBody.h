@@ -29,6 +29,12 @@ namespace me{
 		float mFricion;
 		//amount of bounce of an object after a collision
 		float mRestitution;
+		//layers it can collide with, max 32 bits
+		//example of a mask, mask =  5 means that the rigidbody can collides with layers 1 and 3 because 5 is 101 
+		//the  layer 1 corresponds to the most significant bit
+		int mMask;
+		//current layer of the rigidbody 
+		int mGroup;
 
 		/**
 		If the rigidbody is a trigger, it will detect collisions but will not influence 
@@ -72,6 +78,8 @@ namespace me{
 		void setColliderScale(Vector3 colliderScale);
 		void setColShape(Shapes colShape);
 		void setMomeventType(MovementType mvType);
+		void setMask(int mask);
+		void setGroup(int group);
 
 		bool getTrigger();
 		float getMass();
@@ -79,6 +87,8 @@ namespace me{
 		float getRestitution();
 		int  getColShape();
 		int getMovementType();
+		int getMask();
+		int getGroup();
 
 		/**
 		Apply a force to the rigidBody

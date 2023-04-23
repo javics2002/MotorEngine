@@ -187,6 +187,8 @@ me::Component* me::FactoryRigidBody::create(Parameters& params)
     rigidbody->setColliderScale(Vector3(Value(params, "colliderscale_x", 1.0f),
         Value(params, "colliderscale_y", 1.0f), Value(params, "colliderscale_z", 1.0f)));
     rigidbody->setMomeventType(MovementType(Value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
+    rigidbody->setMask(Value(params, "mask", 15));
+    rigidbody->setGroup(Value(params, "group", 1));
 
     return rigidbody;
 }

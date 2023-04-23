@@ -65,7 +65,7 @@ namespace me {
 
 		@param rigidBody A pointer to the btRigidBody to add to the dynamics world.
 		*/
-		void addRigidBody(btRigidBody* rigidBody);
+		void addRigidBody(btRigidBody* rigidBody, int group, int mask);
 
 		/**
 		Adds a vehicle to the dynamics world. The vehicle will be subject to physical forces
@@ -98,7 +98,7 @@ namespace me {
 		@param restitution restitution of the object
 		*/
 		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
-			Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
+			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const float& dt);
 
