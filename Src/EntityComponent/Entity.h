@@ -66,7 +66,6 @@ namespace me {
 			T* component = static_cast<T*>(componentsFactory().create(componentName));
 
 			if (!hasComponent(componentName)) {
-
 				mComponents.insert({ componentName, component });
 				component->setEntity(this);
 				component->start();
@@ -141,15 +140,15 @@ namespace me {
 		@return Scene to which it belongs.
 		*/
 		inline Scene* getScene() const {
-			return mScn;
+			return mScene;
 		};
 
 		/**
 		Set the associated scene for the entity.
 		@param Scene to which it belongs.
 		*/
-		inline void setScene(Scene* scn) {
-			mScn = scn;
+		inline void setScene(Scene* scene) {
+			mScene = scene;
 		};
 
 		void start();
@@ -186,7 +185,7 @@ namespace me {
 	private:
 		bool mActive;
 		std::string mName;
-		Scene* mScn;
+		Scene* mScene;
 		std::map<ComponentName, Component*> mComponents;
 	};
 };

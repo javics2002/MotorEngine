@@ -27,6 +27,8 @@ namespace me {
         mScenes.clear();
 
         mEntitiesMap.clear();
+
+        Scene::DeleteGlobalEntities();
     };
 
     Scene* SceneManager::addScene(const SceneName& name) {

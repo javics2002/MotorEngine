@@ -30,7 +30,7 @@ namespace me {
 		/*
 		Starts or resumes the timer.
 		*/
-		void play();
+		void resume();
 		/*
 		Pauses the timer.
 		*/

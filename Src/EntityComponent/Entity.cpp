@@ -6,11 +6,10 @@
 #endif
 
 namespace me {
-
-	Entity::Entity(Scene* scn, const SceneName name) :
+	Entity::Entity(Scene* scene, const SceneName name) :
 		mActive(true), //
 		mName(name), // 
-		mScn(scn)
+		mScene(scene)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity ( " << mName << " ) created." << std::endl;
@@ -20,7 +19,7 @@ namespace me {
 	Entity::Entity(const SceneName name) :
 		mActive(true),
 		mName(name),
-		mScn(nullptr)
+		mScene(nullptr)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity " << mName << " created.";

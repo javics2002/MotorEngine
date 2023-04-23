@@ -13,7 +13,7 @@ Timer::~Timer()
 {
 }
 
-void Timer::play()
+void Timer::resume()
 {
 	mRunning = true;
 }
