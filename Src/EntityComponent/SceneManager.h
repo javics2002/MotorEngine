@@ -45,7 +45,7 @@ namespace me {
         This assumes that the name is a unique identifier.
         @param String name to identify the scene to be remove.
         */
-        void removeScene(const SceneName& name);
+        bool removeScene(const SceneName& name);
 
         /**
         Get an scene from the SceneManager.
@@ -66,14 +66,14 @@ namespace me {
         @param String oldName to be change.
         @param String newName to be set.
         */
-        void renameScene(const SceneName& oldName, const SceneName& newName);
+        bool renameScene(const SceneName& oldName, const SceneName& newName);
 
         /**
         Set the active scene from the SceneManager.
         This assumes that the name is a unique identifier.
         @param String name to identify the scene suggested.
         */
-        void setActiveScene(const SceneName& name);
+        bool setActiveScene(const SceneName& name);
 
         /**
         Main loop of this manager, if there is an active scene 
@@ -94,9 +94,12 @@ namespace me {
         */
         int loadEntities(const SceneName& sceneName);
 
-        void deleteAllScenes();
+        /**
+        Load
+        */
+        bool loadScene(const SceneName& newScene, bool eraseActiveScene = true);
 
-        void changeScene(std::string newScene);
+        void deleteAllScenes();
 
     private:
         /*
@@ -114,7 +117,7 @@ namespace me {
 
 
         std::unordered_map<SceneName, Scene*> mScenes;
-        Scene* mActiveScene;
+        Scene* mActiveScene = nullptr;
         InfoScene mEntitiesMap;
     };
 

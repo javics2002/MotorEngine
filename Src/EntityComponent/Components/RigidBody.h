@@ -19,7 +19,6 @@ namespace me{
 	*/
 	class __MOTORENGINE_API RigidBody : public Component
 	{
-
 		Shapes mColShape;
 		MovementType mMvType;
 
@@ -44,7 +43,6 @@ namespace me{
 		Transform* mTransform = nullptr;
 
 	public:
-
 		/*
 		Set the values of the new RigidBody that will be created
 
@@ -79,6 +77,7 @@ namespace me{
 		float getRestitution();
 		int  getColShape();
 		int getMovementType();
+		Vector3 getVelocity();
 
 		/**
 		Apply a force to the rigidBody

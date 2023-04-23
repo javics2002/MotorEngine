@@ -72,12 +72,9 @@ PhysicsManager::~PhysicsManager()
 }
 
 void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
-
-
 	if (rb && rb->getMotionState())
-	{
 		delete rb->getMotionState();
-	}
+
 	mDynamicsWorld->removeCollisionObject(rb);
 
 	btCollisionShape* shape = rb->getCollisionShape();
@@ -86,8 +83,6 @@ void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
 		delete shape;
 		mCollisionShapes.erase(it);
 	}
-	
-
 }
 
 /*
@@ -141,12 +136,10 @@ Collision Exit Callback, mainfold can get the
 pointers of the rigid bodies that have collided
 */
 void callBackExit(btPersistentManifold* const& manifold) {
-
 	const btCollisionObject* body1 = manifold->getBody0();
 	const btCollisionObject* body2 = manifold->getBody1();
 
 	if (body1 && body2) {
-
 		Collider* colliderBody1 = static_cast<Collider*>(body1->getUserPointer());
 		Collider* colliderBody2 = static_cast<Collider*>(body2->getUserPointer());
 
@@ -154,7 +147,6 @@ void callBackExit(btPersistentManifold* const& manifold) {
 			colliderBody1->onCollisionExit(colliderBody2->getEntity());
 			colliderBody2->onCollisionExit(colliderBody1->getEntity());
 		}
-
 	}
 }
 
