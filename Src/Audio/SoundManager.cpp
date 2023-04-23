@@ -104,9 +104,6 @@ void me::SoundManager::systemRefresh()
 {
 	mResult = mSoundSystem->update();
 	checkFMODResult(mResult);
-#ifdef _DEBUG
-	//std::cout << "System refreshed." << "\n";
-#endif // DEBUG
 }
 
 bool me::SoundManager::create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance)

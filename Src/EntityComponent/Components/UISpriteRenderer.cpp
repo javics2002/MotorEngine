@@ -33,13 +33,10 @@ void me::UISpriteRenderer::start()
 
 }
 
-void me::UISpriteRenderer::update()
+void me::UISpriteRenderer::update(const double& dt)
 {
-
 	if (!mStaticObject)
-	{
 		renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
-	}
 }
 
 void me::UISpriteRenderer::setStatic(bool stat)

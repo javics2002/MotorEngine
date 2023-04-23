@@ -49,7 +49,7 @@ namespace me {
 		/**
 		Update UITransform info to image
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 
 		/**

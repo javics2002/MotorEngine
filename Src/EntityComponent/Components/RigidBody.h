@@ -19,7 +19,6 @@ namespace me{
 	*/
 	class __MOTORENGINE_API RigidBody : public Component
 	{
-
 		Shapes mColShape;
 		MovementType mMvType;
 
@@ -50,7 +49,6 @@ namespace me{
 		Transform* mTransform = nullptr;
 
 	public:
-
 		/*
 		Set the values of the new RigidBody that will be created
 
@@ -68,8 +66,8 @@ namespace me{
 		Starts the RigidBody of the entity for the physics
 		*/
 		void start() override;
-		void update() override;
-		void lateUpdate() override;
+		void update(const double& dt) override;
+		void lateUpdate(const double& dt) override;
 
 		void setTrigger(bool isTrigger);
 		void setMass (float mass);
@@ -89,6 +87,7 @@ namespace me{
 		int getMovementType();
 		int getMask();
 		int getGroup();
+		Vector3 getVelocity();
 
 		/**
 		Apply a force to the rigidBody

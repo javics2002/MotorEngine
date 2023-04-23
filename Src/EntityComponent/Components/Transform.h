@@ -9,14 +9,12 @@
 #include <list>
 
 namespace me {
-
 	/*
 	*The Transform class represents a position, rotation, and scale in 3D space and can be attached to entities.
 	*/
 	class __MOTORENGINE_API Transform : public Component
 	{
 	public:
-
 		/**
 		Construct a new Transform object with default position (0, 0, 0),
 		rotation (0, 0, 0) and scale (1, 1, 1).
@@ -29,8 +27,7 @@ namespace me {
 		~Transform() override;
 
 		void start() override;
-		void update() override;
-		void lateUpdate() override;
+		void update(const double& dt) override;
 
 		/**
 		Get the position vector of the Transform object.
@@ -79,7 +76,6 @@ namespace me {
 		*/
 		void setScale(Vector3 newScale);
 
-
 		/**
 		Translate the Transform object by a given vector.
 
@@ -95,13 +91,27 @@ namespace me {
 		*/
 		void rotate(float degrees, Vector3 axis);
 
-
 		/**
 		Scale the Transform object by a given factor.
 
 		@param scaleF A float representing the scale factor.
 		*/
 		void scaleF(float scale);
+
+
+		/*
+		Vector Right of the transform
+
+		@return The vector3 value of the vector right along x axis
+		*/
+		Vector3 right();
+
+		/*
+		Vector Up of the transform
+
+		@return The vector3 value of the vector up along y axis
+		*/
+		Vector3 up();
 
 		/*
 		Vector Forward of the transform

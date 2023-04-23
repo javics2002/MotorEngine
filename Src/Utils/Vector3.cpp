@@ -169,3 +169,9 @@ float Vector3::lerp(float a, float b, float f)
 {
 	return a + f * (b - a);
 }
+
+std::ostream& me::operator<<(std::ostream& os, const Vector3& v)
+{
+	os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
+	return os;
+}

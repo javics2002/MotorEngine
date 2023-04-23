@@ -48,7 +48,7 @@ namespace me {
 		/**
 		Update transform info to mesh(ogreMesh)
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		 Set material to mesh (ogreMesh).

@@ -23,18 +23,15 @@ void Camera::start()
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
-void me::Camera::init()
+void Camera::init()
 {
 	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
 }
 
-void Camera::update()
+void Camera::update(const double& dt)
 {
-	
 	if (!mStaticObject)
-	{
 		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
-	}
 }
 
 void Camera::setStatic(bool stat)

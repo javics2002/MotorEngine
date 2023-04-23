@@ -65,8 +65,10 @@ namespace me {
 		at the begining of the game cycle.
 
 		Almost all the logic updates.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		virtual void update();
+		virtual void update(const double& dt);
 
 		/**
 		This method is meant to be the definition 
@@ -74,8 +76,10 @@ namespace me {
 		at the end of the game cycle.
 
 		For example: render and collisions.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		virtual void lateUpdate();
+		virtual void lateUpdate(const double& dt);
 
 
 		virtual void onCollisionEnter(Entity* other);
