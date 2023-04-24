@@ -52,6 +52,10 @@ void me::RenderCamera::setPosition(const Vector3& pos)
 	mCameraNode->setPosition(pos.v3ToOgreV3());
 }
 
+void me::RenderCamera::setFixedYAxis(bool bFixed) {
+	mCameraNode->setFixedYawAxis(bFixed, Ogre::Vector3::UNIT_Y);
+}
+
 void me::RenderCamera::lookAt(const Vector3& look)
 {
 	mCameraNode->lookAt(look.v3ToOgreV3(), Ogre::Node::TS_WORLD);

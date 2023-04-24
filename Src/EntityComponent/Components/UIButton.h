@@ -14,12 +14,13 @@ namespace me {
 		UIButton(std::string name,float width,float height, float left, float top);
 		~UIButton();
 
-		void update()override;
+		void update(const double& dt) override;
 
 		/**
 		* Method that handles input for the button, called onClick if just clicked
+		* @param dt Seconds that have passed since last update.
 		*/
-		void handleInput();
+		void handleInput(const double& dt);
 
 
 		/**

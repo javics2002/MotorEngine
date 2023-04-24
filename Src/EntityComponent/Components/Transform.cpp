@@ -1,51 +1,31 @@
-#include "Transform.h"
+﻿#include "Transform.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Scene.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-#include <iostream>
+using namespace me;
 
-me::Transform::Transform()
+Transform::Transform()
 {
-	/*
-	// Initialize position, rotation, size and scale vectors
-	mPosition = Vector3(0.0, 0.0, 0.0);
-	mRotation = Vector4(0.0, 0.0, 0.0);
-	mScale = Vector3(1.0, 1.0, 1.0);
-
-	// Set parent to null
-	mParent = nullptr;
-
-#ifdef _DEBUG
-	std::cout << " > Component ( Transform ) created." << std::endl;
-#endif*/
 }
 
-me::Transform::~Transform()
+Transform::~Transform()
 {
-	//DELETES
-#ifdef _DEBUG
-	std::cout << " >>> Component ( Transform ) deleted..." << std::endl;
-#endif
-
-
 	mChildren.clear();
 }
 
-void me::Transform::start()
+void Transform::start()
 {
 	setParent();
 }
 
-void me::Transform::update()
+void Transform::update(const double& dt)
 {
 	childTranslation();
 }
 
-void me::Transform::lateUpdate()
-{
-}
-
-me::Vector3 me::Transform::getPosition()
+Vector3 Transform::getPosition()
 {
 	return mPosition;
 }
@@ -59,12 +39,12 @@ me::Vector4 me::Transform::getRotation() {
 	return mRotation;
 }
 
-me::Vector3 me::Transform::getScale()
+Vector3 Transform::getScale()
 {
 	return mScale;
 }
 
-void me::Transform::setPosition(Vector3 newPosition)
+void Transform::setPosition(Vector3 newPosition)
 {	
 	mTranslatePosition = newPosition - mPosition;
 	mPosition = newPosition;
@@ -80,47 +60,88 @@ void me::Transform::setRotation(Vector3 newRotation)
 	mRotation = Vector4(newRotation);
 }
 
-void me::Transform::setRotation(Vector4 newRotation)
+void Transform::setRotation(Vector4 newRotation)
 {
 	mRotation = newRotation;
 }
 
-void me::Transform::setScale(Vector3 newScale)
+void Transform::setScale(Vector3 newScale)
 {
 	mScale = newScale;
 }
 
-void me::Transform::translate(Vector3 translation)
+void Transform::translate(Vector3 translation)
 {
 	mPosition = mPosition + translation;
 }
 
-void me::Transform::rotate(float degrees, Vector3 axis)
+void Transform::rotate(float degrees, Vector3 axis)
 {
 	mRotation.rotate(degrees, axis);
 }
 
-void me::Transform::scaleF(float scaleF)
+void Transform::scaleF(float scaleF)
 {
 	mScale *= scaleF;
 }
 
-int me::Transform::childCount()
+Vector3 Transform::right()
+{
+	return up().cross(forward());
+}
+
+Vector3 Transform::up()
+{
+	Vector3 rot = mRotation.toEuler();
+
+	Vector3 upVector;
+
+	Vector3 vector_radians = rot;
+	vector_radians.x = rot.x * M_PI / 180.0;
+	vector_radians.y = rot.y * M_PI / 180.0;
+	vector_radians.z = rot.z * M_PI / 180.0;
+
+	upVector.x = sin(vector_radians.x);
+	upVector.y = cos(vector_radians.x) * cos(vector_radians.z);
+	upVector.z = cos(vector_radians.x) * sin(vector_radians.z);
+
+	return upVector;
+}
+
+Vector3 Transform::forward()
+{
+	Vector3 rot = mRotation.toEuler();
+
+	Vector3 forwardVector;
+
+	Vector3 vector_radians = rot;
+	vector_radians.x = rot.x * M_PI / 180.0;
+	vector_radians.y = rot.y * M_PI / 180.0;
+	vector_radians.z = rot.z * M_PI / 180.0;
+
+	forwardVector.x = cos(vector_radians.y);
+	forwardVector.y = -tan(vector_radians.x);
+	forwardVector.z = -sin(vector_radians.y);
+
+	return forwardVector;
+}
+
+int Transform::childCount()
 {
 	return mChildren.size();
 }
 
-void me::Transform::addChild(Transform* child)
+void Transform::addChild(Transform* child)
 {
 	mChildren.push_back(child);
 }
 
-void me::Transform::removeChild(Transform* child)
+void Transform::removeChild(Transform* child)
 {
 	mChildren.remove(child);
 }
 
-me::Transform* me::Transform::getChild(int index)
+Transform* Transform::getChild(int index)
 {
 	if (index > mChildren.size() || index < 0 || mChildren.empty())
 		return nullptr;
@@ -132,12 +153,12 @@ me::Transform* me::Transform::getChild(int index)
 	return *it;
 }
 
-me::Transform* me::Transform::getParent()
+Transform* Transform::getParent()
 {
 	return mParent;
 }
 
-void me::Transform::childTranslation()
+void Transform::childTranslation()
 {
 	if (childCount() > 0) {
 		for (auto child : mChildren) {
@@ -146,7 +167,7 @@ void me::Transform::childTranslation()
 	}
 }
 
-void me::Transform::setParent()
+void Transform::setParent()
 {
 	if (mParentName != "") {
 		mParent = getEntity()->getScene()->findEntity(mParentName)->getComponent<Transform>("transform");
@@ -154,7 +175,7 @@ void me::Transform::setParent()
 	}	
 }
 
-void me::Transform::setParentName(std::string name) {
+void Transform::setParentName(std::string name) {
 	for (char& c : name)
 		c = tolower(c);
 	mParentName = name;

@@ -18,8 +18,8 @@ using namespace me;
 
 InputManager::InputManager()
 {
-	SDL_AddEventWatch(watchControllers, NULL);
-	SDL_AddEventWatch(updateInputData, NULL);
+	SDL_AddEventWatch(WatchControllers, NULL);
+	SDL_AddEventWatch(UpdateInputData, NULL);
 }
 
 InputManager::~InputManager()
@@ -305,7 +305,7 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 		OnButtonPressedInfo* info = (OnButtonPressedInfo*)userdata;
 
 		//Call callback if input matches any of the virtual button's bindings.
-		auto bindings = info->buttonBindings->equal_range(getInput(event));
+		auto bindings = info->buttonBindings->equal_range(GetInput(event));
 		for (auto binding = bindings.first; binding != bindings.second; binding++)
 			if (binding->second == info->buttonName 
 				&& (info->player == -1 || info->player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))
@@ -369,7 +369,7 @@ Vector2 me::InputManager::getMousePositon()
 	return Vector2(mouseX, mouseY);
 }
 
-int InputManager::watchControllers(void* userdata, SDL_Event* event)
+int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 {
 	switch (event->type)
 	{
@@ -401,17 +401,17 @@ int InputManager::watchControllers(void* userdata, SDL_Event* event)
 	return 0;
 }
 
-int InputManager::updateInputData(void* userdata, SDL_Event* event)
+int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 {
-	Input input = getInput(event);
+	Input input = GetInput(event);
 
 	//Update all buttons binded to that input
-	auto bindings = instance()->mButtonBindings.equal_range(input);
+	auto bindings = Instance()->mButtonBindings.equal_range(input);
 	for (auto binding = bindings.first; binding != bindings.second; binding++)
-		instance()->mButtons[binding->second].pressed = EVENT_BUTTON_DOWN;
+		Instance()->mButtons[binding->second].pressed = EVENT_BUTTON_DOWN;
 
 	//Return all unactive axis towards zero
-	for (auto& axis : instance()->mAxis)
+	for (auto& axis : Instance()->mAxis)
 		if (axis.second.active)
 			continue;
 		else if (axis.second.value > 0)
@@ -421,30 +421,30 @@ int InputManager::updateInputData(void* userdata, SDL_Event* event)
 
 	//Update all axis binded to that input
 	if (input.type == INPUTTYPE_GAMEPAD_AXIS) {
-		bindings = instance()->mPositiveAxisBindings.equal_range(input);
+		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
-			Axis* axis = &instance()->mAxis[binding->second];
+			Axis* axis = &Instance()->mAxis[binding->second];
 			axis->value = input.value;
 			axis->active = std::abs(input.value) > axis->dead;
 		}
 	}
 	else {
-		bindings = instance()->mPositiveAxisBindings.equal_range(input);
+		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
-			instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-			instance()->mAxis[binding->second].value = 1;
+			Instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+			Instance()->mAxis[binding->second].value = 1;
 		}
-		bindings = instance()->mNegativeAxisBindings.equal_range(input);
+		bindings = Instance()->mNegativeAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
-			instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-			instance()->mAxis[binding->second].value = -1;
+			Instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
+			Instance()->mAxis[binding->second].value = -1;
 		}
 	}
 
 	return 0;
 }
 
-Input me::InputManager::getInput(SDL_Event* event)
+Input me::InputManager::GetInput(SDL_Event* event)
 {
 	Input input;
 	switch (event->type)

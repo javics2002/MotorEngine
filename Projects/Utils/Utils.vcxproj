@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Utils\Time.cpp" />
+    <ClCompile Include="..\..\Src\Utils\Timer.cpp" />
     <ClCompile Include="..\..\Src\Utils\Vector2.cpp" />
     <ClCompile Include="..\..\Src\Utils\Vector3.cpp" />
     <ClCompile Include="..\..\Src\Utils\Vector4.cpp" />
@@ -28,6 +29,7 @@
     <ClInclude Include="..\..\Src\Utils\checkML.h" />
     <ClInclude Include="..\..\Src\Utils\Singleton.h" />
     <ClInclude Include="..\..\Src\Utils\Time.h" />
+    <ClInclude Include="..\..\Src\Utils\Timer.h" />
     <ClInclude Include="..\..\Src\Utils\Utils.h" />
     <ClInclude Include="..\..\Src\Utils\Vector2.h" />
     <ClInclude Include="..\..\Src\Utils\Vector3.h" />

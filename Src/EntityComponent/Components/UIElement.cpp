@@ -3,83 +3,85 @@
 #include <OgreOverlayContainer.h>
 #include <OgreOverlayManager.h>
 
-me::UIElement::UIElement()
+using namespace me;
+
+UIElement::UIElement()
 {
     mOverlayManager = Ogre::OverlayManager::getSingletonPtr();
     mElems++;
 }
 
-me::UIElement::~UIElement()
+UIElement::~UIElement()
 {
     mOverlayManager->destroy(mOverlay);
 }
 
-void me::UIElement::show()
+void UIElement::show()
 {
     mOverlay->show();
 }
 
-void me::UIElement::hide()
+void UIElement::hide()
 {
     mOverlay->hide();
 }
 
-Vector2 me::UIElement::getSize()
+Vector2 UIElement::getSize()
 {
     return Vector2(mOverlayContainer->getWidth(), mOverlayContainer->getHeight());
 }
 
-Vector2 me::UIElement::getPos()
+Vector2 UIElement::getPos()
 {
     return Vector2(mOverlayContainer->getLeft(), mOverlayContainer->getTop());
 }
 
-void me::UIElement::setSize(Vector2 size)
+void UIElement::setSize(Vector2 size)
 {
     mOverlayContainer->setDimensions(size.x,size.y);
 }
 
-bool me::UIElement::isVisible()
+bool UIElement::isVisible()
 {
     return mOverlay->isVisible();
 }
 
-void me::UIElement::setTop(float top)
+void UIElement::setTop(float top)
 {
     mOverlayContainer->setTop(top);
 }
 
-void me::UIElement::setLeft(float left)
+void UIElement::setLeft(float left)
 {
     mOverlayContainer->setLeft(left);
 }
 
-void me::UIElement::setWidth(float wifth)
+void UIElement::setWidth(float wifth)
 {
     mOverlayContainer->setWidth(wifth);
 }
 
-void me::UIElement::setHeight(float height)
+void UIElement::setHeight(float height)
 {
     mOverlayContainer->setHeight(height);
 }
 
-void me::UIElement::setInteractive(bool interactive)
+void UIElement::setInteractive(bool interactive)
 {
     mInteractive = interactive;
 }
 
-void me::UIElement::setFocusNow(bool focus)
+void UIElement::setFocusNow(bool focus)
 {
     mFocus = focus;
 }
 
-bool me::UIElement::getIsInteractive()
+bool UIElement::getIsInteractive()
 {
     return mInteractive;
 }
 
-bool me::UIElement::getIsFocusNow()
+bool UIElement::getIsFocusNow()
 {
     return mFocus;
 }

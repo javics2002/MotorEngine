@@ -4,68 +4,59 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 
-/*
-class Time provides/has information about time between frames, 
-physics time between frames, time scale and framerate.
-*/
-class __MOTORENGINE_API Time
-{
-public:
-	Time();
-
-	/**
-	Read Only Function used to get the framerate value
-	@returns A float number representing the framerate value (Example: 60fps, 144fps)
-	*/
-	float getGameFrameValue();
-
-	/**
-	Read Only Function used to get the physics framerate value
-	@returns A float number representing the framerate value (Example: 50.0f)
-	*/
-	float getPhysicsFrameValue();
-
-	/**
-	Function used to enable vertical syncronization to cap the framerate of the game
-	*/
-	void enableVSYNC();
-
-	/**
-	Function used to disable vertical syncronization to uncap the framerate of the game
-	*/
-	void disableVSYNC();
-
-
-	double obtainActualTime();
-
+namespace me {
 	/*
-	Delta time describes the time difference between the previous frame that was drawn and the current frame.
+	class Time provides/has information about time between frames,
+	time scale and framerate.
+	The default units are seconds and FPS unless specified otherwise.
+	The user has to call the update method everyframe
 	*/
-	double deltaTime;
+	class __MOTORENGINE_API Time
+	{
+	public:
+		Time(float targetFrameRate = 60, float timeScale = 1);
+		~Time();
 
-	/*
-	Fixed Delta time describes the time difference between the previous PHYSICS frame that was calculated and the current PHYSICS frame.
-	*/
-	double fixedDeltaTime;
+		/**
+		Updates time values.
+		@returns Delta Time, or time since last update.
+		*/
+		double update();
 
-	/*
-	* Current Framerate value
-	*/
-	float currentFPSValue;
+		double getDeltaTime();
 
-private:
-protected:
+		double timeToNextFrame();
+		long long millisecondsToNextFrame();
 
-	/*
-	* Framerate value (60, 144)
-	*/
-	float mFrameValue; 
+		/**
+		Read Only Function used to get the target frame rate
+		@returns A float number representing the target frame rate (Example: 60fps, 144fps)
+		*/
+		double getTargetFrameRate();
+		void setTargetFrameRate(float targetFrameRate);
 
-	/*
-	*  Physics framerate value (50)
-	*/
-	float mPhysicsFrameValue;
-};
+		void setTimeScale(float timeScale);
+		float getTimeScale();
 
+		/*
+		@returns Current global time in seconds
+		*/
+		double obtainCurrentTime();
+
+	protected:
+		float mTargetFrameRate;
+
+		double mPreviousFrameTime;
+		double mCurrentFrameTime;
+
+		/*
+		Delta time describes the time difference between 
+		the previous frame that was drawn and the current frame.
+		*/
+		double mDeltaTime;
+
+		float mTimeScale;
+	};
+}
 #endif
 

@@ -14,22 +14,22 @@
 
 using namespace me;
 
-float me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, float defaultValue)
+float me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, float defaultValue)
 {
     return params.count(parameter) ? std::stof(params[parameter]) : defaultValue;
 }
 
-int me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, int defaultValue)
+int me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, int defaultValue)
 {
     return params.count(parameter) ? std::stoi(params[parameter]) : defaultValue;
 }
 
-bool me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, bool defaultValue)
+bool me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, bool defaultValue)
 {
     return params.count(parameter) ? (bool) std::stoi(params[parameter]) : defaultValue;
 }
 
-std::string me::FactoryComponent::value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
+std::string me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
 {
     auto ci = params.count(parameter);
     return params.count(parameter) ? params[parameter] : defaultValue;
@@ -51,13 +51,13 @@ void me::FactoryAnimator::destroy(Component* component)
 Component* FactoryTransform::create(Parameters& params)
 {
     Transform* transform = new Transform();
-    transform->setPosition(Vector3(value(params, "position_x", 0.0f),
-        value(params, "position_y", 0.0f), value(params, "position_z", 0.0f)));
-    transform->setRotation(Vector3(value(params, "rotation_x", 0.0f),
-        value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f)));
-    transform->setScale(Vector3(value(params, "scale_x", 1.0f),
-        value(params, "scale_y", 1.0f), value(params, "scale_z", 1.0f)));
-    std::string transformParent = value(params, "parentname", std::string());
+    transform->setPosition(Vector3(Value(params, "position_x", 0.0f),
+        Value(params, "position_y", 0.0f), Value(params, "position_z", 0.0f)));
+    transform->setRotation(Vector3(Value(params, "rotation_x", 0.0f),
+        Value(params, "rotation_y", 0.0f), Value(params, "rotation_z", 0.0f)));
+    transform->setScale(Vector3(Value(params, "scale_x", 1.0f),
+        Value(params, "scale_y", 1.0f), Value(params, "scale_z", 1.0f)));
+    std::string transformParent = Value(params, "parentname", std::string());
     transform->setParentName(transformParent);
     return transform;
 }
@@ -83,11 +83,11 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
 {
     AudioSource* audioSource = new AudioSource();
 
-    audioSource->setSourcePath(value(params, "source", std::string()));
-    audioSource->setPlayOnStart(value(params, "onstart", false));
-    audioSource->setVolume(value(params, "volume", 1));
-    audioSource->setIs3D(value(params, "3d", false));
-    audioSource->setLoop(value(params, "loop", false));
+    audioSource->setSource(Value(params, "source", std::string()));
+    audioSource->setPlayOnStart(Value(params, "onstart", false));
+    audioSource->setVolume(Value(params, "volume", 1));
+    audioSource->setIs3D(Value(params, "3d", false));
+    audioSource->setLoop(Value(params, "loop", false));
 
     return audioSource;
 }
@@ -101,14 +101,14 @@ me::Component* me::FactoryCamera::create(Parameters& params)
 {
     Camera* camera = new Camera();
 
-    camera->setName(value(params, "name", std::string("Main")));
-    camera->setNearDistance(value(params, "neardistance", .1f));
-    camera->setFarDistance(value(params, "fardistance", 1000));
-    camera->setAutoRadio(value(params, "autoratio", false));
-    camera->setZOrder(value(params, "zorder", 0));
-    camera->setBackgroundColour(Vector4(value(params, "backgroundcolor_r", .0f), value(params, "backgroundcolor_g", .0f),
-        value(params, "backgroundcolor_b", .0f), value(params, "backgroundcolor_a", 1.0f)));
-    camera->setLookAt(Vector3(value(params, "lookat_x", 0), value(params, "lookat_y", 0), value(params, "lookat_z", 0)));
+    camera->setName(Value(params, "name", std::string("Main")));
+    camera->setNearDistance(Value(params, "neardistance", .1f));
+    camera->setFarDistance(Value(params, "fardistance", 1000));
+    camera->setAutoRadio(Value(params, "autoratio", false));
+    camera->setZOrder(Value(params, "zorder", 0));
+    camera->setBackgroundColour(Vector4(Value(params, "backgroundcolor_r", .0f), Value(params, "backgroundcolor_g", .0f),
+        Value(params, "backgroundcolor_b", .0f), Value(params, "backgroundcolor_a", 1.0f)));
+    camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
     camera->init();
 
     return camera;
@@ -134,10 +134,10 @@ void me::FactoryCollider::destroy(Component* component)
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
     
-    std::string mesh = value(params, "mesh", std::string());
-    std::string meshName = value(params, "meshname", std::string());
-    std::string materialName = value(params, "materialname", std::string());
-    bool staticState = value(params, "staticobj", false);
+    std::string mesh = Value(params, "mesh", std::string());
+    std::string meshName = Value(params, "meshname", std::string());
+    std::string materialName = Value(params, "materialname", std::string());
+    bool staticState = Value(params, "staticobj", false);
 
     MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
     meshRenderer->setMaterial(materialName);
@@ -156,16 +156,16 @@ void me::FactoryMeshRenderer::destroy(Component* component)
 me::Component* me::FactoryParticleSystem::create(Parameters& params)
 {
 
-    std::string particle = value(params, "particle", std::string());
-    std::string particleName = value(params, "particlename", std::string());
-    bool emitted = value(params, "emitted", false);    
+    std::string particle = Value(params, "particle", std::string());
+    std::string particleName = Value(params, "particlename", std::string());
+    bool emitted = Value(params, "emitted", false);
 
     ParticleSystem* particleSystem = new ParticleSystem(particle, particleName);
     particleSystem->setEmitting(emitted);
-    particleSystem->setOffsetPos(Vector3(value(params, "offpos_x", 0.0f),
-        value(params, "offpos_y", 0.0f), value(params, "offpos_z", 0.0f)));
-    particleSystem->setOffsetScale(Vector3(value(params, "offscale_x", 0.0f),
-        value(params, "offscale_y", 0.0f), value(params, "offscale_z", 0.0f)));
+    particleSystem->setOffsetPos(Vector3(Value(params, "offpos_x", 0.0f),
+        Value(params, "offpos_y", 0.0f), Value(params, "offpos_z", 0.0f)));
+    particleSystem->setOffsetScale(Vector3(Value(params, "offscale_x", 0.0f),
+        Value(params, "offscale_y", 0.0f), Value(params, "offscale_z", 0.0f)));
 
     return particleSystem;
 }
@@ -179,14 +179,16 @@ me::Component* me::FactoryRigidBody::create(Parameters& params)
 {
     RigidBody* rigidbody = new RigidBody();
 
-    rigidbody->setMass(value(params, "mass", 0.0f));
-    rigidbody->setRestitution(value(params, "restitution", 0.0f));
-    rigidbody->setFriction(value(params, "friction", 0.0f));
-    rigidbody->setTrigger(value(params, "istrigger", false));
-    rigidbody->setColShape(Shapes(value(params, "colshape", SHAPES_BOX)));
-    rigidbody->setColliderScale(Vector3(value(params, "colliderscale_x", 1.0f),
-        value(params, "colliderscale_y", 1.0f), value(params, "colliderscale_z", 1.0f)));
-    rigidbody->setMomeventType(MovementType(value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
+    rigidbody->setMass(Value(params, "mass", 0.0f));
+    rigidbody->setRestitution(Value(params, "restitution", 0.0f));
+    rigidbody->setFriction(Value(params, "friction", 0.0f));
+    rigidbody->setTrigger(Value(params, "istrigger", false));
+    rigidbody->setColShape(Shapes(Value(params, "colshape", SHAPES_BOX)));
+    rigidbody->setColliderScale(Vector3(Value(params, "colliderscale_x", 1.0f),
+        Value(params, "colliderscale_y", 1.0f), Value(params, "colliderscale_z", 1.0f)));
+    rigidbody->setMomeventType(MovementType(Value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
+    rigidbody->setMask(Value(params, "mask", 15));
+    rigidbody->setGroup(Value(params, "group", 1));
 
     return rigidbody;
 }
@@ -200,10 +202,10 @@ Component* me::FactoryLight::create(Parameters& params)
 {
     Light* light = new Light();
 
-    light->setName(value(params, "name", std::string("Light")));
-    light->setDirection(Vector3(value(params, "direction_x", 0.0f),
-        value(params, "direction_y", -1.0f), value(params, "direction_z", 0.0f)));
-    light->setLightType((LightType) value(params, "type", 0));
+    light->setName(Value(params, "name", std::string("Light")));
+    light->setDirection(Vector3(Value(params, "direction_x", 0.0f),
+        Value(params, "direction_y", -1.0f), Value(params, "direction_z", 0.0f)));
+    light->setLightType((LightType)Value(params, "type", 0));
 
     return light;
 }
@@ -219,9 +221,9 @@ me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
     {
         return new UISpriteRenderer();
     }
-    std::string sprite = value(params, "sprite", std::string());
-    std::string materialName = value(params, "materialname", std::string());
-    bool staticState = value(params, "staticobj", false);
+    std::string sprite = Value(params, "sprite", std::string());
+    std::string materialName = Value(params, "materialname", std::string());
+    bool staticState = Value(params, "staticobj", false);
 
     UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
     spriteRenderer->init(sprite, materialName);
@@ -238,11 +240,11 @@ void me::FactoryUISpriteRenderer::destroy(Component* component)
 Component* me::FactoryUITransform::create(Parameters& params)
 {
     UITransform* transform = new UITransform();
-    transform->setPosition(Vector2(value(params, "position_x", 0.0f),
-        value(params, "position_y", 0.0f)));
-    transform->setRotation(value(params, "rotation", 0.0f));
-    transform->setScale(Vector2(value(params, "scale_x", 1.0f),
-        value(params, "scale_y", 1.0f)));
+    transform->setPosition(Vector2(Value(params, "position_x", 0.0f),
+        Value(params, "position_y", 0.0f)));
+    transform->setRotation(Value(params, "rotation", 0.0f));
+    transform->setScale(Vector2(Value(params, "scale_x", 1.0f),
+        Value(params, "scale_y", 1.0f)));
     return transform;
 }
 

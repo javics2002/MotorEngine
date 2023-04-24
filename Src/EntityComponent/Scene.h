@@ -47,8 +47,9 @@ namespace me {
 		Prepares an entity to be safely remove from the scene.
 		This assumes that the name is a unique identifier.
 		@param String name to identify the entity to be remove.
+		@returns Whether the operation is successful.
 		*/
-		void removeEntity(const EntityName& name);
+		bool removeEntity(const EntityName& name);
 
 		/**
 		Get a vector of all entities in the scene.
@@ -88,8 +89,9 @@ namespace me {
 		Rename an entity name to the new one.
 		@param String oldName to be change.
 		@param String newName to be set.
+		@returns Whether the operation is successful.
 		*/
-		void renameEntity(const EntityName& oldName, const EntityName& newName);
+		bool renameEntity(const EntityName& oldName, const EntityName& newName);
 
 		/**
 		This method is only ever called once.
@@ -103,8 +105,10 @@ namespace me {
 		at the begining of the game cycle.
 
 		Almost all the logic updates.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		void update();
+		void update(const double& dt);
 
 		/**
 		This method is meant to be the definition 
@@ -112,8 +116,10 @@ namespace me {
 		at the end of the game cycle.
 
 		For example: render and collisions.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		void lateUpdate();
+		void lateUpdate(const double& dt);
 
 		/**
 		Safely deletes dead entities from map, 
@@ -135,10 +141,24 @@ namespace me {
 		*/
 		void pushEntities(InfoScene& entitiesMap);
 
+		/**
+		Makes this entity global so it won't be deleted on changeScenes.
+		@param entity The entity to be promoted.
+		@returns Whether the operation is successful.
+		*/
+		bool promoteToGlobal(Entity* entity);
+
+		static void DeleteGlobalEntities();
+
 	protected:
 		SceneName mName;
-		std::vector<std::shared_ptr<Entity>> mNewEntities;
-		std::unordered_map<EntityName, std::shared_ptr<Entity>> mEntities;
+		std::vector<std::shared_ptr<Entity>> mNewEntities, mNewGlobalEntities;
+
+		typedef std::unordered_map<EntityName, std::shared_ptr<Entity>> EntitiesMap;
+		EntitiesMap mEntities;
+
+		//Entities that are not deleted between scenes.
+		static EntitiesMap MGlobalEntities;
 	};
 };
 

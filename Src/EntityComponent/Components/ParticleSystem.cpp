@@ -6,25 +6,27 @@
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
 
-me::ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
+using namespace me;
+
+ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
 {
 	mName = name;
 	mParticleName = nameParticle;
 	renderManager().createParticle(mName, mParticleName);
 }
 
-me::ParticleSystem::~ParticleSystem()
+ParticleSystem::~ParticleSystem()
 {
 	renderManager().destroyMesh(mName);
 }
 
-void me::ParticleSystem::start()
+void ParticleSystem::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 	renderManager().setParticleTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }
 
-void me::ParticleSystem::update()
+void ParticleSystem::update(const double& dt)
 {
 	Vector3 pos = mTransform->getPosition() + mOffsetPos;
 	Vector3 scale = mTransform->getScale() + mOffsetScale;
@@ -32,16 +34,16 @@ void me::ParticleSystem::update()
 	//{ 0.000000000001,0.000000000001,0.000000000001 }  { 1,1,1 }
 }
 
-void me::ParticleSystem::setOffsetPos(Vector3 offset)
+void ParticleSystem::setOffsetPos(Vector3 offset)
 {
 	mOffsetPos = offset;
 }
-void me::ParticleSystem::setOffsetScale(Vector3 offset)
+void ParticleSystem::setOffsetScale(Vector3 offset)
 {
 	mOffsetScale = offset;
 }
 
-void me::ParticleSystem::setEmitting(bool stat)
+void ParticleSystem::setEmitting(bool stat)
 {
 	renderManager().setParticleEmitting(mName, stat);
 }

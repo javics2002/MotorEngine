@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Transform.h"
+#include "Collider.h"
 #include "Physics/PhysicsEnums.h"
 
 class btRigidBody;
@@ -19,7 +20,6 @@ namespace me{
 	*/
 	class __MOTORENGINE_API RigidBody : public Component
 	{
-
 		Shapes mColShape;
 		MovementType mMvType;
 
@@ -29,6 +29,12 @@ namespace me{
 		float mFricion;
 		//amount of bounce of an object after a collision
 		float mRestitution;
+		//layers it can collide with, max 32 bits
+		//example of a mask, mask =  5 means that the rigidbody can collides with layers 1 and 3 because 5 is 101 
+		//the  layer 1 corresponds to the most significant bit
+		int mMask;
+		//current layer of the rigidbody 
+		int mGroup;
 
 		/**
 		If the rigidbody is a trigger, it will detect collisions but will not influence 
@@ -42,9 +48,9 @@ namespace me{
 		btTransform* mBtTransform = nullptr;
 
 		Transform* mTransform = nullptr;
+		Collider* mCollider = nullptr;
 
 	public:
-
 		/*
 		Set the values of the new RigidBody that will be created
 
@@ -62,8 +68,8 @@ namespace me{
 		Starts the RigidBody of the entity for the physics
 		*/
 		void start() override;
-		void update() override;
-		void lateUpdate() override;
+		void update(const double& dt) override;
+		void lateUpdate(const double& dt) override;
 
 		void setTrigger(bool isTrigger);
 		void setMass (float mass);
@@ -72,6 +78,8 @@ namespace me{
 		void setColliderScale(Vector3 colliderScale);
 		void setColShape(Shapes colShape);
 		void setMomeventType(MovementType mvType);
+		void setMask(int mask);
+		void setGroup(int group);
 
 		bool getTrigger();
 		float getMass();
@@ -79,6 +87,12 @@ namespace me{
 		float getRestitution();
 		int  getColShape();
 		int getMovementType();
+		int getMask();
+		int getGroup();
+		Vector3 getVelocity();
+
+		void activeBody();
+		void desactiveBody();
 
 		/**
 		Apply a force to the rigidBody

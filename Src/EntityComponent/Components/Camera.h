@@ -36,7 +36,7 @@ namespace me {
 		//componenet transform of this.Entity
 		Transform* mTransform;
 		//static state of this.Entity 
-		bool mStaticObject = true;
+		bool mStaticObject = false;
 
 		int x = 0;
 
@@ -54,6 +54,13 @@ namespace me {
 		*/
 		inline void setName(std::string name) {
 			mName = name;
+		}
+
+		/*
+		Set the name saved in renderManager() map and used for entity that attached in node
+		*/
+		inline std::string getName() {
+			return mName;
 		}
 
 		inline void setNearDistance(float nearDistance) {
@@ -89,7 +96,7 @@ namespace me {
 		/**
 		Update transform info to camera node
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		Set it is static entity or not

@@ -135,8 +135,6 @@ namespace me {
 		*/
 		void initRoot();
 
-		//Destroy Ogre::Root
-		void shutdown();
 		/**
 		Creates OgreWindow (RenderWindow)
 		*/
@@ -227,6 +225,13 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool setCameraInfo(std::string name, const Vector3& pos, const Vector3& look);
+
+		/*
+		Locks camera orientation in Y Axis
+
+		@param bFixed: lock boolean
+		*/
+		bool setCameraFixedY(std::string name, bool bFixed);
 
 		/**
 		Set dimension to the viewport of the camera with this name
@@ -403,7 +408,7 @@ namespace me {
 		writing OgreManager::instance()->method() we write om().method()
 	*/
 	inline RenderManager& renderManager() {
-		return *RenderManager::instance();
+		return *RenderManager::Instance();
 	}
 
 }

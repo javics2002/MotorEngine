@@ -80,15 +80,6 @@ void RenderManager::initRoot()
 	mRoot->restoreConfig();
 }
 
-void RenderManager::shutdown()
-{
-	// Destroy the RT Shader System.
-	destroyRTShaderSystem();
-	delete mFSLayer;
-	delete mOgreWindow;
-	delete mOverlaySystem;
-}
-
 void RenderManager::initWindow()
 {
 	mOgreWindow = new RenderWindow("OgreWindow");
@@ -188,7 +179,6 @@ RenderMesh* RenderManager::getMesh(std::string name)
 
 RenderCamera* RenderManager::getCamera(std::string name)
 {
-
 	if (!mCameras.count(name))
 		return nullptr;
 
@@ -230,12 +220,12 @@ me::RenderManager::~RenderManager()
 	}
 	mLights.clear();
 
-	/*if (mRoot != nullptr)
-	{
-		mRoot->saveConfig();
-	}*/
+	// Destroy the RT Shader System.
+	destroyRTShaderSystem();
+	delete mFSLayer;
+	delete mOgreWindow;
+	delete mOverlaySystem;
 
-	shutdown();
 	delete mRoot;
 	mRoot = nullptr;
 }
@@ -283,9 +273,20 @@ bool RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Ve
 	cam->setPosition(pos);
 	cam->lookAt(look);
 
+	
+
 	return true;
 }
 
+bool RenderManager::setCameraFixedY(std::string name, bool bFixed) {
+	RenderCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setFixedYAxis(bFixed);
+
+	return true;
+}
 
 bool RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {

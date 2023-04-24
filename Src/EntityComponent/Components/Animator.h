@@ -23,7 +23,7 @@ namespace me {
 		~Animator();
 
 		void start() override;
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		* Sets the Animator's active state
