@@ -16,6 +16,8 @@ namespace me{
 		Collider();
 		virtual ~Collider();
 
+		void start() override;
+
 		/**
 		Executed when a collision starts.
 		@param other Entity that collides with this entity.
