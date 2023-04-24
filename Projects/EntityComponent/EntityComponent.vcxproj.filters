@@ -78,11 +78,13 @@
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -147,11 +149,13 @@
     <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>

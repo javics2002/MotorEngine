@@ -139,6 +139,14 @@ namespace me {
 		*/
 		bool setMode(std::string soundName, FMOD_MODE newMode);
 		/**
+		Sets the minimum and maximum distance a 3D sound can be heard from.
+		@param soundName : the especific name of the sound which hearing distance will be changed.
+		@param minDistance : the new minimum distance a 3D sound can be heard from.
+		@param maxDistance : the new maximun distance a 3D sound can be heard from.
+		@return A boolean showing wether or not the new hearing distances was set.
+		*/
+		bool setMinMaxDistance(std::string soundName, float minDistance, float maxDistance);
+		/**
 		Create a channel group if a channel with the same name doesn't already exists.
 		@param newChannelGroup : the name for the new channel group.
 		@return A boolean representing whether or not a new channel was indeed created.

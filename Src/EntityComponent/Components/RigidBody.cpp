@@ -57,14 +57,14 @@ void me::RigidBody::update()
 	}
 
 	if (MovementType(mMvType) == MOVEMENT_TYPE_DYNAMIC) {
-
 		btVector3 pos = mBtRigidBody->getWorldTransform().getOrigin();
+		btVector3 vel= mBtRigidBody->getLinearVelocity();
 		btQuaternion rot = mBtRigidBody->getWorldTransform().getRotation();
 		//update transform position and rotation
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
+		mTransform->setVelocity(Vector3(vel.x(), vel.y(), vel.z()));
 		mTransform->setRotation(Vector4(rot.x(), rot.y(), rot.z(), rot.w()));
 		mBtRigidBody->activate(true);
-		//std::cout << "rbtrx: " << mTransform->getPosition().x << " rbtry: " << mTransform->getPosition().y << " rbtrz: " << mTransform->getPosition().z << '\n';
 	}
 }
 

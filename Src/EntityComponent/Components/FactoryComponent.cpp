@@ -83,7 +83,7 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
 {
     AudioSource* audioSource = new AudioSource();
 
-    audioSource->setSource(value(params, "source", std::string()));
+    audioSource->setSourcePath(value(params, "source", std::string()));
     audioSource->setPlayOnStart(value(params, "onstart", false));
     audioSource->setVolume(value(params, "volume", 1));
     audioSource->setIs3D(value(params, "3d", false));

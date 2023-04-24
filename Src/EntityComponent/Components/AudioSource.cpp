@@ -9,18 +9,21 @@ me::AudioSource::AudioSource()
 
 me::AudioSource::~AudioSource()
 {
-    //soundManager().deleteSound(mSound);
+    soundManager().deleteSound(mSoundName);
 }
 
 void me::AudioSource::start()
 {
+    bool error;
     // Create a 3D sound or a normal sound
     if (mIs3D)
-        // sm().create3DSound(source, mSound, 1);
-    // else sm().createNormalSound(source, mSound, 1);
+         error = soundManager().create3DSound(mSoundPath, mSoundName, mMinDistance, mMaxDistance);
+     else error = soundManager().createNormalSound(mSoundPath, mSoundName);
+
+
 
     // If the sound was not created, output an error message
-        if (!mSound)
+        if (!error)
             std::cout << "ERROR: Sound is null\n";
 
     if (mPlayOnStart)
@@ -30,13 +33,13 @@ void me::AudioSource::start()
 void me::AudioSource::update()
 {
     if (mIs3D) {
-        //soundManager().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
+        soundManager().setSoundPosition(mSoundName, mEntity->getComponent<me::Transform>("transform")->getPosition());
     }
 }
 
 void me::AudioSource::play()
 {
-    // sm().playSound(mSound, mLoop, 0,10);
+    //soundManager().playSound(mSoundName, mLoop,);
 }
 
 void me::AudioSource::stop()

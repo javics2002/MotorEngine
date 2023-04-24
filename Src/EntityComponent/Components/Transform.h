@@ -40,6 +40,13 @@ namespace me {
 		Vector3 getPosition();
 
 		/**
+		Get the linear velocity vector of the Transform object.
+
+		@return A Vector3 object representing the linear velocity.
+		*/
+		Vector3 getVelocity();
+
+		/**
 		Returns the current Rotation
 		*/
 		Vector4 getRotation();
@@ -57,6 +64,13 @@ namespace me {
 		@param newPosition A Vector3 object representing the new position.
 		*/
 		void setPosition(Vector3 newPosition);
+
+		/**
+		Set the linear velocity vector of the Transform object.
+
+		@param newPosition A Vector3 object representing the new linear velocity.
+		*/
+		void setVelocity(Vector3 newVelocity);
 
 		/**
 		Set the rotation vector of the Transform object.
@@ -158,6 +172,7 @@ namespace me {
 	private:
 
 		Vector3 mPosition;
+		Vector3 mVelocity;
 		Vector3 mTranslatePosition;
 		Vector4 mRotation;
 		Vector3  mScale;

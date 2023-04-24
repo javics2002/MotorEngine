@@ -34,7 +34,6 @@ me::Transform::~Transform()
 void me::Transform::start()
 {
 	setParent();
-	std::cout << "start transform";
 }
 
 void me::Transform::update()
@@ -51,6 +50,11 @@ me::Vector3 me::Transform::getPosition()
 	return mPosition;
 }
 
+me::Vector3 me::Transform::getVelocity()
+{
+	return mVelocity;
+}
+
 me::Vector4 me::Transform::getRotation() {
 	return mRotation;
 }
@@ -64,6 +68,11 @@ void me::Transform::setPosition(Vector3 newPosition)
 {	
 	mTranslatePosition = newPosition - mPosition;
 	mPosition = newPosition;
+}
+
+void me::Transform::setVelocity(Vector3 newVelocity)
+{
+	mVelocity = newVelocity;
 }
 
 void me::Transform::setRotation(Vector3 newRotation)
@@ -150,6 +159,3 @@ void me::Transform::setParentName(std::string name) {
 		c = tolower(c);
 	mParentName = name;
 }
-
-
-

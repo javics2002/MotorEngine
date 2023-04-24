@@ -5,12 +5,15 @@
 #include <string>
 
 #include "Component.h"
+#include "Audio/SoundManager.h"
+
 
 namespace FMOD {
 	class Sound;
 }
 
 namespace me {
+	class SoundManager;
 	/**
 	Plays an audio file in the scene. AudioListeners within range
 	will hear it with the intensity based in their position in the scene. 
@@ -62,14 +65,35 @@ namespace me {
 		*/
 		inline void setVolume(float value) {
 			mVolume = value;
+			soundManager().setVolume(mSoundName, value);
 		}
 
 		/**
-		* Set the source of the audio
-		* @param source The audio file to play.
+		* Set the speed of the audio.
+		* @param value The new speed value.
 		*/
-		inline void setSource(std::string source) {
-			mSource = source;
+		inline void setSpeed(float value) {
+			mSpeed = value;
+			soundManager().setSpeed(mSoundName, value);
+		}
+
+		/**
+		* Set the path of the audio
+		* @param path The path to the audio file to play.
+		* @param name The name to the audio file to play.
+		*/
+		inline void setSourcePath(std::string path) {
+			
+			mSoundPath = path.c_str();
+		}
+
+		/**
+		* Set the name of the audio
+		* @param path The path to the audio file to play.
+		* @param name The name to the audio file to play.
+		*/
+		inline void setSourceName(std::string name) {
+			mSoundName = name;
 		}
 
 		/**
@@ -104,8 +128,15 @@ namespace me {
 
 	private:
 		float mVolume;  // The volume of the audio
-		FMOD::Sound* mSound; // The FMOD sound object
-		std::string mSource; // The audio file to play
+		float mSpeed; // The speed of the audio
+		float mMinDistance; //Minimum distance a 3D sound can be heard from.
+		float mMaxDistance; //Maximun distance a 3D sound can be heard from.
+
+		//FMOD::Sound* mSound; // The FMOD sound object
+		int mSoundChannel; // The number of the channel this sound will be played on.
+		std::string mSoundGroup; // The name of the channel group this sound will be played on.
+		const char* mSoundPath; // The path to the audio file to play
+		std::string mSoundName; // The name we give to the audio file to play
 		bool mPlaying; // Whether the audio is currently playing or not
 		bool mLoop; // Whether the audio should loop or not
 		bool mIs3D;
