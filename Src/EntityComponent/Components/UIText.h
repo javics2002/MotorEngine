@@ -15,6 +15,7 @@ namespace Ogre {
 namespace me {
 	class __MOTORENGINE_API UIText : public UIElement
 	{
+	public:
 		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
 		~UIText();
 
