@@ -6,8 +6,11 @@
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
 #include "UIElement.h"
-#include <OgreTextAreaOverlayElement.h>
 #include <string>
+
+namespace Ogre {
+	class TextAreaOverlayElement;
+}
 
 namespace me {
 	class __MOTORENGINE_API UIText : public UIElement
@@ -78,14 +81,12 @@ namespace me {
 		* Set the alignment of the text displayed by the UIText instance
 		* @param a The new alignment of the text
 		*/
-		void setTextAligment(Ogre::TextAreaOverlayElement::Alignment a);
+		void setTextAligment(int a);
 
 	private:
 
 		// Pointer to the text area overlay element
 		Ogre::TextAreaOverlayElement* mTextArea;
-		// The alignment of the text displayed 
-		Ogre::TextAreaOverlayElement::Alignment mAlignment;
 	};
 }
 
