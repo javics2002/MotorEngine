@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Transform.h"
+#include "Collider.h"
 #include "Physics/PhysicsEnums.h"
 
 class btRigidBody;
@@ -47,6 +48,7 @@ namespace me{
 		btTransform* mBtTransform = nullptr;
 
 		Transform* mTransform = nullptr;
+		Collider* mCollider = nullptr;
 
 	public:
 		/*

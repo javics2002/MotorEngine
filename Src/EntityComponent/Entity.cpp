@@ -91,15 +91,15 @@ namespace me {
 	void Entity::onCollisionEnter(Entity* other)
 	{
 		for (auto &c : mComponents) {
-			if(c.second->enabled)
+			if(c.second->enabled && c.first != "collider")
 				c.second->onCollisionEnter(other);
 		}
 	}
 
 	void Entity::onCollisionStay(Entity* other)
 	{
-		for (auto &c : mComponents) {
-			if (c.second->enabled)
+		for (auto &c : mComponents ) {
+			if (c.second->enabled  && c.first != "collider")
 				c.second->onCollisionStay(other);
 		}
 	}
@@ -107,7 +107,7 @@ namespace me {
 	void Entity::onCollisionExit(Entity* other)
 	{
 		for (auto &c : mComponents) {
-			if (c.second->enabled)
+			if (c.second->enabled && c.first != "collider")
 				c.second->onCollisionExit(other);
 		}
 	}

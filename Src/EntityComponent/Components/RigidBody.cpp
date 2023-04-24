@@ -36,7 +36,11 @@ void RigidBody::start()
 	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale,  mGroup, mMask, mColShape,
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
-	mBtRigidBody->setUserPointer(this);
+	mCollider = mEntity->getComponent<Collider>("collider");
+
+	assert(mCollider && "An Entity doesn't have the collider  component");
+
+	mBtRigidBody->setUserPointer(mCollider);
 
 }
 
