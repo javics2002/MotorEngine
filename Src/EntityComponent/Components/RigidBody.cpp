@@ -203,3 +203,15 @@ Vector3 RigidBody::getVelocity()
 	velocity = mBtRigidBody->getLinearVelocity();
 	return velocity;
 }
+
+void me::RigidBody::activeBody()
+{
+	mBtRigidBody->activate(true);
+	enabled = true;
+}
+
+void me::RigidBody::desactiveBody()
+{
+	mBtRigidBody->activate(false);
+	enabled = false;
+}

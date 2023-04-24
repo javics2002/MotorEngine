@@ -91,6 +91,9 @@ namespace me{
 		int getGroup();
 		Vector3 getVelocity();
 
+		void activeBody();
+		void desactiveBody();
+
 		/**
 		Apply a force to the rigidBody
 
