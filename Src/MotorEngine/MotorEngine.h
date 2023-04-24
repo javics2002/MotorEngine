@@ -8,9 +8,10 @@
 #include <string>
 
 union SDL_Event;
-class Time;
 
 namespace me {
+	class Time;
+
 	/*
 	class MotorEngine provides/has information about the characteristics of the Engine,
 	as the initialization, main loop and memory management of the program.
@@ -49,14 +50,11 @@ namespace me {
 		* @param event is a SDL variable that contains information about the SDL_Event launched by any event.
 		* @returns is ignored
 		*/
-		static int quitLoop(void* userdata, SDL_Event* event);
+		static int QuitLoop(void* userdata, SDL_Event* event);
 
-		HMODULE game;
+		HMODULE mGame;
 
-		/*
-		* Utils
-		*/
-		Time* timeUtils;
+		Time* mTime;
 	};
 }
 

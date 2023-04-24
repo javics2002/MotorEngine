@@ -23,7 +23,7 @@ namespace me {
 	class Singleton {
 	private:
 		//The only instance of class T
-		static std::unique_ptr<T> mInstance;
+		static std::unique_ptr<T> MInstance;
 		
 	protected:
 		Singleton() {};
@@ -38,9 +38,9 @@ namespace me {
 		@tparam Arguments to pass to class T constructor.
 		*/
 		template<typename ...Targs>
-		static T* init(Targs &&...args) {
-			if (mInstance.get() == nullptr) {
-				mInstance.reset(new T(std::forward<Targs>(args)...));
+		static T* Init(Targs &&...args) {
+			if (MInstance.get() == nullptr) {
+				MInstance.reset(new T(std::forward<Targs>(args)...));
 #ifdef _DEBUG
 				std::cout << "Singleton: Instance of " << typeid(T).name() << " created.\n";
 			}
@@ -48,7 +48,7 @@ namespace me {
 				std::cout << "Singleton error: There already is an instance of class " << typeid(T).name() << ".\n";
 #endif
 			}
-			return mInstance.get();
+			return MInstance.get();
 		}
 
 		/**
@@ -56,15 +56,20 @@ namespace me {
 		the default constructor and returns it.
 		@return Reference to the only instance of class T.
 		*/
-		static T* instance() {
-			if (mInstance.get() == nullptr)
-				return init();
-			return mInstance.get();
+		static T* Instance() {
+			if (MInstance.get() == nullptr)
+				return Init();
+			return MInstance.get();
+		}
+
+		static void Shutdown() {
+			if (MInstance.get() != nullptr)
+				delete MInstance.release();
 		}
 	};
 
 	template<class T>
-	std::unique_ptr<T> Singleton<T>::mInstance;
+	std::unique_ptr<T> Singleton<T>::MInstance;
 }
 
 #endif

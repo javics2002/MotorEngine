@@ -12,24 +12,19 @@
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
 #include "EntityComponent/SceneManager.h"
-#include "EntityComponent/Scene.h"
+#include "Render/RenderWindow.h"
 #include "Render/Window.h"
 // --- Components
+#include "EntityComponent/Scene.h"
 #include "EntityComponent/Components/ComponentsFactory.h"
 #include "EntityComponent/Components/FactoryComponent.h"
 // --- Utils
 #include "Utils/Time.h"
+#include "Utils/Timer.h"
 // --- SDL3
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
 
-//UI con SDL
-#include <SDL3/SDL_surface.h>
-#include <SDL3/SDL_render.h>
-#include <SDL3/SDL_video.h>
-#include "Render/RenderWindow.h"
-
-//typedef HRESULT(CALLBACK* LPFNDLLFUNC1)(DWORD, UINT*);
 typedef const char* (*GameName)();
 typedef bool(__cdecl* GameEntryPoint)();
 typedef void(*TypeDefinition)();
@@ -39,30 +34,34 @@ using namespace me;
 
 bool MotorEngine::setup(std::string gameName)
 {
-	loadGame(gameName); 
-
-	if (game == NULL)
+	if (!loadGame(gameName))
 		return false;
 
-	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(game, "init");
+	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(mGame, "init");
 
-	if (entryPoint == NULL)
+	if (entryPoint == NULL) {
+		FreeLibrary(mGame);
 		return false;
+	}
 
-	GameName name = (GameName)GetProcAddress(game, "name");
+	GameName name = (GameName)GetProcAddress(mGame, "name");
 
-	Window::init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
+	Window::Init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 	// Register Motor Engine's default component factories
-	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(game, "initFactories");
-	if (gameTypesDef == NULL)
+	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(mGame, "initFactories");
+	if (gameTypesDef == NULL) {
+		FreeLibrary(mGame);
 		return false;
+	}
 
 	// Register Motor Engine's default component factories
-	InputDefinition gameInputDef = (InputDefinition)GetProcAddress(game, "initInput");
-	if (gameInputDef == NULL)
+	InputDefinition gameInputDef = (InputDefinition)GetProcAddress(mGame, "initInput");
+	if (gameInputDef == NULL) {
+		FreeLibrary(mGame);
 		return false;
+	}
 	
 	// Añadir componentes del juego
 	gameTypesDef();
@@ -76,72 +75,36 @@ bool MotorEngine::setup(std::string gameName)
 	// Init managers
 	physicsManager().start();
 
+	// Start time
+	mTime = new Time();
+
 	return entryPoint();
 }
 
 void MotorEngine::loop()
 {
-	//sceneManager().getActiveScene()->processNewEntities();
-	//sceneManager().getActiveScene()->start();
-
-	/*
-	Init Time Utils
-	*/
-	timeUtils = new Time();
-
-	double prevTime = timeUtils->obtainActualTime();
-	double actTime = 0.0;
-
-	//UI con SDL
-	SDL_Surface* surface = SDL_LoadBMP("Assets/UISprites/OilSprite.bmp");
-	SDL_Renderer* renderer = SDL_GetRenderer(renderManager().getOgreWindow()->getSdlWindow());
-	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	if (texture == NULL) {
-		std::cout << "Error: No se pudo crear la textura: " << SDL_GetError() << std::endl;
-		SDL_UnlockSurface(surface);
-		return;
-	}
-	const SDL_FRect dest_rect = { 0, 0, 200, 200 };
-	
 	SDL_Event event;
 	bool quit = false;
-	inputManager().addEvent(quitLoop, &quit);
+	inputManager().addEvent(QuitLoop, &quit);
+	float dt;
+
 	while (!quit) {
-		while (SDL_PollEvent(&event)) {
+		while (SDL_PollEvent(&event)) { }
 
-		}
+		// Update Time Values
+		dt = mTime->update();
 
-		/*
-		* Update Time Values
-		*/ 
-		actTime = timeUtils->obtainActualTime();
-		timeUtils->deltaTime = actTime - prevTime;
-		prevTime = actTime;
+		// Update the scene
+		physicsManager().update(dt);
 
-		/*
-		* Update the scene
-		*/
-		sceneManager().update();
-
-		physicsManager().update(timeUtils->deltaTime);
+		sceneManager().update(dt);
 		
-		/*
-		* Render the scene
-		*/
-
-		// renderManager().createSprite("a", "a");
+		// Render the scene
 		renderManager().render();
 
-		/*
-		* Wait time
-		*/
-		std::this_thread::sleep_for(std::chrono::milliseconds(16)); // 16ms para apuntar a 60 FPS (1000ms / 60FPS = ~16ms)
+		// Wait time
+		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));
 	}
-
-	//UI con SDL
-	SDL_DestroyTexture(texture);
-	SDL_UnlockSurface(surface);
 }
 
 void MotorEngine::exit()
@@ -149,9 +112,19 @@ void MotorEngine::exit()
 	/*
 	Clear the memory created in the execution of the program
 	*/
-
 	sceneManager().deleteAllScenes();
-	FreeLibrary(game);
+
+	RenderManager::Shutdown();
+	SceneManager::Shutdown();
+	PhysicsManager::Shutdown();
+	InputManager::Shutdown();
+	Window::Shutdown();
+	SoundManager::Shutdown();
+	ComponentsFactory::Shutdown();
+
+	delete mTime;
+
+	FreeLibrary(mGame);
 }
 
 bool MotorEngine::loadGame(std::string gameDllName)
@@ -169,12 +142,12 @@ bool MotorEngine::loadGame(std::string gameDllName)
 	size_t* pReturnValue = new size_t();
 	mbstowcs_s(pReturnValue, wtext, length * 2, gameDllName.c_str(), length);
 
-	game = LoadLibrary(wtext);
+	mGame = LoadLibrary(wtext);
 
 	delete pReturnValue;
 	delete[] wtext;
 
-	return game != NULL;
+	return mGame != NULL;
 }
 
 void me::MotorEngine::initFactories()
@@ -193,7 +166,7 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("light", new FactoryLight());
 }
 
-int MotorEngine::quitLoop(void* userdata, SDL_Event* event)
+int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 {
 	if (event->type == SDL_EVENT_QUIT || (event->type == SDL_EVENT_KEY_DOWN && event->key.keysym.sym == SDLK_ESCAPE)) {
 		bool* quit = (bool*)userdata;
@@ -212,5 +185,4 @@ MotorEngine::MotorEngine() {
 
 MotorEngine::~MotorEngine()
 {
-
 }

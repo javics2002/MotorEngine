@@ -58,17 +58,17 @@ namespace me {
 		/*
 		Manages the connection and disconnection of controllers.
 		*/
-		static int watchControllers(void* userdata, SDL_Event* event);
+		static int WatchControllers(void* userdata, SDL_Event* event);
 
 		/*
 		Updates button and axis' data
 		*/
-		static int updateInputData(void* userdata, SDL_Event* event);
+		static int UpdateInputData(void* userdata, SDL_Event* event);
 
 		/*
 		Constructs input struct for any given event
 		*/
-		static Input getInput(SDL_Event* event);
+		static Input GetInput(SDL_Event* event);
 
 	public:
 		InputManager& operator=(const InputManager& o) = delete;
@@ -247,7 +247,7 @@ namespace me {
 	writing InputManager::instance()->method() we write inputManager().method()
 	*/
 	inline InputManager& inputManager() {
-		return *InputManager::instance();
+		return *InputManager::Instance();
 	}
 }
 

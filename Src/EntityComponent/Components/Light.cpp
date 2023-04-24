@@ -20,6 +20,3 @@ void Light::start()
 	renderManager().createNewLight(mName, mTransform->getPosition(), mDirection);
 }
 
-void Light::update()
-{
-}

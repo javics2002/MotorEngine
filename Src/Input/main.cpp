@@ -78,7 +78,7 @@ int getMousePosition(void* userdata) {
 
 int main() {
     inputManager();
-    Window::init(SDL_INIT_EVERYTHING, "Input Manager Test", 
+    Window::Init(SDL_INIT_EVERYTHING, "Input Manager Test", 
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS);
 
     //char* name = (char*) "Javi";

@@ -66,7 +66,6 @@ namespace me {
 			T* component = static_cast<T*>(componentsFactory().create(componentName));
 
 			if (!hasComponent(componentName)) {
-
 				mComponents.insert({ componentName, component });
 				component->setEntity(this);
 				component->start();
@@ -141,28 +140,30 @@ namespace me {
 		@return Scene to which it belongs.
 		*/
 		inline Scene* getScene() const {
-			return mScn;
+			return mScene;
 		};
 
 		/**
 		Set the associated scene for the entity.
 		@param Scene to which it belongs.
 		*/
-		inline void setScene(Scene* scn) {
-			mScn = scn;
+		inline void setScene(Scene* scene) {
+			mScene = scene;
 		};
 
 		void start();
 
 		/**
 		Run all the added components update method.
+		@param dt Seconds that have passed since last update.
 		*/
-		void update();
+		void update(float dt);
 
 		/**
 		Run all the added components lateUpdate method.
+		@param dt Seconds that have passed since last update.
 		*/
-		void lateUpdate();
+		void lateUpdate(float dt);
 
 
 		/**
@@ -182,10 +183,9 @@ namespace me {
 		void onCollisionExit(Entity* other);
 
 	private:
-
 		bool mActive;
 		std::string mName;
-		Scene* mScn;
+		Scene* mScene;
 		std::map<ComponentName, Component*> mComponents;
 	};
 };

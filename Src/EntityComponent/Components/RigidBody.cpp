@@ -6,24 +6,23 @@
 #include "BulletDynamics/Dynamics/btRigidBody.h"
 
 #include "Physics/PhysicsManager.h"
-
 #include "EntityComponent/Entity.h"
 
-me::RigidBody::RigidBody()
+using namespace me;
+
+RigidBody::RigidBody()
 {
 
 }
 
-me::RigidBody::~RigidBody()
+RigidBody::~RigidBody()
 {
-	me::physicsManager().destroyRigidBody(mBtRigidBody);
+	physicsManager().destroyRigidBody(mBtRigidBody);
 	mBtRigidBody = nullptr;
 	delete mBtTransform;
-	
-	
 }
 
-void me::RigidBody::start()
+void RigidBody::start()
 {
 	mTransform = mEntity->getComponent<Transform>("transform");
 	
@@ -34,18 +33,19 @@ void me::RigidBody::start()
 	btVector3 scale = mTransform->getScale().v3ToBulletV3();
 	btVector3 colliderScale = mColliderScale.v3ToBulletV3();
 
-	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale, mColShape,
+	mBtRigidBody = me::physicsManager().createRigidBody(mBtTransform, scale, colliderScale,  mGroup, mMask, mColShape,
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
-	mBtRigidBody->setUserPointer(this);
-	//mBtRigidBody->setGravity(btVector3(0, 0, 0));
-	//mBtRigidBody->setActivationState(DISABLE_DEACTIVATION);
-	
+	mCollider = mEntity->getComponent<Collider>("collider");
+
+	assert(mCollider && "An Entity doesn't have the collider  component");
+
+	mBtRigidBody->setUserPointer(mCollider);
+
 }
 
-void me::RigidBody::update()
+void RigidBody::update(const double& dt)
 {
-
 	if (MovementType(mMvType) == MOVEMENT_TYPE_KINEMATIC) {
 		
 		btTransform btTr = mBtRigidBody->getWorldTransform();
@@ -69,11 +69,11 @@ void me::RigidBody::update()
 }
 
 //To implement
-void me::RigidBody::lateUpdate()
+void RigidBody::lateUpdate(const double& dt)
 {
 }
 
-void me::RigidBody::setTrigger(bool isTrigger)
+void RigidBody::setTrigger(bool isTrigger)
 {
 	mIsTrigger = isTrigger;
 	if (mBtRigidBody != nullptr) {
@@ -86,34 +86,34 @@ void me::RigidBody::setTrigger(bool isTrigger)
 	}
 }
 
-void me::RigidBody::setMass(float mass)
+void RigidBody::setMass(float mass)
 {
 	mMass = mass;
 }
 
-void me::RigidBody::setFriction(float friction)
+void RigidBody::setFriction(float friction)
 {
 	mFricion = friction;
 	if (mBtRigidBody != nullptr) mBtRigidBody->setFriction(friction);
 }
 
-void me::RigidBody::setRestitution(float restitution)
+void RigidBody::setRestitution(float restitution)
 {
 	mRestitution = restitution;
 	if(mBtRigidBody != nullptr) mBtRigidBody->setRestitution(restitution);
 }
 
-void me::RigidBody::setColliderScale(Vector3 colliderScale)
+void RigidBody::setColliderScale(Vector3 colliderScale)
 {
 	mColliderScale = colliderScale;
 }
 
-void me::RigidBody::setColShape(Shapes colShape)
+void RigidBody::setColShape(Shapes colShape)
 {
 	mColShape = colShape;
 }
 
-void me::RigidBody::setMomeventType(MovementType mvType)
+void RigidBody::setMomeventType(MovementType mvType)
 {
 	if (mBtRigidBody != nullptr) {
 		//keeps the previous flags and removes the old movement to add the new one
@@ -123,47 +123,96 @@ void me::RigidBody::setMomeventType(MovementType mvType)
 	mMvType = mvType;
 }
 
+void me::RigidBody::setMask(int mask)
+{
+	mMask = mask;
+	if(mBtRigidBody != nullptr){
+		btBroadphaseProxy* bdProxy = mBtRigidBody->getBroadphaseProxy();
+		bdProxy->m_collisionFilterMask = mask;
+	}
+}
+
+void me::RigidBody::setGroup(int group)
+{
+	mGroup = group;
+	if (mBtRigidBody != nullptr) {
+		btBroadphaseProxy* bdProxy = mBtRigidBody->getBroadphaseProxy();
+		bdProxy->m_collisionFilterGroup = group;
+	}
+}
+
 void me::RigidBody::addForce(Vector3 force)
 {
 	btVector3 v = force.v3ToBulletV3();
 	mBtRigidBody->applyCentralForce(v);
+	mBtRigidBody->activate(true);
 }
 
-void me::RigidBody::addImpulse(Vector3 impulse)
+void RigidBody::addImpulse(Vector3 impulse)
 {
+	mBtRigidBody->activate(true);
 	mBtRigidBody->applyCentralImpulse(impulse.v3ToBulletV3());
 }
 
-void me::RigidBody::addTorque(Vector3 torque)
+void RigidBody::addTorque(Vector3 torque)
 {
 	mBtRigidBody->applyTorqueImpulse(torque.v3ToBulletV3());
 }
 
-bool me::RigidBody::getTrigger()
+bool RigidBody::getTrigger()
 {
 	return mIsTrigger;
 }
 
-float me::RigidBody::getMass() {
+float RigidBody::getMass() {
 	return mMass;
 }
 
-float me::RigidBody::getFriction()
+float RigidBody::getFriction()
 {
 	return mFricion;
 }
 
-float me::RigidBody::getRestitution()
+float RigidBody::getRestitution()
 {
 	return mRestitution;
 }
 
-int me::RigidBody::getColShape()
+int RigidBody::getColShape()
 {
 	return mColShape;
 }
 
-int me::RigidBody::getMovementType()
+int RigidBody::getMovementType()
 {
 	return mMvType;
+}
+
+int me::RigidBody::getMask()
+{
+	return mMask;
+}
+
+int me::RigidBody::getGroup()
+{
+	return mGroup;
+}
+
+Vector3 RigidBody::getVelocity()
+{
+	Vector3 velocity = Vector3(0, 0, 0);
+	velocity = mBtRigidBody->getLinearVelocity();
+	return velocity;
+}
+
+void me::RigidBody::activeBody()
+{
+	mBtRigidBody->activate(true);
+	enabled = true;
+}
+
+void me::RigidBody::desactiveBody()
+{
+	mBtRigidBody->activate(false);
+	enabled = false;
 }

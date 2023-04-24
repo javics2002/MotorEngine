@@ -51,6 +51,8 @@ namespace me {
 
 		//Set position to mCameraNode
 		void setPosition(const Vector3& pos);
+
+		void setFixedYAxis(bool bFixed);
 		//Set lookAT to mCameraNode
 		void lookAt(const Vector3& look);
 		/**

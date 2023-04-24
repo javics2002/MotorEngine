@@ -20,11 +20,11 @@ void Animator::start()
 {
 	mMesh = mEntity->getComponent<MeshRenderer>("meshrenderer");
 	mCurrentState = nullptr;
-	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
+	mAnimStatesMap = renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
 	mStop = false;
 }
 
-void Animator::update()
+void Animator::update(const double& dt)
 {
 	if (mCurrentState != nullptr && !mStop) {
 		// Increment the animation time by the time between frames

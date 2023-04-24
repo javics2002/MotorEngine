@@ -5,6 +5,7 @@
 #include <OgreOverlayContainer.h>
 #include <OgreOverlayManager.h>
 #include "UIElement.h"
+#include <OgreTextAreaOverlayElement.h>
 
 me::UIText::UIText(std::string name, std::string fontName, float posX, float posY, float width, float height, std::string text, Vector4 textColor) : UIElement()
 {
@@ -78,9 +79,8 @@ void me::UIText::setActive(bool active)
 	else mTextArea->hide();
 }
 
-void me::UIText::setTextAligment(Ogre::TextAreaOverlayElement::Alignment a)
+void me::UIText::setTextAligment(int a)
 {
-	mAlignment = a;
-	// Set the alignment 
-	mTextArea->setAlignment(mAlignment);
+	Ogre::TextAreaOverlayElement::Alignment aa = static_cast<Ogre::TextAreaOverlayElement::Alignment>(a);
+	mTextArea->setAlignment(aa);
 }

@@ -61,7 +61,7 @@ namespace me {
 	writing ComponentsFactory::instance()->method() we write componentsFactory().method()
 	*/
 	inline ComponentsFactory& componentsFactory() {
-		return *ComponentsFactory::instance();
+		return *ComponentsFactory::Instance();
 	}
 }
 #endif

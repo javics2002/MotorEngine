@@ -3,7 +3,43 @@ setlocal
 
 
 rem Fecha inicio: 
-set start_time=%time%
+set start_time=%time% 
+
+
+
+rem Parámetros de instalación
+set "project=MotorEngine" 
+set "platform=x64" 
+set "deps=Bullet FMOD LuaBridge Ogre SDL" 
+
+
+
+rem Formatea la salida de Configuration para el binario final 
+if /I "%Configuration%"=="Debug" ( 
+
+    set "target=%project%_d" 
+
+) else if /I "%Configuration%"=="Release" ( 
+
+    set "target=%project%" 
+
+) 
+
+
+
+rem Muestra las variables de la configuración del entorno antes de continuar:
+echo:
+echo      VARIABLES DE ENTORNO PARA LA INSTALACION
+echo  ------------------------------------------------ 
+echo   GameMachine: %project% 
+echo   Dependencies: %deps% 
+echo  ------------------------------------------------ 
+echo   Platform: %platform% 
+echo   Configuration: %Configuration% 
+echo  ------------------------------------------------ 
+echo   target: %target%.dll 
+echo  ------------------------------------------------ 
+echo: && pause 
 
 
 
@@ -19,13 +55,10 @@ if /I "%1"=="" (
 rem Elimina si existe el anterior registro
 if exist "./build_Output.txt" (
 
-    del "./build_Output.txt"
+    del "./build_Output.txt" 
 
 )
 
-
-rem Establece las dependencias a tener en cuenta
-set deps=Bullet FMOD LuaBridge Ogre SDL
 
 rem Borra los registros genereados en las dependencias
 for %%i in (%deps%) do (
@@ -60,6 +93,8 @@ if /i "%exec_option%"=="P" (
 if /i "%pause_option%"=="S" ( pause ) 
 
 
+rem ----------------------------------------------------------------------------------------------- 
+
 
 rem Configuración del shell de Visual Studio 
 if not exist "%temp%\VSWhereOutput.txt" (
@@ -78,7 +113,6 @@ if /i "%pause_option%"=="S" ( pause )
 
 
 rem Llamadas a la automatización de cada dependencia: 
-
 cd .\Dependencies
 
 cd .\FMOD
@@ -137,8 +171,6 @@ echo: && echo "> Todos los scripts han terminado!!" && echo:
 
 
 rem Copia iterativa de las .dll's a través del directorio .\Dependencies y sus subdirectorios: 
-
-set "platform=x64"
 set "origen=.\Dependencies\*" 
 set "destino=.\Exe\Main\%platform%" 
 
@@ -153,7 +185,6 @@ for /d %%d in (%origen%) do (
         robocopy /NJH "%%d\bin\Release" "%destino%\Release" "*.dll"
         if /i "%pause_option%"=="S" ( pause )
     )    
-
 )
 
 
@@ -170,9 +201,9 @@ if /i "%pause_option%"=="S" ( pause )
 
 rem Copia para ejecutar directamente 
 echo: && echo "> Copiando ficheros necesarios del motor de renderizado de MotorEngine para: build final." && echo: 
-set "destino=.\Exe\Main\x64\Debug\" 
+set "destino=.\Exe\Main\%platform%\Debug\" 
 robocopy /NJH %origen% %destino% *.cfg 
-set "destino=.\Exe\Main\x64\Release\" 
+set "destino=.\Exe\Main\%platform%\Release\" 
 robocopy /NJH %origen% %destino% *.cfg 
 
 if /i "%pause_option%"=="S" ( pause ) 
@@ -181,40 +212,29 @@ if /i "%pause_option%"=="S" ( pause )
 
 rem Llamada al DCP: Developer Command Prompt
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
-del "%temp%\VSWhereOutput.txt"
+del "%temp%\VSWhereOutput.txt" 
 
 
+rem Instalación del motor 
+echo: && echo "> Instalando: %project%" && echo: 
 
-rem Parámetros de instalación
-set "project=MotorEngine" 
-set "target=MotorEngine"
+set "instalar-motor=false" 
+if not exist ".\Exe\Main\%platform%\%Configuration%\%target%.dll" ( set "instalar-motor=true" ) 
+if /i "%recompile-motor%"=="true" ( set "instalar-motor=true" ) 
 
+if /i "%instalar-motor%"=="true" ( 
 
-rem Release
-if not exist "Exe\Main\x64\Release\%target%.dll" ( 
+    rem Compilación del motor 
+    msbuild %project%.sln /t:Main /p:Configuration=%Configuration% /p:Platform=%platform% /p:PlatformToolset=v143 
 
-    rem Compilación en modo Release
-    msbuild %project%.sln /t:Main /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 
-
-    echo: && echo "> Build %project% solucion en modo release compilada." && echo: 
+    echo: && echo "> Instalación de %project% en modo %platform%_%Configuration% completada!" && echo: 
 ) else (
-    echo: && echo "> Build %project% solucion en modo release ya existe." && echo: 
+    echo: && echo "> El motor de videojuegos %GameMachine% en modo %platform%_%Configuration% ya se encontraba instalado." && echo: 
 )
 if /i "%pause_option%"=="S" ( pause ) 
 
 
-
-rem Debug
-if not exist "Exe\Main\x64\Debug\%target%_d.dll" ( 
-
-    rem Compilación en modo Debug
-    msbuild %project%.sln /t:Main /p:Configuration=Debug /p:Platform=x64 /p:PlatformToolset=v143 
-
-    echo: && echo "> Build %project% solucion en modo debug compilada." && echo: 
-) else (
-    echo: && echo "> Build %project% solucion en modo debug ya existe." && echo: 
-)
-if /i "%pause_option%"=="S" ( pause ) 
+rem ----------------------------------------------------------------------------------------------- 
 
 
 rem Fecha final: 

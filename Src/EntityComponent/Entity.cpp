@@ -6,11 +6,10 @@
 #endif
 
 namespace me {
-
-	Entity::Entity(Scene* scn, const SceneName name) :
+	Entity::Entity(Scene* scene, const SceneName name) :
 		mActive(true), //
 		mName(name), // 
-		mScn(scn)
+		mScene(scene)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity ( " << mName << " ) created." << std::endl;
@@ -20,7 +19,7 @@ namespace me {
 	Entity::Entity(const SceneName name) :
 		mActive(true),
 		mName(name),
-		mScn(nullptr)
+		mScene(nullptr)
 	{
 #ifdef _DEBUG
 		std::cout << " > Entity " << mName << " created.";
@@ -73,34 +72,34 @@ namespace me {
 		};
 	}
 
-	void Entity::update() {
+	void Entity::update(float dt) {
 		if (!mActive) return;
 		for (auto c : mComponents) {
 			if(c.second->enabled)
-				c.second->update();
+				c.second->update(dt);
 		};
 	}
 
-	void Entity::lateUpdate() {
+	void Entity::lateUpdate(float dt) {
 		if (!mActive) return;
 		for (auto c : mComponents) {
 			if (c.second->enabled)
-				c.second->lateUpdate();
+				c.second->lateUpdate(dt);
 		};
 	}
 
 	void Entity::onCollisionEnter(Entity* other)
 	{
 		for (auto &c : mComponents) {
-			if(c.second->enabled)
+			if(c.second->enabled && c.first != "collider")
 				c.second->onCollisionEnter(other);
 		}
 	}
 
 	void Entity::onCollisionStay(Entity* other)
 	{
-		for (auto &c : mComponents) {
-			if (c.second->enabled)
+		for (auto &c : mComponents ) {
+			if (c.second->enabled  && c.first != "collider")
 				c.second->onCollisionStay(other);
 		}
 	}
@@ -108,7 +107,7 @@ namespace me {
 	void Entity::onCollisionExit(Entity* other)
 	{
 		for (auto &c : mComponents) {
-			if (c.second->enabled)
+			if (c.second->enabled && c.first != "collider")
 				c.second->onCollisionExit(other);
 		}
 	}

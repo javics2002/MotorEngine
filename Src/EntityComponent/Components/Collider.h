@@ -16,11 +16,13 @@ namespace me{
 		Collider();
 		virtual ~Collider();
 
+		void start() override;
+
 		/**
 		Executed when a collision starts.
 		@param other Entity that collides with this entity.
 		*/
-		void onCollisionEnter(Entity* other);
+		void onCollisionEnter(Entity* other) override;
 
 		/**
 		Executed when a collision starts and every frame it lasts.

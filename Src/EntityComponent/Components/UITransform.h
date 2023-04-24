@@ -27,10 +27,6 @@ namespace me {
 		*/
 		~UITransform() override;
 
-		void start() override;
-		void update() override;
-		void lateUpdate() override;
-
 		/**
 		Get the position vector of the UITransform object.
 
