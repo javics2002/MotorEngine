@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Component.h"
+#include "Transform.h"
 #include "Audio/SoundManager.h"
 
 
@@ -78,6 +79,22 @@ namespace me {
 		}
 
 		/**
+		* Set the minimum distance a sound can be heard from.
+		* @param value The new speed value.
+		*/
+		inline void setMinDistance(float value) {
+			mMinDistance = value;
+		}
+
+		/**
+		* Set the minimum distance a sound can be heard from.
+		* @param value The new speed value.
+		*/
+		inline void setMaxDistance(float value) {
+			mMaxDistance = value;
+		}
+
+		/**
 		* Set the path of the audio
 		* @param path The path to the audio file to play.
 		* @param name The name to the audio file to play.
@@ -94,6 +111,14 @@ namespace me {
 		*/
 		inline void setSourceName(std::string name) {
 			mSoundName = name;
+		}
+
+		/**
+		* Set the name of the group channel this audio is located in.
+		* @param name The name of the group channel.
+		*/
+		inline void setGroupChannelName(std::string name) {
+			mSoundGroup = name.c_str();
 		}
 
 		/**
@@ -134,7 +159,7 @@ namespace me {
 
 		//FMOD::Sound* mSound; // The FMOD sound object
 		int mSoundChannel; // The number of the channel this sound will be played on.
-		std::string mSoundGroup; // The name of the channel group this sound will be played on.
+		const char* mSoundGroup; // The name of the channel group this sound will be played on.
 		const char* mSoundPath; // The path to the audio file to play
 		std::string mSoundName; // The name we give to the audio file to play
 		bool mPlaying; // Whether the audio is currently playing or not
@@ -142,6 +167,8 @@ namespace me {
 		bool mIs3D;
 		bool mPlayOnStart;
 
+
+		Transform* mTransform = nullptr;
 	};
 }
 

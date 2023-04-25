@@ -4,6 +4,7 @@
 #include <OgreQuaternion.h>
 #include <LinearMath/btVector3.h>
 #include <LinearMath/btQuaternion.h>
+#include <fmod.hpp>
 
 using namespace me;
 
@@ -163,6 +164,12 @@ Ogre::Vector3f me::Vector3::v3ToOgreV3() const
 btVector3 me::Vector3::v3ToBulletV3() const
 {
 	return btVector3(btScalar(x), btScalar(y), btScalar(z));
+}
+
+FMOD_VECTOR me::Vector3::v3ToFmodV3() const
+{
+	FMOD_VECTOR newVector = { x,y,z };
+	return newVector;
 }
 
 float Vector3::lerp(float a, float b, float f)

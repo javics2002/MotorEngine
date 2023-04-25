@@ -170,7 +170,22 @@ bool me::SoundManager::pauseSound(std::string soundName, bool pause)
 	else {
 		return false;
 	}
+}
 
+bool me::SoundManager::stopSound(std::string soundName)
+{
+	nameToLower(soundName);
+	bool isPaused;
+	FMOD::Channel* channel = getChannel(soundName);
+	if (channel != nullptr) {
+		mResult = channel->getPaused(&isPaused);
+		checkFMODResult(mResult);
+		channel->stop();
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool me::SoundManager::playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped)
@@ -247,6 +262,19 @@ bool me::SoundManager::setSoundPosition(std::string soundName, Vector3 position)
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
 	//TO BE IMPLEMENTED
+}
+
+bool me::SoundManager::setPitchVelocity(std::string soundName, Vector3 velocity)
+{
+	nameToLower(soundName);
+	FMOD::Channel* channel = getChannel(soundName);
+	float velMagnitude = velocity.magnitude();
+	float newPitch = 1 + (velMagnitude - 1) / 10;
+	if (channel != nullptr) {
+		channel->setPitch(newPitch);
+		return true;
+	}
+	else return false;
 }
 
 bool me::SoundManager::setSpeed(std::string soundName, float newSpeed)

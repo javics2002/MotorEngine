@@ -28,6 +28,8 @@ namespace std {
 class btVector3;
 class btQuaternion;
 
+class FMOD_VECTOR;
+
 namespace me {
 
 	class __MOTORENGINE_API Vector3
@@ -242,6 +244,11 @@ namespace me {
 		Returns the conversion of a Vector3 to an btVector3
 		*/
 		btVector3 v3ToBulletV3() const;
+
+		/**
+		Returns the conversion of a Vector3 to an FMOD_VECTOR
+		*/
+		FMOD_VECTOR v3ToFmodV3() const;
 
 	};
 }
