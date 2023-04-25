@@ -6,7 +6,7 @@
 #include "Utils/Vector2.h"
 #include "Render/Window.h"
 
-me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteMaterialName)
+me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteMaterialName, int zOrder)
 {
 	mOverlay = overlay;
 	mPanel = panel;
@@ -16,7 +16,7 @@ me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement*
 	panel->setMaterialName(spriteMaterialName);
 
 	overlay->add2D(dynamic_cast<Ogre::OverlayContainer*>(panel));
-	overlay->setZOrder(1);
+	overlay->setZOrder(zOrder);
 	overlay->show();
 }
 

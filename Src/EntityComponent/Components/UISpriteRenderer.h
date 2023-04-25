@@ -25,7 +25,7 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = false;
 
-		int x = 0;
+		int mZOrder;
 
 	public:
 
@@ -38,7 +38,7 @@ namespace me {
 		//Destroy RenderManager map saved image
 		~UISpriteRenderer();
 
-		void init(std::string name, std::string spriteName);
+		void init(std::string name, std::string spriteName, int zOrder);
 
 		/**
 		Get info for UITransform, create the Sprite and set the start pos
@@ -56,6 +56,13 @@ namespace me {
 		Set it is static entity or not
 		*/
 		void setStatic(bool stat);
+
+		/**
+		Set the zOrder
+		*/
+		void setZOrder(int zOrder);
+
+
 
 		/**
 		 Set material.

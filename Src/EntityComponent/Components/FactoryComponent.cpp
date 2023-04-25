@@ -223,10 +223,11 @@ me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
     }
     std::string sprite = Value(params, "sprite", std::string());
     std::string materialName = Value(params, "materialname", std::string());
+    int zOrder = Value(params, "zorder", 1);
     bool staticState = Value(params, "staticobj", false);
 
     UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
-    spriteRenderer->init(sprite, materialName);
+    spriteRenderer->init(sprite, materialName,zOrder);
     spriteRenderer->setStatic(staticState);
 
     return spriteRenderer;

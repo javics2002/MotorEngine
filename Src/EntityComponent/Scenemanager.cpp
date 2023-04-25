@@ -92,7 +92,23 @@ void SceneManager::update(const double& dt) {
 		mActiveScene->update(dt);
 		mActiveScene->lateUpdate(dt);
 		mActiveScene->refresh();
+
 	}
+}
+
+void SceneManager::change(std::string newScene) {
+	mNewScene = newScene;
+	mChange = true;
+}
+
+std::string me::SceneManager::getNewScene()
+{
+	return mNewScene;
+}
+
+bool me::SceneManager::isChanging()
+{
+	return mChange;
 }
 
 int SceneManager::loadEntities(const SceneName& sceneName) {
@@ -135,18 +151,24 @@ void SceneManager::deleteAllScenes() {
 }
 
 bool SceneManager::loadScene(const SceneName& newScene, bool eraseActiveScene) {
+
+	std::string s = newScene;
+	mChange = false;
+	addScene(s);
+
 	if (getActiveScene() != nullptr) {
-		if (newScene == getActiveScene()->getName())
+		if (s == getActiveScene()->getName())
 			return false;
 
-		if (eraseActiveScene && mScenes.count(newScene))
+		if (eraseActiveScene && mScenes.count(getActiveScene()->getName()))
 			removeScene(getActiveScene()->getName());
 	}
 
-	addScene(newScene);
-	sceneManager().setActiveScene(newScene);
-	return sceneManager().loadEntities(newScene) == 0;
+	sceneManager().setActiveScene(s);
+	return sceneManager().loadEntities(s) == 0;
 }
+
+
 
 int SceneManager::readEntities(lua_State* L) {
 	lua_pushnil(L);

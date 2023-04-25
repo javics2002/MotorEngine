@@ -38,7 +38,7 @@ namespace me {
 		@param spriteName: name of the source .png file.
 		Must be included in resource.cfg (.png inside Zip or FileSystem)
 		*/
-		RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteName);
+		RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteName,int zOrder);
 
 		~RenderUISprite();
 

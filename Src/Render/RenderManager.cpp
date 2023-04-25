@@ -453,7 +453,7 @@ bool RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 sca
 	return true;
 }
 
-bool me::RenderManager::createSprite(std::string name, std::string spriteMaterialName)
+bool me::RenderManager::createSprite(std::string name, std::string spriteMaterialName,int zOrder)
 {
 	if (mSprites[name] != nullptr) {
 		std::cout << "There cannot be more than one sprite named " << name << ".\n";
@@ -463,7 +463,7 @@ bool me::RenderManager::createSprite(std::string name, std::string spriteMateria
 	auto overlay = mOverlayManager->create(name + "Overlay");
 	auto panel = mOverlayManager->createOverlayElement("Panel", name + "Panel");
 
-	RenderUISprite* uiSprite = new RenderUISprite(overlay, panel, spriteMaterialName);
+	RenderUISprite* uiSprite = new RenderUISprite(overlay, panel, spriteMaterialName,zOrder);
 
 	mSprites[name] = uiSprite;
 	return overlay->isVisible();

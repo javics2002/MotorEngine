@@ -101,6 +101,12 @@ namespace me {
 
         void deleteAllScenes();
 
+        void change(std::string newScene);
+
+        std::string getNewScene();
+
+        bool isChanging();
+
     private:
         /*
         This function parses the .lua file to the unordered_map.
@@ -115,6 +121,9 @@ namespace me {
         */
         void pushEntities();
 
+        bool mChange = false;
+
+        std::string mNewScene;
 
         std::unordered_map<SceneName, Scene*> mScenes;
         Scene* mActiveScene = nullptr;

@@ -276,7 +276,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createSprite(std::string name, std::string nameMesh);
+		bool createSprite(std::string name, std::string nameMesh, int zOrder);
 
 		/**
 		Set Transform info to the mesh with this name (for static object)

@@ -15,14 +15,15 @@ me::UISpriteRenderer::~UISpriteRenderer()
 	renderManager().destroyUISprite(mName);
 }
 
-void me::UISpriteRenderer::init(std::string name, std::string nameSprite)
+void me::UISpriteRenderer::init(std::string name, std::string nameSprite,int zOrder)
 {
 	mName = name;
 	mSpriteName = nameSprite;
+	mZOrder = zOrder;
 
 	if (mSpriteName.size() > 0)
 	{
-		renderManager().createSprite(mName, mSpriteName);
+		renderManager().createSprite(mName, mSpriteName, zOrder);
 	}
 }
 
@@ -42,6 +43,11 @@ void me::UISpriteRenderer::update(const double& dt)
 void me::UISpriteRenderer::setStatic(bool stat)
 {
 	mStaticObject = stat;
+}
+
+void me::UISpriteRenderer::setZOrder(int zOrder)
+{
+	mZOrder = zOrder;
 }
 
 std::string me::UISpriteRenderer::getName()
