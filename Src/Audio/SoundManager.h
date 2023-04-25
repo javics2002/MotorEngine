@@ -25,11 +25,13 @@ namespace me {
 	//Maximum number of channels allowed to exist in this particular system setting.
 	const int MAX_CHANNELS = 36;
 	//Scaling factor for how much the pitch varies due to doppler shifting in 3D sound.
-	const float DOPPLER_SCALE = 1; 
+	const float DOPPLER_SCALE = 1.0f;
 	//Relative distance factor, compared to 1.0 meters. How many units per meter my engine have.
-	const float DISTANCE_FACTOR = 1;
+	const float DISTANCE_FACTOR = 1.0f;
 	//Global attenuation rolloff factor. 
-	const float ROLLOFF_SCALE = 1;
+	const float ROLLOFF_SCALE = 1.0f;
+	//Base pitch of a sound. The "normal" pitch of a sound when it is not moving.
+	const float BASE_PITCH = 1.0f;
 
 	/**
 	SoundManager provides FMOD wrappers to manage audio creation and modulation, 
@@ -139,7 +141,7 @@ namespace me {
 		*/
 		bool setMode(std::string soundName, FMOD_MODE newMode);
 		/**
-		Sets the minimum and maximum distance a 3D sound can be heard from.
+		Sets a new minimum and maximum distance a 3D sound can be heard from.
 		@param soundName : the especific name of the sound which hearing distance will be changed.
 		@param minDistance : the new minimum distance a 3D sound can be heard from.
 		@param maxDistance : the new maximun distance a 3D sound can be heard from.
@@ -178,9 +180,17 @@ namespace me {
 		Looks for a sound channel and in case that it exists, sets the pause state of that channel to "pause".
 		@param soundName : the especific name of the sound which speed will be paused.
 		@param pause : the new pause value the channel will get.
-		@return True if the sound is pauded, false if the sound didn't exist.
+		@return True if the sound is paused, false if the sound didn't exist.
 		*/
 		bool pauseSound(std::string soundName, bool pause);
+
+		/**
+		Looks for a sound channel and in case that it exists, stops that channel from playing.
+		@param soundName : the especific name of the sound which speed will be paused.
+		
+		@return True if the sound is stopped, false if the sound didn't exist.
+		*/
+		bool stopSound(std::string soundName);
 		/**
 		Sets the loopability of a certain sound  dependind on "isLoop".
 		It checks for available channels to play the sound and assigns a group channel depending on the user input.
@@ -193,7 +203,7 @@ namespace me {
 		By default it is set to constant loop.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped);
+		bool playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped = -1);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -223,6 +233,14 @@ namespace me {
 		@return A boolean showing wether or not the position was set.
 		*/
 		bool setSoundPosition(std::string soundName, Vector3 position);
+
+		/**
+		Sets the pitch of a certain sound depending on the velocity of the object it is attached to.
+		@param soundName : the especific name of the sound which pitch will be set.
+		@param velocity : the value of the velocity of the object.
+		@return A boolean showing wether or not the new pitch was set.
+		*/
+		bool setPitchVelocity(std::string soundName, Vector3 velocity);
 
 		/**
 		Gets the useful listener which will be able to listen to a new sound.

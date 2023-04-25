@@ -1,5 +1,5 @@
 #include "AudioSource.h"
-//#include "Audio/SoundManager.h"
+#include "Audio/SoundManager.h"
 #include "Transform.h"
 #include "EntityComponent/Entity.h"
 
@@ -14,6 +14,7 @@ me::AudioSource::~AudioSource()
 
 void me::AudioSource::start()
 {
+    mTransform = mEntity->getComponent<Transform>("transform");
     bool error;
     // Create a 3D sound or a normal sound
     if (mIs3D)
@@ -39,22 +40,23 @@ void me::AudioSource::update()
 
 void me::AudioSource::play()
 {
-    //soundManager().playSound(mSoundName, mLoop,);
+   // soundManager().playSound(mSoundName, mLoop, mSoundGroup, mTransform->getPosition().v3ToFmodV3(), mTransform->getVelocity().v3ToFmodV3());
+    mPlaying = true;
 }
 
 void me::AudioSource::stop()
 {
-    //sm().pauseSound(mSound, true);
+    soundManager().stopSound(mSoundName);
 }
 
 void me::AudioSource::pause()
 {
-    //soundManager().pauseSound(mSound, true);
+    soundManager().pauseSound(mSoundName, true);
 }
 
 void me::AudioSource::resume()
 {
-    //soundManager().pauseSound(mSound, false);
+    soundManager().pauseSound(mSoundName, false);
 }
 
 bool me::AudioSource::isPlaying()
