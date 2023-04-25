@@ -75,8 +75,8 @@ void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
 	if (rb && rb->getMotionState())
 		delete rb->getMotionState();
 
+	rb->setUserPointer(nullptr);
 	mDynamicsWorld->removeCollisionObject(rb);
-
 	btCollisionShape* shape = rb->getCollisionShape();
 	std::vector<btCollisionShape*>::iterator it = std::find(mCollisionShapes.begin(), mCollisionShapes.end(), shape);
 	if (it != mCollisionShapes.end()) {
