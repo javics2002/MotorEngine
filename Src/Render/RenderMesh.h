@@ -44,6 +44,10 @@ namespace me {
 		void setScale(const Ogre::Vector3f &scale);
 		void setRotation(Ogre::Quaternion rot);
 
+
+		void activeMesh();
+		void desactiveMesh();
+
 		/**
 		Return the Ogre::Entity asociated
 		*/

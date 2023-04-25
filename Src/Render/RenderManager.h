@@ -298,6 +298,12 @@ namespace me {
 		//set material to the mesh with this name
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
 
+		//active the mesh from scene
+		void activeMesh(std::string name);
+
+		//desactive the mesh from scene
+		void desactiveMesh(std::string name);
+
 		//destroy OgreMesh created 
 		void destroyMesh(std::string name);
 

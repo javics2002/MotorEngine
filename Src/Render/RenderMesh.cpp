@@ -45,6 +45,16 @@ void me::RenderMesh::setRotation(Ogre::Quaternion rot)
 	mNode->setOrientation(rot);
 }
 
+void me::RenderMesh::activeMesh()
+{
+	mNode->setVisible(true);
+}
+
+void me::RenderMesh::desactiveMesh()
+{
+	mNode->setVisible(false);
+}
+
 Ogre::Entity* me::RenderMesh::getOgreEntity()
 {
 	return mEntity;

@@ -64,7 +64,6 @@ void RigidBody::update(const double& dt)
 		mTransform->setPosition(Vector3(pos.x(), pos.y(), pos.z()));
 		mTransform->setVelocity(Vector3(vel.x(), vel.y(), vel.z()));
 		mTransform->setRotation(Vector4(rot.x(), rot.y(), rot.z(), rot.w()));
-		mBtRigidBody->activate(true);
 	}
 }
 
@@ -156,6 +155,7 @@ void RigidBody::addImpulse(Vector3 impulse)
 
 void RigidBody::addTorque(Vector3 torque)
 {
+	mBtRigidBody->activate(true);
 	mBtRigidBody->applyTorqueImpulse(torque.v3ToBulletV3());
 }
 
@@ -208,11 +208,13 @@ Vector3 RigidBody::getVelocity()
 void me::RigidBody::activeBody()
 {
 	mBtRigidBody->activate(true);
+	setMask(mMask);
 	enabled = true;
 }
 
 void me::RigidBody::desactiveBody()
 {
 	mBtRigidBody->activate(false);
+	setMask(0);
 	enabled = false;
 }

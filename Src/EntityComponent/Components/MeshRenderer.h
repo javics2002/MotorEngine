@@ -65,6 +65,12 @@ namespace me {
 		Set it is static entity or not
 		*/
 		std::string getName();
+
+		//active mesh
+		void activeMesh();
+
+		//desactive mesh
+		void desactiveMesh();
 			
 	};
 }

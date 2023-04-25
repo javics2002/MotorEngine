@@ -50,6 +50,18 @@ std::string MeshRenderer::getName()
 	return mName;
 }
 
+void me::MeshRenderer::activeMesh()
+{
+	renderManager().activeMesh(mName);
+	enabled = true;
+}
+
+void me::MeshRenderer::desactiveMesh()
+{
+	renderManager().desactiveMesh(mName);
+	enabled = false;
+}
+
 
 void MeshRenderer::setMaterial(std::string materialName)
 {

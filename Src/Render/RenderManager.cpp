@@ -403,6 +403,19 @@ bool RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
 	return true;
 }
 
+void me::RenderManager::activeMesh(std::string name)
+{
+	RenderMesh* mesh = getMesh(name);
+	if (mesh != nullptr) mesh->activeMesh();
+		
+}
+
+void me::RenderManager::desactiveMesh(std::string name)
+{
+	RenderMesh* mesh = getMesh(name);
+	if (mesh != nullptr) mesh->desactiveMesh();
+}
+
 void RenderManager::destroyMesh(std::string name)
 {
 	RenderMesh* mesh = getMesh(name);
