@@ -28,11 +28,8 @@ namespace me {
 	public:
 
 		/**
-		Construct a new MeshRenderer component and save necesary info
-		@param name: name saved in om() map and used for entity that attached in node
-		@param meshName: name of .mesh file
+		Construct a new MeshRenderer component 
 		*/
-		MeshRenderer(std::string name, std::string meshName);
 		MeshRenderer();
 		//Destroy om() map saved mesh (ogreMesh)
 		~MeshRenderer();
@@ -55,6 +52,14 @@ namespace me {
 		 @param materialName: name of material that is written in MaterialResource.material.
 		*/
 		void setMaterial(std::string materialName);
+		/**
+		 Set name to mesh (renderMesh in rendermanager array).
+		*/
+		void setName(std::string name);
+		/**
+		 Set meshname to mesh (renderMesh in rendermanager array).
+		*/
+		void setMeshName(std::string meshName);
 
 		/**
 		Set it is static entity or not

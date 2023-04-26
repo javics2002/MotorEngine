@@ -111,6 +111,9 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
     camera->init();
 
+    camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
+    camera->setViewportOverlayEnabled(Value(params, "overlayenable", true));
+    
     return camera;
 }
 
@@ -139,12 +142,14 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
     std::string materialName = Value(params, "materialname", std::string());
     bool staticState = Value(params, "staticobj", false);
 
-    MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
-    meshRenderer->setMaterial(materialName);
+    MeshRenderer* meshRenderer = new MeshRenderer();
+    meshRenderer->setName(mesh);
+    meshRenderer->setMeshName(meshName);
     meshRenderer->setStatic(staticState);
 
     meshRenderer->init();
 
+    meshRenderer->setMaterial(materialName);
     return meshRenderer;
 }
 
@@ -160,13 +165,18 @@ me::Component* me::FactoryParticleSystem::create(Parameters& params)
     std::string particleName = Value(params, "particlename", std::string());
     bool emitted = Value(params, "emitted", false);
 
-    ParticleSystem* particleSystem = new ParticleSystem(particle, particleName);
-    particleSystem->setEmitting(emitted);
+    ParticleSystem* particleSystem = new ParticleSystem();
+
+    particleSystem->setName(particle);
+    particleSystem->setParticleName(particleName);
     particleSystem->setOffsetPos(Vector3(Value(params, "offpos_x", 0.0f),
         Value(params, "offpos_y", 0.0f), Value(params, "offpos_z", 0.0f)));
     particleSystem->setOffsetScale(Vector3(Value(params, "offscale_x", 0.0f),
         Value(params, "offscale_y", 0.0f), Value(params, "offscale_z", 0.0f)));
 
+    particleSystem->init();
+
+    particleSystem->setEmitting(emitted);
     return particleSystem;
 }
 

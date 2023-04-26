@@ -32,11 +32,9 @@ namespace me {
 	public:
 
 		/**
-		Construct a new  particle system component and save necesary info
-		@param name: name saved in om() map and used for particle that attached in node
-		@param particleName: name of particle that is written int ParticleResource.particle
+		Construct a new  particle system component
 		*/
-		ParticleSystem(std::string name, std::string particleName);
+		ParticleSystem();
 		//Destroy om() map saved particle(ogreParticleSystem)
 		~ParticleSystem();
 
@@ -44,6 +42,11 @@ namespace me {
 		Get info for mTransform and create (ogreParticleSystem) and set the start pos
 		*/
 		void start() override;
+		
+		/**
+		Initialize particle system component in rendermanager
+		*/
+		void init() ;
 
 		/**
 		Update transform info to particle(ogreParticleSystem)
@@ -54,6 +57,16 @@ namespace me {
 		Set its emitting state
 		*/
 		void setEmitting(bool emitted);
+
+		/**
+		 Set name to mesh (renderMesh in rendermanager array).
+		*/
+		void setName(std::string name);
+		/**
+		 Set meshname to mesh (renderMesh in rendermanager array).
+		*/
+		void setParticleName(std::string particleName);
+
 
 		/**
 		Set its offset position respective to its entity.

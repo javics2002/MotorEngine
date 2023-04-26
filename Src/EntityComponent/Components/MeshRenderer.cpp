@@ -7,10 +7,9 @@
 
 using namespace me;
 
-MeshRenderer::MeshRenderer(std::string name, std::string nameMesh)
+
+me::MeshRenderer::MeshRenderer()
 {
-	mName = name;
-	mMeshName = nameMesh;
 }
 
 
@@ -66,5 +65,15 @@ void me::MeshRenderer::desactiveMesh()
 void MeshRenderer::setMaterial(std::string materialName)
 {
 	renderManager().setMeshMaterial(mName,materialName);
+}
+
+void me::MeshRenderer::setName(std::string name)
+{
+	mName = name;
+}
+
+void me::MeshRenderer::setMeshName(std::string meshName)
+{
+	mMeshName = meshName;
 }
 

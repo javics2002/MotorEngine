@@ -27,8 +27,8 @@ Window::~Window()
 	if (window != nullptr)
 	{
 		SDL_DestroyWindow(window);
-		SDL_QuitSubSystem(SDL_INIT_VIDEO);
 		window = nullptr;
+		SDL_Quit();
 	}
 }
 

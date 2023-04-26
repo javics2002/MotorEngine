@@ -62,9 +62,6 @@ namespace me {
 		//SceneManager de Ogre
 		Ogre::SceneManager* mSM = nullptr;
 
-		// TEMPORAL VALUE FOR ANIMATION HITO1
-		Ogre::AnimationState* ogreAnimState;
-
 		/**
 		Path of the "resource.cfg"
 		Add all resources (mesh, zip, particles, material, animation) to the subfolder of Asset
@@ -232,6 +229,8 @@ namespace me {
 		@param bFixed: lock boolean
 		*/
 		bool setCameraFixedY(std::string name, bool bFixed);
+
+		bool setViewportOverlayEnabled(std::string name, bool enabled);
 
 		/**
 		Set dimension to the viewport of the camera with this name

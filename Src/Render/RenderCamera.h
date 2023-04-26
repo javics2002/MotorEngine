@@ -64,6 +64,8 @@ namespace me {
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
 
+		//enabled overlay display
+		void setOverlayEnabled(bool enabled);
 		
 		//void setPosition(Vector3 pos);
 		//void lookAt(Vector3 pos);

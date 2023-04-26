@@ -114,6 +114,8 @@ namespace me {
 		@return true: if succeed
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
+
+		void setViewportOverlayEnabled(bool enabled);
 	};
 }
 #endif

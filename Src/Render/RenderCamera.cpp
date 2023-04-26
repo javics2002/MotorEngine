@@ -34,7 +34,7 @@ void me::RenderCamera::createCamera(const char* name, float nearDist, float farD
 		mViewport->setClearEveryFrame(false);
 	}
 	mViewport->setBackgroundColour(color);
-	mViewport->setOverlaysEnabled(true);
+
 }
 
 
@@ -65,6 +65,11 @@ void me::RenderCamera::setViewportDimension(float left, float top, float width, 
 {
 	mViewport->setDimensions(left, top, width, height);
 	
+}
+
+void me::RenderCamera::setOverlayEnabled(bool enabled)
+{
+	mViewport->setOverlaysEnabled(enabled);
 }
 
 

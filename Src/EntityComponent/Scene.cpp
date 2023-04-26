@@ -137,13 +137,18 @@ void Scene::processNewEntities()
 		mEntities.erase(entityPtr->getName());
 	}
 
-	mNewGlobalEntities.clear();
-
 	for (auto& entityPtr : mNewEntities)
 		mEntities.emplace(entityPtr->getName(), entityPtr);
 
+	for (auto& entityPtr : mNewGlobalEntities)
+		entityPtr->start();
+
+	
 	for (auto& entityPtr : mNewEntities)
 		entityPtr->start();
+
+
+	mNewGlobalEntities.clear();
 
 	mNewEntities.clear();
 }
@@ -172,7 +177,6 @@ bool Scene::promoteToGlobal(Entity* entity)
 	auto it = mEntities.find(entity->getName());
 	if (it == mEntities.end())
 		return false;
-
 	mNewGlobalEntities.push_back(it->second);
 	return true;
 }

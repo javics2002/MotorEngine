@@ -220,11 +220,24 @@ me::RenderManager::~RenderManager()
 	}
 	mLights.clear();
 
+	for (auto& it5 : mParticles) {
+		delete it5.second;
+
+	}
+	mParticles.clear();
+
 	// Destroy the RT Shader System.
 	destroyRTShaderSystem();
 	delete mFSLayer;
+	mFSLayer = nullptr;
 	delete mOgreWindow;
+	mOgreWindow = nullptr;	
+	
+	mOverlayManager = nullptr;
 	delete mOverlaySystem;
+	mOverlaySystem = nullptr;
+
+
 
 	delete mRoot;
 	mRoot = nullptr;
@@ -288,6 +301,17 @@ bool RenderManager::setCameraFixedY(std::string name, bool bFixed) {
 	return true;
 }
 
+bool me::RenderManager::setViewportOverlayEnabled(std::string name, bool enabled)
+{
+	RenderCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setOverlayEnabled(enabled);
+
+	return true;
+}
+
 bool RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {
 	RenderCamera* cam = getCamera(name);
@@ -310,6 +334,7 @@ void RenderManager::destroyCamera(std::string name)
 	else
 	{
 		delete cam;
+		cam = nullptr;
 		mCameras.erase(name);
 	}
 
@@ -467,6 +492,7 @@ bool me::RenderManager::createSprite(std::string name, std::string spriteMateria
 
 	mSprites[name] = uiSprite;
 	return overlay->isVisible();
+	
 }
 
 bool RenderManager::setUISpritePosition(std::string name, Vector2 pos)

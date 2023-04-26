@@ -8,11 +8,10 @@
 
 using namespace me;
 
-ParticleSystem::ParticleSystem(std::string name, std::string nameParticle)
+ParticleSystem::ParticleSystem()
 {
-	mName = name;
-	mParticleName = nameParticle;
-	renderManager().createParticle(mName, mParticleName);
+
+	
 }
 
 ParticleSystem::~ParticleSystem()
@@ -24,6 +23,12 @@ void ParticleSystem::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 	renderManager().setParticleTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
+}
+
+void me::ParticleSystem::init()
+{
+	if (mName.size() > 0)
+	renderManager().createParticle(mName, mParticleName);
 }
 
 void ParticleSystem::update(const double& dt)
@@ -46,4 +51,14 @@ void ParticleSystem::setOffsetScale(Vector3 offset)
 void ParticleSystem::setEmitting(bool stat)
 {
 	renderManager().setParticleEmitting(mName, stat);
+}
+
+void me::ParticleSystem::setName(std::string name)
+{
+	mName = name;
+}
+
+void me::ParticleSystem::setParticleName(std::string particleName)
+{
+	mParticleName = particleName;
 }

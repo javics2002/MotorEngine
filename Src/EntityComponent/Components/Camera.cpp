@@ -14,6 +14,7 @@ Camera::Camera()
 
 Camera::~Camera()
 {
+	mTransform = nullptr;
 	renderManager().destroyCamera(mName);
 }
 
@@ -42,6 +43,11 @@ void Camera::setStatic(bool stat)
 void Camera::setViewportDimension(float left, float top, float width, float height)
 {
 	renderManager().setViewportDimension(mName, left, top, width, height);
+}
+
+void me::Camera::setViewportOverlayEnabled(bool enabled)
+{
+	renderManager().setViewportOverlayEnabled(mName,enabled);
 }
 
 
