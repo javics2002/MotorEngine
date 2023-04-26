@@ -50,6 +50,11 @@ void me::UISpriteRenderer::setZOrder(int zOrder)
 	mZOrder = zOrder;
 }
 
+void me::UISpriteRenderer::resetSpriteMaterial()
+{
+	setSpriteMaterial(mSpriteName);
+}
+
 std::string me::UISpriteRenderer::getName()
 {
 	return mName;

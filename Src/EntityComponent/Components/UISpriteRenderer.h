@@ -62,7 +62,10 @@ namespace me {
 		*/
 		void setZOrder(int zOrder);
 
-
+		/*
+		resets the sprite material
+		*/
+		void resetSpriteMaterial();
 
 		/**
 		 Set material.
