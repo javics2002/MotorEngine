@@ -37,6 +37,7 @@ void RigidBody::start()
 										mMvType, mIsTrigger, mFricion, mMass, mRestitution);
 
 	mCollider = mEntity->getComponent<Collider>("collider");
+	mOriginalMask = mMask;
 
 	assert(mCollider && "An Entity doesn't have the collider  component");
 
@@ -208,7 +209,7 @@ Vector3 RigidBody::getVelocity()
 void me::RigidBody::activeBody()
 {
 	mBtRigidBody->activate(true);
-	setMask(mMask);
+	setMask(mOriginalMask);
 	enabled = true;
 }
 

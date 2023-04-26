@@ -17,7 +17,7 @@ void me::Collider::start()
 
 void me::Collider::onCollisionEnter(Entity* other)
 {
-	std::cout << "Im " << mEntity->getName() << " and I have collided with " << other->getName() << std::endl;
+	//std::cout << "Im " << mEntity->getName() << " and I have collided with " << other->getName() << std::endl;
 	mEntity->onCollisionEnter(other);
 }
 

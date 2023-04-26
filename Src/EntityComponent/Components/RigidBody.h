@@ -33,6 +33,7 @@ namespace me{
 		//example of a mask, mask =  5 means that the rigidbody can collides with layers 1 and 3 because 5 is 101 
 		//the  layer 1 corresponds to the most significant bit
 		int mMask;
+		int mOriginalMask;
 		//current layer of the rigidbody 
 		int mGroup;
 

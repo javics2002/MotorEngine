@@ -67,8 +67,8 @@ std::shared_ptr<Entity> Scene::findEntity(const EntityName& name) const {
 	if (it != mEntities.end() && it->second->isActive()) {
 		return it->second;
 	}
-	it = mEntities.find(name);
-	if (it != mEntities.end() && it->second->isActive()) {
+	it = MGlobalEntities.find(name);
+	if (it != MGlobalEntities.end() && it->second->isActive()) {
 		return it->second;
 	}
 	return nullptr;
