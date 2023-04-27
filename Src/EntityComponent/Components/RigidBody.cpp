@@ -140,6 +140,18 @@ void me::RigidBody::setGroup(int group)
 	}
 }
 
+void me::RigidBody::setVelocity(Vector3 linearVelocity)
+{
+	btVector3 v = btVector3(linearVelocity.x, linearVelocity.y, linearVelocity.z);
+	mBtRigidBody->setLinearVelocity(v);
+}
+
+void me::RigidBody::setAngularVelocity(Vector3 angularVelocity)
+{
+	btVector3 w = btVector3(angularVelocity.x, angularVelocity.y, angularVelocity.z);
+	mBtRigidBody->setAngularVelocity(w);
+}
+
 void me::RigidBody::addForce(Vector3 force)
 {
 	btVector3 v = force.v3ToBulletV3();
@@ -203,6 +215,13 @@ Vector3 RigidBody::getVelocity()
 	Vector3 velocity = Vector3(0, 0, 0);
 	velocity = mBtRigidBody->getLinearVelocity();
 	return velocity;
+}
+
+Vector3 me::RigidBody::getAngularVelocity()
+{
+	Vector3 angularVelocity = Vector3(0, 0, 0);
+	angularVelocity = mBtRigidBody->getAngularVelocity();
+	return angularVelocity;
 }
 
 void me::RigidBody::activeBody()

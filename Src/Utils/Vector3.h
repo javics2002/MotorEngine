@@ -117,6 +117,14 @@ namespace me {
 		*/
 		Vector3 operator*=(const float & s);
 
+		/**
+		Returns the division of two vectors
+
+		@param other The vector used in the division
+		@return The final vector after the division
+		*/
+		Vector3 operator/(const Vector3& other);
+
 
 		void operator=(const Vector3& v);
 		void operator=(const Vector3* v);
@@ -157,7 +165,7 @@ namespace me {
 		/**
 		Normalize the vector to have a magnitude of 1
 		*/
-		void normalize();
+		Vector3 normalize();
 
 		/**
 		Calculate the dot product between this vector and another vector "v"

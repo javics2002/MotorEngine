@@ -80,6 +80,8 @@ namespace me{
 		void setMomeventType(MovementType mvType);
 		void setMask(int mask);
 		void setGroup(int group);
+		void setVelocity(Vector3 linearVelocity);
+		void setAngularVelocity(Vector3 angularVelocity);
 
 		bool getTrigger();
 		float getMass();
@@ -90,6 +92,8 @@ namespace me{
 		int getMask();
 		int getGroup();
 		Vector3 getVelocity();
+		Vector3 getAngularVelocity();
+
 
 		void activeBody();
 		void desactiveBody();
@@ -98,7 +102,6 @@ namespace me{
 		Apply a force to the rigidBody
 
 		@param force is the vector of the force to apply
-		@param relativePos is the local pos of the rigidBody
 		*/
 		void addForce(Vector3 force);
 
@@ -106,7 +109,6 @@ namespace me{
 		Apply a impulse to the rigidBody
 
 		@param impulse is the vector of the impulse to apply
-		@param relativePos is the local pos of the rigidBody
 		*/
 		void addImpulse(Vector3 impulse);
 

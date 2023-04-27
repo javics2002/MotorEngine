@@ -43,6 +43,11 @@ Vector3 Vector3::operator+=(const Vector3& v)
 	return Vector3(x * s, y * s, z * s);
 }
 
+ Vector3 me::Vector3::operator/(const Vector3& other)
+ {
+	 return Vector3(x / other.x, y / other.y, z / other.z);
+ }
+
  void Vector3::operator=(const Vector3 & v)
 {
 	x = v.x;
@@ -84,7 +89,7 @@ float Vector3::magnitude()
 	return sqrt(x * x + y * y + z * z);
 }
 
-void Vector3::normalize()
+Vector3 Vector3::normalize()
 {
 	// Calculate the magnitude of the vector
 	float m = magnitude();
@@ -93,6 +98,8 @@ void Vector3::normalize()
 	x = x / m;
 	y = y / m;
 	z = z / m;
+
+	return Vector3(x, y, z);
 }
 
 float Vector3::dot(const Vector3& v)

@@ -108,8 +108,14 @@ void Scene::update(const double& dt) {
 	for (const auto& kv : MGlobalEntities)
 		kv.second->update(dt);
 
-	for (const auto& kv : mEntities)
+	for (const auto& kv : mEntities) {
+#ifdef _DEBUG
+		if (kv.second->getName() == "car") {
+			int suma = 1 + 1;
+		}
+#endif
 		kv.second->update(dt);
+	}
 }
 
 void Scene::lateUpdate(const double& dt) {
