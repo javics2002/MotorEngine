@@ -101,6 +101,11 @@ void SceneManager::change(std::string newScene) {
 	mChange = true;
 }
 
+void me::SceneManager::quit()
+{
+	mQuit = true;
+}
+
 std::string me::SceneManager::getNewScene()
 {
 	return mNewScene;
@@ -109,6 +114,11 @@ std::string me::SceneManager::getNewScene()
 bool me::SceneManager::isChanging()
 {
 	return mChange;
+}
+
+bool me::SceneManager::isQuiting()
+{
+	return mQuit;
 }
 
 int SceneManager::loadEntities(const SceneName& sceneName) {

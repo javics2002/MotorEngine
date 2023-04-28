@@ -88,7 +88,7 @@ void MotorEngine::loop()
 	inputManager().addEvent(QuitLoop, &quit);
 	float dt;
 
-	while (!quit) {
+	while (!quit && !sceneManager().isQuiting()) {
 		while (SDL_PollEvent(&event)) { }
 
 		// Update Time Values

@@ -75,9 +75,6 @@
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
@@ -87,6 +84,7 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h">

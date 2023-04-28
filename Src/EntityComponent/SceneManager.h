@@ -103,9 +103,13 @@ namespace me {
 
         void change(std::string newScene);
 
+        void quit();
+
         std::string getNewScene();
 
         bool isChanging();
+
+        bool isQuiting();
 
     private:
         /*
@@ -121,7 +125,11 @@ namespace me {
         */
         void pushEntities();
 
+        //Change scene
         bool mChange = false;
+
+        //Quit app
+        bool mQuit = false;
 
         std::string mNewScene;
 
