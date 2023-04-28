@@ -175,6 +175,10 @@ namespace me {
 		*/
 		void translate(Vector3 startPoint, Vector3 direction);
 
+		void Rx(float degrees);
+		void Ry(float degrees);
+		void Rz(float degrees);
+
 		/**
 		Calculate the dot product between this vector and another vector "v"
 

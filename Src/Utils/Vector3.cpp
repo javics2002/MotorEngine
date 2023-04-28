@@ -5,6 +5,7 @@
 #include <LinearMath/btVector3.h>
 #include <LinearMath/btQuaternion.h>
 #include <fmod.hpp>
+#define MY_PI 3.14159265358979323846
 
 using namespace me;
 
@@ -109,6 +110,39 @@ void me::Vector3::translate(Vector3 startPoint, Vector3 direction)
 	x = newEndPoint.x - newStartPoint.x;
 	y = newEndPoint.y - newStartPoint.y;
 	z = newEndPoint.z - newStartPoint.z;
+}
+
+void me::Vector3::Rx(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	x = x;
+	y = y * cosAngle - z * sinAngle;
+	y = y * sinAngle + z * cosAngle;
+}
+
+void me::Vector3::Ry(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	x = x * cosAngle + z * sinAngle;
+	y = y;
+	y = -x * sinAngle + z * cosAngle;
+}
+
+void me::Vector3::Rz(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	x = x * cosAngle - y * sinAngle;
+	y = x * sinAngle + y * cosAngle;
+	y = z;
 }
 
 float Vector3::dot(const Vector3& v)
