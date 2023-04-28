@@ -12,12 +12,20 @@ namespace Ogre {
 	class TextAreaOverlayElement;
 }
 
+
+
 namespace me {
-	class __MOTORENGINE_API UIText : public UIElement
+
+	class UITransform;
+
+	class __MOTORENGINE_API UIText : public me::Component
 	{
 	public:
-		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
+		UIText();
 		~UIText();
+
+		void start() override;
+
 
 		/**
 		* Set the position of the UIText instance
@@ -34,7 +42,7 @@ namespace me {
 		*/
 		void setSize(float w, float h);
 
-
+		void init(std::string name, std::string spriteName, int zOrder);
 
 		/**
 		* Set the font used by the UIText instance
@@ -78,16 +86,19 @@ namespace me {
 		void setActive(bool active);
 
 
-		/**
-		* Set the alignment of the text displayed by the UIText instance
-		* @param a The new alignment of the text
-		*/
-		void setTextAligment(int a);
 
 	private:
 
-		// Pointer to the text area overlay element
-		Ogre::TextAreaOverlayElement* mTextArea;
+		//name for RenderManager map and for entity that attached in node
+		std::string mName;
+		//name of .png file
+		std::string mSpriteName;
+		//componenet transform of this.Entity
+		UITransform* mUITransform;
+		//static state of this.Entity 
+		bool mStaticObject = false;
+
+		int mZOrder;
 	};
 }
 

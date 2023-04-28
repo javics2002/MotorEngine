@@ -104,6 +104,13 @@ namespace me {
 		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys UIText components
+	class FactoryUIText : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
 	//Creates and destroys UITransform components
 	class FactoryUITransform : public FactoryComponent {
 	public:

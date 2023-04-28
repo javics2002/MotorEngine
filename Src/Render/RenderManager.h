@@ -37,6 +37,7 @@ namespace me {
 	class RenderWindow;
 	class RenderCamera;
 	class RenderMesh;
+	class RenderUIText;
 	class RenderUISprite;
 	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
@@ -124,6 +125,7 @@ namespace me {
 		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
 		std::unordered_map<std::string, RenderUISprite*> mSprites;			//Pairs each UISprite with its name
+		std::unordered_map<std::string, RenderUIText*> mTexts;			//Pairs each UISprite with its name
 		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
 		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
 
@@ -166,6 +168,13 @@ namespace me {
 		@return nullptr: if it doesn't exist
 		*/
 		RenderUISprite* getUISprite(std::string name);
+
+		/**
+		@param name: Name of the text
+		@return RenderUIIText: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		RenderUIText* getUIText(std::string name);
 
 		/**
 		@param name: Name of the mesh
@@ -278,6 +287,15 @@ namespace me {
 		bool createSprite(std::string name, std::string nameMesh, int zOrder);
 
 		/**
+		Creates a 2D text in the overlay.
+		@param name: Name of Ogre::OverlayElement &&unordered_map
+		@param nameMesh: Name of file (xxx.png)
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createText(std::string name, std::string text, int zOrder);
+
+		/**
 		Set Transform info to the mesh with this name (for static object)
 		@param name: name of ogreMesh
 		@param pos: position of ogreMesh
@@ -359,6 +377,10 @@ namespace me {
 		bool setParticleEmitting(std::string name, bool emitted);
 
 		
+
+		bool setUITextTransform(std::string name, Vector2 pos, Vector2 scale, float rot);
+
+
 		/**
 		@param name: name of node
 		@return Ogre::SceneNodo created with this name and it is in root node

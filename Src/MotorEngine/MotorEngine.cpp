@@ -168,6 +168,7 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("audiosource", new FactoryAudioSource());
 	componentsFactory().addFactoryComponent("audiolistener", new FactoryAudioListener());
 	componentsFactory().addFactoryComponent("light", new FactoryLight());
+	componentsFactory().addFactoryComponent("uitext", new FactoryUIText());
 }
 
 int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)

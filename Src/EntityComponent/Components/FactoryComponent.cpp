@@ -11,6 +11,7 @@
 #include "Transform.h"
 #include "Light.h"
 #include "UITransform.h"
+#include "UIText.h"
 
 using namespace me;
 
@@ -262,4 +263,24 @@ Component* me::FactoryUITransform::create(Parameters& params)
 void me::FactoryUITransform::destroy(Component* component)
 {
     delete component;
+}
+
+Component* me::FactoryUIText::create(Parameters& params)
+{
+    if (params.empty())
+    {
+        return new UIText();
+    }
+    std::string name = Value(params, "name", std::string());
+    std::string text = Value(params, "text", std::string());
+    int zOrder = Value(params, "zorder", 1);
+
+    UIText* textRenderer = new UIText();
+    textRenderer->init(name,text, zOrder);
+
+    return textRenderer;
+}
+
+void me::FactoryUIText::destroy(Component* component)
+{
 }

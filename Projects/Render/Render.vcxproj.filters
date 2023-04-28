@@ -42,7 +42,7 @@
     <ClCompile Include="..\..\Src\Render\RenderUISprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RenderUIButton.cpp">
+    <ClCompile Include="..\..\Src\Render\RenderUIText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,7 @@
     <ClInclude Include="..\..\Src\Render\RenderUISprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RenderUIButton.h">
+    <ClInclude Include="..\..\Src\Render\RenderUIText.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
