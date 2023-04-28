@@ -33,13 +33,13 @@ namespace me {
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
-		Entity(Scene* scn, const SceneName name);
+		Entity(Scene* scn, const EntityName name);
 
 		/**
 		Build the foundation of the Entity.
 		@param String name to identify it.
 		*/
-		Entity(const SceneName name);
+		Entity(const EntityName name);
 
 		/**
 		Delete all the components added to the entity.
