@@ -107,6 +107,7 @@ void RenderManager::locateResources()
 	Ogre::String sec, type, arch;
 	// go through all specified resource groups
 	Ogre::ConfigFile::SettingsBySection_::const_iterator seci;
+
 	for (seci = cf.getSettingsBySection().begin(); seci != cf.getSettingsBySection().end(); ++seci) {
 		sec = seci->first;
 		const Ogre::ConfigFile::SettingsMultiMap&settings = seci->second;
@@ -117,7 +118,7 @@ void RenderManager::locateResources()
 		{
 			type = i->first;
 			arch = Ogre::FileSystemLayer::resolveBundlePath(i->second);
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type, sec);
+			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type);
 		}
 	}
 }

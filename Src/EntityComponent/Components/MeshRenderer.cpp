@@ -64,7 +64,8 @@ void me::MeshRenderer::desactiveMesh()
 
 void MeshRenderer::setMaterial(std::string materialName)
 {
-	renderManager().setMeshMaterial(mName,materialName);
+	if (materialName.size()>0)
+		renderManager().setMeshMaterial(mName,materialName);
 }
 
 void me::MeshRenderer::setName(std::string name)

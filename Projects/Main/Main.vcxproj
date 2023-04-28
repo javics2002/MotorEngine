@@ -26,11 +26,6 @@
       <Project>{a84aeeac-343f-4d4e-ac76-f83afdc68112}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ogre.cfg" />
-    <None Include="plugins.cfg" />
-    <None Include="resources.cfg" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
