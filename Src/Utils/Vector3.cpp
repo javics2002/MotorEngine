@@ -102,6 +102,15 @@ Vector3 Vector3::normalize()
 	return Vector3(x, y, z);
 }
 
+void me::Vector3::translate(Vector3 startPoint, Vector3 direction)
+{
+	Vector3 newStartPoint = startPoint + direction;
+	Vector3 newEndPoint = Vector3(x + direction.x, y + direction.y, z + direction.z);
+	x = newEndPoint.x - newStartPoint.x;
+	y = newEndPoint.y - newStartPoint.y;
+	z = newEndPoint.z - newStartPoint.z;
+}
+
 float Vector3::dot(const Vector3& v)
 {
 	return (x * v.x + y * v.y + z * v.z);

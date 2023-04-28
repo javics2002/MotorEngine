@@ -167,6 +167,14 @@ namespace me {
 		*/
 		Vector3 normalize();
 
+		/*
+		Performs the translation of the vector in a given direction and distance
+		from a given startPoint.
+		@param StartPoint the origin position of the vector to translate
+		@param Direction the vector that describes the direction and the distance to translate
+		*/
+		void translate(Vector3 startPoint, Vector3 direction);
+
 		/**
 		Calculate the dot product between this vector and another vector "v"
 
