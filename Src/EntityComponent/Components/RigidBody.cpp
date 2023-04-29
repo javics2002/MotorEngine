@@ -210,6 +210,12 @@ int me::RigidBody::getGroup()
 	return mGroup;
 }
 
+float me::RigidBody::getGravity()
+{
+	btVector3 vGravity = mBtRigidBody->getGravity();
+	return Vector3(vGravity.getX(), vGravity.getY(), vGravity.getZ()).magnitude();
+}
+
 Vector3 RigidBody::getVelocity()
 {
 	Vector3 velocity = Vector3(0, 0, 0);

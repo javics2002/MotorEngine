@@ -91,6 +91,7 @@ namespace me{
 		int getMovementType();
 		int getMask();
 		int getGroup();
+		float getGravity();
 		Vector3 getVelocity();
 		Vector3 getAngularVelocity();
 

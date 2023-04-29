@@ -125,6 +125,14 @@ namespace me {
 		*/
 		Vector3 operator/(const Vector3& other);
 
+		/**
+		Returns the division of two vectors
+
+		@param s The scalar to divide this vector by
+		@return The final vector after the division
+		*/
+		Vector3 operator/(const float& s);
+
 
 		void operator=(const Vector3& v);
 		void operator=(const Vector3* v);
@@ -172,12 +180,13 @@ namespace me {
 		from a given startPoint.
 		@param StartPoint the origin position of the vector to translate
 		@param Direction the vector that describes the direction and the distance to translate
+		@return The new vector, that is the translation of the original
 		*/
-		void translate(Vector3 startPoint, Vector3 direction);
+		Vector3 translate(Vector3 startPoint, Vector3 direction);
 
-		void Rx(float degrees);
-		void Ry(float degrees);
-		void Rz(float degrees);
+		Vector3 Rx(float degrees);
+		Vector3 Ry(float degrees);
+		Vector3 Rz(float degrees);
 
 		/**
 		Calculate the dot product between this vector and another vector "v"

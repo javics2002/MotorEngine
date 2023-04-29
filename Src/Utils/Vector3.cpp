@@ -49,6 +49,11 @@ Vector3 Vector3::operator+=(const Vector3& v)
 	 return Vector3(x / other.x, y / other.y, z / other.z);
  }
 
+ Vector3 me::Vector3::operator/(const float& s)
+ {
+	 return Vector3(x / s, y / s, z / s);
+ }
+
  void Vector3::operator=(const Vector3 & v)
 {
 	x = v.x;
@@ -96,53 +101,53 @@ Vector3 Vector3::normalize()
 	float m = magnitude();
 
 	// Divide the vector components by the magnitude to normalize the vector
-	x = x / m;
-	y = y / m;
-	z = z / m;
-
-	return Vector3(x, y, z);
+	return Vector3(x / m, y / m, z / m);
 }
 
-void me::Vector3::translate(Vector3 startPoint, Vector3 direction)
+Vector3 me::Vector3::translate(Vector3 startPoint, Vector3 direction)
 {
 	Vector3 newStartPoint = startPoint + direction;
 	Vector3 newEndPoint = Vector3(x + direction.x, y + direction.y, z + direction.z);
-	x = newEndPoint.x - newStartPoint.x;
-	y = newEndPoint.y - newStartPoint.y;
-	z = newEndPoint.z - newStartPoint.z;
+	return Vector3(newEndPoint.x - newStartPoint.x, newEndPoint.y - newStartPoint.y, newEndPoint.z - newStartPoint.z);
 }
 
-void me::Vector3::Rx(float degrees)
+Vector3 me::Vector3::Rx(float degrees)
 {
 	float radians = degrees * MY_PI / 180.0;
 	float cosAngle = cos(radians);
 	float sinAngle = sin(radians);
 
-	x = x;
-	y = y * cosAngle - z * sinAngle;
-	y = y * sinAngle + z * cosAngle;
+	float newX = x;
+	float newY = y * cosAngle - z * sinAngle;
+	float newZ = y * sinAngle + z * cosAngle;
+
+	return Vector3(newX, newY, newZ);
 }
 
-void me::Vector3::Ry(float degrees)
+Vector3 me::Vector3::Ry(float degrees)
 {
 	float radians = degrees * MY_PI / 180.0;
 	float cosAngle = cos(radians);
 	float sinAngle = sin(radians);
 
-	x = x * cosAngle + z * sinAngle;
-	y = y;
-	y = -x * sinAngle + z * cosAngle;
+	float newX = x * cosAngle + z * sinAngle;
+	float newY = y;
+	float newZ = -x * sinAngle + z * cosAngle;
+
+	return Vector3(newX, newY, newZ);
 }
 
-void me::Vector3::Rz(float degrees)
+Vector3 me::Vector3::Rz(float degrees)
 {
 	float radians = degrees * MY_PI / 180.0;
 	float cosAngle = cos(radians);
 	float sinAngle = sin(radians);
 
-	x = x * cosAngle - y * sinAngle;
-	y = x * sinAngle + y * cosAngle;
-	y = z;
+	float newX = x * cosAngle - y * sinAngle;
+	float newY = x * sinAngle + y * cosAngle;
+	float newZ = z;
+
+	return Vector3(newX, newY, newZ);
 }
 
 float Vector3::dot(const Vector3& v)
