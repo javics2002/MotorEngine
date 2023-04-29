@@ -34,6 +34,10 @@ PhysicsManager::PhysicsManager()
 PhysicsManager::~PhysicsManager()
 {
 	//cleanup in the reverse order of creation/initialization
+#ifdef _DEBUG
+	mDynamicsWorld->setDebugDrawer(nullptr);
+	delete mDebug;
+#endif
 
 	//remove the rigidbodies from the dynamics world and delete them
 	for (int i = mDynamicsWorld->getNumCollisionObjects() - 1; i >= 0; i--)
@@ -83,6 +87,8 @@ void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
 		delete shape;
 		mCollisionShapes.erase(it);
 	}
+
+	delete rb;
 }
 
 /*

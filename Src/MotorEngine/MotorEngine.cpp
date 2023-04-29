@@ -77,7 +77,7 @@ bool MotorEngine::setup(std::string gameName)
 
 	// Start time
 	mTime = new Time();
-
+	
 	return entryPoint();
 }
 
@@ -113,18 +113,14 @@ void MotorEngine::loop()
 
 void MotorEngine::exit()
 {
-	/*
-	Clear the memory created in the execution of the program
-	*/
-	sceneManager().deleteAllScenes();
-
-	RenderManager::Shutdown();
+	// Clear the memory created in the execution of the program
 	SceneManager::Shutdown();
 	PhysicsManager::Shutdown();
-	InputManager::Shutdown();
+	RenderManager::Shutdown();
 	Window::Shutdown();
 	SoundManager::Shutdown();
 	ComponentsFactory::Shutdown();
+	InputManager::Shutdown();
 
 	delete mTime;
 

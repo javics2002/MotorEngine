@@ -118,7 +118,6 @@ namespace me{
 		*/
 		void addTorque(Vector3 torque);
 	};
-
 }
 
 #endif

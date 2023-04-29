@@ -6,7 +6,9 @@
 #include "Utils/Vector2.h"
 #include "Render/Window.h"
 
-me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteMaterialName, int zOrder)
+using namespace me;
+
+RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement* panel, std::string spriteMaterialName, int zOrder)
 {
 	mOverlay = overlay;
 	mPanel = panel;
@@ -20,44 +22,44 @@ me::RenderUISprite::RenderUISprite(Ogre::Overlay* overlay, Ogre::OverlayElement*
 	overlay->show();
 }
 
-me::RenderUISprite::~RenderUISprite()
+RenderUISprite::~RenderUISprite()
 {
 	mPanel->cleanupDictionary();
 }
 
-void me::RenderUISprite::setTransform(Vector2 pos, Vector2 scale, float rot)
+void RenderUISprite::setTransform(Vector2 pos, Vector2 scale, float rot)
 {
 	mPanel->setPosition(pos.x, pos.y);
 	mPanel->setDimensions(scale.x, scale.y);
 	mOverlay->setRotate(Ogre::Degree(rot));
 }
 
-void me::RenderUISprite::setPosition(Vector2 pos)
+void RenderUISprite::setPosition(Vector2 pos)
 {
 	mPanel->setPosition(pos.x, pos.y);
 }
 
-void me::RenderUISprite::setScale(Vector2 scale)
+void RenderUISprite::setScale(Vector2 scale)
 {
 	mPanel->setDimensions(scale.x, scale.y);
 }
 
-void me::RenderUISprite::setRotation(float rot)
+void RenderUISprite::setRotation(float rot)
 {
 	mOverlay->setRotate(Ogre::Degree(rot));
 }
 
-Ogre::OverlayElement* me::RenderUISprite::getOgreOverlayElement()
+Ogre::OverlayElement* RenderUISprite::getOgreOverlayElement()
 {
 	return mPanel;
 }
 
-Ogre::Overlay* me::RenderUISprite::getOgreOverlay()
+Ogre::Overlay* RenderUISprite::getOgreOverlay()
 {
 	return mOverlay;
 }
 
-void me::RenderUISprite::setMaterial(std::string materialName)
+void RenderUISprite::setMaterial(std::string materialName)
 {
 	mMaterialName = materialName;
 	mPanel->setMaterialName(materialName);

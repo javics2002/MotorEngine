@@ -118,14 +118,14 @@ namespace me {
 		@param maxDistance : maximum audible distance for a 3D sound.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance);
+		bool create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance);
 		/**
 		Creates a normal sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundName : the especific name of the sound which mode will be changed.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool createNormalSound(const char* soundPath, std::string soundName);
+		bool createNormalSound(std::string soundPath, std::string soundName);
 		/**
 		Sets the speed a certain sound wil be played at.
 		@param soundName : the especific name of the sound which speed will be changed.

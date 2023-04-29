@@ -106,14 +106,14 @@ void me::SoundManager::systemRefresh()
 	checkFMODResult(mResult);
 }
 
-bool me::SoundManager::create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance)
+bool me::SoundManager::create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance)
 {
 	nameToLower(soundName);
 	FMOD::Sound* newSoundHandle;
 	auto soundHandle = getSound(soundName);
 	if (soundHandle != nullptr) return false;
 
-	mResult = mSoundSystem->createSound(soundPath, FMOD_3D, 0, &newSoundHandle);
+	mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_3D, 0, &newSoundHandle);
 	if(!checkFMODResult(mResult)) return false;
 
 	mResult = newSoundHandle->set3DMinMaxDistance(minDistance * DISTANCE_FACTOR, maxDistance * DISTANCE_FACTOR);
@@ -134,14 +134,14 @@ bool me::SoundManager::create3DSound(const char* soundPath, std::string soundNam
 	
 }
 
-bool me::SoundManager::createNormalSound(const char* soundPath, std::string soundName)
+bool me::SoundManager::createNormalSound(std::string soundPath, std::string soundName)
 {
 	nameToLower(soundName);
 	FMOD::Sound* newSoundHandle;
 	auto soundHandle = getSound(soundName);
 	if (soundHandle != nullptr) return false;
 
-	mResult = mSoundSystem->createSound(soundPath, FMOD_DEFAULT, 0, &newSoundHandle);
+	mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_DEFAULT, 0, &newSoundHandle);
 
 	if(checkFMODResult(mResult)){
 		std::pair<std::string, FMOD::Sound*> newSound(soundName, newSoundHandle);

@@ -42,7 +42,6 @@ void RigidBody::start()
 	assert(mCollider && "An Entity doesn't have the collider  component");
 
 	mBtRigidBody->setUserPointer(mCollider);
-
 }
 
 void RigidBody::update(const double& dt)

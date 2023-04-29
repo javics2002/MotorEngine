@@ -26,7 +26,7 @@ namespace me {
 	/**
 	PhysicsManager manages physics using Bullet Engine.
 	*/
-	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
+	class __MOTORENGINE_API PhysicsManager : public Singleton<PhysicsManager>
 	{
 		friend Singleton<PhysicsManager>;
 
@@ -97,7 +97,7 @@ namespace me {
 		@param mass mass of the object
 		@param restitution restitution of the object
 		*/
-		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
+		btRigidBody* createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
 			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const double& dt);

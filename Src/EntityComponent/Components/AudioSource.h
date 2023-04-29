@@ -101,7 +101,7 @@ namespace me {
 		*/
 		inline void setSourcePath(std::string path) {
 			
-			mSoundPath = path.c_str();
+			mSoundPath = path;
 		}
 
 		/**
@@ -160,7 +160,7 @@ namespace me {
 		//FMOD::Sound* mSound; // The FMOD sound object
 		int mSoundChannel; // The number of the channel this sound will be played on.
 		const char* mSoundGroup; // The name of the channel group this sound will be played on.
-		const char* mSoundPath; // The path to the audio file to play
+		std::string mSoundPath; // The path to the audio file to play
 		std::string mSoundName; // The name we give to the audio file to play
 		bool mPlaying; // Whether the audio is currently playing or not
 		bool mLoop; // Whether the audio should loop or not

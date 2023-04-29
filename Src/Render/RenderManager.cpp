@@ -205,35 +205,26 @@ RenderParticleSystem* RenderManager::getParticle(std::string name)
 
 me::RenderManager::~RenderManager()
 {
-	for (auto& it : mCameras) {
-
+	for (auto& it : mCameras)
 		delete it.second;
-	}
 	mCameras.clear();
 
-	for (auto& it2 : mMeshes) {
-
+	for (auto& it2 : mMeshes)
 		delete it2.second;
-	}
 	mMeshes.clear();
 
 	for (auto& it3 : mSprites) {
-
-		destroyUISprite(it3.first);
 		delete it3.second;
+		destroyUISprite(it3.first);
 	}
 	mSprites.clear();
 
-	for (auto& it4 : mLights) {
+	for (auto& it4 : mLights) 
 		delete it4.second;
-		
-	}
 	mLights.clear();
 
-	for (auto& it5 : mParticles) {
+	for (auto& it5 : mParticles)
 		delete it5.second;
-
-	}
 	mParticles.clear();
 
 	// Destroy the RT Shader System.
@@ -246,8 +237,6 @@ me::RenderManager::~RenderManager()
 	mOverlayManager = nullptr;
 	delete mOverlaySystem;
 	mOverlaySystem = nullptr;
-
-
 
 	delete mRoot;
 	mRoot = nullptr;
@@ -363,8 +352,7 @@ void RenderManager::createNewLight(std::string name, const Vector3& pos, const V
 }
 
 void me::RenderManager::destroyLight(std::string name)
-{
-	
+{	
 	if (!mLights.count(name))
 	{
 		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;

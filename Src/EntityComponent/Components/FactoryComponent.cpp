@@ -85,6 +85,7 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
     AudioSource* audioSource = new AudioSource();
 
     audioSource->setSourceName(Value(params, "source", std::string()));
+    audioSource->setSourcePath(Value(params, "path", std::string()));
     audioSource->setPlayOnStart(Value(params, "onstart", false));
     audioSource->setVolume(Value(params, "volume", 1));
     audioSource->setIs3D(Value(params, "3d", false));
@@ -283,4 +284,5 @@ Component* me::FactoryUIText::create(Parameters& params)
 
 void me::FactoryUIText::destroy(Component* component)
 {
+    delete component;
 }

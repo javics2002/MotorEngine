@@ -19,6 +19,7 @@ Scene::Scene(const SceneName name) :
 
 Scene::~Scene() {
 	mNewEntities.clear();
+	mNewGlobalEntities.clear();
 	mEntities.clear();
 
 #ifdef _DEBUG
@@ -163,7 +164,7 @@ void Scene::pushEntities(InfoScene& entitiesMap)
 		// Crear entidad
 		auto entity = addEntity(*entityName);
 
-		// Crear y añadir componentes
+		// Crear y aÃ±adir componentes
 		for (auto& component : *entityComponents) {
 			const ComponentName* componentName = &component.first;
 			Parameters* componentInfo = &component.second;

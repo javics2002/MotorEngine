@@ -20,7 +20,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 #endif
 
     MotorEngine* engine = new MotorEngine();
-
+    
     /*
     * Create and initialize the engine
     * All libraries and components that the engine is going to use (Render, Physics, UI...)

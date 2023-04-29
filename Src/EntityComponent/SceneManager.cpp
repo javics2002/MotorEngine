@@ -22,9 +22,7 @@ SceneManager::~SceneManager() {
 	std::cout << " >>> SceneManager deleted..." << std::endl;
 #endif
 
-	for (auto scene : mScenes)
-		delete scene.second;
-	mScenes.clear();
+	deleteAllScenes();
 
 	mEntitiesMap.clear();
 
@@ -92,7 +90,6 @@ void SceneManager::update(const double& dt) {
 		mActiveScene->update(dt);
 		mActiveScene->lateUpdate(dt);
 		mActiveScene->refresh();
-
 	}
 }
 
@@ -134,6 +131,7 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 #ifdef _DEBUG
 		std::cout << lua_tostring(L, -1) << "\n";
 #endif
+		lua_close(L);
 		return 1;
 	}
 
@@ -146,10 +144,12 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 		pushEntities();
 		mEntitiesMap.clear();
 	}
-	else
+	else {
+		lua_close(L);
 		return 1;
+	}
 
-
+	lua_close(L);
 	return 0;
 }
 
@@ -177,8 +177,6 @@ bool SceneManager::loadScene(const SceneName& newScene, bool eraseActiveScene) {
 	sceneManager().setActiveScene(s);
 	return sceneManager().loadEntities(s) == 0;
 }
-
-
 
 int SceneManager::readEntities(lua_State* L) {
 	lua_pushnil(L);
