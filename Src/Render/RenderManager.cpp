@@ -339,7 +339,8 @@ void RenderManager::destroyCamera(std::string name)
 
 }
 
-void RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir)
+void RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+	const Vector3& color)
 {
 	Ogre::Light* light = mSM->createLight(name);
 	light->setType(Ogre::Light::LT_DIRECTIONAL);
@@ -348,6 +349,8 @@ void RenderManager::createNewLight(std::string name, const Vector3& pos, const V
 	lightNode->attachObject(light);
 	lightNode->setDirection(dir.v3ToOgreV3());
 	lightNode->setPosition(pos.v3ToOgreV3());
+	light->setDiffuseColour(Ogre::ColourValue(color.x, color.y, color.z, 1));
+
 	mLights[name] = light;
 }
 
@@ -366,6 +369,11 @@ void me::RenderManager::destroyLight(std::string name)
 		mSM->destroySceneNode(node);
 		mLights.erase(name);
 	}
+}
+
+void RenderManager::setAmbientLight(const Vector3& color)
+{
+	mSM->setAmbientLight(Ogre::ColourValue(color.x, color.y, color.z, 1));
 }
 
 bool RenderManager::createMesh(std::string name, std::string nameMesh)

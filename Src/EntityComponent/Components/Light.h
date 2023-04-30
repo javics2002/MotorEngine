@@ -13,7 +13,9 @@ namespace me {
 
 	/**
 	A light source that lits objects in the scene.
-	It can be a directional, point or spotlight
+	It can be a directional, point or spotlight.
+	You can also set the scene ambient light through 
+	this component
 	*/
 	class __MOTORENGINE_API Light : public Component
 	{
@@ -21,7 +23,10 @@ namespace me {
 		LightType mType;
 		Vector3 mDirection;
 		Transform* mTransform;
+		Vector3 mColor;
 
+		bool mSetAmbient = false;
+		Vector3 mAmbientColor;
 
 	public:
 		Light();
@@ -39,6 +44,15 @@ namespace me {
 
 		inline void setDirection(Vector3 direction) {
 			mDirection = direction;
+		}
+
+		inline void setColor(Vector3 color) {
+			mColor = color;
+		}
+
+		inline void setAmbientColor(Vector3 color) {
+			mSetAmbient = true;
+			mAmbientColor = color;
 		}
 	};
 }

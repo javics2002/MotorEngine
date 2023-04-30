@@ -218,6 +218,12 @@ Component* me::FactoryLight::create(Parameters& params)
     light->setDirection(Vector3(Value(params, "direction_x", 0.0f),
         Value(params, "direction_y", -1.0f), Value(params, "direction_z", 0.0f)));
     light->setLightType((LightType)Value(params, "type", 0));
+    light->setColor(Vector3(Value(params, "color_r", 1.0f),
+        Value(params, "color_g", 1.0f), Value(params, "color_b", 1.0f)));
+
+    if (params.count("ambientcolor_r"))
+        light->setAmbientColor(Vector3(Value(params, "ambientcolor_r", 1.0f),
+            Value(params, "ambientcolor_g", 1.0f), Value(params, "ambientcolor_b", 1.0f)));
 
     return light;
 }

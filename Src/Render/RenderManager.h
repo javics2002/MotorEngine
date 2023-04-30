@@ -262,11 +262,19 @@ namespace me {
 		@param name: name of light
 		@param pos: position of light
 		@param dir: direction of light
+		@param color: color of light
 		*/
-		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir);
+		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+			const Vector3& color);
 
 		//destroy Light created
 		void destroyLight(std::string name);
+
+		/**
+		Set the ambient light of this scene
+		@param color: color of ambient light
+		*/
+		void setAmbientLight(const Vector3& color);
 		
 		/**
 		Create the ogreMesh with this name 

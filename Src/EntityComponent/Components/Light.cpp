@@ -17,6 +17,8 @@ Light::~Light()
 void Light::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createNewLight(mName, mTransform->getPosition(), mDirection);
-}
+	renderManager().createNewLight(mName, mTransform->getPosition(), mDirection, mColor);
 
+	if (mSetAmbient)
+		renderManager().setAmbientLight(mAmbientColor);
+}

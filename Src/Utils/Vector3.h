@@ -36,7 +36,7 @@ namespace me {
 	{
 
 	private:
-		float lerp(float a, float b, float f);
+		static float lerp(float a, float b, float f);
 
 	public:
 		float x, y, z;
@@ -145,7 +145,7 @@ namespace me {
 		@param b The ending vector to interpolate to
 		@param f The interpolation factor, a value between 0 and 1
 		*/
-		Vector3 lerp(const Vector3 & a, const Vector3 & b, float f);
+		static Vector3 lerp(const Vector3 & a, const Vector3 & b, float f);
 
 		/**
 		Calculate the magnitude (length) of the vector
