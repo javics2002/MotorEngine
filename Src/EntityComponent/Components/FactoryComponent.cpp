@@ -284,7 +284,7 @@ Component* me::FactoryUIText::create(Parameters& params)
     int zOrder = Value(params, "zorder", 1);
 
     UIText* textRenderer = new UIText();
-    textRenderer->init(name,text, zOrder);
+    textRenderer->init(name, text, zOrder);
 
     return textRenderer;
 }

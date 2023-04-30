@@ -674,7 +674,7 @@ bool RenderManager::setParticleEmitting(std::string name, bool emitted)
 	return true;
 }
 
-bool me::RenderManager::setUITextTransform(std::string name, Vector2 pos, Vector2 scale, float rot)
+bool RenderManager::setUITextTransform(std::string name, Vector2 pos, Vector2 scale, float rot)
 {
 	RenderUIText* text = getUIText(name);
 	if (text == nullptr)

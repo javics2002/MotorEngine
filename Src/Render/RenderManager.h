@@ -56,7 +56,6 @@ namespace me {
 		*/
 		RenderManager();
 
-	private:
 	protected:
 		// Root de Ogre
 		Ogre::Root* mRoot;

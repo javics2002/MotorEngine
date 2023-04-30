@@ -11,8 +11,6 @@ namespace Ogre {
 	class TextAreaOverlayElement;
 }
 
-
-
 namespace me {
 
 	class UITransform;
@@ -25,14 +23,12 @@ namespace me {
 
 		void start() override;
 
-
 		/**
 		* Set the position of the UIText instance
 		* @param x The x coordinate of the position
 		* @param y The y coordinate of the position
 		*/
 		void setPosition(float x, float y);
-
 
 		/**
 		* Set the size of the UIText instance
@@ -48,7 +44,6 @@ namespace me {
 		* @param fontName The name of the font to use
 		*/
 		void setFont(std::string fontName);
-
 
 		/**
 		* Set the text displayed by the UIText instance
