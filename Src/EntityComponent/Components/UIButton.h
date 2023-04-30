@@ -39,7 +39,7 @@ namespace me {
 		*/
 		UIButton();
 		//Destroy RenderManager map saved image
-		virtual ~UIButton();
+		~UIButton();
 
 
 		virtual void init(std::string name, std::string materialName, int zOrder);
@@ -47,7 +47,7 @@ namespace me {
 		/**
 		Get info for UITransform, create the Sprite and set the start pos
 		*/
-		void start() override;
+		virtual void start() override;
 
 		virtual void execute() {};
 

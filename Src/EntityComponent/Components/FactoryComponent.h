@@ -124,5 +124,6 @@ namespace me {
 		Component* create(Parameters& params) override;
 		void destroy(Component* component) override;
 	};
+
 }
 #endif

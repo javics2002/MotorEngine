@@ -12,6 +12,7 @@
 #include "Light.h"
 #include "UITransform.h"
 #include "UIText.h"
+#include "UIButton.h"
 
 using namespace me;
 
