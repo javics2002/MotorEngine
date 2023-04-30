@@ -109,8 +109,9 @@ void Scene::update(const double& dt) {
 	for (const auto& kv : MGlobalEntities)
 		kv.second->update(dt);
 
-	for (const auto& kv : mEntities)
+	for (const auto& kv : mEntities) {
 		kv.second->update(dt);
+	}
 }
 
 void Scene::lateUpdate(const double& dt) {

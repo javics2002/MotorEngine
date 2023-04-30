@@ -5,6 +5,7 @@
 #include <LinearMath/btVector3.h>
 #include <LinearMath/btQuaternion.h>
 #include <fmod.hpp>
+#define MY_PI 3.14159265358979323846
 
 using namespace me;
 
@@ -42,6 +43,16 @@ Vector3 Vector3::operator+=(const Vector3& v)
 {
 	return Vector3(x * s, y * s, z * s);
 }
+
+ Vector3 me::Vector3::operator/(const Vector3& other)
+ {
+	 return Vector3(x / other.x, y / other.y, z / other.z);
+ }
+
+ Vector3 me::Vector3::operator/(const float& s)
+ {
+	 return Vector3(x / s, y / s, z / s);
+ }
 
  void Vector3::operator=(const Vector3 & v)
 {
@@ -84,15 +95,59 @@ float Vector3::magnitude()
 	return sqrt(x * x + y * y + z * z);
 }
 
-void Vector3::normalize()
+Vector3 Vector3::normalize()
 {
 	// Calculate the magnitude of the vector
 	float m = magnitude();
 
 	// Divide the vector components by the magnitude to normalize the vector
-	x = x / m;
-	y = y / m;
-	z = z / m;
+	return Vector3(x / m, y / m, z / m);
+}
+
+Vector3 me::Vector3::translate(Vector3 startPoint, Vector3 direction)
+{
+	Vector3 newStartPoint = startPoint + direction;
+	Vector3 newEndPoint = Vector3(x + direction.x, y + direction.y, z + direction.z);
+	return Vector3(newEndPoint.x - newStartPoint.x, newEndPoint.y - newStartPoint.y, newEndPoint.z - newStartPoint.z);
+}
+
+Vector3 me::Vector3::Rx(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	float newX = x;
+	float newY = y * cosAngle - z * sinAngle;
+	float newZ = y * sinAngle + z * cosAngle;
+
+	return Vector3(newX, newY, newZ);
+}
+
+Vector3 me::Vector3::Ry(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	float newX = x * cosAngle + z * sinAngle;
+	float newY = y;
+	float newZ = -x * sinAngle + z * cosAngle;
+
+	return Vector3(newX, newY, newZ);
+}
+
+Vector3 me::Vector3::Rz(float degrees)
+{
+	float radians = degrees * MY_PI / 180.0;
+	float cosAngle = cos(radians);
+	float sinAngle = sin(radians);
+
+	float newX = x * cosAngle - y * sinAngle;
+	float newY = x * sinAngle + y * cosAngle;
+	float newZ = z;
+
+	return Vector3(newX, newY, newZ);
 }
 
 float Vector3::dot(const Vector3& v)
