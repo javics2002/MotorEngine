@@ -138,6 +138,8 @@ void Scene::processNewEntities()
 		mEntities.erase(entityPtr->getName());
 	}
 
+	mNewGlobalEntities.clear();
+
 	for (auto& entityPtr : mNewEntities)
 		mEntities.emplace(entityPtr->getName(), entityPtr);
 
@@ -149,7 +151,7 @@ void Scene::processNewEntities()
 		entityPtr->start();
 
 
-	mNewGlobalEntities.clear();
+
 
 	mNewEntities.clear();
 }

@@ -5,7 +5,6 @@
 #include "Component.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
-#include "UIElement.h"
 #include <string>
 
 namespace Ogre {
