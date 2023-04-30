@@ -281,10 +281,16 @@ Component* me::FactoryUIText::create(Parameters& params)
     }
     std::string name = Value(params, "name", std::string());
     std::string text = Value(params, "text", std::string());
+    std::string fontName = Value(params, "fontname", std::string());
+    Vector3 colour = Vector3(Value(params, "colour_x", 1.0f),Value(params, "colour_y", 1.0f), Value(params, "colour_z", 1.0f));
+    Vector2 position = Vector2(Value(params, "poition_x", 1.0f), Value(params, "position_y", 1.0f));
+    Vector2 dimension = Vector2(Value(params, "dimension_x", 1.0f), Value(params, "dimension_y", 1.0f));
     int zOrder = Value(params, "zorder", 1);
+    int charHeight = Value(params, "charheight", 40);
 
     UIText* textRenderer = new UIText();
-    textRenderer->init(name, text, zOrder);
+    textRenderer->init(name, text, zOrder,position.x,position.y,dimension.x,dimension.y,
+        fontName,charHeight,colour);
 
     return textRenderer;
 }

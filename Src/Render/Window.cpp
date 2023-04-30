@@ -39,12 +39,12 @@ SDL_Window* Window::get()
 
 int Window::getWindowWidth()
 {
-	SDL_GetWindowSizeInPixels(window, &mWidth, &mHeight);
+	SDL_GetWindowSize(window, &mWidth, &mHeight);
 	return mWidth;
 }
 
 int Window::getWindowHeight()
 {
-	SDL_GetWindowSizeInPixels(window, &mWidth, &mHeight);
+	SDL_GetWindowSize(window, &mWidth, &mHeight);
 	return mHeight;
 }

@@ -1,90 +1,63 @@
 #include "RenderUIText.h"
-#include <OgreOverlayElement.h>
 #include <OgreOverlay.h>
+#include <OgreOverlayElement.h>
 #include <OgreTextAreaOverlayElement.h>
 #include <OgreOverlayContainer.h>
-#include <OgreFontManager.h>
 #include <OgreOverlayManager.h>
 #include "Utils/Vector2.h"
 #include "Utils/Vector4.h"
-#include "Render/Window.h"
 
 using namespace me;
 
-RenderUIText::RenderUIText(Ogre::Overlay* overlay, Ogre::TextAreaOverlayElement* panel, std::string text, int zOrder)
-{
-	/*mOverlay = overlay;
-	mPanel = panel;
+RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
+	float positionX, float positionY, float dimensionX, float dimensionY, std::string fontName, float charHeight, Vector3 color)
+{	
 
-	mPanel->setDimensions(width, height);
-	mPanel->setCharHeight(charHeight);
-	mPanel->setMetricsMode(Ogre::GMM_PIXELS);
-	mPanel->setColourTop(Ogre::ColourValue(colourTop.x, colourTop.y, colourTop.z));
-	mPanel->setColourBottom(Ogre::ColourValue(colourBottom.x, colourBottom.y, colourBottom.z));
-	mPanel->setFontName(fontName);
-	mPanel->setCaption(text);
+	mOverlay = Ogre::OverlayManager::getSingleton().create(name + "Overlay");
 
-	Ogre::OverlayContainer* cont = dynamic_cast<Ogre::OverlayContainer*>
-		(Ogre::OverlayManager::getSingletonPtr()->createOverlayElement("Text_" + text, text));
+	mCont = static_cast<Ogre::OverlayContainer*>(
+		Ogre::OverlayManager::getSingleton().createOverlayElement("Panel", "myPanel" + name));
 
-	cont->setPosition(0.3, 0.3);
-	cont->setDimensions(16, 16);
+	mOverlay->add2D(mCont);
 
-	cont->addChild(mPanel);
+	mTextArea = static_cast<Ogre::TextAreaOverlayElement*>(
+		Ogre::OverlayManager::getSingleton().createOverlayElement("TextArea", "myTextArea" + name));
 
-	overlay->add2D(cont);
 
-	overlay->setZOrder(zOrder);
-	overlay->show();*/
+	mTextArea->initialise();
+	mTextArea->setMetricsMode(Ogre::GMM_PIXELS);
+	mTextArea->setPosition(positionX, positionY); // Posición en píxeles
+	mTextArea->setDimensions(dimensionX, dimensionY); // Ancho y alto en píxeles
+	mTextArea->setFontName(fontName);
+	mTextArea->setCharHeight(charHeight);
+	mTextArea->setColour(Ogre::ColourValue(color.x,color.y,color.z));
+	mTextArea->setCaption(text);
 
-	//Cosas de la IA BORRAR
-	/*
-	// Obtén una referencia al `OverlayManager`
-	Ogre::OverlayManager& overlayManager = Ogre::OverlayManager::getSingleton();
-
-	// Crea un `Overlay` con un único `Panel`
-	Ogre::Overlay* overlay = overlayManager.create("myOverlay");
-	Ogre::OverlayContainer* panel = static_cast<Ogre::OverlayContainer*>(
-		overlayManager.createOverlayElement("Panel", "myPanel"));
-	overlay->add2D(panel);
-
-	// Crea un `TextAreaOverlayElement` y configúralo
-	Ogre::TextAreaOverlayElement* textArea = static_cast<Ogre::TextAreaOverlayElement*>(
-		overlayManager.createOverlayElement("TextArea", "myTextArea"));
-	textArea->initialise();
-	textArea->setMetricsMode(Ogre::GMM_PIXELS);
-	textArea->setPosition(10, 10); // Posición en píxeles
-	textArea->setDimensions(200, 50); // Ancho y alto en píxeles
-	textArea->setFontName("Mario");
-	textArea->setCharHeight(50);
-	textArea->setColour(Ogre::ColourValue::White);
-	textArea->setCaption("lap 1/3    00:24.958");
-
-	// Añade el `TextAreaOverlayElement` al `Panel` y muestra el `Overlay`
-	panel->addChild(textArea);
-	overlay->show();*/
+	mCont->addChild(mTextArea);
+	mOverlay->show();
 }
 
 RenderUIText::~RenderUIText()
 {
-	mPanel->cleanupDictionary();
+	mTextArea->setVisible(false);
+	mTextArea->cleanupDictionary();
 }
 
 void RenderUIText::setTransform(Vector2 pos, Vector2 scale, float rot)
 {
-	mPanel->setPosition(pos.x, pos.y);
-	mPanel->setDimensions(scale.x, scale.y);
+	mTextArea->setPosition(pos.x, pos.y);
+	mTextArea->setDimensions(scale.x, scale.y);
 	mOverlay->setRotate(Ogre::Degree(rot));
 }
 
 void RenderUIText::setPosition(Vector2 pos)
 {
-	mPanel->setPosition(pos.x, pos.y);
+	mTextArea->setPosition(pos.x, pos.y);
 }
 
-void RenderUIText::setScale(Vector2 scale)
+void RenderUIText::setDimensions(Vector2 scale)
 {
-	mPanel->setDimensions(scale.x, scale.y);
+	mTextArea->setDimensions(scale.x, scale.y);
 }
 
 void RenderUIText::setRotation(float rot)
@@ -94,12 +67,37 @@ void RenderUIText::setRotation(float rot)
 
 void RenderUIText::setText(std::string text)
 {
-	mPanel->setCaption(text);
+	mTextArea->setCaption(text);
+}
+
+void me::RenderUIText::setFont(std::string fontName)
+{
+	mTextArea->setFontName(fontName);
+}
+
+void me::RenderUIText::setCharHeight(float charHeight)
+{
+	mTextArea->setCharHeight(charHeight);
+}
+
+void me::RenderUIText::setColour(Vector3 colour)
+{
+	mTextArea->setColour(Ogre::ColourValue(colour.x, colour.y, colour.z));
+}
+
+void RenderUIText::setMaterial(std::string materialName)
+{
+	mTextArea->setMaterialName(materialName);
+}
+
+void RenderUIText::setActive(bool active)
+{
+	mTextArea->setVisible(active);
 }
 
 Ogre::OverlayElement* RenderUIText::getOgreOverlayElement()
 {
-	return mPanel;
+	return mTextArea;
 }
 
 Ogre::Overlay* RenderUIText::getOgreOverlay()
@@ -107,7 +105,3 @@ Ogre::Overlay* RenderUIText::getOgreOverlay()
 	return mOverlay;
 }
 
-void RenderUIText::setMaterial(std::string materialName)
-{
-	mPanel->setMaterialName(materialName);
-}

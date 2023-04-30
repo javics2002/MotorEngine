@@ -3,17 +3,19 @@
 #define __ENTITYCOMPONETN_UITEXT
 
 #include "Component.h"
-#include "Utils/Vector3.h"
-#include "Utils/Vector4.h"
 #include <string>
 
 namespace Ogre {
 	class TextAreaOverlayElement;
+	class ColourValue;
 }
 
 namespace me {
 
 	class UITransform;
+	class Vector2;
+	class Vector3;
+	class RenderUIText;
 
 	class __MOTORENGINE_API UIText : public me::Component
 	{
@@ -37,7 +39,9 @@ namespace me {
 		*/
 		void setSize(float w, float h);
 
-		void init(std::string name, std::string spriteName, int zOrder);
+		void init(std::string name, std::string spriteName, int zOrder,
+			float positionX, float positionY, float dimensionX, float dimensionY, 
+			std::string fontName, float charHeight, Vector3 color);
 
 		/**
 		* Set the font used by the UIText instance
@@ -56,7 +60,7 @@ namespace me {
 		* Set the color of the text displayed by the UIText instance
 		* @param newColor The new color of the text
 		*/
-		void setTextColor(Vector4 newColor);
+		void setColour(Vector3 newColor);
 
 
 		/**
@@ -91,6 +95,8 @@ namespace me {
 		UITransform* mUITransform;
 		//static state of this.Entity 
 		bool mStaticObject = false;
+
+		RenderUIText* mRenderUIText;
 
 		int mZOrder;
 	};

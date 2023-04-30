@@ -24,14 +24,12 @@
 #include <OgreOverlaySystem.h>
 #include <OgreTextureManager.h>
 #include <iostream>
-#include "OgreTextAreaOverlayElement.h"
 #include "Render/RenderWindow.h"
 #include "Render/RenderCamera.h"
 #include "Render/RenderMesh.h"
 #include "Render/RenderParticleSystem.h"
 #include "Render/SGTechniqueResolverListener.h"
 #include "Render/RenderUISprite.h"
-#include "Render/RenderUIText.h"
 
 // Animation includes
 #include <OgreAnimation.h>
@@ -169,14 +167,6 @@ RenderUISprite* RenderManager::getUISprite(std::string name)
 		return nullptr;
 
 	return mSprites[name];
-}
-
-RenderUIText* me::RenderManager::getUIText(std::string name)
-{
-	if (!mTexts.count(name))
-		return nullptr;
-
-	return mTexts[name];
 }
 
 RenderMesh* RenderManager::getMesh(std::string name)
@@ -501,22 +491,6 @@ bool me::RenderManager::createSprite(std::string name, std::string spriteMateria
 	
 }
 
-bool me::RenderManager::createText(std::string name, std::string text, int zOrder)
-{
-	if (mTexts[name] != nullptr) {
-		std::cout << "There cannot be more than one text named " << name << ".\n";
-		return false;
-	}
-
-	auto overlay = mOverlayManager->create(name + "Overlay");
-	auto panel = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + "TextArea"));
-
-	RenderUIText* uiText = new RenderUIText(overlay, panel, text, zOrder);
-
-	mTexts[name] = uiText;
-	return overlay->isVisible();
-}
-
 
 bool RenderManager::setUISpritePosition(std::string name, Vector2 pos)
 {
@@ -674,18 +648,6 @@ bool RenderManager::setParticleEmitting(std::string name, bool emitted)
 	return true;
 }
 
-bool RenderManager::setUITextTransform(std::string name, Vector2 pos, Vector2 scale, float rot)
-{
-	RenderUIText* text = getUIText(name);
-	if (text == nullptr)
-		return false;
-
-	text->setTransform(pos, scale, rot);
-
-	return true;
-}
-
-
 
 Ogre::SceneNode* RenderManager::createNode(std::string name)
 {
@@ -717,10 +679,6 @@ Ogre::Entity* RenderManager::getOgreEntity(std::string name)
 	return getMesh(name)->getOgreEntity();
 }
 
-Ogre::TextAreaOverlayElement* RenderManager::createOverlayElement()
-{
-	return nullptr;
-}
 
 Ogre::SceneManager* RenderManager::getSceneManager()
 {

@@ -1,7 +1,9 @@
 #include "UIText.h"
-#include "Render/RenderManager.h"
+#include "Render/RenderUIText.h"
 #include "EntityComponent/Entity.h"
 #include "UITransform.h"
+#include "Utils/Vector2.h"
+#include "Utils/Vector3.h"
 
 using namespace me;
 
@@ -11,51 +13,54 @@ UIText::UIText() : Component()
 
 UIText::~UIText()
 {
+	delete mRenderUIText;
 }
 
-void UIText::init(std::string name, std::string text, int zOrder)
+void UIText::init(std::string name, std::string text, int zOrder, float positionX, float positionY, 
+	float dimensionX, float dimensionY, std::string fontName, float charHeight, Vector3 color)
 {
 	mName = name;
 	mZOrder = zOrder;
 
 	if (text.size() > 0)
-		renderManager().createText(mName, text, zOrder);
+		 mRenderUIText = new RenderUIText(mName, text, zOrder,positionX,positionY,dimensionX,dimensionY,
+			fontName,charHeight,color);
  }
 
 void UIText::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
-	renderManager().setUITextTransform(mName, mUITransform->getPosition(), 
+	mRenderUIText->setTransform(mUITransform->getPosition(), 
 		mUITransform->getScale(), mUITransform->getRotation());
 }
 
 void UIText::setPosition(float x, float y)
 {
-	// Set the position 
+	mRenderUIText->setPosition(Vector2( x,y ));
 	
 }
 
 void UIText::setSize(float w, float h)
 {
-	// Set the dimensions and char height
+	mRenderUIText->setPosition(Vector2( w,h ));
 	
 }
 
 void UIText::setFont(std::string fontName)
 {
-	// Set the font 
+	mRenderUIText->setFont(fontName);
 	
 }
 
 void UIText::setText(std::string text)
 {
-	// Set the caption
+	mRenderUIText->setText(text);
 	
 }
 
-void UIText::setTextColor(Vector4 newColor)
+void UIText::setColour(Vector3 newColor)
 {
-	// Set the color
+	mRenderUIText->setColour(newColor);
 	
 }
 
@@ -75,6 +80,6 @@ void UIText::setHeight(double heightValue)
 void UIText::setActive(bool active)
 {
 	// Show or hide the text area 
-	
+	mRenderUIText->setActive(active);
 }
 
