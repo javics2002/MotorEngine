@@ -428,16 +428,44 @@ int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 			axis->active = std::abs(input.value) > axis->dead;
 		}
 	}
-	else {
+	else if (EVENT_BUTTON_DOWN) {
 		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
-			Instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-			Instance()->mAxis[binding->second].value = 1;
+			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == -1)
+				//The axis is being pressed in both positive and negative input
+				Instance()->mAxis[binding->second].value = 0;
+			else {
+				Instance()->mAxis[binding->second].active = true;
+				Instance()->mAxis[binding->second].value = 1;
+			}
 		}
 		bindings = Instance()->mNegativeAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
-			Instance()->mAxis[binding->second].active = EVENT_BUTTON_DOWN;
-			Instance()->mAxis[binding->second].value = -1;
+			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == 1)
+				//The axis is being pressed in both positive and negative input
+				Instance()->mAxis[binding->second].value = 0;
+			else {
+				Instance()->mAxis[binding->second].active = true;
+				Instance()->mAxis[binding->second].value = -1;
+			}
+		}
+	}
+	else if (EVENT_BUTTON_UP) {
+		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
+		for (auto binding = bindings.first; binding != bindings.second; binding++) {
+			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == 0)
+				//The axis was already pressed in the negative input
+				Instance()->mAxis[binding->second].value = -1;
+			else
+				Instance()->mAxis[binding->second].active = false;
+		}
+		bindings = Instance()->mNegativeAxisBindings.equal_range(input);
+		for (auto binding = bindings.first; binding != bindings.second; binding++) {
+			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == 0)
+				//The axis was already pressed in the positive input
+				Instance()->mAxis[binding->second].value = 1;
+			else
+				Instance()->mAxis[binding->second].active = false;
 		}
 	}
 
