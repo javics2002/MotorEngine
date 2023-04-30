@@ -109,11 +109,6 @@ void Scene::update(const double& dt) {
 		kv.second->update(dt);
 
 	for (const auto& kv : mEntities) {
-#ifdef _DEBUG
-		if (kv.second->getName() == "car") {
-			int suma = 1 + 1;
-		}
-#endif
 		kv.second->update(dt);
 	}
 }

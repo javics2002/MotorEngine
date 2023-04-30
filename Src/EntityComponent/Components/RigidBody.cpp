@@ -144,6 +144,7 @@ void me::RigidBody::setVelocity(Vector3 linearVelocity)
 {
 	btVector3 v = btVector3(linearVelocity.x, linearVelocity.y, linearVelocity.z);
 	mBtRigidBody->setLinearVelocity(v);
+	mBtRigidBody->activate(true);
 }
 
 void me::RigidBody::setAngularVelocity(Vector3 angularVelocity)

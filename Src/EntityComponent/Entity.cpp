@@ -75,11 +75,6 @@ namespace me {
 	void Entity::update(float dt) {
 		if (!mActive) return;
 		for (auto c : mComponents) {
-#ifdef _DEBUG
-			if (c.first == "vehiclecontroller") {
-				int suma = 1 + 1;
-			}
-#endif
 			if(c.second->enabled)
 				c.second->update(dt);
 		};
