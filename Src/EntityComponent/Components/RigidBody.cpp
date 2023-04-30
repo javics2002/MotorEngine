@@ -211,6 +211,11 @@ int me::RigidBody::getGroup()
 	return mGroup;
 }
 
+void me::RigidBody::setGravity(Vector3 newGravity)
+{
+	mBtRigidBody->setGravity(newGravity.v3ToBulletV3());
+}
+
 float me::RigidBody::getGravity()
 {
 	btVector3 vGravity = mBtRigidBody->getGravity();

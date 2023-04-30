@@ -83,6 +83,7 @@ namespace me{
 		void setGroup(int group);
 		void setVelocity(Vector3 linearVelocity);
 		void setAngularVelocity(Vector3 angularVelocity);
+		void setGravity(Vector3 newGravity);
 
 		bool getTrigger();
 		float getMass();
