@@ -142,22 +142,23 @@ void me::RigidBody::setGroup(int group)
 
 void me::RigidBody::setVelocity(Vector3 linearVelocity)
 {
+	mBtRigidBody->activate(true);
 	btVector3 v = btVector3(linearVelocity.x, linearVelocity.y, linearVelocity.z);
 	mBtRigidBody->setLinearVelocity(v);
-	mBtRigidBody->activate(true);
 }
 
 void me::RigidBody::setAngularVelocity(Vector3 angularVelocity)
 {
+	mBtRigidBody->activate(true);
 	btVector3 w = btVector3(angularVelocity.x, angularVelocity.y, angularVelocity.z);
 	mBtRigidBody->setAngularVelocity(w);
 }
 
 void me::RigidBody::addForce(Vector3 force)
 {
+	mBtRigidBody->activate(true);
 	btVector3 v = force.v3ToBulletV3();
 	mBtRigidBody->applyCentralForce(v);
-	mBtRigidBody->activate(true);
 }
 
 void RigidBody::addImpulse(Vector3 impulse)
@@ -248,4 +249,14 @@ void me::RigidBody::desactiveBody()
 	mBtRigidBody->activate(false);
 	setMask(0);
 	enabled = false;
+}
+
+void me::RigidBody::setLinearFactor(Vector3 linearFactor)
+{
+	mBtRigidBody->setLinearFactor(linearFactor.v3ToBulletV3());
+}
+
+void me::RigidBody::setAngularFactor(Vector3 angularFactor)
+{
+	mBtRigidBody->setAngularFactor(angularFactor.v3ToBulletV3());
 }

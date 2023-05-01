@@ -97,6 +97,9 @@ namespace me{
 		Vector3 getVelocity();
 		Vector3 getAngularVelocity();
 
+		void setLinearFactor(Vector3 linearFactor);
+		void setAngularFactor(Vector3 angularFactor);
+
 
 		void activeBody();
 		void desactiveBody();
