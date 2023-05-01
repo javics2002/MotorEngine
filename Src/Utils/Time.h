@@ -14,7 +14,7 @@ namespace me {
 	class __MOTORENGINE_API Time
 	{
 	public:
-		Time(float targetFrameRate = 60, float timeScale = 1);
+		Time(float targetFrameRate = 60, float targetFixedFrameRate = 50, float timeScale = 1);
 		~Time();
 
 		/**
@@ -24,6 +24,7 @@ namespace me {
 		double update();
 
 		double getDeltaTime();
+		double getFixedDeltaTime();
 
 		double timeToNextFrame();
 		long long millisecondsToNextFrame();
@@ -45,6 +46,9 @@ namespace me {
 
 	protected:
 		float mTargetFrameRate;
+		float mTargetFixedFrameRate;
+		float mTargetDeltaTime;
+		float mTargetFixedDeltaTime;
 
 		double mPreviousFrameTime;
 		double mCurrentFrameTime;

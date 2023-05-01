@@ -3,10 +3,12 @@
 
 using namespace me;
 
-Time::Time(float targetFrameRate, float timeScale) :
-	mTargetFrameRate(mTargetFrameRate), mTimeScale(timeScale),
-	mDeltaTime(0), mCurrentFrameTime(0), mPreviousFrameTime(0)
+Time::Time(float targetFrameRate, float targetFixedFrameRate, float timeScale) :
+	mTargetFrameRate(targetFrameRate), mTargetFixedFrameRate(targetFixedFrameRate),
+	mTimeScale(timeScale), mDeltaTime(0), mCurrentFrameTime(0), mPreviousFrameTime(0)
 {
+	mTargetDeltaTime = 1 / mTargetFrameRate;
+	mTargetFixedDeltaTime = 1 / mTargetFixedFrameRate;
 }
 
 Time::~Time()
@@ -27,15 +29,20 @@ double Time::getDeltaTime()
 	return mDeltaTime;
 }
 
+double Time::getFixedDeltaTime()
+{
+	return mTargetFixedDeltaTime;
+}
+
 double Time::timeToNextFrame()
 {
 	double frameTime = obtainCurrentTime() - mCurrentFrameTime;
-	return mTargetFrameRate - frameTime;
+	return mTargetDeltaTime - frameTime;
 }
 
 long long Time::millisecondsToNextFrame()
 {
-	return (long long) timeToNextFrame() * 1000;
+	return (long long) (timeToNextFrame() * 1000);
 }
 
 double Time::getTargetFrameRate()

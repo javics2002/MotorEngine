@@ -93,9 +93,9 @@ void MotorEngine::loop()
 
 		// Update Time Values
 		dt = mTime->update();
-
+		
 		// Update the scene
-		physicsManager().update(dt);
+		physicsManager().update(mTime->getFixedDeltaTime());
 
 		sceneManager().update(dt);
 		
@@ -107,6 +107,7 @@ void MotorEngine::loop()
 			sceneManager().loadScene(sceneManager().getNewScene());
 
 		// Wait time
+		//std::cout << "Deltatime: " << mTime->getDeltaTime() << "\tFixed: " << mTime->getFixedDeltaTime() << "\tSleeptime: " << mTime->millisecondsToNextFrame() << "\n";
 		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));
 	}
 }

@@ -10,7 +10,8 @@
 using namespace me;
 
 RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
-	float positionX, float positionY, float dimensionX, float dimensionY, std::string fontName, float charHeight, Vector3 color)
+	float positionX, float positionY, float dimensionX, float dimensionY, 
+	std::string fontName, float charHeight, Vector3 color)
 {	
 
 	mOverlay = Ogre::OverlayManager::getSingleton().create(name + "Overlay");
