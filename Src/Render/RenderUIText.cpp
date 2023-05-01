@@ -6,22 +6,22 @@
 #include <OgreOverlayManager.h>
 #include "Utils/Vector2.h"
 #include "Utils/Vector4.h"
+#include "Render/RenderManager.h"
 
 using namespace me;
 
 RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
 	float positionX, float positionY, float dimensionX, float dimensionY, std::string fontName, float charHeight, Vector3 color)
 {	
-
-	mOverlay = Ogre::OverlayManager::getSingleton().create(name + "Overlay");
+	mOverlay = renderManager().getOgreManager()->create(name + "Overlay");
 
 	mCont = static_cast<Ogre::OverlayContainer*>(
-		Ogre::OverlayManager::getSingleton().createOverlayElement("Panel", "myPanel" + name));
+		renderManager().getOgreManager()->createOverlayElement("Panel", "myPanel" + name));
 
 	mOverlay->add2D(mCont);
 
 	mTextArea = static_cast<Ogre::TextAreaOverlayElement*>(
-		Ogre::OverlayManager::getSingleton().createOverlayElement("TextArea", "myTextArea" + name));
+		renderManager().getOgreManager()->createOverlayElement("TextArea", "myTextArea" + name));
 
 
 	mTextArea->initialise();
@@ -30,17 +30,23 @@ RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
 	mTextArea->setDimensions(dimensionX, dimensionY); // Ancho y alto en píxeles
 	mTextArea->setFontName(fontName);
 	mTextArea->setCharHeight(charHeight);
-	mTextArea->setColour(Ogre::ColourValue(color.x,color.y,color.z));
+	mTextArea->setColour(Ogre::ColourValue(color.x, color.y, color.z));
 	mTextArea->setCaption(text);
 
 	mCont->addChild(mTextArea);
 	mOverlay->show();
+
 }
 
 RenderUIText::~RenderUIText()
 {
-	mTextArea->setVisible(false);
-	mTextArea->cleanupDictionary();
+	mOverlay->remove2D(mCont);
+	mCont->removeChild(mTextArea->getName());
+	renderManager().getOgreManager()->destroyOverlayElement(mTextArea);
+	renderManager().getOgreManager()->destroyOverlayElement(mCont);
+	renderManager().getOgreManager()->destroy(mOverlay);
+
+	
 }
 
 void RenderUIText::setTransform(Vector2 pos, Vector2 scale, float rot)

@@ -684,3 +684,8 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 {
 	return mSM;
 }
+
+Ogre::OverlayManager* me::RenderManager::getOgreManager()
+{
+	return mOverlayManager;
+}
