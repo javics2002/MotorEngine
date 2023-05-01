@@ -409,6 +409,8 @@ namespace me {
 		*/
 		Ogre::SceneManager* getSceneManager();
 
+		Ogre::OverlayManager* getOgreManager();
+
 
 	};
 
