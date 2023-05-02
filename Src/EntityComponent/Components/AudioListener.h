@@ -3,8 +3,15 @@
 #define __ENTITYCOMPONENT_AUDIOLISTENER
 
 #include "Component.h"
+#include "Transform.h"
+
+namespace FMOD {
+	class Sound;
+	class FMOD_VECTOR;
+}
 
 namespace me {
+	class SoundManager;
 	/**
 	An Entity with this component will output the audio it listens
 	where it is located.
@@ -20,9 +27,11 @@ namespace me {
 		/**
 		* Update the position of the audio listener based on the position of the entity it is attached to.
 		*/
-		void update();
+		void update(const double& dt) override;
 
 	private:
+		Vector3 position ;
+		Vector3 lastPosition = { 0,0,0 };
 		int mListenerIndex;
 	};
 }

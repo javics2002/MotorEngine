@@ -29,9 +29,9 @@ namespace me {
 		AudioSource();
 		~AudioSource();
 
-		void start();
+		void start() override;
 
-		void update();
+		void update(const double& dt) override;
 
 		/**
 		* Play the audio.
@@ -64,91 +64,66 @@ namespace me {
 		* Set the volume of the audio.
 		* @param value The new volume value.
 		*/
-		inline void setVolume(float value) {
-			mVolume = value;
-			soundManager().setVolume(mSoundName, value);
-		}
+		void setVolume(float value);
 
 		/**
 		* Set the speed of the audio.
 		* @param value The new speed value.
 		*/
-		inline void setSpeed(float value) {
-			mSpeed = value;
-			soundManager().setSpeed(mSoundName, value);
-		}
+		void setSpeed(float value);
 
 		/**
 		* Set the minimum distance a sound can be heard from.
 		* @param value The new speed value.
 		*/
-		inline void setMinDistance(float value) {
-			mMinDistance = value;
-		}
+		void setMinDistance(float value);
 
 		/**
 		* Set the minimum distance a sound can be heard from.
 		* @param value The new speed value.
 		*/
-		inline void setMaxDistance(float value) {
-			mMaxDistance = value;
-		}
+		void setMaxDistance(float value);
 
 		/**
 		* Set the path of the audio
 		* @param path The path to the audio file to play.
 		* @param name The name to the audio file to play.
 		*/
-		inline void setSourcePath(std::string path) {
-			
-			mSoundPath = path;
-		}
+		void setSourcePath(std::string path);
 
 		/**
 		* Set the name of the audio
 		* @param path The path to the audio file to play.
 		* @param name The name to the audio file to play.
 		*/
-		inline void setSourceName(std::string name) {
-			mSoundName = name;
-		}
+		void setSourceName(std::string name);
 
 		/**
 		* Set the name of the group channel this audio is located in.
 		* @param name The name of the group channel.
 		*/
-		inline void setGroupChannelName(std::string name) {
-			mSoundGroup = name.c_str();
-		}
+		void setGroupChannelName(std::string name);
 
 		/**
 		* Set if the audio will play in a loop
 		*/
-		inline void setLoop(bool loop) {
-			mLoop = loop;
-		}
+		void setLoop(bool loop);
 
 		/**
 		* Set if the audio will be a 3D audio
 		*/
-		inline void setIs3D(bool is3D) {
-			mIs3D = is3D;
-		}
+		void setIsThreeD(bool threeD);
 
 		/**
 		* Set if the adio will play at the start
 		*/
-		inline void setPlayOnStart(bool playOnStart) {
-			mPlayOnStart = playOnStart;
-		}
+		void setPlayOnStart(bool playOnStart);
 
 		/**
 		* Get the volume of the audio.
 		* @return The current volume value.
 		*/
-		inline float getVolume() {
-			return mVolume;
-		}
+		float getVolume();
 
 
 	private:
@@ -159,12 +134,12 @@ namespace me {
 
 		//FMOD::Sound* mSound; // The FMOD sound object
 		int mSoundChannel; // The number of the channel this sound will be played on.
-		const char* mSoundGroup; // The name of the channel group this sound will be played on.
+		std::string mSoundGroup; // The name of the channel group this sound will be played on.
 		std::string mSoundPath; // The path to the audio file to play
 		std::string mSoundName; // The name we give to the audio file to play
 		bool mPlaying; // Whether the audio is currently playing or not
 		bool mLoop; // Whether the audio should loop or not
-		bool mIs3D;
+		bool mIsThreeD;
 		bool mPlayOnStart;
 
 

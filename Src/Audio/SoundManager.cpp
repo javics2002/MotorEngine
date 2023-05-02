@@ -8,14 +8,17 @@ me::SoundManager::SoundManager() {
 	mResult = FMOD::System_Create(&mSoundSystem);      // Create the main system object.
 	checkFMODResult(mResult);
 
-	mResult = mSoundSystem->init(MAX_CHANNELS, FMOD_INIT_NORMAL, 0);    // Initialize FMOD.
+	mResult = mSoundSystem->init(MAX_CHANNELS, FMOD_INIT_3D_RIGHTHANDED, 0);    // Initialize FMOD.
 	checkFMODResult(mResult);
-	mResult = mSoundSystem->set3DSettings(DOPPLER_SCALE, DISTANCE_FACTOR, ROLLOFF_SCALE);
+	mResult = mSoundSystem->set3DSettings(0.0f, DISTANCE_FACTOR, ROLLOFF_SCALE);
 	checkFMODResult(mResult);
 
 	mSoundSystem->createChannelGroup("master", &mMaster);
+	mChannelGroupMaps["master"] = mMaster;
 	mSoundSystem->createChannelGroup("effects", &mEffects);
+	mChannelGroupMaps["effects"] = mEffects;
 	mSoundSystem->createChannelGroup("music", &mMusic);
+	mChannelGroupMaps["music"] = mMusic;
 
 	mMaster->addGroup(mEffects);
 	mMaster->addGroup(mMusic);
@@ -100,23 +103,30 @@ me::SoundManager::~SoundManager()
 	checkFMODResult(mResult);
 }
 
-void me::SoundManager::systemRefresh()
+void me::SoundManager::systemRefresh(const double& dt)
 {
 	mResult = mSoundSystem->update();
 	checkFMODResult(mResult);
 }
 
-bool me::SoundManager::create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance)
+bool me::SoundManager::create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance, bool loop)
 {
+	soundPath = "Assets/Sounds/" + soundPath;
 	nameToLower(soundName);
 	FMOD::Sound* newSoundHandle;
 	auto soundHandle = getSound(soundName);
 	if (soundHandle != nullptr) return false;
 
-	mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_3D, 0, &newSoundHandle);
+	if (loop) {
+		mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_3D_LINEARROLLOFF | FMOD_3D | FMOD_LOOP_NORMAL, 0, &newSoundHandle);
+	}
+	else {
+		mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_3D_LINEARROLLOFF | FMOD_3D, 0, &newSoundHandle);
+	}
+	
 	if(!checkFMODResult(mResult)) return false;
 
-	mResult = newSoundHandle->set3DMinMaxDistance(minDistance * DISTANCE_FACTOR, maxDistance * DISTANCE_FACTOR);
+	mResult = newSoundHandle->set3DMinMaxDistance(minDistance, maxDistance);
 	if (!checkFMODResult(mResult)) return false;
 
 	if (checkFMODResult(mResult)) {
@@ -130,18 +140,24 @@ bool me::SoundManager::create3DSound(std::string soundPath, std::string soundNam
 	else {
 		return false;
 	}
-
+	
 	
 }
 
-bool me::SoundManager::createNormalSound(std::string soundPath, std::string soundName)
+bool me::SoundManager::createNormalSound(std::string soundPath, std::string soundName, bool loop)
 {
+	soundPath = "Assets/Sounds/" + soundPath;
 	nameToLower(soundName);
 	FMOD::Sound* newSoundHandle;
 	auto soundHandle = getSound(soundName);
 	if (soundHandle != nullptr) return false;
-
-	mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_DEFAULT, 0, &newSoundHandle);
+	
+	if (loop) {
+		mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_DEFAULT | FMOD_LOOP_NORMAL, 0, &newSoundHandle);
+	}
+	else {
+		mResult = mSoundSystem->createSound(soundPath.c_str(), FMOD_DEFAULT, 0, &newSoundHandle);
+	}
 
 	if(checkFMODResult(mResult)){
 		std::pair<std::string, FMOD::Sound*> newSound(soundName, newSoundHandle);
@@ -188,22 +204,25 @@ bool me::SoundManager::stopSound(std::string soundName)
 	}
 }
 
-bool me::SoundManager::playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped)
+bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel)
 {
 	nameToLower(soundName);
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
 
-	if (isLoop) {
-		mResult = soundHandle->setMode(FMOD_LOOP_NORMAL);
-		checkFMODResult(mResult);
-		if (timesLooped < -1) timesLooped = -1;
-		soundHandle->setLoopCount(timesLooped);
-	}
-	else {
-		mResult = soundHandle->setMode(FMOD_LOOP_OFF);
-		checkFMODResult(mResult);
-	}
+	/*FMOD_MODE oldSoundMode;
+	soundHandle->getMode(&oldSoundMode);*/
+
+	//if (isLoop) {
+	//	setMode(soundName, FMOD_LOOP_NORMAL);
+	//	//soundHandle->setMode(FMOD_LOOP_NORMAL);
+	//	/*if (timesLooped > 0)
+	//	soundHandle->setLoopCount(timesLooped);*/
+
+	//}
+	//else {
+	//	//setMode(soundName, FMOD_LOOP_OFF);
+	//}
 
 	for (int i = 0; i < mChannelsVector.size(); i++) {
 		bool isPlaying;
@@ -211,21 +230,24 @@ bool me::SoundManager::playSound(std::string soundName, bool isLoop, const char*
 
 		if (isPlaying) continue;
 
-		FMOD_MODE soundMode;
-		soundHandle->getMode(&soundMode);
-		if (soundMode == FMOD_3D) {
-			mChannelsVector[i]->set3DAttributes(channelPos, channelVel);
-		}
+		/*FMOD_MODE newSoundMode;
+		soundHandle->getMode(&newSoundMode);
+		soundHandle->setMode(newSoundMode | oldSoundMode);*/
+
+		FMOD_MODE finalSoundMode;
+		soundHandle->getMode(&finalSoundMode);
 
 		auto playedChannelGroup = getGroupChannel(channelGroup);
 		if (playedChannelGroup == nullptr) return false;
-
-		
 		mResult = mSoundSystem->playSound(soundHandle, playedChannelGroup, false, &mChannelsVector[i]);
 		checkFMODResult(mResult);
-	
 
-		mLastPlayedMap.find(soundHandle)->second = i;
+		if (finalSoundMode & FMOD_3D) {
+			FMOD_VECTOR v, p;
+			mChannelsVector[i]->set3DAttributes(channelPos, channelVel);
+		}
+
+		mLastPlayedMap[soundHandle] = i;
 
 		break;
 	}
@@ -245,9 +267,9 @@ bool me::SoundManager::deleteSound(std::string soundName)
 	return checkFMODResult(mResult);
 }
 
-void me::SoundManager::updateListenersPosition(int index, Vector3 listenerPos, Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel)
+void me::SoundManager::updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel)
 {
-	//mSoundSystem->set3DListenerAttributes(index, &lPos, &listenerVel, &listenerFW, &listenerUP);
+	mSoundSystem->set3DListenerAttributes(index, &listenerPos, &listenerVel, &listenerFW, &listenerUP);
 }
 
 void me::SoundManager::removeListener(int index)
@@ -256,12 +278,14 @@ void me::SoundManager::removeListener(int index)
 	updateListenersPosition(index, { 999999,999999,999999 }, { 0,0,0 }, { 0,0,0 }, { 0,0,0 });
 }
 
-bool me::SoundManager::setSoundPosition(std::string soundName, Vector3 position)
+bool me::SoundManager::setSoundAtributes(std::string soundName, Vector3 position, Vector3 velocity)
 {
 	nameToLower(soundName);
-	FMOD::Sound* soundHandle = getSound(soundName);
-	if (soundHandle == nullptr) return false;
-	//TO BE IMPLEMENTED
+	FMOD::Channel* channelHandle = getChannel(soundName);
+	if (channelHandle == nullptr) return false;
+
+	channelHandle->set3DAttributes(position.v3ToFmodV3(), position.v3ToFmodV3());
+	return true;
 }
 
 bool me::SoundManager::setPitchVelocity(std::string soundName, Vector3 velocity)
@@ -293,9 +317,27 @@ bool me::SoundManager::setMode(std::string soundName, FMOD_MODE newMode)
 	nameToLower(soundName);
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
+	FMOD_MODE soundMode;
+	soundHandle->getMode(&soundMode);
+	FMOD_MODE newSoundMode;
+	newSoundMode = soundMode | newMode;
+	mResult = soundHandle->setMode(newSoundMode);
+	soundHandle->getMode(&soundMode);
 
-	mResult = soundHandle->setMode(newMode);
-	return checkFMODResult(mResult);
+	if (soundMode & FMOD_3D)
+	{
+		std::cout << "3d" << " ";
+	}
+	if (soundMode & FMOD_3D_LINEARROLLOFF)
+	{
+		std::cout << "atenuacion" << " ";
+	}
+	if (soundMode & FMOD_LOOP_NORMAL)
+	{
+		std::cout << "loop" << " ";
+	}
+
+	checkFMODResult(mResult);
 }
 
 bool me::SoundManager::setMinMaxDistance(std::string soundName,float minDistance, float maxDistance)

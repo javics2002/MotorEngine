@@ -85,13 +85,16 @@ me::Component* me::FactoryAudioSource::create(Parameters& params)
 {
     AudioSource* audioSource = new AudioSource();
 
-    audioSource->setSourceName(Value(params, "source", std::string()));
-    audioSource->setSourcePath(Value(params, "path", std::string()));
+    audioSource->setSourceName(Value(params, "name", std::string()));
+    audioSource->setSourcePath(Value(params, "path", std::string("fire.wav")));
     audioSource->setPlayOnStart(Value(params, "onstart", false));
+    audioSource->setGroupChannelName(Value(params, "groupchannel", std::string("master")));
     audioSource->setVolume(Value(params, "volume", 1));
-    audioSource->setIs3D(Value(params, "3d", false));
+    audioSource->setIsThreeD(Value(params, "threed", false));
     audioSource->setLoop(Value(params, "loop", false));
-
+    audioSource->setMinDistance(Value(params, "mindistance", 1.0f));
+    audioSource->setMaxDistance(Value(params, "maxdistance", 60.0f));
+     
     return audioSource;
 }
 

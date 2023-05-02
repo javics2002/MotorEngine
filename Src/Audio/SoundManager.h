@@ -8,6 +8,7 @@
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
+#include <fmod.hpp>
 
 namespace FMOD {
 	class Sound;
@@ -109,23 +110,25 @@ namespace me {
 		/**
 		Updates the sound system every step of the game loop.
 		*/
-		void systemRefresh();
+		void systemRefresh(const double& dt);
 		/**
 		Creates a 3D sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundName : the especific name of the sound which mode will be changed.
 		@param minDistance : minimum audible distance for a 3D sound.
 		@param maxDistance : maximum audible distance for a 3D sound.
+		@param loop : if the sound will loop or not.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance);
+		bool create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance, bool loop);
 		/**
 		Creates a normal sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundName : the especific name of the sound which mode will be changed.
+		@param loop : if the sound will loop or not.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool createNormalSound(std::string soundPath, std::string soundName);
+		bool createNormalSound(std::string soundPath, std::string soundName, bool loop);
 		/**
 		Sets the speed a certain sound wil be played at.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -192,18 +195,14 @@ namespace me {
 		*/
 		bool stopSound(std::string soundName);
 		/**
-		Sets the loopability of a certain sound  dependind on "isLoop".
 		It checks for available channels to play the sound and assigns a group channel depending on the user input.
 		@param soundName : the especific name of the sound which will be played.
-		@param isLoop : the value of loopability that will be used to play the sound.
 		@param channelGroup : the channel group where the sound will played on.
 		@param channelPos : the channel's position used for panning and attenuation.
 		@param channelVel : the channel' group where the sound will played on's velocity in 3D space used for doppler.
-		@param timesLooped : the number of times the sound will be looped.
-		By default it is set to constant loop.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped = -1);
+		bool playSound(std::string soundName, std::string channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -214,12 +213,12 @@ namespace me {
 		Updates the position of a sound listener relative to a certain sound.
 		@param index : the index that refers to a certain listener.
 		@param listenerPos : the position of the listener.
-		@param listenerFW : 
-		@param listenerUP : 
+		@param listenerFW : the forward vector of the listener.
+		@param listenerUP : the up vector of the listener.
 		@param listenerVel : the velocity of the listener.
 		*/
-		void updateListenersPosition(int index, Vector3 listenerPos, 
-			Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel = { 0,0,0 });
+		void updateListenersPosition(int index, FMOD_VECTOR listenerPos,
+			FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel = { 0,0,0 });
 		/**
 		Removes the listener from its vector and resets its values.
 		@param index : the index that refers to a certain listener.
@@ -232,7 +231,7 @@ namespace me {
 		@param position : the value of the position of the sound.
 		@return A boolean showing wether or not the position was set.
 		*/
-		bool setSoundPosition(std::string soundName, Vector3 position);
+		bool setSoundAtributes(std::string soundName, Vector3 position, Vector3 velocity);
 
 		/**
 		Sets the pitch of a certain sound depending on the velocity of the object it is attached to.
@@ -249,6 +248,7 @@ namespace me {
 		inline int getNextUsefulListenerIndex() {
 			for (int i = 0; i < mListeners.size(); i++) {
 				if (!mListeners[i])
+					mListeners[i] = true;
 					return i;
 			}
 			return -1;

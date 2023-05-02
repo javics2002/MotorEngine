@@ -103,6 +103,8 @@ void MotorEngine::loop()
 		// Update the scene
 		physicsManager().update(mTime->getFixedDeltaTime());
 
+		soundManager().systemRefresh(dt);
+
 		sceneManager().update(dt);
 		
 		// Render the scene
