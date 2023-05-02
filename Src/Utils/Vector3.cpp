@@ -221,10 +221,10 @@ btVector3 me::Vector3::v3ToBulletV3() const
 	return btVector3(btScalar(x), btScalar(y), btScalar(z));
 }
 
-FMOD_VECTOR* me::Vector3::v3ToFmodV3() const
+FMOD_VECTOR me::Vector3::v3ToFmodV3() const
 {
-	FMOD_VECTOR* newVector = new FMOD_VECTOR ();
-	newVector->x = x; newVector->y = y; newVector->z = z;
+	FMOD_VECTOR newVector;
+	newVector.x = x; newVector.y = y; newVector.z = z;
 	return newVector;
 }
 

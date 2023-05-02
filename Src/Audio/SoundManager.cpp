@@ -212,7 +212,7 @@ bool me::SoundManager::stopEverySound()
 	return true;
 }
 
-bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel)
+bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel)
 {
 	nameToLower(soundName);
 	FMOD::Sound* soundHandle = getSound(soundName);
@@ -251,8 +251,8 @@ bool me::SoundManager::playSound(std::string soundName, std::string channelGroup
 		checkFMODResult(mResult);
 
 		if (finalSoundMode & FMOD_3D) {
-			FMOD_VECTOR v, p;
-			mChannelsVector[i]->set3DAttributes(channelPos, channelVel);
+			FMOD_VECTOR v = channelVel->v3ToFmodV3(), p = channelPos->v3ToFmodV3();
+			mChannelsVector[i]->set3DAttributes(&p, &v);
 		}
 
 		mLastPlayedMap[soundHandle] = i;
@@ -275,9 +275,10 @@ bool me::SoundManager::deleteSound(std::string soundName)
 	return checkFMODResult(mResult);
 }
 
-void me::SoundManager::updateListenersPosition(int index, FMOD_VECTOR listenerPos, FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel)
+void me::SoundManager::updateListenersPosition(int index, Vector3 listenerPos, Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel)
 {
-	mSoundSystem->set3DListenerAttributes(index, &listenerPos, &listenerVel, &listenerFW, &listenerUP);
+	FMOD_VECTOR pos = listenerPos.v3ToFmodV3(), fw = listenerFW.v3ToFmodV3(), up = listenerUP.v3ToFmodV3(), vel = listenerVel.v3ToFmodV3();
+	mSoundSystem->set3DListenerAttributes(index, &pos, &vel, &fw, &up);
 }
 
 void me::SoundManager::removeListener(int index)
@@ -291,8 +292,9 @@ bool me::SoundManager::setSoundAtributes(std::string soundName, Vector3 position
 	nameToLower(soundName);
 	FMOD::Channel* channelHandle = getChannel(soundName);
 	if (channelHandle == nullptr) return false;
+	FMOD_VECTOR p = position.v3ToFmodV3(), v = velocity.v3ToFmodV3();
 
-	channelHandle->set3DAttributes(position.v3ToFmodV3(), position.v3ToFmodV3());
+	channelHandle->set3DAttributes(&p, &v);
 	return true;
 }
 

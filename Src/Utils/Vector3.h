@@ -277,7 +277,7 @@ namespace me {
 		/**
 		Returns the conversion of a Vector3 to an FMOD_VECTOR
 		*/
-		FMOD_VECTOR* v3ToFmodV3() const;
+		FMOD_VECTOR v3ToFmodV3() const;
 
 	};
 }

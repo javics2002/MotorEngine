@@ -40,7 +40,9 @@ void me::AudioSource::update(const double& dt)
 
 void me::AudioSource::play()
 {
-   soundManager().playSound(mSoundName, mSoundGroup, mTransform->getPosition().v3ToFmodV3(), mTransform->getVelocity().v3ToFmodV3());
+    Vector3 pos = mTransform->getPosition();
+    Vector3 vel = mTransform->getVelocity();
+   soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel);
     mPlaying = true;
 }
 

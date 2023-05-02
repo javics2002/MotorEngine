@@ -8,7 +8,7 @@
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
-#include <fmod.hpp>
+
 
 namespace FMOD {
 	class Sound;
@@ -18,7 +18,6 @@ namespace FMOD {
 }
 
 enum FMOD_RESULT;
-class FMOD_VECTOR;
 typedef unsigned int FMOD_MODE;
 typedef int CHANNEL_NUMBER;
 
@@ -209,7 +208,7 @@ namespace me {
 		@param channelVel : the channel' group where the sound will played on's velocity in 3D space used for doppler.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(std::string soundName, std::string channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel);
+		bool playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -224,8 +223,8 @@ namespace me {
 		@param listenerUP : the up vector of the listener.
 		@param listenerVel : the velocity of the listener.
 		*/
-		void updateListenersPosition(int index, FMOD_VECTOR listenerPos,
-			FMOD_VECTOR listenerFW, FMOD_VECTOR listenerUP, FMOD_VECTOR listenerVel = { 0,0,0 });
+		void updateListenersPosition(int index, Vector3 listenerPos,
+			Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel = { 0,0,0 });
 		/**
 		Removes the listener from its vector and resets its values.
 		@param index : the index that refers to a certain listener.

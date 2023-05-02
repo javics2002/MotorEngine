@@ -41,5 +41,5 @@ void me::AudioListener::update(const double& dt)
 	lastPosition = position;
 
 	// Update the position of the audio listener in the sound manager
-	soundManager().updateListenersPosition(mListenerIndex, *position.v3ToFmodV3(), *forward.v3ToFmodV3(), *up.v3ToFmodV3(), *v.v3ToFmodV3());
+	soundManager().updateListenersPosition(mListenerIndex, position, forward, up, v);
 }
