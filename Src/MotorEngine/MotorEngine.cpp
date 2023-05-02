@@ -46,8 +46,14 @@ bool MotorEngine::setup(std::string gameName)
 
 	GameName name = (GameName)GetProcAddress(mGame, "name");
 
+#ifdef _DEBUG
 	Window::Init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED, 854, 480, SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+#else
+	Window::Init(SDL_INIT_EVERYTHING, name == NULL ? "Motor Engine" : name(), SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED, 1920, 1080, SDL_WINDOW_FULLSCREEN | SDL_WINDOW_INPUT_FOCUS | 
+		SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+#endif
 
 	// Register Motor Engine's default component factories
 	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(mGame, "initFactories");
@@ -170,7 +176,7 @@ void me::MotorEngine::initFactories()
 
 int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 {
-	if (event->type == SDL_EVENT_QUIT || (event->type == SDL_EVENT_KEY_DOWN && event->key.keysym.sym == SDLK_ESCAPE)) {
+	if (event->type == SDL_EVENT_QUIT) {
 		bool* quit = (bool*)userdata;
 		*quit = true;
 

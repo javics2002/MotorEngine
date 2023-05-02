@@ -17,6 +17,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 
 namespace me {
 	/**
@@ -54,6 +55,8 @@ namespace me {
 		Mouse position. Distance in pixels from the upper left corner of the screen.
 		*/
 		float mouseX, mouseY;
+
+		std::unordered_set<unsigned int> mControllers;
 
 		/*
 		Manages the connection and disconnection of controllers.
