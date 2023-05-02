@@ -204,6 +204,14 @@ bool me::SoundManager::stopSound(std::string soundName)
 	}
 }
 
+bool me::SoundManager::stopEverySound()
+{
+	for (auto i : mChannelsVector) {
+		i->stop();
+	}
+	return true;
+}
+
 bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel)
 {
 	nameToLower(soundName);
@@ -260,7 +268,7 @@ bool me::SoundManager::deleteSound(std::string soundName)
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
 
-	mResult = soundHandle->release();
+	//mResult = soundHandle->release();
 
 	mLastPlayedMap.erase(soundHandle);
 

@@ -194,6 +194,13 @@ namespace me {
 		@return True if the sound is stopped, false if the sound didn't exist.
 		*/
 		bool stopSound(std::string soundName);
+
+		/**
+		Stops every channel playing at the moment.
+
+		@return True if every channel was stopped.
+		*/
+		bool stopEverySound();
 		/**
 		It checks for available channels to play the sound and assigns a group channel depending on the user input.
 		@param soundName : the especific name of the sound which will be played.
