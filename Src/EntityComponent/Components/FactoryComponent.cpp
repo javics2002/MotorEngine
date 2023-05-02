@@ -286,7 +286,7 @@ Component* me::FactoryUIText::create(Parameters& params)
     Vector2 position = Vector2(Value(params, "position_x", 1.0f), Value(params, "position_y", 1.0f));
     Vector2 dimension = Vector2(Value(params, "dimension_x", 1.0f), Value(params, "dimension_y", 1.0f));
     int zOrder = Value(params, "zorder", 1);
-    int charHeight = Value(params, "charheight", 40);
+    float charHeight = Value(params, "charheight", 0.1f);
 
     UIText* textRenderer = new UIText();
     textRenderer->init(name, text, zOrder,position.x,position.y,dimension.x,dimension.y,

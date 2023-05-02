@@ -30,8 +30,8 @@ void UIText::init(std::string name, std::string text, int zOrder, float position
 void UIText::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
-	mRenderUIText->setTransform(mUITransform->getPosition(), 
-		mUITransform->getScale(), mUITransform->getRotation());
+	//mRenderUIText->setTransform(mUITransform->getPosition(), 
+		//mUITransform->getScale(), mUITransform->getRotation());
 }
 
 void UIText::setPosition(float x, float y)
@@ -42,7 +42,7 @@ void UIText::setPosition(float x, float y)
 
 void UIText::setSize(float w, float h)
 {
-	mRenderUIText->setPosition(Vector2( w,h ));
+	mRenderUIText->setDimensions(Vector2( w,h ));
 	
 }
 
@@ -71,9 +71,9 @@ void UIText::setWidth(double widthValue)
 	
 }
 
-void UIText::setHeight(double heightValue)
+void UIText::setCharHeight(double heightValue)
 {
-	// Set the height
+	mRenderUIText->setCharHeight(heightValue);
 	
 }
 

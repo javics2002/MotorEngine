@@ -16,6 +16,8 @@ RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
 {	
 	mOverlay = renderManager().getOgreManager()->create(name + "Overlay");
 
+	mOverlay->setZOrder(zOrder);
+
 	mCont = static_cast<Ogre::OverlayContainer*>(
 		renderManager().getOgreManager()->createOverlayElement("Panel", "myPanel" + name));
 
@@ -24,14 +26,15 @@ RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
 	mTextArea = static_cast<Ogre::TextAreaOverlayElement*>(
 		renderManager().getOgreManager()->createOverlayElement("TextArea", "myTextArea" + name));
 
-
-	mTextArea->initialise();
-	mTextArea->setMetricsMode(Ogre::GMM_PIXELS);
+	mTextArea->setMetricsMode(Ogre::GMM_RELATIVE);
 	mTextArea->setPosition(positionX, positionY); // Posición en píxeles
 	mTextArea->setDimensions(dimensionX, dimensionY); // Ancho y alto en píxeles
 	mTextArea->setFontName(fontName);
 	mTextArea->setCharHeight(charHeight);
 	mTextArea->setColour(Ogre::ColourValue(color.x, color.y, color.z));
+	mTextArea->setAlignment(Ogre::TextAreaOverlayElement::Alignment::Center);
+	//mTextArea->setColourTop(Ogre::ColourValue(0, 0, 0));
+	//mTextArea->setColourBottom(Ogre::ColourValue(1, 0, 0));
 	mTextArea->setCaption(text);
 
 	mCont->addChild(mTextArea);

@@ -74,7 +74,7 @@ namespace me {
 		* Set the height of the UIText instance
 		* @param heightValue The new height of the UIText
 		*/
-		void setHeight(double heightValue);
+		void setCharHeight(double heightValue);
 
 
 		/*
