@@ -10,9 +10,7 @@
 
 using namespace me;
 
-RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
-	float positionX, float positionY, float dimensionX, float dimensionY, 
-	std::string fontName, float charHeight, Vector3 color)
+RenderUIText::RenderUIText(std::string name, std::string text, int zOrder, std::string fontName)
 {	
 	mOverlay = renderManager().getOgreManager()->create(name + "Overlay");
 
@@ -27,16 +25,8 @@ RenderUIText::RenderUIText(std::string name, std::string text, int zOrder,
 		renderManager().getOgreManager()->createOverlayElement("TextArea", "myTextArea" + name));
 
 	mTextArea->setMetricsMode(Ogre::GMM_RELATIVE);
-	mTextArea->setPosition(positionX, positionY); // Posición en píxeles
-	mTextArea->setDimensions(dimensionX, dimensionY); // Ancho y alto en píxeles
 	mTextArea->setFontName(fontName);
-	mTextArea->setCharHeight(charHeight);
-	mTextArea->setColour(Ogre::ColourValue(color.x, color.y, color.z));
-	mTextArea->setAlignment(Ogre::TextAreaOverlayElement::Alignment::Center);
-	//mTextArea->setColourTop(Ogre::ColourValue(0, 0, 0));
-	//mTextArea->setColourBottom(Ogre::ColourValue(1, 0, 0));
-	mTextArea->setCaption(text);
-
+	mTextArea->setAlignment(Ogre::TextAreaOverlayElement::Center);
 	mCont->addChild(mTextArea);
 	mOverlay->show();
 
@@ -93,6 +83,16 @@ void me::RenderUIText::setCharHeight(float charHeight)
 void me::RenderUIText::setColour(Vector3 colour)
 {
 	mTextArea->setColour(Ogre::ColourValue(colour.x, colour.y, colour.z));
+}
+
+void me::RenderUIText::setColourBottom(Vector3 colour)
+{
+	mTextArea->setColourBottom(Ogre::ColourValue(colour.x, colour.y, colour.z));
+}
+
+void me::RenderUIText::setColourTop(Vector3 colour)
+{
+	mTextArea->setColourTop(Ogre::ColourValue(colour.x, colour.y, colour.z));
 }
 
 void RenderUIText::setMaterial(std::string materialName)

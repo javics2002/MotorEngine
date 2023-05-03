@@ -38,7 +38,7 @@ namespace me {
 		Must be included in resource.cfg (.png inside Zip or FileSystem)
 		*/
 		RenderUIText(std::string name, std::string text, int zOrder,
-			float positionX,float positionY,float dimensionX, float dimensionY, std::string fontName , float charHeight, Vector3 color);
+			 std::string fontName);
 
 		~RenderUIText();
 
@@ -96,6 +96,18 @@ namespace me {
 		* @param colour Vector3 for the colour used
 		*/
 		void setColour(Vector3 colour);
+
+		/**
+		* Set colourBottom used by the RenderUIText instance
+		* @param colour Vector3 for the colour used
+		*/
+		void setColourBottom(Vector3 colour);
+
+		/**
+		* Set colourTop used by the RenderUIText instance
+		* @param colour Vector3 for the colour used
+		*/
+		void setColourTop(Vector3 colour);
 
 		/*
 		* Set whether the RenderUIText instance is active or not

@@ -40,8 +40,6 @@ std::string me::FactoryComponent::Value(Parameters& params, const ParameterName&
 Component* FactoryAnimator::create(Parameters& params)
 {
     Animator* animator = new Animator();
-    /*if(params.count("animation"))
-        animator->playAnim(value<std::string>(params, "animation"), value(params, "loop", true));*/
     return animator;
 }
 
@@ -286,14 +284,25 @@ Component* me::FactoryUIText::create(Parameters& params)
     std::string text = Value(params, "text", std::string());
     std::string fontName = Value(params, "fontname", std::string());
     Vector3 colour = Vector3(Value(params, "colour_x", 1.0f),Value(params, "colour_y", 1.0f), Value(params, "colour_z", 1.0f));
+    Vector3 colourBottom = Vector3(Value(params, "colourbottom_x", 1.0f),Value(params, "colourbottom_y", 1.0f), Value(params, "colourbottom_z", 1.0f));
+    Vector3 colourTop = Vector3(Value(params, "colourtop_x", 1.0f),Value(params, "colourtop_y", 1.0f), Value(params, "colourtop_z", 1.0f));
     Vector2 position = Vector2(Value(params, "position_x", 1.0f), Value(params, "position_y", 1.0f));
     Vector2 dimension = Vector2(Value(params, "dimension_x", 1.0f), Value(params, "dimension_y", 1.0f));
     int zOrder = Value(params, "zorder", 1);
     float charHeight = Value(params, "charheight", 0.1f);
 
     UIText* textRenderer = new UIText();
-    textRenderer->init(name, text, zOrder,position.x,position.y,dimension.x,dimension.y,
-        fontName,charHeight,colour);
+    textRenderer->init(name, text, zOrder, fontName);
+    textRenderer->setPosition(position.x, position.y);
+    textRenderer->setSize(dimension.x, dimension.y);
+    textRenderer->setCharHeight(charHeight);
+    if (params.count("colourbottom_x")) {
+        textRenderer->setColourTop(colourTop);
+        textRenderer->setColourBottom(colourBottom);
+    }
+    else textRenderer->setColour(colour);
+
+    textRenderer->setText(text);
 
     return textRenderer;
 }

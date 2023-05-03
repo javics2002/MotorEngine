@@ -16,15 +16,14 @@ UIText::~UIText()
 	delete mRenderUIText;
 }
 
-void UIText::init(std::string name, std::string text, int zOrder, float positionX, float positionY, 
-	float dimensionX, float dimensionY, std::string fontName, float charHeight, Vector3 color)
+void UIText::init(std::string name, std::string text, int zOrder,std::string fontName)
 {
 	mName = name;
 	mZOrder = zOrder;
 
 	if (text.size() > 0)
-		 mRenderUIText = new RenderUIText(mName, text, zOrder,positionX,positionY,dimensionX,dimensionY,
-			fontName,charHeight,color);
+		 mRenderUIText = new RenderUIText(mName, text, zOrder,
+			fontName);
  }
 
 void UIText::start()
@@ -60,6 +59,16 @@ void UIText::setColour(Vector3 newColor)
 {
 	mRenderUIText->setColour(newColor);
 	
+}
+
+void me::UIText::setColourBottom(Vector3 newColor)
+{
+	mRenderUIText->setColourBottom(newColor);
+}
+
+void me::UIText::setColourTop(Vector3 newColor)
+{
+	mRenderUIText->setColourTop(newColor);
 }
 
 void UIText::setCharHeight(double heightValue)

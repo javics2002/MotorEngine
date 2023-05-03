@@ -39,9 +39,7 @@ namespace me {
 		*/
 		void setSize(float w, float h);
 
-		void init(std::string name, std::string spriteName, int zOrder,
-			float positionX, float positionY, float dimensionX, float dimensionY, 
-			std::string fontName, float charHeight, Vector3 color);
+		void init(std::string name, std::string spriteName, int zOrder,std::string fontName);
 
 		/**
 		* Set the font used by the UIText instance
@@ -63,6 +61,18 @@ namespace me {
 		void setColour(Vector3 newColor);
 
 
+		/**
+		* Set the colorBottom of the text displayed by the UIText instance
+		* @param newColor The new color of the text
+		*/
+		void setColourBottom(Vector3 newColor);
+
+
+		/**
+		* Set the colorTop of the text displayed by the UIText instance
+		* @param newColor The new color of the text
+		*/
+		void setColourTop(Vector3 newColor);
 
 		/**
 		* Set the height of the UIText instance
