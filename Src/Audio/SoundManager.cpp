@@ -1,7 +1,8 @@
 #include "SoundManager.h"
 #include <fmod.hpp>
 #include <fmod_errors.h>
-#include <iostream>
+
+#include <algorithm>
 
 me::SoundManager::SoundManager() {
 

@@ -1,8 +1,9 @@
 #include "DebugDrawer.h"
 
 #include "Utils/Vector3.h"
-
 #include "Render/RenderManager.h"
+
+#include <Ogre.h>
 
 me::DebugDrawer::DebugDrawer() {
 	mDebugDrawModes = DBG_DrawWireframe;

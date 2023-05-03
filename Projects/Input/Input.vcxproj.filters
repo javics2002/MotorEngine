@@ -29,9 +29,6 @@
     <ClInclude Include="..\..\Src\Input\Axis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Input\Input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Input\InputCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>

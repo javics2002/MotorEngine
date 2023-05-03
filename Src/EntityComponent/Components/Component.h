@@ -41,17 +41,13 @@ namespace me {
 		This method is meant to be use at the same time as start,
 		because it's not recomended to switch the entity at execution.
 		*/
-		inline void setEntity(Entity* e) {
-			mEntity = e;
-		};
+		void setEntity(Entity* e);
 
 		/**
 		Get the entity associated reference.
 		@return Reference to the entity.
 		*/
-		inline Entity* getEntity() {
-			return mEntity;
-		};
+		Entity* getEntity();
 
 		/**
 		This method is only ever called once.
@@ -99,8 +95,6 @@ namespace me {
 
 	protected:
 		Entity* mEntity;
-
-		// TODO: Identificar cada componente con un nombre
 	};
 };
 

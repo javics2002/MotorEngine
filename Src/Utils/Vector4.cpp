@@ -61,9 +61,14 @@ Vector4::Vector4(const Vector4 &v) {
 	w = v.w;
 }
 
-Vector4 Vector4::lerp(const Vector4& a, const Vector4& b, float f)
+Vector4 Vector4::Lerp(const Vector4& a, const Vector4& b, float f)
 {
 	return Vector4(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f), SimpleLerp::Lerp(a.z, b.z, f), SimpleLerp::Lerp(a.w, b.w, f));
+}
+
+Vector4 Vector4::Identity()
+{
+	return Vector4(1, 0, 0, 0);
 }
 
 void Vector4::operator=(const Vector4& v)

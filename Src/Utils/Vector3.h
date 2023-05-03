@@ -143,7 +143,7 @@ namespace me {
 		@param b The ending vector to interpolate to
 		@param f The interpolation factor, a value between 0 and 1
 		*/
-		static Vector3 lerp(const Vector3 & a, const Vector3 & b, float f);
+		static Vector3 Lerp(const Vector3 & a, const Vector3 & b, float f);
 
 		/**
 		Calculate the magnitude (length) of the vector
@@ -185,37 +185,37 @@ namespace me {
 		/**
 		Returns the linear interpolation between "a" and "b" by a factor of "f"
 		*/
-		static Vector3 zero();
+		static Vector3 Zero();
 
 		/**
 		Returns a unit vector pointing upwards along the y-axis
 		*/
-		static Vector3 up();
+		static Vector3 Up();
 
 		/**
 		Returns a unit vector pointing downwards along the y-axis
 		*/
-		static Vector3 down();
+		static Vector3 Down();
 
 		/**
 		Returns a unit vector pointing to the left along the x-axis
 		*/
-		static Vector3 left();
+		static Vector3 Left();
 
 		/**
 		Returns a unit vector pointing to the right along the x-axis
 		*/
-		static Vector3 right();
+		static Vector3 Right();
 
 		/**
 		Returns a unit vector pointing backwards along the z-axis
 		*/
-		static Vector3 back();
+		static Vector3 Back();
 
 		/**
 		Returns a unit vector pointing forwards along the z-axis
 		*/
-		static Vector3 forward();
+		static Vector3 Forward();
 
 		/**
 		Returns the distance between this vector and another vector "v"

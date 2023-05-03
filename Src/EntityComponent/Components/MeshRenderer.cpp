@@ -3,12 +3,12 @@
 #include "EntityComponent/Entity.h"
 #include "Transform.h"
 #include "Utils/Vector3.h"
-#include <OgreVector3.h>
+
+#include <cassert>
 
 using namespace me;
 
-
-me::MeshRenderer::MeshRenderer()
+MeshRenderer::MeshRenderer()
 {
 }
 
@@ -49,13 +49,13 @@ std::string MeshRenderer::getName()
 	return mName;
 }
 
-void me::MeshRenderer::activeMesh()
+void MeshRenderer::activeMesh()
 {
 	renderManager().activeMesh(mName);
 	enabled = true;
 }
 
-void me::MeshRenderer::desactiveMesh()
+void MeshRenderer::desactiveMesh()
 {
 	renderManager().desactiveMesh(mName);
 	enabled = false;
@@ -68,12 +68,12 @@ void MeshRenderer::setMaterial(std::string materialName)
 		renderManager().setMeshMaterial(mName,materialName);
 }
 
-void me::MeshRenderer::setName(std::string name)
+void MeshRenderer::setName(std::string name)
 {
 	mName = name;
 }
 
-void me::MeshRenderer::setMeshName(std::string meshName)
+void MeshRenderer::setMeshName(std::string meshName)
 {
 	mMeshName = meshName;
 }

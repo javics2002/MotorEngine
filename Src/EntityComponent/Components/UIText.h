@@ -11,7 +11,6 @@ namespace Ogre {
 }
 
 namespace me {
-
 	class UITransform;
 	class Vector2;
 	class Vector3;

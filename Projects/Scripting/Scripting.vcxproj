@@ -23,7 +23,6 @@
     <ClInclude Include="..\..\Src\Scripting\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Scripting\main.cpp" />
     <ClCompile Include="..\..\Src\Scripting\pch.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

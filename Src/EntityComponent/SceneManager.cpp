@@ -4,9 +4,9 @@
 
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>
+
 #ifdef _DEBUG
 #include <iostream>
-#include <Windows.h>
 #endif
 
 using namespace me;
@@ -55,6 +55,11 @@ Scene* SceneManager::getScene(const SceneName& name) const {
 		return it->second;
 	}
 	return nullptr;
+}
+
+Scene* SceneManager::getActiveScene() const
+{
+	return mActiveScene;
 }
 
 bool SceneManager::renameScene(const SceneName& oldName, const SceneName& newName) {
@@ -161,7 +166,6 @@ void SceneManager::deleteAllScenes() {
 }
 
 bool SceneManager::loadScene(const SceneName& newScene, bool eraseActiveScene) {
-
 	std::string s = newScene;
 	mChange = false;
 	addScene(s);

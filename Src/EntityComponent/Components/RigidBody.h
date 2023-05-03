@@ -4,9 +4,8 @@
 #define __ENTITYCOMPONENT_RIGIDBODY
 
 #include "Component.h"
-#include "Transform.h"
-#include "Collider.h"
 #include "Physics/PhysicsEnums.h"
+#include "Utils/Vector3.h"
 
 class btRigidBody;
 class btTransform;
@@ -14,6 +13,8 @@ class btQuaternion;
 class btCollisionShape;
 
 namespace me{
+	class Collider;
+	class Transform;
 	/**
 	Enables physical behaviour for the entity, based on its
 	parameters: mass, friction and restitution; its shape and type.

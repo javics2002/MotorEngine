@@ -3,6 +3,8 @@
 #include <OgreEntity.h>
 #include <OgreSceneNode.h>
 #include <OgreQuaternion.h>
+#include <OgreVector3.h>
+#include "Utils/Vector3.h"
 
 me::RenderMesh::RenderMesh(Ogre::SceneNode* node, std::string meshName)
 {
@@ -23,26 +25,26 @@ me::RenderMesh::~RenderMesh()
 	mSM->destroySceneNode(mNode);
 }
 
-void me::RenderMesh::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)
+void me::RenderMesh::setTransform(const me::Vector3& pos, const me::Vector3& scale, const me::Vector4& rot)
 {
-	mNode->setPosition(pos);
-	mNode->setScale(scale);
-	mNode->setOrientation(rot);
+	mNode->setPosition(pos.v3ToOgreV3());
+	mNode->setScale(scale.v3ToOgreV3());
+	mNode->setOrientation(rot.v4ToOgreQuaternion());
 }
 
-void me::RenderMesh::setPosition(const Ogre::Vector3f &pos)
+void me::RenderMesh::setPosition(const me::Vector3& pos)
 {
-	mNode->setPosition(pos);
+	mNode->setPosition(pos.v3ToOgreV3());
 }
 
-void me::RenderMesh::setScale(const Ogre::Vector3f &scale)
+void me::RenderMesh::setScale(const me::Vector3& scale)
 {
-	mNode->setScale(scale);
+	mNode->setScale(scale.v3ToOgreV3());
 }
 
-void me::RenderMesh::setRotation(Ogre::Quaternion rot)
+void me::RenderMesh::setRotation(me::Vector4 rot)
 {
-	mNode->setOrientation(rot);
+	mNode->setOrientation(rot.v4ToOgreQuaternion());
 }
 
 void me::RenderMesh::activeMesh()

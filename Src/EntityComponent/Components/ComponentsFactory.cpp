@@ -1,6 +1,4 @@
 #include "ComponentsFactory.h"
-
-#include "Component.h"
 #include "FactoryComponent.h"
 
 #include <cassert>

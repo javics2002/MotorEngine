@@ -93,57 +93,43 @@ namespace me {
 		@param Component's key name in this Entity's map
 		@return Boolean confirmation.
 		*/
-		inline bool hasComponent(const ComponentName& name) {
-			return mComponents.find(name) != mComponents.end();
-		};
+		bool hasComponent(const ComponentName& name);
 
 		/**
 		Check if the entity is active.
 		@return Boolean confirmation.
 		*/
-		inline bool isActive() const {
-			return mActive;
-		};
+		bool isActive() const;
 
 		/**
 		Set the entity activity to false.
 		This will cause to be safely delete by the scene.
 		*/
-		inline void destroy() {
-			mActive = false;
-		};
+		void destroy();
 
 		/**
 		Get the entity name.
 		@return String name.
 		*/
-		inline EntityName getName() const {
-			return mName;
-		};
+		EntityName getName() const;
 
 		/**
 		Set the entity name to the new one.
 		@param name New name.
 		*/
-		inline void setName(const EntityName name) {
-			mName = name;
-		};
+		void setName(const EntityName name);
 
 		/**
 		Get the associated scene of the entity.
 		@return Scene to which it belongs.
 		*/
-		inline Scene* getScene() const {
-			return mScene;
-		};
+		Scene* getScene() const;
 
 		/**
 		Set the associated scene for the entity.
 		@param Scene to which it belongs.
 		*/
-		inline void setScene(Scene* scene) {
-			mScene = scene;
-		};
+		void setScene(Scene* scene);
 
 		void start();
 

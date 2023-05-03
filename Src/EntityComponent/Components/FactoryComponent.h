@@ -76,13 +76,6 @@ namespace me {
 		void destroy(Component* component) override;
 	};
 
-	//Creates and destroys ParticleSystem components
-	class FactoryParticleSystem : public FactoryComponent {
-	public:
-		Component* create(Parameters& params) override;
-		void destroy(Component* component) override;
-	};
-
 	//Creates and destroys RigidBody components
 	class FactoryRigidBody : public FactoryComponent {
 	public:

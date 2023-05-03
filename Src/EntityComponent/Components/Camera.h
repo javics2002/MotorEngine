@@ -18,7 +18,7 @@ namespace me {
 	*/
 	class __MOTORENGINE_API Camera : public Component
 	{
-	protected:
+	private:
 		//Name for RenderManager map and for RenderCamera that attached in node
 		std::string mName;
 		//Distance from which objects will begin to render
@@ -38,8 +38,6 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = false;
 
-		int x = 0;
-
 
 	public:
 		/*
@@ -52,60 +50,44 @@ namespace me {
 		/*
 		Set the name saved in renderManager() map and used for entity that attached in node
 		*/
-		inline void setName(std::string name) {
-			mName = name;
-		}
+		void setName(std::string name);
 
 		/*
 		Set the name saved in renderManager() map and used for entity that attached in node
 		*/
-		inline std::string getName() {
-			return mName;
-		}
+		std::string getName() const;
 		/**
 		 * Set the distance from which objects will begin to render.
 		 * @param nearDistance The distance to set.
 		 */
-		inline void setNearDistance(float nearDistance) {
-			mNearDistance = nearDistance;
-		}
+		void setNearDistance(float nearDistance);
 
 		/**
 		 * Set the distance at which objects stop rendering.
 		 * @param farDistance The distance to set.
 		 */
-		inline void setFarDistance(float farDistance) {
-			mFarDistance = farDistance;
-		}
+		void setFarDistance(float farDistance);
 		/**
 		 * Set whether the viewport calculates the aspect ratio automatically.
 		 * @param autoRatio The value to set.
 		 */
-		inline void setAutoRadio(bool autoRatio) {
-			mAutoRatio = autoRatio;
-		}
+		void setAutoRadio(bool autoRatio);
 		/**
 		 * Set the relative order of the viewport.
 		 * @param zOrder The value to set.
 		 */
-		inline void setZOrder(int zOrder) {
-			mZOrder = zOrder;
-		}
+		void setZOrder(int zOrder);
 
 		/**
 		 * Set the point to look at.
 		 * @param lookAt The vector to set.
 		 */
-		inline void setLookAt(Vector3 lookAt) {
-			mLookAt = lookAt;
-		}
+		void setLookAt(Vector3 lookAt);
 		/**
 		 * Set the color of the background.
 		 * @param colour The vector to set.
 		 */
-		inline void setBackgroundColour(Vector4 colour) {
-			mBackgroundColour = colour;
-		}
+		void setBackgroundColour(Vector4 colour);
 
 		/**
 		Get info for mTransform and create ogreCamera and set the start pos

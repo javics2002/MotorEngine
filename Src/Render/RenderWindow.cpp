@@ -5,8 +5,6 @@
 #include <SDL3/SDL_syswm.h>
 #include <SDL3/SDL_version.h>
 #include <SDL3/SDL_mouse.h>
-#include <iostream>
-
 
 using namespace me;
 
@@ -22,7 +20,6 @@ RenderWindow::~RenderWindow()
 		mRenderWindow->destroy();
 		mRenderWindow = nullptr;
 	}
-
 }
 
 void RenderWindow::init(Ogre::Root* root)
@@ -41,8 +38,6 @@ SDL_Window* me::RenderWindow::getSdlWindow()
 	return mSdlWindow;
 }
 
-
-
 void RenderWindow::createWindow(Ogre::Root* root)
 {
 	uint32_t w, h;
@@ -57,8 +52,6 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	miscParams["FSAA"] = cOptionMap["FSAA"].currentValue;
 	miscParams["vsync"] = cOptionMap["VSync"].currentValue;
 	miscParams["gamma"] = cOptionMap["sRGB Gamma Conversion"].currentValue;
-
-	
 
 	Uint32 flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS;
 
@@ -77,7 +70,6 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	mRenderWindow = root->createRenderWindow(mWindowName, window().getWindowWidth(), window().getWindowHeight(), false, &miscParams);
 
 	SDL_ShowCursor();
-
 }
 
 
@@ -88,6 +80,3 @@ void RenderWindow::setWindowGrab(bool bGrab)
 	
 	grab ? SDL_ShowCursor() : SDL_HideCursor();
 }
-
-
-

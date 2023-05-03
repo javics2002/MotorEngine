@@ -1,12 +1,7 @@
 #include "MotorEngine.h"
 
-// --- C++
-#include <iostream>
 #include <thread>
-#include <time.h>
-#include <memory>
-#include <random>
-// --- Managers
+
 #include "Audio/SoundManager.h"
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
@@ -14,14 +9,14 @@
 #include "EntityComponent/SceneManager.h"
 #include "Render/RenderWindow.h"
 #include "Render/Window.h"
-// --- Components
+
 #include "EntityComponent/Scene.h"
 #include "EntityComponent/Components/ComponentsFactory.h"
 #include "EntityComponent/Components/FactoryComponent.h"
-// --- Utils
+
 #include "Utils/Time.h"
 #include "Utils/Timer.h"
-// --- SDL3
+
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>
 
@@ -115,7 +110,6 @@ void MotorEngine::loop()
 			sceneManager().loadScene(sceneManager().getNewScene());
 
 		// Wait time
-		//std::cout << "Deltatime: " << mTime->getDeltaTime() << "\tFixed: " << mTime->getFixedDeltaTime() << "\tSleeptime: " << mTime->millisecondsToNextFrame() << "\n";
 		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));
 	}
 }
@@ -168,7 +162,6 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
 	componentsFactory().addFactoryComponent("uispriterenderer", new FactoryUISpriteRenderer());
 	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
-	componentsFactory().addFactoryComponent("particlesystem", new FactoryParticleSystem());
 	componentsFactory().addFactoryComponent("camera", new FactoryCamera());
 	componentsFactory().addFactoryComponent("audiosource", new FactoryAudioSource());
 	componentsFactory().addFactoryComponent("audiolistener", new FactoryAudioListener());
@@ -181,10 +174,6 @@ int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 	if (event->type == SDL_EVENT_QUIT) {
 		bool* quit = (bool*)userdata;
 		*quit = true;
-
-#ifdef _DEBUG
-		std::cout << "MotorEngine quitting...\n";
-#endif
 	}
 
 	return 0;

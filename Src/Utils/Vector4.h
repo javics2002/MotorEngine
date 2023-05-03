@@ -24,7 +24,6 @@ namespace me {
 	{
 
 	public:
-
 		float x, y, z, w;
 
 
@@ -45,7 +44,11 @@ namespace me {
 		*  @param b The ending vector to interpolate to
 		*  @param f The interpolation factor, a value between 0 and 1
 		*/
-		Vector4 lerp(const Vector4& a, const Vector4& b, float f);
+		static Vector4 Lerp(const Vector4& a, const Vector4& b, float f);
+
+		/* Returns the Quaternion Rotation Identity, which corresponds to no rotation (1, 0, 0, 0)
+		*/
+		static Vector4 Identity();
 
 		/**
 		*  Sets the left vector's values to equal the right one's.

@@ -6,7 +6,6 @@
 #include "Collider.h"
 #include "MeshRenderer.h"
 #include "UISpriteRenderer.h"
-#include "ParticleSystem.h"
 #include "Rigidbody.h"
 #include "Transform.h"
 #include "Light.h"
@@ -40,8 +39,6 @@ std::string me::FactoryComponent::Value(Parameters& params, const ParameterName&
 Component* FactoryAnimator::create(Parameters& params)
 {
     Animator* animator = new Animator();
-    /*if(params.count("animation"))
-        animator->playAnim(value<std::string>(params, "animation"), value(params, "loop", true));*/
     return animator;
 }
 
@@ -160,33 +157,6 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 }
 
 void me::FactoryMeshRenderer::destroy(Component* component)
-{
-    delete component;
-}
-
-me::Component* me::FactoryParticleSystem::create(Parameters& params)
-{
-
-    std::string particle = Value(params, "particle", std::string());
-    std::string particleName = Value(params, "particlename", std::string());
-    bool emitted = Value(params, "emitted", false);
-
-    ParticleSystem* particleSystem = new ParticleSystem();
-
-    particleSystem->setName(particle);
-    particleSystem->setParticleName(particleName);
-    particleSystem->setOffsetPos(Vector3(Value(params, "offpos_x", 0.0f),
-        Value(params, "offpos_y", 0.0f), Value(params, "offpos_z", 0.0f)));
-    particleSystem->setOffsetScale(Vector3(Value(params, "offscale_x", 0.0f),
-        Value(params, "offscale_y", 0.0f), Value(params, "offscale_z", 0.0f)));
-
-    particleSystem->init();
-
-    particleSystem->setEmitting(emitted);
-    return particleSystem;
-}
-
-void me::FactoryParticleSystem::destroy(Component* component)
 {
     delete component;
 }

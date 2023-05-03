@@ -14,15 +14,4 @@
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>
 
-//#include "
-// /Array.h"
-//#include "LuaBridge/List.h"
-//#include "LuaBridge/Map.h"
-//#include "LuaBridge/Optional.h"
-//#include "LuaBridge/Pair.h"
-//#include "LuaBridge/RefCountedObject.h"
-//#include "LuaBridge/RefCountedPtr.h"
-//#include "LuaBridge/UnorderedMap.h"
-//#include "LuaBridge/Vector.h"
-
 #endif //PCH_H

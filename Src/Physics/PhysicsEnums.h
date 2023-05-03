@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __PHYSICS_ENUM
+#define __PHYSICS_ENUM
 
 namespace me {
 	enum Shapes {
@@ -14,3 +16,5 @@ namespace me {
 		MOVEMENT_TYPE_KINEMATIC
 	};
 }
+
+#endif

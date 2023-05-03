@@ -19,9 +19,7 @@ namespace me {
 	//Class to create renderizable object with Sprite
 	class __MOTORENGINE_API RenderUIText
 	{
-
 	private:
-	protected:
 		//Reference to Ogre::Overlay (Overlay) for transformation
 		Ogre::Overlay* mOverlay;
 

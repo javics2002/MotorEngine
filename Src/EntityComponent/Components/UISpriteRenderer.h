@@ -45,12 +45,10 @@ namespace me {
 		*/
 		void start() override;
 
-
 		/**
 		Update UITransform info to image
 		*/
 		void update(const double& dt) override;
-
 
 		/**
 		Set it is static entity or not
@@ -79,7 +77,6 @@ namespace me {
 		Name getter
 		*/
 		std::string getName();
-
 	};
 }
 #endif

@@ -75,6 +75,16 @@ std::shared_ptr<Entity> Scene::findEntity(const EntityName& name) const {
 	return nullptr;
 }
 
+const EntityName Scene::getName() const
+{
+	return mName;
+}
+
+void Scene::setName(const SceneName name)
+{
+	mName = name;
+}
+
 bool Scene::renameEntity(const EntityName& oldName, const EntityName& newName) {
 	auto it = mEntities.find(oldName);
 	auto dst = mEntities.find(newName);

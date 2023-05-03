@@ -33,7 +33,6 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\ComponentsFactory.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\FactoryComponent.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\MeshRenderer.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\ParticleSystem.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\Transform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UIButton.cpp" />
@@ -42,7 +41,6 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\main.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
   </ItemGroup>
@@ -56,7 +54,6 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\ComponentsFactory.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\FactoryComponent.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\MeshRenderer.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\ParticleSystem.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\RigidBody.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\Transform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UIButton.h" />

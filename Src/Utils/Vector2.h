@@ -12,9 +12,7 @@ namespace me {
 	*/
 	class __MOTORENGINE_API Vector2
 	{
-
 	public:
-
 		float x, y;
 
 		/**
@@ -59,9 +57,7 @@ namespace me {
 		*  @param b second Vector2
 		*  @param f interpolation factor
 		*/
-		inline Vector2 lerp(const Vector2 a, const Vector2 b, float f) {
-			return Vector2(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f));
-		}
+		Vector2 lerp(const Vector2 a, const Vector2 b, float f);
 
 	};
 }

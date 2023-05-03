@@ -28,14 +28,10 @@ namespace me {
 		//static state of this.Entity 
 		bool mStaticObject = false;
 
-
 		Ogre::TextAreaOverlayElement* mButtonArea;
-
 	public:
-
 		UIButton();
 		~UIButton();
-
 
 		virtual void init(std::string name, std::string materialName, int zOrder);
 

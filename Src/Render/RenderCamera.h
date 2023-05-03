@@ -3,7 +3,6 @@
 #define __RENDER_RENDERCAMERA
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "Utils/Vector3.h"
 
 namespace Ogre {
 	class Camera;
@@ -15,6 +14,7 @@ namespace Ogre {
 }
 
 namespace me {
+	class Vector3;
 	/**
 	Manages OgreCamera
 	*/
@@ -22,11 +22,11 @@ namespace me {
 	{
 	protected:
 		//Reference to Ogre::Camera
-		Ogre::Camera* mCamera ;
+		Ogre::Camera* mCamera;
 		//Reference to Ogre::Viewport of mCamera
-		Ogre::Viewport* mViewport ;
+		Ogre::Viewport* mViewport;
 		//Reference to Ogre::SceneNode of mCamera
-		Ogre::SceneNode* mCameraNode ;
+		Ogre::SceneNode* mCameraNode;
 		//Reference to Ogre::SceneManager created by RenderManager
 		Ogre::SceneManager* mSceneMgr;
 		//Reference to Ogre::RenderWindow created by RenderManager

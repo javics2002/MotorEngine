@@ -1,8 +1,5 @@
 #include "UIButton.h"
-#include "Input/InputManager.h"
-#include <OgreOverlay.h>
-#include <OgreOverlayContainer.h>
-#include <OgreOverlayManager.h>
+
 #include "EntityComponent/Entity.h"
 #include "Render/RenderManager.h"
 #include "UITransform.h"

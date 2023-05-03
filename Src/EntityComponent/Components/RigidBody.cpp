@@ -1,18 +1,19 @@
 #include "RigidBody.h"
 
-#include "LinearMath/btTransform.h"
-#include "LinearMath/btQuaternion.h"
-#include "LinearMath/btVector3.h"
 #include "BulletDynamics/Dynamics/btRigidBody.h"
 
 #include "Physics/PhysicsManager.h"
 #include "EntityComponent/Entity.h"
 
+#include "Collider.h"
+#include "Transform.h"
+
+#include <cassert>
+
 using namespace me;
 
 RigidBody::RigidBody()
 {
-
 }
 
 RigidBody::~RigidBody()

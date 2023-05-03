@@ -1,5 +1,4 @@
 #include "UITransform.h"
-#include <iostream>
 
 using namespace me;
 
@@ -9,12 +8,6 @@ UITransform::UITransform()
 
 UITransform::~UITransform()
 {
-	//DELETES
-#ifdef _DEBUG
-	std::cout << " >>> Component ( UITransform ) deleted..." << std::endl;
-#endif
-
-
 	mChildren.clear();
 }
 

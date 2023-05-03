@@ -59,15 +59,7 @@ namespace me {
 		* return SDL window of linked window
 		*/
 		SDL_Window* getSdlWindow();
-
-
 	};
-
-
-
-
-
 }
-
 
 #endif 

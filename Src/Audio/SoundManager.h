@@ -3,12 +3,9 @@
 #define _FMOD_SOUND_MANAGER
 
 #include <unordered_map>
-#include <algorithm>
-#include <cctype>
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
-
 
 namespace FMOD {
 	class Sound;
@@ -54,7 +51,7 @@ namespace me {
 		FMOD::ChannelGroup* mEffects, * mMusic, *mMaster;
 		std::vector<bool> mListeners;
 		//The sound system over which every bit of audio gets created.
-		FMOD::System* mSoundSystem = NULL;
+		FMOD::System* mSoundSystem = nullptr;
 
 		/**
 		Chech if the result of any FMOD-related action is without any error.

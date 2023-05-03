@@ -14,12 +14,10 @@ Collider::~Collider()
 
 void Collider::start()
 {
-	std::cout << "\n\nI'm the collider of: " << mEntity->getName() << "\n" << std::endl;
 }
 
 void Collider::onCollisionEnter(Entity* other)
 {
-	
 	mEntity->onCollisionEnter(other);
 }
 

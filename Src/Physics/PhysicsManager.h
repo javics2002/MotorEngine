@@ -4,7 +4,7 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
-#include "DebugDrawer.h"
+
 #include "PhysicsEnums.h"
 #include <vector>
 
@@ -20,9 +20,13 @@ class btDefaultMotionState;
 class btDispatcher;
 class btBroadphaseInterface;
 class btCollisionConfiguration;
+class btVector3;
+class btTransform;
 
 
 namespace me {
+	class DebugDrawer;
+
 	/**
 	PhysicsManager manages physics using Bullet Engine.
 	*/
@@ -101,7 +105,6 @@ namespace me {
 			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
 		void update(const double& dt);
-
 	};
 
 	/**

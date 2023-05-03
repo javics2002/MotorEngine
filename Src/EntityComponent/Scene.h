@@ -66,17 +66,13 @@ namespace me {
 		Get the scene name.
 		@return String name.
 		*/
-		inline const EntityName getName() const {
-			return mName;
-		};
+		const EntityName getName() const;
 
 		/**
 		Set the scene name to the new one.
 		@param String name.
 		*/
-		inline void setName(const SceneName name) {
-			mName = name;
-		};
+		void setName(const SceneName name);
 
 		/**
 		Rename an entity.

@@ -3,7 +3,7 @@
 #define __ENTITYCOMPONENT_AUDIOLISTENER
 
 #include "Component.h"
-#include "Transform.h"
+#include "Utils/Vector3.h"
 
 namespace FMOD {
 	class Sound;

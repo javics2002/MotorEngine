@@ -1,17 +1,11 @@
 #include "PhysicsManager.h"
 
-#include <BulletCollision/CollisionShapes/btBoxShape.h>
 #include <BulletCollision/CollisionShapes/btSphereShape.h>
 #include <BulletCollision/CollisionShapes/btCylinderShape.h>
 #include <BulletCollision/CollisionShapes/btCapsuleShape.h>
-#include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
-#include <BulletDynamics/Dynamics/btRigidBody.h>
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
-#include <BulletDynamics/Dynamics/btActionInterface.h>
-#include <BulletCollision/CollisionShapes/btCollisionShape.h>
-#include <BulletDynamics/ConstraintSolver/btConstraintSolver.h>
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <LinearMath/btDefaultMotionState.h>
 
@@ -216,7 +210,7 @@ btCollisionShape* PhysicsManager::createShape(Shapes shape, const btVector3 &sca
 	return shape_;
 }
 
-btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
+btRigidBody* me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
 	int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
 {
 
@@ -253,16 +247,16 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 
 	addRigidBody(rb, group, mask);
 
-
-
 	return rb;
-
 }
 
 void PhysicsManager::update(const double& dt)
 {
 	mDynamicsWorld->stepSimulation(dt);
 
+	/*
+	Uncomment the following code if you want to see colliders
+	*/
 //#ifdef _DEBUG
 //	mDebug->clear();
 //	mDynamicsWorld->debugDrawWorld();

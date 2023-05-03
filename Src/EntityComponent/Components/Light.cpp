@@ -22,3 +22,29 @@ void Light::start()
 	if (mSetAmbient)
 		renderManager().setAmbientLight(mAmbientColor);
 }
+
+void Light::setName(std::string name)
+{
+	mName = name;
+}
+
+void Light::setLightType(LightType type)
+{
+	mType = type;
+}
+
+void Light::setDirection(Vector3 direction)
+{
+	mDirection = direction;
+}
+
+void me::Light::setColor(Vector3 color)
+{
+	mColor = color;
+}
+
+void me::Light::setAmbientColor(Vector3 color)
+{
+	mSetAmbient = true;
+	mAmbientColor = color;
+}

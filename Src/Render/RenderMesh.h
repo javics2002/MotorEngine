@@ -3,15 +3,16 @@
 #define __RENDER_RENDERMESH
 
 #include "MotorEngine/MotorEngineAPI.h"
+#include "Utils/Vector4.h"
 #include <string>
-#include <OgreVector3.h>
 
 namespace Ogre {
 	class SceneNode;
-	class Quaternion;
+	class Entity;
 }
 
 namespace me {
+	class Vector3;
 
 	//Class to create renderizable object with mesh
 	class __MOTORENGINE_API RenderMesh
@@ -26,8 +27,6 @@ namespace me {
 		//Name of mesh that used
 		std::string mMeshName;
 		std::string mMaterialName;
-		
-
 
 	public:
 
@@ -46,25 +45,25 @@ namespace me {
 		@param scale: scale of ogreMesh
 		@param rot: rotation of ogreMesh
 		*/
-		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
+		void setTransform(const me::Vector3 &pos, const me::Vector3 &scale, const me::Vector4 &rot);
 
 		/**
 		Set position info to the mesh
 		@param pos: position of ogreMesh
 		*/
-		void setPosition(const Ogre::Vector3f &pos);
+		void setPosition(const me::Vector3 &pos);
 
 		/**
 		Set scale info to the mesh
 		@param scale: scale of ogreMesh
 		*/
-		void setScale(const Ogre::Vector3f &scale);
+		void setScale(const me::Vector3 &scale);
 
 		/**
 		Set rotation info to the mesh
 		@param rot: rotation of ogreMesh
 		*/
-		void setRotation(Ogre::Quaternion rot);
+		void setRotation(me::Vector4 rot);
 
 
 		/**

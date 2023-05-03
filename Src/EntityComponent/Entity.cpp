@@ -64,6 +64,41 @@ namespace me {
 		return false;
 	}
 
+	bool Entity::hasComponent(const ComponentName& name)
+	{
+		return mComponents.find(name) != mComponents.end();
+	}
+
+	bool Entity::isActive() const
+	{
+		return mActive;
+	}
+
+	void Entity::destroy()
+	{
+		mActive = false;
+	}
+
+	EntityName Entity::getName() const
+	{
+		return mName;
+	}
+
+	void Entity::setName(const EntityName name)
+	{
+		mName = name;
+	}
+
+	Scene* Entity::getScene() const
+	{
+		return mScene;
+	}
+
+	void Entity::setScene(Scene* scene)
+	{
+		mScene = scene;
+	}
+
 	void Entity::start()
 	{
 		for (auto c : mComponents) {

@@ -28,3 +28,8 @@ Vector2 Vector2::operator-(const  Vector2& v) {
 Vector2 Vector2::operator*(const  float v) {
 	return Vector2(x * v, y * v);
 }
+
+Vector2 Vector2::lerp(const Vector2 a, const Vector2 b, float f)
+{
+	return Vector2(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f));
+}

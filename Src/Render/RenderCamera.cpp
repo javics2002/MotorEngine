@@ -2,6 +2,7 @@
 #include "OgreSceneManager.h"
 #include "OgreRenderWindow.h"
 #include "OgreViewport.h"
+#include "Utils/Vector3.h"
 #include <string>
 
 

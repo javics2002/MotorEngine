@@ -2,8 +2,6 @@
 #include "Render/RenderUIText.h"
 #include "EntityComponent/Entity.h"
 #include "UITransform.h"
-#include "Utils/Vector2.h"
-#include "Utils/Vector3.h"
 
 using namespace me;
 

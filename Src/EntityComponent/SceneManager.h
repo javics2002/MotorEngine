@@ -57,9 +57,7 @@ namespace me {
         /**
         Get currently active scene from the SceneManager.
         */
-        inline Scene* getActiveScene() const {
-            return mActiveScene;
-        };
+        Scene* getActiveScene() const;
 
         /**
         Rename a scene. 

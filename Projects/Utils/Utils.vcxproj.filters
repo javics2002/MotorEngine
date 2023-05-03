@@ -41,9 +41,6 @@
     <ClInclude Include="..\..\Src\Utils\Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Utils\Utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Utils\Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>

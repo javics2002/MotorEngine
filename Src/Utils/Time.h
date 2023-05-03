@@ -70,7 +70,7 @@ namespace me {
 		*/
 		double obtainCurrentTime();
 
-	protected:
+	private:
 		float mTargetFrameRate;
 		float mTargetFixedFrameRate;
 		float mTargetDeltaTime;

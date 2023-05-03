@@ -4,8 +4,7 @@
 #include <OgreTextAreaOverlayElement.h>
 #include <OgreOverlayContainer.h>
 #include <OgreOverlayManager.h>
-#include "Utils/Vector2.h"
-#include "Utils/Vector4.h"
+
 #include "Render/RenderManager.h"
 
 using namespace me;
@@ -49,8 +48,6 @@ RenderUIText::~RenderUIText()
 	renderManager().getOgreManager()->destroyOverlayElement(mTextArea);
 	renderManager().getOgreManager()->destroyOverlayElement(mCont);
 	renderManager().getOgreManager()->destroy(mOverlay);
-
-	
 }
 
 void RenderUIText::setTransform(Vector2 pos, Vector2 scale, float rot)

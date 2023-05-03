@@ -4,8 +4,11 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include <LinearMath/btIDebugDraw.h>
+#include <vector>
 
-#include <Ogre.h>
+namespace Ogre {
+    class ManualObject;
+}
 
 namespace me {
     /**
@@ -13,7 +16,6 @@ namespace me {
     */
 	class __MOTORENGINE_API DebugDrawer : public btIDebugDraw
 	{
-
         Ogre::ManualObject* line;
         std::vector<Ogre::ManualObject*> lines;
 		DebugDrawModes mDebugDrawModes;

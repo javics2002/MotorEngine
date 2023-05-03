@@ -5,9 +5,6 @@
 #include <string>
 
 #include "Component.h"
-#include "Transform.h"
-#include "Audio/SoundManager.h"
-
 
 namespace FMOD {
 	class Sound;
@@ -15,6 +12,7 @@ namespace FMOD {
 
 namespace me {
 	class SoundManager;
+	class Transform;
 	/**
 	Plays an audio file in the scene. AudioListeners within range
 	will hear it with the intensity based in their position in the scene. 

@@ -6,7 +6,6 @@
 #include <LinearMath/btVector3.h>
 #include <LinearMath/btQuaternion.h>
 #include <fmod.hpp>
-#define MY_PI 3.14159265358979323846
 
 using namespace me;
 
@@ -104,7 +103,7 @@ bool Vector3::operator!=(const Vector3& v)
 	return (x != v.x || y != v.y || z != v.z);
 }
 
-Vector3 Vector3::lerp(const Vector3& a, const Vector3& b, float f)
+Vector3 Vector3::Lerp(const Vector3& a, const Vector3& b, float f)
 {
 	return Vector3(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f), SimpleLerp::Lerp(a.z, b.z, f));
 }
@@ -140,37 +139,37 @@ Vector3 Vector3::cross(const Vector3& v)
 	return Vector3((y * v.z) - (z * v.y), (z * v.x) - (x * v.z), (x * v.y) - (y * v.x));
 }
 
-Vector3 Vector3::zero()
+Vector3 Vector3::Zero()
 {
 	return Vector3(0, 0, 0);
 }
 
-Vector3 Vector3::up()
+Vector3 Vector3::Up()
 {
 	return Vector3(0, 1, 0);
 }
 
-Vector3 Vector3::down()
+Vector3 Vector3::Down()
 {
 	return Vector3(0, -1, 0);
 }
 
-Vector3 Vector3::left()
+Vector3 Vector3::Left()
 {
 	return Vector3 (-1, 0, 0);
 }
 
-Vector3 Vector3::right()
+Vector3 Vector3::Right()
 {
 	return Vector3 (1, 0, 0);
 }
 
-Vector3 Vector3::back()
+Vector3 Vector3::Back()
 {
 	return Vector3 (0, 0, -1);
 }
 
-Vector3 Vector3::forward()
+Vector3 Vector3::Forward()
 {
 	return Vector3 (0, 0, 1);
 }

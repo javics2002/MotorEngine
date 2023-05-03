@@ -157,7 +157,6 @@
     <ClInclude Include="..\..\Src\Input\Button.h" />
     <ClInclude Include="..\..\Src\Input\InputCode.h" />
     <ClInclude Include="..\..\Src\Input\InputManager.h" />
-    <ClInclude Include="..\..\Src\Input\Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Render\Render.vcxproj">

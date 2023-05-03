@@ -7,7 +7,6 @@
 
 me::AudioListener::AudioListener()
 {
-
 }
 
 me::AudioListener::~AudioListener()
@@ -26,7 +25,6 @@ void me::AudioListener::start()
 
 void me::AudioListener::update(const double& dt)
 {
-	
 	Vector3 position = mEntity->getComponent<Transform>("transform")->getPosition();
 	Vector3 velocity = mEntity->getComponent<Transform>("transform")->getVelocity();
 	Vector3 up = mEntity->getComponent<Transform>("transform")->up();

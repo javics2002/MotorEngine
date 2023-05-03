@@ -3,7 +3,6 @@
 #include <OgreOverlay.h>
 #include <OgreOverlayContainer.h>
 
-#include "Utils/Vector2.h"
 #include "Render/Window.h"
 
 using namespace me;
@@ -63,5 +62,4 @@ void RenderUISprite::setMaterial(std::string materialName)
 {
 	mMaterialName = materialName;
 	mPanel->setMaterialName(materialName);
-
 }
