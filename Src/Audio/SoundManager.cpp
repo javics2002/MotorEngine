@@ -98,6 +98,9 @@ me::SoundManager::~SoundManager()
 	}
 	mSoundsMap.clear();
 
+	mResult = mSoundSystem->close();
+	checkFMODResult(mResult);
+
 	mResult = mSoundSystem->release();
 	checkFMODResult(mResult);
 }
