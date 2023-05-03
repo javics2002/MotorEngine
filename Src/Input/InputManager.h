@@ -54,7 +54,7 @@ namespace me {
 		/*
 		Mouse position. Distance in pixels from the upper left corner of the screen.
 		*/
-		float mouseX, mouseY;
+		float mMouseX, mMouseY;
 
 		std::unordered_set<unsigned int> mControllers;
 
@@ -87,6 +87,7 @@ namespace me {
 		It is NULL by default.
 		*/
 		void addEvent(SDL_EventFilter filter, void* userdata = NULL);
+
 		/**
 		Deletes filter from the SDLEventWatch.
 		@param filter is the same function used to add the callback.
@@ -95,7 +96,7 @@ namespace me {
 		void deleteEvent(SDL_EventFilter filter, void* userdata = NULL);
 
 		/**
-		Creates a button of name name.
+		Creates a button of name name. It must not exist beforehand.
 		@param name Name of the button.
 		@param player In case it is necessary to differenciate which player
 		inputs a press, InputManager will dissmiss presses from other players.
@@ -103,6 +104,7 @@ namespace me {
 		@returns A boolean representing whether the button could be created.
 		*/
 		bool addButton(std::string name, int player = -1);
+
 		/**
 		Creates a button of name name and binds it with some physical input.
 		@param name Name of the button.
@@ -118,6 +120,7 @@ namespace me {
 		@returns A boolean representing whether the button could be created.
 		*/
 		bool addButton(std::string name, Input input, int player = -1);
+
 		/**
 		Deletes button name and any bindings it may have.
 		@param name Name of the button.
@@ -136,6 +139,7 @@ namespace me {
 		@returns A boolean representing whether the button could be created.
 		*/
 		bool addAxis(std::string name, AxisInfo info);
+
 		/**
 		Creates an axis of name name and binds it with some physical input.
 		@param name Name of the axis.
@@ -153,6 +157,7 @@ namespace me {
 		@returns A boolean representing whether the button could be created.
 		*/
 		bool addAxis(std::string name, AxisInfo info, AxisInput input);
+
 		/**
 		Deletes axis name and any bindings it may have.
 		@param name Name of the axis.
@@ -173,6 +178,7 @@ namespace me {
 		@returns A boolean representing whether the binding was successful.
 		*/
 		bool addBinding(std::string name, Input input);
+
 		/**
 		Binds some physical input with a virutal axis,
 		so triggering said input will trigger the virtual axis.
@@ -186,6 +192,7 @@ namespace me {
 		@returns A boolean representing whether the binding was successful.
 		*/
 		bool addBinding(std::string name, AxisInput input);
+
 		/**
 		Unlinks a button with some physical input
 		@param name Name of the button.
@@ -198,6 +205,7 @@ namespace me {
 		@returns A boolean representing whether the binding was deleted.
 		*/
 		bool deleteBinding(std::string name, Input input);
+
 		/**
 		Unlinks an axis with some physical input
 		@param name Name of the axis.
@@ -216,6 +224,7 @@ namespace me {
 		@returns The state of the button.
 		*/
 		bool getButton(std::string name);
+
 		/**
 		@param name Name of the axis.
 		@returns The value of the axis in range [-1, 1].
@@ -230,6 +239,7 @@ namespace me {
 		@returns Whether the callback could be binded to the button
 		*/
 		bool addOnButtonPressedEvent(std::string name, int(*callback)(void*), void* additionalData = NULL);
+
 		/**
 		Unbinds a callback from its virtual button, so it's never executed again anytime its button is triggered.
 		@param name Name of the button

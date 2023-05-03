@@ -17,16 +17,20 @@ namespace me {
 	given any controller, keyboard or mouse.
 	*/
 	struct __MOTORENGINE_API Button {
+
 		//Value
 		bool pressed;
 
-		/*Whose player this button is, used in case its a gamepad button press
-		-1 will be considered as a playerless input.*/
+		/*
+		Whose player this button is, used in case it's a gamepad button press.
+		-1 will be considered as a playerless input.
+		*/
 		int player;
 	};
 
 	//Represents a physical button or key that can trigger a virtual button.
 	struct __MOTORENGINE_API Input {
+
 		/*
 		INPUTTYPE_KEYBOARD for keyboard key presses
 		INPUTTYPE_MOUSE for mouse clicks
@@ -35,12 +39,14 @@ namespace me {
 		*/
 		InputType type;
 		
-		/*Which key, mouse button, or controller button has been pressed.
+		/*
+		Which key, mouse button, or controller button has been pressed.
 		Represents a value of KeyboardCode, MouseClickCode, MouseWheelCode,
-		GamepadButtonCode or GamepadAxisCode depending on the type of the event*/
+		GamepadButtonCode or GamepadAxisCode depending on the type of the event
+		*/
 		int which;
 
-		/*In case it is a gamepad axis motion, or a mouse motion, the value will be stored here*/
+		// In case it is a gamepad axis motion, or a mouse motion, the value will be stored here
 		float value;
 		
 

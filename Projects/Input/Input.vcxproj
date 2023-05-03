@@ -151,7 +151,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Input\InputManager.cpp" />
-    <ClCompile Include="..\..\Src\Input\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Input\Axis.h" />

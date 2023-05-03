@@ -364,9 +364,8 @@ bool InputManager::deleteOnButtonPressedEvent(std::string name, int(*callback)(v
 
 Vector2 me::InputManager::getMousePositon()
 {
-	SDL_GetMouseState(&mouseX, &mouseY);
-
-	return Vector2(mouseX, mouseY);
+	SDL_GetMouseState(&mMouseX, &mMouseY);
+	return Vector2(mMouseX, mMouseY);
 }
 
 int InputManager::WatchControllers(void* userdata, SDL_Event* event)
