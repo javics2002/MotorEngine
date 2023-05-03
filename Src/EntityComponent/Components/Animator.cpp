@@ -28,7 +28,7 @@ void Animator::update(const double& dt)
 {
 	if (mCurrentState != nullptr && !mStop) {
 		// Increment the animation time by the time between frames
-		mCurrentState->addTime(Ogre::Real()); //Falta el tiempo entre frames;
+		mCurrentState->addTime(dt);
 	}
 }
 

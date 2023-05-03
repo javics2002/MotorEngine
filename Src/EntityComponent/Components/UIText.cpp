@@ -30,8 +30,6 @@ void UIText::init(std::string name, std::string text, int zOrder, float position
 void UIText::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
-	//mRenderUIText->setTransform(mUITransform->getPosition(), 
-		//mUITransform->getScale(), mUITransform->getRotation());
 }
 
 void UIText::setPosition(float x, float y)
@@ -61,13 +59,6 @@ void UIText::setText(std::string text)
 void UIText::setColour(Vector3 newColor)
 {
 	mRenderUIText->setColour(newColor);
-	
-}
-
-
-void UIText::setWidth(double widthValue)
-{
-	// Set the width
 	
 }
 

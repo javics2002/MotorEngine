@@ -19,7 +19,7 @@ namespace me {
 	class __MOTORENGINE_API UIButton : public me::Component
 	{
 	protected:
-		//name for RenderManager map and for entity that attached in node
+		//name for entity that attached in node
 		std::string mName;
 		//name of .png file
 		std::string mSpriteName;
@@ -32,13 +32,8 @@ namespace me {
 		Ogre::TextAreaOverlayElement* mButtonArea;
 
 	public:
-		/**
-		Construct a new UISpriteRenderer component and save necesary info
-		@param name: name saved in RenderManager map and used for entity that attached in node
-		@param meshName: name of .png file
-		*/
+
 		UIButton();
-		//Destroy RenderManager map saved image
 		~UIButton();
 
 
@@ -49,11 +44,14 @@ namespace me {
 		*/
 		virtual void start() override;
 
+		/**
+		"Inherited method that will contain the corresponding action for each button.
+		*/
 		virtual void execute() {};
 
 		/**
-			Set material.
-			@param materialName: name of material, as written in MaterialResource.material.
+		Set material.
+		@param materialName: name of material, as written in MaterialResource.material.
 		*/
 		void setSpriteMaterial(std::string materialName);
 

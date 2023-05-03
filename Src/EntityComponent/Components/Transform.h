@@ -31,14 +31,12 @@ namespace me {
 
 		/**
 		Get the position vector of the Transform object.
-
 		@return A Vector3 object representing the position.
 		*/
 		Vector3 getPosition();
 
 		/**
 		Get the linear velocity vector of the Transform object.
-
 		@return A Vector3 object representing the linear velocity.
 		*/
 		Vector3 getVelocity();
@@ -50,56 +48,48 @@ namespace me {
 
 		/**
 		Get the scale vector of the Transform object.
-
 		@return A Vector3 object representing the scale.
 		*/
 		Vector3 getScale();
 
 		/**
 		Set the position vector of the Transform object.
-
 		@param newPosition A Vector3 object representing the new position.
 		*/
 		void setPosition(Vector3 newPosition);
 
 		/**
 		Set the linear velocity vector of the Transform object.
-
 		@param newPosition A Vector3 object representing the new linear velocity.
 		*/
 		void setVelocity(Vector3 newVelocity);
 
 		/**
 		Set the rotation vector of the Transform object.
-
 		@param newRotation A Vector3 object representing the new rotation.
 		*/
 		void setRotation(Vector3 newRotation);
 
 		/**
 		Set the rotation vector of the Transform object.
-
 		@param newRotation A Vector4 object representing the new rotation.
 		*/
 		void setRotation(Vector4 newRotation);
 
 		/**
 		Set the scale vector of the Transform object.
-
 		@param newScale A Vector3 object representing the new scale.
 		*/
 		void setScale(Vector3 newScale);
 
 		/**
 		Translate the Transform object by a given vector.
-
 		@param translation A Vector3 object representing the translation.
 		*/
 		void translate(Vector3 translation);
 
 		/**
 		Rotate the Transform object by a given vector.
-
 		@param degrees the number of degrees to turn
 		@param degrees the axis where to apply the rotation 
 		*/
@@ -107,7 +97,6 @@ namespace me {
 
 		/**
 		Scale the Transform object by a given factor.
-
 		@param scaleF A float representing the scale factor.
 		*/
 		void scaleF(float scale);
@@ -115,21 +104,18 @@ namespace me {
 
 		/*
 		Vector Right of the transform
-
 		@return The vector3 value of the vector right along x axis
 		*/
 		Vector3 right();
 
 		/*
 		Vector Up of the transform
-
 		@return The vector3 value of the vector up along y axis
 		*/
 		Vector3 up();
 
 		/*
 		Vector Forward of the transform
-
 		@return The vector3 value of the vector forward along z axis
 		*/
 		Vector3 forward();
@@ -141,14 +127,12 @@ namespace me {
 
 		/**
 		 Add a child Transform object to the Transform object.
-
 		 @param child A pointer to the child Transform object.
 		*/
 		void addChild(Transform* child);
 
 		/**
 		Remove a child Transform object from the Transform object.
-
 		@param child A pointer to the child Transform object.
 		*/
 		void removeChild(Transform* child);
@@ -156,7 +140,6 @@ namespace me {
 		/**
 		Returns the child transform at the specified index.
 		Returns nullptr if the index is out of range or if there are no children.
-
 		@param index The index of the child transform to retrieve.
 		 */
 		Transform* getChild(int index);
@@ -181,7 +164,6 @@ namespace me {
 
 		/**
 		Sets the name of the parent entity.
-
 		 @param name The name of the parent.
 		*/
 		void setParentName(std::string name);

@@ -33,10 +33,6 @@ void me::AudioListener::update(const double& dt)
 	Vector3 forward = mEntity->getComponent<Transform>("transform")->forward();
 
 	Vector3 v = { (position.x - lastPosition.x)*float(dt),(position.y - lastPosition.y)*float(dt),(position.z - lastPosition.z)*float(dt)};
-	//
-	//std::cout <<"Pos" << " " << position.x << " " << position.y << " " << position.z << "\n";
-	//std::cout <<"v" << " "<< v.x << " " << v.y << " " << v.z << "\n";
-	//std::cout <<"Vel" << " "<< velocity.x << " " << velocity.y << " " << velocity.z << "\n";
 
 	lastPosition = position;
 

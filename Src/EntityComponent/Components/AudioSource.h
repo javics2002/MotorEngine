@@ -104,16 +104,19 @@ namespace me {
 
 		/**
 		* Set if the audio will play in a loop
+		* @param loop True if the sound should be looping, false otherwise
 		*/
 		void setLoop(bool loop);
 
 		/**
 		* Set if the audio will be a 3D audio
+		* @param threeD if we need 3d sound
 		*/
 		void setIsThreeD(bool threeD);
 
 		/**
 		* Set if the adio will play at the start
+		* @param playOnStart True if the sound should starting played, false otherwise
 		*/
 		void setPlayOnStart(bool playOnStart);
 

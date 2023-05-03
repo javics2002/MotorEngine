@@ -54,11 +54,13 @@ namespace me {
 
 		/**
 		Set it is static entity or not
+		@param stat : true if static, false if not
 		*/
 		void setStatic(bool stat);
 
 		/**
 		Set the zOrder
+		@param zOrder : Determines the depth of the overlay
 		*/
 		void setZOrder(int zOrder);
 

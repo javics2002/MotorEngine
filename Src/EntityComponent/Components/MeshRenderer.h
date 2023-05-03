@@ -54,15 +54,18 @@ namespace me {
 		void setMaterial(std::string materialName);
 		/**
 		 Set name to mesh (renderMesh in rendermanager array).
+		 @param name: name for map and for entity that attached in node
 		*/
 		void setName(std::string name);
 		/**
 		 Set meshname to mesh (renderMesh in rendermanager array).
+		 @param meshName: name of .mesh file
 		*/
 		void setMeshName(std::string meshName);
 
 		/**
 		Set it is static entity or not
+		 @param stat: true if mesh is static, false if not
 		*/
 		void setStatic(bool stat);
 

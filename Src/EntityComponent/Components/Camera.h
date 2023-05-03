@@ -62,27 +62,47 @@ namespace me {
 		inline std::string getName() {
 			return mName;
 		}
-
+		/**
+		 * Set the distance from which objects will begin to render.
+		 * @param nearDistance The distance to set.
+		 */
 		inline void setNearDistance(float nearDistance) {
 			mNearDistance = nearDistance;
 		}
 
+		/**
+		 * Set the distance at which objects stop rendering.
+		 * @param farDistance The distance to set.
+		 */
 		inline void setFarDistance(float farDistance) {
 			mFarDistance = farDistance;
 		}
-
+		/**
+		 * Set whether the viewport calculates the aspect ratio automatically.
+		 * @param autoRatio The value to set.
+		 */
 		inline void setAutoRadio(bool autoRatio) {
 			mAutoRatio = autoRatio;
 		}
-
+		/**
+		 * Set the relative order of the viewport.
+		 * @param zOrder The value to set.
+		 */
 		inline void setZOrder(int zOrder) {
 			mZOrder = zOrder;
 		}
 
+		/**
+		 * Set the point to look at.
+		 * @param lookAt The vector to set.
+		 */
 		inline void setLookAt(Vector3 lookAt) {
 			mLookAt = lookAt;
 		}
-
+		/**
+		 * Set the color of the background.
+		 * @param colour The vector to set.
+		 */
 		inline void setBackgroundColour(Vector4 colour) {
 			mBackgroundColour = colour;
 		}

@@ -63,12 +63,6 @@ namespace me {
 		void setColour(Vector3 newColor);
 
 
-		/**
-		* Set the width of the UIText instance
-		* @param widthValue The new width of the UIText
-		*/
-		void setWidth(double widthValue);
-
 
 		/**
 		* Set the height of the UIText instance

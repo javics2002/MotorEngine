@@ -81,9 +81,20 @@ namespace me {
 		*/
 		virtual void lateUpdate(const double& dt);
 
-
+		/**
+		Executed when a collision starts.
+		@param other Entity that collides with this entity.
+		*/
 		virtual void onCollisionEnter(Entity* other);
+		/**
+		Executed when a collision starts and every frame it lasts.
+		@param other Entity that collides with this entity.
+		*/
 		virtual void onCollisionStay(Entity* other);
+		/**
+		Executed when a collision ends.
+		@param other Entity that collides with this entity.
+		*/
 		virtual void onCollisionExit(Entity* other);
 
 	protected:

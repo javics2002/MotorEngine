@@ -55,25 +55,30 @@ namespace me {
 
 		/**
 		Set its emitting state
+		@param emitted Whether to emit particles or not.
 		*/
 		void setEmitting(bool emitted);
 
 		/**
 		 Set name to mesh (renderMesh in rendermanager array).
+		 @param name The name of the particle system.
 		*/
 		void setName(std::string name);
 		/**
 		 Set meshname to mesh (renderMesh in rendermanager array).
+		 @param particleName The name of the particle system template.
 		*/
 		void setParticleName(std::string particleName);
 
 
 		/**
 		Set its offset position respective to its entity.
+		@param offset The offset position.
 		*/
 		void setOffsetPos(Vector3 offset);
 		/**
 		Set its offset scale respective to its entity.
+		@param offset The offset scale.
 		*/
 		void setOffsetScale(Vector3 offset);
 			

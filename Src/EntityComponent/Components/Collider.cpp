@@ -19,13 +19,12 @@ void Collider::start()
 
 void Collider::onCollisionEnter(Entity* other)
 {
-	//std::cout << "Im " << mEntity->getName() << " and I have collided with " << other->getName() << std::endl;
+	
 	mEntity->onCollisionEnter(other);
 }
 
 void Collider::onCollisionStay(Entity* other)
 {
-	//std::cout << "Stay collision\n";
 	mEntity->onCollisionStay(other);
 }
 
