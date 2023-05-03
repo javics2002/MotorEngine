@@ -7,13 +7,14 @@
 #include "Physics/PhysicsEnums.h"
 #include "Utils/Vector3.h"
 
+#include "Collider.h"
+
 class btRigidBody;
 class btTransform;
 class btQuaternion;
 class btCollisionShape;
 
 namespace me{
-	class Collider;
 	class Transform;
 	/**
 	Enables physical behaviour for the entity, based on its

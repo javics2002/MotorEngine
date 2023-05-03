@@ -1,11 +1,9 @@
 #include "RigidBody.h"
 
 #include "BulletDynamics/Dynamics/btRigidBody.h"
-
 #include "Physics/PhysicsManager.h"
 #include "EntityComponent/Entity.h"
 
-#include "Collider.h"
 #include "Transform.h"
 
 #include <cassert>

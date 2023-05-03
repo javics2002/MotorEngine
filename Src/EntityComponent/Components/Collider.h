@@ -4,9 +4,9 @@
 
 #include "Component.h"
 
-class Entity;
-
 namespace me{
+
+	class Entity;
 	/**
 	Enables the entity's onCollisionEnter, onCollisionStay and onCollisionExit callbacks
 	*/
