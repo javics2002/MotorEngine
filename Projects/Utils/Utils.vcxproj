@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\Utils\SimpleLerp.cpp" />
     <ClCompile Include="..\..\Src\Utils\Time.cpp" />
     <ClCompile Include="..\..\Src\Utils\Timer.cpp" />
     <ClCompile Include="..\..\Src\Utils\Vector2.cpp" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Utils\checkML.h" />
+    <ClInclude Include="..\..\Src\Utils\SimpleLerp.h" />
     <ClInclude Include="..\..\Src\Utils\Singleton.h" />
     <ClInclude Include="..\..\Src\Utils\Time.h" />
     <ClInclude Include="..\..\Src\Utils\Timer.h" />

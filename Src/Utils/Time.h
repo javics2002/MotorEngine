@@ -9,7 +9,7 @@ namespace me {
 	class Time provides/has information about time between frames,
 	time scale and framerate.
 	The default units are seconds and FPS unless specified otherwise.
-	The user has to call the update method everyframe
+	Update method must still be called every frame.
 	*/
 	class __MOTORENGINE_API Time
 	{
@@ -23,24 +23,50 @@ namespace me {
 		*/
 		double update();
 
+		/*
+		@returns Current time since last frame.
+		*/
 		double getDeltaTime();
+
+		/*
+		@returns Current target fixed time between frames.
+		*/
 		double getFixedDeltaTime();
 
+		/*
+		@returns Time left before next frame.
+		*/
 		double timeToNextFrame();
+
+		/*
+		@returns Time left before next frame, in milliseconds.
+		*/
 		long long millisecondsToNextFrame();
 
 		/**
-		Read Only Function used to get the target frame rate
+		Read-Only Function used to get the target frame rate
 		@returns A float number representing the target frame rate (Example: 60fps, 144fps)
 		*/
 		double getTargetFrameRate();
+
+		/*
+		Sets the target framerate (time between frames).
+		*/
 		void setTargetFrameRate(float targetFrameRate);
 
+		/*
+		Sets the time scale (running time multiplier, 0.5f would be slow-mo).
+		*/
 		void setTimeScale(float timeScale);
+
+		/*
+		Read-Only: Get the time scale (running time multiplier, 0.5f would be slow-mo).
+		@returns Current time scale.
+		*/
 		float getTimeScale();
 
 		/*
-		@returns Current global time in seconds
+		@returns Current global time in seconds.
 		*/
 		double obtainCurrentTime();
 

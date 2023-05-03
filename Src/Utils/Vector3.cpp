@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include "SimpleLerp.h"
 
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>
@@ -8,6 +9,24 @@
 #define MY_PI 3.14159265358979323846
 
 using namespace me;
+
+Vector3::Vector3() {
+	x = 0;
+	y = 0;
+	z = 0;
+}
+
+Vector3::Vector3(float a, float b, float c) {
+	x = a;
+	y = b;
+	z = c;
+}
+
+Vector3::Vector3(const Vector3& v) {
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
 
  Vector3 Vector3::operator-(const Vector3& v)
 {
@@ -87,7 +106,7 @@ bool Vector3::operator!=(const Vector3& v)
 
 Vector3 Vector3::lerp(const Vector3& a, const Vector3& b, float f)
 {
-	return Vector3(lerp(a.x, b.x, f), lerp(a.y, b.y, f), lerp(a.z, b.z, f));
+	return Vector3(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f), SimpleLerp::Lerp(a.z, b.z, f));
 }
 
 float Vector3::magnitude()
@@ -109,45 +128,6 @@ Vector3 me::Vector3::translate(Vector3 startPoint, Vector3 direction)
 	Vector3 newStartPoint = startPoint + direction;
 	Vector3 newEndPoint = Vector3(x + direction.x, y + direction.y, z + direction.z);
 	return Vector3(newEndPoint.x - newStartPoint.x, newEndPoint.y - newStartPoint.y, newEndPoint.z - newStartPoint.z);
-}
-
-Vector3 me::Vector3::Rx(float degrees)
-{
-	float radians = degrees * MY_PI / 180.0;
-	float cosAngle = cos(radians);
-	float sinAngle = sin(radians);
-
-	float newX = x;
-	float newY = y * cosAngle - z * sinAngle;
-	float newZ = y * sinAngle + z * cosAngle;
-
-	return Vector3(newX, newY, newZ);
-}
-
-Vector3 me::Vector3::Ry(float degrees)
-{
-	float radians = degrees * MY_PI / 180.0;
-	float cosAngle = cos(radians);
-	float sinAngle = sin(radians);
-
-	float newX = x * cosAngle + z * sinAngle;
-	float newY = y;
-	float newZ = -x * sinAngle + z * cosAngle;
-
-	return Vector3(newX, newY, newZ);
-}
-
-Vector3 me::Vector3::Rz(float degrees)
-{
-	float radians = degrees * MY_PI / 180.0;
-	float cosAngle = cos(radians);
-	float sinAngle = sin(radians);
-
-	float newX = x * cosAngle - y * sinAngle;
-	float newY = x * sinAngle + y * cosAngle;
-	float newZ = z;
-
-	return Vector3(newX, newY, newZ);
 }
 
 float Vector3::dot(const Vector3& v)
@@ -206,11 +186,6 @@ std::ostream& operator<<(std::ostream& os, const Vector3 & v)
 	return os;
 }
 
-float Vector3::angle(const Vector3 & v)
-{
-	return 20.f; //acos((v) / sqrt(magnitude() * v.magnitude())) * 180 / M_PI_CONST;
-}
-
 Ogre::Vector3f me::Vector3::v3ToOgreV3() const
 {
 	return Ogre::Vector3f(x, y, z);
@@ -226,11 +201,6 @@ FMOD_VECTOR me::Vector3::v3ToFmodV3() const
 	FMOD_VECTOR newVector;
 	newVector.x = x; newVector.y = y; newVector.z = z;
 	return newVector;
-}
-
-float Vector3::lerp(float a, float b, float f)
-{
-	return a + f * (b - a);
 }
 
 std::ostream& me::operator<<(std::ostream& os, const Vector3& v)

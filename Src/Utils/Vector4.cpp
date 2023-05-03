@@ -1,5 +1,6 @@
 #include "Vector4.h"
 #include "Vector3.h"
+#include "SimpleLerp.h"
 
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
@@ -7,11 +8,6 @@
 #include <LinearMath/btQuaternion.h>
 
 using namespace me;
-
-float Vector4::lerp(float a, float b, float f)
-{
-	return a + f * (b - a);
-}
 
 Vector4::Vector4()
 {
@@ -67,7 +63,7 @@ Vector4::Vector4(const Vector4 &v) {
 
 Vector4 Vector4::lerp(const Vector4& a, const Vector4& b, float f)
 {
-	return Vector4(lerp(a.x, b.x, f), lerp(a.y, b.y, f), lerp(a.z, b.z, f), lerp(a.w, b.w, f));
+	return Vector4(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f), SimpleLerp::Lerp(a.z, b.z, f), SimpleLerp::Lerp(a.w, b.w, f));
 }
 
 void Vector4::operator=(const Vector4& v)

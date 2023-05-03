@@ -16,7 +16,7 @@ namespace me {
 
 	/*
 	Timer will measure time, whether in real seconds or HH:MM:SS.mmm.
-	The user has to call the update method every frame.
+	Update must be called every frame.
 	*/
 	class __MOTORENGINE_API Timer {
 		bool mRunning;
@@ -31,10 +31,12 @@ namespace me {
 		Starts or resumes the timer.
 		*/
 		void resume();
+
 		/*
 		Pauses the timer.
 		*/
 		void pause();
+
 		/*
 		Resets the timer to 0.
 		*/
@@ -43,13 +45,15 @@ namespace me {
 		void update(float dt);
 
 		/*
-		@returns TimerData struct.
+		@returns TimerData struct, includes raw and formatted timer info.
 		*/
 		TimerData getTimerData();
+
 		/*
-		@returns rawSeconds of timerData.
+		@returns Unformatted seconds of timerData.
 		*/
 		float getRawSeconds();
+
 		/*
 		@param includeHours Whether the hours are removed from the string.
 		@returns A string containing the time formatted like HH:MM:SS.mmm.

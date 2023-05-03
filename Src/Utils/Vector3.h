@@ -35,30 +35,13 @@ namespace me {
 	class __MOTORENGINE_API Vector3
 	{
 
-	private:
-		static float lerp(float a, float b, float f);
-
 	public:
 		float x, y, z;
 
 
-		Vector3() {
-			x = 0;
-			y = 0;
-			z = 0;
-		}
-
-		Vector3(float a, float b, float c) {
-			x = a;
-			y = b;
-			z = c;
-		}
-
-		Vector3(const Vector3& v) {
-			x = v.x;
-			y = v.y;
-			z = v.z;
-		}
+		Vector3();
+		Vector3(float a, float b, float c);
+		Vector3(const Vector3& v);
 
 		/**
 		Returns the difference between this vector and another vector
@@ -66,7 +49,6 @@ namespace me {
 		@param v The other vector to subtract from this vector
 		@return The difference between this vector and the other vector
 		*/
-
 		Vector3 operator-(const Vector3& v);
 
 		/**
@@ -184,10 +166,6 @@ namespace me {
 		*/
 		Vector3 translate(Vector3 startPoint, Vector3 direction);
 
-		Vector3 Rx(float degrees);
-		Vector3 Ry(float degrees);
-		Vector3 Rz(float degrees);
-
 		/**
 		Calculate the dot product between this vector and another vector "v"
 
@@ -248,23 +226,6 @@ namespace me {
 		float distance(const Vector3 & v);
 
 		/**
-		Returns the angle between this vector and another vector "v"
-
-		@param v The other vector
-		@return The angle between the two vectors in degrees
-		*/
-		float angle(const Vector3 & v);
-
-		/**
-		Returns a formatted string representation of the vector
-		
-		@param os The output stream to write to
-		@param v The vector to format
-		@return The output stream with the formatted string
-		*/
-		friend std::ostream& operator<<(std::ostream& os, const Vector3 & v);
-
-		/**
 		Returns the conversion of a Vector3 to an Ogre::Vector3f
 		*/
 		Ogre::Vector3f v3ToOgreV3() const;
@@ -278,6 +239,15 @@ namespace me {
 		Returns the conversion of a Vector3 to an FMOD_VECTOR
 		*/
 		FMOD_VECTOR v3ToFmodV3() const;
+
+		/**
+		Returns a formatted string representation of the vector
+		
+		@param os The output stream to write to
+		@param v The vector to format
+		@return The output stream with the formatted string
+		*/
+		friend std::ostream& operator<<(std::ostream& os, const Vector3 & v);
 
 	};
 }

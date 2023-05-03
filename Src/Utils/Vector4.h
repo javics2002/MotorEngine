@@ -23,17 +23,6 @@ namespace me {
 	class __MOTORENGINE_API Vector4
 	{
 
-	private:
-
-		/**
-		* Returns the linear interpolation between "a" and "b" by a factor of "f"
-		*
-		* @param a The starting value of the interpolation
-		* @param b The ending value of the interpolation
-		* @param f The factor by which to interpolate between "a" and "b"
-		* @return The linear interpolation between "a" and "b" by a factor of "f"
-		*/
-		float lerp(float a, float b, float f);
 	public:
 
 		float x, y, z, w;
@@ -58,21 +47,32 @@ namespace me {
 		*/
 		Vector4 lerp(const Vector4& a, const Vector4& b, float f);
 
+		/**
+		*  Sets the left vector's values to equal the right one's.
+		*  @param v Other vector.
+		*/
 		void operator=(const Vector4& v);
+
+		/**
+		*  Sets the left vector's values to equal the right one's.
+		*  @param v Other vector.
+		*/
 		void operator=(const Vector4* v);
 
 		/**
-		Return the conversion Vector3 - Ogre::Quaternion
+		@return Conversion Vector3 - Ogre::Quaternion
 		*/
 		Ogre::Quaternion v4ToOgreQuaternion() const;
 
 		/**
-		Returns the current Rotation in btQuaternion
+		@return Current Rotation in btQuaternion
 		*/
 		btQuaternion getRotationInBullet() const;
 
 		/*
-		Do the rotation in specify axis
+		Rotate on a given axis.
+		@param degrees Rotation in degrees.
+		@param axis Axis to rotate on. Simple values like (0, 1, 0) are recommended.
 		*/
 		void rotate(float degrees, Vector3 axis);
 
