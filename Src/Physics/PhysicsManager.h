@@ -104,7 +104,7 @@ namespace me {
 		btRigidBody* createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
 			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
-		void update(const double& dt);
+		void update(const double& dt, const double& fixedTimeStep);
 	};
 
 	/**

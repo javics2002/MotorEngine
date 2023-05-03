@@ -77,7 +77,7 @@ bool MotorEngine::setup(std::string gameName)
 	physicsManager().start();
 
 	// Start time
-	mTime = new Time();
+	mTime = new Time(60);
 	
 	return entryPoint();
 }
@@ -96,7 +96,7 @@ void MotorEngine::loop()
 		dt = mTime->update();
 		
 		// Update the scene
-		physicsManager().update(mTime->getFixedDeltaTime());
+		physicsManager().update(dt, 1 / mTime->getTargetFrameRate());
 
 		soundManager().systemRefresh(dt);
 
