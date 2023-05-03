@@ -40,11 +40,11 @@ void me::AudioSource::play()
 {
     Vector3 pos = mTransform->getPosition();
     Vector3 vel = mTransform->getVelocity();
-   soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel);
-   if (!firstPlayed) {
+   soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel, mVolume);
+   /*if (!firstPlayed) {
        soundManager().setVolume(mSoundName, mVolume);
        firstPlayed = true;
-   }
+   }*/
     mPlaying = true;
 }
 

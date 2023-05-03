@@ -23,7 +23,7 @@ typedef int CHANNEL_NUMBER;
 
 namespace me {
 	//Maximum number of channels allowed to exist in this particular system setting.
-	const int MAX_CHANNELS = 36;
+	const int MAX_CHANNELS = 100;
 	//Scaling factor for how much the pitch varies due to doppler shifting in 3D sound.
 	const float DOPPLER_SCALE = 1.0f;
 	//Relative distance factor, compared to 1.0 meters. How many units per meter my engine have.
@@ -208,7 +208,7 @@ namespace me {
 		@param channelVel : the channel' group where the sound will played on's velocity in 3D space used for doppler.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel);
+		bool playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel, float channelVolume);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundName : the especific name of the sound which speed will be changed.

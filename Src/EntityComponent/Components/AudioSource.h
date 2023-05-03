@@ -142,7 +142,6 @@ namespace me {
 		bool mLoop; // Whether the audio should loop or not
 		bool mIsThreeD;
 		bool mPlayOnStart;
-		bool firstPlayed = false;
 
 
 		Transform* mTransform = nullptr;
