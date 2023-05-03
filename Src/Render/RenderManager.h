@@ -224,11 +224,16 @@ namespace me {
 
 		/*
 		Locks camera orientation in Y Axis
-
 		@param bFixed: lock boolean
 		*/
 		bool setCameraFixedY(std::string name, bool bFixed);
 
+		/**
+		*Enable or disable the overlay for a camera's viewport
+		*@param name: the name of the camera
+		*@param enabled: whether the overlay should be enabled (true) or disabled (false)
+		*@return true if the operation succeeded, false otherwise
+		*/
 		bool setViewportOverlayEnabled(std::string name, bool enabled);
 
 		/**
@@ -243,9 +248,11 @@ namespace me {
 		*/
 		bool setViewportDimension(std::string name, float left, float top, float width, float height);
 
-		//destroy OgreCamera created 
+		/**
+		Destroy OgreCamera
+		@param name: name of camera
+		*/
 		void destroyCamera(std::string name);
-		
 
 		/**
 		Create the light with this name
@@ -257,7 +264,10 @@ namespace me {
 		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
 			const Vector3& color);
 
-		//destroy Light created
+		/**
+		Destroy Light
+		@param name: name of light
+		*/
 		void destroyLight(std::string name);
 
 		/**
@@ -293,24 +303,68 @@ namespace me {
 		@return true: if succeed		
 		*/
 		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale);
+
+
+		/**
+		Set Transform info to the mesh with this name (for static object)
+		@param name: name of ogreMesh
+		@param pos: position of ogreMesh
+		@param scale: scale of ogreMesh
+		@param rot: rotation of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
-		//set position info to the mesh with this name
+		
+		/**
+		Set position info to the mesh with this name
+		@param name: name of ogreMesh
+		@param pos: position of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setMeshPosition(std::string name, Vector3 pos);
-		//set scale info to the mesh with this name
+		/**
+		Set scale info to the mesh with this name
+		@param name: name of ogreMesh
+		@param scale: scale of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setMeshScale(std::string name, Vector3 scale);
-		//set rotation info to the mesh with this name
+		/**
+		Set rotation info to the mesh with this name
+		@param name: name of ogreMesh
+		@param rot: rotation of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setMeshRotation(std::string name, Vector4 rot);
-
-		//set material to the mesh with this name
+		/**
+		Set material to the mesh with this name
+		@param name: name of ogreMesh
+		@param nameMaterial: new material name for ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setMeshMaterial(std::string name, std::string nameMaterial);
-
-		//active the mesh from scene
+		/**
+		Active the mesh from scene
+		@param name: name of ogreMesh
+		*/
 		void activeMesh(std::string name);
 
-		//desactive the mesh from scene
+		/**
+		Desactive the mesh from scene
+		@param name: name of ogreMesh
+		*/
 		void desactiveMesh(std::string name);
 
-		//destroy OgreMesh created 
+		
+		/**
+		Destroy OgreMesh created 
+		@param name: name of ogreMesh
+		*/
 		void destroyMesh(std::string name);
 
 		//destroy Particle
@@ -326,28 +380,56 @@ namespace me {
 		@return true: if succeeded	
 		*/
 		bool setUISpriteTransform(std::string name, Vector2 pos, Vector2 scale, float rot);
-		//set position info to the mesh with this name
-		bool setUISpritePosition(std::string name, Vector2 pos);
-		//set scale info to the mesh with this name
 
+		/**
+		Set position info to the mesh with this name
+		@param name: name of UISprite
+		@param pos: position of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
+		bool setUISpritePosition(std::string name, Vector2 pos);
+		/**
+		Set scale info to the mesh with this name
+		@param name: name of UISprite
+		@param scale: scale of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
 		bool setUISpriteScale(std::string name, Vector2 scale);
-		//set rotation info to the mesh with this name
+		/**
+		Set rotation info to the mesh with this name
+		@param name: name of UISprite
+		@param rot: rotation of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
 		bool setUISpriteRotation(std::string name, float rot);
 
-		//set material to the mesh with this name
+		/**
+		Set material to the mesh with this name
+		@param name: name of UISprite
+		@param nameMaterial: maetrial name for UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
 		bool setUISpriteMaterial(std::string name, std::string nameMaterial);
 
-		//destroy OgreMesh created 
+		/**
+		Destroy UISprite created
+		@param name: name of UISprite to destroy
+		*/
 		void destroyUISprite(std::string name);
 
 		/**
 		Create the ogreParticleSystem with this name
-		@param name: name of Ogre::SceneNode &&unordered_map
+		@param name: name of Ogre::SceneNode && unordered_map
 		@param nameParticle: name of partcile system that is written int ParticleResource.particle
 		@return false: if renamed
 		@return true: if succeed
 		*/
 		bool createParticle(std::string name, std::string nameMesh);
+
 		/**
 		Set Transform info to the particle with this name (for static object)
 		@param name: name of ogreParticleSystem
@@ -357,15 +439,52 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale);
+
+		/**
+		Set Transform info to the particle with this name (for static object)
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@param rot: rotation of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
-		//set position info to the particle with this name
+
+		/**
+		Set position info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticlePosition(std::string name, Vector3 pos);
-		//set scale info to the particle with this name
+
+		/**
+		Set scale info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleScale(std::string name, Vector3 scale);
-		//set rotation info to the particle with this name
+		
+		/**
+		Set rotation info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param rot: rotation of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleRotation(std::string name, Vector4 rot);
 
-		//set emitting state to the particle with this name
+		/**
+		Set emitting state to the particle with this name		
+		@param name: name of ogreParticleSystem
+		@param emitted: whether the particle should be enabled (true) or disabled (false)
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleEmitting(std::string name, bool emitted);
 
 		
@@ -393,10 +512,6 @@ namespace me {
 		*/
 		Ogre::SceneNode* getRootSceneNode();
 
-		/**
-		Example scene where rendering a sinbad with 2 camera,viewport
-		*/
-		//void scene1();
 
 		/**
 		Render one frame of Ogre::Root -> current scene manager
@@ -408,10 +523,14 @@ namespace me {
 		*/
 		Ogre::Entity* getOgreEntity(std::string name);
 
-		/*Getter for scene manager
+		/*
+		Getter for scene manager
 		*/
 		Ogre::SceneManager* getSceneManager();
 
+		/*
+		Getter for OgreOverlayManager
+		*/	
 		Ogre::OverlayManager* getOgreManager();
 
 

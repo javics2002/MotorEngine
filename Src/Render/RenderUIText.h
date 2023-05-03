@@ -22,7 +22,7 @@ namespace me {
 
 	private:
 	protected:
-		//Reference to Ogre::Overlay (Panel) for transformation
+		//Reference to Ogre::Overlay (Overlay) for transformation
 		Ogre::Overlay* mOverlay;
 
 		Ogre::OverlayContainer* mCont;
@@ -42,58 +42,64 @@ namespace me {
 
 		~RenderUIText();
 
-		//Set position, rotation and scale of panel in Overlay
+
+		/**
+		* Set position, scale and rotation to the overlay and overlayElement
+		* @param pos : position of overlay
+		* @param scale : scale of overlay
+		* @param rot : rotation of overlayElement
+		*/
 		void setTransform(Vector2 pos, Vector2 scale, float rot);
 
 
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set position to the overlay and overlayElement
+		* @param pos : position of overlay
 		*/
 		void setPosition(Vector2 pos);
 
 
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set scale to the overlay and overlayElement
+		* @param scale : Width and height for the overlayElement
 		*/
 		void setDimensions(Vector2 scale);
 
 
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set rotation to the overlay and overlayElement
+		* @param rot : rotation of overlayElement
 		*/
 		void setRotation(float rot);
 		
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set the text used by the RenderUIText instance
+		* @param text The text of the textAreaOverlayElement
 		*/
 		void setText(std::string text);
 
 		/**
-		* Set the font used by the UIText instance
+		* Set the font used by the RenderUIText instance
 		* @param fontName The name of the font to use
 		*/
 		void setFont(std::string fontName);
 
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set char height to the textElement
+		* @param charHeight Size of the char
 		*/
 		void setCharHeight(float charHeight);	
 		
 		
 		/**
-		* Set the font used by the UIText instance
-		* @param fontName The name of the font to use
+		* Set colour used by the RenderUIText instance
+		* @param colour Vector3 for the colour used
 		*/
 		void setColour(Vector3 colour);
 
 		/*
-		* Set whether the UIText instance is active or not
-		* @param active True if the UIText should be active, false otherwise
+		* Set whether the RenderUIText instance is active or not
+		* @param active True if the RenderUIText should be active, false otherwise
 		*/
 		void setActive(bool active);
 

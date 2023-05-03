@@ -35,8 +35,9 @@ namespace me {
 		@param root:reference of Ogre::Root created by OgreManager
 		*/
 		void createWindow(Ogre::Root* root);
-		//Set a window input's grab mode
+		/*Set a window input's grab mode
 		void setWindowGrab(bool _grab);
+		*/
 
 	public:
 		//Store windowName
@@ -48,9 +49,15 @@ namespace me {
 		@param root:reference of Ogre::Root created by OgreManager
 		*/
 		void init(Ogre::Root* root);
-		//return Ogre::Render window of linked window
+
+		/*
+		* return Ogre::Render window of linked window
+		*/
 		Ogre::RenderWindow* getRenderWindow();
-		//return SDL window of linked window
+
+		/*
+		* return SDL window of linked window
+		*/
 		SDL_Window* getSdlWindow();
 
 

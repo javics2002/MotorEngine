@@ -43,7 +43,7 @@ namespace me {
 		Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, uint32_t windowFlags);
 
 		//Reference to SDL Window class
-		SDL_Window* window;
+		SDL_Window* mWindow;
 
 		int mWidth, mHeight;
 

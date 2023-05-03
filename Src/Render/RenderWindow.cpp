@@ -29,7 +29,6 @@ void RenderWindow::init(Ogre::Root* root)
 {
 	root->initialise(false, mWindowName);
 	createWindow(root);
-	//setWindowGrab(true);
 }
 
 Ogre::RenderWindow* me::RenderWindow::getRenderWindow()
@@ -67,8 +66,6 @@ void RenderWindow::createWindow(Ogre::Root* root)
 		flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_INPUT_FOCUS;
 
 	mSdlWindow = window().get();
-	
-	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
 	SDL_SysWMinfo wmInfo;
 	SDL_version version;
@@ -80,7 +77,6 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	mRenderWindow = root->createRenderWindow(mWindowName, window().getWindowWidth(), window().getWindowHeight(), false, &miscParams);
 
 	SDL_ShowCursor();
-	//SDL_HideCursor();
 
 }
 
@@ -89,7 +85,6 @@ void RenderWindow::setWindowGrab(bool bGrab)
 {
 	SDL_bool grab = SDL_bool(bGrab);
 	SDL_SetWindowGrab(mSdlWindow, grab);
-	//SDL_SetRelativeMouseMode(grab);
 	
 	grab ? SDL_ShowCursor() : SDL_HideCursor();
 }

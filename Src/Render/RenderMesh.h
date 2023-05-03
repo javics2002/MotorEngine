@@ -30,6 +30,7 @@ namespace me {
 
 
 	public:
+
 		/**
 		Assign information and create Ogre::Entity with the given mesh and attach to mNode
 		@param node: mNode for attach Ogre::Entity created
@@ -38,14 +39,42 @@ namespace me {
 		*/
 		RenderMesh(Ogre::SceneNode* node,std::string meshName);
 		~RenderMesh();
-		//Set position, rotation and scale of mNode
+
+		/**
+		Set Transform info to the mesh 
+		@param pos: position of ogreMesh
+		@param scale: scale of ogreMesh
+		@param rot: rotation of ogreMesh
+		*/
 		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
+
+		/**
+		Set position info to the mesh
+		@param pos: position of ogreMesh
+		*/
 		void setPosition(const Ogre::Vector3f &pos);
+
+		/**
+		Set scale info to the mesh
+		@param scale: scale of ogreMesh
+		*/
 		void setScale(const Ogre::Vector3f &scale);
+
+		/**
+		Set rotation info to the mesh
+		@param rot: rotation of ogreMesh
+		*/
 		void setRotation(Ogre::Quaternion rot);
 
 
+		/**
+		Active mesh
+		*/
 		void activeMesh();
+
+		/**
+		Desactive mesh
+		*/
 		void desactiveMesh();
 
 		/**
@@ -60,7 +89,6 @@ namespace me {
 		*/
 		void setMaterial(std::string materialName);
 		
-
 	};
 
 }

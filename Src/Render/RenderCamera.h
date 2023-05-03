@@ -37,7 +37,11 @@ namespace me {
 		RenderCamera();
 		~RenderCamera();
 
-		//Assign references
+		/**Assign references
+		@param CameraNode: Camera sceneNode reference
+		@param SceneMngr: SceneManager reference
+		@param RenderWindow: RenderWindow reference
+		*/
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );
 
 		/**Create mCamera with this informationand create mViewport for it
@@ -49,11 +53,19 @@ namespace me {
 		*/
 		void createCamera(const char* name, float nearDist, float farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 
-		//Set position to mCameraNode
+		/**Set position to mCameraNode
+		@param pos: position of mCamera
+		*/
 		void setPosition(const Vector3& pos);
 
+		/**Set position to mCameraNode
+		@param bFixed: set fixed if true or false
+		*/
 		void setFixedYAxis(bool bFixed);
-		//Set lookAT to mCameraNode
+
+		/**Set lookAT to mCameraNode
+		@param look: position to look at
+		*/
 		void lookAt(const Vector3& look);
 		/**
 		Set dimension to mViewport
@@ -64,11 +76,11 @@ namespace me {
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
 
-		//enabled overlay display
+
+		/**Set lookAT to mCameraNode
+		@param enabled: whether the overlay should be enabled (true) or disabled (false)	
+		*/
 		void setOverlayEnabled(bool enabled);
-		
-		//void setPosition(Vector3 pos);
-		//void lookAt(Vector3 pos);
 
 	};
 

@@ -42,13 +42,26 @@ namespace me {
 
 		~RenderUISprite();
 
-		//Set position, rotation and scale of panel in Overlay
+		/**Set position to UISprite
+		@param pos: position of UISprite
+		@param scale: scale of UISprite
+		@param rot: rotation of UISprite
+		*/
 		void setTransform(Vector2 pos, Vector2 scale, float rot);
 
+		/**Set position to UISprite
+		@param pos: position of UISprite
+		*/
 		void setPosition(Vector2 pos);
 
+		/**Set scale to UISprite
+		@param pos: position of UISprite
+		*/
 		void setScale(Vector2 scale);
 
+		/**Set rotation to UISprite
+		@param pos: position of UISprite
+		*/
 		void setRotation(float rot);
 
 		/**
