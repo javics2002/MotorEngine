@@ -1,8 +1,3 @@
-/**
-The main function of this class is to be the wrapper 
-of a set of components.
-*/
-
 #pragma once
 
 #ifndef __ENTITYCOMPONENT_ENTITY
@@ -21,8 +16,8 @@ namespace me {
 	/**
 	An Entity is anything that exists in a scene.
 	An Entity by itself doesn´t do anything - its behaviour is defined by the Components 
-	it possesses, which are stored in the mComponents map.
-	An Entity has a name, a reference to the scene it exists in and can be active or not.
+	it possesses, which are stored in its mComponents map.
+	An Entity has a name, a reference to the scene it exists in, and can be active or not.
 	*/
 	class __MOTORENGINE_API Entity {
 		friend Scene;
@@ -33,7 +28,7 @@ namespace me {
 		@param Scene to which it belongs.
 		@param String name to identify it.
 		*/
-		Entity(Scene* scn, const EntityName name);
+		Entity(Scene* scene, const EntityName name);
 
 		/**
 		Build the foundation of the Entity.
@@ -48,7 +43,7 @@ namespace me {
 
 		
 		/**
-		Add a new component. If the component already exists, write a cout in debug mode
+		Add a new component. If the component already exists, notify in debug mode
 		@param componentName The key of the component in the map
 		@param params std::unordered_map<std::string parameterName, std::string parameterValue> 
 		@return Reference to the new component.
@@ -82,8 +77,8 @@ namespace me {
 		
 		/**
 		Get the reference a suggested component.
-		@param key name  in the map
-		@return Reference to the component.
+		@param Component's key name in this Entity's map
+		@return Reference to the component. Nullptr if it does not exist.
 		*/
 		template<typename T>
 		inline T* getComponent(const ComponentName& componentName) {
@@ -95,7 +90,7 @@ namespace me {
 
 		/**
 		Check if the component has already been added.
-		@param key name  in the map
+		@param Component's key name in this Entity's map
 		@return Boolean confirmation.
 		*/
 		inline bool hasComponent(const ComponentName& name) {
@@ -128,7 +123,7 @@ namespace me {
 
 		/**
 		Set the entity name to the new one.
-		@param String name.
+		@param name New name.
 		*/
 		inline void setName(const EntityName name) {
 			mName = name;

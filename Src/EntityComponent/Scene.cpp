@@ -125,11 +125,11 @@ void Scene::lateUpdate(const double& dt) {
 void Scene::refresh() {
 	std::erase_if(mEntities, [](const auto& kv) {
 		return !kv.second->isActive();
-		});
+	});
 
 	std::erase_if(MGlobalEntities, [](const auto& kv) {
 		return !kv.second->isActive();
-		});
+	});
 }
 
 void Scene::processNewEntities()

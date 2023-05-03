@@ -13,8 +13,9 @@ class lua_State;
 namespace me {
     class Scene;
     class Entity;
+
     /**
-    SceneManager stores all existing scenes and swaps which one is the active one
+    SceneManager stores all existing scenes and makes one of them active 
     at will. All other scenes are inactive.
     */
     class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
@@ -28,41 +29,41 @@ namespace me {
         SceneManager();
 
         /**
-        This method is meant to be the definition
-        of the dynamic memory that has to be safely delete.
+        * Deletes scenes and clears entities, global and otherwise.
         */
         virtual ~SceneManager();
 
         /**
         Add a new Scene to the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the new scene.
         */
         Scene* addScene(const SceneName& name);
 
         /**
         Remove an scene from the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the scene to be remove.
         */
         bool removeScene(const SceneName& name);
 
         /**
-        Get an scene from the SceneManager.
-        This assumes that the name is a unique identifier.
-        @param String name to identify the scene suggested.
+        Get a scene from the SceneManager.
+        Name is assumed to be a unique identifier.
+        @param String name to identify the scene.
         */
         Scene* getScene(const SceneName& name) const;
 
         /**
-        Get the scene that is actually active from the SceneManager.
+        Get currently active scene from the SceneManager.
         */
         inline Scene* getActiveScene() const {
             return mActiveScene;
         };
 
         /**
-        Rename an scene name to the new one.
+        Rename a scene. 
+        Names are assumed to be unique identifiers.
         @param String oldName to be change.
         @param String newName to be set.
         */
@@ -70,14 +71,14 @@ namespace me {
 
         /**
         Set the active scene from the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the scene suggested.
         */
         bool setActiveScene(const SceneName& name);
 
         /**
         Main loop of this manager, if there is an active scene 
-        this will call the scene loop mehtods by the order of: 
+        this will call the scene loop methods by the order of: 
         processNewEntities, update, lateUpdate and refresh.
 
         @param dt Seconds that have passed since last update.
@@ -95,16 +96,32 @@ namespace me {
         int loadEntities(const SceneName& sceneName);
 
         /**
-        Load
+        Load a new scene to set as active.
+        @param newScene Name of the new scene.
+        @param eraseActiveScene If true, currently active scene is erased.
+        @returns True on Success.
         */
         bool loadScene(const SceneName& newScene, bool eraseActiveScene = true);
 
+        /**
+        Deletes all scenes and clears the map of scenes.
+        */
         void deleteAllScenes();
 
+        /**
+        Set the new scene to be made active.
+        @param newScene Name of the new scene.
+        */
         void change(std::string newScene);
 
+        /**
+        Begin quitting process.
+        */
         void quit();
 
+        /**
+        Get name of the new scene to be made active.
+        */
         std::string getNewScene();
 
         bool isChanging();
@@ -113,7 +130,7 @@ namespace me {
 
     private:
         /*
-        This function parses the .lua file to the unordered_map.
+        Parse the .lua file to an unordered_map.
         @param L is the lua_State that was opened by the function loadEntities
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function

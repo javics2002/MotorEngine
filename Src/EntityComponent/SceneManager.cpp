@@ -119,12 +119,12 @@ bool me::SceneManager::isQuiting()
 }
 
 int SceneManager::loadEntities(const SceneName& sceneName) {
-	// Cargamos Lua Bridge
+	
+	// Lua Bridge load
 	lua_State* L = luaL_newstate();
 	luaL_openlibs(L);
 
-	// Abrimos el fichero
-
+	// File load
 	std::string path = "Assets\\Scenes\\" + sceneName;
 
 	if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
@@ -135,12 +135,12 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 		return 1;
 	}
 
-	// Comenzamos en el punto de partida
+	// Entry Point
 	lua_getglobal(L, "Entities");
 
-	// Parseamos las entidades
+	// Entities Parse
 	if (readEntities(L) == 0)
-	{    // Las mandamos a la escena
+	{    // Entities to Scene
 		pushEntities();
 		mEntitiesMap.clear();
 	}
@@ -186,14 +186,14 @@ int SceneManager::readEntities(lua_State* L) {
 		return 1;
 	}
 
-	// Hemos encontrado las entidades
+	// Entities found
 	while (lua_next(L, -2) != 0) {
 		if (!lua_isstring(L, -2)) {
 			lua_pop(L, 1);
 			continue;
 		}
 
-		// Nombre de las entidades
+		// Entities names
 		std::string entityName = lua_tostring(L, -2);
 
 		for (char& c : entityName)
@@ -201,7 +201,7 @@ int SceneManager::readEntities(lua_State* L) {
 
 		mEntitiesMap[entityName];
 
-		// Lectura de componentes
+		// Read Components
 		lua_pushnil(L);
 		while (lua_next(L, -2) != 0) {
 			if (!lua_isstring(L, -2))
@@ -213,7 +213,7 @@ int SceneManager::readEntities(lua_State* L) {
 
 			mEntitiesMap[entityName][componentName];
 
-			// Lectura de informaci�n del componente
+			// Read Component Info
 			lua_pushnil(L);
 			while (lua_next(L, -2) != 0) {
 				if (!lua_isstring(L, -2)) {
@@ -225,7 +225,7 @@ int SceneManager::readEntities(lua_State* L) {
 				for (char& c : fieldName)
 					c = tolower(c);
 
-				// Valores del componente
+				// Component Values
 				std::string fieldValue;
 				if (lua_istable(L, -1)) {
 					for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
@@ -238,7 +238,7 @@ int SceneManager::readEntities(lua_State* L) {
 					}
 
 					if (fieldValue.size() > 0)
-						fieldValue.pop_back(); // Eliminamos la ultima coma
+						fieldValue.pop_back(); // Delete last ','
 				}
 				else {
 					if (lua_isstring(L, -1))

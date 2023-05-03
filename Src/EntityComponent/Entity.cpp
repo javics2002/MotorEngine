@@ -6,9 +6,9 @@
 #endif
 
 namespace me {
-	Entity::Entity(Scene* scene, const SceneName name) :
-		mActive(true), //
-		mName(name), // 
+	Entity::Entity(Scene* scene, const EntityName name) :
+		mActive(true),
+		mName(name),
 		mScene(scene)
 	{
 #ifdef _DEBUG
@@ -16,7 +16,7 @@ namespace me {
 #endif
 	}
 
-	Entity::Entity(const SceneName name) :
+	Entity::Entity(const EntityName name) :
 		mActive(true),
 		mName(name),
 		mScene(nullptr)
