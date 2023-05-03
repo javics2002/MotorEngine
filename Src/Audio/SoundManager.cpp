@@ -211,7 +211,7 @@ bool me::SoundManager::stopEverySound()
 	return true;
 }
 
-bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel)
+bool me::SoundManager::playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel, float channelVolume)
 {
 	nameToLower(soundName);
 	FMOD::Sound* soundHandle = getSound(soundName);
@@ -234,6 +234,8 @@ bool me::SoundManager::playSound(std::string soundName, std::string channelGroup
 			checkFMODResult(mResult);
 
 			reproChannel = mChannelsVector[i];
+
+			mChannelsVector[i]->setVolume(channelVolume);
 
 			mLastPlayedMap[soundHandle] = i;
 
