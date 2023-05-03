@@ -36,8 +36,8 @@ namespace me {
 		*/
 		void createWindow(Ogre::Root* root);
 		/*Set a window input's grab mode
-		void setWindowGrab(bool _grab);
 		*/
+		void setWindowGrab(bool _grab);
 
 	public:
 		//Store windowName
