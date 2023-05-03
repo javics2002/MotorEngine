@@ -452,6 +452,20 @@ void RenderManager::destroyMesh(std::string name)
 
 }
 
+void RenderManager::destroyParticle(std::string name)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+	{
+		std::cout << "Try to destroy nullptr particle with this name " << name << std::endl;
+	}
+	else
+	{
+		delete particle;
+		mParticles.erase(name);
+	}
+}
+
 bool RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);

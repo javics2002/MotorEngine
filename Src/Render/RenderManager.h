@@ -313,6 +313,9 @@ namespace me {
 		//destroy OgreMesh created 
 		void destroyMesh(std::string name);
 
+		//destroy Particle
+		void destroyParticle(std::string name);
+
 		/**
 		Set UITransform info of the UISprite with this name (for static object)
 		@param name: name of UISprite

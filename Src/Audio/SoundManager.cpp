@@ -35,10 +35,9 @@ bool me::SoundManager::checkFMODResult(FMOD_RESULT FMODResult)
 {
 	if (FMODResult != FMOD_OK)
 	{
-		printf("FMOD error! (%d) %s\n", FMODResult, FMOD_ErrorString(FMODResult));
 #ifdef _DEBUG
-		exit(-1);
-#endif // DEBUG
+		printf("FMOD error! (%d) %s\n", FMODResult, FMOD_ErrorString(FMODResult));
+#endif
 		return false;
 	}
 	return true;

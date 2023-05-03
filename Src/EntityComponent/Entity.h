@@ -68,7 +68,6 @@ namespace me {
 			if (!hasComponent(componentName)) {
 				mComponents.insert({ componentName, component });
 				component->setEntity(this);
-				component->start();
 			}
 			else
 				return getComponent<T>(componentName);

@@ -17,6 +17,7 @@ ParticleSystem::ParticleSystem()
 ParticleSystem::~ParticleSystem()
 {
 	renderManager().destroyMesh(mName);
+	renderManager().destroyParticle(mParticleName);
 }
 
 void ParticleSystem::start()
