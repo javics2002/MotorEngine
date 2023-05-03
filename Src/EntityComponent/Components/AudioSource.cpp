@@ -21,11 +21,9 @@ void me::AudioSource::start()
          error = soundManager().create3DSound(mSoundPath, mSoundName, mMinDistance, mMaxDistance, mLoop);
      else error = soundManager().createNormalSound(mSoundPath, mSoundName, mLoop);
 
-
-
     // If the sound was not created, output an error message
         if (!error)
-            std::cout << "ERROR: Sound is null\n";
+            std::cout << "ERROR: Sound was not created or already existed.\n";
 
     if (mPlayOnStart)
         play();
@@ -43,6 +41,10 @@ void me::AudioSource::play()
     Vector3 pos = mTransform->getPosition();
     Vector3 vel = mTransform->getVelocity();
    soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel);
+   if (!firstPlayed) {
+       soundManager().setVolume(mSoundName, mVolume);
+       firstPlayed = true;
+   }
     mPlaying = true;
 }
 
@@ -68,12 +70,12 @@ bool me::AudioSource::isPlaying()
 
 void me::AudioSource::setVolume(float value) {
     mVolume = value;
-    soundManager().setVolume(mSoundName, value);
+    //soundManager().setVolume(mSoundName, value);
 }
 
 void me::AudioSource::setSpeed(float value) {
     mSpeed = value;
-    soundManager().setSpeed(mSoundName, value);
+    //soundManager().setSpeed(mSoundName, value);
 }
 
 void me::AudioSource::setMinDistance(float value) {

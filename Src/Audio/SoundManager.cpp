@@ -218,47 +218,39 @@ bool me::SoundManager::playSound(std::string soundName, std::string channelGroup
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
 
-	/*FMOD_MODE oldSoundMode;
-	soundHandle->getMode(&oldSoundMode);*/
+	FMOD::ChannelGroup* playedChannelGroup = getGroupChannel(channelGroup);
+	if (playedChannelGroup == nullptr) return false;
 
-	//if (isLoop) {
-	//	setMode(soundName, FMOD_LOOP_NORMAL);
-	//	//soundHandle->setMode(FMOD_LOOP_NORMAL);
-	//	/*if (timesLooped > 0)
-	//	soundHandle->setLoopCount(timesLooped);*/
+	FMOD_MODE finalSoundMode;
+	soundHandle->getMode(&finalSoundMode);
 
-	//}
-	//else {
-	//	//setMode(soundName, FMOD_LOOP_OFF);
-	//}
+	FMOD::Channel* reproChannel = getChannel(soundName);
+	if (reproChannel == nullptr) {
+		for (int i = 0; i < mChannelsVector.size(); i++) {
+			bool isPlaying;
+			mChannelsVector[i]->isPlaying(&isPlaying);
 
-	for (int i = 0; i < mChannelsVector.size(); i++) {
-		bool isPlaying;
-		mChannelsVector[i]->isPlaying(&isPlaying);
+			if (isPlaying) continue;
+			mResult = mSoundSystem->playSound(soundHandle, playedChannelGroup, false, &mChannelsVector[i]);
+			checkFMODResult(mResult);
 
-		if (isPlaying) continue;
+			reproChannel = mChannelsVector[i];
 
-		/*FMOD_MODE newSoundMode;
-		soundHandle->getMode(&newSoundMode);
-		soundHandle->setMode(newSoundMode | oldSoundMode);*/
+			mLastPlayedMap[soundHandle] = i;
 
-		FMOD_MODE finalSoundMode;
-		soundHandle->getMode(&finalSoundMode);
-
-		auto playedChannelGroup = getGroupChannel(channelGroup);
-		if (playedChannelGroup == nullptr) return false;
-		mResult = mSoundSystem->playSound(soundHandle, playedChannelGroup, false, &mChannelsVector[i]);
-		checkFMODResult(mResult);
-
-		if (finalSoundMode & FMOD_3D) {
-			FMOD_VECTOR v = channelVel->v3ToFmodV3(), p = channelPos->v3ToFmodV3();
-			mChannelsVector[i]->set3DAttributes(&p, &v);
+			break;
 		}
-
-		mLastPlayedMap[soundHandle] = i;
-
-		break;
 	}
+	else {
+		mResult = mSoundSystem->playSound(soundHandle, playedChannelGroup, false, &reproChannel);
+		checkFMODResult(mResult);
+	}
+
+	if (finalSoundMode & FMOD_3D) {
+		FMOD_VECTOR v = channelVel->v3ToFmodV3(), p = channelPos->v3ToFmodV3();
+		reproChannel->set3DAttributes(&p, &v);
+	}
+
 	return true;
 }
 

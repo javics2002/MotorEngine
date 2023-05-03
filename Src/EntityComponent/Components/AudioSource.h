@@ -87,13 +87,11 @@ namespace me {
 		/**
 		* Set the path of the audio
 		* @param path The path to the audio file to play.
-		* @param name The name to the audio file to play.
 		*/
 		void setSourcePath(std::string path);
 
 		/**
 		* Set the name of the audio
-		* @param path The path to the audio file to play.
 		* @param name The name to the audio file to play.
 		*/
 		void setSourceName(std::string name);
@@ -141,6 +139,7 @@ namespace me {
 		bool mLoop; // Whether the audio should loop or not
 		bool mIsThreeD;
 		bool mPlayOnStart;
+		bool firstPlayed = false;
 
 
 		Transform* mTransform = nullptr;

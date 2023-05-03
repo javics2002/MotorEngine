@@ -94,7 +94,7 @@ void SceneManager::update(const double& dt) {
 }
 
 void SceneManager::change(std::string newScene) {
-	mNewScene = newScene;
+    mNewScene = newScene;
 	mChange = true;
 }
 
