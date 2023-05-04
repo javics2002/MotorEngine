@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_camera_8cpp" xml:lang="en-US">
+<title>Src/Render/RenderCamera.cpp File Reference</title>
+<indexterm><primary>Src/Render/RenderCamera.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;RenderCamera.h&quot;<?linebreak?>#include &quot;OgreSceneManager.h&quot;<?linebreak?>#include &quot;OgreRenderWindow.h&quot;<?linebreak?>#include &quot;OgreViewport.h&quot;<?linebreak?>#include &lt;string&gt;<?linebreak?></programlisting></section>

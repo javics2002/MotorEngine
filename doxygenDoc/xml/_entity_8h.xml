@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_entity_8h" kind="file" language="C++">
+    <compoundname>Entity.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includes refid="_info_scene_8h" local="yes">InfoScene.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">map</includes>
+    <includedby refid="_animator_8cpp" local="yes">Src/EntityComponent/Components/Animator.cpp</includedby>
+    <includedby refid="_audio_listener_8cpp" local="yes">Src/EntityComponent/Components/AudioListener.cpp</includedby>
+    <includedby refid="_audio_source_8cpp" local="yes">Src/EntityComponent/Components/AudioSource.cpp</includedby>
+    <includedby refid="_camera_8cpp" local="yes">Src/EntityComponent/Components/Camera.cpp</includedby>
+    <includedby refid="_collider_8cpp" local="yes">Src/EntityComponent/Components/Collider.cpp</includedby>
+    <includedby refid="_mesh_renderer_8cpp" local="yes">Src/EntityComponent/Components/MeshRenderer.cpp</includedby>
+    <includedby refid="_particle_system_8cpp" local="yes">Src/EntityComponent/Components/ParticleSystem.cpp</includedby>
+    <includedby refid="_rigid_body_8cpp" local="yes">Src/EntityComponent/Components/RigidBody.cpp</includedby>
+    <includedby refid="_entity_8cpp" local="yes">Src/EntityComponent/Entity.cpp</includedby>
+    <includedby refid="_scene_8cpp" local="yes">Src/EntityComponent/Scene.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/EntityComponent/Components/Animator.cpp</label>
+        <link refid="_animator_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/AudioSource.cpp</label>
+        <link refid="_audio_source_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/Camera.cpp</label>
+        <link refid="_camera_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Src/EntityComponent/Components/Collider.cpp</label>
+        <link refid="_collider_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Src/EntityComponent/Components/MeshRenderer.cpp</label>
+        <link refid="_mesh_renderer_8cpp"/>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/ParticleSystem.cpp</label>
+        <link refid="_particle_system_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Src/EntityComponent/Components/RigidBody.cpp</label>
+        <link refid="_rigid_body_8cpp"/>
+      </node>
+      <node id="10">
+        <label>Src/EntityComponent/Entity.cpp</label>
+        <link refid="_entity_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Src/EntityComponent/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_entity" prot="public">me::Entity</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_entity_8h_1a9924ad77475bce1e51f32741167b1261" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_ENTITY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The main function of this class is to be the wrapper of a set of components. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Entity.h" line="9" column="9" bodyfile="Src/EntityComponent/Entity.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_ENTITY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="_entity_8h_1a9924ad77475bce1e51f32741167b1261" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_ENTITY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_info_scene_8h" kindref="compound">InfoScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Scene;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Component;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classme_1_1_entity" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_entity" kindref="compound">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_scene" kindref="compound">Scene</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_entity" kindref="compound">Entity</ref>(<ref refid="classme_1_1_scene" kindref="compound">Scene</ref>*<sp/>scn,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3" kindref="member">SceneName</ref><sp/>name);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_entity" kindref="compound">Entity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3" kindref="member">SceneName</ref><sp/>name);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity" kindref="compound">~Entity</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref>*<sp/>addComponent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>componentName,<sp/><ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref>&amp;<sp/>params);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T*<sp/>addComponent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>componentName);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="59" refid="classme_1_1_entity_1adaeec09d928ca00a2f5a2329bca24050" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1adaeec09d928ca00a2f5a2329bca24050" kindref="member">removeComponent</ref>(<ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>component)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hasComponent(component))<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mComponents.find(component)-&gt;second;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mComponents.erase(component);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="75" refid="classme_1_1_entity_1aeaef76f73c6151b49e42d50a8413b58d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>T*<sp/><ref refid="classme_1_1_entity_1aeaef76f73c6151b49e42d50a8413b58d" kindref="member">getComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>component)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!hasComponent(component))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mComponents.find(component)-&gt;second);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classme_1_1_entity_1a7ebe4d3e6714b7137bd0f1ba10b6c534" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1a7ebe4d3e6714b7137bd0f1ba10b6c534" kindref="member">hasComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>component)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mComponents.find(component)<sp/>!=<sp/>mComponents.end();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classme_1_1_entity_1af281b0f49e07ed9a5f929eca83c7dec1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1af281b0f49e07ed9a5f929eca83c7dec1" kindref="member">isActive</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mActive;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classme_1_1_entity_1ae184b463755cd3e4ba197e13b4aeb6ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1ae184b463755cd3e4ba197e13b4aeb6ed" kindref="member">destroy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classme_1_1_entity_1abc0320faa7eaf15f59313ba7e8af3ed7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a4549e57e933271d021f2d5b4cd46c84e" kindref="member">EntityName</ref><sp/><ref refid="classme_1_1_entity_1abc0320faa7eaf15f59313ba7e8af3ed7" kindref="member">getName</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mName;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classme_1_1_entity_1a3b6879a58a088f983340a36bd7fddc87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1a3b6879a58a088f983340a36bd7fddc87" kindref="member">setName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a4549e57e933271d021f2d5b4cd46c84e" kindref="member">EntityName</ref><sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mName<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classme_1_1_entity_1a885d6740184376cf9846bd913b07e323" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_scene" kindref="compound">Scene</ref>*<sp/><ref refid="classme_1_1_entity_1a885d6740184376cf9846bd913b07e323" kindref="member">getScene</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mScn;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="classme_1_1_entity_1aedfffd74e7631f78a2dc04740f569397" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_entity_1aedfffd74e7631f78a2dc04740f569397" kindref="member">setScene</ref>(<ref refid="classme_1_1_scene" kindref="compound">Scene</ref>*<sp/>scn)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mScn<sp/>=<sp/>scn;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>lateUpdate();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionEnter(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionStay(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnCollisionExit(<ref refid="classme_1_1_entity" kindref="compound">Entity</ref>*<sp/>other);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>mActive;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>mName;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_scene" kindref="compound">Scene</ref>*<sp/>mScn;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;ComponentName,<sp/>Component*&gt;<sp/>mComponents;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Entity.h"/>
+  </compounddef>
+</doxygen>

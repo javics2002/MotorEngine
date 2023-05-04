@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__draw__null__texture" kind="struct" language="C++" prot="public">
+    <compoundname>nk_draw_null_texture</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__draw__null__texture_1a28406c59e642297560123c8f927dbf44" prot="public" static="no" mutable="no">
+        <type><ref refid="unionnk__handle" kindref="compound">nk_handle</ref></type>
+        <definition>nk_handle nk_draw_null_texture::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>nk_draw_null_texture::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="949" column="15" bodyfile="Src/GUI/nuklear.h" bodystart="949" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__draw__null__texture_1ae00f89beb79ed9aa53d2ddcbdd1ea7c7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_draw_null_texture::uv</definition>
+        <argsstring></argsstring>
+        <name>uv</name>
+        <qualifiedname>nk_draw_null_texture::uv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="950" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="950" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_draw_null_texture</label>
+        <link refid="structnk__draw__null__texture"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>uv</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="3">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="948" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="948" bodyend="951"/>
+    <listofallmembers>
+      <member refid="structnk__draw__null__texture_1a28406c59e642297560123c8f927dbf44" prot="public" virt="non-virtual"><scope>nk_draw_null_texture</scope><name>texture</name></member>
+      <member refid="structnk__draw__null__texture_1ae00f89beb79ed9aa53d2ddcbdd1ea7c7" prot="public" virt="non-virtual"><scope>nk_draw_null_texture</scope><name>uv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

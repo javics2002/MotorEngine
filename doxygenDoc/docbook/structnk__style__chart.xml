@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__chart" xml:lang="en-US">
+<title>nk_style_chart Struct Reference</title>
+<indexterm><primary>nk_style_chart</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__chart_1a45007058d04e5a1dc7611336ccfa4718">background</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__chart_1a1d84173adcc90140b7c12cb5875e716d">border_color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__chart_1ad1227179245ac3164d9e40b05b703926">selected_color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__chart_1ae9971b19eeb2b59cb81898f11cb56467">color</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__chart_1a47ac4908b7c4d442e6e23c1b167c8a9e">border</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__chart_1a178316102e8723bef6ba2c7e6c8ba0ed">rounding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__chart_1aa74537263211d6e2202e82e2e2bb3052">padding</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__chart_1a45007058d04e5a1dc7611336ccfa4718"/><section>
+    <title>background</title>
+<indexterm><primary>background</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>background</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_chart::background</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1a47ac4908b7c4d442e6e23c1b167c8a9e"/><section>
+    <title>border</title>
+<indexterm><primary>border</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>border</secondary></indexterm>
+<para><computeroutput>float nk_style_chart::border</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1a1d84173adcc90140b7c12cb5875e716d"/><section>
+    <title>border_color</title>
+<indexterm><primary>border_color</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>border_color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_chart::border_color</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1ae9971b19eeb2b59cb81898f11cb56467"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_chart::color</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1aa74537263211d6e2202e82e2e2bb3052"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_chart::padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1a178316102e8723bef6ba2c7e6c8ba0ed"/><section>
+    <title>rounding</title>
+<indexterm><primary>rounding</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>rounding</secondary></indexterm>
+<para><computeroutput>float nk_style_chart::rounding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__chart_1ad1227179245ac3164d9e40b05b703926"/><section>
+    <title>selected_color</title>
+<indexterm><primary>selected_color</primary><secondary>nk_style_chart</secondary></indexterm>
+<indexterm><primary>nk_style_chart</primary><secondary>selected_color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_chart::selected_color</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

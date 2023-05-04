@@ -3,18 +3,26 @@
 #define __ENTITYCOMPONETN_UITEXT
 
 #include "Component.h"
-#include "Utils/Vector3.h"
-#include "Utils/Vector4.h"
-#include "UIElement.h"
-#include <OgreTextAreaOverlayElement.h>
 #include <string>
 
+namespace Ogre {
+	class TextAreaOverlayElement;
+	class ColourValue;
+}
+
 namespace me {
-	class __MOTORENGINE_API UIText : public UIElement
+	class UITransform;
+	class Vector2;
+	class Vector3;
+	class RenderUIText;
+
+	class __MOTORENGINE_API UIText : public me::Component
 	{
-		UIText(std::string name, std::string fontName, float posX, float poxY, float width, float height, std::string text, Vector4 textColor);
+	public:
+		UIText();
 		~UIText();
 
+		void start() override;
 
 		/**
 		* Set the position of the UIText instance
@@ -23,7 +31,6 @@ namespace me {
 		*/
 		void setPosition(float x, float y);
 
-
 		/**
 		* Set the size of the UIText instance
 		* @param w The width of the UIText
@@ -31,14 +38,13 @@ namespace me {
 		*/
 		void setSize(float w, float h);
 
-
+		void init(std::string name, std::string spriteName, int zOrder,std::string fontName);
 
 		/**
 		* Set the font used by the UIText instance
 		* @param fontName The name of the font to use
 		*/
 		void setFont(std::string fontName);
-
 
 		/**
 		* Set the text displayed by the UIText instance
@@ -51,21 +57,27 @@ namespace me {
 		* Set the color of the text displayed by the UIText instance
 		* @param newColor The new color of the text
 		*/
-		void setTextColor(Vector4 newColor);
+		void setColour(Vector3 newColor);
 
 
 		/**
-		* Set the width of the UIText instance
-		* @param widthValue The new width of the UIText
+		* Set the colorBottom of the text displayed by the UIText instance
+		* @param newColor The new color of the text
 		*/
-		void setWidth(double widthValue);
+		void setColourBottom(Vector3 newColor);
 
+
+		/**
+		* Set the colorTop of the text displayed by the UIText instance
+		* @param newColor The new color of the text
+		*/
+		void setColourTop(Vector3 newColor);
 
 		/**
 		* Set the height of the UIText instance
 		* @param heightValue The new height of the UIText
 		*/
-		void setHeight(double heightValue);
+		void setCharHeight(double heightValue);
 
 
 		/*
@@ -75,18 +87,21 @@ namespace me {
 		void setActive(bool active);
 
 
-		/**
-		* Set the alignment of the text displayed by the UIText instance
-		* @param a The new alignment of the text
-		*/
-		void setTextAligment(Ogre::TextAreaOverlayElement::Alignment a);
 
 	private:
 
-		// Pointer to the text area overlay element
-		Ogre::TextAreaOverlayElement* mTextArea;
-		// The alignment of the text displayed 
-		Ogre::TextAreaOverlayElement::Alignment mAlignment;
+		//name for RenderManager map and for entity that attached in node
+		std::string mName;
+		//name of .png file
+		std::string mSpriteName;
+		//componenet transform of this.Entity
+		UITransform* mUITransform;
+		//static state of this.Entity 
+		bool mStaticObject = false;
+
+		RenderUIText* mRenderUIText;
+
+		int mZOrder;
 	};
 }
 

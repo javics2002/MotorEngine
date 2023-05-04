@@ -13,17 +13,16 @@ me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode*
 
 	mParticleSystem = mSM->createParticleSystem(mName, mParticleName);
 	mParticleSystem->setEmitting(false);
+	mParticleSystem->setKeepParticlesInLocalSpace(true);
 	mNode->attachObject(mParticleSystem);
 }
 
 me::RenderParticleSystem::~RenderParticleSystem()
 {
-	
 	Ogre::SceneManager* mSM = mNode->getCreator();
 	mNode->detachAllObjects();
 	mSM->destroyParticleSystem(mParticleSystem);
 	mSM->destroySceneNode(mNode);
-
 }
 
 void me::RenderParticleSystem::setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot)

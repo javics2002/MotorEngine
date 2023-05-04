@@ -27,15 +27,18 @@
     <ClCompile Include="..\..\Src\Utils\Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Utils\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Utils\SimpleLerp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Utils\Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Utils\Vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\Utils\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Utils\Vector3.h">
@@ -48,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Utils\checkML.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Utils\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Utils\SimpleLerp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__clipboard" xml:lang="en-US">
+<title>nk_clipboard Struct Reference</title>
+<indexterm><primary>nk_clipboard</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__clipboard_1a40e1bfd251716852fe3fa3f6856aeb2c">userdata</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a5c2f97ddb60956a8743b9f0a8cc5e813">nk_plugin_paste</link> <link linkend="_structnk__clipboard_1ac3224d9fcbceaed96f4c5740cd76797d">paste</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a01c2d0f210146bddb18fd3f4a5a9ec86">nk_plugin_copy</link> <link linkend="_structnk__clipboard_1a3fa8f2ea1924acce4456e714f575ddb4">copy</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__clipboard_1a3fa8f2ea1924acce4456e714f575ddb4"/><section>
+    <title>copy</title>
+<indexterm><primary>copy</primary><secondary>nk_clipboard</secondary></indexterm>
+<indexterm><primary>nk_clipboard</primary><secondary>copy</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a01c2d0f210146bddb18fd3f4a5a9ec86">nk_plugin_copy</link> nk_clipboard::copy</computeroutput></para></section>
+<anchor xml:id="_structnk__clipboard_1ac3224d9fcbceaed96f4c5740cd76797d"/><section>
+    <title>paste</title>
+<indexterm><primary>paste</primary><secondary>nk_clipboard</secondary></indexterm>
+<indexterm><primary>nk_clipboard</primary><secondary>paste</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a5c2f97ddb60956a8743b9f0a8cc5e813">nk_plugin_paste</link> nk_clipboard::paste</computeroutput></para></section>
+<anchor xml:id="_structnk__clipboard_1a40e1bfd251716852fe3fa3f6856aeb2c"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_clipboard</secondary></indexterm>
+<indexterm><primary>nk_clipboard</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_clipboard::userdata</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_ogre" kind="namespace" language="C++">
+    <compoundname>Ogre</compoundname>
+    <innerclass refid="class_ogre_1_1_vector" prot="public">Ogre::Vector</innerclass>
+    <innernamespace refid="namespace_ogre_1_1_material_manager">Ogre::MaterialManager</innernamespace>
+    <innernamespace refid="namespace_ogre_1_1_r_t_shader">Ogre::RTShader</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" prot="public" static="no">
+        <type><ref refid="class_ogre_1_1_vector" kindref="compound">Vector</ref>&lt; 3, float &gt;</type>
+        <definition>typedef Vector&lt; 3, float &gt; Ogre::Vector3f</definition>
+        <argsstring></argsstring>
+        <name>Vector3f</name>
+        <qualifiedname>Ogre::Vector3f</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="16" column="16" bodyfile="Src/Render/RenderCamera.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/EntityComponent/Components/Animator.h" line="8" column="1"/>
+  </compounddef>
+</doxygen>

@@ -12,7 +12,12 @@ class lua_State;
 
 namespace me {
     class Scene;
+    class Entity;
 
+    /**
+    SceneManager stores all existing scenes and makes one of them active 
+    at will. All other scenes are inactive.
+    */
     class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
         friend Singleton<SceneManager>;
 
@@ -24,59 +29,59 @@ namespace me {
         SceneManager();
 
         /**
-        This method is meant to be the definition
-        of the dynamic memory that has to be safely delete.
+        * Deletes scenes and clears entities, global and otherwise.
         */
         virtual ~SceneManager();
 
         /**
         Add a new Scene to the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the new scene.
         */
-        std::shared_ptr<Scene> addScene(const std::string& name);
+        Scene* addScene(const SceneName& name);
 
         /**
         Remove an scene from the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the scene to be remove.
         */
-        void removeScene(const std::string& name);
+        bool removeScene(const SceneName& name);
 
         /**
-        Get an scene from the SceneManager.
-        This assumes that the name is a unique identifier.
-        @param String name to identify the scene suggested.
+        Get a scene from the SceneManager.
+        Name is assumed to be a unique identifier.
+        @param String name to identify the scene.
         */
-        std::shared_ptr<Scene> getScene(const std::string& name) const;
+        Scene* getScene(const SceneName& name) const;
 
         /**
-        Get the scene that is actually active from the SceneManager.
+        Get currently active scene from the SceneManager.
         */
-        inline std::shared_ptr<Scene> getActiveScene() const {
-            return mActiveScene;
-        };
+        Scene* getActiveScene() const;
 
         /**
-        Rename an scene name to the new one.
+        Rename a scene. 
+        Names are assumed to be unique identifiers.
         @param String oldName to be change.
         @param String newName to be set.
         */
-        void renameScene(const std::string& oldName, const std::string& newName);
+        bool renameScene(const SceneName& oldName, const SceneName& newName);
 
         /**
         Set the active scene from the SceneManager.
-        This assumes that the name is a unique identifier.
+        Name is assumed to be a unique identifier.
         @param String name to identify the scene suggested.
         */
-        void setActiveScene(const std::string& name);
+        bool setActiveScene(const SceneName& name);
 
         /**
         Main loop of this manager, if there is an active scene 
-        this will call the scene loop mehtods by the order of: 
+        this will call the scene loop methods by the order of: 
         processNewEntities, update, lateUpdate and refresh.
+
+        @param dt Seconds that have passed since last update.
         */
-        void update();
+        void update(const double& dt);
 
         /**
         Parse entities from .lua file to an unordered_map that will be passed to the current Scene
@@ -86,12 +91,44 @@ namespace me {
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
         */
-        int loadEntities(const std::string& sceneName);
+        int loadEntities(const SceneName& sceneName);
+
+        /**
+        Load a new scene to set as active.
+        @param newScene Name of the new scene.
+        @param eraseActiveScene If true, currently active scene is erased.
+        @returns True on Success.
+        */
+        bool loadScene(const SceneName& newScene, bool eraseActiveScene = true);
+
+        /**
+        Deletes all scenes and clears the map of scenes.
+        */
+        void deleteAllScenes();
+
+        /**
+        Set the new scene to be made active.
+        @param newScene Name of the new scene.
+        */
+        void change(std::string newScene);
+
+        /**
+        Begin quitting process.
+        */
+        void quit();
+
+        /**
+        Get name of the new scene to be made active.
+        */
+        std::string getNewScene();
+
+        bool isChanging();
+
+        bool isQuiting();
 
     private:
-
         /*
-        This function parses the .lua file to the unordered_map.
+        Parse the .lua file to an unordered_map.
         @param L is the lua_State that was opened by the function loadEntities
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
@@ -103,18 +140,25 @@ namespace me {
         */
         void pushEntities();
 
-        std::unordered_map<std::string, std::shared_ptr<Scene>> mScenes;
-        std::shared_ptr<Scene> mActiveScene;
+        //Change scene
+        bool mChange = false;
 
+        //Quit app
+        bool mQuit = false;
+
+        std::string mNewScene;
+
+        std::unordered_map<SceneName, Scene*> mScenes;
+        Scene* mActiveScene = nullptr;
         InfoScene mEntitiesMap;
     };
 
     /**
     This macro defines a compact way for using the singleton SceneManager, 
-    instead of writing SceneManager::instance()->method() we write sm().method()
+    instead of writing SceneManager::instance()->method() we write sceneManager().method()
     */
     inline SceneManager& sceneManager() {
-        return *SceneManager::instance();
+        return *SceneManager::Instance();
     };
 
 };

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__factory_component_8h" xml:lang="en-US">
+<title>Src/EntityComponent/Components/FactoryComponent.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/Components/FactoryComponent.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &quot;EntityComponent/InfoScene.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_factory_component">me::FactoryComponent</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_animator">me::FactoryAnimator</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_audio_listener">me::FactoryAudioListener</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_audio_source">me::FactoryAudioSource</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_camera">me::FactoryCamera</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_collider">me::FactoryCollider</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_mesh_renderer">me::FactoryMeshRenderer</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_particle_system">me::FactoryParticleSystem</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_rigid_body">me::FactoryRigidBody</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classme_1_1_factory_transform">me::FactoryTransform</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__factory_component_8h_1a5b2ca3b3b9cf6251dedbaa2d9b6d0545">__ENTITYCOMPONENT_FACTORYCOMPONENT</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__factory_component_8h_1a5b2ca3b3b9cf6251dedbaa2d9b6d0545"/><section>
+    <title>__ENTITYCOMPONENT_FACTORYCOMPONENT</title>
+<indexterm><primary>__ENTITYCOMPONENT_FACTORYCOMPONENT</primary><secondary>FactoryComponent.h</secondary></indexterm>
+<indexterm><primary>FactoryComponent.h</primary><secondary>__ENTITYCOMPONENT_FACTORYCOMPONENT</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_FACTORYCOMPONENT</computeroutput></para></section>
+</section>
+</section>

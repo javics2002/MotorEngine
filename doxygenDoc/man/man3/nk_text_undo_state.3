@@ -1,0 +1,50 @@
+.TH "nk_text_undo_state" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nk_text_undo_state
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nuklear\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnk_text_undo_record\fP \fBundo_rec\fP [\fBNK_TEXTEDIT_UNDOSTATECOUNT\fP]"
+.br
+.ti -1c
+.RI "\fBnk_rune\fP \fBundo_char\fP [\fBNK_TEXTEDIT_UNDOCHARCOUNT\fP]"
+.br
+.ti -1c
+.RI "short \fBundo_point\fP"
+.br
+.ti -1c
+.RI "short \fBredo_point\fP"
+.br
+.ti -1c
+.RI "short \fBundo_char_point\fP"
+.br
+.ti -1c
+.RI "short \fBredo_char_point\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "short nk_text_undo_state::redo_char_point"
+
+.SS "short nk_text_undo_state::redo_point"
+
+.SS "\fBnk_rune\fP nk_text_undo_state::undo_char[\fBNK_TEXTEDIT_UNDOCHARCOUNT\fP]"
+
+.SS "short nk_text_undo_state::undo_char_point"
+
+.SS "short nk_text_undo_state::undo_point"
+
+.SS "struct \fBnk_text_undo_record\fP nk_text_undo_state::undo_rec[\fBNK_TEXTEDIT_UNDOSTATECOUNT\fP]"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

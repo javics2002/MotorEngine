@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__input_manager_8h" xml:lang="en-US">
+<title>Src/Input/InputManager.h File Reference</title>
+<indexterm><primary>Src/Input/InputManager.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &quot;Utils/Singleton.h&quot;<?linebreak?>#include &quot;Utils/Vector2.h&quot;<?linebreak?>#include &quot;Button.h&quot;<?linebreak?>#include &quot;Axis.h&quot;<?linebreak?>#include &lt;vector&gt;<?linebreak?>#include &lt;string&gt;<?linebreak?>#include &lt;unordered_map&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_input_manager">me::InputManager</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__input_manager_8h_1ab3b73dbecff84d880ec8ae2ebfecfd87">__INPUT_INPUTMANAGER</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>InputManager &amp; <link linkend="_namespaceme_1afd92726e761ee88a793af225d8f55d7a">me::inputManager</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__input_manager_8h_1ab3b73dbecff84d880ec8ae2ebfecfd87"/><section>
+    <title>__INPUT_INPUTMANAGER</title>
+<indexterm><primary>__INPUT_INPUTMANAGER</primary><secondary>InputManager.h</secondary></indexterm>
+<indexterm><primary>InputManager.h</primary><secondary>__INPUT_INPUTMANAGER</secondary></indexterm>
+<para><computeroutput>#define __INPUT_INPUTMANAGER</computeroutput></para></section>
+</section>
+</section>

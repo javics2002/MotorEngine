@@ -1,0 +1,39 @@
+\hypertarget{_u_i_button_8h_source}{}\doxysection{UIButton.\+h}
+\label{_u_i_button_8h_source}\index{Src/EntityComponent/Components/UIButton.h@{Src/EntityComponent/Components/UIButton.h}}
+\mbox{\hyperlink{_u_i_button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_ENTITYCOMPONENT\_UIBUTTON}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_ENTITYCOMPONENT\_UIBUTTON}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_i_element_8h}{UIElement.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <OgreTextAreaOverlayElement.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_u_i_button}{UIButton}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_u_i_element}{me::UIElement}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_u_i_button}{UIButton}}(std::string\ name,\textcolor{keywordtype}{float}\ width,\textcolor{keywordtype}{float}\ height,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_u_i_button}{\string~UIButton}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update()\textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handleInput();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onClick(std::function<\textcolor{keywordtype}{void}()>\ l);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::vector<std::function<void()>>\ mLambda;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Ogre::TextAreaOverlayElement*\ mButtonArea;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_\_EC\_UI\_BUTTON}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+
+\end{DoxyCode}

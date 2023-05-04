@@ -1,86 +1,83 @@
 #include "UIText.h"
-#include "Render/RenderManager.h"
-#include <OgreOverlay.h>
-#include <OgreOverlayElement.h>
-#include <OgreOverlayContainer.h>
-#include <OgreOverlayManager.h>
-#include "UIElement.h"
+#include "Render/RenderUIText.h"
+#include "EntityComponent/Entity.h"
+#include "UITransform.h"
 
-me::UIText::UIText(std::string name, std::string fontName, float posX, float posY, float width, float height, std::string text, Vector4 textColor) : UIElement()
-{
-	mTextArea = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + std::to_string(mElems)));
-	mOverlay = mOverlayManager->create(name + std::to_string(mElems));
+using namespace me;
 
-	setPosition(posX, posY);
-	setFont(fontName);
-	setSize(width, height);
-	setText(text);
-	setTextColor(textColor);
-	setTextAligment(Ogre::TextAreaOverlayElement::Alignment::Center);
-	setWidth(width);
-	setHeight(height);
-
-	mOverlay->add2D((Ogre::OverlayContainer*)mTextArea);
-}
-
-me::UIText::~UIText()
+UIText::UIText() : Component()
 {
 }
 
-void me::UIText::setPosition(float x, float y)
+UIText::~UIText()
 {
-	// Set the position 
-	mTextArea->setPosition(x, y);
+	delete mRenderUIText;
 }
 
-void me::UIText::setSize(float w, float h)
+void UIText::init(std::string name, std::string text, int zOrder,std::string fontName)
 {
-	// Set the dimensions and char height
-	mTextArea->setDimensions(w, h);
-	mTextArea->setCharHeight(h);
+	mName = name;
+	mZOrder = zOrder;
+
+	if (text.size() > 0)
+		 mRenderUIText = new RenderUIText(mName, text, zOrder,
+			fontName);
+ }
+
+void UIText::start()
+{
+	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
 }
 
-void me::UIText::setFont(std::string fontName)
+void UIText::setPosition(float x, float y)
 {
-	// Set the font 
-	mTextArea->setFontName(fontName);
+	mRenderUIText->setPosition(Vector2( x,y ));
+	
 }
 
-void me::UIText::setText(std::string text)
+void UIText::setSize(float w, float h)
 {
-	// Set the caption
-	mTextArea->setCaption(text);
+	mRenderUIText->setDimensions(Vector2( w,h ));
+	
 }
 
-void me::UIText::setTextColor(Vector4 newColor)
+void UIText::setFont(std::string fontName)
 {
-	// Set the color
-	mTextArea->setColour(Ogre::ColourValue(newColor.x, newColor.y, newColor.z, newColor.w));
+	mRenderUIText->setFont(fontName);
+	
 }
 
-
-void me::UIText::setWidth(double widthValue)
+void UIText::setText(std::string text)
 {
-	// Set the width
-	mTextArea->setWidth(widthValue);
+	mRenderUIText->setText(text);
+	
 }
 
-void me::UIText::setHeight(double heightValue)
+void UIText::setColour(Vector3 newColor)
 {
-	// Set the height
-	mTextArea->setHeight(heightValue);
+	mRenderUIText->setColour(newColor);
+	
 }
 
-void me::UIText::setActive(bool active)
+void me::UIText::setColourBottom(Vector3 newColor)
+{
+	mRenderUIText->setColourBottom(newColor);
+}
+
+void me::UIText::setColourTop(Vector3 newColor)
+{
+	mRenderUIText->setColourTop(newColor);
+}
+
+void UIText::setCharHeight(double heightValue)
+{
+	mRenderUIText->setCharHeight(heightValue);
+	
+}
+
+void UIText::setActive(bool active)
 {
 	// Show or hide the text area 
-	if (active) mTextArea->show();
-	else mTextArea->hide();
+	mRenderUIText->setActive(active);
 }
 
-void me::UIText::setTextAligment(Ogre::TextAreaOverlayElement::Alignment a)
-{
-	mAlignment = a;
-	// Set the alignment 
-	mTextArea->setAlignment(mAlignment);
-}

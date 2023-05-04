@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_mesh_renderer_8h" kind="file" language="C++">
+    <compoundname>MeshRenderer.h</compoundname>
+    <includes refid="_component_8h" local="yes">Component.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="_animator_8cpp" local="yes">Src/EntityComponent/Components/Animator.cpp</includedby>
+    <includedby refid="_factory_component_8cpp" local="yes">Src/EntityComponent/Components/FactoryComponent.cpp</includedby>
+    <includedby refid="_mesh_renderer_8cpp" local="yes">Src/EntityComponent/Components/MeshRenderer.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/MeshRenderer.h</label>
+        <link refid="_mesh_renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/EntityComponent/Components/Animator.cpp</label>
+        <link refid="_animator_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Components/FactoryComponent.cpp</label>
+        <link refid="_factory_component_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/MeshRenderer.cpp</label>
+        <link refid="_mesh_renderer_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/MeshRenderer.h</label>
+        <link refid="_mesh_renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_mesh_renderer" prot="public">me::MeshRenderer</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_mesh_renderer_8h_1a86bd494913d1798572aa4f0efaa3abe6" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_MESHRENDERER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="4" column="9" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_MESHRENDERER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="_mesh_renderer_8h_1a86bd494913d1798572aa4f0efaa3abe6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_MESHRENDERER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_component_8h" kindref="compound">Component.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Transform;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classme_1_1_mesh_renderer" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_mesh_renderer" kindref="compound">MeshRenderer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//name<sp/>for<sp/>om()<sp/>map<sp/>and<sp/>for<sp/>entity<sp/>that<sp/>attached<sp/>in<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652" kindref="member">mName</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//name<sp/>of<sp/>.mesh<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35" kindref="member">mMeshName</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//componenet<sp/>transform<sp/>of<sp/>this.Entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_transform" kindref="compound">Transform</ref>*<sp/><ref refid="classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0" kindref="member">mTransform</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>state<sp/>of<sp/>this.Entity<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classme_1_1_mesh_renderer_1a9b89d29d56b623da82cbaa5c11eb1fe7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>mStaticObject<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_mesh_renderer" kindref="compound">MeshRenderer</ref>(std::string<sp/>name,<sp/>std::string<sp/>meshName);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Destroy<sp/>om()<sp/>map<sp/>saved<sp/>mesh<sp/>(ogreMesh)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_mesh_renderer" kindref="compound">~MeshRenderer</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setMaterial(std::string<sp/>materialName);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setStatic(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stat);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>getName();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/MeshRenderer.h"/>
+  </compounddef>
+</doxygen>

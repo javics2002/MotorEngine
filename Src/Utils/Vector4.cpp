@@ -1,16 +1,13 @@
 #include "Vector4.h"
 #include "Vector3.h"
+#include "SimpleLerp.h"
 
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
+#include <OgreColourValue.h>
 #include <LinearMath/btQuaternion.h>
 
 using namespace me;
-
-float Vector4::lerp(float a, float b, float f)
-{
-	return a + f * (b - a);
-}
 
 Vector4::Vector4()
 {
@@ -48,7 +45,6 @@ Vector4::Vector4(const Vector3& v_) {
 	x = cy * cp * sr - sy * sp * cr;
 	y = sy * cp * sr + cy * sp * cr;
 	z = sy * cp * cr - cy * sp * sr;
-	
 }
 
 Vector4::Vector4(float a, float b, float c, float d) {
@@ -65,9 +61,14 @@ Vector4::Vector4(const Vector4 &v) {
 	w = v.w;
 }
 
-Vector4 Vector4::lerp(const Vector4& a, const Vector4& b, float f)
+Vector4 Vector4::Lerp(const Vector4& a, const Vector4& b, float f)
 {
-	return Vector4(lerp(a.x, b.x, f), lerp(a.y, b.y, f), lerp(a.z, b.z, f), lerp(a.w, b.w, f));
+	return Vector4(SimpleLerp::Lerp(a.x, b.x, f), SimpleLerp::Lerp(a.y, b.y, f), SimpleLerp::Lerp(a.z, b.z, f), SimpleLerp::Lerp(a.w, b.w, f));
+}
+
+Vector4 Vector4::Identity()
+{
+	return Vector4(1, 0, 0, 0);
 }
 
 void Vector4::operator=(const Vector4& v)
@@ -86,12 +87,12 @@ void Vector4::operator=(const Vector4* v)
 	w = v->w;
 }
 
-Ogre::Quaternion Vector4::v4ToOgreQuaternion() {
+Ogre::Quaternion Vector4::v4ToOgreQuaternion() const {
 	return Ogre::Quaternion(w, x, y, z);
 }
 
-btQuaternion Vector4::getRotationInBullet() {
-	return btQuaternion(x, y, z);
+btQuaternion Vector4::getRotationInBullet() const {
+	return btQuaternion(x, y, z, w);
 }
 
 void Vector4::rotate(float degrees, Vector3 axis) {
@@ -107,5 +108,23 @@ void Vector4::rotate(float degrees, Vector3 axis) {
 	x = w * quat.x + x * quat.w + y * quat.z - z * quat.y;
 	y = w * quat.y - x * quat.z + y * quat.w + z * quat.x;
 	z = w * quat.z + x * quat.y - y * quat.x + z * quat.w;
+}
+
+Vector3 Vector4::toEuler() {
+	double roll = atan2(2.0 * (y * w + x * z), 1.0 - 2.0 * (y * y + x * x));
+	double pitch = asin(2.0 * (w * x - y * z));
+	double yaw = atan2(2.0 * (z * w + x * y), 1.0 - 2.0 * (z * z + x * x));
+
+	Vector3 angles;
+	angles.y = roll * 180.0 / Ogre::Math::PI;
+	angles.z = pitch * 180.0 / Ogre::Math::PI;
+	angles.x = yaw * 180.0 / Ogre::Math::PI;
+
+	return angles;
+}
+
+Ogre::ColourValue me::Vector4::v4toOgreColourValue() const
+{
+	return Ogre::ColourValue(x, y, z, w);
 }
 

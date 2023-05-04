@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_transform" xml:lang="en-US">
+<title>me::Transform Class Reference</title>
+<indexterm><primary>me::Transform</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Transform.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::Transform:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_transform.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_transform_1af99074e8e38a48840d24ae616ecf5eff">Transform</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_transform_1a68108709319b2cd078034d9f73156503">~Transform</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a242704f2581d1654cc9562932f93aa2d">start</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1ac2193262cc8056821b757d7d9c39bb2c">update</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a9fd9779d2848c6f1ac0bf3c3aac08b52">lateUpdate</link> () override</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector3">Vector3</link> <link linkend="_classme_1_1_transform_1a2a3394417d7be1af5cf997b586b3802d">getPosition</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4">Vector4</link> <link linkend="_classme_1_1_transform_1abcec96f0e6a9eb3b86f1568068639175">getRotation</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector3">Vector3</link> <link linkend="_classme_1_1_transform_1ad86a67fcbc0cb1eea9ca3dd427a3ad1b">getScale</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a535f79706339ccffb31ac911fc13a406">setPosition</link> (<link linkend="_classme_1_1_vector3">Vector3</link> newPosition)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1aa80922610841e1db8bfb8317297b6f83">setRotation</link> (<link linkend="_classme_1_1_vector3">Vector3</link> newRotation)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a5d0b8159e8618392da9a1ff890c4e551">setRotation</link> (<link linkend="_classme_1_1_vector4">Vector4</link> newRotation)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a6517411dc8c1457d1472259d3660401b">setScale</link> (<link linkend="_classme_1_1_vector3">Vector3</link> newScale)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a961468fbfb4263d596d963dcee7ae015">translate</link> (<link linkend="_classme_1_1_vector3">Vector3</link> translation)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a62018e63fcb34e0270597f9b9aa044d5">rotate</link> (float degrees, <link linkend="_classme_1_1_vector3">Vector3</link> axis)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1a367d97c5ae3f1e1e706c838df2f9da6a">scaleF</link> (float scale)</para>
+</listitem>
+            <listitem><para>int <link linkend="_classme_1_1_transform_1a625185efb6c77de21701b806d6c5d17c">childCount</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1abfacb4f6c5590196a628a1610b238ec8">addChild</link> (<link linkend="_classme_1_1_transform">Transform</link> *child)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_transform_1ac55dd46dbbde9825db3cf6a0f11674ed">removeChild</link> (<link linkend="_classme_1_1_transform">Transform</link> *child)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_transform">Transform</link> * <link linkend="_classme_1_1_transform_1a68e69c62c3b1fb3f0d32c2d6b2cc02d8">getChild</link> (int index)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_transform">Transform</link> * <link linkend="_classme_1_1_transform_1adcade11222bca7885bc9b45d509e4f93">getParent</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_transform_1af99074e8e38a48840d24ae616ecf5eff"/><section>
+    <title>Transform()</title>
+<indexterm><primary>Transform</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>Transform</secondary></indexterm>
+<para><computeroutput>me::Transform::Transform ( )</computeroutput></para>
+<para>Construct a new <link linkend="_classme_1_1_transform">Transform</link> object with default position (0, 0, 0), rotation (0, 0, 0) and scale (1, 1, 1). </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a68108709319b2cd078034d9f73156503"/><section>
+    <title>~Transform()</title>
+<indexterm><primary>~Transform</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>~Transform</secondary></indexterm>
+<para><computeroutput>me::Transform::~Transform ( )<computeroutput>[override]</computeroutput></computeroutput></para>
+<para>Destroy the <link linkend="_classme_1_1_transform">Transform</link> object and its components. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_transform_1abfacb4f6c5590196a628a1610b238ec8"/><section>
+    <title>addChild()</title>
+<indexterm><primary>addChild</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>addChild</secondary></indexterm>
+<para><computeroutput>void me::Transform::addChild (<link linkend="_classme_1_1_transform">Transform</link> * child)</computeroutput></para>
+<para>Add a child <link linkend="_classme_1_1_transform">Transform</link> object to the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>child</entry><entry>
+<para>A pointer to the child <link linkend="_classme_1_1_transform">Transform</link> object. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a625185efb6c77de21701b806d6c5d17c"/><section>
+    <title>childCount()</title>
+<indexterm><primary>childCount</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>childCount</secondary></indexterm>
+<para><computeroutput>int me::Transform::childCount ( )</computeroutput></para>
+<para>Get the number of child <link linkend="_classme_1_1_transform">Transform</link> objects. </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a68e69c62c3b1fb3f0d32c2d6b2cc02d8"/><section>
+    <title>getChild()</title>
+<indexterm><primary>getChild</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>getChild</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_transform">me::Transform</link> * me::Transform::getChild (int index)</computeroutput></para>
+<para>Returns the child transform at the specified index. Returns nullptr if the index is out of range or if there are no children.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>The index of the child transform to retrieve. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1adcade11222bca7885bc9b45d509e4f93"/><section>
+    <title>getParent()</title>
+<indexterm><primary>getParent</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>getParent</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_transform">me::Transform</link> * me::Transform::getParent ( )</computeroutput></para>
+<para>Returns the parent transform of this transform.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A pointer to the parent transform of this transform. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a2a3394417d7be1af5cf997b586b3802d"/><section>
+    <title>getPosition()</title>
+<indexterm><primary>getPosition</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>getPosition</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_vector3">me::Vector3</link> me::Transform::getPosition ( )</computeroutput></para>
+<para>Get the position vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the position. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1abcec96f0e6a9eb3b86f1568068639175"/><section>
+    <title>getRotation()</title>
+<indexterm><primary>getRotation</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>getRotation</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_vector4">me::Vector4</link> me::Transform::getRotation ( )</computeroutput></para>
+<para>Returns the current Rotation </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1ad86a67fcbc0cb1eea9ca3dd427a3ad1b"/><section>
+    <title>getScale()</title>
+<indexterm><primary>getScale</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>getScale</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_vector3">me::Vector3</link> me::Transform::getScale ( )</computeroutput></para>
+<para>Get the scale vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the scale. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a9fd9779d2848c6f1ac0bf3c3aac08b52"/><section>
+    <title>lateUpdate()</title>
+<indexterm><primary>lateUpdate</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>lateUpdate</secondary></indexterm>
+<para><computeroutput>void me::Transform::lateUpdate ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the end of the game cycle.</para>
+
+<para>For example: render and collisions. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">me::Component</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1ac55dd46dbbde9825db3cf6a0f11674ed"/><section>
+    <title>removeChild()</title>
+<indexterm><primary>removeChild</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>removeChild</secondary></indexterm>
+<para><computeroutput>void me::Transform::removeChild (<link linkend="_classme_1_1_transform">Transform</link> * child)</computeroutput></para>
+<para>Remove a child <link linkend="_classme_1_1_transform">Transform</link> object from the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>child</entry><entry>
+<para>A pointer to the child <link linkend="_classme_1_1_transform">Transform</link> object. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a62018e63fcb34e0270597f9b9aa044d5"/><section>
+    <title>rotate()</title>
+<indexterm><primary>rotate</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>rotate</secondary></indexterm>
+<para><computeroutput>void me::Transform::rotate (float degrees, <link linkend="_classme_1_1_vector3">Vector3</link> axis)</computeroutput></para>
+<para>Rotate the <link linkend="_classme_1_1_transform">Transform</link> object by a given vector.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>degrees</entry><entry>
+<para>the number of degrees to turn </para>
+</entry>
+                            </row>
+                            <row>
+<entry>degrees</entry><entry>
+<para>the axis where to apply the rotation </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a367d97c5ae3f1e1e706c838df2f9da6a"/><section>
+    <title>scaleF()</title>
+<indexterm><primary>scaleF</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>scaleF</secondary></indexterm>
+<para><computeroutput>void me::Transform::scaleF (float scale)</computeroutput></para>
+<para>Scale the <link linkend="_classme_1_1_transform">Transform</link> object by a given factor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>scaleF</entry><entry>
+<para>A float representing the scale factor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a535f79706339ccffb31ac911fc13a406"/><section>
+    <title>setPosition()</title>
+<indexterm><primary>setPosition</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>setPosition</secondary></indexterm>
+<para><computeroutput>void me::Transform::setPosition (<link linkend="_classme_1_1_vector3">Vector3</link> newPosition)</computeroutput></para>
+<para>Set the position vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newPosition</entry><entry>
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the new position. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1aa80922610841e1db8bfb8317297b6f83"/><section>
+    <title>setRotation()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>setRotation</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>setRotation</secondary></indexterm>
+<para><computeroutput>void me::Transform::setRotation (<link linkend="_classme_1_1_vector3">Vector3</link> newRotation)</computeroutput></para>
+<para>Set the rotation vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newRotation</entry><entry>
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the new rotation. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a5d0b8159e8618392da9a1ff890c4e551"/><section>
+    <title>setRotation()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>setRotation</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>setRotation</secondary></indexterm>
+<para><computeroutput>void me::Transform::setRotation (<link linkend="_classme_1_1_vector4">Vector4</link> newRotation)</computeroutput></para>
+<para>Set the rotation vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newRotation</entry><entry>
+<para>A <link linkend="_classme_1_1_vector4">Vector4</link> object representing the new rotation. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a6517411dc8c1457d1472259d3660401b"/><section>
+    <title>setScale()</title>
+<indexterm><primary>setScale</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>setScale</secondary></indexterm>
+<para><computeroutput>void me::Transform::setScale (<link linkend="_classme_1_1_vector3">Vector3</link> newScale)</computeroutput></para>
+<para>Set the scale vector of the <link linkend="_classme_1_1_transform">Transform</link> object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newScale</entry><entry>
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the new scale. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a242704f2581d1654cc9562932f93aa2d"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void me::Transform::start ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is only ever called once. This must be called at the instantiation of the script. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">me::Component</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1a961468fbfb4263d596d963dcee7ae015"/><section>
+    <title>translate()</title>
+<indexterm><primary>translate</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>translate</secondary></indexterm>
+<para><computeroutput>void me::Transform::translate (<link linkend="_classme_1_1_vector3">Vector3</link> translation)</computeroutput></para>
+<para>Translate the <link linkend="_classme_1_1_transform">Transform</link> object by a given vector.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>translation</entry><entry>
+<para>A <link linkend="_classme_1_1_vector3">Vector3</link> object representing the translation. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_transform_1ac2193262cc8056821b757d7d9c39bb2c"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::Transform</secondary></indexterm>
+<indexterm><primary>me::Transform</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void me::Transform::update ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+
+<para>Almost all the logic updates. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">me::Component</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__transform_8h">Transform.h</link>Src/EntityComponent/Components/<link linkend="__transform_8cpp">Transform.cpp</link></section>
+</section>

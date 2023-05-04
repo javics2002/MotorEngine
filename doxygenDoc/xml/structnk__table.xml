@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__table" kind="struct" language="C++" prot="public">
+    <compoundname>nk_table</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__table_1aa64704d2e52b6663f61c043b0378b2d4" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_table::seq</definition>
+        <argsstring></argsstring>
+        <name>seq</name>
+        <qualifiedname>nk_table::seq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5369" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__table_1a173992867275727635fff4f21e825d99" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_table::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>nk_table::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5370" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="5370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__table_1abe02ed8fb83c928c36e8e719d64e2cbf" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757" kindref="member">nk_hash</ref></type>
+        <definition>nk_hash nk_table::keys[NK_VALUE_PAGE_CAPACITY]</definition>
+        <argsstring>[NK_VALUE_PAGE_CAPACITY]</argsstring>
+        <name>keys</name>
+        <qualifiedname>nk_table::keys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5371" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__table_1ae686139ae8eb9913024a5513c70bde76" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919" kindref="member">nk_uint</ref></type>
+        <definition>nk_uint nk_table::values[NK_VALUE_PAGE_CAPACITY]</definition>
+        <argsstring>[NK_VALUE_PAGE_CAPACITY]</argsstring>
+        <name>values</name>
+        <qualifiedname>nk_table::values</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5372" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__table_1a36a783e6a8874a8c0d793275d08355a4" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__table" kindref="compound">nk_table</ref> *</type>
+        <definition>struct nk_table* nk_table::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>nk_table::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5373" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="5373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__table_1af01641e8389afdefbeb1e6a6e52dc557" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__table" kindref="compound">nk_table</ref> *</type>
+        <definition>struct nk_table * nk_table::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>nk_table::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5373" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="5373" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_table</label>
+        <link refid="structnk__table"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="5368" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5368" bodyend="5374"/>
+    <listofallmembers>
+      <member refid="structnk__table_1abe02ed8fb83c928c36e8e719d64e2cbf" prot="public" virt="non-virtual"><scope>nk_table</scope><name>keys</name></member>
+      <member refid="structnk__table_1a36a783e6a8874a8c0d793275d08355a4" prot="public" virt="non-virtual"><scope>nk_table</scope><name>next</name></member>
+      <member refid="structnk__table_1af01641e8389afdefbeb1e6a6e52dc557" prot="public" virt="non-virtual"><scope>nk_table</scope><name>prev</name></member>
+      <member refid="structnk__table_1aa64704d2e52b6663f61c043b0378b2d4" prot="public" virt="non-virtual"><scope>nk_table</scope><name>seq</name></member>
+      <member refid="structnk__table_1a173992867275727635fff4f21e825d99" prot="public" virt="non-virtual"><scope>nk_table</scope><name>size</name></member>
+      <member refid="structnk__table_1ae686139ae8eb9913024a5513c70bde76" prot="public" virt="non-virtual"><scope>nk_table</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,54 @@
+\hypertarget{_particle_system_8h_source}{}\doxysection{Particle\+System.\+h}
+\label{_particle_system_8h_source}\index{Src/EntityComponent/Components/ParticleSystem.h@{Src/EntityComponent/Components/ParticleSystem.h}}
+\mbox{\hyperlink{_particle_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ \_\_ENTITYCOMPONENT\_PARTICLESYSTEM}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_\_ENTITYCOMPONENT\_PARTICLESYSTEM}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3_8h}{Utils/Vector3.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }Transform;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_particle_system}{ParticleSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_component}{Component}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//name\ for\ om()\ map\ and\ for\ particle\ system\ that\ attached\ in\ node}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_particle_system_ada09ae2be897ba4f732f47999c4ef276}{mName}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//name\ of\ particle\ that\ is\ written\ int\ ParticleResource.particle}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_particle_system_a21a259a3b70a9148483b7d6c23270854}{mParticleName}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//componenet\ transform\ of\ this.Entity}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_transform}{Transform}}*\ \mbox{\hyperlink{classme_1_1_particle_system_a6a94325bf928e26192d758cd9adebf85}{mTransform}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \mbox{\hyperlink{classme_1_1_particle_system_aa403cd5a34a33e79091543878cacebb5}{mOffsetPos}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ \mbox{\hyperlink{classme_1_1_particle_system_a30c0a6ed66e7410efa94c255d7b2c4f0}{mOffsetScale}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_particle_system}{ParticleSystem}}(std::string\ name,\ std::string\ particleName);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Destroy\ om()\ map\ saved\ particle(ogreParticleSystem)}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_particle_system}{\string~ParticleSystem}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ start()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEmitting(\textcolor{keywordtype}{bool}\ emitted);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetPos(\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ offset);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetScale(\mbox{\hyperlink{classme_1_1_vector3}{Vector3}}\ offset);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+
+\end{DoxyCode}

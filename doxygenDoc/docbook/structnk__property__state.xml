@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__property__state" xml:lang="en-US">
+<title>nk_property_state Struct Reference</title>
+<indexterm><primary>nk_property_state</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_structnk__property__state_1a70348c13baea22b6df6ad5fa1ef84f0a">active</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1ac200409ca5d075add6a4b68c3943e080">prev</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_structnk__property__state_1aba9b0d6a242c09b6c949f933a3c4d6c0">buffer</link> [<link linkend="_nuklear_8h_1ad77efd6e24a599928777c715d0b2792b">NK_MAX_NUMBER_BUFFER</link>]</para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1a7fb78c3d605eeda826192d5cb52bc65a">length</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1a39f7b5ce4bacdc4dc826c13081b13a16">cursor</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1a5a6dca290782c4691a70948aa6a2d403">select_start</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1a4387cb65804a20dc3cc03b8a7bf388e5">select_end</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> <link linkend="_structnk__property__state_1a6f05883484dcfe7d79af5dd6fda2b2ed">name</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__property__state_1a17a7408517599a09e6244421b2f06f9b">seq</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__property__state_1a425994ca840cd84b4bb43c14cc761f19">old</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__property__state_1acb8b93d0b35c75577a73362e05617259">state</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__property__state_1a70348c13baea22b6df6ad5fa1ef84f0a"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>int nk_property_state::active</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1aba9b0d6a242c09b6c949f933a3c4d6c0"/><section>
+    <title>buffer</title>
+<indexterm><primary>buffer</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>buffer</secondary></indexterm>
+<para><computeroutput>char nk_property_state::buffer[<link linkend="_nuklear_8h_1ad77efd6e24a599928777c715d0b2792b">NK_MAX_NUMBER_BUFFER</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a39f7b5ce4bacdc4dc826c13081b13a16"/><section>
+    <title>cursor</title>
+<indexterm><primary>cursor</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>cursor</secondary></indexterm>
+<para><computeroutput>int nk_property_state::cursor</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a7fb78c3d605eeda826192d5cb52bc65a"/><section>
+    <title>length</title>
+<indexterm><primary>length</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>length</secondary></indexterm>
+<para><computeroutput>int nk_property_state::length</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a6f05883484dcfe7d79af5dd6fda2b2ed"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>name</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> nk_property_state::name</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a425994ca840cd84b4bb43c14cc761f19"/><section>
+    <title>old</title>
+<indexterm><primary>old</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>old</secondary></indexterm>
+<para><computeroutput>unsigned int nk_property_state::old</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1ac200409ca5d075add6a4b68c3943e080"/><section>
+    <title>prev</title>
+<indexterm><primary>prev</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>prev</secondary></indexterm>
+<para><computeroutput>int nk_property_state::prev</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a4387cb65804a20dc3cc03b8a7bf388e5"/><section>
+    <title>select_end</title>
+<indexterm><primary>select_end</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>select_end</secondary></indexterm>
+<para><computeroutput>int nk_property_state::select_end</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a5a6dca290782c4691a70948aa6a2d403"/><section>
+    <title>select_start</title>
+<indexterm><primary>select_start</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>select_start</secondary></indexterm>
+<para><computeroutput>int nk_property_state::select_start</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1a17a7408517599a09e6244421b2f06f9b"/><section>
+    <title>seq</title>
+<indexterm><primary>seq</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>seq</secondary></indexterm>
+<para><computeroutput>unsigned int nk_property_state::seq</computeroutput></para></section>
+<anchor xml:id="_structnk__property__state_1acb8b93d0b35c75577a73362e05617259"/><section>
+    <title>state</title>
+<indexterm><primary>state</primary><secondary>nk_property_state</secondary></indexterm>
+<indexterm><primary>nk_property_state</primary><secondary>state</secondary></indexterm>
+<para><computeroutput>int nk_property_state::state</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

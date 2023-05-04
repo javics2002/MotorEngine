@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__mouse" kind="struct" language="C++" prot="public">
+    <compoundname>nk_mouse</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__mouse_1a08d6933b4a6d87555cd0d3514f0507fc" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__mouse__button" kindref="compound">nk_mouse_button</ref></type>
+        <definition>struct nk_mouse_button nk_mouse::buttons[NK_BUTTON_MAX]</definition>
+        <argsstring>[NK_BUTTON_MAX]</argsstring>
+        <name>buttons</name>
+        <qualifiedname>nk_mouse::buttons</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4434" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1a07c094826e58d6d56af36b61ec91cc9a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_mouse::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>nk_mouse::pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4435" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4435" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1ae9bfaf081795f248ee28ff73e0e7510b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_mouse::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>nk_mouse::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4439" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1ad51017f1b2ab199b892e454ec8f6e970" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_mouse::delta</definition>
+        <argsstring></argsstring>
+        <name>delta</name>
+        <qualifiedname>nk_mouse::delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4440" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1a73dd665a6eca9bc85763a6148f0ff459" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_mouse::scroll_delta</definition>
+        <argsstring></argsstring>
+        <name>scroll_delta</name>
+        <qualifiedname>nk_mouse::scroll_delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4441" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4441" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1a93b114f1d129ce336d0d237980337ac9" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char nk_mouse::grab</definition>
+        <argsstring></argsstring>
+        <name>grab</name>
+        <qualifiedname>nk_mouse::grab</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4442" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1a498f60d6bf88ca50aacbddcb2a2032ad" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char nk_mouse::grabbed</definition>
+        <argsstring></argsstring>
+        <name>grabbed</name>
+        <qualifiedname>nk_mouse::grabbed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4443" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4443" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse_1a3420ca85bb04a09dd14694dfb394c7f0" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char nk_mouse::ungrab</definition>
+        <argsstring></argsstring>
+        <name>ungrab</name>
+        <qualifiedname>nk_mouse::ungrab</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4444" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4444" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_mouse</label>
+        <link refid="structnk__mouse"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>buttons</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>delta</edgelabel>
+          <edgelabel>pos</edgelabel>
+          <edgelabel>prev</edgelabel>
+          <edgelabel>scroll_delta</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_mouse_button</label>
+        <link refid="structnk__mouse__button"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>clicked_pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4433" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4433" bodyend="4445"/>
+    <listofallmembers>
+      <member refid="structnk__mouse_1a08d6933b4a6d87555cd0d3514f0507fc" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>buttons</name></member>
+      <member refid="structnk__mouse_1ad51017f1b2ab199b892e454ec8f6e970" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>delta</name></member>
+      <member refid="structnk__mouse_1a93b114f1d129ce336d0d237980337ac9" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>grab</name></member>
+      <member refid="structnk__mouse_1a498f60d6bf88ca50aacbddcb2a2032ad" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>grabbed</name></member>
+      <member refid="structnk__mouse_1a07c094826e58d6d56af36b61ec91cc9a" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>pos</name></member>
+      <member refid="structnk__mouse_1ae9bfaf081795f248ee28ff73e0e7510b" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>prev</name></member>
+      <member refid="structnk__mouse_1a73dd665a6eca9bc85763a6148f0ff459" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>scroll_delta</name></member>
+      <member refid="structnk__mouse_1a3420ca85bb04a09dd14694dfb394c7f0" prot="public" virt="non-virtual"><scope>nk_mouse</scope><name>ungrab</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

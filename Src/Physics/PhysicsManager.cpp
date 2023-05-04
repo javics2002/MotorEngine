@@ -1,17 +1,11 @@
 #include "PhysicsManager.h"
 
-#include <BulletCollision/CollisionShapes/btBoxShape.h>
 #include <BulletCollision/CollisionShapes/btSphereShape.h>
 #include <BulletCollision/CollisionShapes/btCylinderShape.h>
 #include <BulletCollision/CollisionShapes/btCapsuleShape.h>
-#include <BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
-#include <BulletDynamics/Dynamics/btRigidBody.h>
 #include <BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h>
 #include <BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
-#include <BulletDynamics/Dynamics/btActionInterface.h>
-#include <BulletCollision/CollisionShapes/btCollisionShape.h>
-#include <BulletDynamics/ConstraintSolver/btConstraintSolver.h>
 #include <BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <LinearMath/btDefaultMotionState.h>
 
@@ -19,12 +13,76 @@
 #include "EntityComponent/Components/Collider.h"
 #include "Render/RenderManager.h"
 
-me::PhysicsManager::PhysicsManager()
+using namespace me;
+
+PhysicsManager::PhysicsManager()
 {
+	mDynamicsWorld = nullptr;
+	mDispatcher = nullptr;
+	mBroadphaseInterface = nullptr;
+	mCollisionConfiguration = nullptr;
+	mConstraintSolver = nullptr;
+	mDebug = nullptr;
 }
 
-me::PhysicsManager::~PhysicsManager()
+PhysicsManager::~PhysicsManager()
 {
+	//cleanup in the reverse order of creation/initialization
+#ifdef _DEBUG
+	mDynamicsWorld->setDebugDrawer(nullptr);
+	delete mDebug;
+#endif
+
+	//remove the rigidbodies from the dynamics world and delete them
+	for (int i = mDynamicsWorld->getNumCollisionObjects() - 1; i >= 0; i--)
+	{
+		btCollisionObject* obj = mDynamicsWorld->getCollisionObjectArray()[i];
+		btRigidBody* body = btRigidBody::upcast(obj);
+		if (body && body->getMotionState())
+		{
+			delete body->getMotionState();
+		}
+		mDynamicsWorld->removeCollisionObject(obj);
+		delete obj;
+	}
+
+	//delete collision shapes
+	for (int j = 0; j < mCollisionShapes.size(); j++)
+	{
+		btCollisionShape* shape = mCollisionShapes[j];
+		delete shape;
+	}
+	mCollisionShapes.clear();
+
+	//delete dynamics world
+	delete mDynamicsWorld;
+
+	//delete solver
+	delete mConstraintSolver;
+
+	//delete broadphase
+	delete mBroadphaseInterface;
+
+	//delete dispatcher
+	delete mDispatcher;
+
+	delete mCollisionConfiguration;
+}
+
+void PhysicsManager::destroyRigidBody(btRigidBody *rb) {
+	if (rb && rb->getMotionState())
+		delete rb->getMotionState();
+
+	rb->setUserPointer(nullptr);
+	mDynamicsWorld->removeCollisionObject(rb);
+	btCollisionShape* shape = rb->getCollisionShape();
+	std::vector<btCollisionShape*>::iterator it = std::find(mCollisionShapes.begin(), mCollisionShapes.end(), shape);
+	if (it != mCollisionShapes.end()) {
+		delete shape;
+		mCollisionShapes.erase(it);
+	}
+
+	delete rb;
 }
 
 /*
@@ -78,24 +136,21 @@ Collision Exit Callback, mainfold can get the
 pointers of the rigid bodies that have collided
 */
 void callBackExit(btPersistentManifold* const& manifold) {
-
 	const btCollisionObject* body1 = manifold->getBody0();
 	const btCollisionObject* body2 = manifold->getBody1();
 
 	if (body1 && body2) {
-
-		me::Collider* colliderBody1 = static_cast<me::Collider*>(body1->getUserPointer());
-		me::Collider* colliderBody2 = static_cast<me::Collider*>(body2->getUserPointer());
+		Collider* colliderBody1 = static_cast<Collider*>(body1->getUserPointer());
+		Collider* colliderBody2 = static_cast<Collider*>(body2->getUserPointer());
 
 		if (colliderBody1 && colliderBody2) {
 			colliderBody1->onCollisionExit(colliderBody2->getEntity());
 			colliderBody2->onCollisionExit(colliderBody1->getEntity());
 		}
-
 	}
 }
 
-void me::PhysicsManager::start()
+void PhysicsManager::start()
 {
 	mCollisionConfiguration = new btDefaultCollisionConfiguration();
 	mDispatcher = new btCollisionDispatcher(mCollisionConfiguration);
@@ -108,26 +163,26 @@ void me::PhysicsManager::start()
 	gContactProcessedCallback = callBackStay;
 	gContactEndedCallback = callBackExit;
 
-//#ifdef _DEBUG
-//	mDebug = new DebugDrawer();
-//	mDynamicsWorld->setDebugDrawer(mDebug);
-//#endif
+#ifdef _DEBUG
+	mDebug = new DebugDrawer();
+	mDynamicsWorld->setDebugDrawer(mDebug);
+#endif
 
-	//mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
+	mDynamicsWorld->setGravity(btVector3(0, -9.8, 0));
 
 }
 
-void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody)
+void me::PhysicsManager::addRigidBody(btRigidBody* rigidBody, int group, int mask)
 {
-	mDynamicsWorld->addRigidBody(rigidBody);
+	mDynamicsWorld->addRigidBody(rigidBody, group, mask);
 }
 
-void me::PhysicsManager::addVehicle(btActionInterface* vehicle)
+void PhysicsManager::addVehicle(btActionInterface* vehicle)
 {
 	mDynamicsWorld->addVehicle(vehicle);
 }
 
-btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 &scale)
+btCollisionShape* PhysicsManager::createShape(Shapes shape, const btVector3 &scale, const btVector3 &colliderScale)
 {
 	
 	btCollisionShape* shape_;
@@ -139,13 +194,13 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 		shape_ = new btSphereShape(scale.length());
 		break;
 	case SHAPES_BOX:
-		shape_ = new btBoxShape(btVector3(scale.x(), scale.y(), scale.z())*50);
+		shape_ = new btBoxShape(btVector3(scale.x(), scale.y(), scale.z())*colliderScale);
 		break;
 	case SHAPES_CYLINDER:
-		shape_ = new btCylinderShape(scale);
+		shape_ = new btCylinderShape(scale*colliderScale);
 		break;
 	case SHAPES_CAPSULE:
-		shape_ = new btCapsuleShape(scale.x(), scale.y());
+		shape_ = new btCapsuleShape(scale.x()*colliderScale.x(), scale.y()*colliderScale.y());
 		break;
 	default:
 		shape_ = new btSphereShape(scale.length());
@@ -155,12 +210,14 @@ btCollisionShape* me::PhysicsManager::createShape(Shapes shape, const btVector3 
 	return shape_;
 }
 
-btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
+btRigidBody* me::PhysicsManager::createRigidBody(btTransform* transform, const btVector3 &scale, const btVector3 &colliderScale, 
+	int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution)
 {
 
 	btCollisionShape* colShape;
 
-	colShape = createShape(shape, scale);
+	colShape = createShape(shape, scale, colliderScale);
+	mCollisionShapes.push_back(colShape);
 	
 	//Initially the rigidBody  is in repose
 	btVector3 reposeInertia(0, 0, 0);
@@ -188,20 +245,22 @@ btRigidBody*me::PhysicsManager::createRigidBody(btTransform* transform, const bt
 		rb->setCollisionFlags(btCollisionObject::CF_NO_CONTACT_RESPONSE);
 	}
 
-	addRigidBody(rb);
+	addRigidBody(rb, group, mask);
 
 	return rb;
-
 }
 
-void me::PhysicsManager::update(const float& dt)
+void PhysicsManager::update(const double& timeStep, int maxSubsteps, const double& fixedTimeStep)
 {
-	mDynamicsWorld->stepSimulation(dt);
+	mDynamicsWorld->stepSimulation(timeStep, maxSubsteps, fixedTimeStep);
 
+	/*
+	Uncomment the following code if you want to see colliders
+	*/
 //#ifdef _DEBUG
+//	mDebug->clear();
 //	mDynamicsWorld->debugDrawWorld();
 //#endif
-
 }
 
 

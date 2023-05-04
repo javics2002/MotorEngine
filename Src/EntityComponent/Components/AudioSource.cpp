@@ -9,52 +9,99 @@ me::AudioSource::AudioSource()
 
 me::AudioSource::~AudioSource()
 {
-    //soundManager().deleteSound(mSound);
+    soundManager().deleteSound(mSoundName);
 }
 
 void me::AudioSource::start()
 {
+    mTransform = mEntity->getComponent<Transform>("transform");
+    
     // Create a 3D sound or a normal sound
-    if (mIs3D)
-        // sm().create3DSound(source, mSound, 1);
-    // else sm().createNormalSound(source, mSound, 1);
-
-    // If the sound was not created, output an error message
-        if (!mSound)
-            std::cout << "ERROR: Sound is null\n";
+    if (mIsThreeD)
+         soundManager().create3DSound(mSoundPath, mSoundName, mMinDistance, mMaxDistance, mLoop);
+    else 
+        soundManager().createNormalSound(mSoundPath, mSoundName, mLoop);
 
     if (mPlayOnStart)
         play();
 }
 
-void me::AudioSource::update()
+void me::AudioSource::update(const double& dt)
 {
-    if (mIs3D) {
-        //soundManager().setSoundPosition(mSound, mEntity->getComponent<me::Transform>("transform")->getPosition());
+    if (mIsThreeD) {
+        soundManager().setSoundAtributes(mSoundName, mEntity->getComponent<me::Transform>("transform")->getPosition(), mEntity->getComponent<me::Transform>("transform")->getVelocity());
     }
 }
 
 void me::AudioSource::play()
 {
-    // sm().playSound(mSound, mLoop, 0,10);
+    Vector3 pos = mTransform->getPosition();
+    Vector3 vel = mTransform->getVelocity();
+    soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel, mVolume);
+
+    mPlaying = true;
 }
 
 void me::AudioSource::stop()
 {
-    //sm().pauseSound(mSound, true);
+    soundManager().stopSound(mSoundName);
 }
 
 void me::AudioSource::pause()
 {
-    //soundManager().pauseSound(mSound, true);
+    soundManager().pauseSound(mSoundName, true);
 }
 
 void me::AudioSource::resume()
 {
-    //soundManager().pauseSound(mSound, false);
+    soundManager().pauseSound(mSoundName, false);
 }
 
 bool me::AudioSource::isPlaying()
 {
     return mPlaying;
+}
+
+void me::AudioSource::setVolume(float value) {
+    mVolume = value;
+}
+
+void me::AudioSource::setSpeed(float value) {
+    mSpeed = value;
+}
+
+void me::AudioSource::setMinDistance(float value) {
+    mMinDistance = value * DISTANCE_FACTOR;
+}
+
+void me::AudioSource::setMaxDistance(float value) {
+    mMaxDistance = value * DISTANCE_FACTOR;
+}
+
+void me::AudioSource::setSourcePath(std::string path) {
+    mSoundPath = path;
+}
+
+void me::AudioSource::setSourceName(std::string name) {
+    mSoundName = name;
+}
+
+void me::AudioSource::setGroupChannelName(std::string name) {
+    mSoundGroup = name;
+}
+
+void me::AudioSource::setLoop(bool loop) {
+    mLoop = loop;
+}
+
+void me::AudioSource::setIsThreeD(bool threeD) {
+    mIsThreeD = threeD;
+}
+
+void me::AudioSource::setPlayOnStart(bool playOnStart) {
+    mPlayOnStart = playOnStart;
+}
+
+float me::AudioSource::getVolume() {
+    return mVolume;
 }

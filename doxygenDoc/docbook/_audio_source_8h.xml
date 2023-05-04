@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__audio_source_8h" xml:lang="en-US">
+<title>Src/EntityComponent/Components/AudioSource.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/Components/AudioSource.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;string&gt;<?linebreak?>#include &quot;Component.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_audio_source">me::AudioSource</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_f_m_o_d">FMOD</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__audio_source_8h_1a27d222d25cbf2676db189d9676512bf7">__ENTITYCOMPONENT_AUDIOSOURCE</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__audio_source_8h_1a27d222d25cbf2676db189d9676512bf7"/><section>
+    <title>__ENTITYCOMPONENT_AUDIOSOURCE</title>
+<indexterm><primary>__ENTITYCOMPONENT_AUDIOSOURCE</primary><secondary>AudioSource.h</secondary></indexterm>
+<indexterm><primary>AudioSource.h</primary><secondary>__ENTITYCOMPONENT_AUDIOSOURCE</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_AUDIOSOURCE</computeroutput></para></section>
+</section>
+</section>

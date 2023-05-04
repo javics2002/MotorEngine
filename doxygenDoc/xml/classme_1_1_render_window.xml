@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_render_window" kind="class" language="C++" prot="public">
+    <compoundname>me::RenderWindow</compoundname>
+    <includes refid="_render_window_8h" local="no">RenderWindow.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_render_window_1a54eeb4f08222f44ef0aa31a8a4796f93" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string me::RenderWindow::mWindowName</definition>
+        <argsstring></argsstring>
+        <name>mWindowName</name>
+        <qualifiedname>me::RenderWindow::mWindowName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="25" column="13" bodyfile="Src/Render/RenderWindow.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_window_1aa50efc07c5ad1cbea17e092945fc7080" prot="protected" static="no" mutable="no">
+        <type><ref refid="_render_window_8h_1a55a196c7d3b8497538632c79ae1e6392" kindref="member">SDL_Window</ref> *</type>
+        <definition>SDL_Window* me::RenderWindow::mSdlWindow</definition>
+        <argsstring></argsstring>
+        <name>mSdlWindow</name>
+        <qualifiedname>me::RenderWindow::mSdlWindow</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="27" column="12" bodyfile="Src/Render/RenderWindow.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_window_1a2066d07f287e6b68e82175959929b958" prot="protected" static="no" mutable="no">
+        <type>Ogre::RenderWindow *</type>
+        <definition>Ogre::RenderWindow* me::RenderWindow::mRenderWindow</definition>
+        <argsstring></argsstring>
+        <name>mRenderWindow</name>
+        <qualifiedname>me::RenderWindow::mRenderWindow</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="29" column="20" bodyfile="Src/Render/RenderWindow.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classme_1_1_render_window_1a4de1296fd4446c3a428077aaf647c789" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderWindow::createWindow</definition>
+        <argsstring>(Ogre::Root *root)</argsstring>
+        <name>createWindow</name>
+        <qualifiedname>me::RenderWindow::createWindow</qualifiedname>
+        <param>
+          <type>Ogre::Root *</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get configuration information, Sdl window, Sdl window information and create Ogre::Render window with all the information mentioned It is linked window between SDL window and Ogre::Render window <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>root:reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of Ogre::Root created by OgreManager </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="37" column="6" bodyfile="Src/Render/RenderWindow.cpp" bodystart="42" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_window_1a75d8f3716021d5881dfbd80553ae3420" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderWindow::setWindowGrab</definition>
+        <argsstring>(bool _grab)</argsstring>
+        <name>setWindowGrab</name>
+        <qualifiedname>me::RenderWindow::setWindowGrab</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>_grab</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="39" column="6" bodyfile="Src/Render/RenderWindow.cpp" bodystart="83" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_render_window_1a6298a3ebb4dea583da69caaedf18338b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RenderWindow::RenderWindow</definition>
+        <argsstring>(const std::string windowName)</argsstring>
+        <name>RenderWindow</name>
+        <qualifiedname>me::RenderWindow::RenderWindow</qualifiedname>
+        <param>
+          <type>const std::string</type>
+          <declname>windowName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="43" column="1" bodyfile="Src/Render/RenderWindow.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_window_1ae17a8d98de14f8ddbbedbee39cf774e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RenderWindow::~RenderWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~RenderWindow</name>
+        <qualifiedname>me::RenderWindow::~RenderWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="44" column="1" bodyfile="Src/Render/RenderWindow.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_window_1a8fdca646c82fc5810af877acbf5b3237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderWindow::init</definition>
+        <argsstring>(Ogre::Root *root)</argsstring>
+        <name>init</name>
+        <qualifiedname>me::RenderWindow::init</qualifiedname>
+        <param>
+          <type>Ogre::Root *</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize linked window without automatically window created <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>root:reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of Ogre::Root created by OgreManager </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="50" column="6" bodyfile="Src/Render/RenderWindow.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_window_1abd3cb7d398d78613b873563fc89ea830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ogre::RenderWindow *</type>
+        <definition>Ogre::RenderWindow * me::RenderWindow::getRenderWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getRenderWindow</name>
+        <qualifiedname>me::RenderWindow::getRenderWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="52" column="20" bodyfile="Src/Render/RenderWindow.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_window_1a46404dc3243ebc43bbfdc5f500dc2234" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_render_window_8h_1a55a196c7d3b8497538632c79ae1e6392" kindref="member">SDL_Window</ref> *</type>
+        <definition>SDL_Window * me::RenderWindow::getSdlWindow</definition>
+        <argsstring>()</argsstring>
+        <name>getSdlWindow</name>
+        <qualifiedname>me::RenderWindow::getSdlWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderWindow.h" line="54" column="12" bodyfile="Src/Render/RenderWindow.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Class to create linked window between SDL_window and Ogre::RendererWindow </para>
+    </detaileddescription>
+    <location file="Src/Render/RenderWindow.h" line="20" column="1" bodyfile="Src/Render/RenderWindow.h" bodystart="20" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classme_1_1_render_window_1a4de1296fd4446c3a428077aaf647c789" prot="protected" virt="non-virtual"><scope>me::RenderWindow</scope><name>createWindow</name></member>
+      <member refid="classme_1_1_render_window_1abd3cb7d398d78613b873563fc89ea830" prot="public" virt="non-virtual"><scope>me::RenderWindow</scope><name>getRenderWindow</name></member>
+      <member refid="classme_1_1_render_window_1a46404dc3243ebc43bbfdc5f500dc2234" prot="public" virt="non-virtual"><scope>me::RenderWindow</scope><name>getSdlWindow</name></member>
+      <member refid="classme_1_1_render_window_1a8fdca646c82fc5810af877acbf5b3237" prot="public" virt="non-virtual"><scope>me::RenderWindow</scope><name>init</name></member>
+      <member refid="classme_1_1_render_window_1a2066d07f287e6b68e82175959929b958" prot="protected" virt="non-virtual"><scope>me::RenderWindow</scope><name>mRenderWindow</name></member>
+      <member refid="classme_1_1_render_window_1aa50efc07c5ad1cbea17e092945fc7080" prot="protected" virt="non-virtual"><scope>me::RenderWindow</scope><name>mSdlWindow</name></member>
+      <member refid="classme_1_1_render_window_1a54eeb4f08222f44ef0aa31a8a4796f93" prot="protected" virt="non-virtual"><scope>me::RenderWindow</scope><name>mWindowName</name></member>
+      <member refid="classme_1_1_render_window_1a6298a3ebb4dea583da69caaedf18338b" prot="public" virt="non-virtual"><scope>me::RenderWindow</scope><name>RenderWindow</name></member>
+      <member refid="classme_1_1_render_window_1a75d8f3716021d5881dfbd80553ae3420" prot="protected" virt="non-virtual"><scope>me::RenderWindow</scope><name>setWindowGrab</name></member>
+      <member refid="classme_1_1_render_window_1ae17a8d98de14f8ddbbedbee39cf774e0" prot="public" virt="non-virtual"><scope>me::RenderWindow</scope><name>~RenderWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

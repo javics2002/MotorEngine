@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__style__scrollbar" kind="struct" language="C++" prot="public">
+    <compoundname>nk_style_scrollbar</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a381f8388c9dd0aaf9c4c249f4d7320b6" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <qualifiedname>nk_style_scrollbar::normal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4819" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4819" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a5059aac4c32afa1a127f02f6b465b90c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::hover</definition>
+        <argsstring></argsstring>
+        <name>hover</name>
+        <qualifiedname>nk_style_scrollbar::hover</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4820" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4820" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a9573ba744345893dca5cc83e0114dad5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>nk_style_scrollbar::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4821" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4821" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1ad6489946e15dc9627a51673de29aea5d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_scrollbar::border_color</definition>
+        <argsstring></argsstring>
+        <name>border_color</name>
+        <qualifiedname>nk_style_scrollbar::border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4822" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4822" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a62eefaabe4c7278fa367bfdab06d06a9" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::cursor_normal</definition>
+        <argsstring></argsstring>
+        <name>cursor_normal</name>
+        <qualifiedname>nk_style_scrollbar::cursor_normal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4825" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4825" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a6ad3a42ce7f9fc7277b0ee17eb48cd6c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::cursor_hover</definition>
+        <argsstring></argsstring>
+        <name>cursor_hover</name>
+        <qualifiedname>nk_style_scrollbar::cursor_hover</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4826" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4826" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a97b096336f28303c20aec3e9443bda75" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__item" kindref="compound">nk_style_item</ref></type>
+        <definition>struct nk_style_item nk_style_scrollbar::cursor_active</definition>
+        <argsstring></argsstring>
+        <name>cursor_active</name>
+        <qualifiedname>nk_style_scrollbar::cursor_active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4827" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a7bfa13e0e337fcbb9c8c48b4d244d774" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_style_scrollbar::cursor_border_color</definition>
+        <argsstring></argsstring>
+        <name>cursor_border_color</name>
+        <qualifiedname>nk_style_scrollbar::cursor_border_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4828" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4828" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a4ad9da720a06076e1e945cd020d72974" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_scrollbar::border</definition>
+        <argsstring></argsstring>
+        <name>border</name>
+        <qualifiedname>nk_style_scrollbar::border</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4831" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4831" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a654d88e47b733ddddac7f2cd555d06e1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_scrollbar::rounding</definition>
+        <argsstring></argsstring>
+        <name>rounding</name>
+        <qualifiedname>nk_style_scrollbar::rounding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4832" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4832" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a9b2f17f53a795487e099887747ab071a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_scrollbar::border_cursor</definition>
+        <argsstring></argsstring>
+        <name>border_cursor</name>
+        <qualifiedname>nk_style_scrollbar::border_cursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4833" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4833" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a85338ec19a8d87922f6f56244eccc2d2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_style_scrollbar::rounding_cursor</definition>
+        <argsstring></argsstring>
+        <name>rounding_cursor</name>
+        <qualifiedname>nk_style_scrollbar::rounding_cursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4834" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4834" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a3ad5ac59291c57e8cea5fc88028e0c6c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_style_scrollbar::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <qualifiedname>nk_style_scrollbar::padding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4835" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4835" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a446fa57c29033ddc7c960c83bee454fb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_style_scrollbar::show_buttons</definition>
+        <argsstring></argsstring>
+        <name>show_buttons</name>
+        <qualifiedname>nk_style_scrollbar::show_buttons</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4838" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="4838" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a3184981c83202a1633f77a6fa224ff98" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_scrollbar::inc_button</definition>
+        <argsstring></argsstring>
+        <name>inc_button</name>
+        <qualifiedname>nk_style_scrollbar::inc_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4839" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4839" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a2f691b18296736c36da1e52295c87909" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__style__button" kindref="compound">nk_style_button</ref></type>
+        <definition>struct nk_style_button nk_style_scrollbar::dec_button</definition>
+        <argsstring></argsstring>
+        <name>dec_button</name>
+        <qualifiedname>nk_style_scrollbar::dec_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4840" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="4840" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1ae880b936bb999860f48aeb9ab52e6a93" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07" kindref="member">nk_symbol_type</ref></type>
+        <definition>enum nk_symbol_type nk_style_scrollbar::inc_symbol</definition>
+        <argsstring></argsstring>
+        <name>inc_symbol</name>
+        <qualifiedname>nk_style_scrollbar::inc_symbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4841" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4841" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1ab6cfc79e1425a8eb0ec7839dac348e44" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07" kindref="member">nk_symbol_type</ref></type>
+        <definition>enum nk_symbol_type nk_style_scrollbar::dec_symbol</definition>
+        <argsstring></argsstring>
+        <name>dec_symbol</name>
+        <qualifiedname>nk_style_scrollbar::dec_symbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4842" column="24" bodyfile="Src/GUI/nuklear.h" bodystart="4842" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a9ffd74fad1ee2f9b293693ebd77f1110" prot="public" static="no" mutable="no">
+        <type><ref refid="unionnk__handle" kindref="compound">nk_handle</ref></type>
+        <definition>nk_handle nk_style_scrollbar::userdata</definition>
+        <argsstring></argsstring>
+        <name>userdata</name>
+        <qualifiedname>nk_style_scrollbar::userdata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4845" column="15" bodyfile="Src/GUI/nuklear.h" bodystart="4845" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1a71b634a194cacf873ba06c5010b7d154" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* nk_style_scrollbar::draw_begin) (struct nk_command_buffer *, nk_handle)</definition>
+        <argsstring>)(struct nk_command_buffer *, nk_handle)</argsstring>
+        <name>draw_begin</name>
+        <qualifiedname>nk_style_scrollbar::draw_begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4846" column="5" bodyfile="Src/GUI/nuklear.h" bodystart="4846" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__style__scrollbar_1aa89c7f391ccb04c1d2c1e6a1fc5434c9" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* nk_style_scrollbar::draw_end) (struct nk_command_buffer *, nk_handle)</definition>
+        <argsstring>)(struct nk_command_buffer *, nk_handle)</argsstring>
+        <name>draw_end</name>
+        <qualifiedname>nk_style_scrollbar::draw_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4847" column="5" bodyfile="Src/GUI/nuklear.h" bodystart="4847" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="6">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="5">
+        <label>nk_image</label>
+        <link refid="structnk__image"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nk_nine_slice</label>
+        <link refid="structnk__nine__slice"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>img</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nk_style_button</label>
+        <link refid="structnk__style__button"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>text_active</edgelabel>
+          <edgelabel>text_background</edgelabel>
+          <edgelabel>text_hover</edgelabel>
+          <edgelabel>text_normal</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>image_padding</edgelabel>
+          <edgelabel>padding</edgelabel>
+          <edgelabel>touch_padding</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_style_item</label>
+        <link refid="structnk__style__item"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>nk_style_item_data</label>
+        <link refid="unionnk__style__item__data"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>slice</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nk_style_scrollbar</label>
+        <link refid="structnk__style__scrollbar"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>active</edgelabel>
+          <edgelabel>cursor_active</edgelabel>
+          <edgelabel>cursor_hover</edgelabel>
+          <edgelabel>cursor_normal</edgelabel>
+          <edgelabel>hover</edgelabel>
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>border_color</edgelabel>
+          <edgelabel>cursor_border_color</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>padding</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>dec_button</edgelabel>
+          <edgelabel>inc_button</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4817" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4817" bodyend="4848"/>
+    <listofallmembers>
+      <member refid="structnk__style__scrollbar_1a9573ba744345893dca5cc83e0114dad5" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>active</name></member>
+      <member refid="structnk__style__scrollbar_1a4ad9da720a06076e1e945cd020d72974" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>border</name></member>
+      <member refid="structnk__style__scrollbar_1ad6489946e15dc9627a51673de29aea5d" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>border_color</name></member>
+      <member refid="structnk__style__scrollbar_1a9b2f17f53a795487e099887747ab071a" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>border_cursor</name></member>
+      <member refid="structnk__style__scrollbar_1a97b096336f28303c20aec3e9443bda75" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>cursor_active</name></member>
+      <member refid="structnk__style__scrollbar_1a7bfa13e0e337fcbb9c8c48b4d244d774" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>cursor_border_color</name></member>
+      <member refid="structnk__style__scrollbar_1a6ad3a42ce7f9fc7277b0ee17eb48cd6c" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>cursor_hover</name></member>
+      <member refid="structnk__style__scrollbar_1a62eefaabe4c7278fa367bfdab06d06a9" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>cursor_normal</name></member>
+      <member refid="structnk__style__scrollbar_1a2f691b18296736c36da1e52295c87909" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>dec_button</name></member>
+      <member refid="structnk__style__scrollbar_1ab6cfc79e1425a8eb0ec7839dac348e44" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>dec_symbol</name></member>
+      <member refid="structnk__style__scrollbar_1a71b634a194cacf873ba06c5010b7d154" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>draw_begin</name></member>
+      <member refid="structnk__style__scrollbar_1aa89c7f391ccb04c1d2c1e6a1fc5434c9" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>draw_end</name></member>
+      <member refid="structnk__style__scrollbar_1a5059aac4c32afa1a127f02f6b465b90c" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>hover</name></member>
+      <member refid="structnk__style__scrollbar_1a3184981c83202a1633f77a6fa224ff98" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>inc_button</name></member>
+      <member refid="structnk__style__scrollbar_1ae880b936bb999860f48aeb9ab52e6a93" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>inc_symbol</name></member>
+      <member refid="structnk__style__scrollbar_1a381f8388c9dd0aaf9c4c249f4d7320b6" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>normal</name></member>
+      <member refid="structnk__style__scrollbar_1a3ad5ac59291c57e8cea5fc88028e0c6c" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>padding</name></member>
+      <member refid="structnk__style__scrollbar_1a654d88e47b733ddddac7f2cd555d06e1" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>rounding</name></member>
+      <member refid="structnk__style__scrollbar_1a85338ec19a8d87922f6f56244eccc2d2" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>rounding_cursor</name></member>
+      <member refid="structnk__style__scrollbar_1a446fa57c29033ddc7c960c83bee454fb" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>show_buttons</name></member>
+      <member refid="structnk__style__scrollbar_1a9ffd74fad1ee2f9b293693ebd77f1110" prot="public" virt="non-virtual"><scope>nk_style_scrollbar</scope><name>userdata</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

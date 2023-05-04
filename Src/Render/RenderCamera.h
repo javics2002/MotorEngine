@@ -11,23 +11,22 @@ namespace Ogre {
 	class SceneManager;
 	class RenderWindow;
 	class ColourValue;
-	template<int dism, typename T>
-	class Vector;
-	typedef Vector<3, float> Vector3f;
 }
 
 namespace me {
+	class Vector3;
+	/**
+	Manages OgreCamera
+	*/
 	class __MOTORENGINE_API RenderCamera
 	{
-
-	private:
 	protected:
 		//Reference to Ogre::Camera
-		Ogre::Camera* mCamera ;
+		Ogre::Camera* mCamera;
 		//Reference to Ogre::Viewport of mCamera
-		Ogre::Viewport* mViewport ;
+		Ogre::Viewport* mViewport;
 		//Reference to Ogre::SceneNode of mCamera
-		Ogre::SceneNode* mCameraNode ;
+		Ogre::SceneNode* mCameraNode;
 		//Reference to Ogre::SceneManager created by RenderManager
 		Ogre::SceneManager* mSceneMgr;
 		//Reference to Ogre::RenderWindow created by RenderManager
@@ -38,8 +37,13 @@ namespace me {
 		RenderCamera();
 		~RenderCamera();
 
-		//Assign references
+		/**Assign references
+		@param CameraNode: Camera sceneNode reference
+		@param SceneMngr: SceneManager reference
+		@param RenderWindow: RenderWindow reference
+		*/
 		void init(Ogre::SceneNode* CameraNode, Ogre::SceneManager* SceneMgr, Ogre::RenderWindow* RenderWindow );
+
 		/**Create mCamera with this informationand create mViewport for it
 		@param name: name of mCamera
 		@param nearDist: near clipping plane distancia
@@ -47,12 +51,22 @@ namespace me {
 		@param autoRadio: if viewport calculate aspect radio automatically
 		@param zOrder: relative order of mViewport
 		*/
-		void createCamera(const char* name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
+		void createCamera(const char* name, float nearDist, float farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
 
-		//Set position to mCameraNode
-		void setPosition(const Ogre::Vector3f &pos);
-		//Set lookAT to mCameraNode
-		void lookAt(const Ogre::Vector3f &look);
+		/**Set position to mCameraNode
+		@param pos: position of mCamera
+		*/
+		void setPosition(const Vector3& pos);
+
+		/**Set position to mCameraNode
+		@param bFixed: set fixed if true or false
+		*/
+		void setFixedYAxis(bool bFixed);
+
+		/**Set lookAT to mCameraNode
+		@param look: position to look at
+		*/
+		void lookAt(const Vector3& look);
 		/**
 		Set dimension to mViewport
 		@param left: left point of mViewport in range 0.0 to 1.0
@@ -62,9 +76,11 @@ namespace me {
 		*/
 		void setViewportDimension(float left, float top, float width, float height);
 
-		
-		//void setPosition(Vector3 pos);
-		//void lookAt(Vector3 pos);
+
+		/**Set lookAT to mCameraNode
+		@param enabled: whether the overlay should be enabled (true) or disabled (false)	
+		*/
+		void setOverlayEnabled(bool enabled);
 
 	};
 

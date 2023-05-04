@@ -9,21 +9,26 @@ using namespace me;
 
 Animator::Animator()
 {
-	mMesh = mEntity->getComponent<MeshRenderer>("meshRenderer");
-	mCurrentState = nullptr;
-	mAnimStatesMap = me::renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
-	mStop = false;
+	
 }
 
 Animator::~Animator()
 {
 }
 
-void Animator::update()
+void Animator::start()
+{
+	mMesh = mEntity->getComponent<MeshRenderer>("meshrenderer");
+	mCurrentState = nullptr;
+	mAnimStatesMap = renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
+	mStop = false;
+}
+
+void Animator::update(const double& dt)
 {
 	if (mCurrentState != nullptr && !mStop) {
 		// Increment the animation time by the time between frames
-		mCurrentState->addTime(Ogre::Real()); //Falta el tiempo entre frames;
+		mCurrentState->addTime(dt);
 	}
 }
 

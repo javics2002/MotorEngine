@@ -39,15 +39,40 @@ namespace me {
 		@param meshName: name of resource (type mesh) that we used for create Ogre::Entity. 
 		Must be writted in resource.cfg (.mesh inside Zip or FileSystem)
 		*/
-		RenderParticleSystem(std::string name,Ogre::SceneNode* node,std::string particleName);
+		RenderParticleSystem(std::string name, Ogre::SceneNode* node, std::string particleName);
 		~RenderParticleSystem();
-		//Set position, rotation and scale of mNode
+
+		/**
+		* Set position, scale and rotation to the ParticleNode
+		* @param pos : position of particleNode
+		* @param scale : scale of particleNode
+		* @param rot : rotation of particleNode
+		*/
 		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
+
+		/**
+		* Set position
+		* @param pos : position of particleNode
+		*/
 		void setPosition(const Ogre::Vector3f &pos);
+
+		/**
+		* Set scale to the ParticleNode
+		* @param scale : scale of particleNode
+		*/
 		void setScale(const Ogre::Vector3f &scale);
+
+		/**
+		* Set rotation to the ParticleNode
+		* @param rot : rotation of particleNode
+		*/
 		void setRotation(Ogre::Quaternion rot);
 
-		//set particle system emitting state
+
+		/*
+		* Set whether the ParticleSystem instance is active or not
+		* @param emitted True if the ParticleSystem should be active, false otherwise
+		*/
 		void setEmitting(bool emitted);
 		
 

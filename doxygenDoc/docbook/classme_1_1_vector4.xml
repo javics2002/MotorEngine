@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_vector4" xml:lang="en-US">
+<title>me::Vector4 Class Reference</title>
+<indexterm><primary>me::Vector4</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Vector4.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_vector4_1a511b4d9c8326c235b76d794eea018921">Vector4</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4_1a3b12319a0f131f0f09a3f2d199a608fe">Vector4</link> (float a, float b, float c)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4_1af9381073e9854cf1190ef98198ddfbff">Vector4</link> (const <link linkend="_classme_1_1_vector3">Vector3</link> &amp;v_)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4_1a3eb2c9782d2a1e5e685bd74354eea8a7">Vector4</link> (float a, float b, float c, float d)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4_1a94bbd0b53dab7d48aa762bbeb7179b2d">Vector4</link> (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp;v)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_vector4">Vector4</link> <link linkend="_classme_1_1_vector4_1a012f2571ce91aaf30d264205311a549d">lerp</link> (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp;a, const <link linkend="_classme_1_1_vector4">Vector4</link> &amp;b, float f)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_vector4_1a1eec9b1b9fa503b79f278a46c1472db6">operator=</link> (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp;v)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_vector4_1a09de4f22f759dab56add186a2da30208">operator=</link> (const <link linkend="_classme_1_1_vector4">Vector4</link> *v)</para>
+</listitem>
+            <listitem><para>Ogre::Quaternion <link linkend="_classme_1_1_vector4_1aa244b8042c59647c594f4309e0131768">v4ToOgreQuaternion</link> ()</para>
+</listitem>
+            <listitem><para>btQuaternion <link linkend="_classme_1_1_vector4_1a85ff06f21db94a8f2d39892413669b85">getRotationInBullet</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_vector4_1adac0e47d5dfad5b0fdcc47371d162113">rotate</link> (float degrees, <link linkend="_classme_1_1_vector3">Vector3</link> axis)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_classme_1_1_vector4_1a0a3f1fd1a3730d3952333adc4b3d7fce">x</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_classme_1_1_vector4_1afd7d4bd8ac3bd548c768834b86a77336">y</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_classme_1_1_vector4_1a1462b316f647c24854fe7494182eccd4">z</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_classme_1_1_vector4_1a1d1c75c33c8c82efd70cbd1e77effb31">w</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_vector4_1a511b4d9c8326c235b76d794eea018921"/><section>
+    <title>Vector4()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>Vector4</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>Vector4</secondary></indexterm>
+<para><computeroutput>Vector4::Vector4 ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a3b12319a0f131f0f09a3f2d199a608fe"/><section>
+    <title>Vector4()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>Vector4</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>Vector4</secondary></indexterm>
+<para><computeroutput>Vector4::Vector4 (float a, float b, float c)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1af9381073e9854cf1190ef98198ddfbff"/><section>
+    <title>Vector4()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>Vector4</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>Vector4</secondary></indexterm>
+<para><computeroutput>Vector4::Vector4 (const <link linkend="_classme_1_1_vector3">Vector3</link> &amp; v_)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a3eb2c9782d2a1e5e685bd74354eea8a7"/><section>
+    <title>Vector4()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>Vector4</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>Vector4</secondary></indexterm>
+<para><computeroutput>Vector4::Vector4 (float a, float b, float c, float d)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a94bbd0b53dab7d48aa762bbeb7179b2d"/><section>
+    <title>Vector4()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>Vector4</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>Vector4</secondary></indexterm>
+<para><computeroutput>Vector4::Vector4 (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp; v)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_vector4_1a85ff06f21db94a8f2d39892413669b85"/><section>
+    <title>getRotationInBullet()</title>
+<indexterm><primary>getRotationInBullet</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>getRotationInBullet</secondary></indexterm>
+<para><computeroutput>btQuaternion Vector4::getRotationInBullet ( )</computeroutput></para>
+<para>Returns the current Rotation in btQuaternion </para>
+</section>
+<anchor xml:id="_classme_1_1_vector4_1a012f2571ce91aaf30d264205311a549d"/><section>
+    <title>lerp()</title>
+<indexterm><primary>lerp</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>lerp</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_vector4">Vector4</link> Vector4::lerp (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp; a, const <link linkend="_classme_1_1_vector4">Vector4</link> &amp; b, float f)</computeroutput></para>
+<para>Returns the linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot;</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>The starting vector to interpolate from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>The ending vector to interpolate to </para>
+</entry>
+                            </row>
+                            <row>
+<entry>f</entry><entry>
+<para>The interpolation factor, a value between 0 and 1 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_vector4_1a1eec9b1b9fa503b79f278a46c1472db6"/><section>
+    <title>operator=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput>void Vector4::operator= (const <link linkend="_classme_1_1_vector4">Vector4</link> &amp; v)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a09de4f22f759dab56add186a2da30208"/><section>
+    <title>operator=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput>void Vector4::operator= (const <link linkend="_classme_1_1_vector4">Vector4</link> * v)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1adac0e47d5dfad5b0fdcc47371d162113"/><section>
+    <title>rotate()</title>
+<indexterm><primary>rotate</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>rotate</secondary></indexterm>
+<para><computeroutput>void Vector4::rotate (float degrees, <link linkend="_classme_1_1_vector3">Vector3</link> axis)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1aa244b8042c59647c594f4309e0131768"/><section>
+    <title>v4ToOgreQuaternion()</title>
+<indexterm><primary>v4ToOgreQuaternion</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>v4ToOgreQuaternion</secondary></indexterm>
+<para><computeroutput>Ogre::Quaternion Vector4::v4ToOgreQuaternion ( )</computeroutput></para>
+<para>Return the conversion <link linkend="_classme_1_1_vector3">Vector3</link> - Ogre::Quaternion </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_vector4_1a1d1c75c33c8c82efd70cbd1e77effb31"/><section>
+    <title>w</title>
+<indexterm><primary>w</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>w</secondary></indexterm>
+<para><computeroutput>float me::Vector4::w</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a0a3f1fd1a3730d3952333adc4b3d7fce"/><section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>float me::Vector4::x</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1afd7d4bd8ac3bd548c768834b86a77336"/><section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>float me::Vector4::y</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_vector4_1a1462b316f647c24854fe7494182eccd4"/><section>
+    <title>z</title>
+<indexterm><primary>z</primary><secondary>me::Vector4</secondary></indexterm>
+<indexterm><primary>me::Vector4</primary><secondary>z</secondary></indexterm>
+<para><computeroutput>float me::Vector4::z</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Utils/<link linkend="__vector4_8h">Vector4.h</link>Src/Utils/<link linkend="__vector4_8cpp">Vector4.cpp</link></section>
+</section>

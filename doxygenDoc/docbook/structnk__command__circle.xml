@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__circle" xml:lang="en-US">
+<title>nk_command_circle Struct Reference</title>
+<indexterm><primary>nk_command_circle</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__circle_1a30307deb035c1dccf43c849fd04a11f7">header</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__circle_1a31305a7d86f24c473a1368822582d856">x</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__circle_1adbeef71bac7e533fe09e059a9c1969e4">y</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__circle_1a116b0d9a26840d54000e63dbcf0829ac">line_thickness</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__circle_1a07238a686ed308b4d1802a35b587eb0d">w</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__circle_1a88c469119d31c7e7ea9c0b10814db875">h</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__command__circle_1aa9f19465515260dc83e60cab859cb040">color</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__circle_1aa9f19465515260dc83e60cab859cb040"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_command_circle::color</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1a88c469119d31c7e7ea9c0b10814db875"/><section>
+    <title>h</title>
+<indexterm><primary>h</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>h</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_circle::h</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1a30307deb035c1dccf43c849fd04a11f7"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_circle::header</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1a116b0d9a26840d54000e63dbcf0829ac"/><section>
+    <title>line_thickness</title>
+<indexterm><primary>line_thickness</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>line_thickness</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_circle::line_thickness</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1a07238a686ed308b4d1802a35b587eb0d"/><section>
+    <title>w</title>
+<indexterm><primary>w</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>w</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_circle::w</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1a31305a7d86f24c473a1368822582d856"/><section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>short nk_command_circle::x</computeroutput></para></section>
+<anchor xml:id="_structnk__command__circle_1adbeef71bac7e533fe09e059a9c1969e4"/><section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>nk_command_circle</secondary></indexterm>
+<indexterm><primary>nk_command_circle</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>short nk_command_circle::y</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

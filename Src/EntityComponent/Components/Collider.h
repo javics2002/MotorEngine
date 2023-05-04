@@ -4,34 +4,36 @@
 
 #include "Component.h"
 
-class Entity;
-
 namespace me{
 
-
+	class Entity;
+	/**
+	Enables the entity's onCollisionEnter, onCollisionStay and onCollisionExit callbacks
+	*/
 	class __MOTORENGINE_API Collider : public Component
 	{
 	public:
 		Collider();
 		virtual ~Collider();
 
+		void start() override;
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision starts.
+		@param other Entity that collides with this entity.
 		*/
-		void onCollisionEnter(Entity* other);
+		void onCollisionEnter(Entity* other) override;
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision starts and every frame it lasts.
+		@param other Entity that collides with this entity.
 		*/
 		void onCollisionStay(Entity* other);
 
 
 		/**
-		Set the entity activity to the boolean petition.
-		@param Boolean state activity.
+		Executed when a collision ends.
+		@param other Entity that collides with this entity.
 		*/
 		void onCollisionExit(Entity* other);
 

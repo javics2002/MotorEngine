@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structme_1_1_axis" kind="struct" language="C++" prot="public">
+    <compoundname>me::Axis</compoundname>
+    <basecompoundref refid="structme_1_1_axis_info" prot="public" virt="non-virtual">me::AxisInfo</basecompoundref>
+    <includes refid="_axis_8h" local="no">Axis.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structme_1_1_axis_1afe8bc98b4fe2b0996a4cc8fa4153c69f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Axis::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>me::Axis::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Axis.h" line="26" column="7" bodyfile="Src/Input/Axis.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_axis_1a76ce39606d2a6e55757fa1d936a9acba" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::Axis::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>me::Axis::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/Axis.h" line="29" column="6" bodyfile="Src/Input/Axis.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Representation of a virtual axis, so you can unify input given any controller, keyboard or mouse </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>me::Axis</label>
+        <link refid="structme_1_1_axis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::AxisInfo</label>
+        <link refid="structme_1_1_axis_info"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>me::Axis</label>
+        <link refid="structme_1_1_axis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::AxisInfo</label>
+        <link refid="structme_1_1_axis_info"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/Input/Axis.h" line="24" column="1" bodyfile="Src/Input/Axis.h" bodystart="24" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structme_1_1_axis_1a76ce39606d2a6e55757fa1d936a9acba" prot="public" virt="non-virtual"><scope>me::Axis</scope><name>active</name></member>
+      <member refid="structme_1_1_axis_info_1a7c82893ab4482ca590f21a427231dc22" prot="public" virt="non-virtual"><scope>me::Axis</scope><name>dead</name></member>
+      <member refid="structme_1_1_axis_info_1a9f84d7f79419c83bff7c123b7ccb0a7a" prot="public" virt="non-virtual"><scope>me::Axis</scope><name>gravity</name></member>
+      <member refid="structme_1_1_axis_1afe8bc98b4fe2b0996a4cc8fa4153c69f" prot="public" virt="non-virtual"><scope>me::Axis</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

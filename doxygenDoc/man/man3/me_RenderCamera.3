@@ -1,0 +1,116 @@
+.TH "me::RenderCamera" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::RenderCamera
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RenderCamera\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRenderCamera\fP ()"
+.br
+.ti -1c
+.RI "\fB~RenderCamera\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP (Ogre::SceneNode *CameraNode, Ogre::SceneManager *SceneMgr, Ogre::RenderWindow *\fBRenderWindow\fP)"
+.br
+.ti -1c
+.RI "void \fBcreateCamera\fP (const char *name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (const \fBOgre::Vector3f\fP &pos)"
+.br
+.ti -1c
+.RI "void \fBlookAt\fP (const \fBOgre::Vector3f\fP &look)"
+.br
+.ti -1c
+.RI "void \fBsetViewportDimension\fP (float left, float top, float width, float height)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ogre::Camera * \fBmCamera\fP"
+.br
+.ti -1c
+.RI "Ogre::Viewport * \fBmViewport\fP"
+.br
+.ti -1c
+.RI "Ogre::SceneNode * \fBmCameraNode\fP"
+.br
+.ti -1c
+.RI "Ogre::SceneManager * \fBmSceneMgr\fP"
+.br
+.ti -1c
+.RI "Ogre::RenderWindow * \fBmRenderWindow\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::RenderCamera::RenderCamera ()"
+
+.SS "me::RenderCamera::~RenderCamera ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void me::RenderCamera::createCamera (const char * name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)"
+Create mCamera with this informationand create mViewport for it 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP name of mCamera 
+.br
+\fInearDist\fP near clipping plane distancia 
+.br
+\fIfarDist\fP far clipping plane distancia 
+.br
+\fIautoRadio\fP if viewport calculate aspect radio automatically 
+.br
+\fIzOrder\fP relative order of mViewport 
+.RE
+.PP
+
+.SS "void me::RenderCamera::init (Ogre::SceneNode * CameraNode, Ogre::SceneManager * SceneMgr, Ogre::RenderWindow * RenderWindow)"
+
+.SS "void me::RenderCamera::lookAt (const \fBOgre::Vector3f\fP & look)"
+
+.SS "void me::RenderCamera::setPosition (const \fBOgre::Vector3f\fP & pos)"
+
+.SS "void me::RenderCamera::setViewportDimension (float left, float top, float width, float height)"
+Set dimension to mViewport 
+.PP
+\fBParameters\fP
+.RS 4
+\fIleft\fP left point of mViewport in range 0\&.0 to 1\&.0 
+.br
+\fItop\fP top point of mViewport in range 0\&.0 to 1\&.0 
+.br
+\fIwidth\fP width of mViewport in range 0\&.0 to 1\&.0 
+.br
+\fIheight\fP height of mViewport in range 0\&.0 to 1\&.0 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Ogre::Camera* me::RenderCamera::mCamera\fC [protected]\fP"
+
+.SS "Ogre::SceneNode* me::RenderCamera::mCameraNode\fC [protected]\fP"
+
+.SS "Ogre::RenderWindow* me::RenderCamera::mRenderWindow\fC [protected]\fP"
+
+.SS "Ogre::SceneManager* me::RenderCamera::mSceneMgr\fC [protected]\fP"
+
+.SS "Ogre::Viewport* me::RenderCamera::mViewport\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

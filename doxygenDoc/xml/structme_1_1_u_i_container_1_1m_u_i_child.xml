@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structme_1_1_u_i_container_1_1m_u_i_child" kind="struct" language="C++" prot="private">
+    <compoundname>me::UIContainer::mUIChild</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structme_1_1_u_i_container_1_1m_u_i_child_1a353e14536bc5adb11b96451683b9b1f0" prot="public" static="no" mutable="no">
+        <type><ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> *</type>
+        <definition>UIElement* me::UIContainer::mUIChild::mUiElement</definition>
+        <argsstring></argsstring>
+        <name>mUiElement</name>
+        <qualifiedname>me::UIContainer::mUIChild::mUiElement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIContainer.h" line="18" column="11" bodyfile="Src/EntityComponent/Components/UIContainer.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_u_i_container_1_1m_u_i_child_1ad17a4c67379f252c031b6cf25edf3564" prot="public" static="no" mutable="no">
+        <type><ref refid="classme_1_1_vector3" kindref="compound">me::Vector3</ref></type>
+        <definition>me::Vector3 me::UIContainer::mUIChild::mPos</definition>
+        <argsstring></argsstring>
+        <name>mPos</name>
+        <qualifiedname>me::UIContainer::mUIChild::mPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIContainer.h" line="19" column="13" bodyfile="Src/EntityComponent/Components/UIContainer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structme_1_1_u_i_container_1_1m_u_i_child_1aa0a15e0ac6346cae8267703b93868633" prot="public" static="no" mutable="no">
+        <type><ref refid="class_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 me::UIContainer::mUIChild::mScale</definition>
+        <argsstring></argsstring>
+        <name>mScale</name>
+        <qualifiedname>me::UIContainer::mUIChild::mScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIContainer.h" line="20" column="9" bodyfile="Src/EntityComponent/Components/UIContainer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>Vector2</label>
+        <link refid="class_vector2"/>
+      </node>
+      <node id="3">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+      <node id="1">
+        <label>me::UIContainer::mUIChild</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mUiElement</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>mPos</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>mScale</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::UIElement</label>
+        <link refid="classme_1_1_u_i_element"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>me::Vector3</label>
+        <link refid="classme_1_1_vector3"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/UIContainer.h" line="17" column="1" bodyfile="Src/EntityComponent/Components/UIContainer.h" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structme_1_1_u_i_container_1_1m_u_i_child_1ad17a4c67379f252c031b6cf25edf3564" prot="public" virt="non-virtual"><scope>me::UIContainer::mUIChild</scope><name>mPos</name></member>
+      <member refid="structme_1_1_u_i_container_1_1m_u_i_child_1aa0a15e0ac6346cae8267703b93868633" prot="public" virt="non-virtual"><scope>me::UIContainer::mUIChild</scope><name>mScale</name></member>
+      <member refid="structme_1_1_u_i_container_1_1m_u_i_child_1a353e14536bc5adb11b96451683b9b1f0" prot="public" virt="non-virtual"><scope>me::UIContainer::mUIChild</scope><name>mUiElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

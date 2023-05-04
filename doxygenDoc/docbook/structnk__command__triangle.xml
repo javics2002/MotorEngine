@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__triangle" xml:lang="en-US">
+<title>nk_command_triangle Struct Reference</title>
+<indexterm><primary>nk_command_triangle</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__triangle_1ae39911e004d052d2546ea9a013eac7c2">header</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__triangle_1a1a7b8926b82bbcd507142fbb337518f7">line_thickness</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle_1a3075515b028883cd55113bd830cc3b19">a</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle_1a50fdee47bcbf228ac6948f7f501a7f31">b</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2i">nk_vec2i</link> <link linkend="_structnk__command__triangle_1a66cc7af34255c6b6e6949ee7ce1f6539">c</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__command__triangle_1ae3698f324f8c4c5d654307c46d903b2b">color</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__triangle_1a3075515b028883cd55113bd830cc3b19"/><section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>a</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle::a</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle_1a50fdee47bcbf228ac6948f7f501a7f31"/><section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>b</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle::b</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle_1a66cc7af34255c6b6e6949ee7ce1f6539"/><section>
+    <title>c</title>
+<indexterm><primary>c</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>c</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2i">nk_vec2i</link> nk_command_triangle::c</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle_1ae3698f324f8c4c5d654307c46d903b2b"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_command_triangle::color</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle_1ae39911e004d052d2546ea9a013eac7c2"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_triangle::header</computeroutput></para></section>
+<anchor xml:id="_structnk__command__triangle_1a1a7b8926b82bbcd507142fbb337518f7"/><section>
+    <title>line_thickness</title>
+<indexterm><primary>line_thickness</primary><secondary>nk_command_triangle</secondary></indexterm>
+<indexterm><primary>nk_command_triangle</primary><secondary>line_thickness</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_triangle::line_thickness</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

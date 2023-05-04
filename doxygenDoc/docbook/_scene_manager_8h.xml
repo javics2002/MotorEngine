@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__scene_manager_8h" xml:lang="en-US">
+<title>Src/EntityComponent/SceneManager.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/SceneManager.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &quot;Utils/Singleton.h&quot;<?linebreak?>#include &quot;InfoScene.h&quot;<?linebreak?>#include &lt;memory&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_scene_manager">me::SceneManager</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__scene_manager_8h_1aa8991acc075d88a59ecb1f7df1c82ba3">__ENTITYCOMPONENT_SCENE_MANAGER</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>SceneManager &amp; <link linkend="_namespaceme_1acac54ce3805b69e3433ac8712a35450c">me::sceneManager</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__scene_manager_8h_1aa8991acc075d88a59ecb1f7df1c82ba3"/><section>
+    <title>__ENTITYCOMPONENT_SCENE_MANAGER</title>
+<indexterm><primary>__ENTITYCOMPONENT_SCENE_MANAGER</primary><secondary>SceneManager.h</secondary></indexterm>
+<indexterm><primary>SceneManager.h</primary><secondary>__ENTITYCOMPONENT_SCENE_MANAGER</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_SCENE_MANAGER</computeroutput></para></section>
+</section>
+</section>

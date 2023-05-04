@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__factory_component_8h_source" xml:lang="en-US">
+<title>FactoryComponent.h</title>
+<indexterm><primary>Src/EntityComponent/Components/FactoryComponent.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#ifndef&#32;__ENTITYCOMPONENT_FACTORYCOMPONENT</emphasis>
+4 <emphasis role="preprocessor">#define&#32;__ENTITYCOMPONENT_FACTORYCOMPONENT</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__info_scene_8h">EntityComponent/InfoScene.h</link>&quot;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Component;
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>
+13 &#32;&#32;&#32;&#32;{
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Checks&#32;if&#32;a&#32;parameter&#32;is&#32;especified&#32;in&#32;the&#32;Parameters&#32;map&#32;and&#32;returns&#32;its&#32;value&#32;if&#32;its&#32;found.</emphasis>
+17 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Otherwise&#32;sets&#32;it&#32;to&#32;defaultValue.</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;@params&#32;parameter&#32;String&#32;representing&#32;the&#32;name&#32;of&#32;the&#32;parameter.</emphasis>
+19 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;@params&#32;defaultValue&#32;Value&#32;returned&#32;in&#32;case&#32;parameter&#32;is&#32;not&#32;specified.</emphasis>
+20 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;@returns&#32;The&#32;value&#32;of&#32;the&#32;parameter.</emphasis>
+21 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;value(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1ad830450629248f34d5ce0ae49268edfa">ParameterName</link>&amp;&#32;parameter,&#32;<emphasis role="keywordtype">float</emphasis>&#32;defaultValue&#32;=&#32;0.0f);
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;value(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1ad830450629248f34d5ce0ae49268edfa">ParameterName</link>&amp;&#32;parameter,&#32;<emphasis role="keywordtype">int</emphasis>&#32;defaultValue&#32;=&#32;0);
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;value(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1ad830450629248f34d5ce0ae49268edfa">ParameterName</link>&amp;&#32;parameter,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;defaultValue);
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;std::string&#32;value(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespaceme_1ad830450629248f34d5ce0ae49268edfa">ParameterName</link>&amp;&#32;parameter,&#32;std::string&#32;defaultValue&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>);
+26 
+27 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_component_1a4e2dd5c566003c4c846ec968d494d094">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params)&#32;=&#32;0;
+29 &#32;&#32;&#32;&#32;};
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_animator">FactoryAnimator</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+32 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_animator_1a27d0257039dcec27525701ea7a20452f">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+34 &#32;&#32;&#32;&#32;};
+35 
+36 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_audio_listener">FactoryAudioListener</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+37 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_audio_listener_1ab9680c41ce5b1ca56aa408b0adf143ed">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+39 &#32;&#32;&#32;&#32;};
+40 
+41 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_audio_source">FactoryAudioSource</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+42 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_audio_source_1a32a7220c332b19d049d2d4b7a307fddb">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+44 &#32;&#32;&#32;&#32;};
+45 
+46 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_camera">FactoryCamera</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+47 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_camera_1a89b0f0035a6fc7af68640d1148d09b1b">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+49 &#32;&#32;&#32;&#32;};
+50 
+51 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_collider">FactoryCollider</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+52 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_collider_1a80d2627182246f0b82134e51a63af34a">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+54 &#32;&#32;&#32;&#32;};
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_mesh_renderer">FactoryMeshRenderer</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+57 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_mesh_renderer_1a86f57a95037ffb710b99ad0977e98707">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+59 &#32;&#32;&#32;&#32;};
+60 
+61 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_particle_system">FactoryParticleSystem</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+62 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_particle_system_1ac97a8b19ba38e29fb466fd2dc8f874cb">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+64 &#32;&#32;&#32;&#32;};
+65 
+66 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_rigid_body">FactoryRigidBody</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+67 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_rigid_body_1ac4649e941f35106db5e4cc49e7b76acc">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+69 &#32;&#32;&#32;&#32;};
+70 
+71 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classme_1_1_factory_transform">FactoryTransform</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_factory_component">FactoryComponent</link>&#32;{
+72 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_component">me::Component</link>*&#32;<link linkend="_classme_1_1_factory_transform_1ad554b91529ec8e8ccc45e95a57064a48">create</link>(<link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link>&#32;params);
+74 &#32;&#32;&#32;&#32;};
+75 }
+76 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

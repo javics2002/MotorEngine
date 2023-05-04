@@ -1,43 +1,40 @@
 #include "RenderManager.h"
 #include "Utils/Vector3.h"
-#include "Utils/Vector4.h"
+
+#include "Render/RenderWindow.h"
+#include "Render/RenderCamera.h"
+#include "Render/RenderMesh.h"
+#include "Render/SGTechniqueResolverListener.h"
+#include "Render/RenderUISprite.h"
 
 #include <OgreRoot.h>
 #include <OgreSceneManager.h>
 #include <OgreSceneNode.h>
-#include <OgreQuaternion.h>
 #include <OgreEntity.h>
 #include <OgreLight.h>
 #include <OgreFileSystemLayer.h>
 #include <OgreConfigFile.h>
-#include <OgreShaderGenerator.h>
 #include <OgreRTShaderSystem.h>
-#include <OgreMaterialManager.h>
-#include <OgreColourValue.h>
-#include <OgreVector.h>
-#include <iostream>
-#include "OgreTextAreaOverlayElement.h"
-#include "Render/RenderWindow.h"
-#include "Render/RenderCamera.h"
-#include "Render/RenderMesh.h"
-#include "Render/RenderParticleSystem.h"
-#include "Render/SGTechniqueResolverListener.h"
+#include <OgreOverlayManager.h>
+#include <OgreOverlay.h>
+#include <OgreOverlaySystem.h>
 
-// Animation includes
-#include <OgreAnimation.h>
-#include <OgreKeyFrame.h>
+
 
 using namespace me;
 
 RenderManager::RenderManager()
 {
 	initRoot();
+	mOverlaySystem = new Ogre::OverlaySystem();
+	mOverlayManager = Ogre::OverlayManager::getSingletonPtr();
 	initWindow();
 	locateResources();
 	loadResources();
 	initialiseRTShaderSystem();
 	mSM = mRoot->createSceneManager();
 	mShaderGenerator->addSceneManager(mSM);
+	mSM->addRenderQueueListener(mOverlaySystem);
 }
 
 void RenderManager::initRoot()
@@ -65,21 +62,16 @@ void RenderManager::initRoot()
 	if (!mRoot)
 		OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_CALL, "Ogre::Root", "OgreManager::initRoot");
 	mRoot->restoreConfig();
-
-
 }
 
-void me::RenderManager::initWindow()
+void RenderManager::initWindow()
 {
 	mOgreWindow = new RenderWindow("OgreWindow");
 	mOgreWindow->init(mRoot);
 }
 
-
-
 void RenderManager::locateResources()
 {
-
 	// load resource paths from config file
 	Ogre::ConfigFile cf;
 
@@ -98,6 +90,7 @@ void RenderManager::locateResources()
 	Ogre::String sec, type, arch;
 	// go through all specified resource groups
 	Ogre::ConfigFile::SettingsBySection_::const_iterator seci;
+
 	for (seci = cf.getSettingsBySection().begin(); seci != cf.getSettingsBySection().end(); ++seci) {
 		sec = seci->first;
 		const Ogre::ConfigFile::SettingsMultiMap&settings = seci->second;
@@ -108,10 +101,9 @@ void RenderManager::locateResources()
 		{
 			type = i->first;
 			arch = Ogre::FileSystemLayer::resolveBundlePath(i->second);
-			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type, sec);
+			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(arch, type);
 		}
 	}
-
 }
 
 void RenderManager::loadResources() {
@@ -133,49 +125,89 @@ bool RenderManager::initialiseRTShaderSystem() {
 	return true;
 }
 
-RenderMesh* me::RenderManager::getMesh(std::string name)
+void RenderManager::destroyRTShaderSystem()
+{
+	// Restore default scheme.
+	Ogre::MaterialManager::getSingleton().setActiveScheme(Ogre::MaterialManager::DEFAULT_SCHEME_NAME);
+
+	// Unregister the material manager listener.
+	if (mMaterialMgrListener != nullptr)
+	{
+		Ogre::MaterialManager::getSingleton().removeListener(mMaterialMgrListener);
+		delete mMaterialMgrListener;
+		mMaterialMgrListener = nullptr;
+	}
+
+	// Destroy RTShader system.
+	if (mShaderGenerator != nullptr)
+	{
+		Ogre::RTShader::ShaderGenerator::destroy();
+		mShaderGenerator = nullptr;
+	}
+}
+
+RenderUISprite* RenderManager::getUISprite(std::string name)
+{
+	if (!mSprites.count(name))
+		return nullptr;
+
+	return mSprites[name];
+}
+
+RenderMesh* RenderManager::getMesh(std::string name)
 {
 	if (!mMeshes.count(name))
 		return nullptr;
 
 	return mMeshes[name];
 }
-RenderCamera* me::RenderManager::getCamera(std::string name)
-{
 
+RenderCamera* RenderManager::getCamera(std::string name)
+{
 	if (!mCameras.count(name))
 		return nullptr;
 
 	return mCameras[name];
 }
 
-RenderParticleSystem* me::RenderManager::getParticle(std::string name)
-{
-	if (!mParticles.count(name))
-		return nullptr;
-
-	return mParticles[name];
-}
-
 me::RenderManager::~RenderManager()
 {
-	for (auto& it : mCameras) {
-
+	for (auto& it : mCameras)
 		delete it.second;
-	}
 	mCameras.clear();
 
-	for (auto& it2 : mMeshes) {
-
+	for (auto& it2 : mMeshes)
 		delete it2.second;
-	}
 	mMeshes.clear();
+
+	for (auto& it3 : mSprites) {
+		delete it3.second;
+		destroyUISprite(it3.first);
+	}
+	mSprites.clear();
+
+	for (auto& it4 : mLights) 
+		delete it4.second;
+	mLights.clear();
+
+	// Destroy the RT Shader System.
+	destroyRTShaderSystem();
+	delete mFSLayer;
+	mFSLayer = nullptr;
 	delete mOgreWindow;
+	mOgreWindow = nullptr;	
+	
+	mOverlayManager = nullptr;
+	delete mOverlaySystem;
+	mOverlaySystem = nullptr;
+
+	delete mRoot;
+	mRoot = nullptr;
 }
 
-bool me::RenderManager::createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)
+bool RenderManager::createCamera(std::string name, std::string parentName, int nearDist, 
+	int farDist, bool autoRatio, int zOrder, Vector4 colour)
 {
-
 	if (mCameras.count(name))
 		return false;
 
@@ -183,15 +215,15 @@ bool me::RenderManager::createCamera(std::string name, std::string parentName, i
 	Ogre::SceneNode* cameraNode = createChildNode(name, parentName);
 	
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
-
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRatio, zOrder, colour.v4toOgreColourValue());
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color )
+bool RenderManager::createCamera(std::string name, float nearDist, float farDist, bool autoRatio, 
+	int zOrder, Vector4 colour)
 {
 	if (mCameras.count(name))
 		return false;
@@ -200,15 +232,14 @@ bool me::RenderManager::createCamera(std::string name, int nearDist, int farDist
 	Ogre::SceneNode* cameraNode = createNode(name);
 
 	camera->init(cameraNode, mSM, mOgreWindow->getRenderWindow());
-
-	camera->createCamera(name.c_str(), nearDist, farDist, autoRadio,zOrder, color);
+	camera->createCamera(name.c_str(), nearDist, farDist, autoRatio, zOrder, colour.v4toOgreColourValue());
 
 	mCameras[name] = camera;
 
 	return true;
 }
 
-bool me::RenderManager::setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look)
+bool RenderManager::setCameraInfo(std::string name, const Vector3& pos, const Vector3& look)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
@@ -217,13 +248,33 @@ bool me::RenderManager::setCameraInfo(std::string name, const Ogre::Vector3f &po
 	cam->setPosition(pos);
 	cam->lookAt(look);
 
+	
 
 	return true;
-
 }
 
+bool RenderManager::setCameraFixedY(std::string name, bool bFixed) {
+	RenderCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
 
-bool me::RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
+	cam->setFixedYAxis(bFixed);
+
+	return true;
+}
+
+bool me::RenderManager::setViewportOverlayEnabled(std::string name, bool enabled)
+{
+	RenderCamera* cam = getCamera(name);
+	if (cam == nullptr)
+		return false;
+
+	cam->setOverlayEnabled(enabled);
+
+	return true;
+}
+
+bool RenderManager::setViewportDimension(std::string name, float left, float top, float width, float height)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
@@ -231,43 +282,69 @@ bool me::RenderManager::setViewportDimension(std::string name, float left, float
 
 	cam->setViewportDimension(left, top, width, height);
 
-
 	return true;
 }
 
 
-void me::RenderManager::destroyCamera(std::string name)
+void RenderManager::destroyCamera(std::string name)
 {
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 	{
+#ifdef _DEBUG
 		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{
 		delete cam;
+		cam = nullptr;
 		mCameras.erase(name);
 	}
 
 }
 
-void me::RenderManager::createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir)
+void RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+	const Vector3& color)
 {
-	
 	Ogre::Light* light = mSM->createLight(name);
 	light->setType(Ogre::Light::LT_DIRECTIONAL);
 	light->setVisible(true);
 	Ogre::SceneNode* lightNode = createNode(name);
 	lightNode->attachObject(light);
-	lightNode->setDirection(dir);
-	lightNode->setPosition(pos);
-	
+	lightNode->setDirection(dir.v3ToOgreV3());
+	lightNode->setPosition(pos.v3ToOgreV3());
+	light->setDiffuseColour(Ogre::ColourValue(color.x, color.y, color.z, 1));
 
+	mLights[name] = light;
 }
 
-bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
-{
+void me::RenderManager::destroyLight(std::string name)
+{	
+	if (!mLights.count(name))
+	{
+#ifdef _DEBUG
+		std::cout << "Try to destroy nullptr light with this name " << name << std::endl;
+#endif // _DEBUG
+	}
+	else
+	{
+		Ogre::Light* light = mLights[name];
+		Ogre::SceneNode* node = light->getParentSceneNode();
+		node->detachAllObjects();
+		mSM->destroyLight(light);
+		mSM->destroySceneNode(node);
+		mLights.erase(name);
+	}
+}
 
+void RenderManager::setAmbientLight(const Vector3& color)
+{
+	mSM->setAmbientLight(Ogre::ColourValue(color.x, color.y, color.z, 1));
+}
+
+bool RenderManager::createMesh(std::string name, std::string nameMesh)
+{
 	if (mMeshes.count(name))
 		return false;
 
@@ -280,40 +357,40 @@ bool me::RenderManager::createMesh(std::string name, std::string nameMesh)
 	return true;
 }
 
-bool me::RenderManager::setMeshPosition(std::string name, Vector3 pos)
+bool RenderManager::setMeshPosition(std::string name, Vector3 pos)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setPosition(pos.v3ToOgreV3());
+	mesh->setPosition(pos);
 
 	return true;
 }
 
-bool me::RenderManager::setMeshScale(std::string name, Vector3 scale)
+bool RenderManager::setMeshScale(std::string name, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setScale(scale.v3ToOgreV3());
+	mesh->setScale(scale);
 	
 	return true;
 }
 
-bool me::RenderManager::setMeshRotation(std::string name, Vector4 rot)
+bool RenderManager::setMeshRotation(std::string name, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setRotation(rot.v4ToOgreQuaternion());
+	mesh->setRotation(rot);
 
 	return true;
 }
 
-bool me::RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
+bool RenderManager::setMeshMaterial(std::string name, std::string nameMaterial)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
@@ -324,12 +401,27 @@ bool me::RenderManager::setMeshMaterial(std::string name, std::string nameMateri
 	return true;
 }
 
-void me::RenderManager::destroyMesh(std::string name)
+void me::RenderManager::activeMesh(std::string name)
+{
+	RenderMesh* mesh = getMesh(name);
+	if (mesh != nullptr) mesh->activeMesh();
+		
+}
+
+void me::RenderManager::desactiveMesh(std::string name)
+{
+	RenderMesh* mesh = getMesh(name);
+	if (mesh != nullptr) mesh->desactiveMesh();
+}
+
+void RenderManager::destroyMesh(std::string name)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 	{
+#ifdef _DEBUG
 		std::cout << "Try to destroy nullptr mesh with this name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{
@@ -339,199 +431,164 @@ void me::RenderManager::destroyMesh(std::string name)
 
 }
 
-bool me::RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
+bool RenderManager::setMeshTransform(std::string name, Vector3 pos, Vector3 scale)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 
-	mesh->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), Ogre::Quaternion::IDENTITY);
+	mesh->setTransform(pos, scale, Vector4::Identity());
 
 	return true;
 }
 
-bool me::RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 scale, Vector4 rot)
+bool RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 scale, Vector4 rot)
 {
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 		return false;
 	
-	mesh->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), rot.v4ToOgreQuaternion());
+	mesh->setTransform(pos, scale, rot);
 
 	return true;
 }
 
-
-
-bool me::RenderManager::createParticle(std::string name, std::string nameParticle)
+bool me::RenderManager::createSprite(std::string name, std::string spriteMaterialName,int zOrder)
 {
-	if (mParticles.count(name))
+	if (mSprites[name] != nullptr) {
+#ifdef _DEBUG
+		std::cout << "There cannot be more than one sprite named " << name << ".\n";
+#endif // _DEBUG
+		return false;
+	}
+
+	auto overlay = mOverlayManager->create(name + "Overlay");
+	auto panel = mOverlayManager->createOverlayElement("Panel", name + "Panel");
+
+	RenderUISprite* uiSprite = new RenderUISprite(overlay, panel, spriteMaterialName,zOrder);
+
+	mSprites[name] = uiSprite;
+	return overlay->isVisible();
+	
+}
+
+
+bool RenderManager::setUISpritePosition(std::string name, Vector2 pos)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
 		return false;
 
-	Ogre::SceneNode* entityNode = createNode(name);
-	RenderParticleSystem* particle = new RenderParticleSystem(name, entityNode, nameParticle);
-
-	mParticles[name] = particle;
+	sprite->setPosition(pos);
 
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)
+
+bool RenderManager::setUISpriteScale(std::string name, Vector2 scale)
 {
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
 		return false;
 
-	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), Ogre::Quaternion::IDENTITY);
+	sprite->setScale(scale);
 
 	return true;
 }
 
-bool me::RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot)
+bool RenderManager::setUISpriteRotation(std::string name, float rot)
 {
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
 		return false;
 
-	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), rot.v4ToOgreQuaternion());
+	sprite->setRotation(rot);
 
 	return true;
 }
 
-bool me::RenderManager::setParticlePosition(std::string name, Vector3 pos)
+bool RenderManager::setUISpriteMaterial(std::string name, std::string nameMaterial)
 {
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
 		return false;
 
-	particle->setPosition(pos.v3ToOgreV3());
+	sprite->setMaterial(nameMaterial);
 
 	return true;
 }
 
-bool me::RenderManager::setParticleScale(std::string name, Vector3 scale)
+void RenderManager::destroyUISprite(std::string name)
 {
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
+	{
+#ifdef _DEBUG
+		std::cout << "Try to destroy nullptr UISprite with name " << name << std::endl;
+#endif // _DEBUG
+	}
+	else
+	{
+		Ogre::OverlayElement* ove = sprite->getOgreOverlayElement();
+		Ogre::Overlay* ov = sprite->getOgreOverlay();
+
+		mOverlayManager->destroyOverlayElement(ove);
+		mOverlayManager->destroy(sprite->getOgreOverlay());
+		delete sprite;
+		mSprites.erase(name);
+	}
+
+}
+
+bool RenderManager::setUISpriteTransform(std::string name, Vector2 pos, Vector2 scale, float rot)
+{
+	RenderUISprite* sprite = getUISprite(name);
+	if (sprite == nullptr)
 		return false;
 
-	particle->setScale(scale.v3ToOgreV3());
-
-	return true;
-}
-
-bool me::RenderManager::setParticleRotation(std::string name, Vector4 rot)
-{
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
-		return false;
-
-	particle->setRotation(rot.v4ToOgreQuaternion());
-
-	return true;
-}
-
-bool me::RenderManager::setParticleEmitting(std::string name, bool emitted)
-{
-	RenderParticleSystem* particle = getParticle(name);
-	if (particle == nullptr)
-		return false;
-
-	particle->setEmitting(emitted);
+	sprite->setTransform(pos, scale, rot);
 
 	return true;
 }
 
 
-
-Ogre::SceneNode* me::RenderManager::createNode(std::string name)
+Ogre::SceneNode* RenderManager::createNode(std::string name)
 {
 	return  mSM->getRootSceneNode()->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::RenderManager::createChildNode(std::string name, std::string parent)
+Ogre::SceneNode* RenderManager::createChildNode(std::string name, std::string parent)
 {
 	return mSM->getSceneNode(parent)->createChildSceneNode(name);
 }
 
-Ogre::SceneNode* me::RenderManager::getRootSceneNode()
+Ogre::SceneNode* RenderManager::getRootSceneNode()
 {
 	return mSM->getRootSceneNode();
 }
 
-void me::RenderManager::render()
+void RenderManager::render()
 {
 	mRoot->renderOneFrame();
-	//ogreAnimState->addTime(0.0166);
 }
 
-RenderWindow* me::RenderManager::getOgreWindow()
+RenderWindow* RenderManager::getOgreWindow()
 {
 	return mOgreWindow;
 }
 
-Ogre::Entity* me::RenderManager::getOgreEntity(std::string name)
+Ogre::Entity* RenderManager::getOgreEntity(std::string name)
 {
 	return getMesh(name)->getOgreEntity();
 }
 
-Ogre::TextAreaOverlayElement* me::RenderManager::createOverlayElement()
-{
-	return nullptr;
-}
 
-Ogre::SceneManager* me::RenderManager::getSceneManager()
+Ogre::SceneManager* RenderManager::getSceneManager()
 {
 	return mSM;
 }
 
-void me::RenderManager::scene1()
+Ogre::OverlayManager* me::RenderManager::getOgreManager()
 {
-	Ogre::SceneNode* mSinbadNode;
-	Ogre::Entity* ent;
-	ent = mSM->createEntity("Sinbad.mesh");
-	mSinbadNode = mSM->getRootSceneNode()->createChildSceneNode("Sinbad");
-	mSinbadNode->attachObject(ent);
-	mSinbadNode->setPosition(0, 0, 0);
-	mSinbadNode->setScale(10, 10, 10);
-	mSinbadNode->setVisible(true);
-
-	// TEMPORAL ANIMATION
-	Ogre::Real duration = 4;
-	Ogre::Real step = duration / 4;
-
-	Ogre::Animation* anim;
-	anim = mSM->createAnimation("sinbadAnimation", duration);
-	Ogre::NodeAnimationTrack* track = anim->createNodeTrack(0, mSinbadNode);
-	anim->setInterpolationMode(Ogre::Animation::IM_LINEAR);
-
-	Ogre::TransformKeyFrame* key;
-
-	int counterStep = 0;
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion());
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-90), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-180), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-270), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	key = track->createNodeKeyFrame(step * counterStep++);
-	key->setRotation(Ogre::Quaternion(Ogre::Degree(-359), Ogre::Vector3::UNIT_X));
-	key->setScale(Ogre::Vector3(10));
-
-	ogreAnimState = mSM->createAnimationState("sinbadAnimation");
-	ogreAnimState->setEnabled(true);
-	ogreAnimState->setLoop(true);
-
-	
+	return mOverlayManager;
 }

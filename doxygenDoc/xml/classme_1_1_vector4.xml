@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_vector4" kind="class" language="C++" prot="public">
+    <compoundname>me::Vector4</compoundname>
+    <includes refid="_vector4_8h" local="no">Vector4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classme_1_1_vector4_1a0a3f1fd1a3730d3952333adc4b3d7fce" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector4::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>me::Vector4::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="40" column="7" bodyfile="Src/Utils/Vector4.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_vector4_1afd7d4bd8ac3bd548c768834b86a77336" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector4::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>me::Vector4::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="40" column="9" bodyfile="Src/Utils/Vector4.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_vector4_1a1462b316f647c24854fe7494182eccd4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector4::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>me::Vector4::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="40" column="11" bodyfile="Src/Utils/Vector4.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_vector4_1a1d1c75c33c8c82efd70cbd1e77effb31" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float me::Vector4::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <qualifiedname>me::Vector4::w</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="40" column="13" bodyfile="Src/Utils/Vector4.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classme_1_1_vector4_1aca190b84b2f6d8d227410c601d1c16d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector4::lerp</definition>
+        <argsstring>(float a, float b, float f)</argsstring>
+        <name>lerp</name>
+        <qualifiedname>me::Vector4::lerp</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting value of the interpolation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending value of the interpolation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The factor by which to interpolate between &quot;a&quot; and &quot;b&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="35" column="7" bodyfile="Src/Utils/Vector4.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_vector4_1a511b4d9c8326c235b76d794eea018921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector4::Vector4</definition>
+        <argsstring>()</argsstring>
+        <name>Vector4</name>
+        <qualifiedname>me::Vector4::Vector4</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="43" column="1" bodyfile="Src/Utils/Vector4.cpp" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a3b12319a0f131f0f09a3f2d199a608fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector4::Vector4</definition>
+        <argsstring>(float a, float b, float c)</argsstring>
+        <name>Vector4</name>
+        <qualifiedname>me::Vector4::Vector4</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="45" column="1" bodyfile="Src/Utils/Vector4.cpp" bodystart="23" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1af9381073e9854cf1190ef98198ddfbff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector4::Vector4</definition>
+        <argsstring>(const Vector3 &amp;v_)</argsstring>
+        <name>Vector4</name>
+        <qualifiedname>me::Vector4::Vector4</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="47" column="1" bodyfile="Src/Utils/Vector4.cpp" bodystart="38" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a3eb2c9782d2a1e5e685bd74354eea8a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector4::Vector4</definition>
+        <argsstring>(float a, float b, float c, float d)</argsstring>
+        <name>Vector4</name>
+        <qualifiedname>me::Vector4::Vector4</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="49" column="1" bodyfile="Src/Utils/Vector4.cpp" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a94bbd0b53dab7d48aa762bbeb7179b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector4::Vector4</definition>
+        <argsstring>(const Vector4 &amp;v)</argsstring>
+        <name>Vector4</name>
+        <qualifiedname>me::Vector4::Vector4</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="51" column="1" bodyfile="Src/Utils/Vector4.cpp" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a012f2571ce91aaf30d264205311a549d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 Vector4::lerp</definition>
+        <argsstring>(const Vector4 &amp;a, const Vector4 &amp;b, float f)</argsstring>
+        <name>lerp</name>
+        <qualifiedname>me::Vector4::lerp</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the linear interpolation between &quot;a&quot; and &quot;b&quot; by a factor of &quot;f&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting vector to interpolate from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending vector to interpolate to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolation factor, a value between 0 and 1 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="60" column="9" bodyfile="Src/Utils/Vector4.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a1eec9b1b9fa503b79f278a46c1472db6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector4::operator=</definition>
+        <argsstring>(const Vector4 &amp;v)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>me::Vector4::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="62" column="6" bodyfile="Src/Utils/Vector4.cpp" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a09de4f22f759dab56add186a2da30208" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector4::operator=</definition>
+        <argsstring>(const Vector4 *v)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>me::Vector4::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="63" column="6" bodyfile="Src/Utils/Vector4.cpp" bodystart="81" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1aa244b8042c59647c594f4309e0131768" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ogre::Quaternion</type>
+        <definition>Ogre::Quaternion Vector4::v4ToOgreQuaternion</definition>
+        <argsstring>()</argsstring>
+        <name>v4ToOgreQuaternion</name>
+        <qualifiedname>me::Vector4::v4ToOgreQuaternion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the conversion <ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref> - Ogre::Quaternion </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="68" column="18" bodyfile="Src/Utils/Vector4.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1a85ff06f21db94a8f2d39892413669b85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>btQuaternion</type>
+        <definition>btQuaternion Vector4::getRotationInBullet</definition>
+        <argsstring>()</argsstring>
+        <name>getRotationInBullet</name>
+        <qualifiedname>me::Vector4::getRotationInBullet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current Rotation in btQuaternion </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="73" column="14" bodyfile="Src/Utils/Vector4.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_vector4_1adac0e47d5dfad5b0fdcc47371d162113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector4::rotate</definition>
+        <argsstring>(float degrees, Vector3 axis)</argsstring>
+        <name>rotate</name>
+        <qualifiedname>me::Vector4::rotate</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>degrees</declname>
+        </param>
+        <param>
+          <type><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector4.h" line="78" column="6" bodyfile="Src/Utils/Vector4.cpp" bodystart="97" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Utils/Vector4.h" line="22" column="1" bodyfile="Src/Utils/Vector4.h" bodystart="23" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classme_1_1_vector4_1a85ff06f21db94a8f2d39892413669b85" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>getRotationInBullet</name></member>
+      <member refid="classme_1_1_vector4_1aca190b84b2f6d8d227410c601d1c16d3" prot="private" virt="non-virtual"><scope>me::Vector4</scope><name>lerp</name></member>
+      <member refid="classme_1_1_vector4_1a012f2571ce91aaf30d264205311a549d" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>lerp</name></member>
+      <member refid="classme_1_1_vector4_1a1eec9b1b9fa503b79f278a46c1472db6" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>operator=</name></member>
+      <member refid="classme_1_1_vector4_1a09de4f22f759dab56add186a2da30208" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>operator=</name></member>
+      <member refid="classme_1_1_vector4_1adac0e47d5dfad5b0fdcc47371d162113" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>rotate</name></member>
+      <member refid="classme_1_1_vector4_1aa244b8042c59647c594f4309e0131768" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>v4ToOgreQuaternion</name></member>
+      <member refid="classme_1_1_vector4_1a511b4d9c8326c235b76d794eea018921" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>Vector4</name></member>
+      <member refid="classme_1_1_vector4_1a3b12319a0f131f0f09a3f2d199a608fe" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>Vector4</name></member>
+      <member refid="classme_1_1_vector4_1af9381073e9854cf1190ef98198ddfbff" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>Vector4</name></member>
+      <member refid="classme_1_1_vector4_1a3eb2c9782d2a1e5e685bd74354eea8a7" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>Vector4</name></member>
+      <member refid="classme_1_1_vector4_1a94bbd0b53dab7d48aa762bbeb7179b2d" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>Vector4</name></member>
+      <member refid="classme_1_1_vector4_1a1d1c75c33c8c82efd70cbd1e77effb31" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>w</name></member>
+      <member refid="classme_1_1_vector4_1a0a3f1fd1a3730d3952333adc4b3d7fce" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>x</name></member>
+      <member refid="classme_1_1_vector4_1afd7d4bd8ac3bd548c768834b86a77336" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>y</name></member>
+      <member refid="classme_1_1_vector4_1a1462b316f647c24854fe7494182eccd4" prot="public" virt="non-virtual"><scope>me::Vector4</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,99 @@
+\hypertarget{classme_1_1_singleton}{}\doxysection{me\+::Singleton\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classme_1_1_singleton}\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Singleton.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \& \mbox{\hyperlink{classme_1_1_singleton_a6745ba60837f9347a75c0cfc27fadfb0}{operator=}} (const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \&o)=delete
+\item 
+\mbox{\hyperlink{classme_1_1_singleton_a70f85c079fd020a8655eed54e7189845}{Singleton}} (const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \&o)=delete
+\item 
+virtual \mbox{\hyperlink{classme_1_1_singleton_a576834dfbf95c3b929511d2a588866d1}{$\sim$\+Singleton}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename ... Targs$>$ }\\static T $\ast$ \mbox{\hyperlink{classme_1_1_singleton_a919633966a5db8336cffa09f28fc2623}{init}} (Targs \&\&...args)
+\item 
+static T $\ast$ \mbox{\hyperlink{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_singleton_af5127d54d6c6904173541b404903b599}{Singleton}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class me\+::\+Singleton$<$ T $>$}
+Ensures there is only one instance of a class, and offers global access to it. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & is the class made a singleton \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_singleton_af5127d54d6c6904173541b404903b599}\label{classme_1_1_singleton_af5127d54d6c6904173541b404903b599}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Singleton()}{Singleton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::\+Singleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_singleton_a70f85c079fd020a8655eed54e7189845}\label{classme_1_1_singleton_a70f85c079fd020a8655eed54e7189845}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Singleton()}{Singleton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::\+Singleton (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classme_1_1_singleton_a576834dfbf95c3b929511d2a588866d1}\label{classme_1_1_singleton_a576834dfbf95c3b929511d2a588866d1}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!````~Singleton@{$\sim$Singleton}}
+\index{````~Singleton@{$\sim$Singleton}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Singleton()}{~Singleton()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classme_1_1_singleton}{Singleton}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_singleton_a919633966a5db8336cffa09f28fc2623}\label{classme_1_1_singleton_a919633966a5db8336cffa09f28fc2623}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!init@{init}}
+\index{init@{init}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$typename ... Targs$>$ \\
+static T $\ast$ \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::init (\begin{DoxyParamCaption}\item[{Targs \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Constructs the instance of class T. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Arguments} & to pass to class T constructor. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}\label{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!instance@{instance}}
+\index{instance@{instance}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static T $\ast$ \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the class T instance. If it does not exits, creates it with the default constructor and returns it. \begin{DoxyReturn}{Returns}
+Reference to the only instance of class T. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_singleton_a6745ba60837f9347a75c0cfc27fadfb0}\label{classme_1_1_singleton_a6745ba60837f9347a75c0cfc27fadfb0}} 
+\index{me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!me::Singleton$<$ T $>$@{me::Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \& \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ T $>$ \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Utils/\mbox{\hyperlink{_singleton_8h}{Singleton.\+h}}\end{DoxyCompactItemize}

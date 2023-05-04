@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__selectable" xml:lang="en-US">
+<title>nk_style_selectable Struct Reference</title>
+<indexterm><primary>nk_style_selectable</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1ac1d806a8b9e70279bf2c548b867ca3ae">normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1a4baf84a6176b653b765de870a9295f12">hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1ae86d07f5a16c62c546c95afddb3ef33d">pressed</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1a7e73c516836b8d0574a1b32f8429a0f2">normal_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1a53887479ef54ba2efd0c078ef64fbe4e">hover_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__selectable_1aefd08007e119a3e321140e31cbfc3f7b">pressed_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1a6a849c9d50abd1dfbbffced1a0283869">text_normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1a1b4e828bbd8ba78ceed9e2efd7c882ba">text_hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1ad96dd5eb1470bbd6cc6e66259e735688">text_pressed</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1acc546befeecba45c2494c47e2800d5c7">text_normal_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1a68320f2eca12232ee4630fb884b389c2">text_hover_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1aecb0b9ee1fb0cdd7d2d42f254c344cd6">text_pressed_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__selectable_1af004e1c08e65f86c0d97f6cf38cc6387">text_background</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> <link linkend="_structnk__style__selectable_1ad5269b824144fa486e83f982767c71ab">text_alignment</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__selectable_1a2c0def63204e22489a0b5020b10baf57">rounding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__selectable_1a2c770699aeb61661fc489c3c6f8e29fb">padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__selectable_1a7c609f101e3d34ab2efd47512261285e">touch_padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__selectable_1a6a88ded1389d9a57728e885d9cfae6e5">image_padding</link></para>
+</listitem>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__selectable_1ab0cdeefe700feb442aefb82a49aa930b">userdata</link></para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__selectable_1a5f8962de9e8498f98ca3a1d7b2d5e07c">draw_begin</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__selectable_1aeee4d32977d1afe0c1980d5fae22fa31">draw_end</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__selectable_1a5f8962de9e8498f98ca3a1d7b2d5e07c"/><section>
+    <title>draw_begin</title>
+<indexterm><primary>draw_begin</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>draw_begin</secondary></indexterm>
+<para><computeroutput>void(* nk_style_selectable::draw_begin) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1aeee4d32977d1afe0c1980d5fae22fa31"/><section>
+    <title>draw_end</title>
+<indexterm><primary>draw_end</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>draw_end</secondary></indexterm>
+<para><computeroutput>void(* nk_style_selectable::draw_end) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a4baf84a6176b653b765de870a9295f12"/><section>
+    <title>hover</title>
+<indexterm><primary>hover</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a53887479ef54ba2efd0c078ef64fbe4e"/><section>
+    <title>hover_active</title>
+<indexterm><primary>hover_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>hover_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::hover_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a6a88ded1389d9a57728e885d9cfae6e5"/><section>
+    <title>image_padding</title>
+<indexterm><primary>image_padding</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>image_padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_selectable::image_padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1ac1d806a8b9e70279bf2c548b867ca3ae"/><section>
+    <title>normal</title>
+<indexterm><primary>normal</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a7e73c516836b8d0574a1b32f8429a0f2"/><section>
+    <title>normal_active</title>
+<indexterm><primary>normal_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>normal_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::normal_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a2c770699aeb61661fc489c3c6f8e29fb"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_selectable::padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1ae86d07f5a16c62c546c95afddb3ef33d"/><section>
+    <title>pressed</title>
+<indexterm><primary>pressed</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>pressed</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::pressed</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1aefd08007e119a3e321140e31cbfc3f7b"/><section>
+    <title>pressed_active</title>
+<indexterm><primary>pressed_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>pressed_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_selectable::pressed_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a2c0def63204e22489a0b5020b10baf57"/><section>
+    <title>rounding</title>
+<indexterm><primary>rounding</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>rounding</secondary></indexterm>
+<para><computeroutput>float nk_style_selectable::rounding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1ad5269b824144fa486e83f982767c71ab"/><section>
+    <title>text_alignment</title>
+<indexterm><primary>text_alignment</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_alignment</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a19e0e2f6db4862891d9801de3c3da323">nk_flags</link> nk_style_selectable::text_alignment</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1af004e1c08e65f86c0d97f6cf38cc6387"/><section>
+    <title>text_background</title>
+<indexterm><primary>text_background</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_background</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_background</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a1b4e828bbd8ba78ceed9e2efd7c882ba"/><section>
+    <title>text_hover</title>
+<indexterm><primary>text_hover</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a68320f2eca12232ee4630fb884b389c2"/><section>
+    <title>text_hover_active</title>
+<indexterm><primary>text_hover_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_hover_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_hover_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a6a849c9d50abd1dfbbffced1a0283869"/><section>
+    <title>text_normal</title>
+<indexterm><primary>text_normal</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1acc546befeecba45c2494c47e2800d5c7"/><section>
+    <title>text_normal_active</title>
+<indexterm><primary>text_normal_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_normal_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_normal_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1ad96dd5eb1470bbd6cc6e66259e735688"/><section>
+    <title>text_pressed</title>
+<indexterm><primary>text_pressed</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_pressed</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_pressed</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1aecb0b9ee1fb0cdd7d2d42f254c344cd6"/><section>
+    <title>text_pressed_active</title>
+<indexterm><primary>text_pressed_active</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>text_pressed_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_selectable::text_pressed_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1a7c609f101e3d34ab2efd47512261285e"/><section>
+    <title>touch_padding</title>
+<indexterm><primary>touch_padding</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>touch_padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_selectable::touch_padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__selectable_1ab0cdeefe700feb442aefb82a49aa930b"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_style_selectable</secondary></indexterm>
+<indexterm><primary>nk_style_selectable</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_style_selectable::userdata</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

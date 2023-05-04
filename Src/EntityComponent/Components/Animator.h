@@ -12,15 +12,18 @@ namespace Ogre {
 
 namespace me {
 	class MeshRenderer;
-
+	
+	/**
+	Manages the MeshRenderer Component to play animations of the mesh file in it.
+	*/
 	class __MOTORENGINE_API Animator : public Component
 	{
 	public:
 		Animator();
 		~Animator();
 
-
-		void update() override;
+		void start() override;
+		void update(const double& dt) override;
 
 		/**
 		* Sets the Animator's active state

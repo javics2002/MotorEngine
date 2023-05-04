@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_components_factory" xml:lang="en-US">
+<title>me::ComponentsFactory Class Reference</title>
+<indexterm><primary>me::ComponentsFactory</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ComponentsFactory.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::ComponentsFactory:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_components_factory.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_components_factory_1a705341a274c483800905f9cf16985867">~ComponentsFactory</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_component">me::Component</link> * <link linkend="_classme_1_1_components_factory_1acb395f78df5ef2ed01281ef5434d3b1f">create</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;name, <link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link> &amp;params)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_components_factory_1a8e19569e45383a83234dae874ef88f56">addFactoryComponent</link> (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp;name, <link linkend="_classme_1_1_factory_component">FactoryComponent</link> *factoryComponent)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; ComponentsFactory &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1a70f85c079fd020a8655eed54e7189845">Singleton</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_components_factory">ComponentsFactory</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_components_factory">ComponentsFactory</link> &gt; &amp; <link linkend="_classme_1_1_singleton_1a6745ba60837f9347a75c0cfc27fadfb0">operator=</link> (const <link linkend="_classme_1_1_singleton">Singleton</link>&lt; <link linkend="_classme_1_1_components_factory">ComponentsFactory</link> &gt; &amp;o)=delete</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_singleton_1a576834dfbf95c3b929511d2a588866d1">~Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; ComponentsFactory &gt;</link>        <itemizedlist>
+            <listitem><para>static <link linkend="_classme_1_1_components_factory">ComponentsFactory</link> * <link linkend="_classme_1_1_singleton_1a919633966a5db8336cffa09f28fc2623">init</link> (Targs &amp;&amp;...args)</para>
+</listitem>
+            <listitem><para>static <link linkend="_classme_1_1_components_factory">ComponentsFactory</link> * <link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">instance</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_classme_1_1_singleton">me::Singleton&lt; ComponentsFactory &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_singleton_1af5127d54d6c6904173541b404903b599">Singleton</link> ()</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_components_factory_1a705341a274c483800905f9cf16985867"/><section>
+    <title>~ComponentsFactory()</title>
+<indexterm><primary>~ComponentsFactory</primary><secondary>me::ComponentsFactory</secondary></indexterm>
+<indexterm><primary>me::ComponentsFactory</primary><secondary>~ComponentsFactory</secondary></indexterm>
+<para><computeroutput>me::ComponentsFactory::~ComponentsFactory ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_components_factory_1a8e19569e45383a83234dae874ef88f56"/><section>
+    <title>addFactoryComponent()</title>
+<indexterm><primary>addFactoryComponent</primary><secondary>me::ComponentsFactory</secondary></indexterm>
+<indexterm><primary>me::ComponentsFactory</primary><secondary>addFactoryComponent</secondary></indexterm>
+<para><computeroutput>void ComponentsFactory::addFactoryComponent (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; name, <link linkend="_classme_1_1_factory_component">FactoryComponent</link> * factoryComponent)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_components_factory_1acb395f78df5ef2ed01281ef5434d3b1f"/><section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>me::ComponentsFactory</secondary></indexterm>
+<indexterm><primary>me::ComponentsFactory</primary><secondary>create</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_component">me::Component</link> * ComponentsFactory::create (const <link linkend="_namespaceme_1a5bb8ed18150e0bc29a11923a7093a347">ComponentName</link> &amp; name, <link linkend="_namespaceme_1aa32db0f4d84698471d693fe90639d8e6">Parameters</link> &amp; params)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__components_factory_8h">ComponentsFactory.h</link>Src/EntityComponent/Components/<link linkend="__components_factory_8cpp">ComponentsFactory.cpp</link></section>
+</section>

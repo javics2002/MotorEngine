@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_particle_system_8h" kind="file" language="C++">
+    <compoundname>ParticleSystem.h</compoundname>
+    <includes refid="_component_8h" local="yes">Component.h</includes>
+    <includes refid="_vector3_8h" local="yes">Utils/Vector3.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">list</includes>
+    <includedby refid="_factory_component_8cpp" local="yes">Src/EntityComponent/Components/FactoryComponent.cpp</includedby>
+    <includedby refid="_particle_system_8cpp" local="yes">Src/EntityComponent/Components/ParticleSystem.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/ParticleSystem.h</label>
+        <link refid="_particle_system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="4">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/EntityComponent/Components/FactoryComponent.cpp</label>
+        <link refid="_factory_component_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Components/ParticleSystem.cpp</label>
+        <link refid="_particle_system_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/ParticleSystem.h</label>
+        <link refid="_particle_system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_particle_system" prot="public">me::ParticleSystem</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_particle_system_8h_1a3fbd09a713daa0d59a0b7e3dff9eb42e" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_PARTICLESYSTEM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/ParticleSystem.h" line="4" column="9" bodyfile="Src/EntityComponent/Components/ParticleSystem.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_PARTICLESYSTEM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="_particle_system_8h_1a3fbd09a713daa0d59a0b7e3dff9eb42e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_PARTICLESYSTEM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_component_8h" kindref="compound">Component.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector3_8h" kindref="compound">Utils/Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Transform;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classme_1_1_particle_system" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_particle_system" kindref="compound">ParticleSystem</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//name<sp/>for<sp/>om()<sp/>map<sp/>and<sp/>for<sp/>particle<sp/>system<sp/>that<sp/>attached<sp/>in<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classme_1_1_particle_system_1ada09ae2be897ba4f732f47999c4ef276" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classme_1_1_particle_system_1ada09ae2be897ba4f732f47999c4ef276" kindref="member">mName</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//name<sp/>of<sp/>particle<sp/>that<sp/>is<sp/>written<sp/>int<sp/>ParticleResource.particle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classme_1_1_particle_system_1a21a259a3b70a9148483b7d6c23270854" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classme_1_1_particle_system_1a21a259a3b70a9148483b7d6c23270854" kindref="member">mParticleName</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//componenet<sp/>transform<sp/>of<sp/>this.Entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classme_1_1_particle_system_1a6a94325bf928e26192d758cd9adebf85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_transform" kindref="compound">Transform</ref>*<sp/><ref refid="classme_1_1_particle_system_1a6a94325bf928e26192d758cd9adebf85" kindref="member">mTransform</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classme_1_1_particle_system_1aa403cd5a34a33e79091543878cacebb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/><ref refid="classme_1_1_particle_system_1aa403cd5a34a33e79091543878cacebb5" kindref="member">mOffsetPos</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classme_1_1_particle_system_1a30c0a6ed66e7410efa94c255d7b2c4f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/><ref refid="classme_1_1_particle_system_1a30c0a6ed66e7410efa94c255d7b2c4f0" kindref="member">mOffsetScale</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_particle_system" kindref="compound">ParticleSystem</ref>(std::string<sp/>name,<sp/>std::string<sp/>particleName);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Destroy<sp/>om()<sp/>map<sp/>saved<sp/>particle(ogreParticleSystem)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_particle_system" kindref="compound">~ParticleSystem</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>start()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setEmitting(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>emitted);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setOffsetPos(<ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>offset);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setOffsetScale(<ref refid="classme_1_1_vector3" kindref="compound">Vector3</ref><sp/>offset);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/ParticleSystem.h"/>
+  </compounddef>
+</doxygen>

@@ -3,15 +3,16 @@
 #define __RENDER_RENDERMESH
 
 #include "MotorEngine/MotorEngineAPI.h"
+#include "Utils/Vector4.h"
 #include <string>
-#include <OgreVector3.h>
 
 namespace Ogre {
 	class SceneNode;
-	class Quaternion;
+	class Entity;
 }
 
 namespace me {
+	class Vector3;
 
 	//Class to create renderizable object with mesh
 	class __MOTORENGINE_API RenderMesh
@@ -26,10 +27,9 @@ namespace me {
 		//Name of mesh that used
 		std::string mMeshName;
 		std::string mMaterialName;
-		
-
 
 	public:
+
 		/**
 		Assign information and create Ogre::Entity with the given mesh and attach to mNode
 		@param node: mNode for attach Ogre::Entity created
@@ -38,11 +38,43 @@ namespace me {
 		*/
 		RenderMesh(Ogre::SceneNode* node,std::string meshName);
 		~RenderMesh();
-		//Set position, rotation and scale of mNode
-		void setTransform(const Ogre::Vector3f &pos, const Ogre::Vector3f &scale, const Ogre::Quaternion &rot);
-		void setPosition(const Ogre::Vector3f &pos);
-		void setScale(const Ogre::Vector3f &scale);
-		void setRotation(Ogre::Quaternion rot);
+
+		/**
+		Set Transform info to the mesh 
+		@param pos: position of ogreMesh
+		@param scale: scale of ogreMesh
+		@param rot: rotation of ogreMesh
+		*/
+		void setTransform(const me::Vector3 &pos, const me::Vector3 &scale, const me::Vector4 &rot);
+
+		/**
+		Set position info to the mesh
+		@param pos: position of ogreMesh
+		*/
+		void setPosition(const me::Vector3 &pos);
+
+		/**
+		Set scale info to the mesh
+		@param scale: scale of ogreMesh
+		*/
+		void setScale(const me::Vector3 &scale);
+
+		/**
+		Set rotation info to the mesh
+		@param rot: rotation of ogreMesh
+		*/
+		void setRotation(me::Vector4 rot);
+
+
+		/**
+		Active mesh
+		*/
+		void activeMesh();
+
+		/**
+		Desactive mesh
+		*/
+		void desactiveMesh();
 
 		/**
 		Return the Ogre::Entity asociated
@@ -56,7 +88,6 @@ namespace me {
 		*/
 		void setMaterial(std::string materialName);
 		
-
 	};
 
 }

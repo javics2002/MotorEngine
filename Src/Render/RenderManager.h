@@ -4,40 +4,34 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
+#include "Utils/Vector4.h"
+#include "Utils/Vector2.h"
 #include <unordered_map>
 #include <string>
-#include <OgreColourValue.h>
 
 namespace Ogre {
 	class Root;
-	class RenderWindow;
-	class FileSystemLayer;
 	class SceneManager;
-	class SceneNode;
-	class Quaternion;
-	class ColourValue;
-	class AnimationState;
 	class Entity;
-	template<int dism, typename T>
-	class Vector;
-	typedef Vector<3, float> Vector3f;
+	class SceneNode;
+	class OverlayManager;
+	class OverlaySystem;
+	class FileSystemLayer;
+	class Light;
 
 	namespace RTShader {
 		class ShaderGenerator;
 	}
-	class TextAreaOverlayElement;
 }
 
 namespace me {
-
 	class RenderWindow;
 	class RenderCamera;
 	class RenderMesh;
-	class RenderParticleSystem;
+	class RenderUISprite;
 	class SGTechniqueResolverListener;
-	class OverlayManager;
-	class Vector3;
-	class Vector4;
+
+
 	/**
 	OgreManager initialize Ogre (Root, RTShaderSystem, SceneManager, RenderWindow), 
 	locate and load resources (from resource.cfg)
@@ -51,15 +45,11 @@ namespace me {
 		*/
 		RenderManager();
 
-	private:
 	protected:
 		// Root de Ogre
 		Ogre::Root* mRoot;
 		//SceneManager de Ogre
-		Ogre::SceneManager* mSM = nullptr;
-
-		// TEMPORAL VALUE FOR ANIMATION HITO1
-		Ogre::AnimationState* ogreAnimState;
+		Ogre::SceneManager* mSM;
 
 		/**
 		Path of the "resource.cfg"
@@ -80,9 +70,23 @@ namespace me {
 		*/
 		std::string mPluginCfgPath;
 
+		/**
+		Manages Overlay objects, parsing them from .overlay files and 
+		storing a lookup library of them.
+		Also manages the creation of OverlayContainers and OverlayElements, 
+		used for non-interactive 2D elements such as HUDs.
+		*/
+		Ogre::OverlayManager* mOverlayManager;
 
-		OverlayManager* mOverlayManager;
-
+		/**
+		This class simplify initialization / finalization of the overlay system.
+		Before you create a concrete instance of the OverlaySystem the OGRE::Root 
+		must be created but not initialized. In the ctor all relevant systems are 
+		created and registered. The dtor must be called before you delete OGRE::Root. 
+		To make the overlays visible (= render into your viewports) you have to 
+		register this instance as a RenderQueueListener in your scenemanager(s).
+		*/
+		Ogre::OverlaySystem* mOverlaySystem;
 
 		/**
 		Path of the "Ogre.cfg"
@@ -106,16 +110,16 @@ namespace me {
 		//Reference to RenderWindow class
 		RenderWindow* mOgreWindow;
 
-		//Store camera name to ogreCamera
-		std::unordered_map<std::string, RenderCamera*> mCameras;			//Pairs each cameras with its name
-		//Store mesh name to ogreMesh
+		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
-		//Store mesh name to ogreParticleSystem
-		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
+		std::unordered_map<std::string, RenderUISprite*> mSprites;			//Pairs each UISprite with its name
+		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
+
 		/**
 		initializes FileSystem, find m_Paths and initialize Ogre::Root
 		*/
 		void initRoot();
+
 		/**
 		Creates OgreWindow (RenderWindow)
 		*/
@@ -134,6 +138,9 @@ namespace me {
 		*/
 		bool initialiseRTShaderSystem();
 
+		//Destroy RTShaderSystem (Shader Generator) and add Ogre:: Material Manager Listener
+		void destroyRTShaderSystem();
+
 		/**
 		@param name: Name of the camera
 		@return OgreCamera: that was created with this name 
@@ -142,18 +149,19 @@ namespace me {
 		RenderCamera* getCamera(std::string name);
 
 		/**
+		@param name: Name of the sprite
+		@return RenderUISprite: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		RenderUISprite* getUISprite(std::string name);
+
+
+		/**
 		@param name: Name of the mesh
 		@return OgreMesh: that was created with this name
 		@return nullptr: if it doesn't exist
 		*/
 		RenderMesh* getMesh(std::string name);
-
-		/**
-		@param name: Name of the particle
-		@return OgreParticleSystem: that was created with this name
-		@return nullptr: if it doesn't exist
-		*/
-		RenderParticleSystem* getParticle(std::string name);
 
 	public:
 		RenderManager&operator=(const RenderManager&o) = delete;
@@ -166,26 +174,26 @@ namespace me {
 		@param parentName: name of parent Ogre::SceneNode
 		@param nearDist: near clipping plane distancia 
 		@param farDist: far clipping plane distancia 
-		@param autoRadio: if viewport calculate aspect radio automatically
+		@param autoRatio: if viewport calculate aspect radio automatically
 		@param zOrder: relative order of viewport
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createCamera(std::string name, std::string parentName, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
+		bool createCamera(std::string name, std::string parentName, int nearDist, 
+			int farDist, bool autoRatio, int zOrder, Vector4 colour = Vector4(0, 0, 0, 1));
 		
 		/**
 		Create the camera with this name and store it
 		@param name: name of camera
 		@param nearDist: near clipping plane distancia
 		@param farDist: far clipping plane distancia
-		@param autoRadio: if viewport calculate aspect radio automatically
+		@param autoRatio: if viewport calculate aspect ratio automatically
 		@param zOrder: relative order of viewport
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		//bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color);
-		
-		bool createCamera(std::string name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color = Ogre::ColourValue(0, 0, 0, 1));
+		bool createCamera(std::string name, float nearDist, float farDist, bool autoRatio,
+			int zOrder, Vector4 colour = Vector4(0, 0, 0, 1));
 
 		/**
 		Set location and direction to the camera with this name
@@ -195,7 +203,21 @@ namespace me {
 		@return false: if it doesn't exist
 		@return true: if succeed
 		*/
-		bool setCameraInfo(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &look);
+		bool setCameraInfo(std::string name, const Vector3& pos, const Vector3& look);
+
+		/*
+		Locks camera orientation in Y Axis
+		@param bFixed: lock boolean
+		*/
+		bool setCameraFixedY(std::string name, bool bFixed);
+
+		/**
+		*Enable or disable the overlay for a camera's viewport
+		*@param name: the name of the camera
+		*@param enabled: whether the overlay should be enabled (true) or disabled (false)
+		*@return true if the operation succeeded, false otherwise
+		*/
+		bool setViewportOverlayEnabled(std::string name, bool enabled);
 
 		/**
 		Set dimension to the viewport of the camera with this name
@@ -209,7 +231,10 @@ namespace me {
 		*/
 		bool setViewportDimension(std::string name, float left, float top, float width, float height);
 
-		//destroy OgreCamera created 
+		/**
+		Destroy OgreCamera
+		@param name: name of camera
+		*/
 		void destroyCamera(std::string name);
 
 		/**
@@ -217,8 +242,22 @@ namespace me {
 		@param name: name of light
 		@param pos: position of light
 		@param dir: direction of light
+		@param color: color of light
 		*/
-		void createNewLight(std::string name, const Ogre::Vector3f &pos, const Ogre::Vector3f &dir);
+		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+			const Vector3& color);
+
+		/**
+		Destroy Light
+		@param name: name of light
+		*/
+		void destroyLight(std::string name);
+
+		/**
+		Set the ambient light of this scene
+		@param color: color of ambient light
+		*/
+		void setAmbientLight(const Vector3& color);
 		
 		/**
 		Create the ogreMesh with this name 
@@ -230,6 +269,15 @@ namespace me {
 		bool createMesh(std::string name, std::string nameMesh);
 
 		/**
+		Creates a 2D sprite in the overlay.
+		@param name: Name of Ogre::OverlayElement &&unordered_map
+		@param nameMesh: Name of file (xxx.png)
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createSprite(std::string name, std::string nameMesh, int zOrder);
+
+		/**
 		Set Transform info to the mesh with this name (for static object)
 		@param name: name of ogreMesh
 		@param pos: position of ogreMesh
@@ -238,48 +286,120 @@ namespace me {
 		@return true: if succeed		
 		*/
 		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale);
-		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
-		//set position info to the mesh with this name
-		bool setMeshPosition(std::string name, Vector3 pos);
-		//set scale info to the mesh with this name
-		bool setMeshScale(std::string name, Vector3 scale);
-		//set rotation info to the mesh with this name
-		bool setMeshRotation(std::string name, Vector4 rot);
 
-		//set material to the mesh with this name
-		bool setMeshMaterial(std::string name, std::string nameMaterial);
-
-		//destroy OgreMesh created 
-		void destroyMesh(std::string name);
 
 		/**
-		Create the ogreParticleSystem with this name
-		@param name: name of Ogre::SceneNode &&unordered_map
-		@param nameParticle: name of partcile system that is written int ParticleResource.particle
-		@return false: if renamed
-		@return true: if succeed
-		*/
-		bool createParticle(std::string name, std::string nameMesh);
-		/**
-		Set Transform info to the particle with this name (for static object)
-		@param name: name of ogreParticleSystem
-		@param pos: position of ogreParticleSystem
-		@param scale: scale of ogreParticleSystem
+		Set Transform info to the mesh with this name (for static object)
+		@param name: name of ogreMesh
+		@param pos: position of ogreMesh
+		@param scale: scale of ogreMesh
+		@param rot: rotation of ogreMesh
 		@return false: if it doesn't exist
 		@return true: if succeed
 		*/
-		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale);
-		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
-		//set position info to the particle with this name
-		bool setParticlePosition(std::string name, Vector3 pos);
-		//set scale info to the particle with this name
-		bool setParticleScale(std::string name, Vector3 scale);
-		//set rotation info to the particle with this name
-		bool setParticleRotation(std::string name, Vector4 rot);
+		bool setMeshTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
+		
+		/**
+		Set position info to the mesh with this name
+		@param name: name of ogreMesh
+		@param pos: position of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setMeshPosition(std::string name, Vector3 pos);
+		/**
+		Set scale info to the mesh with this name
+		@param name: name of ogreMesh
+		@param scale: scale of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setMeshScale(std::string name, Vector3 scale);
+		/**
+		Set rotation info to the mesh with this name
+		@param name: name of ogreMesh
+		@param rot: rotation of ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setMeshRotation(std::string name, Vector4 rot);
+		/**
+		Set material to the mesh with this name
+		@param name: name of ogreMesh
+		@param nameMaterial: new material name for ogreMesh
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setMeshMaterial(std::string name, std::string nameMaterial);
+		/**
+		Active the mesh from scene
+		@param name: name of ogreMesh
+		*/
+		void activeMesh(std::string name);
 
-		//set emitting state to the particle with this name
-		bool setParticleEmitting(std::string name, bool emitted);
+		/**
+		Desactive the mesh from scene
+		@param name: name of ogreMesh
+		*/
+		void desactiveMesh(std::string name);
 
+		
+		/**
+		Destroy OgreMesh created 
+		@param name: name of ogreMesh
+		*/
+		void destroyMesh(std::string name);
+
+		/**
+		Set UITransform info of the UISprite with this name (for static object)
+		@param name: name of UISprite
+		@param pos: position of UISprite
+		@param scale: scale of UISprite
+		@param rot: rotation of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded	
+		*/
+		bool setUISpriteTransform(std::string name, Vector2 pos, Vector2 scale, float rot);
+
+		/**
+		Set position info to the mesh with this name
+		@param name: name of UISprite
+		@param pos: position of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
+		bool setUISpritePosition(std::string name, Vector2 pos);
+		/**
+		Set scale info to the mesh with this name
+		@param name: name of UISprite
+		@param scale: scale of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
+		bool setUISpriteScale(std::string name, Vector2 scale);
+		/**
+		Set rotation info to the mesh with this name
+		@param name: name of UISprite
+		@param rot: rotation of UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
+		bool setUISpriteRotation(std::string name, float rot);
+
+		/**
+		Set material to the mesh with this name
+		@param name: name of UISprite
+		@param nameMaterial: maetrial name for UISprite
+		@return false: if it doesn't exist
+		@return true: if succeeded
+		*/
+		bool setUISpriteMaterial(std::string name, std::string nameMaterial);
+
+		/**
+		Destroy UISprite created
+		@param name: name of UISprite to destroy
+		*/
+		void destroyUISprite(std::string name);
 		
 		/**
 		@param name: name of node
@@ -305,10 +425,6 @@ namespace me {
 		*/
 		Ogre::SceneNode* getRootSceneNode();
 
-		/**
-		Example scene where rendering a sinbad with 2 camera,viewport
-		*/
-		void scene1();
 
 		/**
 		Render one frame of Ogre::Root -> current scene manager
@@ -320,12 +436,15 @@ namespace me {
 		*/
 		Ogre::Entity* getOgreEntity(std::string name);
 
-
-		//Text UI
-		Ogre::TextAreaOverlayElement* createOverlayElement();
-		/*Getter for scene manager
+		/*
+		Getter for scene manager
 		*/
 		Ogre::SceneManager* getSceneManager();
+
+		/*
+		Getter for OgreOverlayManager
+		*/	
+		Ogre::OverlayManager* getOgreManager();
 
 
 	};
@@ -335,7 +454,7 @@ namespace me {
 		writing OgreManager::instance()->method() we write om().method()
 	*/
 	inline RenderManager& renderManager() {
-		return *RenderManager::instance();
+		return *RenderManager::Instance();
 	}
 
 }

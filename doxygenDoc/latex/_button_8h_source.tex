@@ -1,0 +1,88 @@
+\hypertarget{_button_8h_source}{}\doxysection{Button.\+h}
+\label{_button_8h_source}\index{Src/Input/Button.h@{Src/Input/Button.h}}
+\mbox{\hyperlink{_button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_INPUT\_BUTTON}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_INPUT\_BUTTON}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{_button_8h_a33fcc6aa445cb781bfca881e39e5333e}{SDL\_Event}}\ \mbox{\hyperlink{_button_8h_a33fcc6aa445cb781bfca881e39e5333e}{SDL\_Event}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ int\ (\_\_cdecl*\ \mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\_EventFilter}})\ (\textcolor{keywordtype}{void}*\ userdata,\ \mbox{\hyperlink{_button_8h_a33fcc6aa445cb781bfca881e39e5333e}{SDL\_Event}}*\ event);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum}\ InputType\ :\ int;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{structme_1_1_button}{Button}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Value}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structme_1_1_button_ad58d17e945a82434bb904ee99b64143c}{pressed}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Whose\ player\ this\ button\ is,\ used\ in\ case\ its\ a\ gamepad\ button\ press}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ -\/1\ will\ be\ considered\ as\ a\ playerless\ input.*/}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structme_1_1_button_aae750ddc36e499fbbcc091ee7272d14d}{player}};}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//Represents\ a\ physical\ button\ or\ key\ that\ can\ trigger\ a\ virtual\ button.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{structme_1_1_input}{Input}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ \ \ \ INPUTTYPE\_KEYBOARD\ for\ keyboard\ key\ presses}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ INPUTTYPE\_MOUSE\ for\ mouse\ clicks}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ INPUTTYPE\_GAMEPAD\ for\ controller\ presses}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ \ \ \ INPUTTYPE\_NULL\ for\ invalid\ input}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ InputType\ \mbox{\hyperlink{structme_1_1_input_ad80a18dd05ad864a6da82e70dea1af1a}{type}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Which\ key,\ mouse\ button,\ or\ controller\ button\ has\ been\ pressed.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ \ \ \ Represents\ a\ value\ of\ KeyboardCode,\ MouseClickCode,\ MouseWheelCode,}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ GamepadButtonCode\ or\ GamepadAxisCode\ depending\ on\ the\ type\ of\ the\ event*/}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structme_1_1_input_abb8d8dd9c37d1bea216affb4c9b8aa5a}{which}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*In\ case\ it\ is\ a\ gamepad\ axis\ motion,\ or\ a\ mouse\ motion,\ the\ value\ will\ be\ stored\ here*/}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structme_1_1_input_acd194ff45efeb5ed38a7f6cc23f31df3}{value}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structme_1_1_input_a1d02605a516a0dfa3cd680aa24733d31}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structme_1_1_input}{Input}}\&\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\ ==\ i.\mbox{\hyperlink{structme_1_1_input_ad80a18dd05ad864a6da82e70dea1af1a}{type}}\ \&\&\ which\ ==\ i.\mbox{\hyperlink{structme_1_1_input_abb8d8dd9c37d1bea216affb4c9b8aa5a}{which}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//Provides\ hash\ suppport\ for\ using\ struct\ Input\ as\ a\ key\ in\ std::unordered\_map}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{structme_1_1_input_hasher}{InputHasher}}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structme_1_1_input_hasher_a73c49166daa33d72cebb98c59c4bcbc3}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structme_1_1_input}{Input}}\&\ t)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<int>()(t.\mbox{\hyperlink{structme_1_1_input_abb8d8dd9c37d1bea216affb4c9b8aa5a}{which}})\ \string^\ std::hash<int>()(t.\mbox{\hyperlink{structme_1_1_input_ad80a18dd05ad864a6da82e70dea1af1a}{type}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ Stores\ data\ for\ virtual\ buttons'\ callbacks.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info}{OnButtonPressedInfo}}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Simple\ callback\ provided\ by\ the\ user.}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ int(*callback)(\textcolor{keywordtype}{void}*);\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Additional\ userdata\ given\ to\ callback\ as\ a\ parameter.}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info_a7f08adf20c54925200f25cdd51ac15d7}{additionalData}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Filtered\ callback\ that\ calls\ callback\ if\ the\ event\ source\ matches\ any\ of\ the\ virtual\ button's\ bindings.}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\_EventFilter}}\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info_a8b77a2514ed3f32f28e6c2bc7638856c}{filter}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ InputManager's\ mButtonBindings\ multimap.}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::unordered\_multimap<Input,\ std::string,\ InputHasher>*\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info_a763217dc1bcd45569a6c7ebe08106cf1}{buttonBindings}};\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Name\ of\ the\ button\ this\ callback\ belongs\ to.}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info_a49ee0adbdae15793f2f29ce77fd5a706}{buttonName}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Whose\ player\ this\ button\ is,\ used\ in\ case\ its\ a\ gamepad\ button\ press.}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ The\ first\ player\ is\ 0.}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ -\/1\ will\ be\ considered\ as\ a\ playerless\ input.*/}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structme_1_1_on_button_pressed_info_ab6d8a7a6dbd3afc4ebfe924588c83a77}{player}};}
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

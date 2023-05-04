@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_a188c147f9d5e4a42fff69910ae0f409" kind="dir">
+    <compoundname>Src/MotorEngine</compoundname>
+    <innerfile refid="dllmain_8cpp">dllmain.cpp</innerfile>
+    <innerfile refid="_motor_engine_2framework_8h">framework.h</innerfile>
+    <innerfile refid="_motor_engine_8cpp">MotorEngine.cpp</innerfile>
+    <innerfile refid="_motor_engine_8h">MotorEngine.h</innerfile>
+    <innerfile refid="_motor_engine_a_p_i_8h">MotorEngineAPI.h</innerfile>
+    <innerfile refid="_motor_engine_2pch_8cpp">pch.cpp</innerfile>
+    <innerfile refid="_motor_engine_2pch_8h">pch.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/MotorEngine/"/>
+  </compounddef>
+</doxygen>

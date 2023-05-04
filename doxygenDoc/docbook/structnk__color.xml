@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__color" xml:lang="en-US">
+<title>nk_color Struct Reference</title>
+<indexterm><primary>nk_color</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> <link linkend="_structnk__color_1a8c27a9094c4cc8a24adfd111f1c38812">r</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> <link linkend="_structnk__color_1a5f9b6e27eec7cc99ab12fa52a31ca6d1">g</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> <link linkend="_structnk__color_1abce18b5d5e10d175f553cf1b91fee9d4">b</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> <link linkend="_structnk__color_1a5201902552072c321cb43bb0e821fde8">a</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__color_1a5201902552072c321cb43bb0e821fde8"/><section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>nk_color</secondary></indexterm>
+<indexterm><primary>nk_color</primary><secondary>a</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> nk_color::a</computeroutput></para></section>
+<anchor xml:id="_structnk__color_1abce18b5d5e10d175f553cf1b91fee9d4"/><section>
+    <title>b</title>
+<indexterm><primary>b</primary><secondary>nk_color</secondary></indexterm>
+<indexterm><primary>nk_color</primary><secondary>b</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> nk_color::b</computeroutput></para></section>
+<anchor xml:id="_structnk__color_1a5f9b6e27eec7cc99ab12fa52a31ca6d1"/><section>
+    <title>g</title>
+<indexterm><primary>g</primary><secondary>nk_color</secondary></indexterm>
+<indexterm><primary>nk_color</primary><secondary>g</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> nk_color::g</computeroutput></para></section>
+<anchor xml:id="_structnk__color_1a8c27a9094c4cc8a24adfd111f1c38812"/><section>
+    <title>r</title>
+<indexterm><primary>r</primary><secondary>nk_color</secondary></indexterm>
+<indexterm><primary>nk_color</primary><secondary>r</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a1a0ad76219a407f92601a49b44507ecb">nk_byte</link> nk_color::r</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

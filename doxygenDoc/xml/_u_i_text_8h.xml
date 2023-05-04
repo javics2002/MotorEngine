@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_u_i_text_8h" kind="file" language="C++">
+    <compoundname>UIText.h</compoundname>
+    <includes refid="_component_8h" local="yes">Component.h</includes>
+    <includes refid="_vector3_8h" local="yes">Utils/Vector3.h</includes>
+    <includes refid="_vector4_8h" local="yes">Utils/Vector4.h</includes>
+    <includes refid="_u_i_element_8h" local="yes">UIElement.h</includes>
+    <includes local="no">OgreTextAreaOverlayElement.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="_u_i_text_8cpp" local="yes">Src/EntityComponent/Components/UIText.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="9">
+        <label>Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Utils/Vector4.h</label>
+        <link refid="_vector4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>OgreTextAreaOverlayElement.h</label>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/EntityComponent/Components/UIText.cpp</label>
+        <link refid="_u_i_text_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_u_i_text" prot="public">me::UIText</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_i_text_8h_1a24634a0c0206344aac108c93a92e5cf2" prot="public" static="no">
+        <name>__ENTITYCOMPONETN_UITEXT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIText.h" line="3" column="9" bodyfile="Src/EntityComponent/Components/UIText.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONETN_UITEXT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="_u_i_text_8h_1a24634a0c0206344aac108c93a92e5cf2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONETN_UITEXT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_component_8h" kindref="compound">Component.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector3_8h" kindref="compound">Utils/Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector4_8h" kindref="compound">Utils/Vector4.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_u_i_element_8h" kindref="compound">UIElement.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OgreTextAreaOverlayElement.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="classme_1_1_u_i_text" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_u_i_text" kindref="compound">UIText</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_text" kindref="compound">UIText</ref>(std::string<sp/>name,<sp/>std::string<sp/>fontName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>poxY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height,<sp/>std::string<sp/>text,<sp/><ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref><sp/>textColor);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_text" kindref="compound">~UIText</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPosition(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setSize(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setFont(std::string<sp/>fontName);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setText(std::string<sp/>newText);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTextColor(<ref refid="classme_1_1_vector4" kindref="compound">Vector4</ref><sp/>newColor);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setWidth(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>widthValue);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setHeight(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>heightValue);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Set<sp/>whether<sp/>the<sp/>UIText<sp/>instance<sp/>is<sp/>active<sp/>or<sp/>not</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>active<sp/>True<sp/>if<sp/>the<sp/>UIText<sp/>should<sp/>be<sp/>active,<sp/>false<sp/>otherwise</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setActive(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>active);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTextAligment(Ogre::TextAreaOverlayElement::Alignment<sp/>a);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pointer<sp/>to<sp/>the<sp/>text<sp/>area<sp/>overlay<sp/>element</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::TextAreaOverlayElement*<sp/>mTextArea;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>alignment<sp/>of<sp/>the<sp/>text<sp/>displayed<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::TextAreaOverlayElement::Alignment<sp/>mAlignment;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!__EC_UI_TEXT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/UIText.h"/>
+  </compounddef>
+</doxygen>

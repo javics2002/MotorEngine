@@ -1,7 +1,6 @@
 #include "SGTechniqueResolverListener.h"
-
+#include "OgreRTShaderSystem.h"
 #include "OgreTechnique.h"
-
 
 me::SGTechniqueResolverListener::SGTechniqueResolverListener(Ogre::RTShader::ShaderGenerator* pShaderGenerator)
 {

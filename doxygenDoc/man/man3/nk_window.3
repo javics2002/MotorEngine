@@ -1,0 +1,110 @@
+.TH "nk_window" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nk_window
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nuklear\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBseq\fP"
+.br
+.ti -1c
+.RI "\fBnk_hash\fP \fBname\fP"
+.br
+.ti -1c
+.RI "char \fBname_string\fP [\fBNK_WINDOW_MAX_NAME\fP]"
+.br
+.ti -1c
+.RI "\fBnk_flags\fP \fBflags\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_rect\fP \fBbounds\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_scroll\fP \fBscrollbar\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_command_buffer\fP \fBbuffer\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_panel\fP * \fBlayout\fP"
+.br
+.ti -1c
+.RI "float \fBscrollbar_hiding_timer\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_property_state\fP \fBproperty\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_popup_state\fP \fBpopup\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_edit_state\fP \fBedit\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBscrolled\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_table\fP * \fBtables\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBtable_count\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_window\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_window\fP * \fBprev\fP"
+.br
+.ti -1c
+.RI "struct \fBnk_window\fP * \fBparent\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "struct \fBnk_rect\fP nk_window::bounds"
+
+.SS "struct \fBnk_command_buffer\fP nk_window::buffer"
+
+.SS "struct \fBnk_edit_state\fP nk_window::edit"
+
+.SS "\fBnk_flags\fP nk_window::flags"
+
+.SS "struct \fBnk_panel\fP* nk_window::layout"
+
+.SS "\fBnk_hash\fP nk_window::name"
+
+.SS "char nk_window::name_string[\fBNK_WINDOW_MAX_NAME\fP]"
+
+.SS "struct \fBnk_window\fP* nk_window::next"
+
+.SS "struct \fBnk_window\fP* nk_window::parent"
+
+.SS "struct \fBnk_popup_state\fP nk_window::popup"
+
+.SS "struct \fBnk_window\fP* nk_window::prev"
+
+.SS "struct \fBnk_property_state\fP nk_window::property"
+
+.SS "struct \fBnk_scroll\fP nk_window::scrollbar"
+
+.SS "float nk_window::scrollbar_hiding_timer"
+
+.SS "unsigned int nk_window::scrolled"
+
+.SS "unsigned int nk_window::seq"
+
+.SS "unsigned int nk_window::table_count"
+
+.SS "struct \fBnk_table\fP* nk_window::tables"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

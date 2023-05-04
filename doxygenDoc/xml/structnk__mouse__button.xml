@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__mouse__button" kind="struct" language="C++" prot="public">
+    <compoundname>nk_mouse_button</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__mouse__button_1aab2c8e6f794134b8957960ccf8ca85dd" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a2322feace91bf83046a9f8c4ea466a56" kindref="member">nk_bool</ref></type>
+        <definition>nk_bool nk_mouse_button::down</definition>
+        <argsstring></argsstring>
+        <name>down</name>
+        <qualifiedname>nk_mouse_button::down</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4429" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="4429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse__button_1a1b685639b8ff0c166ece7097f89be423" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nk_mouse_button::clicked</definition>
+        <argsstring></argsstring>
+        <name>clicked</name>
+        <qualifiedname>nk_mouse_button::clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4430" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__mouse__button_1a4a025ef1d8ff957864230a2f72c92983" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__vec2" kindref="compound">nk_vec2</ref></type>
+        <definition>struct nk_vec2 nk_mouse_button::clicked_pos</definition>
+        <argsstring></argsstring>
+        <name>clicked_pos</name>
+        <qualifiedname>nk_mouse_button::clicked_pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4431" column="18" bodyfile="Src/GUI/nuklear.h" bodystart="4431" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nk_mouse_button</label>
+        <link refid="structnk__mouse__button"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>clicked_pos</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4428" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4428" bodyend="4432"/>
+    <listofallmembers>
+      <member refid="structnk__mouse__button_1a1b685639b8ff0c166ece7097f89be423" prot="public" virt="non-virtual"><scope>nk_mouse_button</scope><name>clicked</name></member>
+      <member refid="structnk__mouse__button_1a4a025ef1d8ff957864230a2f72c92983" prot="public" virt="non-virtual"><scope>nk_mouse_button</scope><name>clicked_pos</name></member>
+      <member refid="structnk__mouse__button_1aab2c8e6f794134b8957960ccf8ca85dd" prot="public" virt="non-virtual"><scope>nk_mouse_button</scope><name>down</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__rect" kind="struct" language="C++" prot="public">
+    <compoundname>nk_rect</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__rect_1a406b23fbee8afcc3c1a8113c6e4616a1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_rect::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>nk_rect::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="258" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__rect_1ac26ac69f1770909de805053a8cc94f08" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_rect::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>nk_rect::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="258" column="21" bodyfile="Src/GUI/nuklear.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__rect_1af2afe0055fff7694a63a53b8047f6022" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_rect::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <qualifiedname>nk_rect::w</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="258" column="22" bodyfile="Src/GUI/nuklear.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__rect_1a1923740134757198bfa473f5513d66b5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_rect::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <qualifiedname>nk_rect::h</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="258" column="23" bodyfile="Src/GUI/nuklear.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="258" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="258" bodyend="258"/>
+    <listofallmembers>
+      <member refid="structnk__rect_1a1923740134757198bfa473f5513d66b5" prot="public" virt="non-virtual"><scope>nk_rect</scope><name>h</name></member>
+      <member refid="structnk__rect_1af2afe0055fff7694a63a53b8047f6022" prot="public" virt="non-virtual"><scope>nk_rect</scope><name>w</name></member>
+      <member refid="structnk__rect_1a406b23fbee8afcc3c1a8113c6e4616a1" prot="public" virt="non-virtual"><scope>nk_rect</scope><name>x</name></member>
+      <member refid="structnk__rect_1ac26ac69f1770909de805053a8cc94f08" prot="public" virt="non-virtual"><scope>nk_rect</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

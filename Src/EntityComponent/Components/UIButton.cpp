@@ -1,47 +1,43 @@
 #include "UIButton.h"
-#include "Input/InputManager.h"
-#include <OgreOverlay.h>
-#include <OgreOverlayContainer.h>
-#include <OgreOverlayManager.h>
 
+#include "EntityComponent/Entity.h"
+#include "Render/RenderManager.h"
+#include "UITransform.h"
 
-me::UIButton::UIButton(std::string name, float width, float height, float left, float top)
-{
-	mButtonArea = static_cast<Ogre::TextAreaOverlayElement*>(mOverlayManager->createOverlayElement("TextArea", name + std::to_string(mElems)));
-	mOverlay = mOverlayManager->create(name + std::to_string(mElems));
+using namespace me;
 
-	setTop(top);
-	setLeft(left);
-	setSize(Vector2(width,height));
-	setWidth(width);
-	setHeight(height);
-
-	mInteractive = true;
-
-	mOverlay->add2D((Ogre::OverlayContainer*)mButtonArea);
-}
-
-me::UIButton::~UIButton()
+UIButton::UIButton()
 {
 }
 
-void me::UIButton::update()
+UIButton::~UIButton()
 {
-	if (mInteractive) handleInput();
 }
 
-void me::UIButton::handleInput()
+void UIButton::init(std::string name, std::string materialName, int zOrder)
 {
-	Vector2 mousePosition = me::inputManager().getMousePositon();
-	if (mFocus && mousePosition.x >= getPos().x && mousePosition.x <= getPos().x + getSize().x &&
-		mousePosition.y >= getPos().y && mousePosition.y <= getPos().y + getSize().y) {
-		if (me::inputManager().justClicked()) {
-			for (auto l : mLambda) l();
-		}
+	mName = name;
+	mSpriteName = materialName;
+
+	if (mSpriteName.size() > 0)
+	{
+		renderManager().createSprite(mName, mSpriteName, zOrder);
 	}
+
 }
 
-void me::UIButton::onClick(std::function<void()> l)
+void UIButton::start()
 {
-	mLambda.push_back(l);
+	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
+}
+
+std::string UIButton::getName()
+{
+	return mName;
+}
+
+void UIButton::setSpriteMaterial(std::string materialName)
+{
+	renderManager().setUISpriteMaterial(mName, materialName);
 }

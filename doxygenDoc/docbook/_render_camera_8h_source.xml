@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_camera_8h_source" xml:lang="en-US">
+<title>RenderCamera.h</title>
+<indexterm><primary>Src/Render/RenderCamera.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__RENDER_RENDERCAMERA</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__RENDER_RENDERCAMERA</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+6 
+7 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+8 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Camera;
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Viewport;
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>SceneNode;
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>SceneManager;
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderWindow;
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>ColourValue;
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;dism,&#32;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_ogre_1_1_vector">Vector</link>;
+16 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Vector&lt;3, float&gt;</link>&#32;<link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Vector3f</link>;
+17 }
+18 
+19 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_render_camera">RenderCamera</link>
+21 &#32;&#32;&#32;&#32;{
+22 
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+24 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;Ogre::Camera</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Camera*&#32;<link linkend="_classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf">mCamera</link>&#32;;
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;Ogre::Viewport&#32;of&#32;mCamera</emphasis>
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Viewport*&#32;<link linkend="_classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f">mViewport</link>&#32;;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;Ogre::SceneNode&#32;of&#32;mCamera</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneNode*&#32;<link linkend="_classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572">mCameraNode</link>&#32;;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;Ogre::SceneManager&#32;created&#32;by&#32;RenderManager</emphasis>
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneManager*&#32;<link linkend="_classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444">mSceneMgr</link>;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;Ogre::RenderWindow&#32;created&#32;by&#32;RenderManager</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::RenderWindow*&#32;<link linkend="_classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f">mRenderWindow</link>;
+35 
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_camera">RenderCamera</link>();
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_camera">~RenderCamera</link>();
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Assign&#32;references</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;init(Ogre::SceneNode*&#32;CameraNode,&#32;Ogre::SceneManager*&#32;SceneMgr,&#32;Ogre::RenderWindow*&#32;<link linkend="_classme_1_1_render_window">RenderWindow</link>&#32;);
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;createCamera(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nearDist,&#32;<emphasis role="keywordtype">int</emphasis>&#32;farDist,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;autoRadio,&#32;<emphasis role="keywordtype">int</emphasis>&#32;zOrder,&#32;Ogre::ColourValue&#32;color);
+51 
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Set&#32;position&#32;to&#32;mCameraNode</emphasis>
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setPosition(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;pos);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Set&#32;lookAT&#32;to&#32;mCameraNode</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;lookAt(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;look);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setViewportDimension(<emphasis role="keywordtype">float</emphasis>&#32;left,&#32;<emphasis role="keywordtype">float</emphasis>&#32;top,&#32;<emphasis role="keywordtype">float</emphasis>&#32;width,&#32;<emphasis role="keywordtype">float</emphasis>&#32;height);
+64 
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//void&#32;setPosition(Vector3&#32;pos);</emphasis>
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//void&#32;lookAt(Vector3&#32;pos);</emphasis>
+68 
+69 &#32;&#32;&#32;&#32;};
+70 
+71 }
+72 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

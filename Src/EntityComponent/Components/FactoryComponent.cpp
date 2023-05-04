@@ -5,135 +5,281 @@
 #include "Camera.h"
 #include "Collider.h"
 #include "MeshRenderer.h"
-#include "ParticleSystem.h"
+#include "UISpriteRenderer.h"
 #include "Rigidbody.h"
 #include "Transform.h"
+#include "Light.h"
+#include "UITransform.h"
+#include "UIText.h"
+#include "UIButton.h"
 
 using namespace me;
 
-float me::FactoryComponent::value(Parameters params, const ParameterName& parameter, float defaultValue)
+float me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, float defaultValue)
 {
     return params.count(parameter) ? std::stof(params[parameter]) : defaultValue;
 }
 
-int me::FactoryComponent::value(Parameters params, const ParameterName& parameter, int defaultValue)
+int me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, int defaultValue)
 {
     return params.count(parameter) ? std::stoi(params[parameter]) : defaultValue;
 }
 
-bool me::FactoryComponent::value(Parameters params, const ParameterName& parameter, bool defaultValue)
+bool me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, bool defaultValue)
 {
-    return params.count(parameter) ? (bool)std::stoi(params[parameter]) : defaultValue;
+    return params.count(parameter) ? (bool) std::stoi(params[parameter]) : defaultValue;
 }
 
-std::string me::FactoryComponent::value(Parameters params, const ParameterName& parameter, std::string defaultValue)
+std::string me::FactoryComponent::Value(Parameters& params, const ParameterName& parameter, std::string defaultValue)
 {
+    auto ci = params.count(parameter);
     return params.count(parameter) ? params[parameter] : defaultValue;
 }
 
-Component* FactoryAnimator::create(Parameters params)
+Component* FactoryAnimator::create(Parameters& params)
 {
     Animator* animator = new Animator();
-    /*if(params.count("animation"))
-        animator->playAnim(value<std::string>(params, "animation"), value(params, "loop", true));*/
     return animator;
 }
 
-Component* FactoryTransform::create(Parameters params)
+void me::FactoryAnimator::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* FactoryTransform::create(Parameters& params)
 {
     Transform* transform = new Transform();
-    transform->setPosition(Vector3(value(params, "position_x", 0.0f),
-        value(params, "position_y", 0.0f), value(params, "position_z", 0.0f)));
-    transform->setRotation(Vector3(value(params, "rotation_x", 0.0f),
-        value(params, "rotation_y", 0.0f), value(params, "rotation_z", 0.0f)));
-    transform->setScale(Vector3(value(params, "scale_x", 1.0f),
-        value(params, "scale_y", 1.0f), value(params, "scale_z", 1.0f)));
+    transform->setPosition(Vector3(Value(params, "position_x", 0.0f),
+        Value(params, "position_y", 0.0f), Value(params, "position_z", 0.0f)));
+    transform->setRotation(Vector3(Value(params, "rotation_x", 0.0f),
+        Value(params, "rotation_y", 0.0f), Value(params, "rotation_z", 0.0f)));
+    transform->setScale(Vector3(Value(params, "scale_x", 1.0f),
+        Value(params, "scale_y", 1.0f), Value(params, "scale_z", 1.0f)));
+    std::string transformParent = Value(params, "parentname", std::string());
+    transform->setParentName(transformParent);
     return transform;
 }
 
-me::Component* me::FactoryAudioListener::create(Parameters params)
+void me::FactoryTransform::destroy(Component* component)
 {
+    delete component;
+}
 
+me::Component* me::FactoryAudioListener::create(Parameters& params)
+{
     AudioListener* audioListener = new AudioListener();
 
     return audioListener;
 }
 
-me::Component* me::FactoryAudioSource::create(Parameters params)
+void me::FactoryAudioListener::destroy(Component* component)
+{
+    delete component;
+}
+
+me::Component* me::FactoryAudioSource::create(Parameters& params)
 {
     AudioSource* audioSource = new AudioSource();
 
-    audioSource->setSource(value(params, "source", std::string()));
-    audioSource->setPlayOnStart(value(params, "onStart", false));
-    audioSource->setVolume(value(params, "volume", 1));
-    audioSource->setIs3D(value(params, "3D", false));
-    audioSource->setLoop(value(params, "loop", false));
-
+    audioSource->setSourceName(Value(params, "name", std::string()));
+    audioSource->setSourcePath(Value(params, "path", std::string("fire.wav")));
+    audioSource->setPlayOnStart(Value(params, "onstart", false));
+    audioSource->setGroupChannelName(Value(params, "groupchannel", std::string("master")));
+    audioSource->setVolume(Value(params, "volume", 1.0f));
+    audioSource->setIsThreeD(Value(params, "threed", false));
+    audioSource->setLoop(Value(params, "loop", false));
+    audioSource->setMinDistance(Value(params, "mindistance", 1.0f));
+    audioSource->setMaxDistance(Value(params, "maxdistance", 60.0f));
+     
     return audioSource;
 }
 
-me::Component* me::FactoryCamera::create(Parameters params)
+void me::FactoryAudioSource::destroy(Component* component)
+{
+    delete component;
+}
+
+me::Component* me::FactoryCamera::create(Parameters& params)
 {
     Camera* camera = new Camera();
 
-    camera->setName(value(params, "name", std::string()));
-    camera->setNearDistance(value(params, "nearDistance", 1));
-    camera->setFarDistance(value(params, "farDistance", 1));
-    camera->setAutoRadio(value(params, "autoRadio", false));
-    camera->setZOrder(value(params, "zOrder", false));
-    camera->setLookAt(Vector3(value(params, "lookAt_x", 0), value(params, "lookAt_y", 0), value(params, "lookAt_y", 0)));
+    camera->setName(Value(params, "name", std::string("Main")));
+    camera->setNearDistance(Value(params, "neardistance", .1f));
+    camera->setFarDistance(Value(params, "fardistance", 1000));
+    camera->setAutoRadio(Value(params, "autoratio", false));
+    camera->setZOrder(Value(params, "zorder", 0));
+    camera->setBackgroundColour(Vector4(Value(params, "backgroundcolor_r", .0f), Value(params, "backgroundcolor_g", .0f),
+        Value(params, "backgroundcolor_b", .0f), Value(params, "backgroundcolor_a", 1.0f)));
+    camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
+    camera->init();
 
+    camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
+    camera->setViewportOverlayEnabled(Value(params, "overlayenable", true));
+    
     return camera;
 }
 
-me::Component* me::FactoryCollider::create(Parameters params)
+void me::FactoryCamera::destroy(Component* component)
+{
+    delete component;
+}
+
+me::Component* me::FactoryCollider::create(Parameters& params)
 {
     Collider* collider = new Collider();
 
     return collider;
 }
 
-me::Component* me::FactoryMeshRenderer::create(Parameters params)
+void me::FactoryCollider::destroy(Component* component)
 {
-    std::string mesh = value(params, "mesh", std::string());
-    std::string meshName = value(params, "meshname", std::string());
-    std::string materialName = value(params, "materialname", std::string());
-    bool staticState = value(params, "staticobj", false);
+    delete component;
+}
 
-    MeshRenderer* meshRenderer = new MeshRenderer(mesh, meshName);
-    meshRenderer->setMaterial(materialName);
+me::Component* me::FactoryMeshRenderer::create(Parameters& params)
+{
+    
+    std::string mesh = Value(params, "mesh", std::string());
+    std::string meshName = Value(params, "meshname", std::string());
+    std::string materialName = Value(params, "materialname", std::string());
+    bool staticState = Value(params, "staticobj", false);
+
+    MeshRenderer* meshRenderer = new MeshRenderer();
+    meshRenderer->setName(mesh);
+    meshRenderer->setMeshName(meshName);
     meshRenderer->setStatic(staticState);
 
+    meshRenderer->init();
+
+    meshRenderer->setMaterial(materialName);
     return meshRenderer;
 }
 
-me::Component* me::FactoryParticleSystem::create(Parameters params)
+void me::FactoryMeshRenderer::destroy(Component* component)
 {
-
-    std::string particle = value(params, "particle", std::string());
-    std::string particleName = value(params, "particlename", std::string());
-    bool emitted = value(params, "emitted", false);    
-
-    ParticleSystem* particleSystem = new ParticleSystem(particle, particleName);
-    particleSystem->setEmitting(emitted);
-    particleSystem->setOffsetPos(Vector3(value(params, "offpos_x", 0.0f),
-        value(params, "offpos_y", 0.0f), value(params, "offpos_z", 0.0f)));
-    particleSystem->setOffsetScale(Vector3(value(params, "offscale_x", 0.0f),
-        value(params, "offscale_y", 0.0f), value(params, "offscale_z", 0.0f)));
-
-    return particleSystem;
+    delete component;
 }
 
-me::Component* me::FactoryRigidBody::create(Parameters params)
+me::Component* me::FactoryRigidBody::create(Parameters& params)
 {
     RigidBody* rigidbody = new RigidBody();
 
-    rigidbody->setMass(value(params, "mass", 0.0f));
-    rigidbody->setRestitution(value(params, "restitution", 0.0f));
-    rigidbody->setFriction(value(params, "friction", 0.0f));
-    rigidbody->setTrigger(value(params, "istrigger", false));
-    rigidbody->setColShape(value(params, "colshape", 1));
-    rigidbody->setMomeventType(value(params, "mvtype", 1));
+    rigidbody->setMass(Value(params, "mass", 0.0f));
+    rigidbody->setRestitution(Value(params, "restitution", 0.0f));
+    rigidbody->setFriction(Value(params, "friction", 0.0f));
+    rigidbody->setTrigger(Value(params, "istrigger", false));
+    rigidbody->setColShape(Shapes(Value(params, "colshape", SHAPES_BOX)));
+    rigidbody->setColliderScale(Vector3(Value(params, "colliderscale_x", 1.0f),
+        Value(params, "colliderscale_y", 1.0f), Value(params, "colliderscale_z", 1.0f)));
+    rigidbody->setMomeventType(MovementType(Value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
+    rigidbody->setMask(Value(params, "mask", 15));
+    rigidbody->setGroup(Value(params, "group", 1));
 
     return rigidbody;
+}
+
+void me::FactoryRigidBody::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* me::FactoryLight::create(Parameters& params)
+{
+    Light* light = new Light();
+
+    light->setName(Value(params, "name", std::string("Light")));
+    light->setDirection(Vector3(Value(params, "direction_x", 0.0f),
+        Value(params, "direction_y", -1.0f), Value(params, "direction_z", 0.0f)));
+    light->setLightType((LightType)Value(params, "type", 0));
+    light->setColor(Vector3(Value(params, "color_r", 1.0f),
+        Value(params, "color_g", 1.0f), Value(params, "color_b", 1.0f)));
+
+    if (params.count("ambientcolor_r"))
+        light->setAmbientColor(Vector3(Value(params, "ambientcolor_r", 1.0f),
+            Value(params, "ambientcolor_g", 1.0f), Value(params, "ambientcolor_b", 1.0f)));
+
+    return light;
+}
+
+void me::FactoryLight::destroy(Component* component)
+{
+    delete component;
+}
+
+me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
+{
+    if (params.empty())
+    {
+        return new UISpriteRenderer();
+    }
+    std::string sprite = Value(params, "sprite", std::string());
+    std::string materialName = Value(params, "materialname", std::string());
+    int zOrder = Value(params, "zorder", 1);
+    bool staticState = Value(params, "staticobj", false);
+
+    UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
+    spriteRenderer->init(sprite, materialName,zOrder);
+    spriteRenderer->setStatic(staticState);
+
+    return spriteRenderer;
+}
+
+void me::FactoryUISpriteRenderer::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* me::FactoryUITransform::create(Parameters& params)
+{
+    UITransform* transform = new UITransform();
+    transform->setPosition(Vector2(Value(params, "position_x", 0.0f),
+        Value(params, "position_y", 0.0f)));
+    transform->setRotation(Value(params, "rotation", 0.0f));
+    transform->setScale(Vector2(Value(params, "scale_x", 1.0f),
+        Value(params, "scale_y", 1.0f)));
+    return transform;
+}
+
+void me::FactoryUITransform::destroy(Component* component)
+{
+    delete component;
+}
+
+Component* me::FactoryUIText::create(Parameters& params)
+{
+    if (params.empty())
+    {
+        return new UIText();
+    }
+    std::string name = Value(params, "name", std::string());
+    std::string text = Value(params, "text", std::string());
+    std::string fontName = Value(params, "fontname", std::string());
+    Vector3 colour = Vector3(Value(params, "colour_x", 1.0f),Value(params, "colour_y", 1.0f), Value(params, "colour_z", 1.0f));
+    Vector3 colourBottom = Vector3(Value(params, "colourbottom_x", 1.0f),Value(params, "colourbottom_y", 1.0f), Value(params, "colourbottom_z", 1.0f));
+    Vector3 colourTop = Vector3(Value(params, "colourtop_x", 1.0f),Value(params, "colourtop_y", 1.0f), Value(params, "colourtop_z", 1.0f));
+    Vector2 position = Vector2(Value(params, "position_x", 1.0f), Value(params, "position_y", 1.0f));
+    Vector2 dimension = Vector2(Value(params, "dimension_x", 1.0f), Value(params, "dimension_y", 1.0f));
+    int zOrder = Value(params, "zorder", 1);
+    float charHeight = Value(params, "charheight", 0.1f);
+
+    UIText* textRenderer = new UIText();
+    textRenderer->init(name, text, zOrder, fontName);
+    textRenderer->setPosition(position.x, position.y);
+    textRenderer->setSize(dimension.x, dimension.y);
+    textRenderer->setCharHeight(charHeight);
+    if (params.count("colourbottom_x")) {
+        textRenderer->setColourTop(colourTop);
+        textRenderer->setColourBottom(colourBottom);
+    }
+    else textRenderer->setColour(colour);
+
+    textRenderer->setText(text);
+
+    return textRenderer;
+}
+
+void me::FactoryUIText::destroy(Component* component)
+{
+    delete component;
 }

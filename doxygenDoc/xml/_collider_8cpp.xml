@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_collider_8cpp" kind="file" language="C++">
+    <compoundname>Collider.cpp</compoundname>
+    <includes refid="_collider_8h" local="yes">Collider.h</includes>
+    <includes refid="_entity_8h" local="yes">EntityComponent/Entity.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/EntityComponent/Components/Collider.cpp</label>
+        <link refid="_collider_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Collider.h</label>
+        <link refid="_collider_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="10">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_collider_8h" kindref="compound">Collider.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_entity_8h" kindref="compound">EntityComponent/Entity.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="classme_1_1_collider_1ae55f1c3560d886e5b5918558170fdb2b" kindref="member">me::Collider::Collider</ref>()</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="classme_1_1_collider_1a6a5fe4c5bc1b5e685e91a6001f61bd5d" kindref="member">me::Collider::~Collider</ref>()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_collider_1a06b45c7173e37f43710d6507380f4b9d" kindref="member">me::Collider::onCollisionEnter</ref>(Entity*<sp/>other)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Im<sp/>&quot;<sp/>&lt;&lt;<sp/>mEntity-&gt;getName()<sp/>&lt;&lt;<sp/>&quot;<sp/>and<sp/>I<sp/>have<sp/>collided<sp/>with<sp/>&quot;<sp/>&lt;&lt;<sp/>other-&gt;getName()<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>mEntity-&gt;OnCollisionEnter(other);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_collider_1a3f5fa8755c5361d1b1444ead18d90d60" kindref="member">me::Collider::onCollisionStay</ref>(Entity*<sp/>other)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Stay<sp/>collision\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>mEntity-&gt;OnCollisionStay(other);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_collider_1a713a91741f2fd59de09c758f542e4b8b" kindref="member">me::Collider::onCollisionExit</ref>(Entity*<sp/>other)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>mEntity-&gt;OnCollisionExit(other);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/Collider.cpp"/>
+  </compounddef>
+</doxygen>

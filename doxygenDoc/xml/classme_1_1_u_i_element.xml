@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_u_i_element" kind="class" language="C++" prot="public">
+    <compoundname>me::UIElement</compoundname>
+    <basecompoundref refid="classme_1_1_component" prot="public" virt="non-virtual">me::Component</basecompoundref>
+    <derivedcompoundref refid="classme_1_1_u_i_button" prot="public" virt="non-virtual">me::UIButton</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_u_i_container" prot="public" virt="non-virtual">me::UIContainer</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_u_i_text" prot="public" virt="non-virtual">me::UIText</derivedcompoundref>
+    <includes refid="_u_i_element_8h" local="no">UIElement.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" prot="protected" static="no" mutable="no">
+        <type>Ogre::OverlayManager *</type>
+        <definition>Ogre::OverlayManager* me::UIElement::mOverlayManager</definition>
+        <argsstring></argsstring>
+        <name>mOverlayManager</name>
+        <qualifiedname>me::UIElement::mOverlayManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="111" column="22" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" prot="protected" static="no" mutable="no">
+        <type>Ogre::Overlay *</type>
+        <definition>Ogre::Overlay* me::UIElement::mOverlay</definition>
+        <argsstring></argsstring>
+        <name>mOverlay</name>
+        <qualifiedname>me::UIElement::mOverlay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="112" column="15" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752" prot="protected" static="no" mutable="no">
+        <type>Ogre::OverlayContainer *</type>
+        <definition>Ogre::OverlayContainer* me::UIElement::mOverlayContainer</definition>
+        <argsstring></argsstring>
+        <name>mOverlayContainer</name>
+        <qualifiedname>me::UIElement::mOverlayContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="113" column="24" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::UIElement::mInteractive</definition>
+        <argsstring></argsstring>
+        <name>mInteractive</name>
+        <qualifiedname>me::UIElement::mInteractive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="115" column="6" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::UIElement::mFocus</definition>
+        <argsstring></argsstring>
+        <name>mFocus</name>
+        <qualifiedname>me::UIElement::mFocus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="116" column="6" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int me::UIElement::mElems</definition>
+        <argsstring></argsstring>
+        <name>mElems</name>
+        <qualifiedname>me::UIElement::mElems</qualifiedname>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="118" column="5" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a879373496189cf55ae04abaf5abec1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::UIElement::UIElement</definition>
+        <argsstring>()</argsstring>
+        <name>UIElement</name>
+        <qualifiedname>me::UIElement::UIElement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="26" column="1" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="6" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a61d3cbf59484f740216c1ee77393a0e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::UIElement::~UIElement</definition>
+        <argsstring>()</argsstring>
+        <name>~UIElement</name>
+        <qualifiedname>me::UIElement::~UIElement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="27" column="1" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a750ca74e512eb5e414279d6076e94c47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::show</definition>
+        <argsstring>()</argsstring>
+        <name>show</name>
+        <qualifiedname>me::UIElement::show</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shows the overlay </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="33" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a4cda600b5c3189985df9db518f2c6874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::hide</definition>
+        <argsstring>()</argsstring>
+        <name>hide</name>
+        <qualifiedname>me::UIElement::hide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hides the overlay </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="38" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a4d202dcf70aeea95c78bb271605ac389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 me::UIElement::getSize</definition>
+        <argsstring>()</argsstring>
+        <name>getSize</name>
+        <qualifiedname>me::UIElement::getSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the size of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <simplesect kind="return"><para>A Vector2&lt;float&gt; representing the width and height of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="44" column="9" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a1636761026397c61838e78fe9ffc023b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 me::UIElement::getPos</definition>
+        <argsstring>()</argsstring>
+        <name>getPos</name>
+        <qualifiedname>me::UIElement::getPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <simplesect kind="return"><para>A Vector2&lt;float&gt; representing the x and y position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="50" column="9" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1aaa30c97b12f4d43c44081224c1fd0199" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setSize</definition>
+        <argsstring>(Vector2 size)</argsstring>
+        <name>setSize</name>
+        <qualifiedname>me::UIElement::setSize</qualifiedname>
+        <param>
+          <type><ref refid="class_vector2" kindref="compound">Vector2</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the size of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Vector2&lt;float&gt; representing the new width and height of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="56" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1ad1bc15050541c2a5f2f0b17cdc5c97a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::UIElement::isVisible</definition>
+        <argsstring>()</argsstring>
+        <name>isVisible</name>
+        <qualifiedname>me::UIElement::isVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is currently visible <simplesect kind="return"><para>true if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is visible, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="62" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a67ffd299a2d16537316c96d66926b43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setTop</definition>
+        <argsstring>(float top)</argsstring>
+        <name>setTop</name>
+        <qualifiedname>me::UIElement::setTop</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the top position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new top position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="68" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a56c2bab5a90e09e841afe007badd9e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setLeft</definition>
+        <argsstring>(float left)</argsstring>
+        <name>setLeft</name>
+        <qualifiedname>me::UIElement::setLeft</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the left position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new left position of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="73" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a48c74046686a52b34045e909a8565aaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setWidth</definition>
+        <argsstring>(float wifth)</argsstring>
+        <name>setWidth</name>
+        <qualifiedname>me::UIElement::setWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>wifth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the width of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new width of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="79" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a628e925b6913ee1155f23e8ad37815e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setHeight</definition>
+        <argsstring>(float height)</argsstring>
+        <name>setHeight</name>
+        <qualifiedname>me::UIElement::setHeight</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the height of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new height of the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="84" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a54d484900df2197fe8ff757db9e0e0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setInteractive</definition>
+        <argsstring>(bool interactive)</argsstring>
+        <name>setInteractive</name>
+        <qualifiedname>me::UIElement::setInteractive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>interactive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets whether the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is interactive <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interactive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is interactive, false otherwise </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="90" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1a3e827c9c20affb185bc5486868017c1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::UIElement::setFocusNow</definition>
+        <argsstring>(bool focus)</argsstring>
+        <name>setFocusNow</name>
+        <qualifiedname>me::UIElement::setFocusNow</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>focus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets whether the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> should immediately receive keyboard focus <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>focus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> should immediately receive keyboard focus, false otherwise </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="96" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1ab0eb35fb5e951f927251d4c739dfc197" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::UIElement::getIsInteractive</definition>
+        <argsstring>()</argsstring>
+        <name>getIsInteractive</name>
+        <qualifiedname>me::UIElement::getIsInteractive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is interactive <simplesect kind="return"><para>true if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> is interactive, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="102" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_u_i_element_1adba1eadd91cf561d06d15e09c8ed1879" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool me::UIElement::getIsFocusNow</definition>
+        <argsstring>()</argsstring>
+        <name>getIsFocusNow</name>
+        <qualifiedname>me::UIElement::getIsFocusNow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> currently has keyboard focus <simplesect kind="return"><para>true if the <ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> currently has keyboard focus, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="107" column="6" bodyfile="Src/EntityComponent/Components/UIElement.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref> represents a graphical user interface (GUI) element that can be displayed on the screen It is a <ref refid="classme_1_1_component" kindref="compound">Component</ref> that can be attached to an <ref refid="classme_1_1_entity" kindref="compound">Entity</ref> to add user interface functionality to it </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+      </node>
+      <node id="3">
+        <label>me::UIButton</label>
+        <link refid="classme_1_1_u_i_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>me::UIContainer</label>
+        <link refid="classme_1_1_u_i_container"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>me::UIElement</label>
+        <link refid="classme_1_1_u_i_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>me::UIText</label>
+        <link refid="classme_1_1_u_i_text"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+      <node id="1">
+        <label>me::UIElement</label>
+        <link refid="classme_1_1_u_i_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/UIElement.h" line="23" column="1" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="24" bodyend="121"/>
+    <listofallmembers>
+      <member refid="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>Component</name></member>
+      <member refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>enabled</name></member>
+      <member refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>getEntity</name></member>
+      <member refid="classme_1_1_u_i_element_1adba1eadd91cf561d06d15e09c8ed1879" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>getIsFocusNow</name></member>
+      <member refid="classme_1_1_u_i_element_1ab0eb35fb5e951f927251d4c739dfc197" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>getIsInteractive</name></member>
+      <member refid="classme_1_1_u_i_element_1a1636761026397c61838e78fe9ffc023b" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>getPos</name></member>
+      <member refid="classme_1_1_u_i_element_1a4d202dcf70aeea95c78bb271605ac389" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>getSize</name></member>
+      <member refid="classme_1_1_u_i_element_1a4cda600b5c3189985df9db518f2c6874" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>hide</name></member>
+      <member refid="classme_1_1_u_i_element_1ad1bc15050541c2a5f2f0b17cdc5c97a0" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>isVisible</name></member>
+      <member refid="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" virt="virtual"><scope>me::UIElement</scope><name>lateUpdate</name></member>
+      <member refid="classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mElems</name></member>
+      <member refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mEntity</name></member>
+      <member refid="classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mFocus</name></member>
+      <member refid="classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mInteractive</name></member>
+      <member refid="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mOverlay</name></member>
+      <member refid="classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mOverlayContainer</name></member>
+      <member refid="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" prot="protected" virt="non-virtual"><scope>me::UIElement</scope><name>mOverlayManager</name></member>
+      <member refid="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" virt="virtual"><scope>me::UIElement</scope><name>OnCollisionEnter</name></member>
+      <member refid="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" virt="virtual"><scope>me::UIElement</scope><name>OnCollisionExit</name></member>
+      <member refid="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" virt="virtual"><scope>me::UIElement</scope><name>OnCollisionStay</name></member>
+      <member refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setEntity</name></member>
+      <member refid="classme_1_1_u_i_element_1a3e827c9c20affb185bc5486868017c1d" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setFocusNow</name></member>
+      <member refid="classme_1_1_u_i_element_1a628e925b6913ee1155f23e8ad37815e7" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setHeight</name></member>
+      <member refid="classme_1_1_u_i_element_1a54d484900df2197fe8ff757db9e0e0cb" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setInteractive</name></member>
+      <member refid="classme_1_1_u_i_element_1a56c2bab5a90e09e841afe007badd9e4e" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setLeft</name></member>
+      <member refid="classme_1_1_u_i_element_1aaa30c97b12f4d43c44081224c1fd0199" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setSize</name></member>
+      <member refid="classme_1_1_u_i_element_1a67ffd299a2d16537316c96d66926b43d" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setTop</name></member>
+      <member refid="classme_1_1_u_i_element_1a48c74046686a52b34045e909a8565aaf" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>setWidth</name></member>
+      <member refid="classme_1_1_u_i_element_1a750ca74e512eb5e414279d6076e94c47" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>show</name></member>
+      <member refid="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae" prot="public" virt="virtual"><scope>me::UIElement</scope><name>start</name></member>
+      <member refid="classme_1_1_u_i_element_1a879373496189cf55ae04abaf5abec1fc" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>UIElement</name></member>
+      <member refid="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1" prot="public" virt="virtual"><scope>me::UIElement</scope><name>update</name></member>
+      <member refid="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" virt="virtual"><scope>me::UIElement</scope><name>~Component</name></member>
+      <member refid="classme_1_1_u_i_element_1a61d3cbf59484f740216c1ee77393a0e9" prot="public" virt="non-virtual"><scope>me::UIElement</scope><name>~UIElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

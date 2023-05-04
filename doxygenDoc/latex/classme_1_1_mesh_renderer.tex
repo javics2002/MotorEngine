@@ -1,0 +1,178 @@
+\hypertarget{classme_1_1_mesh_renderer}{}\doxysection{me\+::Mesh\+Renderer Class Reference}
+\label{classme_1_1_mesh_renderer}\index{me::MeshRenderer@{me::MeshRenderer}}
+
+
+{\ttfamily \#include $<$Mesh\+Renderer.\+h$>$}
+
+Inheritance diagram for me\+::Mesh\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classme_1_1_mesh_renderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_mesh_renderer_a51a9270b5d7fa21754f10807feda4f68}{Mesh\+Renderer}} (std\+::string name, std\+::string mesh\+Name)
+\item 
+\mbox{\hyperlink{classme_1_1_mesh_renderer_a31dbd94c837b79c98ea2cbf060e34421}{$\sim$\+Mesh\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_mesh_renderer_a6e4acd1a7b8b1aa23cdca27a0e1ef977}{start}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_mesh_renderer_ae3012e47ce3fae28f699e538273be437}{update}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_mesh_renderer_ad812ec39c9b5752b2d1699f4baf6898c}{set\+Material}} (std\+::string material\+Name)
+\item 
+void \mbox{\hyperlink{classme_1_1_mesh_renderer_a2b3bd27f68a453df055d3b47c493060c}{set\+Static}} (bool stat)
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_mesh_renderer_afd5521dfdc1df9b4475613e8d514c815}{get\+Name}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_component_a4dae1070d5cb2b14b49466e64b3095d6}{Component}} ()
+\item 
+virtual \mbox{\hyperlink{classme_1_1_component_ab2a3844334f7d532196025c32e100799}{$\sim$\+Component}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_component_a7c5786c94bfaf7b6e110f9fa30feafb3}{set\+Entity}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$e)
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a1c8917fcfda2d8ad66ab487ab726a0cd}{get\+Entity}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{start}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_af9625b0308ccd7b22c7871922de0b0a0}{late\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a4d98175f03ee8266f71d9237b3d23748}{On\+Collision\+Enter}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a9e024171b2bbed0cedf1476e2879081f}{On\+Collision\+Stay}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a643aad67bcb41b2c936e49e25b78342e}{On\+Collision\+Exit}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_mesh_renderer_a9f15f9f36f6de10ea5a8578dd7efc652}{m\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_mesh_renderer_a6085a2c25d3cce0ee8675ac9bec28c35}{m\+Mesh\+Name}}
+\item 
+\mbox{\hyperlink{classme_1_1_transform}{Transform}} $\ast$ \mbox{\hyperlink{classme_1_1_mesh_renderer_ab22b272fb14e13aa3bac331ad27a0fe0}{m\+Transform}}
+\item 
+bool \mbox{\hyperlink{classme_1_1_mesh_renderer_a9b89d29d56b623da82cbaa5c11eb1fe7}{m\+Static\+Object}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a89862182926907ae608d3244d1d4e6d1}{m\+Entity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classme_1_1_component_ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3}{enabled}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classme_1_1_mesh_renderer}{Mesh\+Renderer}} class represents a visual object in 3D space and can be attached to entities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a51a9270b5d7fa21754f10807feda4f68}\label{classme_1_1_mesh_renderer_a51a9270b5d7fa21754f10807feda4f68}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!MeshRenderer@{MeshRenderer}}
+\index{MeshRenderer@{MeshRenderer}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{MeshRenderer()}{MeshRenderer()}}
+{\footnotesize\ttfamily me\+::\+Mesh\+Renderer\+::\+Mesh\+Renderer (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{mesh\+Name }\end{DoxyParamCaption})}
+
+Construct a new \mbox{\hyperlink{classme_1_1_mesh_renderer}{Mesh\+Renderer}} component and save necesary info 
+\begin{DoxyParams}{Parameters}
+{\em name} & name saved in om() map and used for entity that attached in node \\
+\hline
+{\em mesh\+Name} & name of .mesh file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a31dbd94c837b79c98ea2cbf060e34421}\label{classme_1_1_mesh_renderer_a31dbd94c837b79c98ea2cbf060e34421}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!````~MeshRenderer@{$\sim$MeshRenderer}}
+\index{````~MeshRenderer@{$\sim$MeshRenderer}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$MeshRenderer()}{~MeshRenderer()}}
+{\footnotesize\ttfamily me\+::\+Mesh\+Renderer\+::$\sim$\+Mesh\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_afd5521dfdc1df9b4475613e8d514c815}\label{classme_1_1_mesh_renderer_afd5521dfdc1df9b4475613e8d514c815}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!getName@{getName}}
+\index{getName@{getName}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string me\+::\+Mesh\+Renderer\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set it is static entity or not \mbox{\Hypertarget{classme_1_1_mesh_renderer_ad812ec39c9b5752b2d1699f4baf6898c}\label{classme_1_1_mesh_renderer_ad812ec39c9b5752b2d1699f4baf6898c}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!setMaterial@{setMaterial}}
+\index{setMaterial@{setMaterial}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{setMaterial()}{setMaterial()}}
+{\footnotesize\ttfamily void me\+::\+Mesh\+Renderer\+::set\+Material (\begin{DoxyParamCaption}\item[{std\+::string}]{material\+Name }\end{DoxyParamCaption})}
+
+Set material to mesh (ogre\+Mesh). 
+\begin{DoxyParams}{Parameters}
+{\em material\+Name} & name of material that is written in Material\+Resource.\+material. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a2b3bd27f68a453df055d3b47c493060c}\label{classme_1_1_mesh_renderer_a2b3bd27f68a453df055d3b47c493060c}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!setStatic@{setStatic}}
+\index{setStatic@{setStatic}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{setStatic()}{setStatic()}}
+{\footnotesize\ttfamily void me\+::\+Mesh\+Renderer\+::set\+Static (\begin{DoxyParamCaption}\item[{bool}]{stat }\end{DoxyParamCaption})}
+
+Set it is static entity or not \mbox{\Hypertarget{classme_1_1_mesh_renderer_a6e4acd1a7b8b1aa23cdca27a0e1ef977}\label{classme_1_1_mesh_renderer_a6e4acd1a7b8b1aa23cdca27a0e1ef977}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!start@{start}}
+\index{start@{start}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void me\+::\+Mesh\+Renderer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get info for m\+Transform and create ogre\+Mesh and set the start pos 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{me\+::\+Component}}.
+
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_ae3012e47ce3fae28f699e538273be437}\label{classme_1_1_mesh_renderer_ae3012e47ce3fae28f699e538273be437}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!update@{update}}
+\index{update@{update}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void me\+::\+Mesh\+Renderer\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update transform info to mesh(ogre\+Mesh) 
+
+Reimplemented from \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{me\+::\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a6085a2c25d3cce0ee8675ac9bec28c35}\label{classme_1_1_mesh_renderer_a6085a2c25d3cce0ee8675ac9bec28c35}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!mMeshName@{mMeshName}}
+\index{mMeshName@{mMeshName}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{mMeshName}{mMeshName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Mesh\+Renderer\+::m\+Mesh\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a9f15f9f36f6de10ea5a8578dd7efc652}\label{classme_1_1_mesh_renderer_a9f15f9f36f6de10ea5a8578dd7efc652}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!mName@{mName}}
+\index{mName@{mName}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Mesh\+Renderer\+::m\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_a9b89d29d56b623da82cbaa5c11eb1fe7}\label{classme_1_1_mesh_renderer_a9b89d29d56b623da82cbaa5c11eb1fe7}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!mStaticObject@{mStaticObject}}
+\index{mStaticObject@{mStaticObject}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{mStaticObject}{mStaticObject}}
+{\footnotesize\ttfamily bool me\+::\+Mesh\+Renderer\+::m\+Static\+Object = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_mesh_renderer_ab22b272fb14e13aa3bac331ad27a0fe0}\label{classme_1_1_mesh_renderer_ab22b272fb14e13aa3bac331ad27a0fe0}} 
+\index{me::MeshRenderer@{me::MeshRenderer}!mTransform@{mTransform}}
+\index{mTransform@{mTransform}!me::MeshRenderer@{me::MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{mTransform}{mTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_transform}{Transform}}$\ast$ me\+::\+Mesh\+Renderer\+::m\+Transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_mesh_renderer_8h}{Mesh\+Renderer.\+h}}\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_mesh_renderer_8cpp}{Mesh\+Renderer.\+cpp}}\end{DoxyCompactItemize}

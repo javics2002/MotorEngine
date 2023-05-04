@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dllmain_8cpp" xml:lang="en-US">
+<title>Src/MotorEngine/dllmain.cpp File Reference</title>
+<indexterm><primary>Src/MotorEngine/dllmain.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;pch.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>BOOL APIENTRY <link linkend="_dllmain_8cpp_1a26e64fb39b69bcd9d1274d279f1561b9">DllMain</link> (HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_dllmain_8cpp_1a26e64fb39b69bcd9d1274d279f1561b9"/><section>
+    <title>DllMain()</title>
+<indexterm><primary>DllMain</primary><secondary>dllmain.cpp</secondary></indexterm>
+<indexterm><primary>dllmain.cpp</primary><secondary>DllMain</secondary></indexterm>
+<para><computeroutput>BOOL APIENTRY DllMain (HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)</computeroutput></para></section>
+</section>
+</section>

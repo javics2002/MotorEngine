@@ -1,0 +1,366 @@
+\hypertarget{classme_1_1_input_manager}{}\doxysection{me\+::Input\+Manager Class Reference}
+\label{classme_1_1_input_manager}\index{me::InputManager@{me::InputManager}}
+
+
+{\ttfamily \#include $<$Input\+Manager.\+h$>$}
+
+Inheritance diagram for me\+::Input\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classme_1_1_input_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \& \mbox{\hyperlink{classme_1_1_input_manager_a097291ca4204112b88c9e011a841cd44}{operator=}} (const \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \&o)=delete
+\item 
+\mbox{\hyperlink{classme_1_1_input_manager_a76af2005ae1b8b392e07c1729165e228}{Input\+Manager}} (const \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \&o)=delete
+\item 
+\mbox{\hyperlink{classme_1_1_input_manager_ac07b6252aae165bce8f3608d23761ecf}{$\sim$\+Input\+Manager}} () override
+\item 
+void \mbox{\hyperlink{classme_1_1_input_manager_a26f5a6fb4c432d00040156e45853cf98}{add\+Event}} (\mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\+\_\+\+Event\+Filter}} filter, void $\ast$userdata=NULL)
+\item 
+void \mbox{\hyperlink{classme_1_1_input_manager_a12199fbdbebc969a00d5dcda3fe1b387}{delete\+Event}} (\mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\+\_\+\+Event\+Filter}} filter, void $\ast$userdata=NULL)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_ab7396a5ea3288379cd876b32b6fe2c8c}{add\+Button}} (std\+::string name, int player=-\/1)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a2b90a407cb61f0c568324bbe6cf746e5}{add\+Button}} (std\+::string name, \mbox{\hyperlink{structme_1_1_input}{Input}} input, int player=-\/1)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a1e641f8f21ac2ba43fc022a97efea43b}{delete\+Button}} (std\+::string name)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a33e300808296f6b3e61b99c491fffd12}{add\+Axis}} (std\+::string name, \mbox{\hyperlink{structme_1_1_axis_info}{Axis\+Info}} info)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a3384c2b1f5907fd436af6be072bca448}{add\+Axis}} (std\+::string name, \mbox{\hyperlink{structme_1_1_axis_info}{Axis\+Info}} info, \mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}} input)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a072961e5535cd290a360e3af8fb92be7}{delete\+Axis}} (std\+::string name)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a8bebb9629b541d74f418bba91b027416}{add\+Binding}} (std\+::string name, \mbox{\hyperlink{structme_1_1_input}{Input}} input)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_af7d3de9619cf3d754fb8f59ec636cde3}{add\+Binding}} (std\+::string name, \mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}} input)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_ab34c3e73e7ee2caac0cc583c97e1e039}{delete\+Binding}} (std\+::string name, \mbox{\hyperlink{structme_1_1_input}{Input}} input)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_aecfba078630a4503db3e27cd34318295}{delete\+Binding}} (std\+::string name, \mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}} input)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_aad30006d6511ba5c563393367851ee14}{get\+Button}} (std\+::string name)
+\item 
+float \mbox{\hyperlink{classme_1_1_input_manager_ad1094f22aae49c3ff590780d8f8ecdbf}{get\+Axis}} (std\+::string name)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_aa212df8f68741f22a9b5410c6ea48f05}{add\+On\+Button\+Pressed\+Event}} (std\+::string name, int($\ast$callback)(void $\ast$), void $\ast$additional\+Data=NULL)
+\item 
+bool \mbox{\hyperlink{classme_1_1_input_manager_a77f961528884908c89afb2a01d6f4da9}{delete\+On\+Button\+Pressed\+Event}} (std\+::string name, int($\ast$callback)(void $\ast$), void $\ast$additional\+Data=NULL)
+\item 
+\mbox{\hyperlink{class_vector2}{Vector2}} \mbox{\hyperlink{classme_1_1_input_manager_a4c24100552d97f3d2a88e535e0f87ea8}{get\+Mouse\+Positon}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton$<$ Input\+Manager $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_singleton_a70f85c079fd020a8655eed54e7189845}{Singleton}} (const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} $>$ \&o)=delete
+\item 
+\mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} $>$ \& \mbox{\hyperlink{classme_1_1_singleton_a6745ba60837f9347a75c0cfc27fadfb0}{operator=}} (const \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}$<$ \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} $>$ \&o)=delete
+\item 
+virtual \mbox{\hyperlink{classme_1_1_singleton_a576834dfbf95c3b929511d2a588866d1}{$\sim$\+Singleton}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton$<$ Input\+Manager $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} $\ast$ \mbox{\hyperlink{classme_1_1_singleton_a919633966a5db8336cffa09f28fc2623}{init}} (Targs \&\&...args)
+\item 
+static \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} $\ast$ \mbox{\hyperlink{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classme_1_1_singleton}{me\+::\+Singleton$<$ Input\+Manager $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_singleton_af5127d54d6c6904173541b404903b599}{Singleton}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} provides information and callbacks for any user input from keyboard, mouse and game controller. Define virtual buttons to easely remap your game\textquotesingle{}s controls. You can access the \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} just calling im(). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_input_manager_a76af2005ae1b8b392e07c1729165e228}\label{classme_1_1_input_manager_a76af2005ae1b8b392e07c1729165e228}} 
+\index{me::InputManager@{me::InputManager}!InputManager@{InputManager}}
+\index{InputManager@{InputManager}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{InputManager()}{InputManager()}}
+{\footnotesize\ttfamily me\+::\+Input\+Manager\+::\+Input\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classme_1_1_input_manager_ac07b6252aae165bce8f3608d23761ecf}\label{classme_1_1_input_manager_ac07b6252aae165bce8f3608d23761ecf}} 
+\index{me::InputManager@{me::InputManager}!````~InputManager@{$\sim$InputManager}}
+\index{````~InputManager@{$\sim$InputManager}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputManager()}{~InputManager()}}
+{\footnotesize\ttfamily Input\+Manager\+::$\sim$\+Input\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_input_manager_a33e300808296f6b3e61b99c491fffd12}\label{classme_1_1_input_manager_a33e300808296f6b3e61b99c491fffd12}} 
+\index{me::InputManager@{me::InputManager}!addAxis@{addAxis}}
+\index{addAxis@{addAxis}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addAxis()}{addAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Axis (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_axis_info}{Axis\+Info}}}]{info }\end{DoxyParamCaption})}
+
+Creates an axis of name name. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+{\em info} & Defines the behaviour of the axis. info.\+gravity is the speed in units per second that the axis falls toward neutral when no input is present and info.\+dead is how far the user needs to move an analog stick before your application registers the movement. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the button could be created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a3384c2b1f5907fd436af6be072bca448}\label{classme_1_1_input_manager_a3384c2b1f5907fd436af6be072bca448}} 
+\index{me::InputManager@{me::InputManager}!addAxis@{addAxis}}
+\index{addAxis@{addAxis}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addAxis()}{addAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Axis (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_axis_info}{Axis\+Info}}}]{info,  }\item[{\mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}}}]{input }\end{DoxyParamCaption})}
+
+Creates an axis of name name and binds it with some physical input. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+{\em info} & Defines the behaviour of the axis. info.\+gravity is the speed in units per second that the axis falls toward neutral when no input is present and info.\+dead is how far the user needs to move an analog stick before your application registers the movement. \\
+\hline
+{\em input} & Represents two physical buttons or keys that can trigger a virtual axis. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+positive and input.\+negative represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the button could be created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_af7d3de9619cf3d754fb8f59ec636cde3}\label{classme_1_1_input_manager_af7d3de9619cf3d754fb8f59ec636cde3}} 
+\index{me::InputManager@{me::InputManager}!addBinding@{addBinding}}
+\index{addBinding@{addBinding}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addBinding()}{addBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Binding (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}}}]{input }\end{DoxyParamCaption})}
+
+Binds some physical input with a virutal axis, so triggering said input will trigger the virtual axis. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+{\em input} & Represents two physical buttons or keys that can trigger a virtual axis. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+positive and input.\+negative represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the binding was successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a8bebb9629b541d74f418bba91b027416}\label{classme_1_1_input_manager_a8bebb9629b541d74f418bba91b027416}} 
+\index{me::InputManager@{me::InputManager}!addBinding@{addBinding}}
+\index{addBinding@{addBinding}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addBinding()}{addBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Binding (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_input}{Input}}}]{input }\end{DoxyParamCaption})}
+
+Binds some physical input with a virutal button, so triggering said input will trigger the virtual button. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+{\em input} & Representation of the physical input. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+which represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the binding was successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a2b90a407cb61f0c568324bbe6cf746e5}\label{classme_1_1_input_manager_a2b90a407cb61f0c568324bbe6cf746e5}} 
+\index{me::InputManager@{me::InputManager}!addButton@{addButton}}
+\index{addButton@{addButton}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_input}{Input}}}]{input,  }\item[{int}]{player = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Creates a button of name name and binds it with some physical input. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+{\em input} & Representation of the physical input. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+which represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+{\em player} & In case it is necessary to differenciate which player inputs a press, \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} will dissmiss presses from other players. First player is 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the button could be created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_ab7396a5ea3288379cd876b32b6fe2c8c}\label{classme_1_1_input_manager_ab7396a5ea3288379cd876b32b6fe2c8c}} 
+\index{me::InputManager@{me::InputManager}!addButton@{addButton}}
+\index{addButton@{addButton}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{player = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Creates a button of name name. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+{\em player} & In case it is necessary to differenciate which player inputs a press, \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} will dissmiss presses from other players. First player is 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the button could be created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a26f5a6fb4c432d00040156e45853cf98}\label{classme_1_1_input_manager_a26f5a6fb4c432d00040156e45853cf98}} 
+\index{me::InputManager@{me::InputManager}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void Input\+Manager\+::add\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\+\_\+\+Event\+Filter}}}]{filter,  }\item[{void $\ast$}]{userdata = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Calls filter everytime an SDL\+\_\+\+Event is processed. 
+\begin{DoxyParams}{Parameters}
+{\em filter} & is a function with the format\+: int ({\itshape SDL\+\_\+\+Event\+Filter)(void} userdata, SDL\+\_\+\+Event$\ast$ event). It is recommended to check the type of the event in it. \\
+\hline
+{\em userdata} & is a pointer to additional information to use in the callback. It is NULL by default. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_input_manager_aa212df8f68741f22a9b5410c6ea48f05}\label{classme_1_1_input_manager_aa212df8f68741f22a9b5410c6ea48f05}} 
+\index{me::InputManager@{me::InputManager}!addOnButtonPressedEvent@{addOnButtonPressedEvent}}
+\index{addOnButtonPressedEvent@{addOnButtonPressedEvent}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{addOnButtonPressedEvent()}{addOnButtonPressedEvent()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::add\+On\+Button\+Pressed\+Event (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int($\ast$)(void $\ast$)}]{callback,  }\item[{void $\ast$}]{additional\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Binds a callback to a virtual button, so it\textquotesingle{}s executed anytime it\textquotesingle{}s triggered. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button \\
+\hline
+{\em callback} & Callback to be binded to button name \\
+\hline
+{\em additional\+Data} & Parameter that the callback would be called with and it may use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the callback could be binded to the button 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a072961e5535cd290a360e3af8fb92be7}\label{classme_1_1_input_manager_a072961e5535cd290a360e3af8fb92be7}} 
+\index{me::InputManager@{me::InputManager}!deleteAxis@{deleteAxis}}
+\index{deleteAxis@{deleteAxis}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteAxis()}{deleteAxis()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::delete\+Axis (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+Deletes axis name and any bindings it may have. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the axis was deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_aecfba078630a4503db3e27cd34318295}\label{classme_1_1_input_manager_aecfba078630a4503db3e27cd34318295}} 
+\index{me::InputManager@{me::InputManager}!deleteBinding@{deleteBinding}}
+\index{deleteBinding@{deleteBinding}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteBinding()}{deleteBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::delete\+Binding (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_axis_input}{Axis\+Input}}}]{input }\end{DoxyParamCaption})}
+
+Unlinks an axis with some physical input 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+{\em input} & Represents two physical buttons or keys that can trigger a virtual axis. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+positive and input.\+negative represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the binding was deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_ab34c3e73e7ee2caac0cc583c97e1e039}\label{classme_1_1_input_manager_ab34c3e73e7ee2caac0cc583c97e1e039}} 
+\index{me::InputManager@{me::InputManager}!deleteBinding@{deleteBinding}}
+\index{deleteBinding@{deleteBinding}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteBinding()}{deleteBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Input\+Manager\+::delete\+Binding (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structme_1_1_input}{Input}}}]{input }\end{DoxyParamCaption})}
+
+Unlinks a button with some physical input 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+{\em input} & Representation of the physical input. input.\+type can be SDL\+\_\+\+Keyboard\+Event for keyboard key presses, SDL\+\_\+\+Mouse\+Button\+Event for mouse clicks, or SDL\+\_\+\+Controller\+Button\+Event for controller presses; and input.\+which represents a value of SDL\+\_\+\+Key\+Code, SDL\+\_\+\+BUTTON or SDL\+\_\+\+Gamepad\+Button depending on the type of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the binding was deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a1e641f8f21ac2ba43fc022a97efea43b}\label{classme_1_1_input_manager_a1e641f8f21ac2ba43fc022a97efea43b}} 
+\index{me::InputManager@{me::InputManager}!deleteButton@{deleteButton}}
+\index{deleteButton@{deleteButton}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteButton()}{deleteButton()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::delete\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+Deletes button name and any bindings it may have. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean representing whether the button was deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a12199fbdbebc969a00d5dcda3fe1b387}\label{classme_1_1_input_manager_a12199fbdbebc969a00d5dcda3fe1b387}} 
+\index{me::InputManager@{me::InputManager}!deleteEvent@{deleteEvent}}
+\index{deleteEvent@{deleteEvent}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteEvent()}{deleteEvent()}}
+{\footnotesize\ttfamily void Input\+Manager\+::delete\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_button_8h_aeb0e500783d5ab2d59cb0509da33af0c}{SDL\+\_\+\+Event\+Filter}}}]{filter,  }\item[{void $\ast$}]{userdata = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Deletes filter from the SDLEvent\+Watch. 
+\begin{DoxyParams}{Parameters}
+{\em filter} & is the same function used to add the callback. \\
+\hline
+{\em userdata} & is the same additional information used when adding the callback. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_input_manager_a77f961528884908c89afb2a01d6f4da9}\label{classme_1_1_input_manager_a77f961528884908c89afb2a01d6f4da9}} 
+\index{me::InputManager@{me::InputManager}!deleteOnButtonPressedEvent@{deleteOnButtonPressedEvent}}
+\index{deleteOnButtonPressedEvent@{deleteOnButtonPressedEvent}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{deleteOnButtonPressedEvent()}{deleteOnButtonPressedEvent()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::delete\+On\+Button\+Pressed\+Event (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int($\ast$)(void $\ast$)}]{callback,  }\item[{void $\ast$}]{additional\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Unbinds a callback from its virtual button, so it\textquotesingle{}s never executed again anytime its button is triggered. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button \\
+\hline
+{\em callback} & Callback to be unbinded to button name \\
+\hline
+{\em additional\+Data} & is the same additional information used when the callback was binded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the callback could be unbinded to the button 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_ad1094f22aae49c3ff590780d8f8ecdbf}\label{classme_1_1_input_manager_ad1094f22aae49c3ff590780d8f8ecdbf}} 
+\index{me::InputManager@{me::InputManager}!getAxis@{getAxis}}
+\index{getAxis@{getAxis}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{getAxis()}{getAxis()}}
+{\footnotesize\ttfamily float Input\+Manager\+::get\+Axis (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the axis in range \mbox{[}-\/1, 1\mbox{]}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_aad30006d6511ba5c563393367851ee14}\label{classme_1_1_input_manager_aad30006d6511ba5c563393367851ee14}} 
+\index{me::InputManager@{me::InputManager}!getButton@{getButton}}
+\index{getButton@{getButton}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{getButton()}{getButton()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::get\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the button. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the button. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_input_manager_a4c24100552d97f3d2a88e535e0f87ea8}\label{classme_1_1_input_manager_a4c24100552d97f3d2a88e535e0f87ea8}} 
+\index{me::InputManager@{me::InputManager}!getMousePositon@{getMousePositon}}
+\index{getMousePositon@{getMousePositon}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{getMousePositon()}{getMousePositon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector2}{Vector2}} me\+::\+Input\+Manager\+::get\+Mouse\+Positon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_input_manager_a097291ca4204112b88c9e011a841cd44}\label{classme_1_1_input_manager_a097291ca4204112b88c9e011a841cd44}} 
+\index{me::InputManager@{me::InputManager}!operator=@{operator=}}
+\index{operator=@{operator=}!me::InputManager@{me::InputManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \& me\+::\+Input\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classme_1_1_input_manager}{Input\+Manager}} \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Input/\mbox{\hyperlink{_input_manager_8h}{Input\+Manager.\+h}}\item 
+Src/\+Input/\mbox{\hyperlink{_input_manager_8cpp}{Input\+Manager.\+cpp}}\end{DoxyCompactItemize}

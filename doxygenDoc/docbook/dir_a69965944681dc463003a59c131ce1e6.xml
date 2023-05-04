@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a69965944681dc463003a59c131ce1e6" xml:lang="en-US">
+<title>Src/EntityComponent Directory Reference</title>
+<indexterm><primary>Src/EntityComponent Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_6e5a9919e2cedac938a60c30536d5e3f">Components</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__entity_8cpp">Entity.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__entity_8h">Entity.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__info_scene_8h">InfoScene.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__entity_component_2main_8cpp">main.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__scene_8cpp">Scene.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__scene_8h">Scene.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__scenemanager_8cpp">Scenemanager.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__scene_manager_8h">SceneManager.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

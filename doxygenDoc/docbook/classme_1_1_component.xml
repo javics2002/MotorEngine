@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_component" xml:lang="en-US">
+<title>me::Component Class Reference</title>
+<indexterm><primary>me::Component</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Component.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::Component:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_component.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6"/><section>
+    <title>Component()</title>
+<indexterm><primary>Component</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>Component</secondary></indexterm>
+<para><computeroutput>me::Component::Component ( )</computeroutput></para>
+<para>Build the foundation of the <link linkend="_classme_1_1_component">Component</link>. </para>
+</section>
+<anchor xml:id="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799"/><section>
+    <title>~Component()</title>
+<indexterm><primary>~Component</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>~Component</secondary></indexterm>
+<para><computeroutput>me::Component::~Component ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of the dynamic memory that has to be safely delete. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd"/><section>
+    <title>getEntity()</title>
+<indexterm><primary>getEntity</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>getEntity</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_entity">Entity</link> * me::Component::getEntity ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Get the entity associated reference. <formalpara><title>Returns</title>
+
+<para>Reference to the entity. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0"/><section>
+    <title>lateUpdate()</title>
+<indexterm><primary>lateUpdate</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>lateUpdate</secondary></indexterm>
+<para><computeroutput>void me::Component::lateUpdate ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the end of the game cycle.</para>
+
+<para>For example: render and collisions. </para>
+<para>
+Reimplemented in <link linkend="_classme_1_1_rigid_body_1a1a617e3d268a641f57710f5067375b15">me::RigidBody</link>, and <link linkend="_classme_1_1_transform_1a9fd9779d2848c6f1ac0bf3c3aac08b52">me::Transform</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748"/><section>
+    <title>OnCollisionEnter()</title>
+<indexterm><primary>OnCollisionEnter</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>OnCollisionEnter</secondary></indexterm>
+<para><computeroutput>void me::Component::OnCollisionEnter (<link linkend="_classme_1_1_entity">Entity</link> * other)<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e"/><section>
+    <title>OnCollisionExit()</title>
+<indexterm><primary>OnCollisionExit</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>OnCollisionExit</secondary></indexterm>
+<para><computeroutput>void me::Component::OnCollisionExit (<link linkend="_classme_1_1_entity">Entity</link> * other)<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f"/><section>
+    <title>OnCollisionStay()</title>
+<indexterm><primary>OnCollisionStay</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>OnCollisionStay</secondary></indexterm>
+<para><computeroutput>void me::Component::OnCollisionStay (<link linkend="_classme_1_1_entity">Entity</link> * other)<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3"/><section>
+    <title>setEntity()</title>
+<indexterm><primary>setEntity</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>setEntity</secondary></indexterm>
+<para><computeroutput>void me::Component::setEntity (<link linkend="_classme_1_1_entity">Entity</link> * e)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Set the associated entity to the component. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_classme_1_1_entity">Entity</link></entry><entry>
+<para>to which it belongs.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                This method is meant to be use at the same time as start, because it&apos;s not recomended to switch the entity at execution. </para>
+</section>
+<anchor xml:id="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>void me::Component::start ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is only ever called once. This must be called at the instantiation of the script. </para>
+<para>
+Reimplemented in <link linkend="_classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec">me::AudioSource</link>, <link linkend="_classme_1_1_audio_listener_1a485bf45b15c51f3df9dbf74f0c29c752">me::AudioListener</link>, <link linkend="_classme_1_1_camera_1a733c8cf61120248beaa21cca6e2af3f1">me::Camera</link>, <link linkend="_classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977">me::MeshRenderer</link>, <link linkend="_classme_1_1_particle_system_1aae4f5e2597b60eb13806ede0320fed6d">me::ParticleSystem</link>, <link linkend="_classme_1_1_rigid_body_1afc256e6a0acfc8403a63c6f88e7251e7">me::RigidBody</link>, and <link linkend="_classme_1_1_transform_1a242704f2581d1654cc9562932f93aa2d">me::Transform</link>.</para>
+</section>
+<anchor xml:id="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void me::Component::update ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+
+<para>Almost all the logic updates. </para>
+<para>
+Reimplemented in <link linkend="_classme_1_1_audio_listener_1a3f65a826158724f9794acd03da97ddc2">me::AudioListener</link>, <link linkend="_classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e">me::AudioSource</link>, <link linkend="_classme_1_1_animator_1a59b9903253d8ce084048f7600e956735">me::Animator</link>, <link linkend="_classme_1_1_camera_1ad64b448ab73a9d402a22b212d321ad53">me::Camera</link>, <link linkend="_classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437">me::MeshRenderer</link>, <link linkend="_classme_1_1_particle_system_1ae9553e4244f97cc49c4f44b08096bb4d">me::ParticleSystem</link>, <link linkend="_classme_1_1_rigid_body_1ace166d0417a107651406a821071a827a">me::RigidBody</link>, <link linkend="_classme_1_1_transform_1ac2193262cc8056821b757d7d9c39bb2c">me::Transform</link>, and <link linkend="_classme_1_1_u_i_button_1a6f23eed6a44e48a048b8f27dc5833e02">me::UIButton</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3"/><section>
+    <title>enabled</title>
+<indexterm><primary>enabled</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>enabled</secondary></indexterm>
+<para><computeroutput>bool me::Component::enabled = true</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1"/><section>
+    <title>mEntity</title>
+<indexterm><primary>mEntity</primary><secondary>me::Component</secondary></indexterm>
+<indexterm><primary>me::Component</primary><secondary>mEntity</secondary></indexterm>
+<para><computeroutput><link linkend="_classme_1_1_entity">Entity</link>* me::Component::mEntity<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__component_8h">Component.h</link>Src/EntityComponent/Components/<link linkend="__component_8cpp">Component.cpp</link></section>
+</section>

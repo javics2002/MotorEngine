@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Render\mainRender.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderCamera.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderManager.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderMesh.cpp" />
-    <ClCompile Include="..\..\Src\Render\RenderParticleSystem.cpp" />
+    <ClCompile Include="..\..\Src\Render\RenderUISprite.cpp" />
+    <ClCompile Include="..\..\Src\Render\RenderUIText.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderWindow.cpp" />
     <ClCompile Include="..\..\Src\Render\SGTechniqueResolverListener.cpp" />
     <ClCompile Include="..\..\Src\Render\Window.cpp" />
@@ -32,7 +32,8 @@
     <ClInclude Include="..\..\Src\Render\RenderCamera.h" />
     <ClInclude Include="..\..\Src\Render\RenderManager.h" />
     <ClInclude Include="..\..\Src\Render\RenderMesh.h" />
-    <ClInclude Include="..\..\Src\Render\RenderParticleSystem.h" />
+    <ClInclude Include="..\..\Src\Render\RenderUISprite.h" />
+    <ClInclude Include="..\..\Src\Render\RenderUIText.h" />
     <ClInclude Include="..\..\Src\Render\RenderWindow.h" />
     <ClInclude Include="..\..\Src\Render\SGTechniqueResolverListener.h" />
     <ClInclude Include="..\..\Src\Render\Window.h" />
@@ -151,7 +152,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;Plugin_ParticleFX_d.lib;SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain_d.lib;OgreRTShaderSystem_d.lib;Plugin_ParticleFX_d.lib;SDL3.lib;OgreOverlay_d.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,7 +176,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;Plugin_ParticleFX.lib;SDL3.lib</AdditionalDependencies>
+      <AdditionalDependencies>OgreMain.lib;OgreRTShaderSystem.lib;Plugin_ParticleFX.lib;SDL3.lib;OgreOverlay.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__command__arc__filled" xml:lang="en-US">
+<title>nk_command_arc_filled Struct Reference</title>
+<indexterm><primary>nk_command_arc_filled</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__command">nk_command</link> <link linkend="_structnk__command__arc__filled_1a5dab5721944b118c5baae25ab8654ecb">header</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__arc__filled_1aa460de8a71d839c0b07272e73d3cadf4">cx</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_structnk__command__arc__filled_1a256160e8fe2a191ce9932e83f6cb2b07">cy</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_structnk__command__arc__filled_1a31784cc181f33422ea8b09bc01463937">r</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__command__arc__filled_1aeffc48c9cae2eec6e3bc4835ef330377">a</link> [2]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__command__arc__filled_1adcc1cdd72808838ae02c4b552c4f3229">color</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__command__arc__filled_1aeffc48c9cae2eec6e3bc4835ef330377"/><section>
+    <title>a</title>
+<indexterm><primary>a</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>a</secondary></indexterm>
+<para><computeroutput>float nk_command_arc_filled::a[2]</computeroutput></para></section>
+<anchor xml:id="_structnk__command__arc__filled_1adcc1cdd72808838ae02c4b552c4f3229"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_command_arc_filled::color</computeroutput></para></section>
+<anchor xml:id="_structnk__command__arc__filled_1aa460de8a71d839c0b07272e73d3cadf4"/><section>
+    <title>cx</title>
+<indexterm><primary>cx</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>cx</secondary></indexterm>
+<para><computeroutput>short nk_command_arc_filled::cx</computeroutput></para></section>
+<anchor xml:id="_structnk__command__arc__filled_1a256160e8fe2a191ce9932e83f6cb2b07"/><section>
+    <title>cy</title>
+<indexterm><primary>cy</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>cy</secondary></indexterm>
+<para><computeroutput>short nk_command_arc_filled::cy</computeroutput></para></section>
+<anchor xml:id="_structnk__command__arc__filled_1a5dab5721944b118c5baae25ab8654ecb"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__command">nk_command</link> nk_command_arc_filled::header</computeroutput></para></section>
+<anchor xml:id="_structnk__command__arc__filled_1a31784cc181f33422ea8b09bc01463937"/><section>
+    <title>r</title>
+<indexterm><primary>r</primary><secondary>nk_command_arc_filled</secondary></indexterm>
+<indexterm><primary>nk_command_arc_filled</primary><secondary>r</secondary></indexterm>
+<para><computeroutput>unsigned short nk_command_arc_filled::r</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

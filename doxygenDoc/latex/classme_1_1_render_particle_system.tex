@@ -1,0 +1,124 @@
+\hypertarget{classme_1_1_render_particle_system}{}\doxysection{me\+::Render\+Particle\+System Class Reference}
+\label{classme_1_1_render_particle_system}\index{me::RenderParticleSystem@{me::RenderParticleSystem}}
+
+
+{\ttfamily \#include $<$Render\+Particle\+System.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_render_particle_system_a7476ff81dce12d8e290b318fe3c93ade}{Render\+Particle\+System}} (std\+::string name, Ogre\+::\+Scene\+Node $\ast$node, std\+::string particle\+Name)
+\item 
+\mbox{\hyperlink{classme_1_1_render_particle_system_a52367e48754ed4851a549a86c2e736fe}{$\sim$\+Render\+Particle\+System}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_render_particle_system_a2fd2e75217b300276d26dda3eb363055}{set\+Transform}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&pos, const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&scale, const Ogre\+::\+Quaternion \&rot)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_particle_system_a2ed5c951a5539924b6b35af71cdf49df}{set\+Position}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&pos)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_particle_system_ad079289c01d88d9cf3dc0d33f1a16b08}{set\+Scale}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&scale)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_particle_system_aab701145965a7af4d6575dcc6ab8909f}{set\+Rotation}} (Ogre\+::\+Quaternion rot)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_particle_system_ab7829db65bb81cb788d1c29165af6f95}{set\+Emitting}} (bool emitted)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ogre\+::\+Scene\+Node $\ast$ \mbox{\hyperlink{classme_1_1_render_particle_system_ac7327f2a7285ac9f0b7b954ff8dffb7a}{m\+Node}}
+\item 
+Ogre\+::\+Particle\+System $\ast$ \mbox{\hyperlink{classme_1_1_render_particle_system_abc88985e53ee47372ebb533257b5b6c1}{m\+Particle\+System}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_render_particle_system_a4a5cf2e7cfc429e376d11409c472313d}{m\+Particle\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_render_particle_system_a2511162d295cf2c89d0745b559663516}{m\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a7476ff81dce12d8e290b318fe3c93ade}\label{classme_1_1_render_particle_system_a7476ff81dce12d8e290b318fe3c93ade}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!RenderParticleSystem@{RenderParticleSystem}}
+\index{RenderParticleSystem@{RenderParticleSystem}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{RenderParticleSystem()}{RenderParticleSystem()}}
+{\footnotesize\ttfamily me\+::\+Render\+Particle\+System\+::\+Render\+Particle\+System (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Ogre\+::\+Scene\+Node $\ast$}]{node,  }\item[{std\+::string}]{particle\+Name }\end{DoxyParamCaption})}
+
+Assign information and create Ogre\+::\+Particle\+System with the given mesh and attach to m\+Node 
+\begin{DoxyParams}{Parameters}
+{\em name} & name for particle system \\
+\hline
+{\em node} & m\+Node for attach Ogre\+::\+Particle\+System created \\
+\hline
+{\em mesh\+Name} & name of resource (type mesh) that we used for create Ogre\+::\+Entity. Must be writted in resource.\+cfg (.mesh inside Zip or File\+System) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a52367e48754ed4851a549a86c2e736fe}\label{classme_1_1_render_particle_system_a52367e48754ed4851a549a86c2e736fe}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!````~RenderParticleSystem@{$\sim$RenderParticleSystem}}
+\index{````~RenderParticleSystem@{$\sim$RenderParticleSystem}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$RenderParticleSystem()}{~RenderParticleSystem()}}
+{\footnotesize\ttfamily me\+::\+Render\+Particle\+System\+::$\sim$\+Render\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_render_particle_system_ab7829db65bb81cb788d1c29165af6f95}\label{classme_1_1_render_particle_system_ab7829db65bb81cb788d1c29165af6f95}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!setEmitting@{setEmitting}}
+\index{setEmitting@{setEmitting}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setEmitting()}{setEmitting()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Particle\+System\+::set\+Emitting (\begin{DoxyParamCaption}\item[{bool}]{emitted }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a2ed5c951a5539924b6b35af71cdf49df}\label{classme_1_1_render_particle_system_a2ed5c951a5539924b6b35af71cdf49df}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Particle\+System\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_aab701145965a7af4d6575dcc6ab8909f}\label{classme_1_1_render_particle_system_aab701145965a7af4d6575dcc6ab8909f}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Particle\+System\+::set\+Rotation (\begin{DoxyParamCaption}\item[{Ogre\+::\+Quaternion}]{rot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_ad079289c01d88d9cf3dc0d33f1a16b08}\label{classme_1_1_render_particle_system_ad079289c01d88d9cf3dc0d33f1a16b08}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!setScale@{setScale}}
+\index{setScale@{setScale}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Particle\+System\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a2fd2e75217b300276d26dda3eb363055}\label{classme_1_1_render_particle_system_a2fd2e75217b300276d26dda3eb363055}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!setTransform@{setTransform}}
+\index{setTransform@{setTransform}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Particle\+System\+::set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{pos,  }\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{scale,  }\item[{const Ogre\+::\+Quaternion \&}]{rot }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a2511162d295cf2c89d0745b559663516}\label{classme_1_1_render_particle_system_a2511162d295cf2c89d0745b559663516}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!mName@{mName}}
+\index{mName@{mName}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Render\+Particle\+System\+::m\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_ac7327f2a7285ac9f0b7b954ff8dffb7a}\label{classme_1_1_render_particle_system_ac7327f2a7285ac9f0b7b954ff8dffb7a}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!mNode@{mNode}}
+\index{mNode@{mNode}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mNode}{mNode}}
+{\footnotesize\ttfamily Ogre\+::\+Scene\+Node$\ast$ me\+::\+Render\+Particle\+System\+::m\+Node\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_a4a5cf2e7cfc429e376d11409c472313d}\label{classme_1_1_render_particle_system_a4a5cf2e7cfc429e376d11409c472313d}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!mParticleName@{mParticleName}}
+\index{mParticleName@{mParticleName}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mParticleName}{mParticleName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Render\+Particle\+System\+::m\+Particle\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_particle_system_abc88985e53ee47372ebb533257b5b6c1}\label{classme_1_1_render_particle_system_abc88985e53ee47372ebb533257b5b6c1}} 
+\index{me::RenderParticleSystem@{me::RenderParticleSystem}!mParticleSystem@{mParticleSystem}}
+\index{mParticleSystem@{mParticleSystem}!me::RenderParticleSystem@{me::RenderParticleSystem}}
+\doxysubsubsection{\texorpdfstring{mParticleSystem}{mParticleSystem}}
+{\footnotesize\ttfamily Ogre\+::\+Particle\+System$\ast$ me\+::\+Render\+Particle\+System\+::m\+Particle\+System\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Render/\mbox{\hyperlink{_render_particle_system_8h}{Render\+Particle\+System.\+h}}\item 
+Src/\+Render/\mbox{\hyperlink{_render_particle_system_8cpp}{Render\+Particle\+System.\+cpp}}\end{DoxyCompactItemize}

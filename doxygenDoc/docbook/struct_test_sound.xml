@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_test_sound" xml:lang="en-US">
+<title>TestSound Struct Reference</title>
+<indexterm><primary>TestSound</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>FMOD::Sound * <link linkend="_struct_test_sound_1a3e16b049b0edefdcd3274727f7315353">sound</link></para>
+</listitem>
+            <listitem><para>FMOD::Channel * <link linkend="_struct_test_sound_1ab165eb100dcff770351615f0b39e9eac">channel</link></para>
+</listitem>
+            <listitem><para>FMOD::System * <link linkend="_struct_test_sound_1a6d942bc77bce5bda5c5fbeb91d448d2f">system</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_test_sound_1ab165eb100dcff770351615f0b39e9eac"/><section>
+    <title>channel</title>
+<indexterm><primary>channel</primary><secondary>TestSound</secondary></indexterm>
+<indexterm><primary>TestSound</primary><secondary>channel</secondary></indexterm>
+<para><computeroutput>FMOD::Channel* TestSound::channel</computeroutput></para></section>
+<anchor xml:id="_struct_test_sound_1a3e16b049b0edefdcd3274727f7315353"/><section>
+    <title>sound</title>
+<indexterm><primary>sound</primary><secondary>TestSound</secondary></indexterm>
+<indexterm><primary>TestSound</primary><secondary>sound</secondary></indexterm>
+<para><computeroutput>FMOD::Sound* TestSound::sound</computeroutput></para></section>
+<anchor xml:id="_struct_test_sound_1a6d942bc77bce5bda5c5fbeb91d448d2f"/><section>
+    <title>system</title>
+<indexterm><primary>system</primary><secondary>TestSound</secondary></indexterm>
+<indexterm><primary>TestSound</primary><secondary>system</secondary></indexterm>
+<para><computeroutput>FMOD::System* TestSound::system</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/Audio/<link linkend="__audio_2main_8cpp">main.cpp</link></section>
+</section>

@@ -1,0 +1,55 @@
+\hypertarget{_render_mesh_8h_source}{}\doxysection{Render\+Mesh.\+h}
+\label{_render_mesh_8h_source}\index{Src/Render/RenderMesh.h@{Src/Render/RenderMesh.h}}
+\mbox{\hyperlink{_render_mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_RENDER\_RENDERMESH}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_RENDER\_RENDERMESH}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <OgreVector3.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ogre}{Ogre}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }SceneNode;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }Quaternion;}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//Class\ to\ create\ renderizable\ object\ with\ mesh}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_render_mesh}{RenderMesh}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ Ogre::SceneNode\ for\ renderize}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Ogre::SceneNode*\ \mbox{\hyperlink{classme_1_1_render_mesh_a7b0503d0a84d1e528ea9c450ab48a0c1}{mNode}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ Ogre::Entity\ for\ renderize}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Ogre::Entity*\ \mbox{\hyperlink{classme_1_1_render_mesh_a10ec5689b8d395b7a3313731a67530e5}{mEntity}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Name\ of\ mesh\ that\ used}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_mesh_a8ddfbdf2193533e71721139fd2332332}{mMeshName}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_mesh_ab3dc00d2951b2f5ee467f87b2810d460}{mMaterialName}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_mesh}{RenderMesh}}(Ogre::SceneNode*\ node,std::string\ meshName);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_mesh}{\string~RenderMesh}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Set\ position,\ rotation\ and\ scale\ of\ mNode}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setTransform(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&scale,\ \textcolor{keyword}{const}\ Ogre::Quaternion\ \&rot);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScale(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&scale);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setRotation(Ogre::Quaternion\ rot);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Ogre::Entity*\ getOgreEntity();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setMaterial(std::string\ materialName);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

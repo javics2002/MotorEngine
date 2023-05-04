@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_render_camera" kind="class" language="C++" prot="public">
+    <compoundname>me::RenderCamera</compoundname>
+    <includes refid="_render_camera_8h" local="no">RenderCamera.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf" prot="protected" static="no" mutable="no">
+        <type>Ogre::Camera *</type>
+        <definition>Ogre::Camera* me::RenderCamera::mCamera</definition>
+        <argsstring></argsstring>
+        <name>mCamera</name>
+        <qualifiedname>me::RenderCamera::mCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="26" column="14" bodyfile="Src/Render/RenderCamera.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f" prot="protected" static="no" mutable="no">
+        <type>Ogre::Viewport *</type>
+        <definition>Ogre::Viewport* me::RenderCamera::mViewport</definition>
+        <argsstring></argsstring>
+        <name>mViewport</name>
+        <qualifiedname>me::RenderCamera::mViewport</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="28" column="16" bodyfile="Src/Render/RenderCamera.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572" prot="protected" static="no" mutable="no">
+        <type>Ogre::SceneNode *</type>
+        <definition>Ogre::SceneNode* me::RenderCamera::mCameraNode</definition>
+        <argsstring></argsstring>
+        <name>mCameraNode</name>
+        <qualifiedname>me::RenderCamera::mCameraNode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="30" column="17" bodyfile="Src/Render/RenderCamera.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444" prot="protected" static="no" mutable="no">
+        <type>Ogre::SceneManager *</type>
+        <definition>Ogre::SceneManager* me::RenderCamera::mSceneMgr</definition>
+        <argsstring></argsstring>
+        <name>mSceneMgr</name>
+        <qualifiedname>me::RenderCamera::mSceneMgr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="32" column="20" bodyfile="Src/Render/RenderCamera.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f" prot="protected" static="no" mutable="no">
+        <type>Ogre::RenderWindow *</type>
+        <definition>Ogre::RenderWindow* me::RenderCamera::mRenderWindow</definition>
+        <argsstring></argsstring>
+        <name>mRenderWindow</name>
+        <qualifiedname>me::RenderCamera::mRenderWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="34" column="20" bodyfile="Src/Render/RenderCamera.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_render_camera_1ad3e50bdafd713908a183a51e69274345" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::RenderCamera::RenderCamera</definition>
+        <argsstring>()</argsstring>
+        <name>RenderCamera</name>
+        <qualifiedname>me::RenderCamera::RenderCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="38" column="1" bodyfile="Src/Render/RenderCamera.cpp" bodystart="8" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1ae975df58ebabe1b44690a5e86166f4f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::RenderCamera::~RenderCamera</definition>
+        <argsstring>()</argsstring>
+        <name>~RenderCamera</name>
+        <qualifiedname>me::RenderCamera::~RenderCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="39" column="1" bodyfile="Src/Render/RenderCamera.cpp" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1a5030de4d3ddce342e387346da3531dbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::RenderCamera::init</definition>
+        <argsstring>(Ogre::SceneNode *CameraNode, Ogre::SceneManager *SceneMgr, Ogre::RenderWindow *RenderWindow)</argsstring>
+        <name>init</name>
+        <qualifiedname>me::RenderCamera::init</qualifiedname>
+        <param>
+          <type>Ogre::SceneNode *</type>
+          <declname>CameraNode</declname>
+        </param>
+        <param>
+          <type>Ogre::SceneManager *</type>
+          <declname>SceneMgr</declname>
+        </param>
+        <param>
+          <type>Ogre::RenderWindow *</type>
+          <declname>RenderWindow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="42" column="6" bodyfile="Src/Render/RenderCamera.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1adbff2bc6f6ca0239143b65e34f641b31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::RenderCamera::createCamera</definition>
+        <argsstring>(const char *name, int nearDist, int farDist, bool autoRadio, int zOrder, Ogre::ColourValue color)</argsstring>
+        <name>createCamera</name>
+        <qualifiedname>me::RenderCamera::createCamera</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nearDist</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>farDist</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>autoRadio</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zOrder</declname>
+        </param>
+        <param>
+          <type>Ogre::ColourValue</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create mCamera with this informationand create mViewport for it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of mCamera </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nearDist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>near clipping plane distancia </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>farDist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>far clipping plane distancia </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>autoRadio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if viewport calculate aspect radio automatically </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zOrder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relative order of mViewport </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="50" column="6" bodyfile="Src/Render/RenderCamera.cpp" bodystart="24" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1a40571944be5859eef20d23181b4fa58d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::RenderCamera::setPosition</definition>
+        <argsstring>(const Ogre::Vector3f &amp;pos)</argsstring>
+        <name>setPosition</name>
+        <qualifiedname>me::RenderCamera::setPosition</qualifiedname>
+        <param>
+          <type>const <ref refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" kindref="member">Ogre::Vector3f</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="53" column="6" bodyfile="Src/Render/RenderCamera.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1a32c5cbcf09efb64d1206c7430f55f807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::RenderCamera::lookAt</definition>
+        <argsstring>(const Ogre::Vector3f &amp;look)</argsstring>
+        <name>lookAt</name>
+        <qualifiedname>me::RenderCamera::lookAt</qualifiedname>
+        <param>
+          <type>const <ref refid="namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879" kindref="member">Ogre::Vector3f</ref> &amp;</type>
+          <declname>look</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="55" column="6" bodyfile="Src/Render/RenderCamera.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_render_camera_1abfc0b688fba15b95adbe1f3a397c2cc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::RenderCamera::setViewportDimension</definition>
+        <argsstring>(float left, float top, float width, float height)</argsstring>
+        <name>setViewportDimension</name>
+        <qualifiedname>me::RenderCamera::setViewportDimension</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set dimension to mViewport <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>left point of mViewport in range 0.0 to 1.0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>top point of mViewport in range 0.0 to 1.0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of mViewport in range 0.0 to 1.0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of mViewport in range 0.0 to 1.0 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderCamera.h" line="63" column="6" bodyfile="Src/Render/RenderCamera.cpp" bodystart="63" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Render/RenderCamera.h" line="20" column="1" bodyfile="Src/Render/RenderCamera.h" bodystart="21" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classme_1_1_render_camera_1adbff2bc6f6ca0239143b65e34f641b31" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>createCamera</name></member>
+      <member refid="classme_1_1_render_camera_1a5030de4d3ddce342e387346da3531dbb" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>init</name></member>
+      <member refid="classme_1_1_render_camera_1a32c5cbcf09efb64d1206c7430f55f807" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>lookAt</name></member>
+      <member refid="classme_1_1_render_camera_1aa5bc948910e8c110c6824828f9b210bf" prot="protected" virt="non-virtual"><scope>me::RenderCamera</scope><name>mCamera</name></member>
+      <member refid="classme_1_1_render_camera_1a5d6b59ef3b093080f056ee8704e01572" prot="protected" virt="non-virtual"><scope>me::RenderCamera</scope><name>mCameraNode</name></member>
+      <member refid="classme_1_1_render_camera_1a27d270737a401bfbd96acb203574637f" prot="protected" virt="non-virtual"><scope>me::RenderCamera</scope><name>mRenderWindow</name></member>
+      <member refid="classme_1_1_render_camera_1ad38933a970a2d0686a1a57d4cdfe4444" prot="protected" virt="non-virtual"><scope>me::RenderCamera</scope><name>mSceneMgr</name></member>
+      <member refid="classme_1_1_render_camera_1a4f09cf089360124350da9a11a48d4a6f" prot="protected" virt="non-virtual"><scope>me::RenderCamera</scope><name>mViewport</name></member>
+      <member refid="classme_1_1_render_camera_1ad3e50bdafd713908a183a51e69274345" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>RenderCamera</name></member>
+      <member refid="classme_1_1_render_camera_1a40571944be5859eef20d23181b4fa58d" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>setPosition</name></member>
+      <member refid="classme_1_1_render_camera_1abfc0b688fba15b95adbe1f3a397c2cc8" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>setViewportDimension</name></member>
+      <member refid="classme_1_1_render_camera_1ae975df58ebabe1b44690a5e86166f4f9" prot="public" virt="non-virtual"><scope>me::RenderCamera</scope><name>~RenderCamera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

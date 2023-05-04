@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__scene_8h" xml:lang="en-US">
+<title>Src/EntityComponent/Scene.h File Reference</title>
+<indexterm><primary>Src/EntityComponent/Scene.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngineAPI.h&quot;<?linebreak?>#include &quot;InfoScene.h&quot;<?linebreak?>#include &lt;memory&gt;<?linebreak?>#include &lt;initializer_list&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classme_1_1_scene">me::Scene</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceme">me</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__scene_8h_1a0ac64554737d1f3806887003eff8eec6">__ENTITYCOMPONENT_SCENE</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__scene_8h_1a0ac64554737d1f3806887003eff8eec6"/><section>
+    <title>__ENTITYCOMPONENT_SCENE</title>
+<indexterm><primary>__ENTITYCOMPONENT_SCENE</primary><secondary>Scene.h</secondary></indexterm>
+<indexterm><primary>Scene.h</primary><secondary>__ENTITYCOMPONENT_SCENE</secondary></indexterm>
+<para><computeroutput>#define __ENTITYCOMPONENT_SCENE</computeroutput></para>
+<para>The main function of this class is to be the wrapper of a set of entities. </para>
+</section>
+</section>
+</section>

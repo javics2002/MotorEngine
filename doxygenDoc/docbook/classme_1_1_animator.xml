@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_animator" xml:lang="en-US">
+<title>me::Animator Class Reference</title>
+<indexterm><primary>me::Animator</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Animator.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::Animator:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classme_1_1_animator.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_animator_1a701eeb9283612be2027425efb06bbff7">Animator</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_animator_1a5af4797549f9f466a88657899e17c6ab">~Animator</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1a59b9903253d8ce084048f7600e956735">update</link> () override</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1a85aaf640ac6224644f15ccfffb9c5748">setActive</link> (bool state)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1aeba3c634f367f9d24021c3d62e8b852c">setLoop</link> (bool state)</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_animator_1a9da14b69ed5e949d3511e533c470279b">getCurrAnimName</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_animator_1afa86b70a468766c7d5e7e309a5bf7445">isActive</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_animator_1a89886f13f2eb12cd3184de012fffb98a">isLoop</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classme_1_1_animator_1a93618b388a74a2344368be260b236395">animHasEnded</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1a79b32b578adc9d452977cadc4c77c7f4">playAnim</link> (std::string anim, bool loop=true)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1a1872695c1e9f83ab70d02bda72200a52">stopAnim</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_animator_1a7946f90f69f5497b75ccd7e10f69b8f6">resumeAnim</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6">Component</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classme_1_1_component_1ab2a3844334f7d532196025c32e100799">~Component</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3">setEntity</link> (<link linkend="_classme_1_1_entity">Entity</link> *e)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd">getEntity</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0">lateUpdate</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748">OnCollisionEnter</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f">OnCollisionStay</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e">OnCollisionExit</link> (<link linkend="_classme_1_1_entity">Entity</link> *other)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3">enabled</link> = true</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_classme_1_1_component">me::Component</link>        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_entity">Entity</link> * <link linkend="_classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1">mEntity</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_animator_1a701eeb9283612be2027425efb06bbff7"/><section>
+    <title>Animator()</title>
+<indexterm><primary>Animator</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>Animator</secondary></indexterm>
+<para><computeroutput>Animator::Animator ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_animator_1a5af4797549f9f466a88657899e17c6ab"/><section>
+    <title>~Animator()</title>
+<indexterm><primary>~Animator</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>~Animator</secondary></indexterm>
+<para><computeroutput>Animator::~Animator ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_animator_1a93618b388a74a2344368be260b236395"/><section>
+    <title>animHasEnded()</title>
+<indexterm><primary>animHasEnded</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>animHasEnded</secondary></indexterm>
+<para><computeroutput>bool Animator::animHasEnded ( )</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_animator_1a9da14b69ed5e949d3511e533c470279b"/><section>
+    <title>getCurrAnimName()</title>
+<indexterm><primary>getCurrAnimName</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>getCurrAnimName</secondary></indexterm>
+<para><computeroutput>std::string Animator::getCurrAnimName ( )</computeroutput></para>
+<para>Returns the name of the current animation being played <formalpara><title>Returns</title>
+
+<para>A string containing the name of the current animation </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1afa86b70a468766c7d5e7e309a5bf7445"/><section>
+    <title>isActive()</title>
+<indexterm><primary>isActive</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>isActive</secondary></indexterm>
+<para><computeroutput>bool Animator::isActive ( )</computeroutput></para>
+<para>Returns the <link linkend="_classme_1_1_animator">Animator</link>&apos;s active state <formalpara><title>Returns</title>
+
+<para>A boolean value indicating whether the <link linkend="_classme_1_1_animator">Animator</link> is active or not </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a89886f13f2eb12cd3184de012fffb98a"/><section>
+    <title>isLoop()</title>
+<indexterm><primary>isLoop</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>isLoop</secondary></indexterm>
+<para><computeroutput>bool Animator::isLoop ( )</computeroutput></para>
+<para>Returns the <link linkend="_classme_1_1_animator">Animator</link>&apos;s loop state <formalpara><title>Returns</title>
+
+<para>A boolean value indicating whether the current animation should loop or not </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a79b32b578adc9d452977cadc4c77c7f4"/><section>
+    <title>playAnim()</title>
+<indexterm><primary>playAnim</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>playAnim</secondary></indexterm>
+<para><computeroutput>void Animator::playAnim (std::string anim, bool loop = <computeroutput>true</computeroutput>
+)</computeroutput></para>
+<para>Plays a specified animation on the <link linkend="_classme_1_1_entity">Entity</link> 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>anim</entry><entry>
+<para>A string containing the name of the animation to be played </para>
+</entry>
+                            </row>
+                            <row>
+<entry>loop</entry><entry>
+<para>A boolean value indicating whether the animation should loop or not </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a7946f90f69f5497b75ccd7e10f69b8f6"/><section>
+    <title>resumeAnim()</title>
+<indexterm><primary>resumeAnim</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>resumeAnim</secondary></indexterm>
+<para><computeroutput>void Animator::resumeAnim ( )</computeroutput></para>
+<para>Resumes the current animation </para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a85aaf640ac6224644f15ccfffb9c5748"/><section>
+    <title>setActive()</title>
+<indexterm><primary>setActive</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>setActive</secondary></indexterm>
+<para><computeroutput>void Animator::setActive (bool state)</computeroutput></para>
+<para>Sets the <link linkend="_classme_1_1_animator">Animator</link>&apos;s active state 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>Boolean value indicating whether the <link linkend="_classme_1_1_animator">Animator</link> should be active or not </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1aeba3c634f367f9d24021c3d62e8b852c"/><section>
+    <title>setLoop()</title>
+<indexterm><primary>setLoop</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>setLoop</secondary></indexterm>
+<para><computeroutput>void Animator::setLoop (bool state)</computeroutput></para>
+<para>Sets the <link linkend="_classme_1_1_animator">Animator</link>&apos;s loop state 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>Boolean value indicating whether the current animation should loop or not </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a1872695c1e9f83ab70d02bda72200a52"/><section>
+    <title>stopAnim()</title>
+<indexterm><primary>stopAnim</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>stopAnim</secondary></indexterm>
+<para><computeroutput>void Animator::stopAnim ( )</computeroutput></para>
+<para>Stops the current animation </para>
+</section>
+<anchor xml:id="_classme_1_1_animator_1a59b9903253d8ce084048f7600e956735"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>me::Animator</secondary></indexterm>
+<indexterm><primary>me::Animator</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void Animator::update ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+
+<para>Almost all the logic updates. </para>
+<para>
+Reimplemented from <link linkend="_classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">me::Component</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/EntityComponent/Components/<link linkend="__animator_8h">Animator.h</link>Src/EntityComponent/Components/<link linkend="__animator_8cpp">Animator.cpp</link></section>
+</section>

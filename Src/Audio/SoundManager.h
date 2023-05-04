@@ -2,12 +2,11 @@
 #ifndef _FMOD_SOUND_MANAGER
 #define _FMOD_SOUND_MANAGER
 
-#include <unordered_map>
-#include <algorithm>
-#include <cctype>
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
+#include <string>
+#include <unordered_map>
 
 namespace FMOD {
 	class Sound;
@@ -17,19 +16,20 @@ namespace FMOD {
 }
 
 enum FMOD_RESULT;
-class FMOD_VECTOR;
 typedef unsigned int FMOD_MODE;
 typedef int CHANNEL_NUMBER;
 
 namespace me {
 	//Maximum number of channels allowed to exist in this particular system setting.
-	const int MAX_CHANNELS = 36;
+	const int MAX_CHANNELS = 100;
 	//Scaling factor for how much the pitch varies due to doppler shifting in 3D sound.
-	const float DOPPLER_SCALE = 1; 
+	const float DOPPLER_SCALE = 1.0f;
 	//Relative distance factor, compared to 1.0 meters. How many units per meter my engine have.
-	const float DISTANCE_FACTOR = 1;
+	const float DISTANCE_FACTOR = 1.0f;
 	//Global attenuation rolloff factor. 
-	const float ROLLOFF_SCALE = 1;
+	const float ROLLOFF_SCALE = 1.0f;
+	//Base pitch of a sound. The "normal" pitch of a sound when it is not moving.
+	const float BASE_PITCH = 1.0f;
 
 	/**
 	SoundManager provides FMOD wrappers to manage audio creation and modulation, 
@@ -52,7 +52,7 @@ namespace me {
 		FMOD::ChannelGroup* mEffects, * mMusic, *mMaster;
 		std::vector<bool> mListeners;
 		//The sound system over which every bit of audio gets created.
-		FMOD::System* mSoundSystem = NULL;
+		FMOD::System* mSoundSystem = nullptr;
 
 		/**
 		Chech if the result of any FMOD-related action is without any error.
@@ -99,26 +99,33 @@ namespace me {
 		FMOD_RESULT mResult;
 
 	public:
+
+		/**
+		Destructor for the SoundManager class
+		*/
+		~SoundManager();
 		/**
 		Updates the sound system every step of the game loop.
 		*/
-		void systemRefresh();
+		void systemRefresh(const double& dt);
 		/**
 		Creates a 3D sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundName : the especific name of the sound which mode will be changed.
 		@param minDistance : minimum audible distance for a 3D sound.
 		@param maxDistance : maximum audible distance for a 3D sound.
+		@param loop : if the sound will loop or not.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool create3DSound(const char* soundPath, std::string soundName, float minDistance, float maxDistance);
+		bool create3DSound(std::string soundPath, std::string soundName, float minDistance, float maxDistance, bool loop);
 		/**
 		Creates a normal sound.
 		@param soundPath : relative path to the sound that will be loaded in the sound handle.
 		@param soundName : the especific name of the sound which mode will be changed.
+		@param loop : if the sound will loop or not.
 		@return A boolean representing whether or not a the sound was created.
 		*/
-		bool createNormalSound(const char* soundPath, std::string soundName);
+		bool createNormalSound(std::string soundPath, std::string soundName, bool loop);
 		/**
 		Sets the speed a certain sound wil be played at.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -133,6 +140,14 @@ namespace me {
 		@return A boolean showing wether or not the mode was set.
 		*/
 		bool setMode(std::string soundName, FMOD_MODE newMode);
+		/**
+		Sets a new minimum and maximum distance a 3D sound can be heard from.
+		@param soundName : the especific name of the sound which hearing distance will be changed.
+		@param minDistance : the new minimum distance a 3D sound can be heard from.
+		@param maxDistance : the new maximun distance a 3D sound can be heard from.
+		@return A boolean showing wether or not the new hearing distances was set.
+		*/
+		bool setMinMaxDistance(std::string soundName, float minDistance, float maxDistance);
 		/**
 		Create a channel group if a channel with the same name doesn't already exists.
 		@param newChannelGroup : the name for the new channel group.
@@ -165,22 +180,33 @@ namespace me {
 		Looks for a sound channel and in case that it exists, sets the pause state of that channel to "pause".
 		@param soundName : the especific name of the sound which speed will be paused.
 		@param pause : the new pause value the channel will get.
-		@return True if the sound is pauded, false if the sound didn't exist.
+		@return True if the sound is paused, false if the sound didn't exist.
 		*/
 		bool pauseSound(std::string soundName, bool pause);
+
 		/**
-		Sets the loopability of a certain sound  dependind on "isLoop".
+		Looks for a sound channel and in case that it exists, stops that channel from playing.
+		@param soundName : the especific name of the sound which speed will be paused.
+		
+		@return True if the sound is stopped, false if the sound didn't exist.
+		*/
+		bool stopSound(std::string soundName);
+
+		/**
+		Stops every channel playing at the moment.
+
+		@return True if every channel was stopped.
+		*/
+		bool stopEverySound();
+		/**
 		It checks for available channels to play the sound and assigns a group channel depending on the user input.
 		@param soundName : the especific name of the sound which will be played.
-		@param isLoop : the value of loopability that will be used to play the sound.
 		@param channelGroup : the channel group where the sound will played on.
 		@param channelPos : the channel's position used for panning and attenuation.
 		@param channelVel : the channel' group where the sound will played on's velocity in 3D space used for doppler.
-		@param timesLooped : the number of times the sound will be looped.
-		By default it is set to constant loop.
 		@return A boolean showing whether or not a channel group was found to play the sound.
 		*/
-		bool playSound(std::string soundName, bool isLoop, const char* channelGroup, FMOD_VECTOR* channelPos, FMOD_VECTOR* channelVel, int timesLooped);
+		bool playSound(std::string soundName, std::string channelGroup, Vector3* channelPos, Vector3* channelVel, float channelVolume);
 		/**
 		Releases the dynamic memory created on runtime when creating new sounds.
 		@param soundName : the especific name of the sound which speed will be changed.
@@ -191,11 +217,11 @@ namespace me {
 		Updates the position of a sound listener relative to a certain sound.
 		@param index : the index that refers to a certain listener.
 		@param listenerPos : the position of the listener.
-		@param listenerFW : 
-		@param listenerUP : 
+		@param listenerFW : the forward vector of the listener.
+		@param listenerUP : the up vector of the listener.
 		@param listenerVel : the velocity of the listener.
 		*/
-		void updateListenersPosition(int index, Vector3 listenerPos, 
+		void updateListenersPosition(int index, Vector3 listenerPos,
 			Vector3 listenerFW, Vector3 listenerUP, Vector3 listenerVel = { 0,0,0 });
 		/**
 		Removes the listener from its vector and resets its values.
@@ -209,7 +235,15 @@ namespace me {
 		@param position : the value of the position of the sound.
 		@return A boolean showing wether or not the position was set.
 		*/
-		bool setSoundPosition(std::string soundName, Vector3 position);
+		bool setSoundAtributes(std::string soundName, Vector3 position, Vector3 velocity);
+
+		/**
+		Sets the pitch of a certain sound depending on the velocity of the object it is attached to.
+		@param soundName : the especific name of the sound which pitch will be set.
+		@param velocity : the value of the velocity of the object.
+		@return A boolean showing wether or not the new pitch was set.
+		*/
+		bool setPitchVelocity(std::string soundName, Vector3 velocity);
 
 		/**
 		Gets the useful listener which will be able to listen to a new sound.
@@ -218,6 +252,7 @@ namespace me {
 		inline int getNextUsefulListenerIndex() {
 			for (int i = 0; i < mListeners.size(); i++) {
 				if (!mListeners[i])
+					mListeners[i] = true;
 					return i;
 			}
 			return -1;
@@ -227,11 +262,11 @@ namespace me {
 	};
 
 	/**
-	This macro defines a compact way for using the singleton PhysicsManager, instead of
-	writing SoundManager::instance()->method() we write sm().method()
+	This macro defines a compact way for using the singleton SoundManager, instead of
+	writing SoundManager::instance()->method() we write soundManager().method()
 	*/
 	inline SoundManager& soundManager() {
-		return *SoundManager::instance();
+		return *SoundManager::Instance();
 	}
 }
 

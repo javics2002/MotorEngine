@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__debug_drawer_8cpp" xml:lang="en-US">
+<title>Src/Physics/DebugDrawer.cpp File Reference</title>
+<indexterm><primary>Src/Physics/DebugDrawer.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;DebugDrawer.h&quot;<?linebreak?>#include &quot;Utils/Vector3.h&quot;<?linebreak?>#include &quot;Render/RenderManager.h&quot;<?linebreak?></programlisting></section>

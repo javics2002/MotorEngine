@@ -9,6 +9,10 @@
 namespace me {
 	class Component;
 
+	/**
+	A FactoryComponent is responsible of creating and destroying a specific type 
+	of component.
+	*/
 	class __MOTORENGINE_API FactoryComponent
 	{
 	protected:
@@ -19,58 +23,100 @@ namespace me {
 		@params defaultValue Value returned in case parameter is not specified.
 		@returns The value of the parameter.
 		*/
-		static float value(Parameters params, const ParameterName& parameter, float defaultValue = 0.0f);
-		static int value(Parameters params, const ParameterName& parameter, int defaultValue = 0);
-		static bool value(Parameters params, const ParameterName& parameter, bool defaultValue);
-		static std::string value(Parameters params, const ParameterName& parameter, std::string defaultValue = "");
+		static float Value(Parameters& params, const ParameterName& parameter, float defaultValue = 0.0f);
+		static int Value(Parameters& params, const ParameterName& parameter, int defaultValue = 0);
+		static bool Value(Parameters& params, const ParameterName& parameter, bool defaultValue);
+		static std::string Value(Parameters& params, const ParameterName& parameter, std::string defaultValue = "");
 
 	public:
-		virtual me::Component* create(Parameters params) = 0;
+		virtual Component* create(Parameters& params) = 0;
+		virtual void destroy(Component* component) = 0;
 	};
 
+	
+	//Creates and destroys Animator components
 	class FactoryAnimator : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys AudioListener components
 	class FactoryAudioListener : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys AudioSource components
 	class FactoryAudioSource : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Camera components
 	class FactoryCamera : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Collider components
 	class FactoryCollider : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys MeshRenderer components
 	class FactoryMeshRenderer : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
-	class FactoryParticleSystem : public FactoryComponent {
-	public:
-		me::Component* create(Parameters params);
-	};
-
+	//Creates and destroys RigidBody components
 	class FactoryRigidBody : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
 
+	//Creates and destroys Transform components
 	class FactoryTransform : public FactoryComponent {
 	public:
-		me::Component* create(Parameters params);
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
 	};
+
+	//Creates and destroys UISpriteRenderer components
+	class FactoryUISpriteRenderer : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+	//Creates and destroys UIText components
+	class FactoryUIText : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+	//Creates and destroys UITransform components
+	class FactoryUITransform : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+	//Creates and destroys Light components
+	class FactoryLight : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
 }
 #endif

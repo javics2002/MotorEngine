@@ -5,20 +5,31 @@ namespace me {
 	Component::Component() :
 		mEntity(nullptr)
 	{
-	};
+	}
 
-	Component::~Component() {};
+	Component::~Component() {}
 
-	void Component::start() {};
+	void Component::setEntity(Entity* e)
+	{
+		mEntity = e;
+	}
 
-	void Component::update() {};
+	Entity* Component::getEntity()
+	{
+		return mEntity;
+	}
 
-	void Component::lateUpdate() {};
 
-	void Component::OnCollisionEnter(Entity* other) {};
+	void Component::start() {}
 
-	void Component::OnCollisionStay(Entity* other) {};
+	void Component::update(const double& dt) {}
 
-	void Component::OnCollisionExit(Entity* other) {};
+	void Component::lateUpdate(const double& dt) {}
+
+	void Component::onCollisionEnter(Entity* other) {}
+
+	void Component::onCollisionStay(Entity* other) {}
+
+	void Component::onCollisionExit(Entity* other) {}
 
 };

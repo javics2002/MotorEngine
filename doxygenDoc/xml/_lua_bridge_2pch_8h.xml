@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_lua_bridge_2pch_8h" kind="file" language="C++">
+    <compoundname>pch.h</compoundname>
+    <includes refid="_lua_bridge_2framework_8h" local="yes">framework.h</includes>
+    <includes local="no">lua.hpp</includes>
+    <includes local="no">LuaBridge/LuaBridge.h</includes>
+    <includedby refid="_lua_bridge_2pch_8cpp" local="yes">Src/LuaBridge/pch.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>framework.h</label>
+        <link refid="_lua_bridge_2framework_8h"/>
+      </node>
+      <node id="1">
+        <label>Src/LuaBridge/pch.h</label>
+        <link refid="_lua_bridge_2pch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LuaBridge/LuaBridge.h</label>
+      </node>
+      <node id="3">
+        <label>lua.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/LuaBridge/pch.cpp</label>
+        <link refid="_lua_bridge_2pch_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/LuaBridge/pch.h</label>
+        <link refid="_lua_bridge_2pch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_lua_bridge_2pch_8h_1ab7500e9a1ccffa3a59052fc2b860b1b1" prot="public" static="no">
+        <name>PCH_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/LuaBridge/pch.h" line="9" column="9" bodyfile="Src/LuaBridge/pch.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>pch.h:<sp/>este<sp/>es<sp/>un<sp/>archivo<sp/>de<sp/>encabezado<sp/>precompilado.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Los<sp/>archivos<sp/>que<sp/>se<sp/>muestran<sp/>a<sp/>continuación<sp/>se<sp/>compilan<sp/>solo<sp/>una<sp/>vez,<sp/>lo<sp/>que<sp/>mejora<sp/>el<sp/>rendimiento<sp/>de<sp/>la<sp/>compilación<sp/>en<sp/>futuras<sp/>compilaciones.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Esto<sp/>también<sp/>afecta<sp/>al<sp/>rendimiento<sp/>de<sp/>IntelliSense,<sp/>incluida<sp/>la<sp/>integridad<sp/>del<sp/>código<sp/>y<sp/>muchas<sp/>funciones<sp/>de<sp/>exploración<sp/>del<sp/>código.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Sin<sp/>embargo,<sp/>los<sp/>archivos<sp/>que<sp/>se<sp/>muestran<sp/>aquí<sp/>se<sp/>vuelven<sp/>TODOS<sp/>a<sp/>compilar<sp/>si<sp/>alguno<sp/>de<sp/>ellos<sp/>se<sp/>actualiza<sp/>entre<sp/>compilaciones.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>agregue<sp/>aquí<sp/>los<sp/>archivos<sp/>que<sp/>se<sp/>vayan<sp/>a<sp/>actualizar<sp/>con<sp/>frecuencia,<sp/>ya<sp/>que<sp/>esto<sp/>invalida<sp/>la<sp/>ventaja<sp/>de<sp/>rendimiento.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="_lua_bridge_2pch_8h_1ab7500e9a1ccffa3a59052fc2b860b1b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>agregue<sp/>aquí<sp/>los<sp/>encabezados<sp/>que<sp/>desea<sp/>precompilar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_2framework_8h" kindref="compound">framework.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lua.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;LuaBridge/LuaBridge.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>/Array.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/List.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/Map.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/Optional.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/Pair.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/RefCountedObject.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/RefCountedPtr.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/UnorderedMap.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;LuaBridge/Vector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PCH_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/LuaBridge/pch.h"/>
+  </compounddef>
+</doxygen>

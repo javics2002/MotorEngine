@@ -20,11 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Physics\DebugDrawer.cpp" />
-    <ClCompile Include="..\..\Src\Physics\main.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Physics\DebugDrawer.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsEnums.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +143,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\Build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\Build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\LuaBridge\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;OgreMain_d.lib;OgreRTShaderSystem_d.lib;Lua54_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Bullet3Common_Debug.lib;BulletDynamics_Debug.lib;BulletCollision_Debug.lib;LinearMath_Debug.lib;SDL3.lib;OgreMain_d.lib;OgreRTShaderSystem_d.lib;Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -167,8 +167,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;OgreMain.lib;OgreRTShaderSystem.lib;Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\LuaBridge\bin\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bullet3Common.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;OgreMain.lib;OgreRTShaderSystem.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Bullet\build\lib\$(ConfigurationName);$(SolutionDir)Dependencies\SDL\build\$(ConfigurationName);$(SolutionDir)Dependencies\Ogre\build\lib\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

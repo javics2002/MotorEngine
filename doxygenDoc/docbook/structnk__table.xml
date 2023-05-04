@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__table" xml:lang="en-US">
+<title>nk_table Struct Reference</title>
+<indexterm><primary>nk_table</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned int <link linkend="_structnk__table_1aa64704d2e52b6663f61c043b0378b2d4">seq</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__table_1a173992867275727635fff4f21e825d99">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> <link linkend="_structnk__table_1abe02ed8fb83c928c36e8e719d64e2cbf">keys</link> [<link linkend="_nuklear_8h_1a8dc0d705f81317352b98df20a6481b52">NK_VALUE_PAGE_CAPACITY</link>]</para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> <link linkend="_structnk__table_1ae686139ae8eb9913024a5513c70bde76">values</link> [<link linkend="_nuklear_8h_1a8dc0d705f81317352b98df20a6481b52">NK_VALUE_PAGE_CAPACITY</link>]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__table">nk_table</link> * <link linkend="_structnk__table_1a36a783e6a8874a8c0d793275d08355a4">next</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__table">nk_table</link> * <link linkend="_structnk__table_1af01641e8389afdefbeb1e6a6e52dc557">prev</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__table_1abe02ed8fb83c928c36e8e719d64e2cbf"/><section>
+    <title>keys</title>
+<indexterm><primary>keys</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>keys</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> nk_table::keys[<link linkend="_nuklear_8h_1a8dc0d705f81317352b98df20a6481b52">NK_VALUE_PAGE_CAPACITY</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__table_1a36a783e6a8874a8c0d793275d08355a4"/><section>
+    <title>next</title>
+<indexterm><primary>next</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>next</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__table">nk_table</link>* nk_table::next</computeroutput></para></section>
+<anchor xml:id="_structnk__table_1af01641e8389afdefbeb1e6a6e52dc557"/><section>
+    <title>prev</title>
+<indexterm><primary>prev</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>prev</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__table">nk_table</link> * nk_table::prev</computeroutput></para></section>
+<anchor xml:id="_structnk__table_1aa64704d2e52b6663f61c043b0378b2d4"/><section>
+    <title>seq</title>
+<indexterm><primary>seq</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>seq</secondary></indexterm>
+<para><computeroutput>unsigned int nk_table::seq</computeroutput></para></section>
+<anchor xml:id="_structnk__table_1a173992867275727635fff4f21e825d99"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>unsigned int nk_table::size</computeroutput></para></section>
+<anchor xml:id="_structnk__table_1ae686139ae8eb9913024a5513c70bde76"/><section>
+    <title>values</title>
+<indexterm><primary>values</primary><secondary>nk_table</secondary></indexterm>
+<indexterm><primary>nk_table</primary><secondary>values</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a951b598a3101b6d2a55d22ac39f57919">nk_uint</link> nk_table::values[<link linkend="_nuklear_8h_1a8dc0d705f81317352b98df20a6481b52">NK_VALUE_PAGE_CAPACITY</link>]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

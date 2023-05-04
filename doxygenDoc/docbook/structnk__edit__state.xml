@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__edit__state" xml:lang="en-US">
+<title>nk_edit_state Struct Reference</title>
+<indexterm><primary>nk_edit_state</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> <link linkend="_structnk__edit__state_1a87920c698f22575eab9d07d5ebae318e">name</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__edit__state_1a1c65e389e43214b89c65214a859e883f">seq</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_structnk__edit__state_1ab71fb9bbac77248af5f1c3bd1471ddfc">old</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__edit__state_1a29e96834b044eb48096b50ee584d3528">active</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__edit__state_1aaacf3bdbd141697e4f5645f128bcf785">prev</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__edit__state_1ab416471cb61eacf633a05ad54d8c6bc8">cursor</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__edit__state_1aeecc32de6d1be464baa562d9bba3a351">sel_start</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__edit__state_1a529ee69a1bb79ac2d3377c2d052f5774">sel_end</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__scroll">nk_scroll</link> <link linkend="_structnk__edit__state_1af66f1fff3c22f0149b513ec224360f74">scrollbar</link></para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_structnk__edit__state_1ae841853374d727742a6ac7d31e9346e6">mode</link></para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_structnk__edit__state_1ab124091270e7af08f6df9410a647ae1c">single_line</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__edit__state_1a29e96834b044eb48096b50ee584d3528"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>int nk_edit_state::active</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1ab416471cb61eacf633a05ad54d8c6bc8"/><section>
+    <title>cursor</title>
+<indexterm><primary>cursor</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>cursor</secondary></indexterm>
+<para><computeroutput>int nk_edit_state::cursor</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1ae841853374d727742a6ac7d31e9346e6"/><section>
+    <title>mode</title>
+<indexterm><primary>mode</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>mode</secondary></indexterm>
+<para><computeroutput>unsigned char nk_edit_state::mode</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1a87920c698f22575eab9d07d5ebae318e"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>name</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> nk_edit_state::name</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1ab71fb9bbac77248af5f1c3bd1471ddfc"/><section>
+    <title>old</title>
+<indexterm><primary>old</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>old</secondary></indexterm>
+<para><computeroutput>unsigned int nk_edit_state::old</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1aaacf3bdbd141697e4f5645f128bcf785"/><section>
+    <title>prev</title>
+<indexterm><primary>prev</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>prev</secondary></indexterm>
+<para><computeroutput>int nk_edit_state::prev</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1af66f1fff3c22f0149b513ec224360f74"/><section>
+    <title>scrollbar</title>
+<indexterm><primary>scrollbar</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>scrollbar</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__scroll">nk_scroll</link> nk_edit_state::scrollbar</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1a529ee69a1bb79ac2d3377c2d052f5774"/><section>
+    <title>sel_end</title>
+<indexterm><primary>sel_end</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>sel_end</secondary></indexterm>
+<para><computeroutput>int nk_edit_state::sel_end</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1aeecc32de6d1be464baa562d9bba3a351"/><section>
+    <title>sel_start</title>
+<indexterm><primary>sel_start</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>sel_start</secondary></indexterm>
+<para><computeroutput>int nk_edit_state::sel_start</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1a1c65e389e43214b89c65214a859e883f"/><section>
+    <title>seq</title>
+<indexterm><primary>seq</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>seq</secondary></indexterm>
+<para><computeroutput>unsigned int nk_edit_state::seq</computeroutput></para></section>
+<anchor xml:id="_structnk__edit__state_1ab124091270e7af08f6df9410a647ae1c"/><section>
+    <title>single_line</title>
+<indexterm><primary>single_line</primary><secondary>nk_edit_state</secondary></indexterm>
+<indexterm><primary>nk_edit_state</primary><secondary>single_line</secondary></indexterm>
+<para><computeroutput>unsigned char nk_edit_state::single_line</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

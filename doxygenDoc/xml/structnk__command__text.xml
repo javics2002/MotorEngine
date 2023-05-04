@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__command__text" kind="struct" language="C++" prot="public">
+    <compoundname>nk_command_text</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__command__text_1a5a7a41a2afb06824c9b1573d20573fca" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__command" kindref="compound">nk_command</ref></type>
+        <definition>struct nk_command nk_command_text::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>nk_command_text::header</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4374" column="21" bodyfile="Src/GUI/nuklear.h" bodystart="4374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1a57e049a57f88d08355b6aa929d8e960c" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structnk__user__font" kindref="compound">nk_user_font</ref> *</type>
+        <definition>const struct nk_user_font* nk_command_text::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <qualifiedname>nk_command_text::font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4375" column="29" bodyfile="Src/GUI/nuklear.h" bodystart="4375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1a3a1225818bc3f2174b836d797979a55b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_command_text::background</definition>
+        <argsstring></argsstring>
+        <name>background</name>
+        <qualifiedname>nk_command_text::background</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4376" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1a89f088f305fa55471fe85e74d6d7e69c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__color" kindref="compound">nk_color</ref></type>
+        <definition>struct nk_color nk_command_text::foreground</definition>
+        <argsstring></argsstring>
+        <name>foreground</name>
+        <qualifiedname>nk_command_text::foreground</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4377" column="19" bodyfile="Src/GUI/nuklear.h" bodystart="4377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1aabc9267e7890ddcdd8caefa34cf0e220" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short nk_command_text::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>nk_command_text::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4378" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1ace809f5ab5b1aadd3a97284fb5210a50" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short nk_command_text::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>nk_command_text::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4378" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="4378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1aeb1534c55f5f583788aa6baf8e89da0e" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short nk_command_text::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <qualifiedname>nk_command_text::w</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4379" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="4379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1ad14a9b2dbadcaee4f9d5de6846e09007" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short nk_command_text::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <qualifiedname>nk_command_text::h</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4379" column="22" bodyfile="Src/GUI/nuklear.h" bodystart="4379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1ac4c5a4f26388eaee498ef221b87fdeff" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float nk_command_text::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>nk_command_text::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4380" column="11" bodyfile="Src/GUI/nuklear.h" bodystart="4380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1a61808e6a805e90be52ec3b412446cd9d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_command_text::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>nk_command_text::length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4381" column="9" bodyfile="Src/GUI/nuklear.h" bodystart="4381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__command__text_1a15f58b2e33dd173cf5b6b9803e1617bb" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char nk_command_text::string[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>string</name>
+        <qualifiedname>nk_command_text::string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="4382" column="10" bodyfile="Src/GUI/nuklear.h" bodystart="4382" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="2">
+        <label>nk_command</label>
+        <link refid="structnk__command"/>
+      </node>
+      <node id="1">
+        <label>nk_command_text</label>
+        <link refid="structnk__command__text"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>font</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>background</edgelabel>
+          <edgelabel>foreground</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="3">
+        <label>nk_user_font</label>
+        <link refid="structnk__user__font"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>userdata</edgelabel>
+          <edgelabel>width</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="4373" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="4373" bodyend="4383"/>
+    <listofallmembers>
+      <member refid="structnk__command__text_1a3a1225818bc3f2174b836d797979a55b" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>background</name></member>
+      <member refid="structnk__command__text_1a57e049a57f88d08355b6aa929d8e960c" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>font</name></member>
+      <member refid="structnk__command__text_1a89f088f305fa55471fe85e74d6d7e69c" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>foreground</name></member>
+      <member refid="structnk__command__text_1ad14a9b2dbadcaee4f9d5de6846e09007" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>h</name></member>
+      <member refid="structnk__command__text_1a5a7a41a2afb06824c9b1573d20573fca" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>header</name></member>
+      <member refid="structnk__command__text_1ac4c5a4f26388eaee498ef221b87fdeff" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>height</name></member>
+      <member refid="structnk__command__text_1a61808e6a805e90be52ec3b412446cd9d" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>length</name></member>
+      <member refid="structnk__command__text_1a15f58b2e33dd173cf5b6b9803e1617bb" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>string</name></member>
+      <member refid="structnk__command__text_1aeb1534c55f5f583788aa6baf8e89da0e" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>w</name></member>
+      <member refid="structnk__command__text_1aabc9267e7890ddcdd8caefa34cf0e220" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>x</name></member>
+      <member refid="structnk__command__text_1ace809f5ab5b1aadd3a97284fb5210a50" prot="public" virt="non-virtual"><scope>nk_command_text</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

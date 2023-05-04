@@ -28,32 +28,44 @@ namespace me {
 	public:
 
 		/**
-		Construct a new MeshRenderer component and save necesary info
-		@param name: name saved in om() map and used for entity that attached in node
-		@param meshName: name of .mesh file
+		Construct a new MeshRenderer component 
 		*/
-		MeshRenderer(std::string name, std::string meshName);
+		MeshRenderer();
 		//Destroy om() map saved mesh (ogreMesh)
 		~MeshRenderer();
+
+		void init();
 
 		/**
 		Get info for mTransform and create ogreMesh and set the start pos
 		*/
 		void start() override;
+		
 
 		/**
 		Update transform info to mesh(ogreMesh)
 		*/
-		void update() override;
+		void update(const double& dt) override;
 
 		/**
 		 Set material to mesh (ogreMesh).
 		 @param materialName: name of material that is written in MaterialResource.material.
 		*/
 		void setMaterial(std::string materialName);
+		/**
+		 Set name to mesh (renderMesh in rendermanager array).
+		 @param name: name for map and for entity that attached in node
+		*/
+		void setName(std::string name);
+		/**
+		 Set meshname to mesh (renderMesh in rendermanager array).
+		 @param meshName: name of .mesh file
+		*/
+		void setMeshName(std::string meshName);
 
 		/**
 		Set it is static entity or not
+		 @param stat: true if mesh is static, false if not
 		*/
 		void setStatic(bool stat);
 
@@ -61,6 +73,12 @@ namespace me {
 		Set it is static entity or not
 		*/
 		std::string getName();
+
+		//active mesh
+		void activeMesh();
+
+		//desactive mesh
+		void desactiveMesh();
 			
 	};
 }

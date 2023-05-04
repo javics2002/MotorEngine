@@ -1,0 +1,156 @@
+.TH "me::ParticleSystem" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::ParticleSystem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ParticleSystem\&.h>\fP
+.PP
+Inherits \fBme::Component\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParticleSystem\fP (std::string name, std::string particleName)"
+.br
+.ti -1c
+.RI "\fB~ParticleSystem\fP ()"
+.br
+.ti -1c
+.RI "void \fBstart\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetEmitting\fP (bool emitted)"
+.br
+.ti -1c
+.RI "void \fBsetOffsetPos\fP (\fBVector3\fP offset)"
+.br
+.ti -1c
+.RI "void \fBsetOffsetScale\fP (\fBVector3\fP offset)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBComponent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Component\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEntity\fP (\fBEntity\fP *e)"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBgetEntity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlateUpdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionEnter\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionStay\fP (\fBEntity\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBOnCollisionExit\fP (\fBEntity\fP *other)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBmName\fP"
+.br
+.ti -1c
+.RI "std::string \fBmParticleName\fP"
+.br
+.ti -1c
+.RI "\fBTransform\fP * \fBmTransform\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBmOffsetPos\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBmOffsetScale\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP * \fBmEntity\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBme::Component\fP
+.in +1c
+.ti -1c
+.RI "bool \fBenabled\fP = true"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBParticleSystem\fP class represents a visual particle system in 3D space and can be attached to entities\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::ParticleSystem::ParticleSystem (std::string name, std::string particleName)"
+Construct a new particle system component and save necesary info 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP name saved in om() map and used for particle that attached in node 
+.br
+\fIparticleName\fP name of particle that is written int ParticleResource\&.particle 
+.RE
+.PP
+
+.SS "me::ParticleSystem::~ParticleSystem ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void me::ParticleSystem::setEmitting (bool emitted)"
+Set it emitting state 
+.SS "void me::ParticleSystem::setOffsetPos (\fBVector3\fP offset)"
+
+.SS "void me::ParticleSystem::setOffsetScale (\fBVector3\fP offset)"
+
+.SS "void me::ParticleSystem::start ()\fC [override]\fP, \fC [virtual]\fP"
+Get info for mTransform and create (ogreParticleSystem) and set the start pos 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SS "void me::ParticleSystem::update ()\fC [override]\fP, \fC [virtual]\fP"
+Update transform info to particle(ogreParticleSystem) 
+.PP
+Reimplemented from \fBme::Component\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string me::ParticleSystem::mName\fC [protected]\fP"
+
+.SS "\fBVector3\fP me::ParticleSystem::mOffsetPos\fC [protected]\fP"
+
+.SS "\fBVector3\fP me::ParticleSystem::mOffsetScale\fC [protected]\fP"
+
+.SS "std::string me::ParticleSystem::mParticleName\fC [protected]\fP"
+
+.SS "\fBTransform\fP* me::ParticleSystem::mTransform\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

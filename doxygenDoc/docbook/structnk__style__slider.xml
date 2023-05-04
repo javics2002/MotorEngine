@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__slider" xml:lang="en-US">
+<title>nk_style_slider Struct Reference</title>
+<indexterm><primary>nk_style_slider</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1a338ae8754fc7997abbca126b60668c6a">normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1a9f36bc9ca0a52499e74f486e7a1b4f32">hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1a9f85ea5ee0d952cc5d1e8dfcf06d09b6">active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__slider_1a28182ddaeb0272101a4b484e8900c6db">border_color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__slider_1a1dc33f2a1593baa9cb1915035ef50ce7">bar_normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__slider_1a4beff8f720775d999ec7418f2424fc8e">bar_hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__slider_1a4234c3fd7dd2300c4c27d499eea7eb62">bar_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__slider_1aa0771bad7fb36018adad50913744dc34">bar_filled</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1a2029307fad5395d90ee585439583211e">cursor_normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1ae0045253c289dd775ba8fabf2b3b6761">cursor_hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__slider_1a110cadbf1de8a0830ea5da3e9d64563c">cursor_active</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__slider_1af2bb87b4b87a6e3d2663e2d3a64285dd">border</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__slider_1a950d2cbcc0c1b9dadf2a2c47b00fef4a">rounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structnk__style__slider_1a3c1f505c59eda0537441eb8e6d8c61e1">bar_height</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__slider_1a90c7b4d5cb928cf549eb76ec88f79dfd">padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__slider_1a24853b62553da926bd2476e5305f27d4">spacing</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__slider_1aedeb3490702bb178183e1a061bab2dcb">cursor_size</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__style__slider_1a017823e8257d836b5b6b97433548039f">show_buttons</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style__slider_1a7d7bce402c16ed819a64c72b5ee1928f">inc_button</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style__slider_1a2af42be5c477ddda05dde36d45fbebe4">dec_button</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> <link linkend="_structnk__style__slider_1a82d0f1a7c09ae08a0462047b1c4d035d">inc_symbol</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> <link linkend="_structnk__style__slider_1a4974ffb84ecb0c34afc3b608e34bc339">dec_symbol</link></para>
+</listitem>
+            <listitem><para><link linkend="_unionnk__handle">nk_handle</link> <link linkend="_structnk__style__slider_1a6376ac01b14a9da29af611b9d2aeecd2">userdata</link></para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__slider_1a32d89881002446f40c03ff457a400bc5">draw_begin</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</para>
+</listitem>
+            <listitem><para>void(* <link linkend="_structnk__style__slider_1a821c8a395eb26c6bd6089d75fc197881">draw_end</link> )(struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__slider_1a9f85ea5ee0d952cc5d1e8dfcf06d09b6"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a4234c3fd7dd2300c4c27d499eea7eb62"/><section>
+    <title>bar_active</title>
+<indexterm><primary>bar_active</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>bar_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_slider::bar_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1aa0771bad7fb36018adad50913744dc34"/><section>
+    <title>bar_filled</title>
+<indexterm><primary>bar_filled</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>bar_filled</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_slider::bar_filled</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a3c1f505c59eda0537441eb8e6d8c61e1"/><section>
+    <title>bar_height</title>
+<indexterm><primary>bar_height</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>bar_height</secondary></indexterm>
+<para><computeroutput>float nk_style_slider::bar_height</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a4beff8f720775d999ec7418f2424fc8e"/><section>
+    <title>bar_hover</title>
+<indexterm><primary>bar_hover</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>bar_hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_slider::bar_hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a1dc33f2a1593baa9cb1915035ef50ce7"/><section>
+    <title>bar_normal</title>
+<indexterm><primary>bar_normal</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>bar_normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_slider::bar_normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1af2bb87b4b87a6e3d2663e2d3a64285dd"/><section>
+    <title>border</title>
+<indexterm><primary>border</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>border</secondary></indexterm>
+<para><computeroutput>float nk_style_slider::border</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a28182ddaeb0272101a4b484e8900c6db"/><section>
+    <title>border_color</title>
+<indexterm><primary>border_color</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>border_color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_slider::border_color</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a110cadbf1de8a0830ea5da3e9d64563c"/><section>
+    <title>cursor_active</title>
+<indexterm><primary>cursor_active</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>cursor_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::cursor_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1ae0045253c289dd775ba8fabf2b3b6761"/><section>
+    <title>cursor_hover</title>
+<indexterm><primary>cursor_hover</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>cursor_hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::cursor_hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a2029307fad5395d90ee585439583211e"/><section>
+    <title>cursor_normal</title>
+<indexterm><primary>cursor_normal</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>cursor_normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::cursor_normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1aedeb3490702bb178183e1a061bab2dcb"/><section>
+    <title>cursor_size</title>
+<indexterm><primary>cursor_size</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>cursor_size</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_slider::cursor_size</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a2af42be5c477ddda05dde36d45fbebe4"/><section>
+    <title>dec_button</title>
+<indexterm><primary>dec_button</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>dec_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style_slider::dec_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a4974ffb84ecb0c34afc3b608e34bc339"/><section>
+    <title>dec_symbol</title>
+<indexterm><primary>dec_symbol</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>dec_symbol</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> nk_style_slider::dec_symbol</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a32d89881002446f40c03ff457a400bc5"/><section>
+    <title>draw_begin</title>
+<indexterm><primary>draw_begin</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>draw_begin</secondary></indexterm>
+<para><computeroutput>void(* nk_style_slider::draw_begin) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a821c8a395eb26c6bd6089d75fc197881"/><section>
+    <title>draw_end</title>
+<indexterm><primary>draw_end</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>draw_end</secondary></indexterm>
+<para><computeroutput>void(* nk_style_slider::draw_end) (struct <link linkend="_structnk__command__buffer">nk_command_buffer</link> *, <link linkend="_unionnk__handle">nk_handle</link>)</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a9f36bc9ca0a52499e74f486e7a1b4f32"/><section>
+    <title>hover</title>
+<indexterm><primary>hover</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a7d7bce402c16ed819a64c72b5ee1928f"/><section>
+    <title>inc_button</title>
+<indexterm><primary>inc_button</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>inc_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style_slider::inc_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a82d0f1a7c09ae08a0462047b1c4d035d"/><section>
+    <title>inc_symbol</title>
+<indexterm><primary>inc_symbol</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>inc_symbol</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> nk_style_slider::inc_symbol</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a338ae8754fc7997abbca126b60668c6a"/><section>
+    <title>normal</title>
+<indexterm><primary>normal</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_slider::normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a90c7b4d5cb928cf549eb76ec88f79dfd"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_slider::padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a950d2cbcc0c1b9dadf2a2c47b00fef4a"/><section>
+    <title>rounding</title>
+<indexterm><primary>rounding</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>rounding</secondary></indexterm>
+<para><computeroutput>float nk_style_slider::rounding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a017823e8257d836b5b6b97433548039f"/><section>
+    <title>show_buttons</title>
+<indexterm><primary>show_buttons</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>show_buttons</secondary></indexterm>
+<para><computeroutput>int nk_style_slider::show_buttons</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a24853b62553da926bd2476e5305f27d4"/><section>
+    <title>spacing</title>
+<indexterm><primary>spacing</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>spacing</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_slider::spacing</computeroutput></para></section>
+<anchor xml:id="_structnk__style__slider_1a6376ac01b14a9da29af611b9d2aeecd2"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>nk_style_slider</secondary></indexterm>
+<indexterm><primary>nk_style_slider</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="_unionnk__handle">nk_handle</link> nk_style_slider::userdata</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

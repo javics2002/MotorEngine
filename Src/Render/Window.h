@@ -43,7 +43,9 @@ namespace me {
 		Window(uint32_t sdlFlags, const char* name, int x, int y, int w, int h, uint32_t windowFlags);
 
 		//Reference to SDL Window class
-		SDL_Window* window;
+		SDL_Window* mWindow;
+
+		int mWidth, mHeight;
 
 	public:
 		~Window();
@@ -52,14 +54,23 @@ namespace me {
 		* @returns The window that was created or NULL on failure. Call SDL_GetError() for more information.
 		*/
 		SDL_Window* get();
+
+		/**
+		* @returns The window width
+		*/
+		int getWindowWidth();
+		/**
+		* @returns The window height
+		*/
+		int getWindowHeight();
 	};
 
 	/**
 	This macro defines a compact way for using the singleton Window, instead of
-	writing Window::instance()->method() we write win().method()
+	writing Window::instance()->method() we write window().method()
 	*/
 	inline Window& window() {
-		return *Window::instance();
+		return *Window::Instance();
 	};
 }
 

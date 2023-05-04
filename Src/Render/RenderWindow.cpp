@@ -1,12 +1,10 @@
 #include "RenderWindow.h"
+#include "Window.h"
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
-#include <iostream>
-#include <SDL3/SDL.h>
 #include <SDL3/SDL_syswm.h>
-
-#include "Window.h"
-
+#include <SDL3/SDL_version.h>
+#include <SDL3/SDL_mouse.h>
 
 using namespace me;
 
@@ -17,14 +15,17 @@ RenderWindow::RenderWindow(const std::string windowName)
 
 RenderWindow::~RenderWindow()
 {
-
+	if (mRenderWindow != nullptr)
+	{
+		mRenderWindow->destroy();
+		mRenderWindow = nullptr;
+	}
 }
 
 void RenderWindow::init(Ogre::Root* root)
 {
 	root->initialise(false, mWindowName);
 	createWindow(root);
-	//setWindowGrab(true);
 }
 
 Ogre::RenderWindow* me::RenderWindow::getRenderWindow()
@@ -36,8 +37,6 @@ SDL_Window* me::RenderWindow::getSdlWindow()
 {
 	return mSdlWindow;
 }
-
-
 
 void RenderWindow::createWindow(Ogre::Root* root)
 {
@@ -54,29 +53,23 @@ void RenderWindow::createWindow(Ogre::Root* root)
 	miscParams["vsync"] = cOptionMap["VSync"].currentValue;
 	miscParams["gamma"] = cOptionMap["sRGB Gamma Conversion"].currentValue;
 
-	
-
 	Uint32 flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS;
 
 	if (cOptionMap["Full Screen"].currentValue == "Yes")
 		flags = SDL_WINDOW_FULLSCREEN | SDL_WINDOW_INPUT_FOCUS;
 
 	mSdlWindow = window().get();
-	
-	//mSdlWindow = SDL_CreateWindow(mWindowName.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, flags);
 
-	SDL_SysWMinfo* wmInfo = new SDL_SysWMinfo();
+	SDL_SysWMinfo wmInfo;
 	SDL_version version;
 	SDL_GetVersion(&version);
-	wmInfo->version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
-	SDL_GetWindowWMInfo(mSdlWindow, wmInfo,wmInfo->version);
+	wmInfo.version= SDL_VERSIONNUM(version.major, version.minor, version.patch);
+	SDL_GetWindowWMInfo(mSdlWindow, &wmInfo,wmInfo.version);
 
-	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo->info.win.window));
-	mRenderWindow = root->createRenderWindow(mWindowName, w, h, false, &miscParams);
+	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.win.window));
+	mRenderWindow = root->createRenderWindow(mWindowName, window().getWindowWidth(), window().getWindowHeight(), false, &miscParams);
 
 	SDL_ShowCursor();
-	//SDL_HideCursor();
-
 }
 
 
@@ -84,10 +77,6 @@ void RenderWindow::setWindowGrab(bool bGrab)
 {
 	SDL_bool grab = SDL_bool(bGrab);
 	SDL_SetWindowGrab(mSdlWindow, grab);
-	//SDL_SetRelativeMouseMode(grab);
 	
 	grab ? SDL_ShowCursor() : SDL_HideCursor();
 }
-
-
-

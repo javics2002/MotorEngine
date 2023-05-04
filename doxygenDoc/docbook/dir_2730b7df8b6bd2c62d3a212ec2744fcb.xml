@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2730b7df8b6bd2c62d3a212ec2744fcb" xml:lang="en-US">
+<title>Src/LuaBridge Directory Reference</title>
+<indexterm><primary>Src/LuaBridge Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__lua_bridge_2framework_8h">framework.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__lua_bridge_2main_8cpp">main.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__lua_bridge_2pch_8cpp">pch.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__lua_bridge_2pch_8h">pch.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

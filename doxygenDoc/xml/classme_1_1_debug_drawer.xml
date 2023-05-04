@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_debug_drawer" kind="class" language="C++" prot="public">
+    <compoundname>me::DebugDrawer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">btIDebugDraw</basecompoundref>
+    <includes refid="_debug_drawer_8h" local="no">DebugDrawer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classme_1_1_debug_drawer_1aa91db14708358057d832ca865fa920f5" prot="private" static="no" mutable="no">
+        <type>Ogre::ManualObject *</type>
+        <definition>Ogre::ManualObject* me::DebugDrawer::mTriangles</definition>
+        <argsstring></argsstring>
+        <name>mTriangles</name>
+        <qualifiedname>me::DebugDrawer::mTriangles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="15" column="20" bodyfile="Src/Physics/DebugDrawer.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_debug_drawer_1ac4c6d39390497a589b843ffbd02d4756" prot="private" static="no" mutable="no">
+        <type>DebugDrawModes</type>
+        <definition>DebugDrawModes me::DebugDrawer::mDebugDrawModes</definition>
+        <argsstring></argsstring>
+        <name>mDebugDrawModes</name>
+        <qualifiedname>me::DebugDrawer::mDebugDrawModes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="16" column="16" bodyfile="Src/Physics/DebugDrawer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a8e3da36b6f8ac2315af2b7222c55bdf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::DebugDrawer::DebugDrawer</definition>
+        <argsstring>()</argsstring>
+        <name>DebugDrawer</name>
+        <qualifiedname>me::DebugDrawer::DebugDrawer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="36" column="1" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="37" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a740459997cfcbb425667aac2b16b7a64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::DebugDrawer::~DebugDrawer</definition>
+        <argsstring>()</argsstring>
+        <name>~DebugDrawer</name>
+        <qualifiedname>me::DebugDrawer::~DebugDrawer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="37" column="1" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1acd5d796e721e5e848e4487bdb4c55d80" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::drawTriangle</definition>
+        <argsstring>(const btVector3 &amp;v0, const btVector3 &amp;v1, const btVector3 &amp;v2, const btVector3 &amp;color, btScalar alpha) override</argsstring>
+        <name>drawTriangle</name>
+        <qualifiedname>me::DebugDrawer::drawTriangle</qualifiedname>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>v0</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>btScalar</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="39" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="69" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a980998a0528634eea920f30347da1e48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::drawLine</definition>
+        <argsstring>(const btVector3 &amp;from, const btVector3 &amp;to, const btVector3 &amp;color) override</argsstring>
+        <name>drawLine</name>
+        <qualifiedname>me::DebugDrawer::drawLine</qualifiedname>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="41" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a7d041bf17701d5551567ebe260bdbc19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::drawContactPoint</definition>
+        <argsstring>(const btVector3 &amp;PointOnB, const btVector3 &amp;normalOnB, btScalar distance, int lifeTime, const btVector3 &amp;color) override</argsstring>
+        <name>drawContactPoint</name>
+        <qualifiedname>me::DebugDrawer::drawContactPoint</qualifiedname>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>PointOnB</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>normalOnB</declname>
+        </param>
+        <param>
+          <type>btScalar</type>
+          <declname>distance</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lifeTime</declname>
+        </param>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="42" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a142dd72ddcc22144d7dbf9a493ad09e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::reportErrorWarning</definition>
+        <argsstring>(const char *warningString) override</argsstring>
+        <name>reportErrorWarning</name>
+        <qualifiedname>me::DebugDrawer::reportErrorWarning</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>warningString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="44" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1aa92e8f117210149c23846e8da24d44ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::draw3dText</definition>
+        <argsstring>(const btVector3 &amp;location, const char *textString) override</argsstring>
+        <name>draw3dText</name>
+        <qualifiedname>me::DebugDrawer::draw3dText</qualifiedname>
+        <param>
+          <type>const btVector3 &amp;</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>textString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="45" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1aa4bd1992fc30d2acedc2dabb8d4e2390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::DebugDrawer::setDebugMode</definition>
+        <argsstring>(int debugMode) override</argsstring>
+        <name>setDebugMode</name>
+        <qualifiedname>me::DebugDrawer::setDebugMode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>debugMode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="46" column="14" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_debug_drawer_1a122dee73ce1f1dcb09c06a67019ee3f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int me::DebugDrawer::getDebugMode</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDebugMode</name>
+        <qualifiedname>me::DebugDrawer::getDebugMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/DebugDrawer.h" line="48" column="5" bodyfile="Src/Physics/DebugDrawer.cpp" bodystart="109" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>btIDebugDraw</label>
+      </node>
+      <node id="1">
+        <label>me::DebugDrawer</label>
+        <link refid="classme_1_1_debug_drawer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>btIDebugDraw</label>
+      </node>
+      <node id="1">
+        <label>me::DebugDrawer</label>
+        <link refid="classme_1_1_debug_drawer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/Physics/DebugDrawer.h" line="12" column="1" bodyfile="Src/Physics/DebugDrawer.h" bodystart="13" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classme_1_1_debug_drawer_1a8e3da36b6f8ac2315af2b7222c55bdf6" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>DebugDrawer</name></member>
+      <member refid="classme_1_1_debug_drawer_1aa92e8f117210149c23846e8da24d44ab" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>draw3dText</name></member>
+      <member refid="classme_1_1_debug_drawer_1a7d041bf17701d5551567ebe260bdbc19" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>drawContactPoint</name></member>
+      <member refid="classme_1_1_debug_drawer_1a980998a0528634eea920f30347da1e48" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>drawLine</name></member>
+      <member refid="classme_1_1_debug_drawer_1acd5d796e721e5e848e4487bdb4c55d80" prot="public" virt="virtual"><scope>me::DebugDrawer</scope><name>drawTriangle</name></member>
+      <member refid="classme_1_1_debug_drawer_1a122dee73ce1f1dcb09c06a67019ee3f7" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>getDebugMode</name></member>
+      <member refid="classme_1_1_debug_drawer_1ac4c6d39390497a589b843ffbd02d4756" prot="private" virt="non-virtual"><scope>me::DebugDrawer</scope><name>mDebugDrawModes</name></member>
+      <member refid="classme_1_1_debug_drawer_1aa91db14708358057d832ca865fa920f5" prot="private" virt="non-virtual"><scope>me::DebugDrawer</scope><name>mTriangles</name></member>
+      <member refid="classme_1_1_debug_drawer_1a142dd72ddcc22144d7dbf9a493ad09e5" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>reportErrorWarning</name></member>
+      <member refid="classme_1_1_debug_drawer_1aa4bd1992fc30d2acedc2dabb8d4e2390" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>setDebugMode</name></member>
+      <member refid="classme_1_1_debug_drawer_1a740459997cfcbb425667aac2b16b7a64" prot="public" virt="non-virtual"><scope>me::DebugDrawer</scope><name>~DebugDrawer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

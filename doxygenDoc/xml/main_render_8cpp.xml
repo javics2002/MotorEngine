@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="main_render_8cpp" kind="file" language="C++">
+    <compoundname>mainRender.cpp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OGRE_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OGRE_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_render_manager_8h" kindref="compound">RenderManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OgreVector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_audio_2main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classme_1_1_render_manager" kindref="compound">RenderManager</ref>*<sp/>ogreMgr=<sp/>RenderManager::instance();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>camJ1<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CameraJugador1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1a178464764e348339c8238b9749fa062a" kindref="member">createCamera</ref>(camJ1,<sp/>5,10000,</highlight><highlight class="keyword">true</highlight><highlight class="normal">,0,<sp/>Ogre::ColourValue(0,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1a6fe9e6d618c9e37586a9c3ee59ece096" kindref="member">setCameraInfo</ref>(camJ1,<sp/><sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref>(<sp/>0,<sp/>0,<sp/>500),<sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref>(<sp/>0,<sp/>0,<sp/>-1));</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ogreMgr-&gt;setViewportDimension(camJ1,<sp/>0,<sp/>0,<sp/>0.3,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::string<sp/>camJ2<sp/>=<sp/>&quot;CameraJugador2&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ogreMgr-&gt;createCamera(camJ2,<sp/>5,<sp/>10000,<sp/>true,1,<sp/>Ogre::ColourValue(0,<sp/>0,<sp/>0));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ogreMgr-&gt;setCameraInfo(camJ2,<sp/><sp/>Ogre::Vector3f(0,<sp/>300,<sp/>500),<sp/><sp/>Ogre::Vector3f(<sp/>0,<sp/>0,<sp/>-1));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ogreMgr-&gt;setViewportDimension(camJ2,<sp/>0.5,<sp/>0,<sp/>0.3,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1a1d03ebb0bd03b0ab64d8313e58f6ff43" kindref="member">createNewLight</ref>(</highlight><highlight class="stringliteral">&quot;Luz&quot;</highlight><highlight class="normal">,<sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref>(0,<sp/>500,<sp/>500),<sp/><sp/><ref refid="class_ogre_1_1_vector" kindref="compound">Ogre::Vector3f</ref>(0,<sp/>-1,<sp/>-1));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cubo<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Cubo&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1aacc79cca3a6fdb50ddaa1f5db77a3279" kindref="member">createMesh</ref>(cubo,<sp/></highlight><highlight class="stringliteral">&quot;cube.mesh&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1a9f4f2896ea0286162c8ea85670464166" kindref="member">setMeshMaterial</ref>(cubo,<sp/></highlight><highlight class="stringliteral">&quot;Material/roja&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ogreMgr-&gt;scene1();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ogreMgr-&gt;<ref refid="classme_1_1_render_manager_1a7b55b3550af4f044f269817de60bb3c6" kindref="member">render</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>a;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/Render/mainRender.cpp"/>
+  </compounddef>
+</doxygen>

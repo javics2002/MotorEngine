@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_u_i_element_8h" kind="file" language="C++">
+    <compoundname>UIElement.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includes refid="_component_8h" local="yes">Component.h</includes>
+    <includes refid="_vector3_8h" local="yes">Utils/Vector3.h</includes>
+    <includes refid="_vector2_8h" local="yes">Utils/Vector2.h</includes>
+    <includedby refid="_u_i_button_8h" local="yes">Src/EntityComponent/Components/UIButton.h</includedby>
+    <includedby refid="_u_i_container_8h" local="yes">Src/EntityComponent/Components/UIContainer.h</includedby>
+    <includedby refid="_u_i_element_8cpp" local="yes">Src/EntityComponent/Components/UIElement.cpp</includedby>
+    <includedby refid="_u_i_text_8cpp" local="yes">Src/EntityComponent/Components/UIText.cpp</includedby>
+    <includedby refid="_u_i_text_8h" local="yes">Src/EntityComponent/Components/UIText.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="7">
+        <label>Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>Src/EntityComponent/Components/UIButton.cpp</label>
+        <link refid="_u_i_button_8cpp"/>
+      </node>
+      <node id="2">
+        <label>Src/EntityComponent/Components/UIButton.h</label>
+        <link refid="_u_i_button_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/UIContainer.cpp</label>
+        <link refid="_u_i_container_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/UIContainer.h</label>
+        <link refid="_u_i_container_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Src/EntityComponent/Components/UIElement.cpp</label>
+        <link refid="_u_i_element_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Src/EntityComponent/Components/UIText.cpp</label>
+        <link refid="_u_i_text_8cpp"/>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_u_i_element" prot="public">me::UIElement</innerclass>
+    <innernamespace refid="namespace_ogre">Ogre</innernamespace>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_i_element_8h_1af8d5436047ecd9ec9f8c75a3f730baef" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_UIELEMENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/UIElement.h" line="3" column="9" bodyfile="Src/EntityComponent/Components/UIElement.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_UIELEMENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="_u_i_element_8h_1af8d5436047ecd9ec9f8c75a3f730baef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_UIELEMENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_component_8h" kindref="compound">Component.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector3_8h" kindref="compound">Utils/Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_vector2_8h" kindref="compound">Utils/Vector2.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ogre" kindref="compound">Ogre</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Overlay;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">OverlayContainer;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">OverlayManager;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classme_1_1_u_i_element" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_component" kindref="compound">Component</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element" kindref="compound">UIElement</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_u_i_element" kindref="compound">~UIElement</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>show();<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hide();<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>getSize();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>getPos();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setSize(<ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>size);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isVisible();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTop(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setLeft(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>wifth);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setHeight(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setInteractive(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>interactive);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setFocusNow(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>focus);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getIsInteractive();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getIsFocusNow();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::OverlayManager*<sp/><ref refid="classme_1_1_u_i_element_1afe299abe440f9f566df961d941073a50" kindref="member">mOverlayManager</ref>;</highlight></codeline>
+<codeline lineno="112" refid="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::Overlay*<sp/><ref refid="classme_1_1_u_i_element_1a05b5b96bde313d3703da74763f0abccb" kindref="member">mOverlay</ref>;</highlight></codeline>
+<codeline lineno="113" refid="classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::OverlayContainer*<sp/><ref refid="classme_1_1_u_i_element_1a2f9337d0a954f154b58624c0da550752" kindref="member">mOverlayContainer</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_element_1a9aaafa507fe4cb93a0fec14acdee629c" kindref="member">mInteractive</ref>;</highlight></codeline>
+<codeline lineno="116" refid="classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_u_i_element_1aec65df45e4258e4ffa4a0c8a36452cca" kindref="member">mFocus</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classme_1_1_u_i_element_1a65955e28ff0562b6d3e9452ed52d55d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mElems=0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!__EC_UI:ELEMENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/UIElement.h"/>
+  </compounddef>
+</doxygen>

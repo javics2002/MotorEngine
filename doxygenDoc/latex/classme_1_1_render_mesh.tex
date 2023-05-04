@@ -1,0 +1,135 @@
+\hypertarget{classme_1_1_render_mesh}{}\doxysection{me\+::Render\+Mesh Class Reference}
+\label{classme_1_1_render_mesh}\index{me::RenderMesh@{me::RenderMesh}}
+
+
+{\ttfamily \#include $<$Render\+Mesh.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_render_mesh_a54a4bf99c2243033a24bd16c5f909ee0}{Render\+Mesh}} (Ogre\+::\+Scene\+Node $\ast$node, std\+::string mesh\+Name)
+\item 
+\mbox{\hyperlink{classme_1_1_render_mesh_ae93ce9766eed4cd88f841c19ffe10595}{$\sim$\+Render\+Mesh}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_render_mesh_ac51564e410f50c8a79d0e03a9ccf3796}{set\+Transform}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&pos, const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&scale, const Ogre\+::\+Quaternion \&rot)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_mesh_a575c2ce1c6d49d58daf78a2dd6fec0e0}{set\+Position}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&pos)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_mesh_ab94e87bc5223c4ea558dedaa8c5992f8}{set\+Scale}} (const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&scale)
+\item 
+void \mbox{\hyperlink{classme_1_1_render_mesh_a1abef28d58cd023be4c8e986d14e8740}{set\+Rotation}} (Ogre\+::\+Quaternion rot)
+\item 
+Ogre\+::\+Entity $\ast$ \mbox{\hyperlink{classme_1_1_render_mesh_a10d529e7ca70d19e125ef595a88f68de}{get\+Ogre\+Entity}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_render_mesh_aa3b9991173b75a29da5d71b4f7b20a79}{set\+Material}} (std\+::string material\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ogre\+::\+Scene\+Node $\ast$ \mbox{\hyperlink{classme_1_1_render_mesh_a7b0503d0a84d1e528ea9c450ab48a0c1}{m\+Node}}
+\item 
+Ogre\+::\+Entity $\ast$ \mbox{\hyperlink{classme_1_1_render_mesh_a10ec5689b8d395b7a3313731a67530e5}{m\+Entity}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_render_mesh_a8ddfbdf2193533e71721139fd2332332}{m\+Mesh\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classme_1_1_render_mesh_ab3dc00d2951b2f5ee467f87b2810d460}{m\+Material\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_render_mesh_a54a4bf99c2243033a24bd16c5f909ee0}\label{classme_1_1_render_mesh_a54a4bf99c2243033a24bd16c5f909ee0}} 
+\index{me::RenderMesh@{me::RenderMesh}!RenderMesh@{RenderMesh}}
+\index{RenderMesh@{RenderMesh}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{RenderMesh()}{RenderMesh()}}
+{\footnotesize\ttfamily me\+::\+Render\+Mesh\+::\+Render\+Mesh (\begin{DoxyParamCaption}\item[{Ogre\+::\+Scene\+Node $\ast$}]{node,  }\item[{std\+::string}]{mesh\+Name }\end{DoxyParamCaption})}
+
+Assign information and create Ogre\+::\+Entity with the given mesh and attach to m\+Node 
+\begin{DoxyParams}{Parameters}
+{\em node} & m\+Node for attach Ogre\+::\+Entity created \\
+\hline
+{\em mesh\+Name} & name of resource (type mesh) that we used for create Ogre\+::\+Entity. Must be writted in resource.\+cfg (.mesh inside Zip or File\+System) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_render_mesh_ae93ce9766eed4cd88f841c19ffe10595}\label{classme_1_1_render_mesh_ae93ce9766eed4cd88f841c19ffe10595}} 
+\index{me::RenderMesh@{me::RenderMesh}!````~RenderMesh@{$\sim$RenderMesh}}
+\index{````~RenderMesh@{$\sim$RenderMesh}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$RenderMesh()}{~RenderMesh()}}
+{\footnotesize\ttfamily me\+::\+Render\+Mesh\+::$\sim$\+Render\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_render_mesh_a10d529e7ca70d19e125ef595a88f68de}\label{classme_1_1_render_mesh_a10d529e7ca70d19e125ef595a88f68de}} 
+\index{me::RenderMesh@{me::RenderMesh}!getOgreEntity@{getOgreEntity}}
+\index{getOgreEntity@{getOgreEntity}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{getOgreEntity()}{getOgreEntity()}}
+{\footnotesize\ttfamily Ogre\+::\+Entity $\ast$ me\+::\+Render\+Mesh\+::get\+Ogre\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the Ogre\+::\+Entity asociated \mbox{\Hypertarget{classme_1_1_render_mesh_aa3b9991173b75a29da5d71b4f7b20a79}\label{classme_1_1_render_mesh_aa3b9991173b75a29da5d71b4f7b20a79}} 
+\index{me::RenderMesh@{me::RenderMesh}!setMaterial@{setMaterial}}
+\index{setMaterial@{setMaterial}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{setMaterial()}{setMaterial()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Mesh\+::set\+Material (\begin{DoxyParamCaption}\item[{std\+::string}]{material\+Name }\end{DoxyParamCaption})}
+
+Assign material name to entity 
+\begin{DoxyParams}{Parameters}
+{\em material\+Name} & name of material that we used Must be writted in Material\+Resource.\+material \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_render_mesh_a575c2ce1c6d49d58daf78a2dd6fec0e0}\label{classme_1_1_render_mesh_a575c2ce1c6d49d58daf78a2dd6fec0e0}} 
+\index{me::RenderMesh@{me::RenderMesh}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Mesh\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_a1abef28d58cd023be4c8e986d14e8740}\label{classme_1_1_render_mesh_a1abef28d58cd023be4c8e986d14e8740}} 
+\index{me::RenderMesh@{me::RenderMesh}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Mesh\+::set\+Rotation (\begin{DoxyParamCaption}\item[{Ogre\+::\+Quaternion}]{rot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_ab94e87bc5223c4ea558dedaa8c5992f8}\label{classme_1_1_render_mesh_ab94e87bc5223c4ea558dedaa8c5992f8}} 
+\index{me::RenderMesh@{me::RenderMesh}!setScale@{setScale}}
+\index{setScale@{setScale}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Mesh\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_ac51564e410f50c8a79d0e03a9ccf3796}\label{classme_1_1_render_mesh_ac51564e410f50c8a79d0e03a9ccf3796}} 
+\index{me::RenderMesh@{me::RenderMesh}!setTransform@{setTransform}}
+\index{setTransform@{setTransform}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
+{\footnotesize\ttfamily void me\+::\+Render\+Mesh\+::set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{pos,  }\item[{const \mbox{\hyperlink{namespace_ogre_a8b4adeb18d1b0fcedea1b58bcbc67879}{Ogre\+::\+Vector3f}} \&}]{scale,  }\item[{const Ogre\+::\+Quaternion \&}]{rot }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_render_mesh_a10ec5689b8d395b7a3313731a67530e5}\label{classme_1_1_render_mesh_a10ec5689b8d395b7a3313731a67530e5}} 
+\index{me::RenderMesh@{me::RenderMesh}!mEntity@{mEntity}}
+\index{mEntity@{mEntity}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{mEntity}{mEntity}}
+{\footnotesize\ttfamily Ogre\+::\+Entity$\ast$ me\+::\+Render\+Mesh\+::m\+Entity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_ab3dc00d2951b2f5ee467f87b2810d460}\label{classme_1_1_render_mesh_ab3dc00d2951b2f5ee467f87b2810d460}} 
+\index{me::RenderMesh@{me::RenderMesh}!mMaterialName@{mMaterialName}}
+\index{mMaterialName@{mMaterialName}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{mMaterialName}{mMaterialName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Render\+Mesh\+::m\+Material\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_a8ddfbdf2193533e71721139fd2332332}\label{classme_1_1_render_mesh_a8ddfbdf2193533e71721139fd2332332}} 
+\index{me::RenderMesh@{me::RenderMesh}!mMeshName@{mMeshName}}
+\index{mMeshName@{mMeshName}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{mMeshName}{mMeshName}}
+{\footnotesize\ttfamily std\+::string me\+::\+Render\+Mesh\+::m\+Mesh\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_render_mesh_a7b0503d0a84d1e528ea9c450ab48a0c1}\label{classme_1_1_render_mesh_a7b0503d0a84d1e528ea9c450ab48a0c1}} 
+\index{me::RenderMesh@{me::RenderMesh}!mNode@{mNode}}
+\index{mNode@{mNode}!me::RenderMesh@{me::RenderMesh}}
+\doxysubsubsection{\texorpdfstring{mNode}{mNode}}
+{\footnotesize\ttfamily Ogre\+::\+Scene\+Node$\ast$ me\+::\+Render\+Mesh\+::m\+Node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Render/\mbox{\hyperlink{_render_mesh_8h}{Render\+Mesh.\+h}}\item 
+Src/\+Render/\mbox{\hyperlink{_render_mesh_8cpp}{Render\+Mesh.\+cpp}}\end{DoxyCompactItemize}

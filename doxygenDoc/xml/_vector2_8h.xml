@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_vector2_8h" kind="file" language="C++">
+    <compoundname>Vector2.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includedby refid="_u_i_container_8h" local="yes">Src/EntityComponent/Components/UIContainer.h</includedby>
+    <includedby refid="_u_i_element_8h" local="yes">Src/EntityComponent/Components/UIElement.h</includedby>
+    <includedby refid="_input_manager_8h" local="yes">Src/Input/InputManager.h</includedby>
+    <includedby refid="_vector2_8cpp" local="yes">Src/Utils/Vector2.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="1">
+        <label>Src/Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>Src/Audio/main.cpp</label>
+        <link refid="_audio_2main_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Src/EntityComponent/Components/UIButton.cpp</label>
+        <link refid="_u_i_button_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Components/UIButton.h</label>
+        <link refid="_u_i_button_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Components/UIContainer.cpp</label>
+        <link refid="_u_i_container_8cpp"/>
+      </node>
+      <node id="2">
+        <label>Src/EntityComponent/Components/UIContainer.h</label>
+        <link refid="_u_i_container_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Src/EntityComponent/Components/UIElement.cpp</label>
+        <link refid="_u_i_element_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Components/UIElement.h</label>
+        <link refid="_u_i_element_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/UIText.cpp</label>
+        <link refid="_u_i_text_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Src/EntityComponent/Components/UIText.h</label>
+        <link refid="_u_i_text_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Src/Input/InputManager.cpp</label>
+        <link refid="_input_manager_8cpp"/>
+      </node>
+      <node id="10">
+        <label>Src/Input/InputManager.h</label>
+        <link refid="_input_manager_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Src/MotorEngine/MotorEngine.cpp</label>
+        <link refid="_motor_engine_8cpp"/>
+      </node>
+      <node id="14">
+        <label>Src/Utils/Vector2.cpp</label>
+        <link refid="_vector2_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/Utils/Vector2.h</label>
+        <link refid="_vector2_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_vector2" prot="public">Vector2</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_vector2_8h_1a2725662c3f72aaed980f858f666c14f0" prot="public" static="no">
+        <name>__UTILS_VECTOR2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Utils/Vector2.h" line="5" column="9" bodyfile="Src/Utils/Vector2.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//TODO<sp/>Pasar<sp/>a<sp/>cpp!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__UTILS_VECTOR2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="_vector2_8h_1a2725662c3f72aaed980f858f666c14f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__UTILS_VECTOR2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_vector2" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lerp(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a<sp/>+<sp/>f<sp/>*<sp/>(b<sp/>-<sp/>a);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref><sp/>,<sp/>y;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_vector2_1a22104d1809be26a419ef1f959e3761bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2_1a22104d1809be26a419ef1f959e3761bf" kindref="member">Vector2</ref>()<sp/>{<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_vector2_1afdb8d87b3eae80e7330d6fc0bfdb2d00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2_1afdb8d87b3eae80e7330d6fc0bfdb2d00" kindref="member">Vector2</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>a;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>b;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_vector2_1a299d9e1cd67d3fb587f57170afab9741" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2_1a299d9e1cd67d3fb587f57170afab9741" kindref="member">Vector2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref>&amp;<sp/>v)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>v.<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>v.<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>operator+(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>operator-(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref>&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>operator*(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_vector2_1a8d571a2b35954247c869e30f753a59dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/><ref refid="class_vector2_1a8d571a2b35954247c869e30f753a59dd" kindref="member">lerp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref><sp/>b,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_vector2" kindref="compound">Vector2</ref>(<sp/>lerp(a.<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref>,<sp/>b.<ref refid="class_vector2_1a046bb8d17a876acc49415128dc0502f2" kindref="member">x</ref>,<sp/>f),<sp/>lerp(a.<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref>,<sp/>b.<ref refid="class_vector2_1a0e07bad05f01ed811b909a2eef97f9e2" kindref="member">y</ref>,<sp/>f));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/Utils/Vector2.h"/>
+  </compounddef>
+</doxygen>

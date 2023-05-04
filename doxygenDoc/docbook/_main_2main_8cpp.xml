@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__main_2main_8cpp" xml:lang="en-US">
+<title>Src/Main/main.cpp File Reference</title>
+<indexterm><primary>Src/Main/main.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;MotorEngine/MotorEngine.h&quot;<?linebreak?>#include &lt;Windows.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int WINAPI <link linkend="__main_2main_8cpp_1ae8c2438b496ad32454f200f3b5b28053">wWinMain</link> (HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__main_2main_8cpp_1ae8c2438b496ad32454f200f3b5b28053"/><section>
+    <title>wWinMain()</title>
+<indexterm><primary>wWinMain</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>wWinMain</secondary></indexterm>
+<para><computeroutput>int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)</computeroutput></para></section>
+</section>
+</section>

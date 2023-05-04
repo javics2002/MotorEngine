@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_components_factory_8h" kind="file" language="C++">
+    <compoundname>ComponentsFactory.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includes refid="_info_scene_8h" local="yes">EntityComponent/InfoScene.h</includes>
+    <includes refid="_singleton_8h" local="yes">Utils/Singleton.h</includes>
+    <includedby refid="_components_factory_8cpp" local="yes">Src/EntityComponent/Components/ComponentsFactory.cpp</includedby>
+    <includedby refid="_entity_8cpp" local="yes">Src/EntityComponent/Entity.cpp</includedby>
+    <includedby refid="_scene_8cpp" local="yes">Src/EntityComponent/Scene.cpp</includedby>
+    <includedby refid="_motor_engine_8cpp" local="yes">Src/MotorEngine/MotorEngine.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/EntityComponent/Components/ComponentsFactory.h</label>
+        <link refid="_components_factory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>EntityComponent/InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="6">
+        <label>Utils/Singleton.h</label>
+        <link refid="_singleton_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/EntityComponent/Components/ComponentsFactory.cpp</label>
+        <link refid="_components_factory_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/ComponentsFactory.h</label>
+        <link refid="_components_factory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Entity.cpp</label>
+        <link refid="_entity_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Src/MotorEngine/MotorEngine.cpp</label>
+        <link refid="_motor_engine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_components_factory" prot="public">me::ComponentsFactory</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_components_factory_8h_1a78604184c383734b5485353d2e2d8f06" prot="public" static="no">
+        <name>__ENTITYCOMPONENT_COMPONENTSFACTORY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/ComponentsFactory.h" line="3" column="9" bodyfile="Src/EntityComponent/Components/ComponentsFactory.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__ENTITYCOMPONENT_COMPONENTSFACTORY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="_components_factory_8h_1a78604184c383734b5485353d2e2d8f06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ENTITYCOMPONENT_COMPONENTSFACTORY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_info_scene_8h" kindref="compound">EntityComponent/InfoScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_singleton_8h" kindref="compound">Utils/Singleton.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Component;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">FactoryComponent;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classme_1_1_components_factory" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_components_factory" kindref="compound">ComponentsFactory</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_singleton" kindref="compound">Singleton</ref>&lt;ComponentsFactory&gt;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_singleton" kindref="compound">Singleton&lt;ComponentsFactory&gt;</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_components_factory" kindref="compound">ComponentsFactory</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;ComponentName,<sp/>FactoryComponent*&gt;<sp/>mFactories;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_components_factory" kindref="compound">~ComponentsFactory</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classme_1_1_component" kindref="compound">me::Component</ref>*<sp/>create(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>name,<sp/><ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref>&amp;<sp/>params);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addFactoryComponent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>&amp;<sp/>name,<sp/><ref refid="classme_1_1_factory_component" kindref="compound">FactoryComponent</ref>*<sp/>factoryComponent);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespaceme_1a2b2e5ee03fa025cbc18185e54c865b08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_components_factory" kindref="compound">ComponentsFactory</ref>&amp;<sp/><ref refid="namespaceme_1a2b2e5ee03fa025cbc18185e54c865b08" kindref="member">componentsFactory</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260" kindref="member">ComponentsFactory::instance</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/ComponentsFactory.h"/>
+  </compounddef>
+</doxygen>

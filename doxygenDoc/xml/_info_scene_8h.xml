@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_info_scene_8h" kind="file" language="C++">
+    <compoundname>InfoScene.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="_components_factory_8h" local="yes">Src/EntityComponent/Components/ComponentsFactory.h</includedby>
+    <includedby refid="_factory_component_8h" local="yes">Src/EntityComponent/Components/FactoryComponent.h</includedby>
+    <includedby refid="_entity_8h" local="yes">Src/EntityComponent/Entity.h</includedby>
+    <includedby refid="_scene_8h" local="yes">Src/EntityComponent/Scene.h</includedby>
+    <includedby refid="_scene_manager_8h" local="yes">Src/EntityComponent/SceneManager.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Src/EntityComponent/InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>Src/EntityComponent/Components/Animator.cpp</label>
+        <link refid="_animator_8cpp"/>
+      </node>
+      <node id="11">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+      </node>
+      <node id="12">
+        <label>Src/EntityComponent/Components/AudioSource.cpp</label>
+        <link refid="_audio_source_8cpp"/>
+      </node>
+      <node id="13">
+        <label>Src/EntityComponent/Components/Camera.cpp</label>
+        <link refid="_camera_8cpp"/>
+      </node>
+      <node id="14">
+        <label>Src/EntityComponent/Components/Collider.cpp</label>
+        <link refid="_collider_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Src/EntityComponent/Components/ComponentsFactory.cpp</label>
+        <link refid="_components_factory_8cpp"/>
+      </node>
+      <node id="2">
+        <label>Src/EntityComponent/Components/ComponentsFactory.h</label>
+        <link refid="_components_factory_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Src/EntityComponent/Components/FactoryComponent.cpp</label>
+        <link refid="_factory_component_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Src/EntityComponent/Components/FactoryComponent.h</label>
+        <link refid="_factory_component_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Src/EntityComponent/Components/MeshRenderer.cpp</label>
+        <link refid="_mesh_renderer_8cpp"/>
+      </node>
+      <node id="16">
+        <label>Src/EntityComponent/Components/ParticleSystem.cpp</label>
+        <link refid="_particle_system_8cpp"/>
+      </node>
+      <node id="17">
+        <label>Src/EntityComponent/Components/RigidBody.cpp</label>
+        <link refid="_rigid_body_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Src/EntityComponent/Entity.cpp</label>
+        <link refid="_entity_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Src/EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Src/EntityComponent/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="18">
+        <label>Src/EntityComponent/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Src/EntityComponent/SceneManager.h</label>
+        <link refid="_scene_manager_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Src/EntityComponent/Scenemanager.cpp</label>
+        <link refid="_scenemanager_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Src/MotorEngine/MotorEngine.cpp</label>
+        <link refid="_motor_engine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceme">me</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="6" refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3" kindref="member">SceneName</ref>,<sp/><ref refid="namespaceme_1a4549e57e933271d021f2d5b4cd46c84e" kindref="member">EntityName</ref>,<sp/><ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>,<sp/><ref refid="namespaceme_1ad830450629248f34d5ce0ae49268edfa" kindref="member">ParameterName</ref>,<sp/><ref refid="namespaceme_1af4a83244dc6e4b5613ed7bf9fd99835e" kindref="member">ParameterValue</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::unordered_map&lt;ParameterName,<sp/>ParameterValue&gt;<sp/><ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref>;</highlight></codeline>
+<codeline lineno="9" refid="namespaceme_1a3260d136024bb5071741250cf4a832fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::unordered_map&lt;ComponentName,<sp/>Parameters&gt;<sp/><ref refid="namespaceme_1a3260d136024bb5071741250cf4a832fb" kindref="member">InfoEntity</ref>;</highlight></codeline>
+<codeline lineno="10" refid="namespaceme_1a37719813e3fb0545c6e4b9165b9215c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::unordered_map&lt;EntityName,<sp/>InfoEntity&gt;<sp/><ref refid="namespaceme_1a37719813e3fb0545c6e4b9165b9215c1" kindref="member">InfoScene</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/InfoScene.h"/>
+  </compounddef>
+</doxygen>

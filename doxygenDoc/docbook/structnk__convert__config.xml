@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__convert__config" xml:lang="en-US">
+<title>nk_convert_config Struct Reference</title>
+<indexterm><primary>nk_convert_config</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_structnk__convert__config_1ad344c555b0c1ce0a07dded48860ceb00">global_alpha</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a9b070460af54cd26421eb7d000956f38">nk_anti_aliasing</link> <link linkend="_structnk__convert__config_1a7279543367b1ad0e5f183491233cedad">line_AA</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a9b070460af54cd26421eb7d000956f38">nk_anti_aliasing</link> <link linkend="_structnk__convert__config_1a1d0cf3e01234c636729dfd0fddf5b2c7">shape_AA</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__convert__config_1ae62d641bf9c5bc6b3e66c6071f4a8267">circle_segment_count</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__convert__config_1ae367d812c2f866e843f9684b3a920e73">arc_segment_count</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__convert__config_1afcf45f3fc6e3f043b572b59cb04424c5">curve_segment_count</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__draw__null__texture">nk_draw_null_texture</link> <link linkend="_structnk__convert__config_1afe7d1907a295a3db7bbb11e3f0f98c1e">tex_null</link></para>
+</listitem>
+            <listitem><para>const struct nk_draw_vertex_layout_element * <link linkend="_structnk__convert__config_1addeb894f54f2ba1dbe3d5bf887b27776">vertex_layout</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__convert__config_1acf0d9e08220c6e29ee9d2753f9273591">vertex_size</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> <link linkend="_structnk__convert__config_1a92519fe62ef0e8f0d7180dbd874c775f">vertex_alignment</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__convert__config_1ae367d812c2f866e843f9684b3a920e73"/><section>
+    <title>arc_segment_count</title>
+<indexterm><primary>arc_segment_count</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>arc_segment_count</secondary></indexterm>
+<para><computeroutput>unsigned nk_convert_config::arc_segment_count</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1ae62d641bf9c5bc6b3e66c6071f4a8267"/><section>
+    <title>circle_segment_count</title>
+<indexterm><primary>circle_segment_count</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>circle_segment_count</secondary></indexterm>
+<para><computeroutput>unsigned nk_convert_config::circle_segment_count</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1afcf45f3fc6e3f043b572b59cb04424c5"/><section>
+    <title>curve_segment_count</title>
+<indexterm><primary>curve_segment_count</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>curve_segment_count</secondary></indexterm>
+<para><computeroutput>unsigned nk_convert_config::curve_segment_count</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1ad344c555b0c1ce0a07dded48860ceb00"/><section>
+    <title>global_alpha</title>
+<indexterm><primary>global_alpha</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>global_alpha</secondary></indexterm>
+<para><computeroutput>float nk_convert_config::global_alpha</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1a7279543367b1ad0e5f183491233cedad"/><section>
+    <title>line_AA</title>
+<indexterm><primary>line_AA</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>line_AA</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a9b070460af54cd26421eb7d000956f38">nk_anti_aliasing</link> nk_convert_config::line_AA</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1a1d0cf3e01234c636729dfd0fddf5b2c7"/><section>
+    <title>shape_AA</title>
+<indexterm><primary>shape_AA</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>shape_AA</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a9b070460af54cd26421eb7d000956f38">nk_anti_aliasing</link> nk_convert_config::shape_AA</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1afe7d1907a295a3db7bbb11e3f0f98c1e"/><section>
+    <title>tex_null</title>
+<indexterm><primary>tex_null</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>tex_null</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__draw__null__texture">nk_draw_null_texture</link> nk_convert_config::tex_null</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1a92519fe62ef0e8f0d7180dbd874c775f"/><section>
+    <title>vertex_alignment</title>
+<indexterm><primary>vertex_alignment</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>vertex_alignment</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_convert_config::vertex_alignment</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1addeb894f54f2ba1dbe3d5bf887b27776"/><section>
+    <title>vertex_layout</title>
+<indexterm><primary>vertex_layout</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>vertex_layout</secondary></indexterm>
+<para><computeroutput>const struct nk_draw_vertex_layout_element* nk_convert_config::vertex_layout</computeroutput></para></section>
+<anchor xml:id="_structnk__convert__config_1acf0d9e08220c6e29ee9d2753f9273591"/><section>
+    <title>vertex_size</title>
+<indexterm><primary>vertex_size</primary><secondary>nk_convert_config</secondary></indexterm>
+<indexterm><primary>nk_convert_config</primary><secondary>vertex_size</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c">nk_size</link> nk_convert_config::vertex_size</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

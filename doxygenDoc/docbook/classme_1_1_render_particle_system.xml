@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classme_1_1_render_particle_system" xml:lang="en-US">
+<title>me::RenderParticleSystem Class Reference</title>
+<indexterm><primary>me::RenderParticleSystem</primary></indexterm>
+<para>
+<computeroutput>#include &lt;RenderParticleSystem.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classme_1_1_render_particle_system_1a7476ff81dce12d8e290b318fe3c93ade">RenderParticleSystem</link> (std::string name, Ogre::SceneNode *node, std::string particleName)</para>
+</listitem>
+            <listitem><para><link linkend="_classme_1_1_render_particle_system_1a52367e48754ed4851a549a86c2e736fe">~RenderParticleSystem</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_particle_system_1a2fd2e75217b300276d26dda3eb363055">setTransform</link> (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;scale, const Ogre::Quaternion &amp;rot)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_particle_system_1a2ed5c951a5539924b6b35af71cdf49df">setPosition</link> (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;pos)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_particle_system_1ad079289c01d88d9cf3dc0d33f1a16b08">setScale</link> (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp;scale)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_particle_system_1aab701145965a7af4d6575dcc6ab8909f">setRotation</link> (Ogre::Quaternion rot)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classme_1_1_render_particle_system_1ab7829db65bb81cb788d1c29165af6f95">setEmitting</link> (bool emitted)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Ogre::SceneNode * <link linkend="_classme_1_1_render_particle_system_1ac7327f2a7285ac9f0b7b954ff8dffb7a">mNode</link></para>
+</listitem>
+            <listitem><para>Ogre::ParticleSystem * <link linkend="_classme_1_1_render_particle_system_1abc88985e53ee47372ebb533257b5b6c1">mParticleSystem</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_particle_system_1a4a5cf2e7cfc429e376d11409c472313d">mParticleName</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classme_1_1_render_particle_system_1a2511162d295cf2c89d0745b559663516">mName</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classme_1_1_render_particle_system_1a7476ff81dce12d8e290b318fe3c93ade"/><section>
+    <title>RenderParticleSystem()</title>
+<indexterm><primary>RenderParticleSystem</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>RenderParticleSystem</secondary></indexterm>
+<para><computeroutput>me::RenderParticleSystem::RenderParticleSystem (std::string name, Ogre::SceneNode * node, std::string particleName)</computeroutput></para>
+<para>Assign information and create Ogre::ParticleSystem with the given mesh and attach to mNode 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>name for particle system </para>
+</entry>
+                            </row>
+                            <row>
+<entry>node</entry><entry>
+<para>mNode for attach Ogre::ParticleSystem created </para>
+</entry>
+                            </row>
+                            <row>
+<entry>meshName</entry><entry>
+<para>name of resource (type mesh) that we used for create Ogre::Entity. Must be writted in resource.cfg (.mesh inside Zip or FileSystem) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classme_1_1_render_particle_system_1a52367e48754ed4851a549a86c2e736fe"/><section>
+    <title>~RenderParticleSystem()</title>
+<indexterm><primary>~RenderParticleSystem</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>~RenderParticleSystem</secondary></indexterm>
+<para><computeroutput>me::RenderParticleSystem::~RenderParticleSystem ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classme_1_1_render_particle_system_1ab7829db65bb81cb788d1c29165af6f95"/><section>
+    <title>setEmitting()</title>
+<indexterm><primary>setEmitting</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>setEmitting</secondary></indexterm>
+<para><computeroutput>void me::RenderParticleSystem::setEmitting (bool emitted)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1a2ed5c951a5539924b6b35af71cdf49df"/><section>
+    <title>setPosition()</title>
+<indexterm><primary>setPosition</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>setPosition</secondary></indexterm>
+<para><computeroutput>void me::RenderParticleSystem::setPosition (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; pos)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1aab701145965a7af4d6575dcc6ab8909f"/><section>
+    <title>setRotation()</title>
+<indexterm><primary>setRotation</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>setRotation</secondary></indexterm>
+<para><computeroutput>void me::RenderParticleSystem::setRotation (Ogre::Quaternion rot)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1ad079289c01d88d9cf3dc0d33f1a16b08"/><section>
+    <title>setScale()</title>
+<indexterm><primary>setScale</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>setScale</secondary></indexterm>
+<para><computeroutput>void me::RenderParticleSystem::setScale (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; scale)</computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1a2fd2e75217b300276d26dda3eb363055"/><section>
+    <title>setTransform()</title>
+<indexterm><primary>setTransform</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>setTransform</secondary></indexterm>
+<para><computeroutput>void me::RenderParticleSystem::setTransform (const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; pos, const <link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Ogre::Vector3f</link> &amp; scale, const Ogre::Quaternion &amp; rot)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classme_1_1_render_particle_system_1a2511162d295cf2c89d0745b559663516"/><section>
+    <title>mName</title>
+<indexterm><primary>mName</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>mName</secondary></indexterm>
+<para><computeroutput>std::string me::RenderParticleSystem::mName<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1ac7327f2a7285ac9f0b7b954ff8dffb7a"/><section>
+    <title>mNode</title>
+<indexterm><primary>mNode</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>mNode</secondary></indexterm>
+<para><computeroutput>Ogre::SceneNode* me::RenderParticleSystem::mNode<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1a4a5cf2e7cfc429e376d11409c472313d"/><section>
+    <title>mParticleName</title>
+<indexterm><primary>mParticleName</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>mParticleName</secondary></indexterm>
+<para><computeroutput>std::string me::RenderParticleSystem::mParticleName<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classme_1_1_render_particle_system_1abc88985e53ee47372ebb533257b5b6c1"/><section>
+    <title>mParticleSystem</title>
+<indexterm><primary>mParticleSystem</primary><secondary>me::RenderParticleSystem</secondary></indexterm>
+<indexterm><primary>me::RenderParticleSystem</primary><secondary>mParticleSystem</secondary></indexterm>
+<para><computeroutput>Ogre::ParticleSystem* me::RenderParticleSystem::mParticleSystem<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Src/Render/<link linkend="__render_particle_system_8h">RenderParticleSystem.h</link>Src/Render/<link linkend="__render_particle_system_8cpp">RenderParticleSystem.cpp</link></section>
+</section>

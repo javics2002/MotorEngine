@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_manager_8h_source" xml:lang="en-US">
+<title>RenderManager.h</title>
+<indexterm><primary>Src/Render/RenderManager.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__RENDER_MANAGER</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__RENDER_MANAGER</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__singleton_8h">Utils/Singleton.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;unordered_map&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;OgreColourValue.h&gt;</emphasis>
+10 
+11 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Root;
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderWindow;
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>FileSystemLayer;
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>SceneManager;
+16 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>SceneNode;
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Quaternion;
+18 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>ColourValue;
+19 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>AnimationState;
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Entity;
+21 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;dism,&#32;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector;
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;Vector&lt;3,&#32;float&gt;&#32;<link linkend="_namespace_ogre_1a8b4adeb18d1b0fcedea1b58bcbc67879">Vector3f</link>;
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>RTShader&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>ShaderGenerator;
+27 &#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>TextAreaOverlayElement;
+29 }
+30 
+31 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderWindow;
+34 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderCamera;
+35 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderMesh;
+36 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderParticleSystem;
+37 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>SGTechniqueResolverListener;
+38 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>OverlayManager;
+39 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector3;
+40 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Vector4;
+47 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton</link>&lt;RenderManager&gt;&#32;{
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classme_1_1_singleton">Singleton&lt;RenderManager&gt;</link>;
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>();
+53 
+54 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+55 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Root&#32;de&#32;Ogre</emphasis>
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Root*&#32;<link linkend="_classme_1_1_render_manager_1a576a756c04044763622b72c4b7e6e408">mRoot</link>;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//SceneManager&#32;de&#32;Ogre</emphasis>
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneManager*&#32;mSM&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>;
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;TEMPORAL&#32;VALUE&#32;FOR&#32;ANIMATION&#32;HITO1</emphasis>
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::AnimationState*&#32;<link linkend="_classme_1_1_render_manager_1a29da0fdf6dcdbb47720d300688a43ecf">ogreAnimState</link>;
+63 
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_render_manager_1a317bc83673486fbea07f73c5c1204ddc">mResourceCfgPath</link>;
+74 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_render_manager_1a7d869efc48f5f6c524ff99abb74a460b">mPluginCfgPath</link>;
+82 
+83 
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;OverlayManager*&#32;<link linkend="_classme_1_1_render_manager_1ab2a905f7d6c2aad56c8069f983df346c">mOverlayManager</link>;
+85 
+86 
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_render_manager_1ada59f65deb076e29c41816b7e28a1ebb">mOgreCfgPath</link>;
+93 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Ogre&#32;fileSystem</emphasis>
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::FileSystemLayer*&#32;<link linkend="_classme_1_1_render_manager_1ad8430f766674f86c92404dfc32fc19da">mFSLayer</link>;
+96 
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Ogre&#32;ShaderGenerator</emphasis>
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::RTShader::ShaderGenerator*&#32;<link linkend="_classme_1_1_render_manager_1a860b0a5af9a7f30d2c38fb5e09c7011a">mShaderGenerator</link>;
+99 
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Ogre&#32;Material&#32;Manager&#32;Listener</emphasis>
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_s_g_technique_resolver_listener">SGTechniqueResolverListener</link>*&#32;<link linkend="_classme_1_1_render_manager_1a23ad00e18700c36aac44b597525af289">mMaterialMgrListener</link>;
+102 
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Path&#32;pointing&#32;to&#32;&quot;/Main/x64/debug&quot;</emphasis>
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_render_manager_1aac24973efc5fb20e2a3f4b6d484dea82">mSolutionPath</link>;
+105 
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;RenderWindow&#32;class</emphasis>
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_window">RenderWindow</link>*&#32;<link linkend="_classme_1_1_render_manager_1a87ae76e5b7a96184679e7973bba7ef75">mOgreWindow</link>;
+108 
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Store&#32;camera&#32;name&#32;to&#32;ogreCamera</emphasis>
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;RenderCamera*&gt;&#32;<link linkend="_classme_1_1_render_manager_1ab9321ec98f6b4b3d3e8bff1c0a44e6e3">mCameras</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Pairs&#32;each&#32;cameras&#32;with&#32;its&#32;name</emphasis>
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Store&#32;mesh&#32;name&#32;to&#32;ogreMesh</emphasis>
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;RenderMesh*&gt;&#32;<link linkend="_classme_1_1_render_manager_1a67cc796cabfa82831eb2e85fd92a1f94">mMeshes</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Pairs&#32;each&#32;mesh&#32;with&#32;its&#32;name</emphasis>
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Store&#32;mesh&#32;name&#32;to&#32;ogreParticleSystem</emphasis>
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;RenderParticleSystem*&gt;&#32;<link linkend="_classme_1_1_render_manager_1a6dbe72bad91d0c42c98c3ad3e0098369">mParticles</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Pairs&#32;each&#32;mesh&#32;with&#32;its&#32;name</emphasis>
+118 <emphasis role="comment"></emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;initRoot();
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;initWindow();
+123 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+125 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Find&#32;mResourcePath&#32;and&#32;add&#32;all&#32;written&#32;resources&#32;to&#32;Ogre::ResourceGroupManager</emphasis>
+126 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;locateResources();
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;loadResources();
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;initialiseRTShaderSystem();
+136 
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_camera">RenderCamera</link>*&#32;getCamera(std::string&#32;name);
+143 
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_mesh">RenderMesh</link>*&#32;getMesh(std::string&#32;name);
+150 
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_particle_system">RenderParticleSystem</link>*&#32;getParticle(std::string&#32;name);
+157 
+158 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>&amp;<link linkend="_classme_1_1_render_manager_1a9d9d473840134f9d316ed90af0b503d9">operator=</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>&amp;o)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_manager_1a7fc7bb82c0ea308eaf15bac7420abf1d">RenderManager</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>&amp;o)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_manager">~RenderManager</link>()&#32;<emphasis role="keyword">override</emphasis>;
+162 
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createCamera(std::string&#32;name,&#32;std::string&#32;parentName,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nearDist,&#32;<emphasis role="keywordtype">int</emphasis>&#32;farDist,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;autoRadio,&#32;<emphasis role="keywordtype">int</emphasis>&#32;zOrder,&#32;Ogre::ColourValue&#32;color&#32;=&#32;Ogre::ColourValue(0,&#32;0,&#32;0,&#32;1));
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//bool&#32;createCamera(std::string&#32;name,&#32;int&#32;nearDist,&#32;int&#32;farDist,&#32;bool&#32;autoRadio,&#32;int&#32;zOrder,&#32;Ogre::ColourValue&#32;color);</emphasis>
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createCamera(std::string&#32;name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nearDist,&#32;<emphasis role="keywordtype">int</emphasis>&#32;farDist,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;autoRadio,&#32;<emphasis role="keywordtype">int</emphasis>&#32;zOrder,&#32;Ogre::ColourValue&#32;color&#32;=&#32;Ogre::ColourValue(0,&#32;0,&#32;0,&#32;1));
+189 
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setCameraInfo(std::string&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;pos,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;look);
+199 
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setViewportDimension(std::string&#32;name,&#32;<emphasis role="keywordtype">float</emphasis>&#32;left,&#32;<emphasis role="keywordtype">float</emphasis>&#32;top,&#32;<emphasis role="keywordtype">float</emphasis>&#32;width,&#32;<emphasis role="keywordtype">float</emphasis>&#32;height);
+211 
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//destroy&#32;OgreCamera&#32;created&#32;</emphasis>
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;destroyCamera(std::string&#32;name);
+214 
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;createNewLight(std::string&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;pos,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_ogre_1_1_vector">Ogre::Vector3f</link>&#32;&amp;dir);
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createMesh(std::string&#32;name,&#32;std::string&#32;nameMesh);
+231 
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshTransform(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale);
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshTransform(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale,&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&#32;rot);
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;position&#32;info&#32;to&#32;the&#32;mesh&#32;with&#32;this&#32;name</emphasis>
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshPosition(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos);
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;scale&#32;info&#32;to&#32;the&#32;mesh&#32;with&#32;this&#32;name</emphasis>
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshScale(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale);
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;rotation&#32;info&#32;to&#32;the&#32;mesh&#32;with&#32;this&#32;name</emphasis>
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshRotation(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&#32;rot);
+248 
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;material&#32;to&#32;the&#32;mesh&#32;with&#32;this&#32;name</emphasis>
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setMeshMaterial(std::string&#32;name,&#32;std::string&#32;nameMaterial);
+251 
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//destroy&#32;OgreMesh&#32;created&#32;</emphasis>
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;destroyMesh(std::string&#32;name);
+254 
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;createParticle(std::string&#32;name,&#32;std::string&#32;nameMesh);
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticleTransform(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale);
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticleTransform(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale,&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&#32;rot);
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;position&#32;info&#32;to&#32;the&#32;particle&#32;with&#32;this&#32;name</emphasis>
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticlePosition(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;pos);
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;scale&#32;info&#32;to&#32;the&#32;particle&#32;with&#32;this&#32;name</emphasis>
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticleScale(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector3">Vector3</link>&#32;scale);
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;rotation&#32;info&#32;to&#32;the&#32;particle&#32;with&#32;this&#32;name</emphasis>
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticleRotation(std::string&#32;name,&#32;<link linkend="_classme_1_1_vector4">Vector4</link>&#32;rot);
+279 
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;emitting&#32;state&#32;to&#32;the&#32;particle&#32;with&#32;this&#32;name</emphasis>
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;setParticleEmitting(std::string&#32;name,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;emitted);
+282 
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneNode*&#32;createNode(std::string&#32;name);
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneNode*&#32;createChildNode(std::string&#32;name,&#32;std::string&#32;parent);
+295 
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_window">RenderWindow</link>*&#32;getOgreWindow();
+301 
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneNode*&#32;getRootSceneNode();
+307 
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;scene1();
+312 
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;render();
+317 
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::Entity*&#32;getOgreEntity(std::string&#32;name);
+322 
+323 
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Text&#32;UI</emphasis>
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::TextAreaOverlayElement*&#32;createOverlayElement();
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*Getter&#32;for&#32;scene&#32;manager</emphasis>
+327 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::SceneManager*&#32;getSceneManager();
+329 
+330 
+331 &#32;&#32;&#32;&#32;};
+332 
+337 &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<link linkend="_classme_1_1_render_manager">RenderManager</link>&amp;&#32;<link linkend="_namespaceme_1af8da8de4d9ebcdaa653b23af353b5edc">renderManager</link>()&#32;{
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<link linkend="_classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260">RenderManager::instance</link>();
+339 &#32;&#32;&#32;&#32;}
+340 
+341 }
+342 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

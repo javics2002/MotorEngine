@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__collider_8h_source" xml:lang="en-US">
+<title>Collider.h</title>
+<indexterm><primary>Src/EntityComponent/Components/Collider.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__EC_COLLIDER</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__EC_COLLIDER</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__component_8h">Component.h</link>&quot;</emphasis>
+6 
+7 <emphasis role="keyword">class&#32;</emphasis>Entity;
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>{
+10 
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_collider">Collider</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classme_1_1_component">Component</link>
+13 &#32;&#32;&#32;&#32;{
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_collider">Collider</link>();
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classme_1_1_collider">~Collider</link>();
+17 
+18 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;onCollisionEnter(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+24 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;onCollisionStay(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+30 
+31 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;onCollisionExit(<link linkend="_classme_1_1_entity">Entity</link>*&#32;other);
+37 
+38 &#32;&#32;&#32;&#32;};
+39 }
+40 
+41 <emphasis role="preprocessor">#endif&#32;</emphasis>
+42 
+43 
+</programlisting></section>

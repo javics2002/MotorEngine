@@ -1,0 +1,71 @@
+.TH "me::ComponentsFactory" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::ComponentsFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ComponentsFactory\&.h>\fP
+.PP
+Inherits \fBme::Singleton< ComponentsFactory >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~ComponentsFactory\fP ()"
+.br
+.ti -1c
+.RI "\fBme::Component\fP * \fBcreate\fP (const \fBComponentName\fP &name, \fBParameters\fP &params)"
+.br
+.ti -1c
+.RI "void \fBaddFactoryComponent\fP (const \fBComponentName\fP &name, \fBFactoryComponent\fP *factoryComponent)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Singleton< ComponentsFactory >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP (const \fBSingleton\fP< \fBComponentsFactory\fP > &o)=delete"
+.br
+.ti -1c
+.RI "\fBSingleton\fP< \fBComponentsFactory\fP > & \fBoperator=\fP (const \fBSingleton\fP< \fBComponentsFactory\fP > &o)=delete"
+.br
+.ti -1c
+.RI "virtual \fB~Singleton\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBme::Singleton< ComponentsFactory >\fP
+.in +1c
+.ti -1c
+.RI "static \fBComponentsFactory\fP * \fBinit\fP (Targs &&\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "static \fBComponentsFactory\fP * \fBinstance\fP ()"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBme::Singleton< ComponentsFactory >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::ComponentsFactory::~ComponentsFactory ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ComponentsFactory::addFactoryComponent (const \fBComponentName\fP & name, \fBFactoryComponent\fP * factoryComponent)"
+
+.SS "\fBme::Component\fP * ComponentsFactory::create (const \fBComponentName\fP & name, \fBParameters\fP & params)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

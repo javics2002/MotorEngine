@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__popup__buffer" kind="struct" language="C++" prot="public">
+    <compoundname>nk_popup_buffer</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__popup__buffer_1ae93e42070c567aa61352d9c832496c77" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_popup_buffer::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <qualifiedname>nk_popup_buffer::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5149" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__popup__buffer_1aff97e8d18ec464a77bf28be1b9f54bf7" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_popup_buffer::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <qualifiedname>nk_popup_buffer::parent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5150" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__popup__buffer_1ab4c3e21e03a4428e92d375efe384add0" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_popup_buffer::last</definition>
+        <argsstring></argsstring>
+        <name>last</name>
+        <qualifiedname>nk_popup_buffer::last</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5151" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__popup__buffer_1a630c901d09e64b5945e5a9c760153496" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a84c0fc50dec5501be327b33d41d9010c" kindref="member">nk_size</ref></type>
+        <definition>nk_size nk_popup_buffer::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>nk_popup_buffer::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5152" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__popup__buffer_1abc02c29d11327aac9e056d9b00c694e3" prot="public" static="no" mutable="no">
+        <type><ref refid="nuklear_8h_1a2322feace91bf83046a9f8c4ea466a56" kindref="member">nk_bool</ref></type>
+        <definition>nk_bool nk_popup_buffer::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>nk_popup_buffer::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5153" column="13" bodyfile="Src/GUI/nuklear.h" bodystart="5153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="5148" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5148" bodyend="5154"/>
+    <listofallmembers>
+      <member refid="structnk__popup__buffer_1abc02c29d11327aac9e056d9b00c694e3" prot="public" virt="non-virtual"><scope>nk_popup_buffer</scope><name>active</name></member>
+      <member refid="structnk__popup__buffer_1ae93e42070c567aa61352d9c832496c77" prot="public" virt="non-virtual"><scope>nk_popup_buffer</scope><name>begin</name></member>
+      <member refid="structnk__popup__buffer_1a630c901d09e64b5945e5a9c760153496" prot="public" virt="non-virtual"><scope>nk_popup_buffer</scope><name>end</name></member>
+      <member refid="structnk__popup__buffer_1ab4c3e21e03a4428e92d375efe384add0" prot="public" virt="non-virtual"><scope>nk_popup_buffer</scope><name>last</name></member>
+      <member refid="structnk__popup__buffer_1aff97e8d18ec464a77bf28be1b9f54bf7" prot="public" virt="non-virtual"><scope>nk_popup_buffer</scope><name>parent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

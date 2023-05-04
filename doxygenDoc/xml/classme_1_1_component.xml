@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_component" kind="class" language="C++" prot="public">
+    <compoundname>me::Component</compoundname>
+    <derivedcompoundref refid="classme_1_1_animator" prot="public" virt="non-virtual">me::Animator</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_audio_listener" prot="public" virt="non-virtual">me::AudioListener</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_audio_source" prot="public" virt="non-virtual">me::AudioSource</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_camera" prot="public" virt="non-virtual">me::Camera</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_collider" prot="public" virt="non-virtual">me::Collider</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_mesh_renderer" prot="public" virt="non-virtual">me::MeshRenderer</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_particle_system" prot="public" virt="non-virtual">me::ParticleSystem</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_rigid_body" prot="public" virt="non-virtual">me::RigidBody</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_transform" prot="public" virt="non-virtual">me::Transform</derivedcompoundref>
+    <derivedcompoundref refid="classme_1_1_u_i_element" prot="public" virt="non-virtual">me::UIElement</derivedcompoundref>
+    <includes refid="_component_8h" local="no">Component.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::Component::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <qualifiedname>me::Component::enabled</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="20" column="6" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" static="no" mutable="no">
+        <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity* me::Component::mEntity</definition>
+        <argsstring></argsstring>
+        <name>mEntity</name>
+        <qualifiedname>me::Component::mEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="82" column="8" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::Component::Component</definition>
+        <argsstring>()</argsstring>
+        <name>Component</name>
+        <qualifiedname>me::Component::Component</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build the foundation of the <ref refid="classme_1_1_component" kindref="compound">Component</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="25" column="1" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="5" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>me::Component::~Component</definition>
+        <argsstring>()</argsstring>
+        <name>~Component</name>
+        <qualifiedname>me::Component::~Component</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be the definition of the dynamic memory that has to be safely delete. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="31" column="9" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::Component::setEntity</definition>
+        <argsstring>(Entity *e)</argsstring>
+        <name>setEntity</name>
+        <qualifiedname>me::Component::setEntity</qualifiedname>
+        <param>
+          <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the associated entity to the component. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classme_1_1_entity" kindref="compound">Entity</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to which it belongs.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This method is meant to be use at the same time as start, because it&apos;s not recomended to switch the entity at execution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="40" column="13" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity * me::Component::getEntity</definition>
+        <argsstring>()</argsstring>
+        <name>getEntity</name>
+        <qualifiedname>me::Component::getEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the entity associated reference. <simplesect kind="return"><para>Reference to the entity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="48" column="15" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>me::Component::start</qualifiedname>
+        <reimplementedby refid="classme_1_1_audio_source_1a6cb047e546b01f5778498fa2f6e147ec">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_audio_listener_1a485bf45b15c51f3df9dbf74f0c29c752">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_camera_1a733c8cf61120248beaa21cca6e2af3f1">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_particle_system_1aae4f5e2597b60eb13806ede0320fed6d">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_rigid_body_1afc256e6a0acfc8403a63c6f88e7251e7">start</reimplementedby>
+        <reimplementedby refid="classme_1_1_transform_1a242704f2581d1654cc9562932f93aa2d">start</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is only ever called once. This must be called at the instantiation of the script. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="56" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>me::Component::update</qualifiedname>
+        <reimplementedby refid="classme_1_1_audio_listener_1a3f65a826158724f9794acd03da97ddc2">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_audio_source_1a99c56d61c5defa32953f822a5084265e">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_animator_1a59b9903253d8ce084048f7600e956735">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_camera_1ad64b448ab73a9d402a22b212d321ad53">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_particle_system_1ae9553e4244f97cc49c4f44b08096bb4d">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_rigid_body_1ace166d0417a107651406a821071a827a">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_transform_1ac2193262cc8056821b757d7d9c39bb2c">update</reimplementedby>
+        <reimplementedby refid="classme_1_1_u_i_button_1a6f23eed6a44e48a048b8f27dc5833e02">update</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be the definition of those updates that has to be processed at the begining of the game cycle.</para>
+<para>Almost all the logic updates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="65" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::lateUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>lateUpdate</name>
+        <qualifiedname>me::Component::lateUpdate</qualifiedname>
+        <reimplementedby refid="classme_1_1_rigid_body_1a1a617e3d268a641f57710f5067375b15">lateUpdate</reimplementedby>
+        <reimplementedby refid="classme_1_1_transform_1a9fd9779d2848c6f1ac0bf3c3aac08b52">lateUpdate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be the definition of those updates that has to be processed at the end of the game cycle.</para>
+<para>For example: render and collisions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="74" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::OnCollisionEnter</definition>
+        <argsstring>(Entity *other)</argsstring>
+        <name>OnCollisionEnter</name>
+        <qualifiedname>me::Component::OnCollisionEnter</qualifiedname>
+        <param>
+          <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="77" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::OnCollisionStay</definition>
+        <argsstring>(Entity *other)</argsstring>
+        <name>OnCollisionStay</name>
+        <qualifiedname>me::Component::OnCollisionStay</qualifiedname>
+        <param>
+          <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="78" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::Component::OnCollisionExit</definition>
+        <argsstring>(Entity *other)</argsstring>
+        <name>OnCollisionExit</name>
+        <qualifiedname>me::Component::OnCollisionExit</qualifiedname>
+        <param>
+          <type><ref refid="classme_1_1_entity" kindref="compound">Entity</ref> *</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/Component.h" line="79" column="14" bodyfile="Src/EntityComponent/Components/Component.cpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>me::Animator</label>
+        <link refid="classme_1_1_animator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>me::AudioListener</label>
+        <link refid="classme_1_1_audio_listener"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>me::AudioSource</label>
+        <link refid="classme_1_1_audio_source"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>me::Camera</label>
+        <link refid="classme_1_1_camera"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>me::Collider</label>
+        <link refid="classme_1_1_collider"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+      </node>
+      <node id="7">
+        <label>me::MeshRenderer</label>
+        <link refid="classme_1_1_mesh_renderer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>me::ParticleSystem</label>
+        <link refid="classme_1_1_particle_system"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>me::RigidBody</label>
+        <link refid="classme_1_1_rigid_body"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>me::Transform</label>
+        <link refid="classme_1_1_transform"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>me::UIButton</label>
+        <link refid="classme_1_1_u_i_button"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>me::UIContainer</label>
+        <link refid="classme_1_1_u_i_container"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>me::UIElement</label>
+        <link refid="classme_1_1_u_i_element"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>me::UIText</label>
+        <link refid="classme_1_1_u_i_text"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/Component.h" line="17" column="1" bodyfile="Src/EntityComponent/Components/Component.h" bodystart="17" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" virt="non-virtual"><scope>me::Component</scope><name>Component</name></member>
+      <member refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" virt="non-virtual"><scope>me::Component</scope><name>enabled</name></member>
+      <member refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" virt="non-virtual"><scope>me::Component</scope><name>getEntity</name></member>
+      <member refid="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" virt="virtual"><scope>me::Component</scope><name>lateUpdate</name></member>
+      <member refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" virt="non-virtual"><scope>me::Component</scope><name>mEntity</name></member>
+      <member refid="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" virt="virtual"><scope>me::Component</scope><name>OnCollisionEnter</name></member>
+      <member refid="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" virt="virtual"><scope>me::Component</scope><name>OnCollisionExit</name></member>
+      <member refid="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" virt="virtual"><scope>me::Component</scope><name>OnCollisionStay</name></member>
+      <member refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" virt="non-virtual"><scope>me::Component</scope><name>setEntity</name></member>
+      <member refid="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae" prot="public" virt="virtual"><scope>me::Component</scope><name>start</name></member>
+      <member refid="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1" prot="public" virt="virtual"><scope>me::Component</scope><name>update</name></member>
+      <member refid="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" virt="virtual"><scope>me::Component</scope><name>~Component</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

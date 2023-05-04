@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style" xml:lang="en-US">
+<title>nk_style Struct Reference</title>
+<indexterm><primary>nk_style</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const struct <link linkend="_structnk__user__font">nk_user_font</link> * <link linkend="_structnk__style_1aab136e535cc1d11d40e8b2fd18060c5d">font</link></para>
+</listitem>
+            <listitem><para>const struct <link linkend="_structnk__cursor">nk_cursor</link> * <link linkend="_structnk__style_1aba31682e1e6dba96e52fcbdb750be34c">cursors</link> [<link linkend="_nuklear_8h_1ac83d70db962be55fde890e491d190213a87299462a55125531df5f9aa8c99fadf">NK_CURSOR_COUNT</link>]</para>
+</listitem>
+            <listitem><para>const struct <link linkend="_structnk__cursor">nk_cursor</link> * <link linkend="_structnk__style_1ac9b1221879c981b2afc829e819aaee5a">cursor_active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__cursor">nk_cursor</link> * <link linkend="_structnk__style_1a90fbf5f270f36ec466bef6a0591fb37b">cursor_last</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structnk__style_1a9ee1b418ab830430d317d9a4e06f4f98">cursor_visible</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__text">nk_style_text</link> <link linkend="_structnk__style_1a3a84db8a7418bf259f60be1d10bd54ed">text</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style_1a42b97653cc5b81ff97432e40fdf47026">button</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style_1a22d7362fed90d872bca7e51c3281d10b">contextual_button</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style_1af26de9bbb7b4c8a9bd3e722ae41b6433">menu_button</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__toggle">nk_style_toggle</link> <link linkend="_structnk__style_1a12e31b1eff50ff00fc327325ce6cd7f9">option</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__toggle">nk_style_toggle</link> <link linkend="_structnk__style_1af3bd1c9f26bcdc34deeea5afe005b4ee">checkbox</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__selectable">nk_style_selectable</link> <link linkend="_structnk__style_1a7c05a97b375483b83cedf51932334357">selectable</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__slider">nk_style_slider</link> <link linkend="_structnk__style_1ac3f3abfee5be6a0fa96f8cbf0c63d77e">slider</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__progress">nk_style_progress</link> <link linkend="_structnk__style_1a8064c6b388f735cff32d4951c6156c9a">progress</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__property">nk_style_property</link> <link linkend="_structnk__style_1a6af2c48298dd1c358751c70c59b91924">property</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__edit">nk_style_edit</link> <link linkend="_structnk__style_1a2e6872e44b048d5e562994b0f9acc4eb">edit</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__chart">nk_style_chart</link> <link linkend="_structnk__style_1a61bfb1b8d07189d9ba529c666e42e886">chart</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__scrollbar">nk_style_scrollbar</link> <link linkend="_structnk__style_1a3ba589ca868f99b7dfcffce8e788c7a9">scrollh</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__scrollbar">nk_style_scrollbar</link> <link linkend="_structnk__style_1a11ec083ec9db3bdb607dd9fb74eac901">scrollv</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__tab">nk_style_tab</link> <link linkend="_structnk__style_1a50ba7d1509135829d80fe1448cbff2b1">tab</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__combo">nk_style_combo</link> <link linkend="_structnk__style_1ae206fbbb12d966b970cf291ca54e43ac">combo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__window">nk_style_window</link> <link linkend="_structnk__style_1abab238d75bb12b1270171909a9b3e21a">window</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style_1a42b97653cc5b81ff97432e40fdf47026"/><section>
+    <title>button</title>
+<indexterm><primary>button</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style::button</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a61bfb1b8d07189d9ba529c666e42e886"/><section>
+    <title>chart</title>
+<indexterm><primary>chart</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>chart</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__chart">nk_style_chart</link> nk_style::chart</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1af3bd1c9f26bcdc34deeea5afe005b4ee"/><section>
+    <title>checkbox</title>
+<indexterm><primary>checkbox</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>checkbox</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__toggle">nk_style_toggle</link> nk_style::checkbox</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1ae206fbbb12d966b970cf291ca54e43ac"/><section>
+    <title>combo</title>
+<indexterm><primary>combo</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>combo</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__combo">nk_style_combo</link> nk_style::combo</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a22d7362fed90d872bca7e51c3281d10b"/><section>
+    <title>contextual_button</title>
+<indexterm><primary>contextual_button</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>contextual_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style::contextual_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1ac9b1221879c981b2afc829e819aaee5a"/><section>
+    <title>cursor_active</title>
+<indexterm><primary>cursor_active</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>cursor_active</secondary></indexterm>
+<para><computeroutput>const struct <link linkend="_structnk__cursor">nk_cursor</link>* nk_style::cursor_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a90fbf5f270f36ec466bef6a0591fb37b"/><section>
+    <title>cursor_last</title>
+<indexterm><primary>cursor_last</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>cursor_last</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__cursor">nk_cursor</link>* nk_style::cursor_last</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a9ee1b418ab830430d317d9a4e06f4f98"/><section>
+    <title>cursor_visible</title>
+<indexterm><primary>cursor_visible</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>cursor_visible</secondary></indexterm>
+<para><computeroutput>int nk_style::cursor_visible</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1aba31682e1e6dba96e52fcbdb750be34c"/><section>
+    <title>cursors</title>
+<indexterm><primary>cursors</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>cursors</secondary></indexterm>
+<para><computeroutput>const struct <link linkend="_structnk__cursor">nk_cursor</link>* nk_style::cursors[<link linkend="_nuklear_8h_1ac83d70db962be55fde890e491d190213a87299462a55125531df5f9aa8c99fadf">NK_CURSOR_COUNT</link>]</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a2e6872e44b048d5e562994b0f9acc4eb"/><section>
+    <title>edit</title>
+<indexterm><primary>edit</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>edit</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__edit">nk_style_edit</link> nk_style::edit</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1aab136e535cc1d11d40e8b2fd18060c5d"/><section>
+    <title>font</title>
+<indexterm><primary>font</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>font</secondary></indexterm>
+<para><computeroutput>const struct <link linkend="_structnk__user__font">nk_user_font</link>* nk_style::font</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1af26de9bbb7b4c8a9bd3e722ae41b6433"/><section>
+    <title>menu_button</title>
+<indexterm><primary>menu_button</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>menu_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style::menu_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a12e31b1eff50ff00fc327325ce6cd7f9"/><section>
+    <title>option</title>
+<indexterm><primary>option</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>option</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__toggle">nk_style_toggle</link> nk_style::option</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a8064c6b388f735cff32d4951c6156c9a"/><section>
+    <title>progress</title>
+<indexterm><primary>progress</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>progress</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__progress">nk_style_progress</link> nk_style::progress</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a6af2c48298dd1c358751c70c59b91924"/><section>
+    <title>property</title>
+<indexterm><primary>property</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>property</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__property">nk_style_property</link> nk_style::property</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a3ba589ca868f99b7dfcffce8e788c7a9"/><section>
+    <title>scrollh</title>
+<indexterm><primary>scrollh</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>scrollh</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__scrollbar">nk_style_scrollbar</link> nk_style::scrollh</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a11ec083ec9db3bdb607dd9fb74eac901"/><section>
+    <title>scrollv</title>
+<indexterm><primary>scrollv</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>scrollv</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__scrollbar">nk_style_scrollbar</link> nk_style::scrollv</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a7c05a97b375483b83cedf51932334357"/><section>
+    <title>selectable</title>
+<indexterm><primary>selectable</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>selectable</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__selectable">nk_style_selectable</link> nk_style::selectable</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1ac3f3abfee5be6a0fa96f8cbf0c63d77e"/><section>
+    <title>slider</title>
+<indexterm><primary>slider</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>slider</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__slider">nk_style_slider</link> nk_style::slider</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a50ba7d1509135829d80fe1448cbff2b1"/><section>
+    <title>tab</title>
+<indexterm><primary>tab</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>tab</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__tab">nk_style_tab</link> nk_style::tab</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1a3a84db8a7418bf259f60be1d10bd54ed"/><section>
+    <title>text</title>
+<indexterm><primary>text</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>text</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__text">nk_style_text</link> nk_style::text</computeroutput></para></section>
+<anchor xml:id="_structnk__style_1abab238d75bb12b1270171909a9b3e21a"/><section>
+    <title>window</title>
+<indexterm><primary>window</primary><secondary>nk_style</secondary></indexterm>
+<indexterm><primary>nk_style</primary><secondary>window</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__window">nk_style_window</link> nk_style::window</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

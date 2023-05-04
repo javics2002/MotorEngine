@@ -9,11 +9,15 @@ for any behavior designed as a component.
 #define __ENTITYCOMPONENT_COMPONENT
 
 #include "MotorEngine/MotorEngineAPI.h"
+#include <string>
 
 namespace me {
-
 	class Entity;
 
+	/**
+	Components define Entities behaviour by defining
+	start and update methods.
+	*/
 	class __MOTORENGINE_API Component {
 	public:
 
@@ -37,17 +41,13 @@ namespace me {
 		This method is meant to be use at the same time as start,
 		because it's not recomended to switch the entity at execution.
 		*/
-		inline void setEntity(Entity* e) {
-			mEntity = e;
-		};
+		void setEntity(Entity* e);
 
 		/**
 		Get the entity associated reference.
 		@return Reference to the entity.
 		*/
-		inline Entity* getEntity() {
-			return mEntity;
-		};
+		Entity* getEntity();
 
 		/**
 		This method is only ever called once.
@@ -61,8 +61,10 @@ namespace me {
 		at the begining of the game cycle.
 
 		Almost all the logic updates.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		virtual void update();
+		virtual void update(const double& dt);
 
 		/**
 		This method is meant to be the definition 
@@ -70,18 +72,29 @@ namespace me {
 		at the end of the game cycle.
 
 		For example: render and collisions.
+
+		@param dt Seconds that have passed since last update.
 		*/
-		virtual void lateUpdate();
+		virtual void lateUpdate(const double& dt);
 
-
-		virtual void OnCollisionEnter(Entity* other);
-		virtual void OnCollisionStay(Entity* other);
-		virtual void OnCollisionExit(Entity* other);
+		/**
+		Executed when a collision starts.
+		@param other Entity that collides with this entity.
+		*/
+		virtual void onCollisionEnter(Entity* other);
+		/**
+		Executed when a collision starts and every frame it lasts.
+		@param other Entity that collides with this entity.
+		*/
+		virtual void onCollisionStay(Entity* other);
+		/**
+		Executed when a collision ends.
+		@param other Entity that collides with this entity.
+		*/
+		virtual void onCollisionExit(Entity* other);
 
 	protected:
 		Entity* mEntity;
-
-		// TODO: Identificar cada componente con un nombre
 	};
 };
 

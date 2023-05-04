@@ -4,20 +4,9 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
-#include "DebugDrawer.h"
 
-enum Shapes {
-	SHAPES_SPHERE,
-	SHAPES_BOX,
-	SHAPES_CYLINDER,
-	SHAPES_CAPSULE
-};
-
-enum MovementType {
-	MOVEMENT_TYPE_DYNAMIC,
-	MOVEMENT_TYPE_STATIC,
-	MOVEMENT_TYPE_KINEMATIC
-};
+#include "PhysicsEnums.h"
+#include <vector>
 
 class btDiscreteDynamicsWorld;
 class btRigidBody;
@@ -31,15 +20,18 @@ class btDefaultMotionState;
 class btDispatcher;
 class btBroadphaseInterface;
 class btCollisionConfiguration;
+class btVector3;
+class btTransform;
 
 
 namespace me {
+	class DebugDrawer;
 
-	class __MOTORENGINE_API PhysicsManager: public Singleton<PhysicsManager>
+	/**
+	PhysicsManager manages physics using Bullet Engine.
+	*/
+	class __MOTORENGINE_API PhysicsManager : public Singleton<PhysicsManager>
 	{
-
-	private:
-
 		friend Singleton<PhysicsManager>;
 
 		PhysicsManager();
@@ -55,12 +47,15 @@ namespace me {
 
 		DebugDrawer* mDebug;
 
-	public:
+		std::vector<btCollisionShape*>	mCollisionShapes;
 
+	public:
 		/**
-		Destructor for the PhysicsManager class. TO DO.
+		Destructor for the PhysicsManager class.
 		*/
 		~PhysicsManager();
+
+		void destroyRigidBody(btRigidBody* rb);
 
 		/**
 		Initializes a default collision configuration,
@@ -74,7 +69,7 @@ namespace me {
 
 		@param rigidBody A pointer to the btRigidBody to add to the dynamics world.
 		*/
-		void addRigidBody(btRigidBody* rigidBody);
+		void addRigidBody(btRigidBody* rigidBody, int group, int mask);
 
 		/**
 		Adds a vehicle to the dynamics world. The vehicle will be subject to physical forces
@@ -91,7 +86,7 @@ namespace me {
 		@param scale indicates the scale of transform
 		@param size indicates the size of transform
 		*/
-		btCollisionShape* createShape(Shapes shape, const btVector3 &scale);
+		btCollisionShape* createShape(Shapes shape, const btVector3 &scale, const btVector3 &colliderScale);
 
 		/*
 		Create and add a rigidbody to the dynamic world
@@ -106,17 +101,24 @@ namespace me {
 		@param mass mass of the object
 		@param restitution restitution of the object
 		*/
-		btRigidBody*createRigidBody(btTransform *transform, const btVector3 &scale, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
+		btRigidBody* createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
+			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
-		void update(const float& dt);
+		/**
+		Simulate the physics world every. If maxSubSteps > 0, it will interpolate motion between fixedTimeStep's.
+		@param timeStep deltaTime, or time since last frame
+		@param maxSubsteps maximum substeps of this frame
+		@param fixedTimeStep Interpolation time between substeps
+		*/
+		void update(const double& timeStep, int maxSubsteps = 1, const double& fixedTimeStep = 1 / 60.0);
 	};
 
 	/**
 	This macro defines a compact way for using the singleton PhysicsManager, instead of
-	writing InputHandler::instance()->method() we write ih().method()
+	writing PhysicsManager::instance()->method() we write physicsManager().method()
 	*/
 	inline PhysicsManager& physicsManager() {
-		return *PhysicsManager::instance();
+		return *PhysicsManager::Instance();
 	}
 
 }

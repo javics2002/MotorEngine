@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_audio_listener_8cpp" kind="file" language="C++">
+    <compoundname>AudioListener.cpp</compoundname>
+    <includes refid="_audio_listener_8h" local="yes">AudioListener.h</includes>
+    <includes refid="_sound_manager_8h" local="yes">Audio/SoundManager.h</includes>
+    <includes refid="_entity_8h" local="yes">EntityComponent/Entity.h</includes>
+    <includes refid="_transform_8h" local="yes">Transform.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Audio/SoundManager.h</label>
+        <link refid="_sound_manager_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/EntityComponent/Components/AudioListener.cpp</label>
+        <link refid="_audio_listener_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AudioListener.h</label>
+        <link refid="_audio_listener_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Component.h</label>
+        <link refid="_component_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Transform.h</label>
+        <link refid="_transform_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>EntityComponent/Entity.h</label>
+        <link refid="_entity_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>InfoScene.h</label>
+        <link refid="_info_scene_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="9">
+        <label>Utils/Singleton.h</label>
+        <link refid="_singleton_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Utils/Vector3.h</label>
+        <link refid="_vector3_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Utils/Vector4.h</label>
+        <link refid="_vector4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>algorithm</label>
+      </node>
+      <node id="8">
+        <label>cctype</label>
+      </node>
+      <node id="13">
+        <label>cmath</label>
+      </node>
+      <node id="21">
+        <label>list</label>
+      </node>
+      <node id="18">
+        <label>map</label>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_audio_listener_8h" kindref="compound">AudioListener.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sound_manager_8h" kindref="compound">Audio/SoundManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_entity_8h" kindref="compound">EntityComponent/Entity.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_transform_8h" kindref="compound">Transform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="classme_1_1_audio_listener_1ac46f31591f718ea724ae9fbd75cf4f76" kindref="member">me::AudioListener::AudioListener</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="classme_1_1_audio_listener_1a07e6b50bc69b9c45ff42b6c1064455eb" kindref="member">me::AudioListener::~AudioListener</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" kindref="member">soundManager</ref>().<ref refid="classme_1_1_sound_manager_1afff7f6e5fd095e3a411f106b3d74f078" kindref="member">removeListener</ref>(mListenerIndex);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_audio_listener_1a485bf45b15c51f3df9dbf74f0c29c752" kindref="member">me::AudioListener::start</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>next<sp/>available<sp/>index<sp/>for<sp/>a<sp/>listener<sp/>in<sp/>the<sp/>sound<sp/>manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>mListenerIndex<sp/>=<sp/><ref refid="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" kindref="member">soundManager</ref>().<ref refid="classme_1_1_sound_manager_1ac6f3c6ec6995394ede2e7217ec7fe160" kindref="member">getNextUsefulListenerIndex</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mListenerIndex<sp/>=<sp/>-1)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>Listeners<sp/>vector<sp/>is<sp/>full\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_audio_listener_1a3f65a826158724f9794acd03da97ddc2" kindref="member">me::AudioListener::update</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3<sp/>position<sp/>=<sp/>mEntity-&gt;getComponent&lt;Transform&gt;(</highlight><highlight class="stringliteral">&quot;transform&quot;</highlight><highlight class="normal">)-&gt;getPosition();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>the<sp/>position<sp/>of<sp/>the<sp/>audio<sp/>listener<sp/>in<sp/>the<sp/>sound<sp/>manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" kindref="member">soundManager</ref>().<ref refid="classme_1_1_sound_manager_1af78cde6c156326cec930337d6f886a1c" kindref="member">updateListenersPosition</ref>(mListenerIndex,<sp/>{<sp/>position.x,position.y,position.z<sp/>},<sp/>{<sp/>0,0,1<sp/>},<sp/>{0,1,0});</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Src/EntityComponent/Components/AudioListener.cpp"/>
+  </compounddef>
+</doxygen>

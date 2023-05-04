@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__popup__state" xml:lang="en-US">
+<title>nk_popup_state Struct Reference</title>
+<indexterm><primary>nk_popup_state</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__window">nk_window</link> * <link linkend="_structnk__popup__state_1acce72ab5fd41fd54edf84d2a7915619c">win</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1ae2eaaeccb136c68814c17bbc71496b99">nk_panel_type</link> <link linkend="_structnk__popup__state_1af50698b4abee20445ffdd61584ed9740">type</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__popup__buffer">nk_popup_buffer</link> <link linkend="_structnk__popup__state_1a74261b023275e19b075c6db1dab8905b">buf</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> <link linkend="_structnk__popup__state_1aabf4437be5882c80a3a290bc5240bc68">name</link></para>
+</listitem>
+            <listitem><para><link linkend="_nuklear_8h_1a2322feace91bf83046a9f8c4ea466a56">nk_bool</link> <link linkend="_structnk__popup__state_1a73945da4ad8bd905f3f42442312ab2f4">active</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__popup__state_1aa3c1aaa75caa20b7bb8b2506aceb45ab">combo_count</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__popup__state_1ae2a49af137226e5994d10e2e33729aa6">con_count</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__popup__state_1a5e6aef37a114b6d08184ff087d2d80e2">con_old</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_structnk__popup__state_1af670e7c6e45a92e369dc54e7b7321f78">active_con</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__rect">nk_rect</link> <link linkend="_structnk__popup__state_1a340e6ee6435224189edae0010a8bff37">header</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__popup__state_1a73945da4ad8bd905f3f42442312ab2f4"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>active</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2322feace91bf83046a9f8c4ea466a56">nk_bool</link> nk_popup_state::active</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1af670e7c6e45a92e369dc54e7b7321f78"/><section>
+    <title>active_con</title>
+<indexterm><primary>active_con</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>active_con</secondary></indexterm>
+<para><computeroutput>unsigned nk_popup_state::active_con</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1a74261b023275e19b075c6db1dab8905b"/><section>
+    <title>buf</title>
+<indexterm><primary>buf</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>buf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__popup__buffer">nk_popup_buffer</link> nk_popup_state::buf</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1aa3c1aaa75caa20b7bb8b2506aceb45ab"/><section>
+    <title>combo_count</title>
+<indexterm><primary>combo_count</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>combo_count</secondary></indexterm>
+<para><computeroutput>unsigned nk_popup_state::combo_count</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1ae2a49af137226e5994d10e2e33729aa6"/><section>
+    <title>con_count</title>
+<indexterm><primary>con_count</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>con_count</secondary></indexterm>
+<para><computeroutput>unsigned nk_popup_state::con_count</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1a5e6aef37a114b6d08184ff087d2d80e2"/><section>
+    <title>con_old</title>
+<indexterm><primary>con_old</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>con_old</secondary></indexterm>
+<para><computeroutput>unsigned nk_popup_state::con_old</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1a340e6ee6435224189edae0010a8bff37"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__rect">nk_rect</link> nk_popup_state::header</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1aabf4437be5882c80a3a290bc5240bc68"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>name</secondary></indexterm>
+<para><computeroutput><link linkend="_nuklear_8h_1a2123e2728db7d1f136b57d6528a0d757">nk_hash</link> nk_popup_state::name</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1af50698b4abee20445ffdd61584ed9740"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1ae2eaaeccb136c68814c17bbc71496b99">nk_panel_type</link> nk_popup_state::type</computeroutput></para></section>
+<anchor xml:id="_structnk__popup__state_1acce72ab5fd41fd54edf84d2a7915619c"/><section>
+    <title>win</title>
+<indexterm><primary>win</primary><secondary>nk_popup_state</secondary></indexterm>
+<indexterm><primary>nk_popup_state</primary><secondary>win</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__window">nk_window</link>* nk_popup_state::win</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

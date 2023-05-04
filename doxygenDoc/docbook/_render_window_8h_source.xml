@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_window_8h_source" xml:lang="en-US">
+<title>RenderWindow.h</title>
+<indexterm><primary>Src/Render/RenderWindow.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__RENDER_RENDERWINDOW</emphasis>
+3 <emphasis role="preprocessor">#define&#32;__RENDER_RENDERWINDOW</emphasis>
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__motor_engine_a_p_i_8h">MotorEngine/MotorEngineAPI.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+7 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;<link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>;
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ogre">Ogre</link>&#32;{
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>Root;
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>RenderWindow;
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>FileSystemLayer;
+13 }
+14 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespaceme">me</link>&#32;{
+15 
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="__motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219">__MOTORENGINE_API</link>&#32;<link linkend="_classme_1_1_render_window">RenderWindow</link>&#32;{
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//name&#32;to&#32;display&#32;on&#32;the&#32;window&#32;created</emphasis>
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;<link linkend="_classme_1_1_render_window_1a54eeb4f08222f44ef0aa31a8a4796f93">mWindowName</link>;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;SDL&#32;window&#32;created</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>*&#32;mSdlWindow&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>;
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Reference&#32;to&#32;the&#32;Ogre::Render&#32;window&#32;created</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::RenderWindow*&#32;mRenderWindow&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>;
+30 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;createWindow(Ogre::Root*&#32;root);
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Set&#32;a&#32;window&#32;input&apos;s&#32;grab&#32;mode</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setWindowGrab(<emphasis role="keywordtype">bool</emphasis>&#32;_grab);
+40 
+41 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Store&#32;windowName</emphasis>
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_window">RenderWindow</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;windowName);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classme_1_1_render_window">~RenderWindow</link>();
+45 
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;init(Ogre::Root*&#32;root);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//return&#32;Ogre::Render&#32;window&#32;of&#32;linked&#32;window</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Ogre::RenderWindow*&#32;getRenderWindow();
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//return&#32;SDL&#32;window&#32;of&#32;linked&#32;window</emphasis>
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__render_window_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>*&#32;getSdlWindow();
+55 
+56 
+57 &#32;&#32;&#32;&#32;};
+58 
+59 
+60 
+61 
+62 
+63 }
+64 
+65 
+66 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

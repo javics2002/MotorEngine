@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_s_g_technique_resolver_listener_8h" kind="file" language="C++">
+    <compoundname>SGTechniqueResolverListener.h</compoundname>
+    <includes refid="_motor_engine_a_p_i_8h" local="yes">MotorEngine/MotorEngineAPI.h</includes>
+    <includes local="yes">OgreRTShaderSystem.h</includes>
+    <includes local="yes">OgreMaterialManager.h</includes>
+    <includedby refid="_render_manager_8cpp" local="yes">Src/Render/RenderManager.cpp</includedby>
+    <includedby refid="_s_g_technique_resolver_listener_8cpp" local="yes">Src/Render/SGTechniqueResolverListener.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>MotorEngine/MotorEngineAPI.h</label>
+        <link refid="_motor_engine_a_p_i_8h"/>
+      </node>
+      <node id="1">
+        <label>Src/Render/SGTechniqueResolverListener.h</label>
+        <link refid="_s_g_technique_resolver_listener_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OgreMaterialManager.h</label>
+      </node>
+      <node id="3">
+        <label>OgreRTShaderSystem.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Src/Render/RenderManager.cpp</label>
+        <link refid="_render_manager_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Src/Render/SGTechniqueResolverListener.cpp</label>
+        <link refid="_s_g_technique_resolver_listener_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Src/Render/SGTechniqueResolverListener.h</label>
+        <link refid="_s_g_technique_resolver_listener_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classme_1_1_s_g_technique_resolver_listener" prot="public">me::SGTechniqueResolverListener</innerclass>
+    <innernamespace refid="namespaceme">me</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_g_technique_resolver_listener_8h_1ae6d54be200cecb5cd7d675aa0a585078" prot="public" static="no">
+        <name>__RENDER_SGTECHNIQUERESOLVERLISTENER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/SGTechniqueResolverListener.h" line="4" column="9" bodyfile="Src/Render/SGTechniqueResolverListener.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__RENDER_SGTECHNIQUERESOLVERLISTENER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="_s_g_technique_resolver_listener_8h_1ae6d54be200cecb5cd7d675aa0a585078" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__RENDER_SGTECHNIQUERESOLVERLISTENER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_motor_engine_a_p_i_8h" kindref="compound">MotorEngine/MotorEngineAPI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;OgreRTShaderSystem.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;OgreMaterialManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceme" kindref="compound">me</ref><sp/>{</highlight></codeline>
+<codeline lineno="16" refid="classme_1_1_s_g_technique_resolver_listener" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_motor_engine_a_p_i_8h_1ae7d210fc6a9598f82960577024307219" kindref="member">__MOTORENGINE_API</ref><sp/><ref refid="classme_1_1_s_g_technique_resolver_listener" kindref="compound">SGTechniqueResolverListener</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Ogre::MaterialManager::Listener<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classme_1_1_s_g_technique_resolver_listener" kindref="compound">SGTechniqueResolverListener</ref>(Ogre::RTShader::ShaderGenerator*<sp/>pShaderGenerator);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::Technique*<sp/>handleSchemeNotFound(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>schemeIndex,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ogre::String<sp/>&amp;schemeName,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::Material*<sp/>originalMaterial,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>lodIndex,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ogre::Renderable*<sp/>rend)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>afterIlluminationPassesCreated(Ogre::Technique*<sp/>tech)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>beforeIlluminationPassesCleared(Ogre::Technique*<sp/>tech)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>shader<sp/>generator<sp/>instance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classme_1_1_s_g_technique_resolver_listener_1a91f6b1c04aa719d64755b6db5a22ceb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ogre::RTShader::ShaderGenerator*<sp/><ref refid="classme_1_1_s_g_technique_resolver_listener_1a91f6b1c04aa719d64755b6db5a22ceb5" kindref="member">mShaderGenerator</ref>;<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Src/Render/SGTechniqueResolverListener.h"/>
+  </compounddef>
+</doxygen>

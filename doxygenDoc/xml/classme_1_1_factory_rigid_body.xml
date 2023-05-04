@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_factory_rigid_body" kind="class" language="C++" prot="public">
+    <compoundname>me::FactoryRigidBody</compoundname>
+    <basecompoundref refid="classme_1_1_factory_component" prot="public" virt="non-virtual">me::FactoryComponent</basecompoundref>
+    <includes refid="_factory_component_8h" local="no">FactoryComponent.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_factory_rigid_body_1ac4649e941f35106db5e4cc49e7b76acc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classme_1_1_component" kindref="compound">me::Component</ref> *</type>
+        <definition>me::Component * me::FactoryRigidBody::create</definition>
+        <argsstring>(Parameters params)</argsstring>
+        <name>create</name>
+        <qualifiedname>me::FactoryRigidBody::create</qualifiedname>
+        <reimplements refid="classme_1_1_factory_component_1a4e2dd5c566003c4c846ec968d494d094">create</reimplements>
+        <param>
+          <type><ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref></type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/FactoryComponent.h" line="68" column="15" bodyfile="Src/EntityComponent/Components/FactoryComponent.cpp" bodystart="127" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>me::FactoryComponent</label>
+        <link refid="classme_1_1_factory_component"/>
+      </node>
+      <node id="1">
+        <label>me::FactoryRigidBody</label>
+        <link refid="classme_1_1_factory_rigid_body"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>me::FactoryComponent</label>
+        <link refid="classme_1_1_factory_component"/>
+      </node>
+      <node id="1">
+        <label>me::FactoryRigidBody</label>
+        <link refid="classme_1_1_factory_rigid_body"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/FactoryComponent.h" line="66" column="1" bodyfile="Src/EntityComponent/Components/FactoryComponent.h" bodystart="66" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classme_1_1_factory_rigid_body_1ac4649e941f35106db5e4cc49e7b76acc" prot="public" virt="virtual"><scope>me::FactoryRigidBody</scope><name>create</name></member>
+      <member refid="classme_1_1_factory_component_1a494ea3a746bc7e6e127f9fff8731a41e" prot="protected" virt="non-virtual"><scope>me::FactoryRigidBody</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a5a017735ff95dcab5d1e49706e9ec4a6" prot="protected" virt="non-virtual"><scope>me::FactoryRigidBody</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a49176230fa6a8e59c3cb7be92cb3bbe2" prot="protected" virt="non-virtual"><scope>me::FactoryRigidBody</scope><name>value</name></member>
+      <member refid="classme_1_1_factory_component_1a0a1ce0b3cc6055b37efcf80beaf9a626" prot="protected" virt="non-virtual"><scope>me::FactoryRigidBody</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

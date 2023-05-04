@@ -4,8 +4,17 @@
 #define __RENDER_SGTECHNIQUERESOLVERLISTENER
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "OgreRTShaderSystem.h"
 #include "OgreMaterialManager.h"
+
+namespace Ogre {
+    class Technique;
+    class Material;
+    class Renderable;
+
+    namespace RTShader {
+        class ShaderGenerator;
+    }
+}
 
 namespace me {
     /**

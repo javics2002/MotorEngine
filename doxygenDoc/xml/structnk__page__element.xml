@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structnk__page__element" kind="struct" language="C++" prot="public">
+    <compoundname>nk_page_element</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnk__page__element_1a073b1fa427f3f6ca81ea5bb95783199f" prot="public" static="no" mutable="no">
+        <type>union <ref refid="unionnk__page__data" kindref="compound">nk_page_data</ref></type>
+        <definition>union nk_page_data nk_page_element::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>nk_page_element::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5383" column="23" bodyfile="Src/GUI/nuklear.h" bodystart="5383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__page__element_1a4bfb5e8153bc2e02547fecf055181cad" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__page__element" kindref="compound">nk_page_element</ref> *</type>
+        <definition>struct nk_page_element* nk_page_element::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>nk_page_element::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5384" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="5384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnk__page__element_1a1254dabb77cb9a33240f007f473a99b2" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnk__page__element" kindref="compound">nk_page_element</ref> *</type>
+        <definition>struct nk_page_element* nk_page_element::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>nk_page_element::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="5385" column="26" bodyfile="Src/GUI/nuklear.h" bodystart="5385" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="16">
+        <label>nk_allocator</label>
+        <link refid="structnk__allocator"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>alloc</edgelabel>
+          <edgelabel>free</edgelabel>
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>nk_buffer</label>
+        <link refid="structnk__buffer"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>marker</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>nk_buffer_marker</label>
+        <link refid="structnk__buffer__marker"/>
+      </node>
+      <node id="9">
+        <label>nk_chart</label>
+        <link refid="structnk__chart"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nk_chart_slot</label>
+        <link refid="structnk__chart__slot"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>color</edgelabel>
+          <edgelabel>highlight</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>last</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>nk_color</label>
+        <link refid="structnk__color"/>
+      </node>
+      <node id="13">
+        <label>nk_command_buffer</label>
+        <link refid="structnk__command__buffer"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>userdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>nk_edit_state</label>
+        <link refid="structnk__edit__state"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>nk_handle</label>
+        <link refid="unionnk__handle"/>
+      </node>
+      <node id="18">
+        <label>nk_memory</label>
+        <link refid="structnk__memory"/>
+      </node>
+      <node id="6">
+        <label>nk_menu_state</label>
+        <link refid="structnk__menu__state"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nk_page_data</label>
+        <link refid="unionnk__page__data"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>tbl</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pan</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nk_page_element</label>
+        <link refid="structnk__page__element"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nk_panel</label>
+        <link refid="structnk__panel"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>bounds</edgelabel>
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>menu</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>row</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>chart</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>nk_popup_buffer</label>
+        <link refid="structnk__popup__buffer"/>
+      </node>
+      <node id="21">
+        <label>nk_popup_state</label>
+        <link refid="structnk__popup__state"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>win</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>buf</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>nk_property_state</label>
+        <link refid="structnk__property__state"/>
+      </node>
+      <node id="5">
+        <label>nk_rect</label>
+        <link refid="structnk__rect"/>
+      </node>
+      <node id="8">
+        <label>nk_row_layout</label>
+        <link refid="structnk__row__layout"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>item</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nk_scroll</label>
+        <link refid="structnk__scroll"/>
+      </node>
+      <node id="3">
+        <label>nk_table</label>
+        <link refid="structnk__table"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>nk_vec2</label>
+        <link refid="structnk__vec2"/>
+      </node>
+      <node id="19">
+        <label>nk_window</label>
+        <link refid="structnk__window"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>scrollbar</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>layout</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>property</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>popup</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>edit</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>tables</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>parent</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/GUI/nuklear.h" line="5382" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="5382" bodyend="5386"/>
+    <listofallmembers>
+      <member refid="structnk__page__element_1a073b1fa427f3f6ca81ea5bb95783199f" prot="public" virt="non-virtual"><scope>nk_page_element</scope><name>data</name></member>
+      <member refid="structnk__page__element_1a4bfb5e8153bc2e02547fecf055181cad" prot="public" virt="non-virtual"><scope>nk_page_element</scope><name>next</name></member>
+      <member refid="structnk__page__element_1a1254dabb77cb9a33240f007f473a99b2" prot="public" virt="non-virtual"><scope>nk_page_element</scope><name>prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

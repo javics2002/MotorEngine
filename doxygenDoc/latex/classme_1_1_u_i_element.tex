@@ -1,0 +1,296 @@
+\hypertarget{classme_1_1_u_i_element}{}\doxysection{me\+::UIElement Class Reference}
+\label{classme_1_1_u_i_element}\index{me::UIElement@{me::UIElement}}
+
+
+{\ttfamily \#include $<$UIElement.\+h$>$}
+
+Inheritance diagram for me\+::UIElement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classme_1_1_u_i_element}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_u_i_element_a879373496189cf55ae04abaf5abec1fc}{UIElement}} ()
+\item 
+\mbox{\hyperlink{classme_1_1_u_i_element_a61d3cbf59484f740216c1ee77393a0e9}{$\sim$\+UIElement}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a750ca74e512eb5e414279d6076e94c47}{show}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a4cda600b5c3189985df9db518f2c6874}{hide}} ()
+\item 
+\mbox{\hyperlink{class_vector2}{Vector2}} \mbox{\hyperlink{classme_1_1_u_i_element_a4d202dcf70aeea95c78bb271605ac389}{get\+Size}} ()
+\item 
+\mbox{\hyperlink{class_vector2}{Vector2}} \mbox{\hyperlink{classme_1_1_u_i_element_a1636761026397c61838e78fe9ffc023b}{get\+Pos}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_aaa30c97b12f4d43c44081224c1fd0199}{set\+Size}} (\mbox{\hyperlink{class_vector2}{Vector2}} size)
+\item 
+bool \mbox{\hyperlink{classme_1_1_u_i_element_ad1bc15050541c2a5f2f0b17cdc5c97a0}{is\+Visible}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a67ffd299a2d16537316c96d66926b43d}{set\+Top}} (float top)
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a56c2bab5a90e09e841afe007badd9e4e}{set\+Left}} (float left)
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a48c74046686a52b34045e909a8565aaf}{set\+Width}} (float wifth)
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a628e925b6913ee1155f23e8ad37815e7}{set\+Height}} (float height)
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a54d484900df2197fe8ff757db9e0e0cb}{set\+Interactive}} (bool interactive)
+\item 
+void \mbox{\hyperlink{classme_1_1_u_i_element_a3e827c9c20affb185bc5486868017c1d}{set\+Focus\+Now}} (bool focus)
+\item 
+bool \mbox{\hyperlink{classme_1_1_u_i_element_ab0eb35fb5e951f927251d4c739dfc197}{get\+Is\+Interactive}} ()
+\item 
+bool \mbox{\hyperlink{classme_1_1_u_i_element_adba1eadd91cf561d06d15e09c8ed1879}{get\+Is\+Focus\+Now}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_component_a4dae1070d5cb2b14b49466e64b3095d6}{Component}} ()
+\item 
+virtual \mbox{\hyperlink{classme_1_1_component_ab2a3844334f7d532196025c32e100799}{$\sim$\+Component}} ()
+\item 
+void \mbox{\hyperlink{classme_1_1_component_a7c5786c94bfaf7b6e110f9fa30feafb3}{set\+Entity}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$e)
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a1c8917fcfda2d8ad66ab487ab726a0cd}{get\+Entity}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a349e2dfff958c956945a12fbcb6951ae}{start}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a421049b57bf72b90a48425f772b39aa1}{update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_af9625b0308ccd7b22c7871922de0b0a0}{late\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a4d98175f03ee8266f71d9237b3d23748}{On\+Collision\+Enter}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a9e024171b2bbed0cedf1476e2879081f}{On\+Collision\+Stay}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\item 
+virtual void \mbox{\hyperlink{classme_1_1_component_a643aad67bcb41b2c936e49e25b78342e}{On\+Collision\+Exit}} (\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ogre\+::\+Overlay\+Manager $\ast$ \mbox{\hyperlink{classme_1_1_u_i_element_afe299abe440f9f566df961d941073a50}{m\+Overlay\+Manager}}
+\item 
+Ogre\+::\+Overlay $\ast$ \mbox{\hyperlink{classme_1_1_u_i_element_a05b5b96bde313d3703da74763f0abccb}{m\+Overlay}}
+\item 
+Ogre\+::\+Overlay\+Container $\ast$ \mbox{\hyperlink{classme_1_1_u_i_element_a2f9337d0a954f154b58624c0da550752}{m\+Overlay\+Container}}
+\item 
+bool \mbox{\hyperlink{classme_1_1_u_i_element_a9aaafa507fe4cb93a0fec14acdee629c}{m\+Interactive}}
+\item 
+bool \mbox{\hyperlink{classme_1_1_u_i_element_aec65df45e4258e4ffa4a0c8a36452cca}{m\+Focus}}
+\item 
+int \mbox{\hyperlink{classme_1_1_u_i_element_a65955e28ff0562b6d3e9452ed52d55d5}{m\+Elems}} =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classme_1_1_entity}{Entity}} $\ast$ \mbox{\hyperlink{classme_1_1_component_a89862182926907ae608d3244d1d4e6d1}{m\+Entity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{classme_1_1_component}{me\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classme_1_1_component_ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3}{enabled}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} represents a graphical user interface (GUI) element that can be displayed on the screen It is a \mbox{\hyperlink{classme_1_1_component}{Component}} that can be attached to an \mbox{\hyperlink{classme_1_1_entity}{Entity}} to add user interface functionality to it 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a879373496189cf55ae04abaf5abec1fc}\label{classme_1_1_u_i_element_a879373496189cf55ae04abaf5abec1fc}} 
+\index{me::UIElement@{me::UIElement}!UIElement@{UIElement}}
+\index{UIElement@{UIElement}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{UIElement()}{UIElement()}}
+{\footnotesize\ttfamily me\+::\+UIElement\+::\+UIElement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_a61d3cbf59484f740216c1ee77393a0e9}\label{classme_1_1_u_i_element_a61d3cbf59484f740216c1ee77393a0e9}} 
+\index{me::UIElement@{me::UIElement}!````~UIElement@{$\sim$UIElement}}
+\index{````~UIElement@{$\sim$UIElement}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{$\sim$UIElement()}{~UIElement()}}
+{\footnotesize\ttfamily me\+::\+UIElement\+::$\sim$\+UIElement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classme_1_1_u_i_element_adba1eadd91cf561d06d15e09c8ed1879}\label{classme_1_1_u_i_element_adba1eadd91cf561d06d15e09c8ed1879}} 
+\index{me::UIElement@{me::UIElement}!getIsFocusNow@{getIsFocusNow}}
+\index{getIsFocusNow@{getIsFocusNow}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{getIsFocusNow()}{getIsFocusNow()}}
+{\footnotesize\ttfamily bool me\+::\+UIElement\+::get\+Is\+Focus\+Now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} currently has keyboard focus \begin{DoxyReturn}{Returns}
+true if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} currently has keyboard focus, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_u_i_element_ab0eb35fb5e951f927251d4c739dfc197}\label{classme_1_1_u_i_element_ab0eb35fb5e951f927251d4c739dfc197}} 
+\index{me::UIElement@{me::UIElement}!getIsInteractive@{getIsInteractive}}
+\index{getIsInteractive@{getIsInteractive}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{getIsInteractive()}{getIsInteractive()}}
+{\footnotesize\ttfamily bool me\+::\+UIElement\+::get\+Is\+Interactive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is interactive \begin{DoxyReturn}{Returns}
+true if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is interactive, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a1636761026397c61838e78fe9ffc023b}\label{classme_1_1_u_i_element_a1636761026397c61838e78fe9ffc023b}} 
+\index{me::UIElement@{me::UIElement}!getPos@{getPos}}
+\index{getPos@{getPos}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector2}{Vector2}} me\+::\+UIElement\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \begin{DoxyReturn}{Returns}
+A Vector2$<$float$>$ representing the x and y position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a4d202dcf70aeea95c78bb271605ac389}\label{classme_1_1_u_i_element_a4d202dcf70aeea95c78bb271605ac389}} 
+\index{me::UIElement@{me::UIElement}!getSize@{getSize}}
+\index{getSize@{getSize}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector2}{Vector2}} me\+::\+UIElement\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the size of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \begin{DoxyReturn}{Returns}
+A Vector2$<$float$>$ representing the width and height of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a4cda600b5c3189985df9db518f2c6874}\label{classme_1_1_u_i_element_a4cda600b5c3189985df9db518f2c6874}} 
+\index{me::UIElement@{me::UIElement}!hide@{hide}}
+\index{hide@{hide}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{hide()}{hide()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Hides the overlay \mbox{\Hypertarget{classme_1_1_u_i_element_ad1bc15050541c2a5f2f0b17cdc5c97a0}\label{classme_1_1_u_i_element_ad1bc15050541c2a5f2f0b17cdc5c97a0}} 
+\index{me::UIElement@{me::UIElement}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily bool me\+::\+UIElement\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is currently visible \begin{DoxyReturn}{Returns}
+true if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is visible, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a3e827c9c20affb185bc5486868017c1d}\label{classme_1_1_u_i_element_a3e827c9c20affb185bc5486868017c1d}} 
+\index{me::UIElement@{me::UIElement}!setFocusNow@{setFocusNow}}
+\index{setFocusNow@{setFocusNow}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setFocusNow()}{setFocusNow()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Focus\+Now (\begin{DoxyParamCaption}\item[{bool}]{focus }\end{DoxyParamCaption})}
+
+Sets whether the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} should immediately receive keyboard focus 
+\begin{DoxyParams}{Parameters}
+{\em focus} & true if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} should immediately receive keyboard focus, false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a628e925b6913ee1155f23e8ad37815e7}\label{classme_1_1_u_i_element_a628e925b6913ee1155f23e8ad37815e7}} 
+\index{me::UIElement@{me::UIElement}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Height (\begin{DoxyParamCaption}\item[{float}]{height }\end{DoxyParamCaption})}
+
+Sets the height of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a54d484900df2197fe8ff757db9e0e0cb}\label{classme_1_1_u_i_element_a54d484900df2197fe8ff757db9e0e0cb}} 
+\index{me::UIElement@{me::UIElement}!setInteractive@{setInteractive}}
+\index{setInteractive@{setInteractive}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setInteractive()}{setInteractive()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Interactive (\begin{DoxyParamCaption}\item[{bool}]{interactive }\end{DoxyParamCaption})}
+
+Sets whether the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is interactive 
+\begin{DoxyParams}{Parameters}
+{\em interactive} & true if the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} is interactive, false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a56c2bab5a90e09e841afe007badd9e4e}\label{classme_1_1_u_i_element_a56c2bab5a90e09e841afe007badd9e4e}} 
+\index{me::UIElement@{me::UIElement}!setLeft@{setLeft}}
+\index{setLeft@{setLeft}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setLeft()}{setLeft()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Left (\begin{DoxyParamCaption}\item[{float}]{left }\end{DoxyParamCaption})}
+
+Sets the left position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\begin{DoxyParams}{Parameters}
+{\em left} & The new left position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_aaa30c97b12f4d43c44081224c1fd0199}\label{classme_1_1_u_i_element_aaa30c97b12f4d43c44081224c1fd0199}} 
+\index{me::UIElement@{me::UIElement}!setSize@{setSize}}
+\index{setSize@{setSize}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2}{Vector2}}}]{size }\end{DoxyParamCaption})}
+
+Sets the size of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\begin{DoxyParams}{Parameters}
+{\em size} & A Vector2$<$float$>$ representing the new width and height of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a67ffd299a2d16537316c96d66926b43d}\label{classme_1_1_u_i_element_a67ffd299a2d16537316c96d66926b43d}} 
+\index{me::UIElement@{me::UIElement}!setTop@{setTop}}
+\index{setTop@{setTop}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setTop()}{setTop()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Top (\begin{DoxyParamCaption}\item[{float}]{top }\end{DoxyParamCaption})}
+
+Sets the top position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\begin{DoxyParams}{Parameters}
+{\em top} & The new top position of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a48c74046686a52b34045e909a8565aaf}\label{classme_1_1_u_i_element_a48c74046686a52b34045e909a8565aaf}} 
+\index{me::UIElement@{me::UIElement}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::set\+Width (\begin{DoxyParamCaption}\item[{float}]{wifth }\end{DoxyParamCaption})}
+
+Sets the width of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} 
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width of the \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a750ca74e512eb5e414279d6076e94c47}\label{classme_1_1_u_i_element_a750ca74e512eb5e414279d6076e94c47}} 
+\index{me::UIElement@{me::UIElement}!show@{show}}
+\index{show@{show}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void me\+::\+UIElement\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Shows the overlay 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classme_1_1_u_i_element_a65955e28ff0562b6d3e9452ed52d55d5}\label{classme_1_1_u_i_element_a65955e28ff0562b6d3e9452ed52d55d5}} 
+\index{me::UIElement@{me::UIElement}!mElems@{mElems}}
+\index{mElems@{mElems}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mElems}{mElems}}
+{\footnotesize\ttfamily int me\+::\+UIElement\+::m\+Elems =0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_aec65df45e4258e4ffa4a0c8a36452cca}\label{classme_1_1_u_i_element_aec65df45e4258e4ffa4a0c8a36452cca}} 
+\index{me::UIElement@{me::UIElement}!mFocus@{mFocus}}
+\index{mFocus@{mFocus}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mFocus}{mFocus}}
+{\footnotesize\ttfamily bool me\+::\+UIElement\+::m\+Focus\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_a9aaafa507fe4cb93a0fec14acdee629c}\label{classme_1_1_u_i_element_a9aaafa507fe4cb93a0fec14acdee629c}} 
+\index{me::UIElement@{me::UIElement}!mInteractive@{mInteractive}}
+\index{mInteractive@{mInteractive}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mInteractive}{mInteractive}}
+{\footnotesize\ttfamily bool me\+::\+UIElement\+::m\+Interactive\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_a05b5b96bde313d3703da74763f0abccb}\label{classme_1_1_u_i_element_a05b5b96bde313d3703da74763f0abccb}} 
+\index{me::UIElement@{me::UIElement}!mOverlay@{mOverlay}}
+\index{mOverlay@{mOverlay}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mOverlay}{mOverlay}}
+{\footnotesize\ttfamily Ogre\+::\+Overlay$\ast$ me\+::\+UIElement\+::m\+Overlay\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_a2f9337d0a954f154b58624c0da550752}\label{classme_1_1_u_i_element_a2f9337d0a954f154b58624c0da550752}} 
+\index{me::UIElement@{me::UIElement}!mOverlayContainer@{mOverlayContainer}}
+\index{mOverlayContainer@{mOverlayContainer}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mOverlayContainer}{mOverlayContainer}}
+{\footnotesize\ttfamily Ogre\+::\+Overlay\+Container$\ast$ me\+::\+UIElement\+::m\+Overlay\+Container\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classme_1_1_u_i_element_afe299abe440f9f566df961d941073a50}\label{classme_1_1_u_i_element_afe299abe440f9f566df961d941073a50}} 
+\index{me::UIElement@{me::UIElement}!mOverlayManager@{mOverlayManager}}
+\index{mOverlayManager@{mOverlayManager}!me::UIElement@{me::UIElement}}
+\doxysubsubsection{\texorpdfstring{mOverlayManager}{mOverlayManager}}
+{\footnotesize\ttfamily Ogre\+::\+Overlay\+Manager$\ast$ me\+::\+UIElement\+::m\+Overlay\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_u_i_element_8h}{UIElement.\+h}}\item 
+Src/\+Entity\+Component/\+Components/\mbox{\hyperlink{_u_i_element_8cpp}{UIElement.\+cpp}}\end{DoxyCompactItemize}

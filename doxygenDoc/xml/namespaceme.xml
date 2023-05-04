@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespaceme" kind="namespace" language="C++">
+    <compoundname>me</compoundname>
+    <innerclass refid="classme_1_1_animator" prot="public">me::Animator</innerclass>
+    <innerclass refid="classme_1_1_audio_listener" prot="public">me::AudioListener</innerclass>
+    <innerclass refid="classme_1_1_audio_source" prot="public">me::AudioSource</innerclass>
+    <innerclass refid="structme_1_1_axis" prot="public">me::Axis</innerclass>
+    <innerclass refid="structme_1_1_axis_info" prot="public">me::AxisInfo</innerclass>
+    <innerclass refid="structme_1_1_axis_input" prot="public">me::AxisInput</innerclass>
+    <innerclass refid="structme_1_1_button" prot="public">me::Button</innerclass>
+    <innerclass refid="classme_1_1_camera" prot="public">me::Camera</innerclass>
+    <innerclass refid="classme_1_1_collider" prot="public">me::Collider</innerclass>
+    <innerclass refid="classme_1_1_component" prot="public">me::Component</innerclass>
+    <innerclass refid="classme_1_1_components_factory" prot="public">me::ComponentsFactory</innerclass>
+    <innerclass refid="classme_1_1_debug_drawer" prot="public">me::DebugDrawer</innerclass>
+    <innerclass refid="classme_1_1_entity" prot="public">me::Entity</innerclass>
+    <innerclass refid="classme_1_1_factory_animator" prot="public">me::FactoryAnimator</innerclass>
+    <innerclass refid="classme_1_1_factory_audio_listener" prot="public">me::FactoryAudioListener</innerclass>
+    <innerclass refid="classme_1_1_factory_audio_source" prot="public">me::FactoryAudioSource</innerclass>
+    <innerclass refid="classme_1_1_factory_camera" prot="public">me::FactoryCamera</innerclass>
+    <innerclass refid="classme_1_1_factory_collider" prot="public">me::FactoryCollider</innerclass>
+    <innerclass refid="classme_1_1_factory_component" prot="public">me::FactoryComponent</innerclass>
+    <innerclass refid="classme_1_1_factory_mesh_renderer" prot="public">me::FactoryMeshRenderer</innerclass>
+    <innerclass refid="classme_1_1_factory_particle_system" prot="public">me::FactoryParticleSystem</innerclass>
+    <innerclass refid="classme_1_1_factory_rigid_body" prot="public">me::FactoryRigidBody</innerclass>
+    <innerclass refid="classme_1_1_factory_transform" prot="public">me::FactoryTransform</innerclass>
+    <innerclass refid="structme_1_1_input" prot="public">me::Input</innerclass>
+    <innerclass refid="structme_1_1_input_hasher" prot="public">me::InputHasher</innerclass>
+    <innerclass refid="classme_1_1_input_manager" prot="public">me::InputManager</innerclass>
+    <innerclass refid="classme_1_1_mesh_renderer" prot="public">me::MeshRenderer</innerclass>
+    <innerclass refid="classme_1_1_motor_engine" prot="public">me::MotorEngine</innerclass>
+    <innerclass refid="structme_1_1_on_button_pressed_info" prot="public">me::OnButtonPressedInfo</innerclass>
+    <innerclass refid="classme_1_1_particle_system" prot="public">me::ParticleSystem</innerclass>
+    <innerclass refid="classme_1_1_physics_manager" prot="public">me::PhysicsManager</innerclass>
+    <innerclass refid="classme_1_1_render_camera" prot="public">me::RenderCamera</innerclass>
+    <innerclass refid="classme_1_1_render_manager" prot="public">me::RenderManager</innerclass>
+    <innerclass refid="classme_1_1_render_mesh" prot="public">me::RenderMesh</innerclass>
+    <innerclass refid="classme_1_1_render_particle_system" prot="public">me::RenderParticleSystem</innerclass>
+    <innerclass refid="classme_1_1_render_window" prot="public">me::RenderWindow</innerclass>
+    <innerclass refid="classme_1_1_rigid_body" prot="public">me::RigidBody</innerclass>
+    <innerclass refid="classme_1_1_scene" prot="public">me::Scene</innerclass>
+    <innerclass refid="classme_1_1_scene_manager" prot="public">me::SceneManager</innerclass>
+    <innerclass refid="classme_1_1_s_g_technique_resolver_listener" prot="public">me::SGTechniqueResolverListener</innerclass>
+    <innerclass refid="classme_1_1_singleton" prot="public">me::Singleton</innerclass>
+    <innerclass refid="classme_1_1_sound_manager" prot="public">me::SoundManager</innerclass>
+    <innerclass refid="classme_1_1_transform" prot="public">me::Transform</innerclass>
+    <innerclass refid="classme_1_1_u_i_button" prot="public">me::UIButton</innerclass>
+    <innerclass refid="classme_1_1_u_i_container" prot="public">me::UIContainer</innerclass>
+    <innerclass refid="classme_1_1_u_i_element" prot="public">me::UIElement</innerclass>
+    <innerclass refid="classme_1_1_u_i_text" prot="public">me::UIText</innerclass>
+    <innerclass refid="classme_1_1_vector3" prot="public">me::Vector3</innerclass>
+    <innerclass refid="classme_1_1_vector4" prot="public">me::Vector4</innerclass>
+    <innerclass refid="classme_1_1_window" prot="public">me::Window</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceme_1a7af63ced847cd4a7e0ca4ba5a1688da3" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string me::SceneName</definition>
+        <argsstring></argsstring>
+        <name>SceneName</name>
+        <qualifiedname>me::SceneName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="6" column="25" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1a4549e57e933271d021f2d5b4cd46c84e" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string me::EntityName</definition>
+        <argsstring></argsstring>
+        <name>EntityName</name>
+        <qualifiedname>me::EntityName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="6" column="35" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string me::ComponentName</definition>
+        <argsstring></argsstring>
+        <name>ComponentName</name>
+        <qualifiedname>me::ComponentName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="6" column="46" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1ad830450629248f34d5ce0ae49268edfa" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string me::ParameterName</definition>
+        <argsstring></argsstring>
+        <name>ParameterName</name>
+        <qualifiedname>me::ParameterName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="6" column="60" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1af4a83244dc6e4b5613ed7bf9fd99835e" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string me::ParameterValue</definition>
+        <argsstring></argsstring>
+        <name>ParameterValue</name>
+        <qualifiedname>me::ParameterValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="6" column="74" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" prot="public" static="no">
+        <type>std::unordered_map&lt; <ref refid="namespaceme_1ad830450629248f34d5ce0ae49268edfa" kindref="member">ParameterName</ref>, <ref refid="namespaceme_1af4a83244dc6e4b5613ed7bf9fd99835e" kindref="member">ParameterValue</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;ParameterName, ParameterValue&gt; me::Parameters</definition>
+        <argsstring></argsstring>
+        <name>Parameters</name>
+        <qualifiedname>me::Parameters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="8" column="32" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1a3260d136024bb5071741250cf4a832fb" prot="public" static="no">
+        <type>std::unordered_map&lt; <ref refid="namespaceme_1a5bb8ed18150e0bc29a11923a7093a347" kindref="member">ComponentName</ref>, <ref refid="namespaceme_1aa32db0f4d84698471d693fe90639d8e6" kindref="member">Parameters</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;ComponentName, Parameters&gt; me::InfoEntity</definition>
+        <argsstring></argsstring>
+        <name>InfoEntity</name>
+        <qualifiedname>me::InfoEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="9" column="32" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceme_1a37719813e3fb0545c6e4b9165b9215c1" prot="public" static="no">
+        <type>std::unordered_map&lt; <ref refid="namespaceme_1a4549e57e933271d021f2d5b4cd46c84e" kindref="member">EntityName</ref>, <ref refid="namespaceme_1a3260d136024bb5071741250cf4a832fb" kindref="member">InfoEntity</ref> &gt;</type>
+        <definition>typedef std::unordered_map&lt;EntityName, InfoEntity&gt; me::InfoScene</definition>
+        <argsstring></argsstring>
+        <name>InfoScene</name>
+        <qualifiedname>me::InfoScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/InfoScene.h" line="10" column="32" bodyfile="Src/EntityComponent/InfoScene.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceme_1a15c4fa676c025760938ddb5ba349c4e1" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int me::MAX_CHANNELS</definition>
+        <argsstring></argsstring>
+        <name>MAX_CHANNELS</name>
+        <qualifiedname>me::MAX_CHANNELS</qualifiedname>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="26" column="11" bodyfile="Src/Audio/SoundManager.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceme_1a481a0c381d7e955f1654c93f4a046839" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float me::DOPPLER_SCALE</definition>
+        <argsstring></argsstring>
+        <name>DOPPLER_SCALE</name>
+        <qualifiedname>me::DOPPLER_SCALE</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="28" column="13" bodyfile="Src/Audio/SoundManager.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceme_1a439b64171f81c9557e8dab9df2adc081" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float me::DISTANCE_FACTOR</definition>
+        <argsstring></argsstring>
+        <name>DISTANCE_FACTOR</name>
+        <qualifiedname>me::DISTANCE_FACTOR</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="30" column="13" bodyfile="Src/Audio/SoundManager.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceme_1a266976037dee6b06b15e6604621b0adf" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float me::ROLLOFF_SCALE</definition>
+        <argsstring></argsstring>
+        <name>ROLLOFF_SCALE</name>
+        <qualifiedname>me::ROLLOFF_SCALE</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="32" column="13" bodyfile="Src/Audio/SoundManager.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceme_1a625a6e78ea8ccf4bb78d65e645513dd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_sound_manager" kindref="compound">SoundManager</ref> &amp;</type>
+        <definition>SoundManager &amp; me::soundManager</definition>
+        <argsstring>()</argsstring>
+        <name>soundManager</name>
+        <qualifiedname>me::soundManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton <ref refid="classme_1_1_physics_manager" kindref="compound">PhysicsManager</ref>, instead of writing <ref refid="classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260" kindref="member">SoundManager::instance()</ref>-&gt;method() we write sm().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Audio/SoundManager.h" line="233" column="21" bodyfile="Src/Audio/SoundManager.h" bodystart="233" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1a2b2e5ee03fa025cbc18185e54c865b08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_components_factory" kindref="compound">ComponentsFactory</ref> &amp;</type>
+        <definition>ComponentsFactory &amp; me::componentsFactory</definition>
+        <argsstring>()</argsstring>
+        <name>componentsFactory</name>
+        <qualifiedname>me::componentsFactory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton InputHandler, instead of writing InputHandler::instance()-&gt;method() we write ih().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/ComponentsFactory.h" line="30" column="26" bodyfile="Src/EntityComponent/Components/ComponentsFactory.h" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1acac54ce3805b69e3433ac8712a35450c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_scene_manager" kindref="compound">SceneManager</ref> &amp;</type>
+        <definition>SceneManager &amp; me::sceneManager</definition>
+        <argsstring>()</argsstring>
+        <name>sceneManager</name>
+        <qualifiedname>me::sceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton <ref refid="classme_1_1_scene_manager" kindref="compound">SceneManager</ref>, instead of writing <ref refid="classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260" kindref="member">SceneManager::instance()</ref>-&gt;method() we write sm().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/SceneManager.h" line="116" column="25" bodyfile="Src/EntityComponent/SceneManager.h" bodystart="116" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1afd92726e761ee88a793af225d8f55d7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_input_manager" kindref="compound">InputManager</ref> &amp;</type>
+        <definition>InputManager &amp; me::inputManager</definition>
+        <argsstring>()</argsstring>
+        <name>inputManager</name>
+        <qualifiedname>me::inputManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton InputHandler, instead of writing InputHandler::instance()-&gt;method() we write ih().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Input/InputManager.h" line="249" column="21" bodyfile="Src/Input/InputManager.h" bodystart="249" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1a4c5f82cdd874c703ca40fb8fc4336d8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_physics_manager" kindref="compound">PhysicsManager</ref> &amp;</type>
+        <definition>PhysicsManager &amp; me::physicsManager</definition>
+        <argsstring>()</argsstring>
+        <name>physicsManager</name>
+        <qualifiedname>me::physicsManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton <ref refid="classme_1_1_physics_manager" kindref="compound">PhysicsManager</ref>, instead of writing InputHandler::instance()-&gt;method() we write ih().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Physics/PhysicsManager.h" line="118" column="23" bodyfile="Src/Physics/PhysicsManager.h" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1af8da8de4d9ebcdaa653b23af353b5edc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_render_manager" kindref="compound">RenderManager</ref> &amp;</type>
+        <definition>RenderManager &amp; me::renderManager</definition>
+        <argsstring>()</argsstring>
+        <name>renderManager</name>
+        <qualifiedname>me::renderManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton OgreManager, instead of writing OgreManager::instance()-&gt;method() we write om().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/RenderManager.h" line="337" column="22" bodyfile="Src/Render/RenderManager.h" bodystart="337" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceme_1a2632192578f3d0d64db4976e8a05dd13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classme_1_1_window" kindref="compound">Window</ref> &amp;</type>
+        <definition>Window &amp; me::window</definition>
+        <argsstring>()</argsstring>
+        <name>window</name>
+        <qualifiedname>me::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a compact way for using the singleton <ref refid="classme_1_1_window" kindref="compound">Window</ref>, instead of writing <ref refid="classme_1_1_singleton_1a8810aab25f6fdc043bfac52761a9a260" kindref="member">Window::instance()</ref>-&gt;method() we write win().method() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/Render/Window.h" line="61" column="15" bodyfile="Src/Render/Window.h" bodystart="61" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/Audio/SoundManager.h" line="24" column="1"/>
+  </compounddef>
+</doxygen>

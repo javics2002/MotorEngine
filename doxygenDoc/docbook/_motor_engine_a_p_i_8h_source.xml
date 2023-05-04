@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__motor_engine_a_p_i_8h_source" xml:lang="en-US">
+<title>MotorEngineAPI.h</title>
+<indexterm><primary>Src/MotorEngine/MotorEngineAPI.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#ifndef&#32;__MOTORENGINE_API</emphasis>
+3 <emphasis role="preprocessor">#ifdef&#32;__MOTORENGINE_EXPORT</emphasis>
+4 <emphasis role="preprocessor">#define&#32;__MOTORENGINE_API&#32;__declspec(dllexport)</emphasis>
+5 <emphasis role="preprocessor">#else</emphasis>
+6 <emphasis role="preprocessor">#define&#32;__MOTORENGINE_API&#32;__declspec(dllimport)</emphasis>
+7 <emphasis role="preprocessor">#endif</emphasis>
+8 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

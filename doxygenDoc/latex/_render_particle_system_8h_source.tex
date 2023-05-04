@@ -1,0 +1,57 @@
+\hypertarget{_render_particle_system_8h_source}{}\doxysection{Render\+Particle\+System.\+h}
+\label{_render_particle_system_8h_source}\index{Src/Render/RenderParticleSystem.h@{Src/Render/RenderParticleSystem.h}}
+\mbox{\hyperlink{_render_particle_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_RENDER\_RENDERPARTICLESYSTEM}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_RENDER\_RENDERPARTICLESYSTEM}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <OgreVector3.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ogre}{Ogre}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }SceneNode;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }Quaternion;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }ParticleSystem;}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//Class\ to\ create\ renderizable\ particle\ system\ }}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_render_particle_system}{RenderParticleSystem}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ Ogre::SceneNode\ for\ renderize}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Ogre::SceneNode*\ \mbox{\hyperlink{classme_1_1_render_particle_system_ac7327f2a7285ac9f0b7b954ff8dffb7a}{mNode}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reference\ to\ Ogre::ParticleSystem\ for\ renderize}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Ogre::\ ParticleSystem*\ \mbox{\hyperlink{classme_1_1_render_particle_system_abc88985e53ee47372ebb533257b5b6c1}{mParticleSystem}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Name\ of\ particle\ that\ used}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_particle_system_a4a5cf2e7cfc429e376d11409c472313d}{mParticleName}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Name\ of\ particle\ system}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classme_1_1_render_particle_system_a2511162d295cf2c89d0745b559663516}{mName}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_particle_system}{RenderParticleSystem}}(std::string\ name,Ogre::SceneNode*\ node,std::string\ particleName);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_render_particle_system}{\string~RenderParticleSystem}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Set\ position,\ rotation\ and\ scale\ of\ mNode}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setTransform(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&scale,\ \textcolor{keyword}{const}\ Ogre::Quaternion\ \&rot);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&pos);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScale(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ogre_1_1_vector}{Ogre::Vector3f}}\ \&scale);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setRotation(Ogre::Quaternion\ rot);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ particle\ system\ emitting\ state}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEmitting(\textcolor{keywordtype}{bool}\ emitted);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

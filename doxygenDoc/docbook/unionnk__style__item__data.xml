@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_unionnk__style__item__data" xml:lang="en-US">
+<title>nk_style_item_data Union Reference</title>
+<indexterm><primary>nk_style_item_data</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_unionnk__style__item__data_1ab7eee146e91f259891435c8c89792938">color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__image">nk_image</link> <link linkend="_unionnk__style__item__data_1ae0256c98c4e25f3b8ad0596d6dd68407">image</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__nine__slice">nk_nine_slice</link> <link linkend="_unionnk__style__item__data_1a59062cc6500d7011ed54d55b737a2085">slice</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_unionnk__style__item__data_1ab7eee146e91f259891435c8c89792938"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>nk_style_item_data</secondary></indexterm>
+<indexterm><primary>nk_style_item_data</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_item_data::color</computeroutput></para></section>
+<anchor xml:id="_unionnk__style__item__data_1ae0256c98c4e25f3b8ad0596d6dd68407"/><section>
+    <title>image</title>
+<indexterm><primary>image</primary><secondary>nk_style_item_data</secondary></indexterm>
+<indexterm><primary>nk_style_item_data</primary><secondary>image</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__image">nk_image</link> nk_style_item_data::image</computeroutput></para></section>
+<anchor xml:id="_unionnk__style__item__data_1a59062cc6500d7011ed54d55b737a2085"/><section>
+    <title>slice</title>
+<indexterm><primary>slice</primary><secondary>nk_style_item_data</secondary></indexterm>
+<indexterm><primary>nk_style_item_data</primary><secondary>slice</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__nine__slice">nk_nine_slice</link> nk_style_item_data::slice</computeroutput></para></section>
+<para>
+The documentation for this union was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

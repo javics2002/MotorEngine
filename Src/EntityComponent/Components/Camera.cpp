@@ -1,45 +1,91 @@
 #include "Camera.h"
 #include "Render/RenderManager.h"
-#include <OgreVector3.h>
 #include "EntityComponent/Entity.h"
 #include "Transform.h"
-#include "Utils/Vector3.h"
 
+using namespace me;
 
-
-me::Camera::Camera()
+Camera::Camera()
 {
+
 }
 
-me::Camera::~Camera()
+Camera::~Camera()
 {
+	mTransform = nullptr;
 	renderManager().destroyCamera(mName);
 }
 
-void me::Camera::start()
+void Camera::setName(std::string name)
+{
+	mName = name;
+}
+
+std::string Camera::getName() const
+{
+	return mName;
+}
+
+void Camera::setNearDistance(float nearDistance)
+{
+	mNearDistance = nearDistance;
+}
+
+void Camera::setFarDistance(float farDistance)
+{
+	mFarDistance = farDistance;
+}
+
+void Camera::setAutoRadio(bool autoRatio)
+{
+	mAutoRatio = autoRatio;
+}
+
+void me::Camera::setZOrder(int zOrder)
+{
+	mZOrder = zOrder;
+}
+
+void me::Camera::setLookAt(Vector3 lookAt)
+{
+	mLookAt = lookAt;
+}
+
+void me::Camera::setBackgroundColour(Vector4 colour)
+{
+	mBackgroundColour = colour;
+}
+
+void Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
-	renderManager().createCamera(mName,mNearDistance,mFarDistance,mAutoRadio,mZOrder);
-	renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
-
+	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
-void me::Camera::update()
+void Camera::init()
+{
+	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
+}
+
+void Camera::update(const double& dt)
 {
 	if (!mStaticObject)
-	{
-		renderManager().setCameraInfo(mName, mTransform->getPosition().v3ToOgreV3(), mLookAt.v3ToOgreV3());
-	}
+		renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
-void me::Camera::setStatic(bool stat)
+void Camera::setStatic(bool stat)
 {
 	mStaticObject = stat;
 }
 
-void me::Camera::setViewportDimension(float left, float top, float width, float height)
+void Camera::setViewportDimension(float left, float top, float width, float height)
 {
 	renderManager().setViewportDimension(mName, left, top, width, height);
+}
+
+void me::Camera::setViewportOverlayEnabled(bool enabled)
+{
+	renderManager().setViewportOverlayEnabled(mName,enabled);
 }
 
 

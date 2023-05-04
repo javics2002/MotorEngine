@@ -1,0 +1,31 @@
+\hypertarget{_u_i_container_8h_source}{}\doxysection{UIContainer.\+h}
+\label{_u_i_container_8h_source}\index{Src/EntityComponent/Components/UIContainer.h@{Src/EntityComponent/Components/UIContainer.h}}
+\mbox{\hyperlink{_u_i_container_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_ENTITYCOMPONENT\_UICONTAINER}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_ENTITYCOMPONENT\_UICONTAINER}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_i_element_8h}{UIElement.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3_8h}{Utils/Vector3.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2_8h}{Utils/Vector2.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_u_i_container}{UIContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addElement(\mbox{\hyperlink{classme_1_1_component}{Component}}*\ c);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }mUIChild\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_u_i_element}{UIElement}}*\ mUiElement;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_vector3}{me::Vector3}}\ mPos;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2}{Vector2}}\ mScale;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::vector<mUIChild>\ mUiElements;}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

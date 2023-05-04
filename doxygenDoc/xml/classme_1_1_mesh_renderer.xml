@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classme_1_1_mesh_renderer" kind="class" language="C++" prot="public">
+    <compoundname>me::MeshRenderer</compoundname>
+    <basecompoundref refid="classme_1_1_component" prot="public" virt="non-virtual">me::Component</basecompoundref>
+    <includes refid="_mesh_renderer_8h" local="no">MeshRenderer.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string me::MeshRenderer::mName</definition>
+        <argsstring></argsstring>
+        <name>mName</name>
+        <qualifiedname>me::MeshRenderer::mName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="20" column="13" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string me::MeshRenderer::mMeshName</definition>
+        <argsstring></argsstring>
+        <name>mMeshName</name>
+        <qualifiedname>me::MeshRenderer::mMeshName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="22" column="13" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0" prot="protected" static="no" mutable="no">
+        <type><ref refid="classme_1_1_transform" kindref="compound">Transform</ref> *</type>
+        <definition>Transform* me::MeshRenderer::mTransform</definition>
+        <argsstring></argsstring>
+        <name>mTransform</name>
+        <qualifiedname>me::MeshRenderer::mTransform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="24" column="11" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classme_1_1_mesh_renderer_1a9b89d29d56b623da82cbaa5c11eb1fe7" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool me::MeshRenderer::mStaticObject</definition>
+        <argsstring></argsstring>
+        <name>mStaticObject</name>
+        <qualifiedname>me::MeshRenderer::mStaticObject</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="26" column="6" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1a51a9270b5d7fa21754f10807feda4f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::MeshRenderer::MeshRenderer</definition>
+        <argsstring>(std::string name, std::string meshName)</argsstring>
+        <name>MeshRenderer</name>
+        <qualifiedname>me::MeshRenderer::MeshRenderer</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>meshName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct a new <ref refid="classme_1_1_mesh_renderer" kindref="compound">MeshRenderer</ref> component and save necesary info <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name saved in om() map and used for entity that attached in node </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>meshName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of .mesh file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="35" column="1" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="8" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1a31dbd94c837b79c98ea2cbf060e34421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>me::MeshRenderer::~MeshRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>~MeshRenderer</name>
+        <qualifiedname>me::MeshRenderer::~MeshRenderer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="37" column="1" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::MeshRenderer::start</definition>
+        <argsstring>() override</argsstring>
+        <name>start</name>
+        <qualifiedname>me::MeshRenderer::start</qualifiedname>
+        <reimplements refid="classme_1_1_component_1a349e2dfff958c956945a12fbcb6951ae">start</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get info for mTransform and create ogreMesh and set the start pos </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="42" column="6" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="19" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void me::MeshRenderer::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>me::MeshRenderer::update</qualifiedname>
+        <reimplements refid="classme_1_1_component_1a421049b57bf72b90a48425f772b39aa1">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update transform info to mesh(ogreMesh) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="47" column="6" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="29" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1ad812ec39c9b5752b2d1699f4baf6898c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::MeshRenderer::setMaterial</definition>
+        <argsstring>(std::string materialName)</argsstring>
+        <name>setMaterial</name>
+        <qualifiedname>me::MeshRenderer::setMaterial</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>materialName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set material to mesh (ogreMesh). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>materialName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of material that is written in MaterialResource.material. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="53" column="6" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1a2b3bd27f68a453df055d3b47c493060c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void me::MeshRenderer::setStatic</definition>
+        <argsstring>(bool stat)</argsstring>
+        <name>setStatic</name>
+        <qualifiedname>me::MeshRenderer::setStatic</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>stat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set it is static entity or not </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="58" column="6" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classme_1_1_mesh_renderer_1afd5521dfdc1df9b4475613e8d514c815" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string me::MeshRenderer::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <qualifiedname>me::MeshRenderer::getName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set it is static entity or not </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/EntityComponent/Components/MeshRenderer.h" line="63" column="13" bodyfile="Src/EntityComponent/Components/MeshRenderer.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classme_1_1_mesh_renderer" kindref="compound">MeshRenderer</ref> class represents a visual object in 3D space and can be attached to entities. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+      </node>
+      <node id="1">
+        <label>me::MeshRenderer</label>
+        <link refid="classme_1_1_mesh_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>me::Component</label>
+        <link refid="classme_1_1_component"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mEntity</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>me::Entity</label>
+        <link refid="classme_1_1_entity"/>
+      </node>
+      <node id="1">
+        <label>me::MeshRenderer</label>
+        <link refid="classme_1_1_mesh_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mTransform</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>me::Transform</label>
+        <link refid="classme_1_1_transform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Src/EntityComponent/Components/MeshRenderer.h" line="15" column="1" bodyfile="Src/EntityComponent/Components/MeshRenderer.h" bodystart="16" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classme_1_1_component_1a4dae1070d5cb2b14b49466e64b3095d6" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>Component</name></member>
+      <member refid="classme_1_1_component_1ab29a0b2c3a9ad3e4e0cf81d8fdbff4f3" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>enabled</name></member>
+      <member refid="classme_1_1_component_1a1c8917fcfda2d8ad66ab487ab726a0cd" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>getEntity</name></member>
+      <member refid="classme_1_1_mesh_renderer_1afd5521dfdc1df9b4475613e8d514c815" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>getName</name></member>
+      <member refid="classme_1_1_component_1af9625b0308ccd7b22c7871922de0b0a0" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>lateUpdate</name></member>
+      <member refid="classme_1_1_component_1a89862182926907ae608d3244d1d4e6d1" prot="protected" virt="non-virtual"><scope>me::MeshRenderer</scope><name>mEntity</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a51a9270b5d7fa21754f10807feda4f68" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>MeshRenderer</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a6085a2c25d3cce0ee8675ac9bec28c35" prot="protected" virt="non-virtual"><scope>me::MeshRenderer</scope><name>mMeshName</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a9f15f9f36f6de10ea5a8578dd7efc652" prot="protected" virt="non-virtual"><scope>me::MeshRenderer</scope><name>mName</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a9b89d29d56b623da82cbaa5c11eb1fe7" prot="protected" virt="non-virtual"><scope>me::MeshRenderer</scope><name>mStaticObject</name></member>
+      <member refid="classme_1_1_mesh_renderer_1ab22b272fb14e13aa3bac331ad27a0fe0" prot="protected" virt="non-virtual"><scope>me::MeshRenderer</scope><name>mTransform</name></member>
+      <member refid="classme_1_1_component_1a4d98175f03ee8266f71d9237b3d23748" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>OnCollisionEnter</name></member>
+      <member refid="classme_1_1_component_1a643aad67bcb41b2c936e49e25b78342e" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>OnCollisionExit</name></member>
+      <member refid="classme_1_1_component_1a9e024171b2bbed0cedf1476e2879081f" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>OnCollisionStay</name></member>
+      <member refid="classme_1_1_component_1a7c5786c94bfaf7b6e110f9fa30feafb3" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>setEntity</name></member>
+      <member refid="classme_1_1_mesh_renderer_1ad812ec39c9b5752b2d1699f4baf6898c" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>setMaterial</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a2b3bd27f68a453df055d3b47c493060c" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>setStatic</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a6e4acd1a7b8b1aa23cdca27a0e1ef977" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>start</name></member>
+      <member refid="classme_1_1_mesh_renderer_1ae3012e47ce3fae28f699e538273be437" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>update</name></member>
+      <member refid="classme_1_1_component_1ab2a3844334f7d532196025c32e100799" prot="public" virt="virtual"><scope>me::MeshRenderer</scope><name>~Component</name></member>
+      <member refid="classme_1_1_mesh_renderer_1a31dbd94c837b79c98ea2cbf060e34421" prot="public" virt="non-virtual"><scope>me::MeshRenderer</scope><name>~MeshRenderer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

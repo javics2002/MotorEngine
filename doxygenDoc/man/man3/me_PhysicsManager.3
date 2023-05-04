@@ -1,0 +1,105 @@
+.TH "me::PhysicsManager" 3 "Mon Apr 3 2023" "Version 0.2.1" "MotorEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+me::PhysicsManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PhysicsManager\&.h>\fP
+.PP
+Inherits \fBme::Singleton< PhysicsManager >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~PhysicsManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddRigidBody\fP (btRigidBody *rigidBody)"
+.br
+.ti -1c
+.RI "void \fBaddVehicle\fP (btActionInterface *vehicle)"
+.br
+.ti -1c
+.RI "btCollisionShape * \fBcreateShape\fP (\fBShapes\fP shape, const btVector3 &scale)"
+.br
+.ti -1c
+.RI "btRigidBody * \fBcreateRigidBody\fP (btTransform *transform, const btVector3 &scale, \fBShapes\fP shape, \fBMovementType\fP mvType, bool isTrigger, float friction, float &mass, float restitution)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const float &dt)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBme::Singleton< PhysicsManager >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP (const \fBSingleton\fP< \fBPhysicsManager\fP > &o)=delete"
+.br
+.ti -1c
+.RI "\fBSingleton\fP< \fBPhysicsManager\fP > & \fBoperator=\fP (const \fBSingleton\fP< \fBPhysicsManager\fP > &o)=delete"
+.br
+.ti -1c
+.RI "virtual \fB~Singleton\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBme::Singleton< PhysicsManager >\fP
+.in +1c
+.ti -1c
+.RI "static \fBPhysicsManager\fP * \fBinit\fP (Targs &&\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "static \fBPhysicsManager\fP * \fBinstance\fP ()"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBme::Singleton< PhysicsManager >\fP
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "me::PhysicsManager::~PhysicsManager ()"
+Destructor for the \fBPhysicsManager\fP class\&. TO DO\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void me::PhysicsManager::addRigidBody (btRigidBody * rigidBody)"
+Adds a rigid body to the dynamics world\&. The rigid body will be subject to physical forces and will interact with other objects in the world\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIrigidBody\fP A pointer to the btRigidBody to add to the dynamics world\&. 
+.RE
+.PP
+
+.SS "void me::PhysicsManager::addVehicle (btActionInterface * vehicle)"
+Adds a vehicle to the dynamics world\&. The vehicle will be subject to physical forces and will interact with other objects in the world\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIvehicle\fP A pointer to the btActionInterface that represents the vehicle\&. 
+.RE
+.PP
+
+.SS "btRigidBody * me::PhysicsManager::createRigidBody (btTransform * transform, const btVector3 & scale, \fBShapes\fP shape, \fBMovementType\fP mvType, bool isTrigger, float friction, float & mass, float restitution)"
+
+.SS "btCollisionShape * me::PhysicsManager::createShape (\fBShapes\fP shape, const btVector3 & scale)"
+
+.SS "void me::PhysicsManager::start ()"
+Initializes a default collision configuration, a collision dispatcher, a broadphase interface, and a dynamics world\&. 
+.SS "void me::PhysicsManager::update (const float & dt)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MotorEngine from the source code\&.

@@ -38,14 +38,14 @@
     <ProjectReference Include="..\Input\Input.vcxproj">
       <Project>{fa7d6596-a4bd-4c2c-958f-dabe80d49850}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\LuaBridge\LuaBridge.vcxproj">
-      <Project>{1cac7004-abd3-4156-8820-cbf95d3b8df7}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Physics\Physics.vcxproj">
       <Project>{31ea8915-ab30-4545-8535-15a0ee380979}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Render\Render.vcxproj">
       <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Scripting\Scripting.vcxproj">
+      <Project>{1cac7004-abd3-4156-8820-cbf95d3b8df7}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">

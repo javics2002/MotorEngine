@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structme_1_1_axis_info" xml:lang="en-US">
+<title>me::AxisInfo Struct Reference</title>
+<indexterm><primary>me::AxisInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Axis.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for me::AxisInfo:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structme_1_1_axis_info.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_structme_1_1_axis_info_1a9f84d7f79419c83bff7c123b7ccb0a7a">gravity</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structme_1_1_axis_info_1a7c82893ab4482ca590f21a427231dc22">dead</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structme_1_1_axis_info_1a7c82893ab4482ca590f21a427231dc22"/><section>
+    <title>dead</title>
+<indexterm><primary>dead</primary><secondary>me::AxisInfo</secondary></indexterm>
+<indexterm><primary>me::AxisInfo</primary><secondary>dead</secondary></indexterm>
+<para><computeroutput>float me::AxisInfo::dead</computeroutput></para></section>
+<anchor xml:id="_structme_1_1_axis_info_1a9f84d7f79419c83bff7c123b7ccb0a7a"/><section>
+    <title>gravity</title>
+<indexterm><primary>gravity</primary><secondary>me::AxisInfo</secondary></indexterm>
+<indexterm><primary>me::AxisInfo</primary><secondary>gravity</secondary></indexterm>
+<para><computeroutput>float me::AxisInfo::gravity</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/Input/<link linkend="__axis_8h">Axis.h</link></section>
+</section>

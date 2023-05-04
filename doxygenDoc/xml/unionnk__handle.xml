@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="unionnk__handle" kind="union" language="C++" prot="public">
+    <compoundname>nk_handle</compoundname>
+    <includes refid="nuklear_8h" local="no">nuklear.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionnk__handle_1adbdcd879ad5f3d6cc77b5085bf35ac40" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nk_handle::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <qualifiedname>nk_handle::ptr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="261" column="20" bodyfile="Src/GUI/nuklear.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionnk__handle_1ab4db605f712876c795e39598b25ca9b3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nk_handle::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>nk_handle::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/GUI/nuklear.h" line="261" column="28" bodyfile="Src/GUI/nuklear.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/GUI/nuklear.h" line="261" column="1" bodyfile="Src/GUI/nuklear.h" bodystart="261" bodyend="261"/>
+    <listofallmembers>
+      <member refid="unionnk__handle_1ab4db605f712876c795e39598b25ca9b3" prot="public" virt="non-virtual"><scope>nk_handle</scope><name>id</name></member>
+      <member refid="unionnk__handle_1adbdcd879ad5f3d6cc77b5085bf35ac40" prot="public" virt="non-virtual"><scope>nk_handle</scope><name>ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

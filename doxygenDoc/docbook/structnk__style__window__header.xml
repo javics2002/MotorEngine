@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnk__style__window__header" xml:lang="en-US">
+<title>nk_style_window_header Struct Reference</title>
+<indexterm><primary>nk_style_window_header</primary></indexterm>
+<para>
+<computeroutput>#include &lt;nuklear.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__window__header_1a60e54f5a43fc8963247f8ee035dbb44e">normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__window__header_1af3467d4e76b52493aaac1c56feb78d88">hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__item">nk_style_item</link> <link linkend="_structnk__style__window__header_1a59505c74fca60c0a6c8b2e8ebe8e4c4a">active</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style__window__header_1a1ca819b7f0dffcdeee9deaf7c9f6d5ce">close_button</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__style__button">nk_style_button</link> <link linkend="_structnk__style__window__header_1a492a9e48e37f089794368ebe4339440a">minimize_button</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> <link linkend="_structnk__style__window__header_1a4462aa46088c539b1ccdcc2ddb0cd66e">close_symbol</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> <link linkend="_structnk__style__window__header_1ab734ca0639f56dde1f263dce6868e527">minimize_symbol</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> <link linkend="_structnk__style__window__header_1ad45757a0d00f6c46fa4f6c10fe9d526c">maximize_symbol</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__window__header_1aa53277062d4275d5e7bb0aa5fd14cb41">label_normal</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__window__header_1a649c485bd48904cc10427f72ee846228">label_hover</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__color">nk_color</link> <link linkend="_structnk__style__window__header_1a765cc5c0b858988506b99a0664e3ebc8">label_active</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_nuklear_8h_1ae05e44870132244e24e5f5139f74186e">nk_style_header_align</link> <link linkend="_structnk__style__window__header_1ac625860b1a7a856e0b029b53bdc15c04">align</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__window__header_1a52553e15d47afbf06908e8a1949e12e2">padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__window__header_1af36619005a7a69b06fcc037369a7e9e4">label_padding</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structnk__vec2">nk_vec2</link> <link linkend="_structnk__style__window__header_1a590cfd4a72e89b1fba9b3b966bf8ef5c">spacing</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structnk__style__window__header_1a59505c74fca60c0a6c8b2e8ebe8e4c4a"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_window_header::active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1ac625860b1a7a856e0b029b53bdc15c04"/><section>
+    <title>align</title>
+<indexterm><primary>align</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>align</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1ae05e44870132244e24e5f5139f74186e">nk_style_header_align</link> nk_style_window_header::align</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a1ca819b7f0dffcdeee9deaf7c9f6d5ce"/><section>
+    <title>close_button</title>
+<indexterm><primary>close_button</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>close_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style_window_header::close_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a4462aa46088c539b1ccdcc2ddb0cd66e"/><section>
+    <title>close_symbol</title>
+<indexterm><primary>close_symbol</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>close_symbol</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> nk_style_window_header::close_symbol</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1af3467d4e76b52493aaac1c56feb78d88"/><section>
+    <title>hover</title>
+<indexterm><primary>hover</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_window_header::hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a765cc5c0b858988506b99a0664e3ebc8"/><section>
+    <title>label_active</title>
+<indexterm><primary>label_active</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>label_active</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_window_header::label_active</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a649c485bd48904cc10427f72ee846228"/><section>
+    <title>label_hover</title>
+<indexterm><primary>label_hover</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>label_hover</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_window_header::label_hover</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1aa53277062d4275d5e7bb0aa5fd14cb41"/><section>
+    <title>label_normal</title>
+<indexterm><primary>label_normal</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>label_normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__color">nk_color</link> nk_style_window_header::label_normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1af36619005a7a69b06fcc037369a7e9e4"/><section>
+    <title>label_padding</title>
+<indexterm><primary>label_padding</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>label_padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_window_header::label_padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1ad45757a0d00f6c46fa4f6c10fe9d526c"/><section>
+    <title>maximize_symbol</title>
+<indexterm><primary>maximize_symbol</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>maximize_symbol</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> nk_style_window_header::maximize_symbol</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a492a9e48e37f089794368ebe4339440a"/><section>
+    <title>minimize_button</title>
+<indexterm><primary>minimize_button</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>minimize_button</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__button">nk_style_button</link> nk_style_window_header::minimize_button</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1ab734ca0639f56dde1f263dce6868e527"/><section>
+    <title>minimize_symbol</title>
+<indexterm><primary>minimize_symbol</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>minimize_symbol</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_nuklear_8h_1a29b4aaa400d0ce28aea3c8c9c372ac07">nk_symbol_type</link> nk_style_window_header::minimize_symbol</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a60e54f5a43fc8963247f8ee035dbb44e"/><section>
+    <title>normal</title>
+<indexterm><primary>normal</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>normal</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__style__item">nk_style_item</link> nk_style_window_header::normal</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a52553e15d47afbf06908e8a1949e12e2"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_window_header::padding</computeroutput></para></section>
+<anchor xml:id="_structnk__style__window__header_1a590cfd4a72e89b1fba9b3b966bf8ef5c"/><section>
+    <title>spacing</title>
+<indexterm><primary>spacing</primary><secondary>nk_style_window_header</secondary></indexterm>
+<indexterm><primary>nk_style_window_header</primary><secondary>spacing</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structnk__vec2">nk_vec2</link> nk_style_window_header::spacing</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Src/GUI/<link linkend="_nuklear_8h">nuklear.h</link></section>
+</section>

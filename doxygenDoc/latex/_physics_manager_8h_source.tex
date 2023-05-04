@@ -1,0 +1,107 @@
+\hypertarget{_physics_manager_8h_source}{}\doxysection{Physics\+Manager.\+h}
+\label{_physics_manager_8h_source}\index{Src/Physics/PhysicsManager.h@{Src/Physics/PhysicsManager.h}}
+\mbox{\hyperlink{_physics_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_PHYSICS\_PHYSICSMANAGER}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_PHYSICS\_PHYSICSMANAGER}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_motor_engine_a_p_i_8h}{MotorEngine/MotorEngineAPI.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{Utils/Singleton.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_drawer_8h}{DebugDrawer.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}{Shapes}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14bad234e1337b65f7d48adcec10b0a5233e}{SHAPES\_SPHERE}},}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14baf52143b9efb76308441d30efa1013e8f}{SHAPES\_BOX}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba9d9edaa5743e042d75e3a3cedcf17e5b}{SHAPES\_CYLINDER}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14ba6e7c12404e97120c0a157da639dae55a}{SHAPES\_CAPSULE}}}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}{MovementType}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f3293f4fee67e119d537aba61589bc8}{MOVEMENT\_TYPE\_DYNAMIC}},}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493aaff433b41af5badf4d9de6b351e1cf17}{MOVEMENT\_TYPE\_STATIC}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493a5f2da38a18deb028bb9707880ec80441}{MOVEMENT\_TYPE\_KINEMATIC}}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }btDiscreteDynamicsWorld;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }btRigidBody;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }btDefaultCollisionConfiguration;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }btDbvBroadphase;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }btActionInterface;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }btCollisionShape;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }btConstrainSolver;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }btSequentialImpulseConstraintSolver;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }btDefaultMotionState;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }btDispatcher;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }btBroadphaseInterface;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }btCollisionConfiguration;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceme}{me}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{_motor_engine_a_p_i_8h_ae7d210fc6a9598f82960577024307219}{\_\_MOTORENGINE\_API}}\ \mbox{\hyperlink{classme_1_1_physics_manager}{PhysicsManager}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classme_1_1_singleton}{Singleton}}<PhysicsManager>}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classme_1_1_singleton}{Singleton<PhysicsManager>}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_physics_manager}{PhysicsManager}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//DynamicWorld}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ btDiscreteDynamicsWorld*\ mDynamicsWorld;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Variables\ used\ to\ inicializate\ the\ dynamicsWorld}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ btDispatcher*\ mDispatcher;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ btBroadphaseInterface*\ mBroadphaseInterface;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ btCollisionConfiguration*\ mCollisionConfiguration;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ btSequentialImpulseConstraintSolver*\ mConstraintSolver;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_debug_drawer}{DebugDrawer}}*\ mDebug;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classme_1_1_physics_manager}{\string~PhysicsManager}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ start();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addRigidBody(btRigidBody*\ rigidBody);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addVehicle(btActionInterface*\ vehicle);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ Returns\ the\ Collision\ Shape\ of\ the\ rigidbody}}
+\DoxyCodeLine{00089\ \textcolor{comment}{}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ shape\ indicates\ the\ shape\ of\ the\ rigidbody\ (0\ =\ sphere,\ 1\ =\ box,\ 2\ =\ cylinder,\ 3\ =\ capsule)}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ scale\ indicates\ the\ scale\ of\ transform}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ size\ indicates\ the\ size\ of\ transform}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ btCollisionShape*\ createShape(\mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}{Shapes}}\ shape,\ \textcolor{keyword}{const}\ btVector3\ \&scale);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ Create\ and\ add\ a\ rigidbody\ to\ the\ dynamic\ world}}
+\DoxyCodeLine{00098\ \textcolor{comment}{}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ transform\ is\ the\ transform\ of\ the\ rigidBody}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ scale\ indicates\ the\ scale\ of\ transform}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ size\ indicates\ the\ size\ of\ transform}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ shape\ indicates\ the\ shape\ of\ the\ rigidbody\ (0\ =\ sphere,\ 1\ =\ box,\ 2\ =\ cylinder,\ 3\ =\ capsule)}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ mvType\ the\ movement\ of\ the\ object\ (0\ =\ Dynamic,\ 1\ =\ Static,\ 2\ =\ Kinematic)}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ isTrigger\ indicates\ if\ the\ object\ is\ trigger\ or\ not}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ friction\ friction\ of\ the\ objetct}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ mass\ mass\ of\ the\ object}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ \ \ \ \ \ @param\ restitution\ restitution\ of\ the\ object}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ btRigidBody*createRigidBody(btTransform\ *transform,\ \textcolor{keyword}{const}\ btVector3\ \&scale,\ \mbox{\hyperlink{_physics_manager_8h_a3c6c49dd4d974c67346f991bc443b14b}{Shapes}}\ shape,\ \mbox{\hyperlink{_physics_manager_8h_a8a93b61bc797a7d1907f42796a252493}{MovementType}}\ mvType,\ \textcolor{keywordtype}{bool}\ isTrigger,\ \textcolor{keywordtype}{float}\ friction,\ \textcolor{keywordtype}{float}\ \&mass,\ \textcolor{keywordtype}{float}\ restitution);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ dt);}
+\DoxyCodeLine{00112\ \ \ \ \ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classme_1_1_physics_manager}{PhysicsManager}}\&\ \mbox{\hyperlink{namespaceme_a4c5f82cdd874c703ca40fb8fc4336d8d}{physicsManager}}()\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classme_1_1_singleton_a8810aab25f6fdc043bfac52761a9a260}{PhysicsManager::instance}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
