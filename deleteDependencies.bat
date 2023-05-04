@@ -9,6 +9,9 @@ set LUABRIDGE_BUILD_DIR=.\Dependencies\LuaBridge\build\
 set FMOD_BUILD_DIR=.\Dependencies\FMOD\bin\
 set SDL_BUILD_DIR=.\Dependencies\SDL\build\
 
+set OGRE_BIN_DIR=.\Dependencies\Ogre\bin\
+set SDL_BIN_DIR=.\Dependencies\SDL\bin\
+
 set EXES_DIR=.\Exe\
 set LIBS_DIR=.\Lib\
 set TEMP_DIR=.\Temp\
@@ -17,9 +20,17 @@ echo Borrando build de OGRE...
 if exist %OGRE_BUILD_DIR% rmdir /s /q %OGRE_BUILD_DIR%
 echo Build de OGRE borradas.
 
+echo Borrando bin de OGRE...
+if exist %OGRE_BIN_DIR% rmdir /s /q %OGRE_BIN_DIR%
+echo Bin de OGRE borradas.
+
 echo Borrando build de SDL...
 if exist %SDL_BUILD_DIR% rmdir /s /q %SDL_BUILD_DIR%
 echo Build de SDL borradas.
+
+echo Borrando bin de SDL...
+if exist %SDL_BIN_DIR% rmdir /s /q %SDL_BIN_DIR%
+echo Bin de SDL borradas.
 
 echo Borrando build de Bullet...
 if exist %BULLET_BUILD_DIR% rmdir /s /q %BULLET_BUILD_DIR%
