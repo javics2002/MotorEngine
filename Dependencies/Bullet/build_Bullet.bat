@@ -12,8 +12,6 @@ rem 1. git          -- Descargar repositorios
 rem 2. cmake        -- Generar builds configuradas
 rem 3. msbuild      -- Compilar usando las herramientas de visual studio
 
-
-
 rem Configuración del shell de Visual Studio 
 if not exist "%temp%\VSWhereOutput.txt" (
 
@@ -26,7 +24,6 @@ if not exist "%temp%\VSWhereOutput.txt" (
 
 set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
-
 
 rem Parámetros de instalación
 set "project=BULLET_PHYSICS" 

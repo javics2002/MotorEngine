@@ -16,8 +16,6 @@ rem 2.c. powershell     -- Uso de la herramienta Expand-Archive, descomprimir fi
 rem 3. cmake            -- Generar builds configuradas
 rem 4. msbuild          -- Compilar usando las herramientas de visual studio
 
-
-
 rem Configuración del shell de Visual Studio 
 if not exist "%temp%\VSWhereOutput.txt" (
 
@@ -30,8 +28,6 @@ if not exist "%temp%\VSWhereOutput.txt" (
 
 set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
-
-
 
 rem Parámetros de instalación
 set "project=OGRE" 
