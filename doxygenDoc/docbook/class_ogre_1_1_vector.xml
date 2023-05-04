@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_ogre_1_1_vector" xml:lang="en-US">
-<title>Ogre::Vector&lt; dism, T &gt; Class Template Reference</title>
-<indexterm><primary>Ogre::Vector&lt; dism, T &gt;</primary></indexterm>
-<para>
-The documentation for this class was generated from the following file:</para>
-Src/Render/<link linkend="__render_camera_8h">RenderCamera.h</link></section>

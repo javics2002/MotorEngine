@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_particle_system_8cpp" xml:lang="en-US">
-<title>Src/Render/RenderParticleSystem.cpp File Reference</title>
-<indexterm><primary>Src/Render/RenderParticleSystem.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;RenderParticleSystem.h&quot;<?linebreak?>#include &lt;OgreSceneManager.h&gt;<?linebreak?>#include &lt;OgreParticleSystem.h&gt;<?linebreak?>#include &lt;OgreSceneNode.h&gt;<?linebreak?>#include &lt;OgreQuaternion.h&gt;<?linebreak?></programlisting></section>

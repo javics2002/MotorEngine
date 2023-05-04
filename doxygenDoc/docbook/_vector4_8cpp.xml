@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__vector4_8cpp" xml:lang="en-US">
-<title>Src/Utils/Vector4.cpp File Reference</title>
-<indexterm><primary>Src/Utils/Vector4.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;Vector4.h&quot;<?linebreak?>#include &quot;Vector3.h&quot;<?linebreak?>#include &lt;OgreQuaternion.h&gt;<?linebreak?>#include &lt;OgreVector3.h&gt;<?linebreak?>#include &lt;LinearMath/btQuaternion.h&gt;<?linebreak?></programlisting></section>

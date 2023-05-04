@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classstd_1_1basic__ostream" xml:lang="en-US">
-<title>std::basic_ostream&lt; _Elem, _Traits &gt; Class Template Reference</title>
-<indexterm><primary>std::basic_ostream&lt; _Elem, _Traits &gt;</primary></indexterm>
-<para>
-The documentation for this class was generated from the following file:</para>
-Src/Utils/<link linkend="__vector3_8h">Vector3.h</link></section>

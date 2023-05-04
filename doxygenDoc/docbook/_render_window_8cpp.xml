@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_window_8cpp" xml:lang="en-US">
-<title>Src/Render/RenderWindow.cpp File Reference</title>
-<indexterm><primary>Src/Render/RenderWindow.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;RenderWindow.h&quot;<?linebreak?>#include &lt;OgreRoot.h&gt;<?linebreak?>#include &lt;OgreRenderWindow.h&gt;<?linebreak?>#include &lt;iostream&gt;<?linebreak?>#include &lt;SDL3/SDL.h&gt;<?linebreak?>#include &lt;SDL3/SDL_syswm.h&gt;<?linebreak?>#include &quot;Window.h&quot;<?linebreak?></programlisting></section>
