@@ -96,7 +96,7 @@ void MotorEngine::loop()
 		dt = mTime->update();
 		
 		// Update the scene
-		physicsManager().update(dt, 1 / mTime->getTargetFrameRate());
+		physicsManager().update(dt, 0, 1 / mTime->getTargetFrameRate());
 
 		soundManager().systemRefresh(dt);
 

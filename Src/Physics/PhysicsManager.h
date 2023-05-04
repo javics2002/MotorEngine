@@ -104,7 +104,13 @@ namespace me {
 		btRigidBody* createRigidBody(btTransform *transform, const btVector3 &scale, const btVector3 &colliderScale, 
 			int group, int mask, Shapes shape, MovementType mvType, bool isTrigger, float friction, float &mass, float restitution);
 
-		void update(const double& dt, const double& fixedTimeStep);
+		/**
+		Simulate the physics world every. If maxSubSteps > 0, it will interpolate motion between fixedTimeStep's.
+		@param timeStep deltaTime, or time since last frame
+		@param maxSubsteps maximum substeps of this frame
+		@param fixedTimeStep Interpolation time between substeps
+		*/
+		void update(const double& timeStep, int maxSubsteps = 1, const double& fixedTimeStep = 1 / 60.0);
 	};
 
 	/**

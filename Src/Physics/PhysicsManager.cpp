@@ -250,9 +250,9 @@ btRigidBody* me::PhysicsManager::createRigidBody(btTransform* transform, const b
 	return rb;
 }
 
-void PhysicsManager::update(const double& dt, const double& fixedTimeStep)
+void PhysicsManager::update(const double& timeStep, int maxSubsteps, const double& fixedTimeStep)
 {
-	mDynamicsWorld->stepSimulation(dt, 0, fixedTimeStep);
+	mDynamicsWorld->stepSimulation(timeStep, maxSubsteps, fixedTimeStep);
 
 	/*
 	Uncomment the following code if you want to see colliders
