@@ -1,26 +1,7 @@
 @echo off
-setlocal
-
 
 rem Fecha inicio: 
 set start_time=%time%
-
-
-rem Elimina si existe el anterior registro
-if exist "./build_Output.txt" (
-
-    del "./build_Output.txt"
-
-)
-
-
-rem Configuración de paradas
-if /I "%1"=="" (
-
-    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
-
-) else ( set "pause_option=%1" )
-
 
 rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
@@ -47,8 +28,6 @@ if not exist "%temp%\VSWhereOutput.txt" (
 set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 
-if /i "%pause_option%"=="S" ( pause )
-
 
 
 rem Parámetros de instalación
@@ -68,7 +47,6 @@ if not exist "src/" (
 ) else (
     echo: && echo "> El codigo %src% fuente ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause )
 
 
 
@@ -86,7 +64,6 @@ if not exist "build/" (
 ) else (
     echo: && echo "> La build %src% ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause )
 
 
 
@@ -100,7 +77,6 @@ if not exist "build\Tests\Release\%project%.lib" (
 ) else (
     echo: && echo "> La biblioteca %project% release ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause )
 
 
 
@@ -114,7 +90,6 @@ if not exist "build\Tests\Debug\%project%.lib" (
 ) else (
     echo: && echo "> La biblioteca %project% debug ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause ) 
 
 
 rem Fecha final: 
@@ -132,6 +107,4 @@ rem Check final
 echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
 
-rem pause 
-endlocal 
-exit 
+:end

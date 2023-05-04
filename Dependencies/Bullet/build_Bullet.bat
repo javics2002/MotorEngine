@@ -1,26 +1,7 @@
 @echo off
-setlocal
-
 
 rem Fecha inicio: 
 set start_time=%time%
-
-
-rem Elimina si existe el anterior registro
-if exist "./build_Output.txt" (
-
-    del "./build_Output.txt"
-
-)
-
-
-rem Configuración de paradas
-if /I "%1"=="" (
-
-    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
-
-) else ( set "pause_option=%1" )
-
 
 rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
@@ -46,9 +27,6 @@ if not exist "%temp%\VSWhereOutput.txt" (
 set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
 call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 
-if /i "%pause_option%"=="S" ( pause )
-
-
 
 rem Parámetros de instalación
 set "project=BULLET_PHYSICS" 
@@ -72,7 +50,6 @@ if not exist "build/%project%.sln" (
 ) else (
     echo: && echo "> La build %src% ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause )
 
 
 
@@ -86,7 +63,6 @@ if not exist "build\lib\Release\%target%.lib" (
 ) else (
     echo: && echo "> Build %project% solucion en modo release ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause ) 
 
 
 
@@ -100,8 +76,6 @@ if not exist "build\lib\Debug\%target%_Debug.lib" (
 ) else (
     echo: && echo "> Build %project% solucion en modo debug ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause ) 
-
 
 rem Fecha final: 
 set end_time=%time%
@@ -113,11 +87,7 @@ echo Fecha inicio: %start_time%
 echo Fecha final: %end_time% 
 echo:
 
-
 rem Check final
 echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
-
-rem pause 
-endlocal 
-exit 
+:end
