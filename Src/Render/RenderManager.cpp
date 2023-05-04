@@ -291,7 +291,9 @@ void RenderManager::destroyCamera(std::string name)
 	RenderCamera* cam = getCamera(name);
 	if (cam == nullptr)
 	{
+#ifdef _DEBUG
 		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{
@@ -321,7 +323,9 @@ void me::RenderManager::destroyLight(std::string name)
 {	
 	if (!mLights.count(name))
 	{
-		std::cout << "Try to destroy nullptr camera with this name " << name << std::endl;
+#ifdef _DEBUG
+		std::cout << "Try to destroy nullptr light with this name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{
@@ -415,7 +419,9 @@ void RenderManager::destroyMesh(std::string name)
 	RenderMesh* mesh = getMesh(name);
 	if (mesh == nullptr)
 	{
+#ifdef _DEBUG
 		std::cout << "Try to destroy nullptr mesh with this name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{
@@ -450,7 +456,9 @@ bool RenderManager::setMeshTransform(std::string name,  Vector3 pos, Vector3 sca
 bool me::RenderManager::createSprite(std::string name, std::string spriteMaterialName,int zOrder)
 {
 	if (mSprites[name] != nullptr) {
+#ifdef _DEBUG
 		std::cout << "There cannot be more than one sprite named " << name << ".\n";
+#endif // _DEBUG
 		return false;
 	}
 
@@ -515,7 +523,9 @@ void RenderManager::destroyUISprite(std::string name)
 	RenderUISprite* sprite = getUISprite(name);
 	if (sprite == nullptr)
 	{
+#ifdef _DEBUG
 		std::cout << "Try to destroy nullptr UISprite with name " << name << std::endl;
+#endif // _DEBUG
 	}
 	else
 	{

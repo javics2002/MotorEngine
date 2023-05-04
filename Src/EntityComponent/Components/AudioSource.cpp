@@ -15,15 +15,12 @@ me::AudioSource::~AudioSource()
 void me::AudioSource::start()
 {
     mTransform = mEntity->getComponent<Transform>("transform");
-    bool error;
+    
     // Create a 3D sound or a normal sound
     if (mIsThreeD)
-         error = soundManager().create3DSound(mSoundPath, mSoundName, mMinDistance, mMaxDistance, mLoop);
-     else error = soundManager().createNormalSound(mSoundPath, mSoundName, mLoop);
-
-    // If the sound was not created, output an error message
-        if (!error)
-            std::cout << "ERROR: Sound was not created or already existed.\n";
+         soundManager().create3DSound(mSoundPath, mSoundName, mMinDistance, mMaxDistance, mLoop);
+    else 
+        soundManager().createNormalSound(mSoundPath, mSoundName, mLoop);
 
     if (mPlayOnStart)
         play();
@@ -40,11 +37,8 @@ void me::AudioSource::play()
 {
     Vector3 pos = mTransform->getPosition();
     Vector3 vel = mTransform->getVelocity();
-   soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel, mVolume);
-   /*if (!firstPlayed) {
-       soundManager().setVolume(mSoundName, mVolume);
-       firstPlayed = true;
-   }*/
+    soundManager().playSound(mSoundName, mSoundGroup, &pos, &vel, mVolume);
+
     mPlaying = true;
 }
 
@@ -70,12 +64,10 @@ bool me::AudioSource::isPlaying()
 
 void me::AudioSource::setVolume(float value) {
     mVolume = value;
-    //soundManager().setVolume(mSoundName, value);
 }
 
 void me::AudioSource::setSpeed(float value) {
     mSpeed = value;
-    //soundManager().setSpeed(mSoundName, value);
 }
 
 void me::AudioSource::setMinDistance(float value) {

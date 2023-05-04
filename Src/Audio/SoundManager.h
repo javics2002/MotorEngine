@@ -2,10 +2,11 @@
 #ifndef _FMOD_SOUND_MANAGER
 #define _FMOD_SOUND_MANAGER
 
-#include <unordered_map>
 #include "MotorEngine/MotorEngineAPI.h"
 #include "Utils/Singleton.h"
 #include "Utils/Vector3.h"
+#include <string>
+#include <unordered_map>
 
 namespace FMOD {
 	class Sound;

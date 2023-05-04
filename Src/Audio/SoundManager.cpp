@@ -265,8 +265,6 @@ bool me::SoundManager::deleteSound(std::string soundName)
 	FMOD::Sound* soundHandle = getSound(soundName);
 	if (soundHandle == nullptr) return false;
 
-	//mResult = soundHandle->release();
-
 	mLastPlayedMap.erase(soundHandle);
 
 	return checkFMODResult(mResult);
@@ -331,18 +329,15 @@ bool me::SoundManager::setMode(std::string soundName, FMOD_MODE newMode)
 	mResult = soundHandle->setMode(newSoundMode);
 	soundHandle->getMode(&soundMode);
 
+#ifdef _DEBUG
 	if (soundMode & FMOD_3D)
-	{
 		std::cout << "3d" << " ";
-	}
 	if (soundMode & FMOD_3D_LINEARROLLOFF)
-	{
 		std::cout << "atenuacion" << " ";
-	}
 	if (soundMode & FMOD_LOOP_NORMAL)
-	{
 		std::cout << "loop" << " ";
-	}
+#endif
+	
 
 	checkFMODResult(mResult);
 }

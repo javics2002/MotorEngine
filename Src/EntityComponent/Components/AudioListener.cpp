@@ -19,8 +19,10 @@ void me::AudioListener::start()
 	// Get the next available index for a listener in the sound manager
 	mListenerIndex = soundManager().getNextUsefulListenerIndex();
 
+#ifdef _DEBUG
 	if (mListenerIndex == -1)
 		std::cout << "ERROR: Listeners vector is full\n";
+#endif // _DEBUG
 }
 
 void me::AudioListener::update(const double& dt)
