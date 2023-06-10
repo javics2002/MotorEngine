@@ -34,7 +34,12 @@ namespace me {
 		//Destroy om() map saved mesh (ogreMesh)
 		~MeshRenderer();
 
-		void init();
+		/**
+		Calls renderManager to create a new mesh with this name and store it
+		@return false: if a mesh with that name already exist
+		@return true: if succeed
+		*/
+		bool createMesh();
 
 		/**
 		Get info for mTransform and create ogreMesh and set the start pos

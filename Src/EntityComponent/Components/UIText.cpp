@@ -14,14 +14,17 @@ UIText::~UIText()
 	delete mRenderUIText;
 }
 
-void UIText::init(std::string name, std::string text, int zOrder,std::string fontName)
+bool UIText::setTextInfo(std::string name, std::string text, int zOrder, std::string fontName)
 {
 	mName = name;
 	mZOrder = zOrder;
 
-	if (text.size() > 0)
-		 mRenderUIText = new RenderUIText(mName, text, zOrder,
-			fontName);
+	if (text.size() > 0) {
+		mRenderUIText = new RenderUIText(mName, text, zOrder, fontName);
+		return true;
+	}
+
+	return false;
  }
 
 void UIText::start()

@@ -167,7 +167,7 @@ void Scene::processNewEntities()
 	mNewEntities.clear();
 }
 
-void Scene::pushEntities(InfoScene& entitiesMap)
+bool Scene::pushEntities(InfoScene& entitiesMap)
 {
 	// Recorrer el mapa de entidades
 	for (auto& infoEntity : entitiesMap) {
@@ -181,9 +181,13 @@ void Scene::pushEntities(InfoScene& entitiesMap)
 		for (auto& component : *entityComponents) {
 			const ComponentName* componentName = &component.first;
 			Parameters* componentInfo = &component.second;
-			entity->addComponent(*componentName, *componentInfo);
+
+			if (entity->addComponent(*componentName, *componentInfo))
+				return false;
 		}
 	}
+
+	return true;
 }
 
 bool Scene::promoteToGlobal(Entity* entity)

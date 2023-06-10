@@ -136,9 +136,11 @@ namespace me {
         int readEntities(lua_State* L);
 
         /*
-        This function calls the active scene and passes the unordered_map with all the entities information
+        This function calls the active scene and passes the unordered_map with all the entities information.
+        @returns true if all entitys and their components were created successfully.
+        @returns false if any component failed to create.
         */
-        void pushEntities();
+        bool pushEntities();
 
         //Change scene
         bool mChange = false;

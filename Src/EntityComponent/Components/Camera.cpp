@@ -62,9 +62,9 @@ void Camera::start()
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 
-void Camera::init()
+bool Camera::createCamera()
 {
-	renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
+	return renderManager().createCamera(mName, mNearDistance, mFarDistance, mAutoRatio, mZOrder, mBackgroundColour);
 }
 
 void Camera::update(const double& dt)

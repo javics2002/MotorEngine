@@ -117,8 +117,10 @@ namespace me {
 		/**
 		Adds new entities from unordered_map passed by the sceneManager
 		@param entitiesMap Contains all info about each entity and its components.
+		@returns true if all entitys and their components were created successfully.
+		@returns false if any component failed to create.
 		*/
-		void pushEntities(InfoScene& entitiesMap);
+		bool pushEntities(InfoScene& entitiesMap);
 
 		/**
 		Makes this entity global so it won't be deleted on changeScenes.

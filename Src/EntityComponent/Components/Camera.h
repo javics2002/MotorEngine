@@ -94,7 +94,12 @@ namespace me {
 		*/
 		void start() override;
 
-		void init();
+		/**
+		Calls renderManager to create a new camera with this name and store it
+		@return false: if a camera with that name already exist
+		@return true: if succeed
+		*/
+		bool createCamera();
 		/**
 		Update transform info to camera node
 		*/

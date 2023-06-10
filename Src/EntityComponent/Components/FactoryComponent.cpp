@@ -104,7 +104,8 @@ me::Component* me::FactoryCamera::create(Parameters& params)
 {
     Camera* camera = new Camera();
 
-    camera->setName(Value(params, "name", std::string("Main")));
+    std::string name = Value(params, "name", std::string("Main"));
+    camera->setName(name);
     camera->setNearDistance(Value(params, "neardistance", .1f));
     camera->setFarDistance(Value(params, "fardistance", 1000));
     camera->setAutoRadio(Value(params, "autoratio", false));
@@ -112,7 +113,11 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setBackgroundColour(Vector4(Value(params, "backgroundcolor_r", .0f), Value(params, "backgroundcolor_g", .0f),
         Value(params, "backgroundcolor_b", .0f), Value(params, "backgroundcolor_a", 1.0f)));
     camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
-    camera->init();
+
+    if (!camera->createCamera()) {
+        delete camera;
+        return nullptr;
+    }
 
     camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
     camera->setViewportOverlayEnabled(Value(params, "overlayenable", true));
@@ -139,7 +144,6 @@ void me::FactoryCollider::destroy(Component* component)
 
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
-    
     std::string mesh = Value(params, "mesh", std::string());
     std::string meshName = Value(params, "meshname", std::string());
     std::string materialName = Value(params, "materialname", std::string());
@@ -150,7 +154,10 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
     meshRenderer->setMeshName(meshName);
     meshRenderer->setStatic(staticState);
 
-    meshRenderer->init();
+    if (!meshRenderer->createMesh()) {
+        delete meshRenderer;
+        return nullptr;
+    }
 
     meshRenderer->setMaterial(materialName);
     return meshRenderer;
@@ -264,7 +271,7 @@ Component* me::FactoryUIText::create(Parameters& params)
     float charHeight = Value(params, "charheight", 0.1f);
 
     UIText* textRenderer = new UIText();
-    textRenderer->init(name, text, zOrder, fontName);
+    textRenderer->setTextInfo(name, text, zOrder, fontName);
     textRenderer->setPosition(position.x, position.y);
     textRenderer->setSize(dimension.x, dimension.y);
     textRenderer->setCharHeight(charHeight);

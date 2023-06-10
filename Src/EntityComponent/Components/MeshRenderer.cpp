@@ -18,10 +18,13 @@ MeshRenderer::~MeshRenderer()
 	renderManager().destroyMesh(mName);
 }
 
-void MeshRenderer::init()
+bool MeshRenderer::createMesh()
 {
-	if (mMeshName.size() > 0)
-		renderManager().createMesh(mName, mMeshName);
+	if (mMeshName.size() > 0) {
+		return renderManager().createMesh(mName, mMeshName);;
+	}
+
+	return false;
 }
 
 void MeshRenderer::start()

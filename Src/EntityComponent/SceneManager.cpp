@@ -134,6 +134,9 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 
 	if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
 #ifdef _DEBUG
+		//TO DO: Cuando esta clase este en el proyecto MotorEngine (lo tinene que hacer Liy) 
+		// llamar a la funcion throwMotorEngineError (lo tinene que hacer alfonso)
+		//Si se encuentra 1n entra aqui
 		std::cout << lua_tostring(L, -1) << "\n";
 #endif
 		lua_close(L);
@@ -265,9 +268,12 @@ int SceneManager::readEntities(lua_State* L) {
 	return 0;
 }
 
-void SceneManager::pushEntities() {
+bool SceneManager::pushEntities() {
 	// Get active scene and call it
-	mActiveScene->pushEntities(mEntitiesMap);
+	if (!mActiveScene->pushEntities(mEntitiesMap))
+		return false;
 
 	mActiveScene->processNewEntities();
+
+	return true;
 }

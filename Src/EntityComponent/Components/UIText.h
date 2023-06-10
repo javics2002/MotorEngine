@@ -38,7 +38,14 @@ namespace me {
 		*/
 		void setSize(float w, float h);
 
-		void init(std::string name, std::string spriteName, int zOrder,std::string fontName);
+		/**
+		Sets name and zOrder and creates a render overlay with custom text and font.
+		@param name
+		@param text
+		@param zOrder
+		@param fontName
+		*/
+		bool setTextInfo(std::string name, std::string text, int zOrder, std::string fontName);
 
 		/**
 		* Set the font used by the UIText instance
