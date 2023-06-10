@@ -182,7 +182,7 @@ bool Scene::pushEntities(InfoScene& entitiesMap)
 			const ComponentName* componentName = &component.first;
 			Parameters* componentInfo = &component.second;
 
-			if (entity->addComponent(*componentName, *componentInfo))
+			if (!entity->addComponent(*componentName, *componentInfo))
 				return false;
 		}
 	}

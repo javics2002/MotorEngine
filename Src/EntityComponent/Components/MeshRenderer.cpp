@@ -31,7 +31,7 @@ void MeshRenderer::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 
-	assert(mTransform && "An Entity doesn't have the transform component");
+	assert(mTransform);
 
 	renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }

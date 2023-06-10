@@ -41,7 +41,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (entryPoint == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function bool init() in the game dll was not found.");
+		throwMotorEngineError("MotorEngine setup error", 
+			"Function bool init() in the game dll was not found.");
 		return false;
 	}
 
@@ -61,7 +62,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameTypesDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function void initFactories() in the game dll was not found.");
+		throwMotorEngineError("MotorEngine setup error", 
+			"Function void initFactories() in the game dll was not found.");
 		return false;
 	}
 
@@ -70,7 +72,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameInputDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function void initInput() in the game dll was not found.");
+		throwMotorEngineError("MotorEngine setup error", 
+			"Function void initInput() in the game dll was not found.");
 		return false;
 	}
 	
@@ -152,17 +155,10 @@ bool MotorEngine::loadGame(std::string gameDllName)
 	gameDllName = "./" + gameDllName + ".dll";
 #endif
 
-	//Convert to Windows text
-	size_t length = gameDllName.length();
-	wchar_t* wtext = new wchar_t[length * 2];
+	//Convert to wide character string
+	std::wstring wName = std::wstring(gameDllName.begin(), gameDllName.end());
 
-	size_t* pReturnValue = new size_t();
-	mbstowcs_s(pReturnValue, wtext, length * 2, gameDllName.c_str(), length);
-
-	mGame = LoadLibrary(wtext);
-
-	delete pReturnValue;
-	delete[] wtext;
+	mGame = LoadLibrary(wName.c_str());
 
 	return mGame != NULL;
 }

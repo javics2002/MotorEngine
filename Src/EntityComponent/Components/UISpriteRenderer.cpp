@@ -15,16 +15,16 @@ me::UISpriteRenderer::~UISpriteRenderer()
 	renderManager().destroyUISprite(mName);
 }
 
-void me::UISpriteRenderer::init(std::string name, std::string nameSprite,int zOrder)
+bool me::UISpriteRenderer::createSprite(std::string name, std::string nameSprite,int zOrder)
 {
 	mName = name;
 	mSpriteName = nameSprite;
 	mZOrder = zOrder;
 
 	if (mSpriteName.size() > 0)
-	{
-		renderManager().createSprite(mName, mSpriteName, zOrder);
-	}
+		return renderManager().createSprite(mName, mSpriteName, zOrder);
+
+	return false;
 }
 
 void me::UISpriteRenderer::start()

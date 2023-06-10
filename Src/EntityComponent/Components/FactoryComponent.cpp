@@ -217,16 +217,18 @@ void me::FactoryLight::destroy(Component* component)
 me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
 {
     if (params.empty())
-    {
         return new UISpriteRenderer();
-    }
+    
     std::string sprite = Value(params, "sprite", std::string());
     std::string materialName = Value(params, "materialname", std::string());
     int zOrder = Value(params, "zorder", 1);
     bool staticState = Value(params, "staticobj", false);
 
     UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
-    spriteRenderer->init(sprite, materialName,zOrder);
+    if (!spriteRenderer->createSprite(sprite, materialName, zOrder)) {
+        delete spriteRenderer;
+        return nullptr;
+    }
     spriteRenderer->setStatic(staticState);
 
     return spriteRenderer;

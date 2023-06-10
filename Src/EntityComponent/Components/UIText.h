@@ -40,10 +40,11 @@ namespace me {
 
 		/**
 		Sets name and zOrder and creates a render overlay with custom text and font.
-		@param name
-		@param text
-		@param zOrder
-		@param fontName
+		@param name Name for RenderManager map
+		@param text Text content of the component
+		@param zOrder Render order. A higher value means it will be on
+			top of other text and sprites with lower zOrder
+		@param fontName Name of the font the text will be displayed with
 		*/
 		bool setTextInfo(std::string name, std::string text, int zOrder, std::string fontName);
 
