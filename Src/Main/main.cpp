@@ -3,7 +3,6 @@
 */
 
 #include "MotorEngine/MotorEngine.h"
-using namespace me;
 
 #ifdef _DEBUG
 #include "Utils/checkML.h"

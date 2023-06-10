@@ -2,6 +2,8 @@
 
 #include <thread>
 
+#include "MotorEngineError.h"
+
 #include "Audio/SoundManager.h"
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
@@ -29,13 +31,17 @@ using namespace me;
 
 bool MotorEngine::setup(std::string gameName)
 {
-	if (!loadGame(gameName))
+	if (!loadGame(gameName)) {
+		throwMotorEngineError("MotorEngine setup error", "The game dll was not found.");
 		return false;
+	}
 
 	GameEntryPoint entryPoint = (GameEntryPoint)GetProcAddress(mGame, "init");
 
 	if (entryPoint == NULL) {
 		FreeLibrary(mGame);
+
+		throwMotorEngineError("MotorEngine setup error", "Function bool init() in the game dll was not found.");
 		return false;
 	}
 
@@ -54,6 +60,8 @@ bool MotorEngine::setup(std::string gameName)
 	TypeDefinition gameTypesDef = (TypeDefinition)GetProcAddress(mGame, "initFactories");
 	if (gameTypesDef == NULL) {
 		FreeLibrary(mGame);
+
+		throwMotorEngineError("MotorEngine setup error", "Function void initFactories() in the game dll was not found.");
 		return false;
 	}
 
@@ -61,6 +69,8 @@ bool MotorEngine::setup(std::string gameName)
 	InputDefinition gameInputDef = (InputDefinition)GetProcAddress(mGame, "initInput");
 	if (gameInputDef == NULL) {
 		FreeLibrary(mGame);
+
+		throwMotorEngineError("MotorEngine setup error", "Function void initInput() in the game dll was not found.");
 		return false;
 	}
 	
