@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\MotorEngine\dllmain.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\MotorEngine.cpp" />
+    <ClCompile Include="..\..\Src\MotorEngine\MotorEngineError.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\MotorEngine\framework.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngine.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngineAPI.h" />
+    <ClInclude Include="..\..\Src\MotorEngine\MotorEngineError.h" />
     <ClInclude Include="..\..\Src\MotorEngine\pch.h" />
   </ItemGroup>
   <ItemGroup>
