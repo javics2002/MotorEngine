@@ -117,7 +117,11 @@ void MotorEngine::loop()
 		
 		//If we're going to change the scene
 		if (sceneManager().isChanging())
-			sceneManager().loadScene(sceneManager().getNewScene());
+			if (!sceneManager().loadScene(sceneManager().getNewScene())) {
+				throwMotorEngineError("New scene load error.", "Invalid parameter value in load file.");
+				quit = true;
+				sceneManager().quit();
+			}
 
 		// Wait time
 		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));
