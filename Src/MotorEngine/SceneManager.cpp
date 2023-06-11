@@ -1,6 +1,6 @@
 ﻿#include "SceneManager.h"
 #include "Scene.h"
-#include "Entity.h"
+#include "EntityComponent/Entity.h"
 
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>

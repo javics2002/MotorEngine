@@ -22,13 +22,18 @@
     <ClCompile Include="..\..\Src\MotorEngine\dllmain.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\MotorEngine.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\MotorEngineError.cpp" />
+    <ClCompile Include="..\..\Src\MotorEngine\Scene.cpp" />
+    <ClCompile Include="..\..\Src\MotorEngine\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\MotorEngine\framework.h" />
+    <ClInclude Include="..\..\Src\MotorEngine\InfoScene.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngine.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngineAPI.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngineError.h" />
     <ClInclude Include="..\..\Src\MotorEngine\pch.h" />
+    <ClInclude Include="..\..\Src\MotorEngine\Scene.h" />
+    <ClInclude Include="..\..\Src\MotorEngine\SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Audio\Audio.vcxproj">
@@ -45,9 +50,6 @@
     </ProjectReference>
     <ProjectReference Include="..\Render\Render.vcxproj">
       <Project>{f397a5dd-2267-4be9-9453-7db0da6118ae}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Scripting\Scripting.vcxproj">
-      <Project>{1cac7004-abd3-4156-8820-cbf95d3b8df7}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -154,12 +156,15 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\LuaBridge\build\Tests\$(Configuration)\;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -172,7 +177,8 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\FMOD\src\api\studio\inc;$(SolutionDir)Dependencies\FMOD\src\api\core\inc;$(SolutionDir)Dependencies\Ogre\src\OgreMain\include;$(SolutionDir)Dependencies\Ogre\src\Components\RTShaderSystem\include;$(SolutionDir)Dependencies\Ogre\build\include;$(SolutionDir)Dependencies\SDL\build\include;$(SolutionDir)Dependencies\SDL\src\include;$(SolutionDir)Dependencies\Bullet\build\src;$(SolutionDir)Dependencies\Bullet\src\src;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -180,6 +186,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\LuaBridge\build\Tests\$(Configuration)\;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

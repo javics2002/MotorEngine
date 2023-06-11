@@ -1,6 +1,6 @@
 ﻿#include "Transform.h"
 #include "EntityComponent/Entity.h"
-#include "EntityComponent/Scene.h"
+#include "MotorEngine/Scene.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 

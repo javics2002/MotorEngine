@@ -1,11 +1,13 @@
 #include "Scene.h"
 
-#include "Entity.h"
-#include "Components/ComponentsFactory.h"
+#include "EntityComponent/Entity.h"
+#include "EntityComponent/Components/ComponentsFactory.h"
+
 
 #ifdef _DEBUG
 #include <iostream>
 #endif
+
 
 using namespace me;
 
@@ -133,6 +135,7 @@ void Scene::lateUpdate(const double& dt) {
 }
 
 void Scene::refresh() {
+	
 	std::erase_if(mEntities, [](const auto& kv) {
 		return !kv.second->isActive();
 	});

@@ -4,7 +4,7 @@
 #define __ENTITYCOMPONENT_FACTORYCOMPONENT
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "EntityComponent/InfoScene.h"
+#include "MotorEngine/InfoScene.h"
 
 namespace me {
 	class Component;

@@ -4,7 +4,7 @@
 #define __ENTITYCOMPONENT_ENTITY
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "InfoScene.h"
+#include "MotorEngine/InfoScene.h"
 #include "Components/ComponentsFactory.h"
 #include <vector>
 #include <map>

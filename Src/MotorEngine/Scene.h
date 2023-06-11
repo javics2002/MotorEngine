@@ -3,7 +3,7 @@
 #ifndef __ENTITYCOMPONENT_SCENE
 #define __ENTITYCOMPONENT_SCENE
 
-#include "MotorEngine/MotorEngineAPI.h"
+#include "MotorEngineAPI.h"
 #include "InfoScene.h"
 #include <memory>
 #include <initializer_list>

@@ -3,7 +3,7 @@
 #define __ENTITYCOMPONENT_COMPONENTSFACTORY
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "EntityComponent/InfoScene.h"
+#include "MotorEngine/InfoScene.h"
 #include "Utils/Singleton.h"
 
 namespace me {

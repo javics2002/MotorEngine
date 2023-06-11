@@ -8,11 +8,11 @@
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
-#include "EntityComponent/SceneManager.h"
+#include "SceneManager.h"
 #include "Render/RenderWindow.h"
 #include "Render/Window.h"
 
-#include "EntityComponent/Scene.h"
+#include "Scene.h"
 #include "EntityComponent/Components/ComponentsFactory.h"
 #include "EntityComponent/Components/FactoryComponent.h"
 

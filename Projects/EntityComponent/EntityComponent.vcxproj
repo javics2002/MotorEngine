@@ -41,8 +41,6 @@
     <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Scene.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h" />
@@ -62,9 +60,6 @@
     <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\InfoScene.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Scene.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\SceneManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
