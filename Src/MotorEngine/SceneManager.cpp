@@ -98,9 +98,15 @@ void SceneManager::update(const double& dt) {
 	}
 }
 
-void SceneManager::change(std::string newScene) {
+void SceneManager::change(std::string newScene, std::list<std::string> awake, std::list<std::string>start) {
     mNewScene = newScene;
 	mChange = true;
+	for (auto awakeFunc : awake) {
+		mAwake.push_back(awakeFunc);
+	}
+	for (auto startFunc : start) {
+		mAwake.push_back(startFunc);
+	}
 }
 
 void me::SceneManager::quit()
@@ -123,7 +129,7 @@ bool me::SceneManager::isQuiting()
 	return mQuit;
 }
 
-int SceneManager::loadEntities(const SceneName& sceneName) {
+int SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start) {
 	
 	// Lua Bridge load
 	lua_State* L = luaL_newstate();
@@ -143,6 +149,18 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 		return 1;
 	}
 
+	for (auto awakeFunc : awake) {
+		lua_getglobal(L, awakeFunc.c_str());
+		if (lua_isfunction(L, -1)) {
+			int result = lua_pcall(L, 0, 0, 0);
+			if (result != LUA_OK) {
+				const char* errorMessage = lua_tostring(L, -1);
+			}
+		}
+	}
+
+	awake.clear();
+
 	// Entry Point
 	lua_getglobal(L, "Entities");
 
@@ -157,6 +175,18 @@ int SceneManager::loadEntities(const SceneName& sceneName) {
 		return 1;
 	}
 
+	for (auto startFunc : start) {
+		lua_getglobal(L, startFunc.c_str());
+		if (lua_isfunction(L, -1)) {
+			int result = lua_pcall(L, 0, 0, 0);
+			if (result != LUA_OK) {
+				const char* errorMessage = lua_tostring(L, -1);
+			}
+		}
+	}
+
+	start.clear();
+
 	lua_close(L);
 	return 0;
 }
@@ -168,21 +198,21 @@ void SceneManager::deleteAllScenes() {
 	mScenes.clear();
 }
 
-bool SceneManager::loadScene(const SceneName& newScene, bool eraseActiveScene) {
-	std::string s = newScene;
+bool SceneManager::loadScene() {
+
 	mChange = false;
-	addScene(s);
+	addScene(mNewScene);
 
 	if (getActiveScene() != nullptr) {
-		if (s == getActiveScene()->getName())
+		if (mNewScene == getActiveScene()->getName())
 			return false;
 
-		if (eraseActiveScene && mScenes.count(getActiveScene()->getName()))
+		if (mScenes.count(getActiveScene()->getName()))
 			removeScene(getActiveScene()->getName());
 	}
 
-	sceneManager().setActiveScene(s);
-	return sceneManager().loadEntities(s) == 0;
+	sceneManager().setActiveScene(mNewScene);
+	return sceneManager().loadEntities(mNewScene, mAwake, mStart) == 0;
 }
 
 int SceneManager::readEntities(lua_State* L) {

@@ -137,7 +137,7 @@ void MotorEngine::loop()
 		
 		//If we're going to change the scene
 		if (sceneManager().isChanging())
-			if (!sceneManager().loadScene(sceneManager().getNewScene())) {
+			if (!sceneManager().loadScene()) {
 				throwMotorEngineError("New scene load error.", "Invalid parameter value in load file.");
 				quit = true;
 				sceneManager().quit();

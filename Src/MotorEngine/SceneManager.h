@@ -91,7 +91,7 @@ namespace me {
         @returns Error Value, 0 if loadEntities worked correctly or 1 if
         some error appeared during this function
         */
-        int loadEntities(const SceneName& sceneName);
+        int loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start);
 
         /**
         Load a new scene to set as active.
@@ -99,7 +99,7 @@ namespace me {
         @param eraseActiveScene If true, currently active scene is erased.
         @returns True on Success.
         */
-        bool loadScene(const SceneName& newScene, bool eraseActiveScene = true);
+        bool loadScene();
 
         /**
         Deletes all scenes and clears the map of scenes.
@@ -110,7 +110,8 @@ namespace me {
         Set the new scene to be made active.
         @param newScene Name of the new scene.
         */
-        void change(std::string newScene);
+        void change(std::string newScene, 
+            std::list<std::string> awake = std::list<std::string>(), std::list<std::string>start = std::list<std::string>());
 
         /**
         Begin quitting process.
@@ -153,6 +154,10 @@ namespace me {
         std::unordered_map<SceneName, Scene*> mScenes;
         Scene* mActiveScene = nullptr;
         InfoScene mEntitiesMap;
+
+
+        std::list<std::string> mAwake;
+        std::list<std::string> mStart;
     };
 
     /**
