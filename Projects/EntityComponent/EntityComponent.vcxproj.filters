@@ -1,126 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{8468747b-677f-41a0-b085-e375e334901f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{7fe9908e-b244-4fc7-8bc1-6d432b2465b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{032ad421-ccca-4ec2-89bc-639739f66376}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Components">
-      <UniqueIdentifier>{fafaca52-8d12-470c-9e58-be262f8a09b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Components">
-      <UniqueIdentifier>{b52f2000-1cab-495f-8674-ef3dc408ed12}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Animator.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\AudioListener.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\AudioSource.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Camera.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Collider.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Component.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\ComponentsFactory.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\FactoryComponent.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\MeshRenderer.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\RigidBody.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Transform.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UIButton.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UIText.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="..\..\Src\EntityComponent\ComponentsFactory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="..\..\Src\EntityComponent\FactoryComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="..\..\Src\EntityComponent\Component.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\AudioListener.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\AudioSource.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Camera.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Collider.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Component.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\ComponentsFactory.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\FactoryComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\MeshRenderer.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\RigidBody.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Transform.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UIButton.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UIText.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="..\..\Src\EntityComponent\ComponentsFactory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="..\..\Src\EntityComponent\FactoryComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{aaf8beaf-5f95-4328-acec-f0d303588f8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{81447079-ba9c-4fa7-8827-50e4e6f29bd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

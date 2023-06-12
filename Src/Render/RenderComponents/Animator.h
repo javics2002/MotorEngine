@@ -2,7 +2,8 @@
 #ifndef __ENTITYCOMPONENT_ANIMATOR
 #define __ENTITYCOMPONENT_ANIMATOR
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include <string>
 
 namespace Ogre {
@@ -12,6 +13,14 @@ namespace Ogre {
 
 namespace me {
 	class MeshRenderer;
+
+
+	//Creates and destroys Animator components
+	class FactoryAnimator : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
 	
 	/**
 	Manages the MeshRenderer Component to play animations of the mesh file in it.

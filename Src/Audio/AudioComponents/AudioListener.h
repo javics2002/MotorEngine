@@ -2,7 +2,8 @@
 #ifndef __ENTITYCOMPONENT_AUDIOLISTENER
 #define __ENTITYCOMPONENT_AUDIOLISTENER
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include "Utils/Vector3.h"
 
 namespace FMOD {
@@ -12,6 +13,15 @@ namespace FMOD {
 
 namespace me {
 	class SoundManager;
+
+	//Creates and destroys AudioListener components
+	class FactoryAudioListener : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/**
 	An Entity with this component will output the audio it listens
 	where it is located.

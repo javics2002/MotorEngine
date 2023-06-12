@@ -1,5 +1,5 @@
 #include "Entity.h"
-#include "Components/Component.h"
+#include "Component.h"
 
 #ifdef _DEBUG
 #include <iostream>

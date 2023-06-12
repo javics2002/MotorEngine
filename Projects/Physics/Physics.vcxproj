@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Physics\DebugDrawer.cpp" />
+    <ClCompile Include="..\..\Src\Physics\PhysicsComponents\Collider.cpp" />
+    <ClCompile Include="..\..\Src\Physics\PhysicsComponents\RigidBody.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Physics\DebugDrawer.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsComponents\Collider.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsComponents\RigidBody.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsEnums.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsManager.h" />
   </ItemGroup>

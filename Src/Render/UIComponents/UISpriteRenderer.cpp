@@ -6,6 +6,33 @@
 #include <OgreVector3.h>
 
 
+
+me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
+{
+	if (params.empty())
+		return new UISpriteRenderer();
+
+	std::string sprite = Value(params, "sprite", std::string());
+	std::string materialName = Value(params, "materialname", std::string());
+	int zOrder = Value(params, "zorder", 1);
+	bool staticState = Value(params, "staticobj", false);
+
+	UISpriteRenderer* spriteRenderer = new UISpriteRenderer();
+	if (!spriteRenderer->createSprite(sprite, materialName, zOrder)) {
+		delete spriteRenderer;
+		return nullptr;
+	}
+	spriteRenderer->setStatic(staticState);
+
+	return spriteRenderer;
+}
+
+void me::FactoryUISpriteRenderer::destroy(Component* component)
+{
+	delete component;
+}
+
+
 me::UISpriteRenderer::UISpriteRenderer()
 {
 }

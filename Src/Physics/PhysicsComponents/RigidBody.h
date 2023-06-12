@@ -3,7 +3,7 @@
 #ifndef __ENTITYCOMPONENT_RIGIDBODY
 #define __ENTITYCOMPONENT_RIGIDBODY
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
 #include "Physics/PhysicsEnums.h"
 #include "Utils/Vector3.h"
 
@@ -16,6 +16,15 @@ class btCollisionShape;
 
 namespace me{
 	class Transform;
+
+	//Creates and destroys RigidBody components
+	class FactoryRigidBody : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/**
 	Enables physical behaviour for the entity, based on its
 	parameters: mass, friction and restitution; its shape and type.

@@ -2,7 +2,8 @@
 #ifndef __ENTITYCOMPONENT_LIGHT
 #define __ENTITYCOMPONENT_LIGHT
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include "Utils/Vector3.h"
 #include <string>
 
@@ -10,6 +11,13 @@ namespace me {
 	class Transform;
 
 	enum LightType { LIGHTTYPE_DIRECTIONAL, LIGHTTYPE_POINT, LIGHTTYPE_SPOT };
+
+	//Creates and destroys Light components
+	class FactoryLight : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
 
 	/**
 	A light source that lits objects in the scene.

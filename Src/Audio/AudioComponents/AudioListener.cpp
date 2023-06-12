@@ -1,9 +1,21 @@
 #include "AudioListener.h"
 #include "Audio/SoundManager.h"
 #include "EntityComponent/Entity.h"
-#include "Transform.h"
+#include "EntityComponent/Transform.h"
 
 
+
+me::Component* me::FactoryAudioListener::create(Parameters& params)
+{
+	AudioListener* audioListener = new AudioListener();
+
+	return audioListener;
+}
+
+void me::FactoryAudioListener::destroy(Component* component)
+{
+	delete component;
+}
 
 me::AudioListener::AudioListener()
 {

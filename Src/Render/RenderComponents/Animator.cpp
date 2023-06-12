@@ -7,6 +7,17 @@
 
 using namespace me;
 
+Component* FactoryAnimator::create(Parameters& params)
+{
+	Animator* animator = new Animator();
+	return animator;
+}
+
+void me::FactoryAnimator::destroy(Component* component)
+{
+	delete component;
+}
+
 Animator::Animator()
 {
 	

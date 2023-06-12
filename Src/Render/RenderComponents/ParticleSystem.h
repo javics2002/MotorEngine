@@ -3,7 +3,7 @@
 #ifndef __ENTITYCOMPONENT_PARTICLESYSTEM
 #define __ENTITYCOMPONENT_PARTICLESYSTEM
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
 #include "Utils/Vector3.h"
 #include <string>
 #include <list>

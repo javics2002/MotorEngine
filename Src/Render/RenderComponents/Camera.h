@@ -3,7 +3,8 @@
 #ifndef __ENTITYCOMPONENT_CAMERA
 #define __ENTITYCOMPONENT_CAMERA
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
 #include <string>
@@ -12,6 +13,14 @@
 namespace me {
 
 	class Transform;
+
+	//Creates and destroys Camera components
+	class FactoryCamera : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
 
 	/**
 	The Camera class create camera(Viewer) in scene

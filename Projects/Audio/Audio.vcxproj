@@ -19,9 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\Audio\AudioComponents\AudioListener.cpp" />
+    <ClCompile Include="..\..\Src\Audio\AudioComponents\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\Audio\AudioComponents\AudioListener.h" />
+    <ClInclude Include="..\..\Src\Audio\AudioComponents\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\SoundManager.h" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,18 @@
 
 using namespace me;
 
+me::Component* me::FactoryCollider::create(Parameters& params)
+{
+	Collider* collider = new Collider();
+
+	return collider;
+}
+
+void me::FactoryCollider::destroy(Component* component)
+{
+	delete component;
+}
+
 Collider::Collider()
 {
 	

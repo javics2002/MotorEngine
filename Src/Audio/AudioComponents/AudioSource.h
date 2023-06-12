@@ -4,7 +4,8 @@
 
 #include <string>
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 
 namespace FMOD {
 	class Sound;
@@ -13,6 +14,15 @@ namespace FMOD {
 namespace me {
 	class SoundManager;
 	class Transform;
+
+	//Creates and destroys AudioSource components
+	class FactoryAudioSource : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/**
 	Plays an audio file in the scene. AudioListeners within range
 	will hear it with the intensity based in their position in the scene. 

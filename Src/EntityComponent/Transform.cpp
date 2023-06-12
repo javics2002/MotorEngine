@@ -6,6 +6,26 @@
 
 using namespace me;
 
+Component* FactoryTransform::create(Parameters& params)
+{
+	Transform* transform = new Transform();
+	transform->setPosition(Vector3(Value(params, "position_x", 0.0f),
+		Value(params, "position_y", 0.0f), Value(params, "position_z", 0.0f)));
+	transform->setRotation(Vector3(Value(params, "rotation_x", 0.0f),
+		Value(params, "rotation_y", 0.0f), Value(params, "rotation_z", 0.0f)));
+	transform->setScale(Vector3(Value(params, "scale_x", 1.0f),
+		Value(params, "scale_y", 1.0f), Value(params, "scale_z", 1.0f)));
+	std::string transformParent = Value(params, "parentname", std::string());
+	transform->setParentName(transformParent);
+	return transform;
+}
+
+void me::FactoryTransform::destroy(Component* component)
+{
+	delete component;
+}
+
+
 Transform::Transform()
 {
 }

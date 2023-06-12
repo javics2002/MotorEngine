@@ -3,11 +3,19 @@
 #ifndef __ENTITYCOMPONENT_UISPRITERENDERER
 #define __ENTITYCOMPONENT_UISPRITERENDERER
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include <string>
 
 namespace me {
 	class UITransform;
+
+	//Creates and destroys UISpriteRenderer components
+	class FactoryUISpriteRenderer : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
 
 	/**
 	The UISpriteRenderer class represents a visual object in 2D space as a screen overlay that will be attached to an entity.

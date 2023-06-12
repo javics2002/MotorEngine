@@ -13,8 +13,24 @@
 #include "Render/Window.h"
 
 #include "Scene.h"
-#include "EntityComponent/Components/ComponentsFactory.h"
-#include "EntityComponent/Components/FactoryComponent.h"
+#include "EntityComponent/ComponentsFactory.h"
+#include "EntityComponent/FactoryComponent.h"
+#include "EntityComponent/Transform.h"
+
+#include "Audio/AudioComponents/AudioListener.h"
+#include "Audio/AudioComponents/AudioSource.h"
+
+#include "Physics/PhysicsComponents/Collider.h"
+#include "Physics/PhysicsComponents/Rigidbody.h"
+
+#include "Render/RenderComponents/Animator.h"
+#include "Render/RenderComponents/Camera.h"
+#include "Render/RenderComponents/Light.h"
+#include "Render/RenderComponents/MeshRenderer.h"
+
+#include "Render/UIComponents/UISpriteRenderer.h"
+#include "Render/UIComponents/UITransform.h"
+#include "Render/UIComponents/UIText.h"
 
 #include "Utils/Time.h"
 #include "Utils/Timer.h"

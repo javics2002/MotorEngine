@@ -3,11 +3,20 @@
 #ifndef __ENTITYCOMPONENT_MESHRENDERER
 #define __ENTITYCOMPONENT_MESHRENDERER
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include <string>
 
 namespace me {
 	class Transform;
+
+	//Creates and destroys MeshRenderer components
+	class FactoryMeshRenderer : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
 
 	/**
 	The MeshRenderer class represents a visual object in 3D space and can be attached to entities.

@@ -2,7 +2,8 @@
 #ifndef __ENTITYCOMPONETN_UITEXT
 #define __ENTITYCOMPONETN_UITEXT
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include <string>
 
 namespace Ogre {
@@ -15,6 +16,13 @@ namespace me {
 	class Vector2;
 	class Vector3;
 	class RenderUIText;
+
+	//Creates and destroys UIText components
+	class FactoryUIText : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
 
 	class __MOTORENGINE_API UIText : public me::Component
 	{

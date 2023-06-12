@@ -4,11 +4,34 @@
 #include "Physics/PhysicsManager.h"
 #include "EntityComponent/Entity.h"
 
-#include "Transform.h"
+#include "EntityComponent/Transform.h"
 
 #include <cassert>
 
 using namespace me;
+
+me::Component* me::FactoryRigidBody::create(Parameters& params)
+{
+	RigidBody* rigidbody = new RigidBody();
+
+	rigidbody->setMass(Value(params, "mass", 0.0f));
+	rigidbody->setRestitution(Value(params, "restitution", 0.0f));
+	rigidbody->setFriction(Value(params, "friction", 0.0f));
+	rigidbody->setTrigger(Value(params, "istrigger", false));
+	rigidbody->setColShape(Shapes(Value(params, "colshape", SHAPES_BOX)));
+	rigidbody->setColliderScale(Vector3(Value(params, "colliderscale_x", 1.0f),
+		Value(params, "colliderscale_y", 1.0f), Value(params, "colliderscale_z", 1.0f)));
+	rigidbody->setMomeventType(MovementType(Value(params, "mvtype", MOVEMENT_TYPE_STATIC)));
+	rigidbody->setMask(Value(params, "mask", 15));
+	rigidbody->setGroup(Value(params, "group", 1));
+
+	return rigidbody;
+}
+
+void me::FactoryRigidBody::destroy(Component* component)
+{
+	delete component;
+}
 
 RigidBody::RigidBody()
 {

@@ -3,11 +3,21 @@
 #ifndef __ENTITYCOMPONENT_UITRANSFORM
 #define __ENTITYCOMPONENT_UITRANSFORM
 
-#include "Component.h"
+#include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include "Utils/Vector2.h"
 #include <list>
 
 namespace me {
+
+	//Creates and destroys UITransform components
+	class FactoryUITransform : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/*
 	*The UITransform class represents a position, rotation, and scale in 2D space as a screen overlay and can be attached to entities.
 	*/

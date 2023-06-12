@@ -24,42 +24,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Animator.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\AudioListener.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\AudioSource.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Camera.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Collider.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Component.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\ComponentsFactory.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\FactoryComponent.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\MeshRenderer.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\RigidBody.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Transform.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UIButton.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UIText.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\Light.cpp" />
-    <ClCompile Include="..\..\Src\EntityComponent\Components\UITransform.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Component.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\ComponentsFactory.cpp" />
     <ClCompile Include="..\..\Src\EntityComponent\Entity.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\FactoryComponent.cpp" />
+    <ClCompile Include="..\..\Src\EntityComponent\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Animator.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\AudioListener.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\AudioSource.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Camera.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Collider.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Component.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\ComponentsFactory.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\FactoryComponent.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\MeshRenderer.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\RigidBody.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Transform.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UIButton.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UISpriteRenderer.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UIText.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\Light.h" />
-    <ClInclude Include="..\..\Src\EntityComponent\Components\UITransform.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Component.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\ComponentsFactory.h" />
     <ClInclude Include="..\..\Src\EntityComponent\Entity.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\FactoryComponent.h" />
+    <ClInclude Include="..\..\Src\EntityComponent\Transform.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

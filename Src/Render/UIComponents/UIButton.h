@@ -3,7 +3,7 @@
 #ifndef __ENTITYCOMPONENT_UIBUTTON
 #define __ENTITYCOMPONENT_UIBUTTON
 
-#include "EntityComponent/Components/Component.h"
+#include "EntityComponent/Component.h"
 #include <string>
 
 namespace Ogre {

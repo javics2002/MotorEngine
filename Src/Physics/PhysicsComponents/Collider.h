@@ -2,11 +2,21 @@
 #ifndef __EC_COLLIDER
 #define __EC_COLLIDER
 
-#include "Component.h"
+#include "EntityComponent/Component.h" 
+#include "EntityComponent/FactoryComponent.h" 
 
 namespace me{
 
 	class Entity;
+
+	//Creates and destroys Collider components
+	class FactoryCollider : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/**
 	Enables the entity's onCollisionEnter, onCollisionStay and onCollisionExit callbacks
 	*/

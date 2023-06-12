@@ -1,7 +1,7 @@
 #include "Scene.h"
 
 #include "EntityComponent/Entity.h"
-#include "EntityComponent/Components/ComponentsFactory.h"
+#include "EntityComponent/ComponentsFactory.h"
 
 
 #ifdef _DEBUG

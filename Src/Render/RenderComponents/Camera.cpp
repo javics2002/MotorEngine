@@ -1,9 +1,41 @@
 #include "Camera.h"
 #include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
-#include "Transform.h"
+#include "EntityComponent/Transform.h"
 
 using namespace me;
+
+
+me::Component* me::FactoryCamera::create(Parameters& params)
+{
+    Camera* camera = new Camera();
+
+    std::string name = Value(params, "name", std::string("Main"));
+    camera->setName(name);
+    camera->setNearDistance(Value(params, "neardistance", .1f));
+    camera->setFarDistance(Value(params, "fardistance", 1000));
+    camera->setAutoRadio(Value(params, "autoratio", false));
+    camera->setZOrder(Value(params, "zorder", 0));
+    camera->setBackgroundColour(Vector4(Value(params, "backgroundcolor_r", .0f), Value(params, "backgroundcolor_g", .0f),
+        Value(params, "backgroundcolor_b", .0f), Value(params, "backgroundcolor_a", 1.0f)));
+    camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
+
+    if (!camera->createCamera()) {
+        delete camera;
+        return nullptr;
+    }
+
+    camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
+    camera->setViewportOverlayEnabled(Value(params, "overlayenable", true));
+
+    return camera;
+}
+
+void me::FactoryCamera::destroy(Component* component)
+{
+    delete component;
+}
+
 
 Camera::Camera()
 {

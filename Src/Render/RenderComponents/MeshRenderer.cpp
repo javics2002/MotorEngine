@@ -1,12 +1,38 @@
 #include "MeshRenderer.h"
 #include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
-#include "Transform.h"
+#include "EntityComponent/Transform.h"
 #include "Utils/Vector3.h"
 
 #include <cassert>
 
 using namespace me;
+
+me::Component* me::FactoryMeshRenderer::create(Parameters& params)
+{
+	std::string mesh = Value(params, "mesh", std::string());
+	std::string meshName = Value(params, "meshname", std::string());
+	std::string materialName = Value(params, "materialname", std::string());
+	bool staticState = Value(params, "staticobj", false);
+
+	MeshRenderer* meshRenderer = new MeshRenderer();
+	meshRenderer->setName(mesh);
+	meshRenderer->setMeshName(meshName);
+	meshRenderer->setStatic(staticState);
+
+	if (!meshRenderer->createMesh()) {
+		delete meshRenderer;
+		return nullptr;
+	}
+
+	meshRenderer->setMaterial(materialName);
+	return meshRenderer;
+}
+
+void me::FactoryMeshRenderer::destroy(Component* component)
+{
+	delete component;
+}
 
 MeshRenderer::MeshRenderer()
 {

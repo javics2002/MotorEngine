@@ -4,11 +4,21 @@
 #define __ENTITYCOMPONENT_TRANSFORM
 
 #include "Component.h"
+#include "FactoryComponent.h"
 #include "Utils/Vector3.h"
 #include "Utils/Vector4.h"
 #include <list>
 
 namespace me {
+
+	//Creates and destroys Transform components
+	class FactoryTransform : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
+
+
 	/*
 	*The Transform class represents a position, rotation, and scale in 3D space and can be attached to entities.
 	*/

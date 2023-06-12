@@ -5,7 +5,7 @@
 
 #include "MotorEngine/MotorEngineAPI.h"
 #include "MotorEngine/InfoScene.h"
-#include "Components/ComponentsFactory.h"
+#include "ComponentsFactory.h"
 #include <vector>
 #include <map>
 
@@ -15,7 +15,7 @@ namespace me {
 
 	/**
 	An Entity is anything that exists in a scene.
-	An Entity by itself doesn´t do anything - its behaviour is defined by the Components 
+	An Entity by itself doesnï¿½t do anything - its behaviour is defined by the Components 
 	it possesses, which are stored in its mComponents map.
 	An Entity has a name, a reference to the scene it exists in, and can be active or not.
 	*/

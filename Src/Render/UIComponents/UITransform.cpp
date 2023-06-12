@@ -2,6 +2,23 @@
 
 using namespace me;
 
+Component* me::FactoryUITransform::create(Parameters& params)
+{
+	UITransform* transform = new UITransform();
+	transform->setPosition(Vector2(Value(params, "position_x", 0.0f),
+		Value(params, "position_y", 0.0f)));
+	transform->setRotation(Value(params, "rotation", 0.0f));
+	transform->setScale(Vector2(Value(params, "scale_x", 1.0f),
+		Value(params, "scale_y", 1.0f)));
+	return transform;
+}
+
+void me::FactoryUITransform::destroy(Component* component)
+{
+	delete component;
+}
+
+
 UITransform::UITransform()
 {
 }
