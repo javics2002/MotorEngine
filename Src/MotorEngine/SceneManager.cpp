@@ -90,13 +90,20 @@ bool SceneManager::setActiveScene(const SceneName& name) {
 	return true;
 }
 
-void SceneManager::update(const double& dt) {
+void SceneManager::update(const double& dt, bool& q) {
 	if (mActiveScene) {
 		mActiveScene->processNewEntities();
 		mActiveScene->update(dt);
 		mActiveScene->lateUpdate(dt);
 		mActiveScene->refresh();
 	}
+
+	//If we're going to change the scene
+	if (isChanging() && !loadScene())
+		quit();
+
+	if (mQuit)
+		q = true;
 }
 
 void SceneManager::change(std::string newScene, std::list<std::string> awake, std::list<std::string>start) {

@@ -119,7 +119,7 @@ void MotorEngine::loop()
 	inputManager().addEvent(QuitLoop, &quit);
 	float dt;
 
-	while (!quit && !sceneManager().isQuiting()) {
+	while (!quit) {
 		while (SDL_PollEvent(&event)) { }
 
 		// Update Time Values
@@ -130,18 +130,10 @@ void MotorEngine::loop()
 
 		soundManager().systemRefresh(dt);
 
-		sceneManager().update(dt);
+		sceneManager().update(dt, quit);
 		
 		// Render the scene
 		renderManager().render();
-		
-		//If we're going to change the scene
-		if (sceneManager().isChanging())
-			if (!sceneManager().loadScene()) {
-				throwMotorEngineError("New scene load error.", "Invalid parameter value in load file.");
-				quit = true;
-				sceneManager().quit();
-			}
 
 		// Wait time
 		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));

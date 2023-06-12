@@ -257,10 +257,10 @@ void PhysicsManager::update(const double& timeStep, int maxSubsteps, const doubl
 	/*
 	Uncomment the following code if you want to see colliders
 	*/
-#ifdef _DEBUG
-	mDebug->clear();
-	mDynamicsWorld->debugDrawWorld();
-#endif
+//#ifdef _DEBUG
+//	mDebug->clear();
+//	mDynamicsWorld->debugDrawWorld();
+//#endif
 }
 
 

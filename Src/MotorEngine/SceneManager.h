@@ -80,8 +80,9 @@ namespace me {
         processNewEntities, update, lateUpdate and refresh.
 
         @param dt Seconds that have passed since last update.
+        @param q Boolean that exits main loop when true.
         */
-        void update(const double& dt);
+        void update(const double& dt, bool& q);
 
         /**
         Parse entities from .lua file to an unordered_map that will be passed to the current Scene
