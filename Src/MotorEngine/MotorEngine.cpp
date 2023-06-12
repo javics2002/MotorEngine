@@ -28,6 +28,7 @@
 #include "Render/RenderComponents/Light.h"
 #include "Render/RenderComponents/MeshRenderer.h"
 
+#include "Render/UIComponents/UIButton.h"
 #include "Render/UIComponents/UISpriteRenderer.h"
 #include "Render/UIComponents/UITransform.h"
 #include "Render/UIComponents/UIText.h"
