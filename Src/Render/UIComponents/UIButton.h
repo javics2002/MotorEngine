@@ -33,7 +33,15 @@ namespace me {
 		UIButton();
 		~UIButton();
 
-		virtual void init(std::string name, std::string materialName, int zOrder);
+		/**
+		Calls RenderManager to create a 2D sprite in the overlay.
+		@param name: Name of Ogre::OverlayElement &&unordered_map
+		@param nameMesh: Name of file (xxx.png)
+		@param zOrder: a value that stablishes if a button is in front or behind something.
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createSprite(std::string name, std::string materialName, int zOrder);
 
 		/**
 		Get info for UITransform, create the Sprite and set the start pos

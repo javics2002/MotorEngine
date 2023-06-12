@@ -49,7 +49,7 @@ using namespace me;
 bool MotorEngine::setup(std::string gameName)
 {
 	if (!loadGame(gameName)) {
-		throwMotorEngineError("MotorEngine setup error", "The game dll was not found.");
+		throwMotorEngineError("MotorEngine setup error", "The game dll was not found or is outdated.");
 		return false;
 	}
 

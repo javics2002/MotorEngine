@@ -1,6 +1,7 @@
 ﻿#include "SceneManager.h"
 #include "Scene.h"
 #include "EntityComponent/Entity.h"
+#include "MotorEngineError.h"
 
 #include <lua.hpp>
 #include <LuaBridge/LuaBridge.h>
@@ -101,12 +102,11 @@ void SceneManager::update(const double& dt) {
 void SceneManager::change(std::string newScene, std::list<std::string> awake, std::list<std::string>start) {
     mNewScene = newScene;
 	mChange = true;
-	for (auto awakeFunc : awake) {
+
+	for (auto awakeFunc : awake)
 		mAwake.push_back(awakeFunc);
-	}
-	for (auto startFunc : start) {
+	for (auto startFunc : start)
 		mAwake.push_back(startFunc);
-	}
 }
 
 void me::SceneManager::quit()
@@ -129,7 +129,7 @@ bool me::SceneManager::isQuiting()
 	return mQuit;
 }
 
-int SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start) {
+bool SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start) {
 	
 	// Lua Bridge load
 	lua_State* L = luaL_newstate();
@@ -139,22 +139,21 @@ int SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string
 	std::string path = "Assets\\Scenes\\" + sceneName;
 
 	if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
-#ifdef _DEBUG
-		//TO DO: Cuando esta clase este en el proyecto MotorEngine (lo tinene que hacer Liy) 
-		// llamar a la funcion throwMotorEngineError (lo tinene que hacer alfonso)
-		//Si se encuentra 1n entra aqui
+#ifdef _DEBUG;
+		throwMotorEngineError("Load entities error", lua_tostring(L, -1));
 		std::cout << lua_tostring(L, -1) << "\n";
 #endif
 		lua_close(L);
-		return 1;
+		return false;
 	}
 
 	for (auto awakeFunc : awake) {
 		lua_getglobal(L, awakeFunc.c_str());
 		if (lua_isfunction(L, -1)) {
-			int result = lua_pcall(L, 0, 0, 0);
-			if (result != LUA_OK) {
-				const char* errorMessage = lua_tostring(L, -1);
+			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
+				throwMotorEngineError("Load entities error", lua_tostring(L, -1));
+				lua_close(L);
+				return false;
 			}
 		}
 	}
@@ -165,22 +164,27 @@ int SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string
 	lua_getglobal(L, "Entities");
 
 	// Entities Parse
-	if (readEntities(L) == 0)
+	if (readEntities(L))
 	{    // Entities to Scene
-		pushEntities();
-		mEntitiesMap.clear();
+		if (pushEntities())
+			mEntitiesMap.clear();
+		else {
+			lua_close(L);
+			return false;
+		}
 	}
 	else {
 		lua_close(L);
-		return 1;
+		return false;
 	}
 
 	for (auto startFunc : start) {
 		lua_getglobal(L, startFunc.c_str());
 		if (lua_isfunction(L, -1)) {
-			int result = lua_pcall(L, 0, 0, 0);
-			if (result != LUA_OK) {
-				const char* errorMessage = lua_tostring(L, -1);
+			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
+				throwMotorEngineError("Load entities error", lua_tostring(L, -1));
+				lua_close(L);
+				return false;
 			}
 		}
 	}
@@ -188,7 +192,7 @@ int SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string
 	start.clear();
 
 	lua_close(L);
-	return 0;
+	return true;
 }
 
 void SceneManager::deleteAllScenes() {
@@ -212,15 +216,17 @@ bool SceneManager::loadScene() {
 	}
 
 	sceneManager().setActiveScene(mNewScene);
-	return sceneManager().loadEntities(mNewScene, mAwake, mStart) == 0;
+	return sceneManager().loadEntities(mNewScene, mAwake, mStart);
 }
 
-int SceneManager::readEntities(lua_State* L) {
+bool SceneManager::readEntities(lua_State* L) {
 	lua_pushnil(L);
 
 	if (!lua_istable(L, -2)) {
+		throwMotorEngineError("Read entities error", 
+			std::string("Expected a table of entities, got ") + std::string(lua_typename(L, lua_type(L, -2))));
 		std::cout << "Expected a table of entities, got " << lua_typename(L, lua_type(L, -2)) << "\n";
-		return 1;
+		return false;
 	}
 
 	// Entities found
@@ -295,7 +301,7 @@ int SceneManager::readEntities(lua_State* L) {
 		lua_pop(L, 1);
 	}
 
-	return 0;
+	return true;
 }
 
 bool SceneManager::pushEntities() {

@@ -50,6 +50,7 @@ namespace me {
 		Calls RenderManager to create a 2D sprite in the overlay.
 		@param name: Name of Ogre::OverlayElement &&unordered_map
 		@param nameMesh: Name of file (xxx.png)
+		@param zOrder: a value that stablishes if a button is in front or behind something.
 		@return false: if renamed
 		@return true: if succeed
 		*/

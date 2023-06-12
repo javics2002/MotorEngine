@@ -29,7 +29,18 @@ namespace me {
 		static std::string Value(Parameters& params, const ParameterName& parameter, std::string defaultValue = "");
 
 	public:
+		/**
+		Creates a component using the parameters specified in params.
+		If a parameter is not included in params it will have its default value.
+		@params Parameters to configure the components in pairs of 
+			<std::string parameterName, std::string parameterValue>
+		@returns Pointer to the component created or nullptr in case component could not be created
+		*/
 		virtual Component* create(Parameters& params) = 0;
+
+		/**
+		Calls the destructor of the component.
+		*/
 		virtual void destroy(Component* component) = 0;
 	};
 

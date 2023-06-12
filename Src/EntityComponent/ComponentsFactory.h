@@ -28,7 +28,7 @@ namespace me {
 		/**
 		Creates a component by default.
 		@param name Name of the component to be created
-		@returns Pointer to the component created
+		@returns Pointer to the component created or nullptr in case component could not be created
 		*/
 		Component* create(const ComponentName& name);
 
@@ -37,7 +37,7 @@ namespace me {
 		@param name Name of the component to be created
 		@param params Parameters to configure the components in pairs of 
 			<std::string parameterName, std::string parameterValue>
-		@returns Pointer to the component created
+		@returns Pointer to the component created or nullptr in case component could not be created
 		*/
 		Component* create(const ComponentName& name, Parameters& params);
 

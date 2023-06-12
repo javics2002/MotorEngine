@@ -2,7 +2,7 @@
 
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/ComponentsFactory.h"
-
+#include "MotorEngineError.h"
 
 #ifdef _DEBUG
 #include <iostream>
@@ -185,8 +185,13 @@ bool Scene::pushEntities(InfoScene& entitiesMap)
 			const ComponentName* componentName = &component.first;
 			Parameters* componentInfo = &component.second;
 
-			if (!entity->addComponent(*componentName, *componentInfo))
+			if (!entity->addComponent(*componentName, *componentInfo)) {
+				throwMotorEngineError("Push entities error", 
+					*componentName + std::string(" component of entity ") +
+					*entityName + std::string(" could not be created. ") +
+					std::string("Check all values are correct and there are no duplicate names"));
 				return false;
+			}
 		}
 	}
 

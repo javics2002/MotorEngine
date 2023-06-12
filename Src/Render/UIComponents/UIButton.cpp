@@ -14,16 +14,13 @@ UIButton::~UIButton()
 {
 }
 
-void UIButton::init(std::string name, std::string materialName, int zOrder)
+bool UIButton::createSprite(std::string name, std::string materialName, int zOrder)
 {
 	mName = name;
 	mSpriteName = materialName;
 
 	if (mSpriteName.size() > 0)
-	{
-		renderManager().createSprite(mName, mSpriteName, zOrder);
-	}
-
+		return renderManager().createSprite(mName, mSpriteName, zOrder);
 }
 
 void UIButton::start()
