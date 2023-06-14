@@ -1,7 +1,7 @@
 # Builds
 /Dependencies/*/build/
 /Dependencies/*/bin/
-/Dependencies/LuaBridge/src/
+/Dependencies/Lua/Src/*/
 
 # No build-time data records
 build_Output.txt

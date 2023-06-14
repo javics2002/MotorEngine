@@ -8,7 +8,7 @@ set ENGINE_ROOT_DIR=%cd%
 set OGRE_COMPILE_DIR=.\Dependencies\Ogre\
 set SDL_COMPILE_DIR=.\Dependencies\SDL\
 set BULLET_COMPILE_DIR=.\Dependencies\Bullet\
-set LUABRIDGE_COMPILE_DIR=.\Dependencies\LuaBridge\
+set LUA_COMPILE_DIR=.\Dependencies\Lua\
 set FMOD_COMPILE_DIR=.\Dependencies\FMOD\
 
 set EXE_DIR=.\Exe\
@@ -32,10 +32,10 @@ cd %ENGINE_ROOT_DIR%/%BULLET_COMPILE_DIR%
 rem Compilacion de Bullet
 call build_Bullet.bat
 
-cd %ENGINE_ROOT_DIR%/%LUABRIDGE_COMPILE_DIR%
+cd %ENGINE_ROOT_DIR%/%LUA_COMPILE_DIR%
 
-rem Compilacion de LuaBridge
-call build_LuaBridge.bat
+rem Compilacion de Lua
+call build_Lua.bat
 
 cd %ENGINE_ROOT_DIR%/%FMOD_COMPILE_DIR%
 
