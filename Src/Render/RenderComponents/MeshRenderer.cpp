@@ -3,6 +3,7 @@
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
 #include "Utils/Vector3.h"
+#include "MotorEngine/MotorEngineError.h"
 
 #include <cassert>
 
@@ -21,6 +22,7 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 	meshRenderer->setStatic(staticState);
 
 	if (!meshRenderer->createMesh()) {
+		throwMotorEngineError("Mesh Renderer Factory Error", "A mesh with that name already exists.");
 		delete meshRenderer;
 		return nullptr;
 	}

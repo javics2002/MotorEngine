@@ -189,7 +189,7 @@ bool Scene::pushEntities(InfoScene& entitiesMap)
 				throwMotorEngineError("Push entities error", 
 					*componentName + std::string(" component of entity ") +
 					*entityName + std::string(" could not be created. ") +
-					std::string("Check all values are correct and there are no duplicate names"));
+					std::string("Check all values are correct."));
 				return false;
 			}
 		}

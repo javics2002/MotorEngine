@@ -53,6 +53,8 @@ namespace me {
 		@param zOrder Render order. A higher value means it will be on
 			top of other text and sprites with lower zOrder
 		@param fontName Name of the font the text will be displayed with
+		@returns true: if succeeded
+		@returns false: text parameter is empty
 		*/
 		bool setTextInfo(std::string name, std::string text, int zOrder, std::string fontName);
 

@@ -2,6 +2,7 @@
 #include "Render/RenderUIText.h"
 #include "EntityComponent/Entity.h"
 #include "UITransform.h"
+#include "MotorEngine/MotorEngineError.h"
 
 using namespace me;
 
@@ -23,7 +24,13 @@ Component* me::FactoryUIText::create(Parameters& params)
     float charHeight = Value(params, "charheight", 0.1f);
 
     UIText* textRenderer = new UIText();
-    textRenderer->setTextInfo(name, text, zOrder, fontName);
+
+    if (!textRenderer->setTextInfo(name, text, zOrder, fontName)) {
+        throwMotorEngineError("UIText Factory Error", "Text parameter was empty.");
+        delete textRenderer;
+        return nullptr;
+    }
+
     textRenderer->setPosition(position.x, position.y);
     textRenderer->setSize(dimension.x, dimension.y);
     textRenderer->setCharHeight(charHeight);

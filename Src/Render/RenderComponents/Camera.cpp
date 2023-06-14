@@ -2,6 +2,7 @@
 #include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
+#include "MotorEngine/MotorEngineError.h"
 
 using namespace me;
 
@@ -21,11 +22,13 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
 
     if (!camera->createCamera()) {
+		throwMotorEngineError("Camera Factory Error", "A camera with that name already exists.");
         delete camera;
         return nullptr;
     }
 
-    camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
+    camera->setViewportDimension(Value(params, "viewport_left", 0.0f), Value(params, "viewport_top", 0.0f), 
+		Value(params, "viewport_width", 1.0f), Value(params, "viewport_height", 1.0f));
     camera->setViewportOverlayEnabled(Value(params, "overlayenable", true));
 
     return camera;
