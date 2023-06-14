@@ -1,6 +1,7 @@
 # Builds
 /Dependencies/*/build/
 /Dependencies/*/bin/
+/Dependencies/Lua/Src/*/
 
 # No build-time data records
 build_Output.txt
