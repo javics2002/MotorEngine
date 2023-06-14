@@ -1,7 +1,7 @@
 ﻿#include "SceneManager.h"
 #include "Scene.h"
 #include "EntityComponent/Entity.h"
-#include "Utils/MotorEngineError.h"
+#include "MotorEngineError.h"
 
 #include <lua.hpp>
 #include <LuaBridge.h>

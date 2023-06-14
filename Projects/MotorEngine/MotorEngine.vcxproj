@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\MotorEngine\dllmain.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\MotorEngine.cpp" />
+    <ClCompile Include="..\..\Src\MotorEngine\MotorEngineError.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\Scene.cpp" />
     <ClCompile Include="..\..\Src\MotorEngine\SceneManager.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="..\..\Src\MotorEngine\InfoScene.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngine.h" />
     <ClInclude Include="..\..\Src\MotorEngine\MotorEngineAPI.h" />
+    <ClInclude Include="..\..\Src\MotorEngine\MotorEngineError.h" />
     <ClInclude Include="..\..\Src\MotorEngine\pch.h" />
     <ClInclude Include="..\..\Src\MotorEngine\Scene.h" />
     <ClInclude Include="..\..\Src\MotorEngine\SceneManager.h" />

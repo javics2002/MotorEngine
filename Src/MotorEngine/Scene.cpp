@@ -2,7 +2,7 @@
 
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/ComponentsFactory.h"
-#include "Utils/MotorEngineError.h"
+#include "MotorEngineError.h"
 
 #ifdef _DEBUG
 #include <iostream>
