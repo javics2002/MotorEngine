@@ -88,8 +88,9 @@ namespace me {
         Parse entities from .lua file to an unordered_map that will be passed to the current Scene
         to create the entities.
         sceneName has to be the name of the file with .lua INCLUDED. Example: sceneName => scene.lua
-		@param awake List of possible methods that will make changes to the lua entity table before reading the entities
-        @param start List of possible methods that will make changes to the entities after reading the entities
+        @param sceneName Name of scene that will be charged
+		@param awake Names of methods to execute before reading the entities
+        @param start Names of methods to execute after reading the entities
         @returns True on Success.
         */
         bool loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start);
