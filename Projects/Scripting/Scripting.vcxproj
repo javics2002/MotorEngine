@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\LuaBridge\Src\;$(SolutionDir)Dependencies\Lua\Src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -130,10 +130,10 @@
       <AdditionalDependencies>Lua54_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>Lua54.lib</AdditionalDependencies>
+      <AdditionalDependencies>lua_d.lib</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\LuaBridge\build\Tests\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Lua\Src\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,7 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;__MOTORENGINE_EXPORT;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Dependencies\LuaBridge\src\Source\;$(SolutionDir)Dependencies\LuaBridge\src\Tests\Lua\lua-5.4.4\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\LuaBridge\Src\;$(SolutionDir)Dependencies\Lua\Src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -154,10 +154,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>Lua54.lib</AdditionalDependencies>
+      <AdditionalDependencies>lua.lib</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\LuaBridge\build\Tests\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Lua\Src\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

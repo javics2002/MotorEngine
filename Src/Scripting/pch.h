@@ -12,6 +12,6 @@
 #include "framework.h"
 
 #include <lua.hpp>
-#include <LuaBridge/LuaBridge.h>
+#include <LuaBridge.h>
 
 #endif //PCH_H
