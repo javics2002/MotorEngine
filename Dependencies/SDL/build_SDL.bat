@@ -1,59 +1,12 @@
 @echo off
-setlocal
-
-
-rem Fecha inicio: 
-set start_time=%time%
-
-
-rem Elimina si existe el anterior registro
-if exist "./build_Output.txt" (
-
-    del "./build_Output.txt"
-
-)
-
-
-rem Configuración de paradas
-if /I "%1"=="" (
-
-    set /p pause_option="> Quieres que se generen pausas? [S/N]: "
-
-) else ( set "pause_option=%1" )
-
 
 rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
 set "cmake=..\CMake\bin\cmake.exe"
 
-
-rem Herramientas necesarias:
-rem 1. cmake        -- Generar builds configuradas
-rem 2. msbuild      -- Compilar usando las herramientas de visual studio
-
-
-
-rem Configuración del shell de Visual Studio 
-if not exist "%temp%\VSWhereOutput.txt" (
-
-    echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
-
-    rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
-    call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
-
-) else ( echo: && echo "> Arranque instantaneo!!" && echo: )
-
-set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
-call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
-
-if /i "%pause_option%"=="S" ( pause )
-
-
-
 rem Parámetros de instalación
 set "project=SDL3" 
 set "src=SDL" 
-
 
 rem Build  
 if not exist "build/%project%.sln" (
@@ -69,8 +22,6 @@ if not exist "build/%project%.sln" (
 ) else (
     echo: && echo "> La build %src% ya existe." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause )
-
 
 
 set "origen=.\build\Release\" 
@@ -78,8 +29,6 @@ set "destino=.\bin\Release\"
 
 rem Release
 if not exist "bin\Release\%project%.dll" (
-
-
     if not exist "build\Release\%project%.dll" ( 
     
         rem Compilación en modo Release
@@ -89,7 +38,6 @@ if not exist "bin\Release\%project%.dll" (
     ) else (
         echo: && echo "> La biblioteca %project% release ya existe." && echo: 
     )
-    if /i "%pause_option%"=="S" ( pause )
 
 
     rem Copia los binarios .dll
@@ -99,9 +47,6 @@ if not exist "bin\Release\%project%.dll" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %project% en modo release ya estaban copiados." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause ) 
-
-
 
 set "origen=.\build\Debug\" 
 set "destino=.\bin\Debug\" 
@@ -119,7 +64,6 @@ if not exist "bin\Debug\%project%.dll" (
     ) else (
         echo: && echo "> La biblioteca %project% debug ya existe." && echo: 
     )
-    if /i "%pause_option%"=="S" ( pause )
 
 
     rem Copia los binarios .dll
@@ -129,24 +73,5 @@ if not exist "bin\Debug\%project%.dll" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %project% en modo debug ya estaban copiados." && echo: 
 )
-if /i "%pause_option%"=="S" ( pause ) 
 
-
-rem Fecha final: 
-set end_time=%time%
-
-
-echo:
-echo ----------------------------
-echo Fecha inicio: %start_time% 
-echo Fecha final: %end_time% 
-echo:
-
-
-rem Check final
-echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
-
-
-rem pause 
-endlocal 
-exit 
+:end

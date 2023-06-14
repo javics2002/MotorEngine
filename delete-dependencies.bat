@@ -6,6 +6,7 @@ rem Variables de directorio
 set OGRE_BUILD_DIR=.\Dependencies\Ogre\build\
 set BULLET_BUILD_DIR=.\Dependencies\Bullet\build\
 set LUA_BUILD_DIR=.\Dependencies\Lua\Src\lib\
+set LUA_TEMPS_DIR=.\Dependencies\Lua\Src\Temp\
 set FMOD_BUILD_DIR=.\Dependencies\FMOD\bin\
 set SDL_BUILD_DIR=.\Dependencies\SDL\build\
 
@@ -44,6 +45,9 @@ echo Borrando build de Lua...
 if exist %LUA_BUILD_DIR% rmdir /s /q %LUA_BUILD_DIR%
 echo Build de Lua borrada.
 
+echo Borrando temps de Lua...
+if exist %LUA_TEMPS_DIR% rmdir /s /q %LUA_TEMPS_DIR%
+echo Temps de Lua borrada.
 
 echo Borrando la carpeta Lib
 if exist %LIBS_DIR% rmdir /s /q %LIBS_DIR%
