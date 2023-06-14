@@ -2,8 +2,6 @@
 
 #include <thread>
 
-#include "MotorEngineError.h"
-
 #include "Audio/SoundManager.h"
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
@@ -35,6 +33,7 @@
 
 #include "Utils/Time.h"
 #include "Utils/Timer.h"
+#include "Utils/MotorEngineError.h"
 
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_init.h>

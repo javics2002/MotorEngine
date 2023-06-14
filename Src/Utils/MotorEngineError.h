@@ -2,7 +2,6 @@
 #ifndef __MOTORENGINE_MOTORENGINEERROR
 #define __MOTORENGINE_MOTORENGINEERROR
 
-#include "MotorEngineAPI.h"
 #include <string>
 
 namespace me {
