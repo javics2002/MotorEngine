@@ -2,7 +2,8 @@
 #include "Audio/SoundManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
-
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 
 me::Component* me::FactoryAudioListener::create(Parameters& params)
@@ -39,6 +40,12 @@ void me::AudioListener::start()
 
 void me::AudioListener::update(const double& dt)
 {
+	if (!mEntity->getComponent<Transform>("transform")) {
+		throwMotorEngineError("AudioListener error", "An entity doesn't have transform component");
+		sceneManager().quit();
+	}
+
+
 	Vector3 position = mEntity->getComponent<Transform>("transform")->getPosition();
 	Vector3 velocity = mEntity->getComponent<Transform>("transform")->getVelocity();
 	Vector3 up = mEntity->getComponent<Transform>("transform")->up();

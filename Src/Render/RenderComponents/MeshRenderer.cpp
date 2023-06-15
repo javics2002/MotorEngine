@@ -4,6 +4,8 @@
 #include "EntityComponent/Transform.h"
 #include "Utils/Vector3.h"
 #include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
+
 
 #include <cassert>
 
@@ -59,7 +61,10 @@ void MeshRenderer::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 
-	assert(mTransform);
+	if (!mTransform) {
+		throwMotorEngineError("MeshRenderer error", "An entity doesn't have Transform component");
+		sceneManager().quit();
+	}
 
 	renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }

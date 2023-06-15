@@ -3,6 +3,7 @@
 #include "EntityComponent/Entity.h"
 #include "UITransform.h"
 #include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 using namespace me;
 
@@ -75,6 +76,11 @@ bool UIText::setTextInfo(std::string name, std::string text, int zOrder, std::st
 void UIText::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+
+    if (!mUITransform) {
+        throwMotorEngineError("UIText error", "An entity doesn't have UItransform component");
+        sceneManager().quit();
+    }
 }
 
 void UIText::setPosition(float x, float y)

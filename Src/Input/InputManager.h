@@ -88,6 +88,14 @@ namespace me {
 		*/
 		void addEvent(SDL_EventFilter filter, void* userdata = NULL);
 
+
+		/**
+		Main loop of this manager
+		@param dt Seconds that have passed since last update.
+		@param q Boolean that exits main loop when true.
+		*/
+		void update(const double& dt);
+
 		/**
 		Deletes filter from the SDLEventWatch.
 		@param filter is the same function used to add the callback.

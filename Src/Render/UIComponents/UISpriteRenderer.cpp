@@ -4,7 +4,8 @@
 #include "UITransform.h"
 #include "Utils/Vector2.h"
 #include <OgreVector3.h>
-
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 
 me::Component* me::FactoryUISpriteRenderer::create(Parameters& params)
@@ -57,6 +58,11 @@ bool me::UISpriteRenderer::createSprite(std::string name, std::string nameSprite
 void me::UISpriteRenderer::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+	if (!mUITransform) {
+		throwMotorEngineError("UISpriteRenderer error", "An entity doesn't have UItransform component");
+		sceneManager().quit();
+	}
+
 	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
 
 }

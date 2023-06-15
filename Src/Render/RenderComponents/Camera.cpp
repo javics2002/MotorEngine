@@ -3,6 +3,8 @@
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
 #include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
+
 
 using namespace me;
 
@@ -94,6 +96,10 @@ void me::Camera::setBackgroundColour(Vector4 colour)
 void Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
+	if (!mTransform) {
+		throwMotorEngineError("Camera error", "An entity doesn't have transform component");
+		sceneManager().quit();
+	}
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }
 

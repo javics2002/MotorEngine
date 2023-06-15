@@ -3,8 +3,9 @@
 #include "BulletDynamics/Dynamics/btRigidBody.h"
 #include "Physics/PhysicsManager.h"
 #include "EntityComponent/Entity.h"
-
+#include "MotorEngine/MotorEngineError.h"
 #include "EntityComponent/Transform.h"
+#include "MotorEngine/SceneManager.h"
 
 #include <cassert>
 
@@ -48,7 +49,10 @@ void RigidBody::start()
 {
 	mTransform = mEntity->getComponent<Transform>("transform");
 	
-	assert(mTransform && "An Entity doesn't have the transform component");
+	if (!mTransform) {
+		throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Transform  component");
+		sceneManager().quit();
+	}
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotation().getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
 
@@ -61,7 +65,10 @@ void RigidBody::start()
 	mCollider = mEntity->getComponent<Collider>("collider");
 	mOriginalMask = mMask;
 
-	assert(mCollider && "An Entity doesn't have the collider  component");
+	if (!mCollider) {
+		throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Collider  component");
+		sceneManager().quit();
+	}
 
 	mBtRigidBody->setUserPointer(mCollider);
 }

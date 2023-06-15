@@ -2,6 +2,8 @@
 #include "Audio/SoundManager.h"
 #include "EntityComponent/Transform.h"
 #include "EntityComponent/Entity.h"
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 
 me::Component* me::FactoryAudioSource::create(Parameters& params)
@@ -39,6 +41,11 @@ me::AudioSource::~AudioSource()
 void me::AudioSource::start()
 {
     mTransform = mEntity->getComponent<Transform>("transform");
+
+    if (!mTransform) {
+        throwMotorEngineError("AudioSource error", "An entity doesn't have transform component");
+        sceneManager().quit();
+    }
     
     // Create a 3D sound or a normal sound
     if (mIsThreeD)

@@ -4,6 +4,8 @@
 #include "Render/RenderManager.h"
 #include <OgreAnimation.h>
 #include <OgreEntity.h>
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 using namespace me;
 
@@ -30,6 +32,10 @@ Animator::~Animator()
 void Animator::start()
 {
 	mMesh = mEntity->getComponent<MeshRenderer>("meshrenderer");
+	if (!mMesh) {
+		throwMotorEngineError("Animator error", "An entity doesn't have MeshRenderer component");
+		sceneManager().quit();
+	}
 	mCurrentState = nullptr;
 	mAnimStatesMap = renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();
 	mStop = false;

@@ -3,6 +3,8 @@
 #include "EntityComponent/Entity.h"
 #include "Render/RenderManager.h"
 #include "UITransform.h"
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 
 using namespace me;
 
@@ -26,6 +28,10 @@ bool UIButton::createSprite(std::string name, std::string materialName, int zOrd
 void UIButton::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
+	if (!mUITransform){
+		throwMotorEngineError("UIButton error", "An entity doesn't have UITransform component");
+	}
+
 	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());
 }
 

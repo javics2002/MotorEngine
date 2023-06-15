@@ -1,6 +1,8 @@
 ﻿#include "Transform.h"
 #include "EntityComponent/Entity.h"
 #include "MotorEngine/Scene.h"
+#include "MotorEngine/MotorEngineError.h"
+#include "MotorEngine/SceneManager.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -190,7 +192,17 @@ void Transform::childTranslation()
 void Transform::setParent()
 {
 	if (mParentName != "") {
+		if (!getEntity()->getScene()->findEntity(mParentName)) {
+			throwMotorEngineError("Transform Error", "Can't find the parent transform Entity");
+			sceneManager().quit();
+
+		}
 		mParent = getEntity()->getScene()->findEntity(mParentName)->getComponent<Transform>("transform");
+		if (!mParent) {
+			throwMotorEngineError("Transform Error", "The parent Entity doesn't have the transform component");
+			sceneManager().quit();
+
+		}
 		mParent->addChild(this);
 	}	
 }

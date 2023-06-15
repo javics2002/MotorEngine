@@ -114,14 +114,12 @@ bool MotorEngine::setup(std::string gameName)
 
 void MotorEngine::loop()
 {
-	SDL_Event event;
 	bool quit = false;
 	inputManager().addEvent(QuitLoop, &quit);
 	float dt;
 
 	while (!quit) {
-		while (SDL_PollEvent(&event)) { }
-
+		
 		// Update Time Values
 		dt = mTime->update();
 		
@@ -131,6 +129,8 @@ void MotorEngine::loop()
 		soundManager().systemRefresh(dt);
 
 		sceneManager().update(dt, quit);
+
+		inputManager().update(dt);
 		
 		// Render the scene
 		renderManager().render();
