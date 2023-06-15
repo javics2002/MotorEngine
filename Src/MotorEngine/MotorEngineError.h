@@ -11,6 +11,6 @@ namespace me {
 	@params title Title of the window
 	@params message Message of the window
 	*/
-	void throwMotorEngineError(std::string title, std::string message);
+	__MOTORENGINE_API void throwMotorEngineError(std::string title, std::string message);
 }
 #endif

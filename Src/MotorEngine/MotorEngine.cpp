@@ -119,6 +119,7 @@ void MotorEngine::loop()
 	float dt;
 
 	while (!quit) {
+		inputManager().update();
 		
 		// Update Time Values
 		dt = mTime->update();
@@ -130,8 +131,6 @@ void MotorEngine::loop()
 
 		sceneManager().update(dt, quit);
 
-		inputManager().update(dt);
-		
 		// Render the scene
 		renderManager().render();
 
