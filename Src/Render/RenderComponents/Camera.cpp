@@ -19,7 +19,7 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setZOrder(Value(params, "zorder", 0));
     camera->setBackgroundColour(Vector4(Value(params, "backgroundcolor_r", .0f), Value(params, "backgroundcolor_g", .0f),
         Value(params, "backgroundcolor_b", .0f), Value(params, "backgroundcolor_a", 1.0f)));
-    camera->setLookAt(Vector3(Value(params, "lookat_x", 0), Value(params, "lookat_y", 0), Value(params, "lookat_z", 0)));
+    camera->setLookAt(Vector3(Value(params, "lookat_x", .0f), Value(params, "lookat_y", .0f), Value(params, "lookat_z", .0f)));
 
     if (!camera->createCamera()) {
 		throwMotorEngineError("Camera Factory Error", "A camera with that name already exists.");
