@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\RenderComponents">
+      <UniqueIdentifier>{7a37e25e-73dd-443c-8da0-89c9affec3a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UIComponents">
+      <UniqueIdentifier>{b1dbab66-8977-439d-9624-5e7105ec4d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RenderComponents">
+      <UniqueIdentifier>{c989d17c-be67-41b9-9683-a7229c01a052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIComponents">
+      <UniqueIdentifier>{d5fc1fb3-476c-4d2e-b10e-fd8184972cae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Render\RenderCamera.cpp">
@@ -39,6 +51,30 @@
     <ClCompile Include="..\..\Src\Render\RenderUIText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Render\RenderComponents\Animator.cpp">
+      <Filter>Source Files\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\RenderComponents\Camera.cpp">
+      <Filter>Source Files\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\RenderComponents\Light.cpp">
+      <Filter>Source Files\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\RenderComponents\MeshRenderer.cpp">
+      <Filter>Source Files\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\UIComponents\UIButton.cpp">
+      <Filter>Source Files\UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\UIComponents\UISpriteRenderer.cpp">
+      <Filter>Source Files\UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\UIComponents\UIText.cpp">
+      <Filter>Source Files\UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Render\UIComponents\UITransform.cpp">
+      <Filter>Source Files\UIComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Render\RenderCamera.h">
@@ -64,6 +100,30 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Render\RenderUIText.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\RenderComponents\Animator.h">
+      <Filter>Header Files\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\RenderComponents\Camera.h">
+      <Filter>Header Files\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\RenderComponents\Light.h">
+      <Filter>Header Files\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\RenderComponents\MeshRenderer.h">
+      <Filter>Header Files\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\UIComponents\UIButton.h">
+      <Filter>Header Files\UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\UIComponents\UISpriteRenderer.h">
+      <Filter>Header Files\UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\UIComponents\UIText.h">
+      <Filter>Header Files\UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Render\UIComponents\UITransform.h">
+      <Filter>Header Files\UIComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

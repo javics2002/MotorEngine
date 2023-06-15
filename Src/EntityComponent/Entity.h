@@ -4,8 +4,8 @@
 #define __ENTITYCOMPONENT_ENTITY
 
 #include "MotorEngine/MotorEngineAPI.h"
-#include "InfoScene.h"
-#include "Components/ComponentsFactory.h"
+#include "MotorEngine/InfoScene.h"
+#include "ComponentsFactory.h"
 #include <vector>
 #include <map>
 
@@ -15,7 +15,7 @@ namespace me {
 
 	/**
 	An Entity is anything that exists in a scene.
-	An Entity by itself doesn´t do anything - its behaviour is defined by the Components 
+	An Entity by itself doesnï¿½t do anything - its behaviour is defined by the Components 
 	it possesses, which are stored in its mComponents map.
 	An Entity has a name, a reference to the scene it exists in, and can be active or not.
 	*/
@@ -46,7 +46,7 @@ namespace me {
 		Add a new component. If the component already exists, notify in debug mode
 		@param componentName The key of the component in the map
 		@param params std::unordered_map<std::string parameterName, std::string parameterValue> 
-		@return Reference to the new component.
+		@return Reference to the new component or nullptr if something went wrong.
 		*/
 		Component* addComponent(const ComponentName& componentName, Parameters& params);
 
@@ -54,18 +54,23 @@ namespace me {
 		Add a new component. If the component already exists, returns a reference to the existing component.
 		@tparam T component type to be returned
 		@param params std::unordered_map<std::string parameterName, std::string parameterValue>
-		@return Reference to the new component.
+		@return Reference to the new component or nullptr if something went wrong.
 		*/
 		template<typename T>
 		T* addComponent(const ComponentName& componentName) {
+			if (hasComponent(componentName)) {
+#ifdef _DEBUG
+				std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+				return nullptr;
+			}
+
 			T* component = static_cast<T*>(componentsFactory().create(componentName));
 
-			if (!hasComponent(componentName)) {
+			if (component) {
 				mComponents.insert({ componentName, component });
 				component->setEntity(this);
 			}
-			else
-				return getComponent<T>(componentName);
 
 			return component;
 		};

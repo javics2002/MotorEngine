@@ -10,7 +10,7 @@
 #include <LinearMath/btDefaultMotionState.h>
 
 #include "DebugDrawer.h"
-#include "EntityComponent/Components/Collider.h"
+#include "PhysicsComponents/Collider.h"
 #include "Render/RenderManager.h"
 
 using namespace me;

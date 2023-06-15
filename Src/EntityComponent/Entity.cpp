@@ -1,5 +1,5 @@
 #include "Entity.h"
-#include "Components/Component.h"
+#include "Component.h"
 
 #ifdef _DEBUG
 #include <iostream>
@@ -38,19 +38,21 @@ namespace me {
 	}
 	
 	Component* Entity::addComponent(const ComponentName& componentName, Parameters& params) {
-		Component* c = componentsFactory().create(componentName, params);
-
-		if (!hasComponent(componentName)) {
-
-			mComponents.insert({ componentName, c });
-			c->setEntity(this);
+		if (hasComponent(componentName)) {
+#ifdef _DEBUG
+			std::cout << "Entity: " << mName << " already has the Component:" << componentName;
+#endif
+			return nullptr;
 		}
 
-#ifdef _DEBUG
-		else std::cout << "Entity: " << mName << " already has the Component:" << componentName;
-#endif
+		Component* component = componentsFactory().create(componentName, params);
 
-		return c;
+		if (component) {
+			mComponents.insert({ componentName, component });
+			component->setEntity(this);
+		}
+
+		return component;
 	}
 
 	bool Entity::removeComponent(const ComponentName& componentName)

@@ -1,29 +1,8 @@
 @echo off
 
-rem Fecha inicio: 
-set start_time=%time%
-
 rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
 set "cmake=..\CMake\bin\cmake.exe"
-
-
-rem Herramientas necesarias:
-rem 1. cmake        -- Generar builds configuradas
-rem 2. msbuild      -- Compilar usando las herramientas de visual studio
-
--rem Configuración del shell de Visual Studio 
-if not exist "%temp%\VSWhereOutput.txt" (
-
-    echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
-
-    rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
-    call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
-
-) else ( echo: && echo "> Arranque instantaneo!!" && echo: )
-
-set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
-call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 
 rem Parámetros de instalación
 set "project=SDL3" 
@@ -50,8 +29,6 @@ set "destino=.\bin\Release\"
 
 rem Release
 if not exist "bin\Release\%project%.dll" (
-
-
     if not exist "build\Release\%project%.dll" ( 
     
         rem Compilación en modo Release
@@ -70,8 +47,6 @@ if not exist "bin\Release\%project%.dll" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %project% en modo release ya estaban copiados." && echo: 
 )
-
-
 
 set "origen=.\build\Debug\" 
 set "destino=.\bin\Debug\" 
@@ -98,20 +73,5 @@ if not exist "bin\Debug\%project%.dll" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %project% en modo debug ya estaban copiados." && echo: 
 )
-
-
-rem Fecha final: 
-set end_time=%time%
-
-
-echo:
-echo ----------------------------
-echo Fecha inicio: %start_time% 
-echo Fecha final: %end_time% 
-echo:
-
-
-rem Check final
-echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
 :end

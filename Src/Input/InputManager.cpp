@@ -31,6 +31,12 @@ void InputManager::addEvent(SDL_EventFilter filter, void* userdata)
 	SDL_AddEventWatch(filter, userdata);
 }
 
+void InputManager::update()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {}
+}
+
 void InputManager::deleteEvent(SDL_EventFilter filter, void* userdata)
 {
 	SDL_DelEventWatch(filter, userdata);

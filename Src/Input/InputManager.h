@@ -88,6 +88,12 @@ namespace me {
 		*/
 		void addEvent(SDL_EventFilter filter, void* userdata = NULL);
 
+
+		/**
+		Main loop of this manager
+		*/
+		void update();
+
 		/**
 		Deletes filter from the SDLEventWatch.
 		@param filter is the same function used to add the callback.

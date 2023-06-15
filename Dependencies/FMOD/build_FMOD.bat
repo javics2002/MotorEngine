@@ -1,15 +1,8 @@
 @echo off
 
-rem Fecha inicio: 
-set start_time=%time%
-
 rem Plataforma utilizada
 set "platform=x64"
 set "target=FMOD"
-
-rem Herramientas necesarias:
-rem 1. xcopy        -- Copiar ficheros concretos
-
 
 set "origen=.\src\api\core\lib\%platform%\" 
 set "origenstudio=.\src\api\studio\lib\%platform%\" 
@@ -34,21 +27,6 @@ if not exist "bin/" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %target% ya estaban copiados." && echo: 
 )
-
-
-rem Fecha final: 
-set end_time=%time%
-
-
-echo:
-echo ----------------------------
-echo Fecha inicio: %start_time% 
-echo Fecha final: %end_time% 
-echo:
-
-
-rem Check final
-echo "> Build %target% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
 
 
 :end

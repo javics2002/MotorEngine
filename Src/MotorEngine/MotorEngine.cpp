@@ -8,13 +8,30 @@
 #include "Physics/PhysicsManager.h"
 #include "Render/RenderManager.h"
 #include "Input/InputManager.h"
-#include "EntityComponent/SceneManager.h"
+#include "SceneManager.h"
 #include "Render/RenderWindow.h"
 #include "Render/Window.h"
 
-#include "EntityComponent/Scene.h"
-#include "EntityComponent/Components/ComponentsFactory.h"
-#include "EntityComponent/Components/FactoryComponent.h"
+#include "Scene.h"
+#include "EntityComponent/ComponentsFactory.h"
+#include "EntityComponent/FactoryComponent.h"
+#include "EntityComponent/Transform.h"
+
+#include "Audio/AudioComponents/AudioListener.h"
+#include "Audio/AudioComponents/AudioSource.h"
+
+#include "Physics/PhysicsComponents/Collider.h"
+#include "Physics/PhysicsComponents/Rigidbody.h"
+
+#include "Render/RenderComponents/Animator.h"
+#include "Render/RenderComponents/Camera.h"
+#include "Render/RenderComponents/Light.h"
+#include "Render/RenderComponents/MeshRenderer.h"
+
+#include "Render/UIComponents/UIButton.h"
+#include "Render/UIComponents/UISpriteRenderer.h"
+#include "Render/UIComponents/UITransform.h"
+#include "Render/UIComponents/UIText.h"
 
 #include "Utils/Time.h"
 #include "Utils/Timer.h"
@@ -32,7 +49,7 @@ using namespace me;
 bool MotorEngine::setup(std::string gameName)
 {
 	if (!loadGame(gameName)) {
-		throwMotorEngineError("MotorEngine setup error", "The game dll was not found.");
+		errorManager().throwMotorEngineError("MotorEngine setup error", "The game dll was not found or is outdated.");
 		return false;
 	}
 
@@ -41,7 +58,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (entryPoint == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function bool init() in the game dll was not found.");
+		errorManager().throwMotorEngineError("MotorEngine setup error",
+			"Function bool init() in the game dll was not found.");
 		return false;
 	}
 
@@ -61,7 +79,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameTypesDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function void initFactories() in the game dll was not found.");
+		errorManager().throwMotorEngineError("MotorEngine setup error",
+			"Function void initFactories() in the game dll was not found.");
 		return false;
 	}
 
@@ -70,7 +89,8 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameInputDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", "Function void initInput() in the game dll was not found.");
+		errorManager().throwMotorEngineError("MotorEngine setup error",
+			"Function void initInput() in the game dll was not found.");
 		return false;
 	}
 	
@@ -94,14 +114,13 @@ bool MotorEngine::setup(std::string gameName)
 
 void MotorEngine::loop()
 {
-	SDL_Event event;
 	bool quit = false;
 	inputManager().addEvent(QuitLoop, &quit);
 	float dt;
 
-	while (!quit && !sceneManager().isQuiting()) {
-		while (SDL_PollEvent(&event)) { }
-
+	while (!quit) {
+		inputManager().update();
+		
 		// Update Time Values
 		dt = mTime->update();
 		
@@ -110,14 +129,10 @@ void MotorEngine::loop()
 
 		soundManager().systemRefresh(dt);
 
-		sceneManager().update(dt);
-		
+		sceneManager().update(dt, quit);
+
 		// Render the scene
 		renderManager().render();
-		
-		//If we're going to change the scene
-		if (sceneManager().isChanging())
-			sceneManager().loadScene(sceneManager().getNewScene());
 
 		// Wait time
 		std::this_thread::sleep_for(std::chrono::milliseconds(mTime->millisecondsToNextFrame()));
@@ -135,7 +150,8 @@ void MotorEngine::exit()
 	ComponentsFactory::Shutdown();
 	InputManager::Shutdown();
 
-	delete mTime;
+	if (mTime)
+		delete mTime;
 
 	FreeLibrary(mGame);
 }
@@ -148,17 +164,10 @@ bool MotorEngine::loadGame(std::string gameDllName)
 	gameDllName = "./" + gameDllName + ".dll";
 #endif
 
-	//Convert to Windows text
-	size_t length = gameDllName.length();
-	wchar_t* wtext = new wchar_t[length * 2];
+	//Convert to wide character string
+	std::wstring wName = std::wstring(gameDllName.begin(), gameDllName.end());
 
-	size_t* pReturnValue = new size_t();
-	mbstowcs_s(pReturnValue, wtext, length * 2, gameDllName.c_str(), length);
-
-	mGame = LoadLibrary(wtext);
-
-	delete pReturnValue;
-	delete[] wtext;
+	mGame = LoadLibrary(wName.c_str());
 
 	return mGame != NULL;
 }
@@ -189,7 +198,7 @@ int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 	return 0;
 }
 
-MotorEngine::MotorEngine() {
+MotorEngine::MotorEngine() : mGame(nullptr), mTime(nullptr) {
 }
 
 MotorEngine::~MotorEngine()

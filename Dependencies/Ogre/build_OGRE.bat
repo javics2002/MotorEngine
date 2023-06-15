@@ -1,33 +1,8 @@
 @echo off
 
-rem Fecha inicio: 
-set start_time=%time%
-
 rem Ruta actual y herramienta cmake
 set "RootDirectory=%CD%"
 set "cmake=..\CMake\bin\cmake.exe"
-
-
-rem Herramientas necesarias:
-rem 1. curl             -- Parecido a powershell Invoke-Request, solicitar una descarga web
-rem 2.a. unzip          -- Descompresor de ficheros .zip más eficiente (no logro generar la build) 
-rem 2.b. 7zip           -- Descompresor de ficheros .zip y .tar muy eficiente! 
-rem 2.c. powershell     -- Uso de la herramienta Expand-Archive, descomprimir ficheros .zip 
-rem 3. cmake            -- Generar builds configuradas
-rem 4. msbuild          -- Compilar usando las herramientas de visual studio
-
-rem Configuración del shell de Visual Studio 
-if not exist "%temp%\VSWhereOutput.txt" (
-
-    echo: && echo "> Buscando la version mas actualizada de Visual Studio DCP..." && echo:
-
-    rem Búsqueda y ejecución del shell Developer command prompt for Visual Studio 2022 más actualizado
-    call "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath > "%temp%\VSWhereOutput.txt"
-
-) else ( echo: && echo "> Arranque instantaneo!!" && echo: )
-
-set /p VS_PATH=<"%temp%\VSWhereOutput.txt"
-call "%VS_PATH%\Common7\Tools\VsDevCmd.bat"
 
 rem Parámetros de instalación
 set "project=OGRE" 
@@ -52,15 +27,11 @@ if not exist "build/" (
     echo: && echo "> La build %project% ya existe." && echo: 
 )
 
-
-
 set "origen=.\build\bin\release\" 
 set "destino=.\bin\Release\" 
 
 rem Release
 if not exist "bin\Release\%target%.dll" (
-
-
     if not exist "build\bin\release\%target%.dll" ( 
         
         rem Compilación en modo Release
@@ -106,21 +77,5 @@ if not exist "bin\Debug\%target%_d.dll" (
 ) else (
     echo: && echo "> Los binarios (.dll) de %project% en modo debug ya estaban copiados." && echo: 
 )
-
-
-rem Fecha final: 
-set end_time=%time%
-
-
-echo:
-echo ----------------------------
-echo Fecha inicio: %start_time% 
-echo Fecha final: %end_time% 
-echo:
-
-
-rem Check final
-echo "> Build %project% finalizada [ inicio: %start_time% // finalizado: %end_time% ]" > "./build_Output.txt"
-
 
 :end

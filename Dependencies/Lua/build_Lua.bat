@@ -1,10 +1,14 @@
 @echo off
-set EXES=.\..\..\Exe
+
+set "origen=.\Src\lib\Release\" 
+set "destino=.\bin\Release\" 
 
 cd .\Src
 
 msbuild "lua.sln" /p:configuration=Debug
 msbuild "lua.sln" /p:configuration=Release
 
-rem XCOPY /y /s .\lib\Debug\lua_d.dll %EXES%
-rem XCOPY /y /s .\lib\Release\lua.dll %EXES%
+cd..
+
+rem Copia los binarios .dll
+robocopy /NJH %origen% %destino% *.dll

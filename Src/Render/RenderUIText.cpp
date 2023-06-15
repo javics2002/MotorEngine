@@ -28,7 +28,6 @@ RenderUIText::RenderUIText(std::string name, std::string text, int zOrder, std::
 	mTextArea->setAlignment(Ogre::TextAreaOverlayElement::Center);
 	mCont->addChild(mTextArea);
 	mOverlay->show();
-
 }
 
 RenderUIText::~RenderUIText()
