@@ -91,10 +91,8 @@ namespace me {
 
 		/**
 		Main loop of this manager
-		@param dt Seconds that have passed since last update.
-		@param q Boolean that exits main loop when true.
 		*/
-		void update(const double& dt);
+		void update();
 
 		/**
 		Deletes filter from the SDLEventWatch.
