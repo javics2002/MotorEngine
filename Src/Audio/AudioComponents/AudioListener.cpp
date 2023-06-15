@@ -41,7 +41,7 @@ void me::AudioListener::start()
 void me::AudioListener::update(const double& dt)
 {
 	if (!mEntity->getComponent<Transform>("transform")) {
-		throwMotorEngineError("AudioListener error", "An entity doesn't have transform component");
+		errorManager().throwMotorEngineError("AudioListener error", "An entity doesn't have transform component");
 		sceneManager().quit();
 	}
 

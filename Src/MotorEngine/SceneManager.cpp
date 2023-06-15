@@ -146,10 +146,7 @@ bool SceneManager::loadEntities(const SceneName& sceneName, std::list<std::strin
 	std::string path = "Assets\\Scenes\\" + sceneName;
 
 	if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
-#ifdef _DEBUG;
-		throwMotorEngineError("Load entities error", lua_tostring(L, -1));
-		std::cout << lua_tostring(L, -1) << "\n";
-#endif
+		errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
 		lua_close(L);
 		return false;
 	}
@@ -158,7 +155,7 @@ bool SceneManager::loadEntities(const SceneName& sceneName, std::list<std::strin
 		lua_getglobal(L, awakeFunc.c_str());
 		if (lua_isfunction(L, -1)) {
 			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
-				throwMotorEngineError("Load entities error", lua_tostring(L, -1));
+				errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
 				lua_close(L);
 				return false;
 			}
@@ -189,7 +186,7 @@ bool SceneManager::loadEntities(const SceneName& sceneName, std::list<std::strin
 		lua_getglobal(L, startFunc.c_str());
 		if (lua_isfunction(L, -1)) {
 			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
-				throwMotorEngineError("Load entities error", lua_tostring(L, -1));
+				errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
 				lua_close(L);
 				return false;
 			}
@@ -230,7 +227,7 @@ bool SceneManager::readEntities(lua_State* L) {
 	lua_pushnil(L);
 
 	if (!lua_istable(L, -2)) {
-		throwMotorEngineError("Read entities error", 
+		errorManager().throwMotorEngineError("Read entities error",
 			std::string("Expected a table of entities, got ") + std::string(lua_typename(L, lua_type(L, -2))));
 		std::cout << "Expected a table of entities, got " << lua_typename(L, lua_type(L, -2)) << "\n";
 		return false;

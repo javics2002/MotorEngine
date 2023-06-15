@@ -186,7 +186,7 @@ bool Scene::pushEntities(InfoScene& entitiesMap)
 			Parameters* componentInfo = &component.second;
 
 			if (!entity->addComponent(*componentName, *componentInfo)) {
-				throwMotorEngineError("Push entities error", 
+				errorManager().throwMotorEngineError("Push entities error",
 					*componentName + std::string(" component of entity ") +
 					*entityName + std::string(" could not be created. ") +
 					std::string("Check all values are correct."));

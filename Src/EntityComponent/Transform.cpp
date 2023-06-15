@@ -193,13 +193,13 @@ void Transform::setParent()
 {
 	if (mParentName != "") {
 		if (!getEntity()->getScene()->findEntity(mParentName)) {
-			throwMotorEngineError("Transform Error", "Can't find the parent transform Entity");
+			errorManager().throwMotorEngineError("Transform Error", "Can't find the parent transform Entity");
 			sceneManager().quit();
 
 		}
 		mParent = getEntity()->getScene()->findEntity(mParentName)->getComponent<Transform>("transform");
 		if (!mParent) {
-			throwMotorEngineError("Transform Error", "The parent Entity doesn't have the transform component");
+			errorManager().throwMotorEngineError("Transform Error", "The parent Entity doesn't have the transform component");
 			sceneManager().quit();
 
 		}

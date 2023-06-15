@@ -27,7 +27,7 @@ Component* me::FactoryUIText::create(Parameters& params)
     UIText* textRenderer = new UIText();
 
     if (!textRenderer->setTextInfo(name, text, zOrder, fontName)) {
-        throwMotorEngineError("UIText Factory Error", "Text parameter was empty.");
+        errorManager().throwMotorEngineError("UIText Factory Error", "Text parameter was empty.");
         delete textRenderer;
         return nullptr;
     }
@@ -78,7 +78,7 @@ void UIText::start()
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
 
     if (!mUITransform) {
-        throwMotorEngineError("UIText error", "An entity doesn't have UItransform component");
+        errorManager().throwMotorEngineError("UIText error", "An entity doesn't have UItransform component");
         sceneManager().quit();
     }
 }

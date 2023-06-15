@@ -24,7 +24,7 @@ me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 	meshRenderer->setStatic(staticState);
 
 	if (!meshRenderer->createMesh()) {
-		throwMotorEngineError("Mesh Renderer Factory Error", "A mesh with that name already exists.");
+		errorManager().throwMotorEngineError("Mesh Renderer Factory Error", "A mesh with that name already exists.");
 		delete meshRenderer;
 		return nullptr;
 	}
@@ -62,7 +62,7 @@ void MeshRenderer::start()
 	mTransform = getEntity()->getComponent<Transform>("transform");
 
 	if (!mTransform) {
-		throwMotorEngineError("MeshRenderer error", "An entity doesn't have Transform component");
+		errorManager().throwMotorEngineError("MeshRenderer error", "An entity doesn't have Transform component");
 		sceneManager().quit();
 	}
 

@@ -24,7 +24,7 @@ me::Component* me::FactoryCamera::create(Parameters& params)
     camera->setLookAt(Vector3(Value(params, "lookat_x", .0f), Value(params, "lookat_y", .0f), Value(params, "lookat_z", .0f)));
 
     if (!camera->createCamera()) {
-		throwMotorEngineError("Camera Factory Error", "A camera with that name already exists.");
+		errorManager().throwMotorEngineError("Camera Factory Error", "A camera with that name already exists.");
         delete camera;
         return nullptr;
     }
@@ -97,7 +97,7 @@ void Camera::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
 	if (!mTransform) {
-		throwMotorEngineError("Camera error", "An entity doesn't have transform component");
+		errorManager().throwMotorEngineError("Camera error", "An entity doesn't have transform component");
 		sceneManager().quit();
 	}
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);

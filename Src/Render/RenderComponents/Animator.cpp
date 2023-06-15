@@ -33,7 +33,7 @@ void Animator::start()
 {
 	mMesh = mEntity->getComponent<MeshRenderer>("meshrenderer");
 	if (!mMesh) {
-		throwMotorEngineError("Animator error", "An entity doesn't have MeshRenderer component");
+		errorManager().throwMotorEngineError("Animator error", "An entity doesn't have MeshRenderer component");
 		sceneManager().quit();
 	}
 	mCurrentState = nullptr;

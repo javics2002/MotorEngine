@@ -9,7 +9,7 @@ float FactoryComponent::Value(Parameters& params, const ParameterName& parameter
     if (params.count(parameter) > 0) {
         for (char c : params[parameter]) {
             if (!std::isdigit(c) && c != '.' && c != '-') {
-                throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a float.");
+                errorManager().throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a float.");
                 sceneManager().quit();
                 return defaultValue;
             }
@@ -29,7 +29,7 @@ int FactoryComponent::Value(Parameters& params, const ParameterName& parameter, 
     if (params.count(parameter) > 0) {
         for (char c : params[parameter]) {
             if (!std::isdigit(c) && c != '-') {
-                throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a integer.");
+                errorManager().throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a integer.");
                 sceneManager().quit();
                 return defaultValue;
             }
@@ -52,7 +52,7 @@ bool FactoryComponent::Value(Parameters& params, const ParameterName& parameter,
             return (bool)value;
         }
         else {
-            throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a boolean.");
+            errorManager().throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a boolean.");
             sceneManager().quit();
             return defaultValue;
         }

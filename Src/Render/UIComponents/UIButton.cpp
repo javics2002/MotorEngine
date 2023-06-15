@@ -29,7 +29,7 @@ void UIButton::start()
 {
 	mUITransform = getEntity()->getComponent<UITransform>("uitransform");
 	if (!mUITransform){
-		throwMotorEngineError("UIButton error", "An entity doesn't have UITransform component");
+		errorManager().throwMotorEngineError("UIButton error", "An entity doesn't have UITransform component");
 	}
 
 	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());

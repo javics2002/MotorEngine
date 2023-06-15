@@ -1,7 +1,15 @@
 #include "MotorEngineError.h"
 #include <Windows.h>
 
-void me::throwMotorEngineError(std::string title, std::string message)
+me::ErrorManager::ErrorManager()
+{
+}
+
+me::ErrorManager::~ErrorManager()
+{
+}
+
+void me::ErrorManager::throwMotorEngineError(std::string title, std::string message)
 {
 	std::wstring wTitle = std::wstring(title.begin(), title.end());
 	std::wstring wMessage = std::wstring(message.begin(), message.end());

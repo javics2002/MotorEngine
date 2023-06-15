@@ -50,7 +50,7 @@ void RigidBody::start()
 	mTransform = mEntity->getComponent<Transform>("transform");
 	
 	if (!mTransform) {
-		throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Transform  component");
+		errorManager().throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Transform  component");
 		sceneManager().quit();
 	}
 
@@ -66,7 +66,7 @@ void RigidBody::start()
 	mOriginalMask = mMask;
 
 	if (!mCollider) {
-		throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Collider  component");
+		errorManager().throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Collider  component");
 		sceneManager().quit();
 	}
 

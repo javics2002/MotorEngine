@@ -49,7 +49,7 @@ using namespace me;
 bool MotorEngine::setup(std::string gameName)
 {
 	if (!loadGame(gameName)) {
-		throwMotorEngineError("MotorEngine setup error", "The game dll was not found or is outdated.");
+		errorManager().throwMotorEngineError("MotorEngine setup error", "The game dll was not found or is outdated.");
 		return false;
 	}
 
@@ -58,7 +58,7 @@ bool MotorEngine::setup(std::string gameName)
 	if (entryPoint == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", 
+		errorManager().throwMotorEngineError("MotorEngine setup error",
 			"Function bool init() in the game dll was not found.");
 		return false;
 	}
@@ -79,7 +79,7 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameTypesDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", 
+		errorManager().throwMotorEngineError("MotorEngine setup error",
 			"Function void initFactories() in the game dll was not found.");
 		return false;
 	}
@@ -89,7 +89,7 @@ bool MotorEngine::setup(std::string gameName)
 	if (gameInputDef == NULL) {
 		FreeLibrary(mGame);
 
-		throwMotorEngineError("MotorEngine setup error", 
+		errorManager().throwMotorEngineError("MotorEngine setup error",
 			"Function void initInput() in the game dll was not found.");
 		return false;
 	}

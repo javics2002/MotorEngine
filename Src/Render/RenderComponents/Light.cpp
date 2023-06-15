@@ -43,7 +43,7 @@ void Light::start()
 {
 	mTransform = getEntity()->getComponent<Transform>("transform");
     if (!mTransform) {
-        throwMotorEngineError("Ligth error", "An entity doesn't have transform Component");
+        errorManager().throwMotorEngineError("Ligth error", "An entity doesn't have transform Component");
         sceneManager().quit();
     }
 	renderManager().createNewLight(mName, mTransform->getPosition(), mDirection, mColor);

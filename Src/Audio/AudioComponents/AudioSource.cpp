@@ -43,7 +43,7 @@ void me::AudioSource::start()
     mTransform = mEntity->getComponent<Transform>("transform");
 
     if (!mTransform) {
-        throwMotorEngineError("AudioSource error", "An entity doesn't have transform component");
+        errorManager().throwMotorEngineError("AudioSource error", "An entity doesn't have transform component");
         sceneManager().quit();
     }
     
