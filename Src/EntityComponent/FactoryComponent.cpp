@@ -47,15 +47,16 @@ int FactoryComponent::Value(Parameters& params, const ParameterName& parameter, 
 bool FactoryComponent::Value(Parameters& params, const ParameterName& parameter, bool defaultValue)
 {
     if (params.count(parameter) > 0) {
-        int value = std::stoi(params[parameter]);
-        if ((value == 0) || (value == 1)) {
-            return (bool)value;
+        if (params[parameter].size() == 1 && std::isdigit(params[parameter][0])) {
+            int value = std::stoi(params[parameter]);
+
+            if ((value == 0) || (value == 1))
+                return (bool)value;
         }
-        else {
-            errorManager().throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a boolean.");
-            sceneManager().quit();
-            return defaultValue;
-        }
+    
+        errorManager().throwMotorEngineError("Invalid parameter for " + parameter + " set.", " Value is not a boolean.");
+        sceneManager().quit();
+        return defaultValue;
     }
     else {
 #ifdef _DEBUG

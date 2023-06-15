@@ -61,6 +61,7 @@ void me::UISpriteRenderer::start()
 	if (!mUITransform) {
 		errorManager().throwMotorEngineError("UISpriteRenderer error", "An entity doesn't have UItransform component");
 		sceneManager().quit();
+		return;
 	}
 
 	renderManager().setUISpriteTransform(mName, mUITransform->getPosition(), mUITransform->getScale(), mUITransform->getRotation());

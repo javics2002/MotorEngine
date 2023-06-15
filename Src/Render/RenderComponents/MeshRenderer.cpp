@@ -64,6 +64,7 @@ void MeshRenderer::start()
 	if (!mTransform) {
 		errorManager().throwMotorEngineError("MeshRenderer error", "An entity doesn't have Transform component");
 		sceneManager().quit();
+        return;
 	}
 
 	renderManager().setMeshTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());

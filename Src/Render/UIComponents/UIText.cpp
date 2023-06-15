@@ -15,7 +15,7 @@ Component* me::FactoryUIText::create(Parameters& params)
     }
     std::string name = Value(params, "name", std::string());
     std::string text = Value(params, "text", std::string());
-    std::string fontName = Value(params, "fontname", std::string());
+    std::string fontName = Value(params, "fontname", std::string("Mario"));
     Vector3 colour = Vector3(Value(params, "colour_x", 1.0f), Value(params, "colour_y", 1.0f), Value(params, "colour_z", 1.0f));
     Vector3 colourBottom = Vector3(Value(params, "colourbottom_x", 1.0f), Value(params, "colourbottom_y", 1.0f), Value(params, "colourbottom_z", 1.0f));
     Vector3 colourTop = Vector3(Value(params, "colourtop_x", 1.0f), Value(params, "colourtop_y", 1.0f), Value(params, "colourtop_z", 1.0f));
@@ -80,6 +80,7 @@ void UIText::start()
     if (!mUITransform) {
         errorManager().throwMotorEngineError("UIText error", "An entity doesn't have UItransform component");
         sceneManager().quit();
+        return;
     }
 }
 

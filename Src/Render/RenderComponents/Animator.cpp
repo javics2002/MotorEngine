@@ -35,6 +35,7 @@ void Animator::start()
 	if (!mMesh) {
 		errorManager().throwMotorEngineError("Animator error", "An entity doesn't have MeshRenderer component");
 		sceneManager().quit();
+        return;
 	}
 	mCurrentState = nullptr;
 	mAnimStatesMap = renderManager().getOgreEntity(mMesh->getName())->getAllAnimationStates();

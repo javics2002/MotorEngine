@@ -150,7 +150,8 @@ void MotorEngine::exit()
 	ComponentsFactory::Shutdown();
 	InputManager::Shutdown();
 
-	delete mTime;
+	if (mTime)
+		delete mTime;
 
 	FreeLibrary(mGame);
 }
@@ -197,7 +198,7 @@ int MotorEngine::QuitLoop(void* userdata, SDL_Event* event)
 	return 0;
 }
 
-MotorEngine::MotorEngine() {
+MotorEngine::MotorEngine() : mGame(nullptr), mTime(nullptr) {
 }
 
 MotorEngine::~MotorEngine()

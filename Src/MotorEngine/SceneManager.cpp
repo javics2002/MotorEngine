@@ -277,7 +277,11 @@ bool SceneManager::readEntities(lua_State* L) {
 				if (lua_istable(L, -1)) {
 					for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
 						std::string key = fieldName + "_" + lua_tostring(L, -2);
-						std::string value = lua_tostring(L, -1);
+						std::string value;
+						if (lua_isstring(L, -1))
+							value = lua_tostring(L, -1);
+						else if (lua_isboolean(L, -1))
+							value = std::to_string(lua_toboolean(L, -1));
 
 						fieldValue += key + ":" + value + ",";
 
@@ -315,5 +319,5 @@ bool SceneManager::pushEntities() {
 
 	mActiveScene->processNewEntities();
 
-	return true;
+	return !mQuit;
 }

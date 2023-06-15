@@ -45,6 +45,7 @@ void me::AudioSource::start()
     if (!mTransform) {
         errorManager().throwMotorEngineError("AudioSource error", "An entity doesn't have transform component");
         sceneManager().quit();
+        return;
     }
     
     // Create a 3D sound or a normal sound

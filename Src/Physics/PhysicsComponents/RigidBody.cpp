@@ -40,9 +40,13 @@ RigidBody::RigidBody()
 
 RigidBody::~RigidBody()
 {
-	physicsManager().destroyRigidBody(mBtRigidBody);
-	mBtRigidBody = nullptr;
-	delete mBtTransform;
+	if(mBtRigidBody){
+		physicsManager().destroyRigidBody(mBtRigidBody);
+		mBtRigidBody = nullptr;
+	}
+
+	if (mBtTransform)
+		delete mBtTransform;
 }
 
 void RigidBody::start()
@@ -52,6 +56,7 @@ void RigidBody::start()
 	if (!mTransform) {
 		errorManager().throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Transform  component");
 		sceneManager().quit();
+        return;
 	}
 
 	mBtTransform = new btTransform(btQuaternion(mTransform->getRotation().getRotationInBullet()), btVector3(mTransform->getPosition().v3ToBulletV3()));
@@ -68,6 +73,7 @@ void RigidBody::start()
 	if (!mCollider) {
 		errorManager().throwMotorEngineError("Rigidbody Error", "An Entity doesn't have the Collider  component");
 		sceneManager().quit();
+        return;
 	}
 
 	mBtRigidBody->setUserPointer(mCollider);

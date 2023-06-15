@@ -26,6 +26,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     * In case of the setup of the engine fails, the game can't start and the program returns an error value (-1)
     */
     if (!engine->setup()) {
+        engine->exit();
         delete engine;
         return -1;
     }

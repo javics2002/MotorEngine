@@ -99,6 +99,7 @@ void Camera::start()
 	if (!mTransform) {
 		errorManager().throwMotorEngineError("Camera error", "An entity doesn't have transform component");
 		sceneManager().quit();
+        return;
 	}
 	renderManager().setCameraInfo(mName, mTransform->getPosition(), mLookAt);
 }

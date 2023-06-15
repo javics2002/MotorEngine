@@ -195,13 +195,13 @@ void Transform::setParent()
 		if (!getEntity()->getScene()->findEntity(mParentName)) {
 			errorManager().throwMotorEngineError("Transform Error", "Can't find the parent transform Entity");
 			sceneManager().quit();
-
+            return;
 		}
 		mParent = getEntity()->getScene()->findEntity(mParentName)->getComponent<Transform>("transform");
 		if (!mParent) {
 			errorManager().throwMotorEngineError("Transform Error", "The parent Entity doesn't have the transform component");
 			sceneManager().quit();
-
+            return;
 		}
 		mParent->addChild(this);
 	}	
