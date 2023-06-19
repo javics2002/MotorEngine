@@ -8,8 +8,6 @@
 #include "InfoScene.h"
 #include <memory>
 
-class lua_State;
-
 namespace me {
     class Scene;
     class Entity;
@@ -21,13 +19,12 @@ namespace me {
     class __MOTORENGINE_API SceneManager : public Singleton<SceneManager> {
         friend Singleton<SceneManager>;
 
-    public:        
-
         /**
         Build the foundation of the SceneManager.
         */
         SceneManager();
 
+    public:
         /**
         * Deletes scenes and clears entities, global and otherwise.
         */
@@ -85,16 +82,6 @@ namespace me {
         void update(const double& dt, bool& q);
 
         /**
-        Parse entities from .lua file to an unordered_map that will be passed to the current Scene
-        to create the entities.
-        @param sceneName has to be the name of the file with .lua INCLUDED. Example: sceneName => scene.lua
-		@param awake Names of methods list to execute before reading the entities
-        @param start Names of methods list to execute after reading the entities
-        @returns True on Success.
-        */
-        bool loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start);
-
-        /**
         Load a new scene to set as active.
         @returns True on Success.
         */
@@ -128,18 +115,11 @@ namespace me {
 
     private:
         /*
-        Parse the .lua file to an unordered_map.
-        @param L is the lua_State that was opened by the function loadEntities
-        @returns True on Success.
-        */
-        bool readEntities(lua_State* L);
-
-        /*
         This function calls the active scene and passes the unordered_map with all the entities information.
         @returns true if all entitys and their components were created successfully.
         @returns false if any component failed to create.
         */
-        bool pushEntities();
+        bool pushEntities(InfoScene& entitiesMap);
 
         //Change scene
         bool mChange = false;
@@ -151,8 +131,6 @@ namespace me {
 
         std::unordered_map<SceneName, Scene*> mScenes;
         Scene* mActiveScene = nullptr;
-        InfoScene mEntitiesMap;
-
 
         std::list<std::string> mAwake;
         std::list<std::string> mStart;

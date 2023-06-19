@@ -164,9 +164,6 @@ void Scene::processNewEntities()
 	for (auto& entityPtr : mNewEntities)
 		entityPtr->start();
 
-
-
-
 	mNewEntities.clear();
 }
 

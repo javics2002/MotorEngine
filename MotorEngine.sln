@@ -16,8 +16,16 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Main", "Projects\Main\Main.vcxproj", "{57A9F9FE-6E4F-47B4-9019-995EF3E812DC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotorEngine", "Projects\MotorEngine\MotorEngine.vcxproj", "{A84AEEAC-343F-4D4E-AC76-F83AFDC68112}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC} = {BD185A42-5D9C-40DA-A690-ADD3577902DC}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntityComponent", "Projects\EntityComponent\EntityComponent.vcxproj", "{E996E8C5-C183-4221-9A3E-4FC9E4475465}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scripting", "Projects\Scripting\Scripting.vcxproj", "{BD185A42-5D9C-40DA-A690-ADD3577902DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E37B8FFF-2C86-46A5-B2A6-635658143588} = {E37B8FFF-2C86-46A5-B2A6-635658143588}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +99,14 @@ Global
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Release|x64.Build.0 = Release|x64
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Release|x86.ActiveCfg = Release|Win32
 		{E996E8C5-C183-4221-9A3E-4FC9E4475465}.Release|x86.Build.0 = Release|Win32
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Debug|x64.ActiveCfg = Debug|x64
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Debug|x64.Build.0 = Debug|x64
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Debug|x86.Build.0 = Debug|Win32
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Release|x64.ActiveCfg = Release|x64
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Release|x64.Build.0 = Release|x64
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Release|x86.ActiveCfg = Release|Win32
+		{BD185A42-5D9C-40DA-A690-ADD3577902DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

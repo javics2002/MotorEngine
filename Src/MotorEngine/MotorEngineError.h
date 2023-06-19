@@ -14,8 +14,9 @@ namespace me {
 	class __MOTORENGINE_API ErrorManager : public Singleton<ErrorManager> {
 		friend Singleton<ErrorManager>;
 
-	public:
 		ErrorManager();
+
+	public:
 		~ErrorManager();
 
 		/**

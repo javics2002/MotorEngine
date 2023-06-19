@@ -2,9 +2,7 @@
 #include "Scene.h"
 #include "EntityComponent/Entity.h"
 #include "MotorEngineError.h"
-
-#include <lua.hpp>
-#include <LuaBridge.h>
+#include "Scripting/LoadManager.h"
 
 #ifdef _DEBUG
 #include <iostream>
@@ -24,8 +22,6 @@ SceneManager::~SceneManager() {
 #endif
 
 	deleteAllScenes();
-
-	mEntitiesMap.clear();
 
 	Scene::DeleteGlobalEntities();
 };
@@ -136,69 +132,6 @@ bool me::SceneManager::isQuiting()
 	return mQuit;
 }
 
-bool SceneManager::loadEntities(const SceneName& sceneName, std::list<std::string> awake, std::list<std::string>start) {
-	
-	// Lua Bridge load
-	lua_State* L = luaL_newstate();
-	luaL_openlibs(L);
-
-	// File load
-	std::string path = "Assets\\Scenes\\" + sceneName;
-
-	if (luaL_loadfile(L, path.c_str()) || lua_pcall(L, 0, 0, 0)) {
-		errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
-		lua_close(L);
-		return false;
-	}
-
-	for (auto awakeFunc : awake) {
-		lua_getglobal(L, awakeFunc.c_str());
-		if (lua_isfunction(L, -1)) {
-			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
-				errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
-				lua_close(L);
-				return false;
-			}
-		}
-	}
-
-	awake.clear();
-
-	// Entry Point
-	lua_getglobal(L, "Entities");
-
-	// Entities Parse
-	if (readEntities(L))
-	{    // Entities to Scene
-		if (pushEntities())
-			mEntitiesMap.clear();
-		else {
-			lua_close(L);
-			return false;
-		}
-	}
-	else {
-		lua_close(L);
-		return false;
-	}
-
-	for (auto startFunc : start) {
-		lua_getglobal(L, startFunc.c_str());
-		if (lua_isfunction(L, -1)) {
-			if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
-				errorManager().throwMotorEngineError("Load entities error", lua_tostring(L, -1));
-				lua_close(L);
-				return false;
-			}
-		}
-	}
-
-	start.clear();
-
-	lua_close(L);
-	return true;
-}
-
 void SceneManager::deleteAllScenes() {
 	for (auto scene : mScenes)
 		delete scene.second;
@@ -220,101 +153,18 @@ bool SceneManager::loadScene() {
 	}
 
 	sceneManager().setActiveScene(mNewScene);
-	return sceneManager().loadEntities(mNewScene, mAwake, mStart);
-}
 
-bool SceneManager::readEntities(lua_State* L) {
-	lua_pushnil(L);
+	InfoScene entitiesMap;
 
-	if (!lua_istable(L, -2)) {
-		errorManager().throwMotorEngineError("Read entities error",
-			std::string("Expected a table of entities, got ") + std::string(lua_typename(L, lua_type(L, -2))));
-		std::cout << "Expected a table of entities, got " << lua_typename(L, lua_type(L, -2)) << "\n";
+	if (!loadManager().loadEntities(mNewScene, entitiesMap, mAwake, mStart)) 
 		return false;
-	}
 
-	// Entities found
-	while (lua_next(L, -2) != 0) {
-		if (!lua_isstring(L, -2)) {
-			lua_pop(L, 1);
-			continue;
-		}
-
-		// Entities names
-		std::string entityName = lua_tostring(L, -2);
-
-		for (char& c : entityName)
-			c = tolower(c);
-
-		mEntitiesMap[entityName];
-
-		// Read Components
-		lua_pushnil(L);
-		while (lua_next(L, -2) != 0) {
-			if (!lua_isstring(L, -2))
-				continue;
-
-			std::string componentName = lua_tostring(L, -2);
-			for (char& c : componentName)
-				c = tolower(c);
-
-			mEntitiesMap[entityName][componentName];
-
-			// Read Component Info
-			lua_pushnil(L);
-			while (lua_next(L, -2) != 0) {
-				if (!lua_isstring(L, -2)) {
-					lua_pop(L, 1);
-					continue;
-				}
-
-				std::string fieldName = lua_tostring(L, -2);
-				for (char& c : fieldName)
-					c = tolower(c);
-
-				// Component Values
-				std::string fieldValue;
-				if (lua_istable(L, -1)) {
-					for (lua_pushnil(L); lua_next(L, -2); lua_pop(L, 1)) {
-						std::string key = fieldName + "_" + lua_tostring(L, -2);
-						std::string value;
-						if (lua_isstring(L, -1))
-							value = lua_tostring(L, -1);
-						else if (lua_isboolean(L, -1))
-							value = std::to_string(lua_toboolean(L, -1));
-
-						fieldValue += key + ":" + value + ",";
-
-						mEntitiesMap[entityName][componentName][key] = value;
-					}
-
-					if (fieldValue.size() > 0)
-						fieldValue.pop_back(); // Delete last ','
-				}
-				else {
-					if (lua_isstring(L, -1))
-						fieldValue = lua_tostring(L, -1);
-					else if (lua_isboolean(L, -1))
-						fieldValue = std::to_string(lua_toboolean(L, -1));
-
-					mEntitiesMap[entityName][componentName][fieldName] = fieldValue;
-				}
-
-				lua_pop(L, 1);
-			}
-
-			lua_pop(L, 1);
-		}
-
-		lua_pop(L, 1);
-	}
-
-	return true;
+	return pushEntities(entitiesMap);
 }
 
-bool SceneManager::pushEntities() {
+bool SceneManager::pushEntities(InfoScene& entitiesMap) {
 	// Get active scene and call it
-	if (!mActiveScene->pushEntities(mEntitiesMap))
+	if (!mActiveScene->pushEntities(entitiesMap))
 		return false;
 
 	mActiveScene->processNewEntities();

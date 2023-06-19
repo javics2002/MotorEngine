@@ -17,6 +17,8 @@
 #include "EntityComponent/FactoryComponent.h"
 #include "EntityComponent/Transform.h"
 
+#include "Scripting/LoadManager.h"
+
 #include "Audio/AudioComponents/AudioListener.h"
 #include "Audio/AudioComponents/AudioSource.h"
 
@@ -143,6 +145,7 @@ void MotorEngine::exit()
 {
 	// Clear the memory created in the execution of the program
 	SceneManager::Shutdown();
+	LoadManager::Shutdown();
 	PhysicsManager::Shutdown();
 	RenderManager::Shutdown();
 	Window::Shutdown();
