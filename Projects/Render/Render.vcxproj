@@ -26,6 +26,7 @@
     <ClCompile Include="..\..\Src\Render\RenderComponents\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderManager.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderMesh.cpp" />
+    <ClCompile Include="..\..\Src\Render\RenderParticleSystem.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderUISprite.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderUIText.cpp" />
     <ClCompile Include="..\..\Src\Render\RenderWindow.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="..\..\Src\Render\RenderComponents\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\Render\RenderManager.h" />
     <ClInclude Include="..\..\Src\Render\RenderMesh.h" />
+    <ClInclude Include="..\..\Src\Render\RenderParticleSystem.h" />
     <ClInclude Include="..\..\Src\Render\RenderUISprite.h" />
     <ClInclude Include="..\..\Src\Render\RenderUIText.h" />
     <ClInclude Include="..\..\Src\Render\RenderWindow.h" />
