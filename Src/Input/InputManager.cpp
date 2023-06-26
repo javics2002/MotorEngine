@@ -51,7 +51,7 @@ bool InputManager::addButton(std::string name, int player)
 #ifdef _DEBUG
 		std::cout << "Button " << name << " already exists.\n";
 #endif
-		
+
 		return false;
 	}
 
@@ -226,7 +226,7 @@ bool InputManager::deleteBinding(std::string name, Input input)
 			it = mButtonBindings.erase(it);
 
 #ifdef _DEBUG
-			std::cout << "Binding " << name << " to " << typeid(input.type).name() 
+			std::cout << "Binding " << name << " to " << typeid(input.type).name()
 				<< " " << input.which << " deleted.\n";
 #endif
 		}
@@ -248,7 +248,7 @@ bool InputManager::deleteBinding(std::string name, AxisInput input)
 			it++;
 
 	for (auto it = mNegativeAxisBindings.begin(); it != mNegativeAxisBindings.end();)
-		if (it->second == name && it->first.type == input.type && it->first.which == input.negative) 
+		if (it->second == name && it->first.type == input.type && it->first.which == input.negative)
 			it = mNegativeAxisBindings.erase(it);
 		else
 			it++;
@@ -303,7 +303,7 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 		return false;
 	}
 
-	/*Create filtered callback that checks if the SDL_Event source matches 
+	/*Create filtered callback that checks if the SDL_Event source matches
 	any of the virtual button's bindings.*/
 	OnButtonPressedInfo info;
 	info.filter = [](void* userdata, SDL_Event* event)->int {
@@ -315,10 +315,10 @@ bool InputManager::addOnButtonPressedEvent(std::string name, int(*callback)(void
 		//Call callback if input matches any of the virtual button's bindings.
 		auto bindings = info->buttonBindings->equal_range(GetInput(event));
 		for (auto binding = bindings.first; binding != bindings.second; binding++)
-			if (binding->second == info->buttonName 
+			if (binding->second == info->buttonName
 				&& (info->player == -1 || info->player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))
 				info->callback(info->additionalData);
-		
+
 		return 0;
 	};
 
@@ -362,7 +362,7 @@ bool InputManager::deleteOnButtonPressedEvent(std::string name, int(*callback)(v
 		else
 			info++;
 
-	
+
 #ifdef _DEBUG
 	std::cout << "Event unbinded to button " << name << ".\n";
 #endif
@@ -390,6 +390,23 @@ void me::InputManager::resetMotionControlValues()
 	mLastMotionControlRollValue = 0.0f;
 }
 
+float me::InputManager::getAxisMotionFromInputNumber(int axis, float value)
+{
+	switch (axis) {
+	default:
+		value = (int)value % 1000;
+		break;
+	case 1:
+		value = (int)value / 1000;
+		value = (int)value % 1000;
+		break;
+	case 2:
+		value = (int)value / 1000000;
+		break;
+	}
+	return (value / 100.0) - 1;
+}
+
 int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 {
 	switch (event->type)
@@ -403,11 +420,11 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 			SDL_SetGamepadSensorEnabled(gamepad, SDL_SENSOR_GYRO, SDL_bool(true));
 
 #ifdef _DEBUG
-		std::cout << SDL_GetGamepadName(gamepad) << " detected.	Player: " 
+		std::cout << SDL_GetGamepadName(gamepad) << " detected.	Player: "
 			<< SDL_GetGamepadPlayerIndex(gamepad) << "	ID: " << event->cdevice.which << "\n";
 #endif
 	}
-		break;
+	break;
 	case SDL_EVENT_GAMEPAD_REMOVED:
 		if (Instance()->mControllers.count(event->cdevice.which)) {
 			SDL_Gamepad* gamepad = SDL_GetGamepadFromInstanceID(event->cdevice.which);
@@ -426,7 +443,7 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 	default:
 		break;
 	}
-		
+
 	return 0;
 }
 
@@ -438,9 +455,9 @@ int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 	auto bindings = Instance()->mButtonBindings.equal_range(input);
 	for (auto binding = bindings.first; binding != bindings.second; binding++)
 		//Check if its the right player
-		if (input.type != INPUTTYPE_GAMEPAD_BUTTON || 
+		if (input.type != INPUTTYPE_GAMEPAD_BUTTON ||
 			(input.type == INPUTTYPE_GAMEPAD_BUTTON && (Instance()->mButtons[binding->second].player == -1 ||
-			Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which))))
+				Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which))))
 			Instance()->mButtons[binding->second].pressed = EVENT_BUTTON_DOWN;
 
 	//Return all unactive axis towards zero
@@ -449,13 +466,13 @@ int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 			continue;
 		else if (axis.second.value > 0)
 			axis.second.value = std::max(.0f, axis.second.value - axis.second.gravity);
-		else 
+		else
 			axis.second.value = std::min(.0f, axis.second.value + axis.second.gravity);
 
 	//Update all axis binded to that input
 	if (input.type == INPUTTYPE_GAMEPAD_AXIS) {
 		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
-		for (auto binding = bindings.first; binding != bindings.second; binding++) 
+		for (auto binding = bindings.first; binding != bindings.second; binding++)
 			//Check if its the right player
 			if (Instance()->mButtons[binding->second].player == -1 ||
 				Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->caxis.which)) {
@@ -468,9 +485,9 @@ int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 		bindings = Instance()->mPositiveAxisBindings.equal_range(input);
 		for (auto binding = bindings.first; binding != bindings.second; binding++) {
 			//Check if its the right player
-			if (!(input.type != INPUTTYPE_GAMEPAD_BUTTON || 
+			if (!(input.type != INPUTTYPE_GAMEPAD_BUTTON ||
 				(input.type == INPUTTYPE_GAMEPAD_BUTTON && (Instance()->mButtons[binding->second].player == -1 ||
-				Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))))
+					Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))))
 				continue;
 
 			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == -1)
@@ -486,7 +503,7 @@ int InputManager::UpdateInputData(void* userdata, SDL_Event* event)
 			//Check if its the right player
 			if (!(input.type != INPUTTYPE_GAMEPAD_BUTTON ||
 				(input.type == INPUTTYPE_GAMEPAD_BUTTON && (Instance()->mButtons[binding->second].player == -1 ||
-				Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))))
+					Instance()->mButtons[binding->second].player == SDL_GetGamepadInstancePlayerIndex(event->cbutton.which)))))
 				continue;
 
 			if (Instance()->mAxis[binding->second].active && Instance()->mAxis[binding->second].value == 1)
@@ -549,14 +566,18 @@ Input me::InputManager::GetInput(SDL_Event* event)
 	case SDL_EVENT_GAMEPAD_AXIS_MOTION:
 		input.type = INPUTTYPE_GAMEPAD_AXIS;
 		input.which = event->caxis.axis;
-		input.value = std::max(-1.0f, (float) event->caxis.value / SHRT_MAX);
+		input.value = std::max(-1.0f, (float)event->caxis.value / SHRT_MAX);
 		break;
 	case SDL_EVENT_GAMEPAD_SENSOR_UPDATE:
 		if (event->csensor.sensor == SDL_SENSOR_GYRO) {
 			input.type = INPUTTYPE_GAMEPAD_AXIS;
-			input.which = GamepadAxisCode::GAMEPAD_AXISCODE_MOTION_ROLL;
+			input.which = GamepadAxisCode::GAMEPAD_AXISCODE_MOTION;
+			Instance()->mLastMotionControlPitchValue += std::min(std::max(-1.0f, event->csensor.data[0] * Instance()->mMotionControlsSensitivityPitch), 1.0f);
+			input.value = (int)((Instance()->mLastMotionControlPitchValue + 1) * 100);
+			Instance()->mLastMotionControlYawValue += std::min(std::max(-1.0f, -event->csensor.data[1] * Instance()->mMotionControlsSensitivityYaw), 1.0f);
+			input.value += (int)((Instance()->mLastMotionControlYawValue + 1) * 100) * 1000;
 			Instance()->mLastMotionControlRollValue += std::min(std::max(-1.0f, -event->csensor.data[2] * Instance()->mMotionControlsSensitivityRoll), 1.0f);
-			input.value = Instance()->mLastMotionControlRollValue;
+			input.value += (int)((Instance()->mLastMotionControlRollValue + 1) * 100) * 1000000;
 		}
 		break;
 
