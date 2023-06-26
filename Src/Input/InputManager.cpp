@@ -2,6 +2,7 @@
 
 #include "InputCode.h"
 #include <SDL3/SDL_events.h>
+#include <SDL3/SDL_gamepad.h>
 #ifdef _DEBUG
 #include <iostream>
 #include <typeinfo>
@@ -383,6 +384,8 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 		SDL_Gamepad* gamepad = SDL_OpenGamepad(event->cdevice.which);
 
 		Instance()->mControllers.insert(event->cdevice.which);
+		if (SDL_GamepadHasSensor(gamepad, SDL_SENSOR_GYRO))
+			SDL_SetGamepadSensorEnabled(gamepad, SDL_SENSOR_GYRO, SDL_bool(true));
 
 #ifdef _DEBUG
 		std::cout << SDL_GetGamepadName(gamepad) << " detected.	Player: " 
@@ -395,6 +398,8 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 			SDL_Gamepad* gamepad = SDL_GetGamepadFromInstanceID(event->cdevice.which);
 
 			Instance()->mControllers.erase(event->cdevice.which);
+			if (SDL_GamepadHasSensor(gamepad, SDL_SENSOR_GYRO))
+				SDL_SetGamepadSensorEnabled(gamepad, SDL_SENSOR_GYRO, SDL_bool(true));
 
 #ifdef _DEBUG
 			std::cout << SDL_GetGamepadName(gamepad) << " removed. ID: " << event->cdevice.which << "\n";
