@@ -56,6 +56,10 @@ namespace me {
 		*/
 		float mMouseX, mMouseY;
 
+		// Motion Controls sensitivity multipliers
+		float mMotionControlsSensitivityPitch, mMotionControlsSensitivityYaw, mMotionControlsSensitivityRoll = 1.0f;
+		float mLastMotionControlPitchValue, mLastMotionControlYawValue, mLastMotionControlRollValue;
+
 		std::unordered_set<unsigned int> mControllers;
 
 		/*
@@ -259,6 +263,16 @@ namespace me {
 		@returns Current mouse position
 		*/
 		Vector2 getMousePositon();
+
+		/*
+		Set the Motion Controls Sensitivity Multiplier. Higher means less movement needed.
+		*/
+		void setMotionControlsSensitivity(float pitch, float yaw, float roll);
+
+		/*
+		Resets motion control input values to 0 on all axes.
+		*/
+		void resetMotionControlValues();
 	};
 
 	/**

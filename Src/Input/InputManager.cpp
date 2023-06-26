@@ -21,6 +21,7 @@ InputManager::InputManager()
 {
 	SDL_AddEventWatch(WatchControllers, NULL);
 	SDL_AddEventWatch(UpdateInputData, NULL);
+	resetMotionControlValues();
 }
 
 InputManager::~InputManager()
@@ -375,6 +376,20 @@ Vector2 me::InputManager::getMousePositon()
 	return Vector2(mMouseX, mMouseY);
 }
 
+void me::InputManager::setMotionControlsSensitivity(float pitch, float yaw, float roll)
+{
+	mMotionControlsSensitivityPitch = pitch;
+	mMotionControlsSensitivityYaw = yaw;
+	mMotionControlsSensitivityRoll = roll;
+}
+
+void me::InputManager::resetMotionControlValues()
+{
+	mLastMotionControlPitchValue = 0.0f;
+	mLastMotionControlYawValue = 0.0f;
+	mLastMotionControlRollValue = 0.0f;
+}
+
 int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 {
 	switch (event->type)
@@ -537,17 +552,12 @@ Input me::InputManager::GetInput(SDL_Event* event)
 		input.value = std::max(-1.0f, (float) event->caxis.value / SHRT_MAX);
 		break;
 	case SDL_EVENT_GAMEPAD_SENSOR_UPDATE:
-
 		if (event->csensor.sensor == SDL_SENSOR_GYRO) {
-
-			int motionAxis = 0;	// x, y, or z axis
-
 			input.type = INPUTTYPE_GAMEPAD_AXIS;
 			input.which = GamepadAxisCode::GAMEPAD_AXISCODE_MOTION_ROLL;
-			input.value = std::max(-1.0f, (float)event->csensor.data[motionAxis] / SHRT_MAX);
-
+			Instance()->mLastMotionControlRollValue += std::min(std::max(-1.0f, -event->csensor.data[2] * Instance()->mMotionControlsSensitivityRoll), 1.0f);
+			input.value = Instance()->mLastMotionControlRollValue;
 		}
-
 		break;
 
 	case SDL_EVENT_MOUSE_WHEEL:
