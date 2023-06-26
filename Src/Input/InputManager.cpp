@@ -531,6 +531,20 @@ Input me::InputManager::GetInput(SDL_Event* event)
 		input.which = event->caxis.axis;
 		input.value = std::max(-1.0f, (float) event->caxis.value / SHRT_MAX);
 		break;
+	case SDL_EVENT_GAMEPAD_SENSOR_UPDATE:
+
+		if (event->csensor.sensor == SDL_SENSOR_GYRO) {
+
+			int motionAxis = 0;	// x, y, or z axis
+
+			input.type = INPUTTYPE_GAMEPAD_AXIS;
+			input.which = GamepadAxisCode::GAMEPAD_AXISCODE_MOTION_ROLL;
+			input.value = std::max(-1.0f, (float)event->csensor.data[motionAxis] / SHRT_MAX);
+
+		}
+
+		break;
+
 	case SDL_EVENT_MOUSE_WHEEL:
 		input.type = INPUTTYPE_MOUSE_WHEEL;
 		input.which = event->wheel.direction;
