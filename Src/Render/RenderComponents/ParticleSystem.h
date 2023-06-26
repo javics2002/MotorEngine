@@ -4,12 +4,20 @@
 #define __ENTITYCOMPONENT_PARTICLESYSTEM
 
 #include "EntityComponent/Component.h"
+#include "EntityComponent/FactoryComponent.h"
 #include "Utils/Vector3.h"
 #include <string>
 #include <list>
 
 namespace me {
 	class Transform;
+
+	//Creates and destroys ParticleSYstem components
+	class FactoryParticleSystem : public FactoryComponent {
+	public:
+		Component* create(Parameters& params) override;
+		void destroy(Component* component) override;
+	};
 
 	/**
 	The ParticleSystem class represents a visual particle system in 3D space and can be attached to entities.
@@ -44,9 +52,9 @@ namespace me {
 		void start() override;
 		
 		/**
-		Initialize particle system component in rendermanager
+		Set the context of the Particle System
 		*/
-		void init() ;
+		void setContext();
 
 		/**
 		Update transform info to particle(ogreParticleSystem)

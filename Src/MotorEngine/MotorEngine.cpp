@@ -29,6 +29,7 @@
 #include "Render/RenderComponents/Camera.h"
 #include "Render/RenderComponents/Light.h"
 #include "Render/RenderComponents/MeshRenderer.h"
+#include "Render/RenderComponents/ParticleSystem.h"
 
 #include "Render/UIComponents/UIButton.h"
 #include "Render/UIComponents/UISpriteRenderer.h"
@@ -183,6 +184,7 @@ void me::MotorEngine::initFactories()
 	componentsFactory().addFactoryComponent("animator", new FactoryAnimator());
 	componentsFactory().addFactoryComponent("meshrenderer", new FactoryMeshRenderer());
 	componentsFactory().addFactoryComponent("uispriterenderer", new FactoryUISpriteRenderer());
+	componentsFactory().addFactoryComponent("particlesystem", new FactoryParticleSystem());
 	componentsFactory().addFactoryComponent("collider", new FactoryCollider());
 	componentsFactory().addFactoryComponent("camera", new FactoryCamera());
 	componentsFactory().addFactoryComponent("audiosource", new FactoryAudioSource());

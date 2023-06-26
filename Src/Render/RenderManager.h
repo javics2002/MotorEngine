@@ -276,7 +276,6 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool createMesh(std::string name, std::string nameMesh);
-
 		/**
 		Creates a 2D sprite in the overlay.
 		@param name: Name of Ogre::OverlayElement &&unordered_map
@@ -285,7 +284,6 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool createSprite(std::string name, std::string nameMesh, int zOrder);
-
 		/**
 		Set Transform info to the mesh with this name (for static object)
 		@param name: name of ogreMesh
@@ -419,6 +417,11 @@ namespace me {
 		*/
 		bool createParticle(std::string name, std::string nameMesh);
 		/**
+		Destroy particle system created
+		@param name: name of particle system to destroy
+		*/
+		void destroyParticle(std::string name);
+		/**
 		Set Transform info to the particle with this name (for static object)
 		@param name: name of ogreParticleSystem
 		@param pos: position of ogreParticleSystem
@@ -427,15 +430,52 @@ namespace me {
 		@return true: if succeed
 		*/
 		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale);
+
+		/**
+		Set Transform info to the particle with this name (for static object)
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@param rot: rotation of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
-		//set position info to the particle with this name
+
+		/**
+		Set position info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticlePosition(std::string name, Vector3 pos);
-		//set scale info to the particle with this name
+
+		/**
+		Set scale info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleScale(std::string name, Vector3 scale);
-		//set rotation info to the particle with this name
+
+		/**
+		Set rotation info to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param rot: rotation of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleRotation(std::string name, Vector4 rot);
 
-		//set emitting state to the particle with this name
+		/**
+		Set emitting state to the particle with this name
+		@param name: name of ogreParticleSystem
+		@param emitted: whether the particle should be enabled (true) or disabled (false)
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
 		bool setParticleEmitting(std::string name, bool emitted);
 		
 		/**

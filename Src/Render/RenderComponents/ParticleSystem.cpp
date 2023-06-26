@@ -1,12 +1,40 @@
 #include "ParticleSystem.h"
+
 #include "Render/RenderManager.h"
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
+#include "MotorEngine/MotorEngineError.h"
 #include "Utils/Vector3.h"
 #include <OgreQuaternion.h>
 #include <OgreVector3.h>
 
 using namespace me;
+
+me::Component* me::FactoryParticleSystem::create(Parameters& params)
+{
+	ParticleSystem* particleSystem = new ParticleSystem();
+
+	std::string particle = Value(params, "particle", std::string());
+	std::string particleName = Value(params, "particlename", std::string());
+	bool emitted = Value(params, "emitted", false);
+
+	particleSystem->setName(particle);
+	particleSystem->setParticleName(particleName);
+	particleSystem->setOffsetPos(Vector3(Value(params, "offpos_x", 0.0f),
+		Value(params, "offpos_y", 0.0f), Value(params, "offpos_z", 0.0f)));
+	particleSystem->setOffsetScale(Vector3(Value(params, "offscale_x", 0.0f),
+		Value(params, "offscale_y", 0.0f), Value(params, "offscale_z", 0.0f)));
+
+	particleSystem->setContext();
+
+	particleSystem->setEmitting(emitted);
+	return particleSystem;
+}
+
+void me::FactoryParticleSystem::destroy(Component* component)
+{
+	delete component;
+}
 
 ParticleSystem::ParticleSystem()
 {
@@ -26,10 +54,9 @@ void ParticleSystem::start()
 	renderManager().setParticleTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }
 
-void me::ParticleSystem::init()
+void ParticleSystem::setContext()
 {
-	if (mName.size() > 0)
-	renderManager().createParticle(mName, mParticleName);
+	
 }
 
 void ParticleSystem::update(const double& dt)
