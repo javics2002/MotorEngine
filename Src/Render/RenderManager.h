@@ -29,6 +29,7 @@ namespace me {
 	class RenderCamera;
 	class RenderMesh;
 	class RenderUISprite;
+	class RenderParticleSystem;
 	class SGTechniqueResolverListener;
 
 
@@ -113,6 +114,7 @@ namespace me {
 		std::unordered_map<std::string, RenderCamera*> mCameras;		//Pairs each cameras with its name
 		std::unordered_map<std::string, RenderMesh*> mMeshes;			//Pairs each mesh with its name
 		std::unordered_map<std::string, RenderUISprite*> mSprites;			//Pairs each UISprite with its name
+		std::unordered_map<std::string, RenderParticleSystem*> mParticles;			//Pairs each mesh with its name
 		std::unordered_map<std::string, Ogre::Light*> mLights;			//Pairs each mesh with its name
 
 		/**
@@ -162,6 +164,13 @@ namespace me {
 		@return nullptr: if it doesn't exist
 		*/
 		RenderMesh* getMesh(std::string name);
+
+		/**
+		@param name: Name of the particle
+		@return OgreParticleSystem: that was created with this name
+		@return nullptr: if it doesn't exist
+		*/
+		RenderParticleSystem* getParticle(std::string name);
 
 	public:
 		RenderManager&operator=(const RenderManager&o) = delete;
@@ -400,6 +409,34 @@ namespace me {
 		@param name: name of UISprite to destroy
 		*/
 		void destroyUISprite(std::string name);
+
+		/**
+		Create the ogreParticleSystem with this name
+		@param name: name of Ogre::SceneNode &&unordered_map
+		@param nameParticle: name of partcile system that is written int ParticleResource.particle
+		@return false: if renamed
+		@return true: if succeed
+		*/
+		bool createParticle(std::string name, std::string nameMesh);
+		/**
+		Set Transform info to the particle with this name (for static object)
+		@param name: name of ogreParticleSystem
+		@param pos: position of ogreParticleSystem
+		@param scale: scale of ogreParticleSystem
+		@return false: if it doesn't exist
+		@return true: if succeed
+		*/
+		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale);
+		bool setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot);
+		//set position info to the particle with this name
+		bool setParticlePosition(std::string name, Vector3 pos);
+		//set scale info to the particle with this name
+		bool setParticleScale(std::string name, Vector3 scale);
+		//set rotation info to the particle with this name
+		bool setParticleRotation(std::string name, Vector4 rot);
+
+		//set emitting state to the particle with this name
+		bool setParticleEmitting(std::string name, bool emitted);
 		
 		/**
 		@param name: name of node

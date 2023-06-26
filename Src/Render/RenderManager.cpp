@@ -4,6 +4,7 @@
 #include "Render/RenderWindow.h"
 #include "Render/RenderCamera.h"
 #include "Render/RenderMesh.h"
+#include "Render/RenderParticleSystem.h"
 #include "Render/SGTechniqueResolverListener.h"
 #include "Render/RenderUISprite.h"
 
@@ -168,6 +169,14 @@ RenderCamera* RenderManager::getCamera(std::string name)
 		return nullptr;
 
 	return mCameras[name];
+}
+
+RenderParticleSystem* RenderManager::getParticle(std::string name)
+{
+	if (!mParticles.count(name))
+		return nullptr;
+
+	return mParticles[name];
 }
 
 me::RenderManager::~RenderManager()
@@ -551,6 +560,85 @@ bool RenderManager::setUISpriteTransform(std::string name, Vector2 pos, Vector2 
 	return true;
 }
 
+
+bool RenderManager::createParticle(std::string name, std::string nameParticle)
+{
+	if (mParticles.count(name))
+		return false;
+
+	Ogre::SceneNode* entityNode = createNode(name);
+	RenderParticleSystem* particle = new RenderParticleSystem(name, entityNode, nameParticle);
+
+	mParticles[name] = particle;
+
+	return true;
+}
+
+bool RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), Ogre::Quaternion::IDENTITY);
+
+	return true;
+}
+
+bool RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale, Vector4 rot)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setTransform(pos.v3ToOgreV3(), scale.v3ToOgreV3(), rot.v4ToOgreQuaternion());
+
+	return true;
+}
+
+bool RenderManager::setParticlePosition(std::string name, Vector3 pos)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setPosition(pos.v3ToOgreV3());
+
+	return true;
+}
+
+bool RenderManager::setParticleScale(std::string name, Vector3 scale)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setScale(scale.v3ToOgreV3());
+
+	return true;
+}
+
+bool RenderManager::setParticleRotation(std::string name, Vector4 rot)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setRotation(rot.v4ToOgreQuaternion());
+
+	return true;
+}
+
+bool RenderManager::setParticleEmitting(std::string name, bool emitted)
+{
+	RenderParticleSystem* particle = getParticle(name);
+	if (particle == nullptr)
+		return false;
+
+	particle->setEmitting(emitted);
+
+	return true;
+}
 
 Ogre::SceneNode* RenderManager::createNode(std::string name)
 {
