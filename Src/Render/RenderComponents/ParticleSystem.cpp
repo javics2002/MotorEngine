@@ -56,7 +56,8 @@ void ParticleSystem::start()
 
 void ParticleSystem::setContext()
 {
-	
+	if (mName.size() > 0)
+		renderManager().createParticle(mName, mParticleName);
 }
 
 void ParticleSystem::update(const double& dt)

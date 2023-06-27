@@ -415,7 +415,7 @@ namespace me {
 		@return false: if renamed
 		@return true: if succeed
 		*/
-		bool createParticle(std::string name, std::string nameMesh);
+		bool createParticle(std::string name, std::string nameParticle);
 		/**
 		Destroy particle system created
 		@param name: name of particle system to destroy
