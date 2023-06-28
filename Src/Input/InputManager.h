@@ -276,7 +276,7 @@ namespace me {
 
 		/*
 		Must be used to translate the value from the motion input into a value between -1 and 1 on a given axis.
-		@param axis Pitch is 0, yaw is 1, roll is 2. Axis to return the value of.
+		@param axis Pitch is 0, yaw is 1, roll is 2. Axis to return the value on.
 		*/
 		float getAxisMotionFromInputNumber(int axis, float value);
 	};

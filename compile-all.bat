@@ -54,6 +54,14 @@ for /d %%d in (%origen%) do (
     )    
 )
 
+set "DESTINO_DEBUG=.\Exe\Main\x64\Debug\" 
+
+for /d %%d in (%origen%) do (
+    if exist "%%d\bin\Debug" (
+        robocopy /NJH "%%d\bin\Debug" %DESTINO_DEBUG% *.dll
+    )    
+)
+
 cd %ENGINE_ROOT_DIR%
 
 rem ( OGRE .cfg ) actualiza los ficheros de configuración de Ogre
@@ -62,8 +70,10 @@ set "ORIGEN=.\Dependencies\Ogre\"
 rem Copia para ejecutar directamente 
 echo: && echo "> Copiando ficheros necesarios del motor de renderizado de MotorEngine para: build final." && echo: 
 robocopy /NJH %origen% %DESTINO_RELEASE% *.cfg 
+robocopy /NJH %origen% %DESTINO_DEBUG% *.cfg 
 
 cd %ENGINE_ROOT_DIR%
 
 rem Compilacion de la solucion del motor
 msbuild %MOTOR_ENGINE_SLN% /p:configuration=Release /p:Platform=x64
+msbuild %MOTOR_ENGINE_SLN% /p:configuration=Debug /p:Platform=x64
