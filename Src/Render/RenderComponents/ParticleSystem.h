@@ -54,7 +54,7 @@ namespace me {
 		/**
 		Set the context of the Particle System
 		*/
-		void setContext();
+		bool setContext();
 
 		/**
 		Update transform info to particle(ogreParticleSystem)

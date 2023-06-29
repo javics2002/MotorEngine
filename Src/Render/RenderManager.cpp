@@ -585,11 +585,12 @@ bool RenderManager::createParticle(std::string name, std::string nameParticle)
 		return false;
 
 	Ogre::SceneNode* entityNode = createNode(name);
-	RenderParticleSystem* particle = new RenderParticleSystem(name, entityNode, nameParticle);
+	bool particleSystemCreated;
+	RenderParticleSystem* particle = new RenderParticleSystem(name, entityNode, nameParticle, particleSystemCreated);
+	
 
 	mParticles[name] = particle;
-
-	return true;
+	return particleSystemCreated;
 }
 
 bool RenderManager::setParticleTransform(std::string name, Vector3 pos, Vector3 scale)

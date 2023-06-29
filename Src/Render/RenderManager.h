@@ -411,7 +411,7 @@ namespace me {
 		/**
 		Create the ogreParticleSystem with this name
 		@param name: name of Ogre::SceneNode &&unordered_map
-		@param nameParticle: name of partcile system that is written int ParticleResource.particle
+		@param nameParticle: name of particle system that is written int ParticleResource.particle
 		@return false: if renamed
 		@return true: if succeed
 		*/

@@ -10,6 +10,7 @@ namespace Ogre {
 	class SceneNode;
 	class Quaternion;
 	class ParticleSystem;
+	class ParticleSystemManager;
 }
 
 namespace me {
@@ -39,7 +40,7 @@ namespace me {
 		@param meshName: name of resource (type mesh) that we used for create Ogre::Entity. 
 		Must be writted in resource.cfg (.mesh inside Zip or FileSystem)
 		*/
-		RenderParticleSystem(std::string name, Ogre::SceneNode* node, std::string particleName);
+		RenderParticleSystem(std::string name, Ogre::SceneNode* node, std::string particleName, bool &success);
 		~RenderParticleSystem();
 
 		/**

@@ -25,7 +25,7 @@ me::Component* me::FactoryParticleSystem::create(Parameters& params)
 	particleSystem->setOffsetScale(Vector3(Value(params, "offscale_x", 0.0f),
 		Value(params, "offscale_y", 0.0f), Value(params, "offscale_z", 0.0f)));
 
-	particleSystem->setContext();
+	if(!particleSystem->setContext()) return nullptr;
 
 	particleSystem->setEmitting(emitted);
 	return particleSystem;
@@ -54,10 +54,10 @@ void ParticleSystem::start()
 	renderManager().setParticleTransform(mName, mTransform->getPosition(), mTransform->getScale(), mTransform->getRotation());
 }
 
-void ParticleSystem::setContext()
+bool ParticleSystem::setContext()
 {
 	if (mName.size() > 0)
-		renderManager().createParticle(mName, mParticleName);
+		return renderManager().createParticle(mName, mParticleName);
 }
 
 void ParticleSystem::update(const double& dt)

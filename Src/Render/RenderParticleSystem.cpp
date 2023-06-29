@@ -1,20 +1,31 @@
 #include "RenderParticleSystem.h"
 #include <OgreSceneManager.h>
+#include <OgreParticleSystemManager.h>
+#include "MotorEngine/MotorEngineError.h"
 #include <OgreParticleSystem.h>
 #include <OgreSceneNode.h>
 #include <OgreQuaternion.h>
+#include "MotorEngine/SceneManager.h"
+#include <iostream>
 
-me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode* node, std::string particleName)
+me::RenderParticleSystem::RenderParticleSystem(std::string name,Ogre::SceneNode* node, std::string particleName, bool &success)
 {
 	mNode = node;
 	mParticleName = particleName;
 	mName = name;
 	Ogre::SceneManager* mSM = mNode->getCreator();
 
+	if (Ogre::ParticleSystemManager::getSingleton().getTemplate(mParticleName) == 0) {
+		errorManager().throwMotorEngineError(mParticleName + " was not registered in the .particle file", " Can´t create particle system.");
+		success = false;
+		sceneManager().quit();
+		return;
+	}
 	mParticleSystem = mSM->createParticleSystem(mName, mParticleName);
 	mParticleSystem->setEmitting(false);
 	mParticleSystem->setKeepParticlesInLocalSpace(true);
 	mNode->attachObject(mParticleSystem);
+	success = true;
 }
 
 me::RenderParticleSystem::~RenderParticleSystem()
