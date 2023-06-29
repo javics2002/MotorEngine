@@ -46,9 +46,16 @@ cd %ENGINE_ROOT_DIR%
 
 rem Copia de los dlls de bin a Exe
 set "ORIGEN=.\Dependencies\*" 
+set "DESTINO_DEBUG=.\Exe\Main\x64\Debug\" 
 set "DESTINO_RELEASE=.\Exe\Main\x64\Release\" 
 
-for /d %%d in (%origen%) do (
+for /d %%d in (%ORIGEN%) do (
+    if exist "%%d\bin\Debug" (
+        robocopy /NJH "%%d\bin\Debug" %DESTINO_DEBUG% *.dll
+    )    
+)
+
+for /d %%d in (%ORIGEN%) do (
     if exist "%%d\bin\Release" (
         robocopy /NJH "%%d\bin\Release" %DESTINO_RELEASE% *.dll
     )    
@@ -69,6 +76,7 @@ set "ORIGEN=.\Dependencies\Ogre\"
 
 rem Copia para ejecutar directamente 
 echo: && echo "> Copiando ficheros necesarios del motor de renderizado de MotorEngine para: build final." && echo: 
+robocopy /NJH %origen% %DESTINO_DEBUG% *.cfg && echo:
 robocopy /NJH %origen% %DESTINO_RELEASE% *.cfg 
 robocopy /NJH %origen% %DESTINO_DEBUG% *.cfg 
 
