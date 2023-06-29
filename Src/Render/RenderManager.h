@@ -244,7 +244,7 @@ namespace me {
 		@param dir: direction of light
 		@param color: color of light
 		*/
-		void createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+		bool createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
 			const Vector3& color);
 
 		/**

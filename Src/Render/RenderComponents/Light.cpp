@@ -47,7 +47,13 @@ void Light::start()
         sceneManager().quit();
         return;
     }
-	renderManager().createNewLight(mName, mTransform->getPosition(), mDirection, mColor);
+
+    if (!renderManager().createNewLight(mName, mTransform->getPosition(), mDirection, mColor)) {
+        errorManager().throwMotorEngineError("Ligth error", "Failed to create a new light, check if the values are correct");
+        sceneManager().quit();
+        return;
+    }
+	
 
 	if (mSetAmbient)
 		renderManager().setAmbientLight(mAmbientColor);

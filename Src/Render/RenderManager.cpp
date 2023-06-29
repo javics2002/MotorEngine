@@ -304,9 +304,12 @@ void RenderManager::destroyCamera(std::string name)
 
 }
 
-void RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
+bool RenderManager::createNewLight(std::string name, const Vector3& pos, const Vector3& dir,
 	const Vector3& color)
 {
+	if (mLights.count(name))
+		return false;
+
 	Ogre::Light* light = mSM->createLight(name);
 	light->setType(Ogre::Light::LT_DIRECTIONAL);
 	light->setVisible(true);
@@ -317,6 +320,8 @@ void RenderManager::createNewLight(std::string name, const Vector3& pos, const V
 	light->setDiffuseColour(Ogre::ColourValue(color.x, color.y, color.z, 1));
 
 	mLights[name] = light;
+
+	return true;
 }
 
 void me::RenderManager::destroyLight(std::string name)

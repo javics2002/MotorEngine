@@ -14,7 +14,8 @@ float FactoryComponent::Value(Parameters& params, const ParameterName& parameter
                 return defaultValue;
             }
         }
-        return std::stof(params[parameter]);
+        float value = std::strtol(params[parameter].c_str(), NULL, 16);
+        return (value ==  FLT_MAX || value == FLT_MIN) ? defaultValue : std::stof(params[parameter]);
     }
     else {
 #ifdef _DEBUG
@@ -34,7 +35,8 @@ int FactoryComponent::Value(Parameters& params, const ParameterName& parameter, 
                 return defaultValue;
             }
         }
-        return std::stoi(params[parameter]);
+        int value = std::strtol(params[parameter].c_str(), NULL, 16);
+        return (value == INT_MAX || value == INT_MIN) ? defaultValue : std::stoi(params[parameter]);
     }
     else {
 #ifdef _DEBUG

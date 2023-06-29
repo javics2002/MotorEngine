@@ -13,7 +13,7 @@ using namespace me;
 
 me::Component* me::FactoryMeshRenderer::create(Parameters& params)
 {
-	std::string mesh = Value(params, "mesh", std::string());
+	std::string mesh = Value(params, "mesh", std::string("defaultMesh"));
 	std::string meshName = Value(params, "meshname", std::string());
 	std::string materialName = Value(params, "materialname", std::string());
 	bool staticState = Value(params, "staticobj", false);
@@ -51,7 +51,7 @@ MeshRenderer::~MeshRenderer()
 bool MeshRenderer::createMesh()
 {
 	if (mMeshName.size() > 0) {
-		return renderManager().createMesh(mName, mMeshName);;
+		return renderManager().createMesh(mName, mMeshName);
 	}
 
 	return false;

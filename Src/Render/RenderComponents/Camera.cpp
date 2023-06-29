@@ -15,7 +15,7 @@ me::Component* me::FactoryCamera::create(Parameters& params)
 
     std::string name = Value(params, "name", std::string("Main"));
     camera->setName(name);
-    camera->setNearDistance(Value(params, "neardistance", .1f));
+    camera->setNearDistance(Value(params, "neardistance", 1.f));
     camera->setFarDistance(Value(params, "fardistance", 1000));
     camera->setAutoRadio(Value(params, "autoratio", false));
     camera->setZOrder(Value(params, "zorder", 0));
@@ -44,7 +44,7 @@ void me::FactoryCamera::destroy(Component* component)
 
 Camera::Camera()
 {
-
+	mNearDistance = 1;
 }
 
 Camera::~Camera()
@@ -65,12 +65,24 @@ std::string Camera::getName() const
 
 void Camera::setNearDistance(float nearDistance)
 {
-	mNearDistance = nearDistance;
+	if (nearDistance > 0)
+		mNearDistance = nearDistance;
+	else { // throw exception before ogre
+		errorManager().throwMotorEngineError("Camera error", "nearDistance can't be negative or 0, check value: " + std::to_string(nearDistance));
+		sceneManager().quit();
+		return;
+	}
 }
 
 void Camera::setFarDistance(float farDistance)
 {
-	mFarDistance = farDistance;
+	if (farDistance >= 0)
+		mFarDistance = farDistance;
+	else { // throw exception before ogre
+			errorManager().throwMotorEngineError("Camera error", "farDistance can't be negative, check value: " + std::to_string(farDistance));
+			sceneManager().quit();
+			return;
+	}
 }
 
 void Camera::setAutoRadio(bool autoRatio)
