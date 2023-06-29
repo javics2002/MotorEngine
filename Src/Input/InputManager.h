@@ -60,6 +60,8 @@ namespace me {
 		float mMotionControlsSensitivityPitch, mMotionControlsSensitivityYaw, mMotionControlsSensitivityRoll = 1.0f;
 		float mLastMotionControlPitchValue, mLastMotionControlYawValue, mLastMotionControlRollValue;
 
+		std::vector<bool> mPlayerHasMotion;
+
 		std::unordered_set<unsigned int> mControllers;
 
 		/*
@@ -122,7 +124,7 @@ namespace me {
 		input.type can be SDL_KeyboardEvent for keyboard key presses,
 		SDL_MouseButtonEvent for mouse clicks,
 		or SDL_ControllerButtonEvent for controller presses;
-		and input.which represents a value of SDL_KeyCode, SDL_BUTTON 
+		and input.which represents a value of SDL_KeyCode, SDL_BUTTON
 		or SDL_GamepadButton depending on the type of the event
 		@param player In case it is necessary to differenciate which player
 		inputs a press, InputManager will dissmiss presses from other players.
@@ -142,9 +144,9 @@ namespace me {
 		Creates an axis of name name.
 		@param name Name of the axis.
 		@param info Defines the behaviour of the axis.
-		info.gravity is the speed in units per second 
+		info.gravity is the speed in units per second
 		that the axis falls toward neutral when no input is present
-		and info.dead is how far the user needs to move an analog stick 
+		and info.dead is how far the user needs to move an analog stick
 		before your application registers the movement.
 		@returns A boolean representing whether the button could be created.
 		*/
@@ -228,7 +230,7 @@ namespace me {
 		@returns A boolean representing whether the binding was deleted.
 		*/
 		bool deleteBinding(std::string name, AxisInput input);
-		
+
 		/**
 		@param name Name of the button.
 		@returns The state of the button.
@@ -279,6 +281,12 @@ namespace me {
 		@param axis Pitch is 0, yaw is 1, roll is 2. Axis to return the value on.
 		*/
 		float getAxisMotionFromInputNumber(int axis, float value);
+
+		/*
+		Returns whether the player linked to a certain ID number has a controller that supports motion controls.
+		@param playerNum Player ID number.
+		*/
+		bool doesPlayerHaveMotionControls(int playerNum);
 	};
 
 	/**

@@ -22,6 +22,7 @@ InputManager::InputManager()
 	SDL_AddEventWatch(WatchControllers, NULL);
 	SDL_AddEventWatch(UpdateInputData, NULL);
 	resetMotionControlValues();
+	mPlayerHasMotion = std::vector<bool>(0);
 }
 
 InputManager::~InputManager()
@@ -407,6 +408,14 @@ float me::InputManager::getAxisMotionFromInputNumber(int axis, float value)
 	return (value / 100.0) - 1;
 }
 
+bool me::InputManager::doesPlayerHaveMotionControls(int playerNum)
+{
+	if (playerNum >= mPlayerHasMotion.size())
+		return false;
+	else
+		return mPlayerHasMotion[playerNum];
+}
+
 int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 {
 	switch (event->type)
@@ -416,8 +425,13 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 		SDL_Gamepad* gamepad = SDL_OpenGamepad(event->cdevice.which);
 
 		Instance()->mControllers.insert(event->cdevice.which);
-		if (SDL_GamepadHasSensor(gamepad, SDL_SENSOR_GYRO))
+		if (SDL_GamepadHasSensor(gamepad, SDL_SENSOR_GYRO)) {
 			SDL_SetGamepadSensorEnabled(gamepad, SDL_SENSOR_GYRO, SDL_bool(true));
+			if (SDL_GetGamepadPlayerIndex(gamepad) >= Instance()->mPlayerHasMotion.size())
+				Instance()->mPlayerHasMotion.push_back(true);
+			else
+				Instance()->mPlayerHasMotion[SDL_GetGamepadPlayerIndex(gamepad)] = true;
+		}
 
 #ifdef _DEBUG
 		std::cout << SDL_GetGamepadName(gamepad) << " detected.	Player: "
@@ -432,6 +446,7 @@ int InputManager::WatchControllers(void* userdata, SDL_Event* event)
 			Instance()->mControllers.erase(event->cdevice.which);
 			if (SDL_GamepadHasSensor(gamepad, SDL_SENSOR_GYRO))
 				SDL_SetGamepadSensorEnabled(gamepad, SDL_SENSOR_GYRO, SDL_bool(true));
+			Instance()->mPlayerHasMotion[SDL_GetGamepadPlayerIndex(gamepad)] = false;
 
 #ifdef _DEBUG
 			std::cout << SDL_GetGamepadName(gamepad) << " removed. ID: " << event->cdevice.which << "\n";
